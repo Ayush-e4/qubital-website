@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# binaries & scratch
+cloudflared.exe
+scratch/
+retro-grid*.json
+dock.json
