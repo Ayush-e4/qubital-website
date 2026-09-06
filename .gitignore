@@ -45,3 +45,5 @@ cloudflared.exe
 scratch/
 retro-grid*.json
 dock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
