@@ -11,15 +11,12 @@ import MethodologySteps from "@/components/MethodologySteps";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import { useLanguage } from "@/components/LanguageProvider";
+import { useLocalePath } from "@/lib/i18n/useLocalePath";
 
 export default function HomeParallaxContent() {
   const containerRef = useRef(null);
-  const { t, locale } = useLanguage();
-
-  const localePath = (path) => {
-    if (!locale || locale === 'en') return path;
-    return `/${locale}${path === '/' ? '' : path}`;
-  };
+  const { t } = useLanguage();
+  const localePath = useLocalePath();
 
   // Scroll Parallax Hooks for Mobile & Desktop
   const { scrollYProgress } = useScroll({

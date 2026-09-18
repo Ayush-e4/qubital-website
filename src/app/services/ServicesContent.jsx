@@ -4,15 +4,13 @@ import Link from 'next/link';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import MethodologySteps from '@/components/MethodologySteps';
 import { useLanguage } from '@/components/LanguageProvider';
+import { useLocalePath } from '@/lib/i18n/useLocalePath';
 
 export default function ServicesContent() {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const s = t.services_page;
 
-  const localePath = (path) => {
-    if (!locale || locale === 'en') return path;
-    return `/${locale}${path === '/' ? '' : path}`;
-  };
+  const localePath = useLocalePath();
 
   return (
     <main className="flex-grow pt-20 sm:pt-28 pb-16">

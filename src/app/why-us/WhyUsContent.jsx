@@ -3,15 +3,13 @@
 import Link from 'next/link';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
+import { useLocalePath } from '@/lib/i18n/useLocalePath';
 
 export default function WhyUsContent() {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const w = t.why_us_page || {};
 
-  const localePath = (path) => {
-    if (!locale || locale === 'en') return path;
-    return `/${locale}${path === '/' ? '' : path}`;
-  };
+  const localePath = useLocalePath();
 
   const headers = w.comparison_headers || {
     criteria: 'Criteria',
