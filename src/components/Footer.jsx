@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FOOTER_LINKS, COMPANY_INFO } from '@/lib/constants';
@@ -18,10 +18,31 @@ const LANGUAGES = [
   { code: 'nl', label: 'Nederlands' },
 ];
 
+const HOVER_QUERY = '(hover: hover) and (pointer: fine)';
+
+const subscribeToHover = (onChange) => {
+  const mq = window.matchMedia(HOVER_QUERY);
+  mq.addEventListener('change', onChange);
+  return () => mq.removeEventListener('change', onChange);
+};
+
+const hoverAvailable = () => window.matchMedia(HOVER_QUERY).matches;
+
 export default function Footer() {
   const pathname = usePathname();
   const { t, locale, setLocale } = useLanguage();
   const [time, setTime] = useState('--:--:-- CET');
+
+  // The interactive grid renders 1,600 <rect> elements, each with its own mouse
+  // handlers, with the hover state held in the parent — so moving the mouse
+  // re-renders all of them. On a touch device every element and handler is
+  // still mounted, hydrated and painted, yet hover can never fire. Touch gets
+  // the same texture from a CSS gradient instead: no DOM nodes, no handlers.
+  //
+  // useSyncExternalStore rather than an effect plus setState, which would trip
+  // react-hooks/set-state-in-effect. It is also the supported way to read a
+  // media query without a hydration mismatch — the server snapshot is `false`.
+  const hasHover = useSyncExternalStore(subscribeToHover, hoverAvailable, () => false);
 
   // Locale of the current URL, or null when unprefixed (English)
   const currentPrefix = localeFromPath(pathname);
@@ -58,13 +79,25 @@ export default function Footer() {
     <footer className="w-full relative z-50 bg-surface-card border-t border-border-subtle overflow-hidden flex flex-col items-center">
       {/* Interactive Grid Background */}
       <div className="absolute inset-0 overflow-hidden opacity-80 -z-0">
-        <InteractiveGridPattern
-          className={cn(
-            '[mask-image:radial-gradient(1200px_circle_at_top,white,transparent)]',
-            'inset-x-0 inset-y-[-10%] h-[150%] skew-y-12'
-          )}
-          squares={[40, 40]}
-        />
+        {hasHover ? (
+          <InteractiveGridPattern
+            className={cn(
+              '[mask-image:radial-gradient(1200px_circle_at_top,white,transparent)]',
+              'inset-x-0 inset-y-[-10%] h-[150%] skew-y-12'
+            )}
+            squares={[40, 40]}
+          />
+        ) : (
+          <div
+            aria-hidden="true"
+            className={cn(
+              '[mask-image:radial-gradient(1200px_circle_at_top,white,transparent)]',
+              'inset-x-0 inset-y-[-10%] h-[150%] skew-y-12',
+              '[background-image:linear-gradient(to_right,var(--color-outline-variant)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-outline-variant)_1px,transparent_1px)]',
+              '[background-size:40px_40px]'
+            )}
+          />
+        )}
       </div>
 
       {/* Content Layout */}
