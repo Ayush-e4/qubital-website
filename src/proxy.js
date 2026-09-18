@@ -1,8 +1,27 @@
 import { NextResponse } from 'next/server';
 
+/**
+ * Locale routing policy — keep this comment in sync with the behaviour below.
+ *
+ * 1. Prefixed paths (/de/…, /fr/…) are rewritten onto the unprefixed route and
+ *    tagged with `x-locale`, so the page renders in that language. The browser
+ *    URL keeps its prefix, which is why the client derives the locale from
+ *    usePathname() rather than from a cookie.
+ * 2. The root `/` is auto-detected for first-time visitors: with no NEXT_LOCALE
+ *    cookie, a browser whose top Accept-Language is a supported locale is
+ *    redirected to that locale. Only the root redirects — deep links such as
+ *    /about always serve English, so a shared URL renders as written.
+ * 3. Every other unprefixed path serves English.
+ *
+ * NEXT_LOCALE is written when a visitor uses a prefixed path, and is
+ * deliberately NOT cleared on unprefixed paths: it is what stops a returning
+ * German visitor from being redirected off `/` again on every subsequent visit.
+ * `x-locale` is the header the app renders from; the cookie is only an
+ * auto-detect marker.
+ */
 const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname } = request.nextUrl;
 
   // ── Match URL subpaths like /de, /fr, /es, /it, /nl ───────────────────────
