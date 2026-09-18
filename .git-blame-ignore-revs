@@ -1,0 +1,8 @@
+# Formatting-only commits — safe to skip when blaming.
+#
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+#
+# or per-invocation:
+#
+#   git blame --ignore-revs-file .git-blame-ignore-revs <file>
+237eaa553a2fd03a2717805f355aac5578768acd

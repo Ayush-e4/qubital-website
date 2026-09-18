@@ -9,9 +9,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "node --test \"tests/**/*.test.mjs\"",
-    "test:browser": "node tests/browser/interactions.mjs"
+    "test:browser": "node tests/browser/interactions.mjs",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,yml,yaml}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -30,7 +42,10 @@
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
     "playwright": "^1.63.0",
+    "prettier": "^3.9.8",
     "tailwindcss": "^4"
   }
 }

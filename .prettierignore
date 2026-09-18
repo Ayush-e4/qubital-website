@@ -1,0 +1,12 @@
+.next
+node_modules
+package-lock.json
+public
+
+# Large generated-style data file. Reformatting it would produce a ~3,400 line
+# diff that strips every quoted key, for no behavioural gain. #15 splits this
+# file per locale; format it then.
+src/lib/i18n/translations.js
+
+# The bundled Next docs are not ours to format.
+node_modules/next/dist/docs

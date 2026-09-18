@@ -33,6 +33,11 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # The pre-commit hook formats staged files, but a hook can be skipped
+      # (--no-verify, or a commit made outside the repo). This is the backstop.
+      - name: Check formatting
+        run: npm run format:check
+
       - name: Build
         run: npm run build
 
