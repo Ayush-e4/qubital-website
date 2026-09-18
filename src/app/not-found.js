@@ -49,7 +49,7 @@ export default async function NotFound() {
         </Link>
 
         {/* Secondary links */}
-        <p className="text-xs font-mono text-secondary/70 uppercase tracking-widest mb-4">
+        <p className="text-xs font-mono text-secondary/90 uppercase tracking-widest mb-4">
           {nf.links_heading}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
@@ -66,7 +66,7 @@ export default async function NotFound() {
       </div>
 
       {/* Bottom location badge */}
-      <div className="absolute bottom-8 flex items-center gap-2 text-xs font-mono text-secondary/60">
+      <div className="absolute bottom-8 flex items-center gap-2 text-xs font-mono text-secondary/90">
         <span className="material-symbols-outlined text-[14px]">location_on</span>
         <span>Herzogenaurach, Bavaria · qubital.eu</span>
       </div>
