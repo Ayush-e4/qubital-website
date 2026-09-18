@@ -110,6 +110,42 @@ each locale has its own URL and the rendered output is deterministic per URL.
 Security headers (`HSTS`, `CSP`, `X-Content-Type-Options`, `Referrer-Policy`,
 `X-Frame-Options`, `Permissions-Policy`) are set in `next.config.mjs`.
 
+### Self-hosting (Azure, containers, any Node host)
+
+The app runs off Vercel unchanged, but three things must be done deliberately.
+
+**1. There has to be a CDN in front, or the cache headers do nothing.**
+`Cache-Control: public, s-maxage=…` is plain HTTP — it only helps if a shared
+cache honours it. On Azure that means **Front Door** (or Azure CDN). With no CDN,
+every request re-renders on your compute, which is the slow and expensive case on
+App Service. On Vercel the edge does this for you.
+
+**2. `output: 'standalone'` is on, and its assets must be copied.**
+The build emits `.next/standalone` — a self-contained server. **Running it
+without copying the static assets serves a 200 page with a 404 stylesheet, i.e.
+an unstyled site.** Verified:
+
+```
+node .next/standalone/server.js                    # page 200, css 404
+cp -r .next/static .next/standalone/.next/static
+cp -r public      .next/standalone/public
+node .next/standalone/server.js                    # page 200, css 200
+```
+
+Run it with `node .next/standalone/server.js`. It honours `PORT` and `HOSTNAME`,
+which is what App Service and Container Apps inject.
+
+**3. `NEXT_PUBLIC_*` values are inlined at build time.**
+`NEXT_PUBLIC_POSTHOG_KEY` is baked into the bundle during `next build`, so a
+single artifact cannot serve two environments — build per environment, or supply
+the values during the build step in the pipeline.
+
+`sharp` is a direct dependency rather than an optional one. Next declares it
+_optional_, which npm is allowed to skip, and self-hosted `next/image`
+optimisation needs it. Vercel bundles its own, so this only matters off Vercel.
+
+Node `>=22.13.0` is required; `.nvmrc` is the version CI uses.
+
 > **Note:** `qubital.eu` currently serves a separate legacy static site from
 > S3/CloudFront, not this application. This app is the replacement; the domain
 > will be repointed when it is ready.
