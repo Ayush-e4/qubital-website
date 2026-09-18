@@ -197,7 +197,7 @@ export default function HomeParallaxContent() {
         </div>
 
         {/* Subtle Scroll Hint Indicator */}
-        <div className="relative z-10 pt-4 flex flex-col items-center justify-center text-secondary/60 text-[11px] font-mono tracking-widest uppercase animate-bounce pointer-events-none">
+        <div className="relative z-10 pt-4 flex flex-col items-center justify-center text-secondary/90 text-[11px] font-mono tracking-widest uppercase animate-bounce pointer-events-none">
           <span>{t.hero.scroll_hint}</span>
           <span className="material-symbols-outlined text-[16px]">expand_more</span>
         </div>

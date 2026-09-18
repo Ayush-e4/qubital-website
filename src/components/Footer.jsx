@@ -158,7 +158,7 @@ export default function Footer() {
 
           {/* Minimal Text Language Links with Active Route Preservation */}
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-on-surface/70 pointer-events-auto">
-            <span className="text-on-surface/40 uppercase tracking-widest">
+            <span className="text-on-surface/70 uppercase tracking-widest">
               {t.footer.languages}:
             </span>
             {LANGUAGES.map((lang, idx) => (
@@ -174,7 +174,7 @@ export default function Footer() {
                 >
                   {lang.label}
                 </Link>
-                {idx < LANGUAGES.length - 1 && <span className="text-on-surface/30">•</span>}
+                {idx < LANGUAGES.length - 1 && <span className="text-on-surface/70">•</span>}
               </span>
             ))}
           </div>

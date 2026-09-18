@@ -70,7 +70,7 @@ export default function WhyUsContent() {
                       <span>{headers.qubital}</span>
                     </div>
                   </th>
-                  <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-secondary/70 w-3/8">
+                  <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-secondary/90 w-3/8">
                     {headers.traditional}
                   </th>
                 </tr>
@@ -91,7 +91,7 @@ export default function WhyUsContent() {
                     </td>
                     <td className="py-4 px-6 text-sm text-secondary">
                       <div className="flex items-start gap-2">
-                        <span className="material-symbols-outlined text-secondary/50 text-[18px] shrink-0 mt-0.5">
+                        <span className="material-symbols-outlined text-secondary/80 text-[18px] shrink-0 mt-0.5">
                           cancel
                         </span>
                         <span>{row.traditional}</span>
@@ -131,7 +131,7 @@ export default function WhyUsContent() {
                       {pillar.desc}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/70 uppercase">
+                  <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/90 uppercase">
                     <span>
                       {w.advantage_label || 'Advantage'} 0{pillar.id}
                     </span>

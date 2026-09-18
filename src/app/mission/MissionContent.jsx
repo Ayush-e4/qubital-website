@@ -83,7 +83,7 @@ export default function MissionContent() {
                     {pillar.desc}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/70 uppercase">
+                <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/90 uppercase">
                   <span>
                     {m.tenet_label || 'Tenet'} 0{pillar.id}
                   </span>
@@ -121,7 +121,7 @@ export default function MissionContent() {
                     <h3 className="text-xl font-bold text-on-surface mb-3">{step.title}</h3>
                     <p className="text-secondary text-sm leading-relaxed">{step.desc}</p>
                   </div>
-                  <div className="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-mono text-emerald-600 font-semibold">
+                  <div className="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-mono text-emerald-700 font-semibold">
                     <span className="material-symbols-outlined text-[16px]">check_circle</span>
                     <span>{m.verified_milestone || 'Verified Milestone'}</span>
                   </div>
