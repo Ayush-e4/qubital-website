@@ -6,8 +6,41 @@ import LenisProvider from '@/components/LenisProvider';
 import PageTransition from '@/components/PageTransition';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { PostHogProvider } from '@/components/PostHogProvider';
+import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 
 const BASE_URL = 'https://qubital.eu';
+
+// Self-hosted at build time: `next/font` downloads the woff2 files and serves
+// them from our own origin, so no font request ever reaches Google. That
+// removes a render-blocking third-party stylesheet — a DNS lookup, TLS
+// handshake and CSS fetch before first paint — and stops the visitor's IP
+// being sent to Google, which matters for a German site whose privacy page
+// makes GDPR claims.
+//
+// The weights are exactly the ones the design uses, so nothing unused ships.
+// `latin` covers every character in the six locales (umlauts, accents, ß).
+// `next/font` also emits a size-adjusted fallback face, so text does not shift
+// when the real font swaps in — that is CLS, 25% of the mobile score.
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  display: 'swap',
+  variable: '--font-plus-jakarta-sans',
+});
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
@@ -134,7 +167,10 @@ export default async function RootLayout({ children }) {
   const locale = (await headers()).get('x-locale') || 'en';
 
   return (
-    <html lang={locale} className="h-full antialiased">
+    <html
+      lang={locale}
+      className={`h-full antialiased ${inter.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable}`}
+    >
       <head>
         {/* JSON-LD Structured Data */}
         <script
@@ -142,14 +178,13 @@ export default async function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Preconnect for Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
-          precedence="default"
-        />
+        {/* The text families are self-hosted via `next/font` above, so no
+            preconnect or stylesheet is needed for them.
+            Material Symbols is the one remaining third-party font request: it
+            is a variable icon font with a wght/FILL axis that `next/font` does
+            not serve, and its 47 usages are spread across 12 files. Replacing
+            it with `lucide-react` (already a dependency) would remove this
+            request and the two Google origins from the CSP below. */}
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
