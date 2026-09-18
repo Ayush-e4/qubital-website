@@ -506,8 +506,6 @@ const dictionary = {
     tag: 'PERCHÉ QUBITAL',
     hero_title_1: 'Ingegneria di precisione.',
     hero_title_2: 'Zero sovraccarico da agenzia.',
-    hero_desc:
-      'Perché aziende leader e campioni di mercato scelgono Qubital rispetto alle tradizionali società di consulenza e alle agenzie web.',
     comparison_tag: 'IL CONFRONTO DIRETTO',
     comparison_title: 'Come Qubital ridefinisce la consulenza IT',
     comparison_headers: {

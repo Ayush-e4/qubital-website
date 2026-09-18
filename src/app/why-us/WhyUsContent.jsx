@@ -34,10 +34,6 @@ export default function WhyUsContent() {
               {w.hero_title_1} <br />
               <span className="text-primary font-semibold">{w.hero_title_2}</span>
             </h1>
-
-            <p className="lg:col-span-4 text-base sm:text-lg text-secondary leading-relaxed pt-2">
-              {w.hero_desc}
-            </p>
           </div>
         </AnimateOnScroll>
       </section>

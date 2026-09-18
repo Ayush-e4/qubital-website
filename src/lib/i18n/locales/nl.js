@@ -515,8 +515,6 @@ const dictionary = {
     tag: 'WAAROM QUBITAL',
     hero_title_1: 'Precisie-engineering.',
     hero_title_2: 'Zonder bureau-overhead.',
-    hero_desc:
-      'Waarom toonaangevende bedrijven kiezen voor Qubital in plaats van traditionele advieskantoren en algemene webbureaus.',
     comparison_tag: 'DE RECHTSTREEKSE VERGELIJKING',
     comparison_title: 'Hoe Qubital technisch advies opnieuw definieert',
     comparison_headers: {
