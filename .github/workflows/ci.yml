@@ -34,3 +34,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      # Browser-free smoke suite (tests/smoke.test.mjs): locale routing,
+      # canonical/hreflang, titles and the sitemap. No browser, a couple of
+      # seconds. Interactive checks live in tests/browser/ and are run locally.
+      - name: Smoke tests
+        run: npm test
