@@ -15,7 +15,10 @@ export const translations = {
     "header": {
       "cta": "Get in Touch",
       "menu": "MENU",
-      "close": "CLOSE"
+      "close": "CLOSE",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu",
+      "change_language": "Change language"
     },
     "hero": {
       "sub_headline": "Enterprise IT Advisory & Digital Architecture",
@@ -578,7 +581,10 @@ export const translations = {
     "header": {
       "cta": "Kontakt aufnehmen",
       "menu": "MENÜ",
-      "close": "SCHLIESSEN"
+      "close": "SCHLIESSEN",
+      "open_menu": "Menü öffnen",
+      "close_menu": "Menü schließen",
+      "change_language": "Sprache ändern"
     },
     "hero": {
       "sub_headline": "IT-Beratung & Digitale Architektur für Unternehmen",
@@ -1141,7 +1147,10 @@ export const translations = {
     "header": {
       "cta": "Prendre contact",
       "menu": "MENU",
-      "close": "FERMER"
+      "close": "FERMER",
+      "open_menu": "Ouvrir le menu",
+      "close_menu": "Fermer le menu",
+      "change_language": "Changer de langue"
     },
     "hero": {
       "sub_headline": "Conseil IT & Architecture Numérique d’Entreprise",
@@ -1704,7 +1713,10 @@ export const translations = {
     "header": {
       "cta": "Póngase en contacto",
       "menu": "MENÚ",
-      "close": "CERRAR"
+      "close": "CERRAR",
+      "open_menu": "Abrir el menú",
+      "close_menu": "Cerrar el menú",
+      "change_language": "Cambiar idioma"
     },
     "hero": {
       "sub_headline": "Consultoría IT & Arquitectura Digital para Empresas",
@@ -2267,7 +2279,10 @@ export const translations = {
     "header": {
       "cta": "Contattaci",
       "menu": "MENU",
-      "close": "CHIUDI"
+      "close": "CHIUDI",
+      "open_menu": "Apri il menu",
+      "close_menu": "Chiudi il menu",
+      "change_language": "Cambia lingua"
     },
     "hero": {
       "sub_headline": "Consulenza IT Enterprise & Architettura Digitale",
@@ -2830,7 +2845,10 @@ export const translations = {
     "header": {
       "cta": "Neem Contact Op",
       "menu": "MENU",
-      "close": "SLUITEN"
+      "close": "SLUITEN",
+      "open_menu": "Menu openen",
+      "close_menu": "Menu sluiten",
+      "change_language": "Taal wijzigen"
     },
     "hero": {
       "sub_headline": "Enterprise IT Advies & Digitale Architectuur",

@@ -37,6 +37,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langDropdownRef = useRef(null);
+  const langButtonRef = useRef(null);
+  const drawerRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   // Locale of the current URL, or null when unprefixed (English)
   const currentPrefix = localeFromPath(pathname);
@@ -77,6 +80,53 @@ export default function Header() {
     (targetLang) => localizedPath(canonicalPath, targetLang),
     [canonicalPath]
   );
+
+  // Mobile drawer: move focus into the panel, keep Tab inside it, close on
+  // Escape, and hand focus back to the trigger when it closes. Without this the
+  // drawer was a keyboard trap in reverse — Tab walked straight out into the
+  // page behind the overlay.
+  useEffect(() => {
+    if (!mobileOpen) return undefined;
+
+    const trigger = menuButtonRef.current;
+    const focusables = () =>
+      drawerRef.current
+        ? Array.from(
+            drawerRef.current.querySelectorAll(
+              'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            )
+          ).filter((el) => el.offsetParent !== null)
+        : [];
+
+    focusables()[0]?.focus();
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMobileOpen(false);
+        return;
+      }
+      if (event.key !== 'Tab') return;
+
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      trigger?.focus();
+    };
+  }, [mobileOpen]);
 
   // Close desktop language dropdown when clicking outside
   useEffect(() => {
@@ -152,13 +202,24 @@ export default function Header() {
           {/* Right Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Desktop Language Switcher Dropdown */}
-            <div className="relative" ref={langDropdownRef}>
+            <div
+              className="relative"
+              ref={langDropdownRef}
+              onKeyDown={(event) => {
+                if (event.key === 'Escape') {
+                  setLangOpen(false);
+                  langButtonRef.current?.focus();
+                }
+              }}
+            >
               <button
+                ref={langButtonRef}
                 type="button"
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-300/80 bg-slate-100/90 hover:bg-slate-200/80 transition-all text-xs font-mono font-bold text-slate-800 shadow-2xs cursor-pointer select-none"
-                aria-label="Change Language"
+                aria-label={t.header?.change_language || 'Change language'}
                 aria-expanded={langOpen}
+                aria-controls="header-language-menu"
               >
                 <span className="material-symbols-outlined text-[15px] text-primary">language</span>
                 <span>{LANGUAGES.find((l) => l.code === activeLocale)?.short || 'EN'}</span>
@@ -172,6 +233,7 @@ export default function Header() {
               <AnimatePresence>
                 {langOpen && (
                   <motion.div
+                    id="header-language-menu"
                     initial={{ opacity: 0, y: 8, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
@@ -215,10 +277,16 @@ export default function Header() {
 
             {/* Custom Animated Executive Mobile Menu Button (Pill + Morphing Dual Lines) */}
             <button
+              ref={menuButtonRef}
               className="md:hidden flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-slate-300/80 bg-slate-100/90 hover:bg-slate-200/80 transition-all duration-200 shadow-2xs active:scale-95"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-label={
+                mobileOpen
+                  ? t.header?.close_menu || 'Close menu'
+                  : t.header?.open_menu || 'Open menu'
+              }
               aria-expanded={mobileOpen}
+              aria-controls="header-mobile-menu"
             >
               {/* Morphing Dual-Line Icon */}
               <div className="w-4 h-3 flex flex-col justify-between items-center relative py-0.5">
@@ -259,6 +327,8 @@ export default function Header() {
 
             {/* Slide-in Panel */}
             <motion.div
+              ref={drawerRef}
+              id="header-mobile-menu"
               className="fixed top-0 right-0 bottom-0 z-[60] w-[85vw] max-w-[360px] bg-surface-card shadow-2xl flex flex-col"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -284,7 +354,7 @@ export default function Header() {
                 <button
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors"
                   onClick={() => setMobileOpen(false)}
-                  aria-label="Close menu"
+                  aria-label={t.header?.close_menu || 'Close menu'}
                 >
                   <span className="w-3.5 h-3.5 flex items-center justify-center relative">
                     <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute rotate-45" />

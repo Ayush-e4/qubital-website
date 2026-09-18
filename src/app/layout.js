@@ -161,9 +161,12 @@ export default async function RootLayout({ children }) {
           <LanguageProvider>
             <LenisProvider>
               <Header />
-              <main className="w-full pt-16 bg-surface-canvas min-h-screen flex-1 overflow-hidden">
+              {/* Shell wrapper only — the page itself renders the <main>
+                  landmark. Nesting them produced duplicate/nested main
+                  landmarks and confused screen readers. */}
+              <div className="w-full pt-16 bg-surface-canvas min-h-screen flex-1 overflow-hidden">
                 <PageTransition>{children}</PageTransition>
-              </main>
+              </div>
               <Footer />
             </LenisProvider>
           </LanguageProvider>
