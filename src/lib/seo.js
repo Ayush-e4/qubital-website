@@ -48,7 +48,11 @@ export async function pageMetadata({ title, description, path }) {
   const locale = (await headers()).get('x-locale') || 'en';
 
   return {
-    title,
+    // `title` is the complete, final title (e.g. 'About | Qubital'). Using
+    // `absolute` bypasses the root `title.template`, which otherwise appends
+    // ' | Qubital' a second time, and keeps <title> identical to og:title /
+    // twitter:title instead of diverging from them.
+    title: { absolute: title },
     description,
     alternates: buildAlternates(path, locale),
     openGraph: {

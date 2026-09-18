@@ -13,7 +13,6 @@ export const metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: "Qubital — Strategic IT Advisory & Systems Architecture",
-    template: "%s | Qubital",
   },
   description:
     "Qubital engineers clarity across distributed architectures. Based in Bavaria, Germany, we partner with enterprises to turn technical complexity into operational simplicity.",
