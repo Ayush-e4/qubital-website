@@ -7,6 +7,7 @@ import PageTransition from '@/components/PageTransition';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { PostHogProvider } from '@/components/PostHogProvider';
 import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google';
+import { getDictionary } from '@/lib/i18n/translations';
 
 const BASE_URL = 'https://qubital.eu';
 
@@ -166,6 +167,12 @@ export default async function RootLayout({ children }) {
   // Read locale set by middleware — server-side, no client flash
   const locale = (await headers()).get('x-locale') || 'en';
 
+  // Hand the client the one dictionary this request renders in. Importing the
+  // dictionaries inside the client provider instead pulls all six locales into
+  // the client bundle — ~114 KB of JavaScript to display a single language.
+  // The server needs all six; a given client needs one.
+  const dictionary = getDictionary(locale);
+
   return (
     <html
       lang={locale}
@@ -193,7 +200,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body className="bg-surface-canvas text-on-surface selection:bg-secondary-container selection:text-on-secondary-fixed min-h-full flex flex-col">
         <PostHogProvider>
-          <LanguageProvider>
+          <LanguageProvider dictionary={dictionary}>
             <LenisProvider>
               <Header />
               {/* Shell wrapper only — the page itself renders the <main>
