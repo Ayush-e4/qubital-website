@@ -23,7 +23,8 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v5
         with:
-          node-version: 22.12.0
+          # Single source of truth for the Node version — see .nvmrc
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Install dependencies
