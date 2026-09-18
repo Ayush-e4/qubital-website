@@ -529,8 +529,6 @@ const dictionary = {
     tag: 'WARUM QUBITAL',
     hero_title_1: 'Präzisions-Engineering.',
     hero_title_2: 'Ohne Agentur-Overhead.',
-    hero_desc:
-      'Warum Marktführer und wachstumsstarke Unternehmen Qubital gegenüber traditionellen Großberatungen und Agenturen bevorzugen.',
     comparison_tag: 'DER DIREKTE VERGLEICH',
     comparison_title: 'Wie Qubital Beratung neu definiert',
     comparison_headers: {

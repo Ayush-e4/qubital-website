@@ -509,8 +509,6 @@ const dictionary = {
     tag: 'POR QUÉ QUBITAL',
     hero_title_1: 'Ingeniería de precisión.',
     hero_title_2: 'Sin sobrecostes de agencia.',
-    hero_desc:
-      'Por qué líderes empresariales eligen a Qubital frente a consultoras tradicionales y agencias generales.',
     comparison_tag: 'COMPARATIVA DIRECTA',
     comparison_title: 'Cómo Qubital redefine los servicios de asesoría',
     comparison_headers: {

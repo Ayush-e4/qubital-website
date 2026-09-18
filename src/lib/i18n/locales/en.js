@@ -517,8 +517,6 @@ const dictionary = {
     tag: 'WHY QUBITAL',
     hero_title_1: 'Precision Engineering.',
     hero_title_2: 'Zero Agency Overhead.',
-    hero_desc:
-      'Why mid-market champions and global enterprise leaders choose Qubital over traditional Big-4 consultancies and web agencies.',
     comparison_tag: 'THE DIRECT COMPARISON',
     comparison_title: 'How Qubital Redefines Advisory Engagements',
     comparison_headers: {

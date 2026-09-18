@@ -510,8 +510,6 @@ const dictionary = {
     tag: 'POURQUOI QUBITAL',
     hero_title_1: 'Ingénierie de précision.',
     hero_title_2: 'Zéro surcoût d’agence.',
-    hero_desc:
-      'Pourquoi les leaders industriels et les entreprises en croissance choisissent Qubital face aux grands cabinets et agences web.',
     comparison_tag: 'COMPARAISON DIRECTE',
     comparison_title: 'Comment Qubital réinvente le conseil technique',
     comparison_headers: {
