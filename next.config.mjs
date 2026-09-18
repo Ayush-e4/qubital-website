@@ -32,6 +32,22 @@ const securityHeaders = [
   { key: 'Content-Security-Policy', value: contentSecurityPolicy },
 ];
 
+// Every route except `/` is deterministic per URL — verified by fetching
+// /de/about with different Accept-Language and cookie values and getting
+// byte-identical HTML. Next marks these responses `no-store` because the layout
+// reads `headers()`, which forces a fresh server render per request even though
+// the result never changes for a given URL. Letting the edge cache them avoids
+// that.
+//
+// `/` is excluded on purpose: it redirects on Accept-Language and NEXT_LOCALE,
+// so it is the one route that genuinely varies per request.
+const edgeCacheHeaders = [
+  {
+    key: 'Cache-Control',
+    value: 'public, s-maxage=3600, stale-while-revalidate=86400',
+  },
+];
+
 const nextConfig = {
   poweredByHeader: false,
   images: {
@@ -44,7 +60,12 @@ const nextConfig = {
     ],
   },
   async headers() {
-    return [{ source: '/(.*)', headers: securityHeaders }];
+    return [
+      { source: '/(.*)', headers: securityHeaders },
+      // `/:path+` needs at least one segment, so it matches every page but not
+      // the root.
+      { source: '/:path+', headers: edgeCacheHeaders },
+    ];
   },
 };
 
