@@ -38,28 +38,28 @@ export default function ContactContent() {
 
     const fullNameTrimmed = formData.fullName.trim();
     if (!fullNameTrimmed) {
-      newErrors.fullName = 'Full Name is required';
+      newErrors.fullName = c.val_name_required || 'Full Name is required';
     } else if (fullNameTrimmed.length < 2) {
-      newErrors.fullName = 'Name must be at least 2 characters';
+      newErrors.fullName = c.val_name_min || 'Name must be at least 2 characters';
     }
 
     const emailTrimmed = formData.email.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailTrimmed) {
-      newErrors.email = 'Corporate Email is required';
+      newErrors.email = c.val_email_required || 'Corporate Email is required';
     } else if (!emailRegex.test(emailTrimmed)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = c.val_email_invalid || 'Please enter a valid email address';
     }
 
     if (!formData.domain) {
-      newErrors.domain = 'Please select a domain';
+      newErrors.domain = c.val_domain_required || 'Please select a domain';
     }
 
     const messageTrimmed = formData.message.trim();
     if (!messageTrimmed) {
-      newErrors.message = 'Message is required';
+      newErrors.message = c.val_message_required || 'Message is required';
     } else if (messageTrimmed.length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = c.val_message_required || 'Message must be at least 10 characters';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -264,8 +264,8 @@ export default function ContactContent() {
                   </div>
                   <div>
                     <span className="text-xs font-mono font-semibold text-secondary uppercase block mb-0.5">{c.headquarters}</span>
-                    <p className="text-sm font-medium text-on-surface">Herzogenaurach, Bavaria, Germany</p>
-                    <span className="text-xs text-secondary">Nuremberg Metropolitan Region</span>
+                    <p className="text-sm font-medium text-on-surface">{c.location_full || "Herzogenaurach, Bavaria, Germany"}</p>
+                    <span className="text-xs text-secondary">{c.region || "Nuremberg Metropolitan Region"}</span>
                   </div>
                 </div>
 
@@ -287,14 +287,14 @@ export default function ContactContent() {
                   </div>
                   <div>
                     <span className="text-xs font-mono font-semibold text-secondary uppercase block mb-0.5">{c.hours}</span>
-                    <p className="text-sm font-medium text-on-surface">Mon – Fri: 08:00 – 18:00 CET</p>
+                    <p className="text-sm font-medium text-on-surface">{c.hours_val || "Mon – Fri: 08:00 – 18:00 CET"}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-surface-card border border-outline-variant p-6 sm:p-8 rounded-xl shadow-xs space-y-4">
-              <span className="text-xs font-mono font-semibold text-primary uppercase tracking-wider block">Security Protocol</span>
+              <span className="text-xs font-mono font-semibold text-primary uppercase tracking-wider block">{c.security_protocol || "Security Protocol"}</span>
               <h4 className="text-base font-bold text-on-surface">{c.protocol_title}</h4>
               <p className="text-xs sm:text-sm text-secondary leading-relaxed">
                 {c.protocol_desc}

@@ -8,15 +8,21 @@ export default function LenisProvider({ children }) {
     // Check if the user device is mobile/touch to prevent smooth wheel hijacking on touchscreens
     const isTouchDevice =
       typeof window !== "undefined" &&
-      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0 || window.innerWidth < 768);
+
+    // On mobile and touch devices, skip Lenis entirely to preserve native 120Hz compositor scrolling
+    // and eliminate continuous RAF execution on the main thread.
+    if (isTouchDevice) {
+      return;
+    }
 
     const lenis = new Lenis({
-      duration: isTouchDevice ? 0.8 : 1.2,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      smoothTouch: false, // Ensure native momentum scrolling on mobile touchscreens
+      smoothTouch: false,
     });
 
     const resizeObserver = new ResizeObserver(() => {

@@ -1,7 +1,10 @@
 'use client';
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { getDictionary } from '@/lib/i18n/translations';
+
+const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
 
 const LanguageContext = createContext({
   locale: 'en',
@@ -11,15 +14,40 @@ const LanguageContext = createContext({
 
 /**
  * Wraps the app and provides the current locale + translation dictionary.
- * initialLocale is read server-side from the x-locale header (set by middleware)
- * and passed in as a prop so there's no flash on first render.
+ * initialLocale is read server-side from the x-locale header (set by middleware).
+ * Client-side pathname is also tracked so route transitions update translations seamlessly.
  */
 export function LanguageProvider({ children, initialLocale = 'en' }) {
-  const [locale, setLocaleState] = useState(initialLocale);
+  const pathname = usePathname();
+
+  // Detect locale from pathname if present, otherwise fallback to initialLocale or 'en'
+  const getPathLocale = (path) => {
+    if (!path) return initialLocale || 'en';
+    const match = SUPPORTED_LOCALES.find(
+      (loc) => path === `/${loc}` || path.startsWith(`/${loc}/`)
+    );
+    return match || 'en';
+  };
+
+  const [locale, setLocaleState] = useState(() => getPathLocale(pathname));
+
+  // Sync when pathname changes on client-side soft navigation
+  useEffect(() => {
+    const active = getPathLocale(pathname);
+    if (active !== locale) {
+      setLocaleState(active);
+    }
+  }, [pathname]);
+
+  // Sync when initialLocale changes (e.g. server render)
+  useEffect(() => {
+    if (initialLocale && initialLocale !== locale) {
+      setLocaleState(initialLocale);
+    }
+  }, [initialLocale]);
 
   function setLocale(newLocale) {
     setLocaleState(newLocale);
-    // Persist preference in cookie so middleware picks it up on next request
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
   }
 

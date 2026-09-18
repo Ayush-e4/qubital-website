@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 
@@ -35,10 +36,13 @@ export default function CareersContent() {
           
           <div className="col-span-12 lg:col-span-5 flex justify-center">
             <div className="w-full rounded-2xl border border-outline-variant overflow-hidden shadow-sm aspect-[4/3] relative bg-surface-card">
-              <img 
+              <Image 
                 src="/images/career_hero.jpg"
                 alt="Qubital Team Workshop"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+                priority
               />
             </div>
           </div>
@@ -70,11 +74,13 @@ export default function CareersContent() {
           ))}
         </StaggerContainer>
 
-        <AnimateOnScroll className="rounded-2xl border border-outline-variant overflow-hidden relative">
-          <img 
+        <AnimateOnScroll className="rounded-2xl border border-outline-variant overflow-hidden relative h-64 md:h-80">
+          <Image 
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80"
             alt="Modern collaborative office workspace"
-            className="w-full h-64 md:h-80 object-cover"
+            fill
+            sizes="(max-width: 1024px) 100vw, 1200px"
+            className="object-cover"
           />
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-8 md:p-12 flex flex-col justify-end">
             <div className="inline-flex px-3 py-1 bg-white/10 backdrop-blur-md rounded-md text-xs font-mono text-white mb-4 w-fit border border-white/20">
