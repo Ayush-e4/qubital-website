@@ -36,19 +36,6 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  // hreflang alternate links for European SEO (EN, DE, FR, ES, IT, NL)
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      "en": BASE_URL,
-      "de": `${BASE_URL}/de`,
-      "fr": `${BASE_URL}/fr`,
-      "es": `${BASE_URL}/es`,
-      "it": `${BASE_URL}/it`,
-      "nl": `${BASE_URL}/nl`,
-      "x-default": BASE_URL,
-    },
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
