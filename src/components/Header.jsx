@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import gsap from 'gsap';
 import { NAV_LINKS, COMPANY_INFO } from '@/lib/constants';
 import { Dock, DockIcon } from '@/components/ui/dock';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -39,6 +40,7 @@ export default function Header() {
   const langDropdownRef = useRef(null);
   const langButtonRef = useRef(null);
   const drawerRef = useRef(null);
+  const backdropRef = useRef(null);
   const menuButtonRef = useRef(null);
 
   // Locale of the current URL, or null when unprefixed (English)
@@ -81,10 +83,72 @@ export default function Header() {
     [canonicalPath]
   );
 
+  // Smooth GSAP Close Handler
+  const handleClose = useCallback(() => {
+    if (drawerRef.current) {
+      const tl = gsap.timeline({
+        onComplete: () => setMobileOpen(false),
+      });
+
+      tl.to(drawerRef.current, {
+        xPercent: -100,
+        duration: 0.28,
+        ease: 'power2.in',
+      });
+
+      if (backdropRef.current) {
+        tl.to(backdropRef.current, { opacity: 0, duration: 0.2 }, '-=0.15');
+      }
+    } else {
+      setMobileOpen(false);
+    }
+  }, []);
+
+  // GSAP Choreography for Left-Sliding Drawer
+  useEffect(() => {
+    if (!mobileOpen || !drawerRef.current) return;
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      onComplete: () => {
+        gsap.set(['.mobile-lang-chip', '.mobile-nav-link-item', '.mobile-drawer-footer-content'], {
+          clearProps: 'opacity,transform',
+        });
+      },
+    });
+
+    if (backdropRef.current) {
+      tl.fromTo(backdropRef.current, { opacity: 0 }, { opacity: 1, duration: 0.25 });
+    }
+
+    tl.fromTo(
+      drawerRef.current,
+      { xPercent: -100 },
+      { xPercent: 0, duration: 0.38, ease: 'expo.out' },
+      backdropRef.current ? '-=0.15' : 0
+    )
+      .fromTo(
+        '.mobile-lang-chip',
+        { opacity: 0, y: -6 },
+        { opacity: 1, y: 0, duration: 0.18, stagger: 0.015 },
+        '-=0.2'
+      )
+      .fromTo(
+        '.mobile-nav-link-item',
+        { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.22, stagger: 0.02 },
+        '-=0.15'
+      )
+      .fromTo(
+        '.mobile-drawer-footer-content',
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.2 },
+        '-=0.1'
+      );
+  }, [mobileOpen]);
+
   // Mobile drawer: move focus into the panel, keep Tab inside it, close on
-  // Escape, and hand focus back to the trigger when it closes. Without this the
-  // drawer was a keyboard trap in reverse — Tab walked straight out into the
-  // page behind the overlay.
+  // Escape, and hand focus back to the trigger when it closes.
   useEffect(() => {
     if (!mobileOpen) return undefined;
 
@@ -93,16 +157,21 @@ export default function Header() {
       drawerRef.current
         ? Array.from(
             drawerRef.current.querySelectorAll(
-              'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+              'button:not([disabled]), a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
             )
-          ).filter((el) => el.offsetParent !== null)
+          )
         : [];
 
-    focusables()[0]?.focus();
+    const first = focusables()[0];
+    if (first) {
+      first.focus();
+    } else {
+      drawerRef.current?.focus();
+    }
 
     const onKeyDown = (event) => {
       if (event.key === 'Escape') {
-        setMobileOpen(false);
+        handleClose();
         return;
       }
       if (event.key !== 'Tab') return;
@@ -126,7 +195,7 @@ export default function Header() {
       document.removeEventListener('keydown', onKeyDown);
       trigger?.focus();
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, handleClose]);
 
   // Close desktop language dropdown when clicking outside
   useEffect(() => {
@@ -311,128 +380,182 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              className="fixed inset-0 z-[55] bg-text-primary/40 backdrop-blur-sm"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setMobileOpen(false)}
-            />
+      {/* Mobile Drawer (Left-Sliding Translucent Bluish Glass with GSAP) */}
+      {mobileOpen && (
+        <>
+          {/* Frosted Deep Backdrop */}
+          <div
+            ref={backdropRef}
+            className="fixed inset-0 z-[65] bg-[#020617]/65 backdrop-blur-md transition-opacity"
+            onClick={handleClose}
+          />
 
-            {/* Slide-in Panel */}
-            <motion.div
-              ref={drawerRef}
-              id="header-mobile-menu"
-              className="fixed top-0 right-0 bottom-0 z-[60] w-[85vw] max-w-[360px] bg-surface-card shadow-2xl flex flex-col"
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            >
-              {/* Mobile Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle">
-                <div className="flex items-center gap-2">
-                  <Image
-                    alt="Qubital Logo"
-                    className="h-7 w-auto object-contain"
-                    src={COMPANY_INFO.logoUrl}
-                    width={28}
-                    height={28}
-                  />
-                  <span className="text-style-headline-sm font-semibold tracking-tight text-text-primary">
+          {/* Left-Sliding Panel Container */}
+          <div
+            ref={drawerRef}
+            id="header-mobile-menu"
+            className="fixed top-0 left-0 bottom-0 z-[70] w-[88vw] max-w-[380px] flex flex-col overflow-hidden bg-[#060e24]/92 backdrop-blur-2xl text-white border-r border-blue-500/25 shadow-[12px_0_50px_rgba(0,102,255,0.22)]"
+          >
+            {/* Ambient Lighting Layers */}
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/2 -left-20 w-56 h-56 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Mobile Header */}
+            <div className="relative z-10 flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-white/[0.02]">
+              <div className="flex items-center gap-3">
+                <Image
+                  alt="Qubital Logo"
+                  className="h-7 w-auto object-contain brightness-110 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+                  src={COMPANY_INFO.logoUrl}
+                  width={28}
+                  height={28}
+                />
+                <div className="flex flex-col">
+                  <span className="text-base font-bold tracking-tight text-white leading-tight">
                     Qubital
                   </span>
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-blue-400/80 font-semibold">
+                    Systems // Munich
+                  </span>
                 </div>
-
-                {/* Close Button Pill */}
-                <button
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                  aria-label={t.header?.close_menu || 'Close menu'}
-                >
-                  <span className="w-3.5 h-3.5 flex items-center justify-center relative">
-                    <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute rotate-45" />
-                    <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute -rotate-45" />
-                  </span>
-                  <span className="text-[11px] font-mono font-bold tracking-wider uppercase">
-                    {t.header?.close || 'CLOSE'}
-                  </span>
-                </button>
               </div>
 
-              {/* Mobile Language Selector Grid */}
-              <div className="px-6 py-3.5 border-b border-border-subtle bg-surface-canvas/40">
-                <span className="text-[10px] font-mono uppercase text-secondary font-bold tracking-widest block mb-2">
+              {/* Close Button Pill */}
+              <button
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white border border-white/15 backdrop-blur-md transition-all cursor-pointer"
+                onClick={handleClose}
+                aria-label={t.header?.close_menu || 'Close menu'}
+              >
+                <span className="w-3.5 h-3.5 flex items-center justify-center relative">
+                  <span className="w-3.5 h-[2px] bg-white rounded-full absolute rotate-45" />
+                  <span className="w-3.5 h-[2px] bg-white rounded-full absolute -rotate-45" />
+                </span>
+                <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/90">
+                  {t.header?.close || 'CLOSE'}
+                </span>
+              </button>
+            </div>
+
+            {/* Redesigned Language Segmented Glass Capsule */}
+            <div className="relative z-10 px-6 py-3.5 border-b border-white/[0.08] bg-white/[0.02] mobile-lang-container">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-mono uppercase text-blue-300/80 font-semibold tracking-widest">
                   {t.footer?.languages || 'Languages'}
                 </span>
-                <div className="grid grid-cols-3 gap-2">
-                  {LANGUAGES.map((lang) => {
-                    const isCurrent = activeLocale === lang.code;
-                    return (
-                      <Link
-                        key={lang.code}
-                        href={getSwitchPath(lang.code)}
-                        onClick={() => {
-                          setLocale(lang.code);
-                          setMobileOpen(false);
-                        }}
-                        className={`flex flex-col items-center py-1.5 px-1 rounded-lg border text-xs transition-all ${
-                          isCurrent
-                            ? 'border-primary bg-primary/10 text-primary font-bold shadow-2xs'
-                            : 'border-border-subtle bg-surface-card text-on-surface hover:border-primary/40'
-                        }`}
-                      >
-                        <span className="font-mono text-xs font-bold uppercase">{lang.short}</span>
-                        <span className="text-[10px] text-secondary truncate max-w-full">
-                          {lang.label}
-                        </span>
-                      </Link>
-                    );
-                  })}
-                </div>
+                <span className="text-[10px] font-mono text-slate-400">
+                  Active: <strong className="text-blue-300 uppercase">{activeLocale}</strong>
+                </span>
               </div>
 
-              {/* Mobile Navigation Links */}
-              <nav className="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-2">
-                {NAV_LINKS.map((link) => {
-                  const isActive = canonicalPath === link.path;
-                  const label = t.nav[NAV_KEY_MAP[link.path]] ?? link.label;
+              <div className="grid grid-cols-6 gap-1 p-1 rounded-xl bg-white/[0.05] border border-white/[0.1] backdrop-blur-md">
+                {LANGUAGES.map((lang) => {
+                  const isCurrent = activeLocale === lang.code;
                   return (
                     <Link
-                      key={link.path}
-                      href={localePath(link.path)}
-                      className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-style-title-md transition-all ${
-                        isActive
-                          ? 'bg-primary-container/10 text-primary font-bold shadow-2xs'
-                          : 'text-text-secondary hover:bg-surface-canvas hover:text-text-primary'
+                      key={lang.code}
+                      href={getSwitchPath(lang.code)}
+                      onClick={() => {
+                        setLocale(lang.code);
+                        handleClose();
+                      }}
+                      title={lang.label}
+                      className={`mobile-lang-chip flex flex-col items-center justify-center py-2 px-0.5 rounded-lg text-xs transition-all relative font-mono select-none ${
+                        isCurrent
+                          ? 'bg-blue-600/35 border border-blue-400/60 text-white font-bold shadow-[0_0_15px_rgba(37,99,235,0.4)]'
+                          : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/[0.08] font-medium'
                       }`}
                     >
-                      <span>{label}</span>
-                      {isActive && <span className="w-2 h-2 rounded-full bg-primary" />}
+                      <span className="text-xs uppercase tracking-tight">{lang.short}</span>
+                      {isCurrent && (
+                        <span className="w-1 h-1 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee] mt-0.5" />
+                      )}
                     </Link>
                   );
                 })}
-              </nav>
+              </div>
+            </div>
 
-              {/* Mobile Drawer Footer CTA */}
-              <div className="p-6 border-t border-border-subtle bg-surface-canvas/50">
+            {/* Architectural Navigation Links */}
+            <nav className="relative z-10 flex-1 overflow-y-auto px-5 py-4 flex flex-col gap-2 scrollbar-none">
+              {NAV_LINKS.map((link, idx) => {
+                const isActive = canonicalPath === link.path;
+                const label = t.nav[NAV_KEY_MAP[link.path]] ?? link.label;
+                const indexStr = String(idx + 1).padStart(2, '0');
+                return (
+                  <Link
+                    key={link.path}
+                    href={localePath(link.path)}
+                    onClick={handleClose}
+                    className={`mobile-nav-link-item group flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 border ${
+                      isActive
+                        ? 'bg-gradient-to-r from-blue-600/35 to-blue-500/20 border-blue-400/50 text-white font-semibold shadow-[0_0_25px_rgba(37,99,235,0.3)]'
+                        : 'border-transparent text-white/90 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.12]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`font-mono text-[11px] tracking-wider transition-colors ${
+                          isActive
+                            ? 'text-cyan-300 font-bold'
+                            : 'text-blue-400/70 group-hover:text-cyan-300'
+                        }`}
+                      >
+                        {indexStr}
+                      </span>
+                      <span className="text-[15px] font-medium tracking-tight text-white/95">
+                        {label}
+                      </span>
+                    </div>
+                    {isActive ? (
+                      <span className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-pulse" />
+                      </span>
+                    ) : (
+                      <span className="text-slate-400 group-hover:text-cyan-300 group-hover:translate-x-0.5 transition-all text-sm font-semibold">
+                        →
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
+
+              {/* Enterprise Security & Location Micro-Badge */}
+              <div className="mt-3 p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <span>Bavaria, Germany</span>
+                </span>
+                <span className="text-blue-300 font-semibold">ISO 27001 / GDPR</span>
+              </div>
+            </nav>
+
+            {/* Drawer Footer Status & CTA */}
+            <div className="relative z-10 border-t border-white/[0.08] bg-white/[0.02] mobile-drawer-footer-content flex flex-col">
+              {/* Munich Operating Status Strip */}
+              <div className="flex items-center justify-between px-6 py-2.5 border-b border-white/[0.05] text-[11px] font-mono text-slate-400">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+                  <span>Munich HQ</span>
+                </div>
+                <span className="text-slate-300 font-medium">08:00 – 18:00 CET</span>
+              </div>
+
+              {/* Primary CTA Button */}
+              <div className="p-5 pt-3.5">
                 <Link
                   href={localePath('/contact')}
-                  className="w-full flex items-center justify-center text-style-label-md bg-primary-container text-on-primary px-4 py-3.5 rounded-xl hover:bg-primary transition-colors text-center font-bold shadow-sm uppercase tracking-wider text-xs"
+                  onClick={handleClose}
+                  className="mobile-cta-btn w-full flex items-center justify-center gap-2 text-style-label-md bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-4 py-3.5 rounded-xl font-bold shadow-[0_4px_25px_rgba(37,99,235,0.4)] hover:shadow-[0_4px_30px_rgba(37,99,235,0.6)] border border-blue-400/40 text-center uppercase tracking-wider text-xs transition-all active:scale-[0.98] cursor-pointer"
                 >
-                  {t.header.cta}
+                  <span>{t.header.cta}</span>
+                  <span className="text-sm font-bold">→</span>
                 </Link>
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
