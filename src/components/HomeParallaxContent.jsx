@@ -130,7 +130,7 @@ export default function HomeParallaxContent() {
   ];
 
   return (
-    <div ref={containerRef} className="flex flex-col w-full overflow-hidden relative">
+    <main ref={containerRef} className="flex flex-col w-full overflow-hidden relative">
       {/* Parallax Ambient Glowing Elements */}
       <motion.div
         style={{ y: yBlob1 }}
@@ -369,6 +369,6 @@ export default function HomeParallaxContent() {
           </AnimateOnScroll>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

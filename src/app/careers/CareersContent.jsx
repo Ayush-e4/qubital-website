@@ -76,7 +76,7 @@ export default function CareersContent() {
                 <span className="material-symbols-outlined">{icons[i % icons.length]}</span>
               </div>
               <div>
-                <h4 className="text-on-surface font-medium mb-1">{ben.title}</h4>
+                <h3 className="text-on-surface font-medium mb-1">{ben.title}</h3>
                 <p className="text-secondary text-sm">{ben.desc}</p>
               </div>
             </StaggerItem>

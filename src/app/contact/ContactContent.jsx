@@ -258,8 +258,11 @@ export default function ContactContent() {
                       </label>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-secondary font-medium">{c.priority}</span>
+                        <label htmlFor="priority" className="text-xs text-secondary font-medium">
+                          {c.priority}
+                        </label>
                         <select
+                          id="priority"
                           name="priority"
                           value={formData.priority}
                           onChange={handleChange}
@@ -288,9 +291,9 @@ export default function ContactContent() {
           {/* Right Column (5 cols) - Contact Info & Direct Channels */}
           <div className="xl:col-span-5 flex flex-col gap-6">
             <div className="bg-surface-card border border-outline-variant p-6 sm:p-8 rounded-xl shadow-xs space-y-6">
-              <h3 className="text-lg font-bold text-on-surface pb-3 border-b border-outline-variant">
+              <h2 className="text-lg font-bold text-on-surface pb-3 border-b border-outline-variant">
                 {c.channels_title}
-              </h3>
+              </h2>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3.5">
@@ -347,7 +350,7 @@ export default function ContactContent() {
               <span className="text-xs font-mono font-semibold text-primary uppercase tracking-wider block">
                 {c.security_protocol || 'Security Protocol'}
               </span>
-              <h4 className="text-base font-bold text-on-surface">{c.protocol_title}</h4>
+              <h3 className="text-base font-bold text-on-surface">{c.protocol_title}</h3>
               <p className="text-xs sm:text-sm text-secondary leading-relaxed">{c.protocol_desc}</p>
             </div>
           </div>

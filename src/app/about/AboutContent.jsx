@@ -53,9 +53,9 @@ export default function AboutContent() {
               </div>
 
               <div>
-                <h3 className="text-lg sm:text-xl text-on-surface font-semibold mb-2">
+                <h2 className="text-lg sm:text-xl text-on-surface font-semibold mb-2">
                   {a.focus_title}
-                </h3>
+                </h2>
                 <p className="text-sm text-secondary leading-relaxed">{a.focus_desc}</p>
               </div>
             </div>

@@ -22,7 +22,9 @@ const checks = [
     'language switcher preserves the page (header dropdown)',
     async (page) => {
       await page.goto(`${BASE}/about`, { waitUntil: 'load' });
-      await page.getByRole('button', { name: 'Change Language' }).click();
+      // Selected by aria-controls, not by accessible name: the labels are
+      // localised, so matching on English wording would only pass on /en.
+      await page.locator('button[aria-controls="header-language-menu"]').click();
       await page
         .getByRole('link', { name: /Deutsch/ })
         .first()
@@ -53,13 +55,23 @@ const checks = [
     async (page) => {
       await page.setViewportSize({ width: 390, height: 844 });
       await page.goto(`${BASE}/de/about`, { waitUntil: 'load' });
-      await page.getByRole('button', { name: 'Open menu' }).click();
+
+      const trigger = page.locator('button[aria-controls="header-mobile-menu"]');
+      await trigger.click();
+
+      // Focus must land inside the panel, otherwise the drawer is unreachable
+      // by keyboard.
+      assert.equal(
+        await page.evaluate(() =>
+          Boolean(document.querySelector('#header-mobile-menu')?.contains(document.activeElement))
+        ),
+        true,
+        'focus should move into the drawer when it opens'
+      );
+
       await page.getByRole('link', { name: 'Leistungen' }).first().click();
       await page.waitForURL('**/de/services');
-      const expanded = await page
-        .getByRole('button', { name: 'Open menu' })
-        .getAttribute('aria-expanded');
-      assert.equal(expanded, 'false');
+      assert.equal(await trigger.getAttribute('aria-expanded'), 'false');
       assert.notEqual(await page.evaluate(() => document.body.style.overflow), 'hidden');
     },
   ],
