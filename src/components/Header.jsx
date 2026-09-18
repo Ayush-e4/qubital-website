@@ -58,8 +58,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => { setMobileOpen(false); }, [pathname]);
+  // Close the mobile menu when the route changes. Adjusted during render
+  // (React's "adjust state when a prop changes" pattern) rather than in an
+  // effect, which would cause a cascading render.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+  }
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {

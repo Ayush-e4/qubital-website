@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import { getDictionary } from '@/lib/i18n/translations';
 
@@ -13,41 +13,31 @@ const LanguageContext = createContext({
 });
 
 /**
- * Wraps the app and provides the current locale + translation dictionary.
- * initialLocale is read server-side from the x-locale header (set by middleware).
- * Client-side pathname is also tracked so route transitions update translations seamlessly.
+ * The locale implied by a pathname. The middleware rewrites /{locale}/… onto the
+ * unprefixed route, but the browser URL keeps the prefix, so the pathname is the
+ * single source of truth for the active locale.
  */
-export function LanguageProvider({ children, initialLocale = 'en' }) {
+function getPathLocale(pathname) {
+  if (!pathname) return 'en';
+  return (
+    SUPPORTED_LOCALES.find(
+      (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
+    ) || 'en'
+  );
+}
+
+/**
+ * Wraps the app and provides the current locale + translation dictionary.
+ *
+ * The locale is derived from the pathname rather than mirrored into state, so
+ * client-side route transitions (`<Link>`) stay in sync with the URL subpath
+ * with no effect and no duplicated state.
+ */
+export function LanguageProvider({ children }) {
   const pathname = usePathname();
-
-  // Detect locale from pathname if present, otherwise fallback to initialLocale or 'en'
-  const getPathLocale = (path) => {
-    if (!path) return initialLocale || 'en';
-    const match = SUPPORTED_LOCALES.find(
-      (loc) => path === `/${loc}` || path.startsWith(`/${loc}/`)
-    );
-    return match || 'en';
-  };
-
-  const [locale, setLocaleState] = useState(() => getPathLocale(pathname));
-
-  // Sync when pathname changes on client-side soft navigation
-  useEffect(() => {
-    const active = getPathLocale(pathname);
-    if (active !== locale) {
-      setLocaleState(active);
-    }
-  }, [pathname]);
-
-  // Sync when initialLocale changes (e.g. server render)
-  useEffect(() => {
-    if (initialLocale && initialLocale !== locale) {
-      setLocaleState(initialLocale);
-    }
-  }, [initialLocale]);
+  const locale = getPathLocale(pathname);
 
   function setLocale(newLocale) {
-    setLocaleState(newLocale);
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
   }
 
