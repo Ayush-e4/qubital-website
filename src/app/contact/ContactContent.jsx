@@ -144,7 +144,7 @@ export default function ContactContent() {
                           value={formData.fullName}
                           onChange={handleChange}
                           placeholder={c.placeholders?.fullName ?? 'Dr. Marcus Vance'}
-                          className={`w-full bg-surface-canvas border ${errors.fullName ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/70`}
+                          className={`w-full bg-surface-canvas border ${errors.fullName ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
                         {errors.fullName && (
                           <p className="text-error text-xs mt-1">{errors.fullName}</p>
@@ -166,7 +166,7 @@ export default function ContactContent() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder={c.placeholders?.email ?? 'm.vance@company.com'}
-                          className={`w-full bg-surface-canvas border ${errors.email ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/70`}
+                          className={`w-full bg-surface-canvas border ${errors.email ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
                         {errors.email && <p className="text-error text-xs mt-1">{errors.email}</p>}
                       </div>
@@ -188,7 +188,7 @@ export default function ContactContent() {
                           value={formData.organization}
                           onChange={handleChange}
                           placeholder={c.placeholders?.organization ?? 'Siemens Energy AG'}
-                          className="w-full bg-surface-canvas border border-outline-variant text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/70"
+                          className="w-full bg-surface-canvas border border-outline-variant text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90"
                         />
                       </div>
 
@@ -237,7 +237,7 @@ export default function ContactContent() {
                         placeholder={
                           c.placeholders?.message ?? 'Detail your operational bottlenecks...'
                         }
-                        className={`w-full bg-surface-canvas border ${errors.message ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/70`}
+                        className={`w-full bg-surface-canvas border ${errors.message ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                       />
                       {errors.message && (
                         <p className="text-error text-xs mt-1">{errors.message}</p>
