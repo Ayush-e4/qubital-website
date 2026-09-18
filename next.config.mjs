@@ -50,11 +50,14 @@ const edgeCacheHeaders = [
 
 const nextConfig = {
   poweredByHeader: false,
-  // Emits .next/standalone — a self-contained server bundle with only the
-  // dependencies it needs, which is how Next is deployed off Vercel (containers,
-  // Azure App Service, Container Apps). Vercel builds its own output and ignores
-  // this, so it costs nothing there.
-  output: 'standalone',
+  // `output: 'standalone'` emits .next/standalone — the self-contained server
+  // bundle used off Vercel (containers, Azure App Service, Container Apps).
+  //
+  // It is applied only when NOT building on Vercel: Vercel manages its own
+  // deployment output, and the build failed there with this set (see #39). The
+  // standalone bundle is therefore still produced for a self-hosted build,
+  // which is the only place it is used.
+  ...(process.env.VERCEL ? {} : { output: 'standalone' }),
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
