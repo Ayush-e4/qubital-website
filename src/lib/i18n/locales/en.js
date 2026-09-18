@@ -553,40 +553,10 @@ const dictionary = {
         traditional: 'Treated as an afterthought or outsourced to third-party sub-contractors',
       },
     ],
-    pillars_tag: 'PROVEN ADVANTAGES',
-    pillars_title: 'Engineered for High-Stakes Environments',
-    pillars: [
-      {
-        id: 1,
-        icon: 'location_city',
-        title: 'Bavarian Engineering Center',
-        desc: 'Headquartered in Herzogenaurach, Bavaria, our practice operates with the precision, discipline, and dependability Germany is globally renowned for.',
-      },
-      {
-        id: 2,
-        icon: 'cloud_done',
-        title: '480+ Governed Enterprise Workloads',
-        desc: 'Battle-tested experience managing high-throughput production environments across automotive, industrial, and financial sectors.',
-      },
-      {
-        id: 3,
-        icon: 'speed',
-        title: '99.98% SLA Availability Guarantee',
-        desc: 'We take operational uptime seriously, guaranteeing strict SLA commitments backed by robust multi-region disaster recovery topologies.',
-      },
-      {
-        id: 4,
-        icon: 'lock',
-        title: 'Confidentiality & NDA Standards',
-        desc: 'Strict data segregation and sovereign European security protocols ensure your strategic intellectual property remains 100% confidential.',
-      },
-    ],
     cta_title: 'Experience the difference of senior-led engineering.',
     cta_desc:
       'Talk directly to our principal architects to review your technical challenges and architectural goals.',
     cta_btn: 'Book an Architecture Briefing',
-    advantage_label: 'Advantage',
-    enterprise_guarantee: 'Enterprise Guarantee',
   },
 };
 
