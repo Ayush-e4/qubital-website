@@ -175,7 +175,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body className="bg-surface-canvas text-on-surface selection:bg-secondary-container selection:text-on-secondary-fixed min-h-full flex flex-col">
         <PostHogProvider>
-          <LanguageProvider initialLocale={locale}>
+          <LanguageProvider>
             <LenisProvider>
               <Header />
               <main className="w-full pt-16 bg-surface-canvas min-h-screen flex-1 overflow-hidden">
