@@ -35,8 +35,6 @@ export const translations = {
       "cyber_desc": "Zero-trust architecture implementation, auditing, and compliance management.",
       "special_title": "Specialized Tech",
       "special_desc": "IoT integration, legacy system modernization, and specialized hardware interfacing.",
-      "advisory_title": "Strategic Advisory",
-      "advisory_desc": "Virtual CIO services, technology roadmapping, and vendor management.",
       "cta": "Learn more",
       "sap_title": "SAP Solutions",
       "sap_desc": "S/4HANA migrations, clean-core architecture, and SAP BTP cloud integrations."
@@ -600,8 +598,6 @@ export const translations = {
       "cyber_desc": "Implementierung von Zero-Trust-Architekturen, Audits und Compliance-Management.",
       "special_title": "Spezialisierte Technologien",
       "special_desc": "IoT-Integration, Modernisierung von Altsystemen und spezialisierte Hardwareschnittstellen.",
-      "advisory_title": "Strategische IT-Beratung",
-      "advisory_desc": "Virtuelle CIO-Dienste, Technologie-Roadmapping und Lieferantenmanagement.",
       "cta": "Mehr erfahren",
       "sap_title": "SAP-Lösungen",
       "sap_desc": "S/4HANA-Migrationen, Clean-Core-Architektur und SAP BTP-Cloud-Integrationen."
@@ -1165,8 +1161,6 @@ export const translations = {
       "cyber_desc": "Mise en œuvre d’architectures Zero-Trust, audits et gestion de la conformité.",
       "special_title": "Technologies Spécialisées",
       "special_desc": "Intégration IoT, modernisation des systèmes existants et interfaces matérielles.",
-      "advisory_title": "Conseil Stratégique",
-      "advisory_desc": "Services de CIO virtuel, feuille de route technologique et gestion des fournisseurs.",
       "cta": "En savoir plus",
       "sap_title": "Solutions SAP",
       "sap_desc": "Migrations S/4HANA, architecture clean-core et intégration cloud SAP BTP."
@@ -1730,8 +1724,6 @@ export const translations = {
       "cyber_desc": "Implementación de arquitectura Zero-Trust, auditorías y gestión de cumplimiento.",
       "special_title": "Tecnología Especializada",
       "special_desc": "Integración IoT, modernización de sistemas legados e interfaces de hardware.",
-      "advisory_title": "Asesoría Estratégica",
-      "advisory_desc": "Servicios de CIO virtual, mapas de ruta tecnológicos y gestión de proveedores.",
       "cta": "Saber más",
       "sap_title": "Soluciones SAP",
       "sap_desc": "Migración S/4HANA, arquitectura clean-core e integraciones cloud SAP BTP."
@@ -2295,8 +2287,6 @@ export const translations = {
       "cyber_desc": "Implementazione di architetture Zero-Trust, audit e gestione della conformità.",
       "special_title": "Tecnologie Specializzate",
       "special_desc": "Integrazione IoT, modernizzazione dei sistemi legacy e interfacce hardware.",
-      "advisory_title": "Consulenza Strategica",
-      "advisory_desc": "Servizi di Virtual CIO, roadmap tecnologiche e gestione dei fornitori.",
       "cta": "Scopri di più",
       "sap_title": "Soluzioni SAP",
       "sap_desc": "Migrazione S/4HANA, architettura clean-core e integrazioni cloud SAP BTP."
@@ -2860,8 +2850,6 @@ export const translations = {
       "cyber_desc": "Zero-trust architectuurimplementatie, audits en compliancebeheer.",
       "special_title": "Gespecialiseerde Technologie",
       "special_desc": "IoT-integratie, modernisering van legacy systemen en hardware-interfaces.",
-      "advisory_title": "Strategisch Advies",
-      "advisory_desc": "Virtuele CIO-diensten, technologie-roadmaps en leveranciersbeheer.",
       "cta": "Meer informatie",
       "sap_title": "SAP Oplossingen",
       "sap_desc": "S/4HANA-migratie, clean-core-architectuur en SAP BTP-cloudintegraties."
