@@ -1,7 +1,10 @@
 'use client';
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext } from 'react';
+import { usePathname } from 'next/navigation';
 import { getDictionary } from '@/lib/i18n/translations';
+
+const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
 
 const LanguageContext = createContext({
   locale: 'en',
@@ -10,16 +13,31 @@ const LanguageContext = createContext({
 });
 
 /**
- * Wraps the app and provides the current locale + translation dictionary.
- * initialLocale is read server-side from the x-locale header (set by middleware)
- * and passed in as a prop so there's no flash on first render.
+ * The locale implied by a pathname. The middleware rewrites /{locale}/… onto the
+ * unprefixed route, but the browser URL keeps the prefix, so the pathname is the
+ * single source of truth for the active locale.
  */
-export function LanguageProvider({ children, initialLocale = 'en' }) {
-  const [locale, setLocaleState] = useState(initialLocale);
+function getPathLocale(pathname) {
+  if (!pathname) return 'en';
+  return (
+    SUPPORTED_LOCALES.find(
+      (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
+    ) || 'en'
+  );
+}
+
+/**
+ * Wraps the app and provides the current locale + translation dictionary.
+ *
+ * The locale is derived from the pathname rather than mirrored into state, so
+ * client-side route transitions (`<Link>`) stay in sync with the URL subpath
+ * with no effect and no duplicated state.
+ */
+export function LanguageProvider({ children }) {
+  const pathname = usePathname();
+  const locale = getPathLocale(pathname);
 
   function setLocale(newLocale) {
-    setLocaleState(newLocale);
-    // Persist preference in cookie so middleware picks it up on next request
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
   }
 

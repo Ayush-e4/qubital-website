@@ -7,10 +7,12 @@ export default async function NotFound() {
   const t = getDictionary(locale);
   const nf = t.not_found;
 
+  const localePath = (p) => (locale && locale !== 'en' ? `/${locale}${p}` : p);
+
   const links = [
-    { href: locale === 'de' ? '/de/about' : '/about',    label: t.nav.about },
-    { href: locale === 'de' ? '/de/services' : '/services', label: t.nav.services },
-    { href: locale === 'de' ? '/de/contact' : '/contact',  label: t.nav.contact },
+    { href: localePath('/about'),    label: t.nav.about },
+    { href: localePath('/services'), label: t.nav.services },
+    { href: localePath('/contact'),  label: t.nav.contact },
   ];
 
   return (
@@ -40,7 +42,7 @@ export default async function NotFound() {
 
         {/* Primary CTA */}
         <Link
-          href={locale === 'de' ? '/de' : '/'}
+          href={localePath('/')}
           className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-on-primary font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200 mb-10 shadow-md"
         >
           <span className="material-symbols-outlined text-[18px]">arrow_back</span>

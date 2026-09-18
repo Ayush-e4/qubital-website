@@ -598,6 +598,14 @@ export function RetroGrid({
         return;
       }
 
+      // On mobile viewports, use the lightweight hardware-accelerated CSS fallback grid
+      // to avoid heavy WebGL shader compilation and RAF loops on mobile CPUs
+      if (window.innerWidth < 768) {
+        stopAnimation();
+        setIsWebGlReady(false);
+        return;
+      }
+
       if (!gl || !positionBuffer || !programInfo) {
         if (!initializePipeline()) {
           stopAnimation();

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS, COMPANY_INFO } from "@/lib/constants";
@@ -11,24 +12,39 @@ import { useLanguage } from "@/components/LanguageProvider";
 const NAV_KEY_MAP = {
   "/":        "home",
   "/about":   "about",
+  "/mission": "mission",
+  "/why-us":  "why_us",
   "/services":"services",
   "/careers": "careers",
   "/contact": "contact",
 };
 
+const LANGUAGES = [
+  { code: 'en', label: 'English', short: 'EN' },
+  { code: 'de', label: 'Deutsch', short: 'DE' },
+  { code: 'fr', label: 'Français', short: 'FR' },
+  { code: 'es', label: 'Español', short: 'ES' },
+  { code: 'it', label: 'Italiano', short: 'IT' },
+  { code: 'nl', label: 'Nederlands', short: 'NL' },
+];
+
 const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
 
 export default function Header() {
   const pathname = usePathname();
-  const { t } = useLanguage();
+  const { t, locale, setLocale } = useLanguage();
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled,   setScrolled]   = useState(false);
+  const [langOpen,   setLangOpen]   = useState(false);
+  const langDropdownRef = useRef(null);
 
   // Detect if the current path has a locale prefix (e.g., /de, /fr)
   const currentPrefix = SUPPORTED_LOCALES.find(
     (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
   );
+
+  const activeLocale = currentPrefix || locale || 'en';
 
   // Build locale-aware href for navigation links
   const localePath = useCallback(
@@ -42,8 +58,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => { setMobileOpen(false); }, [pathname]);
+  // Close the mobile menu when the route changes. Adjusted during render
+  // (React's "adjust state when a prop changes" pattern) rather than in an
+  // effect, which would cause a cascading render.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+  }
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -55,6 +77,28 @@ export default function Header() {
   const canonicalPath = currentPrefix
     ? pathname.slice(currentPrefix.length + 1) || "/"
     : pathname;
+
+  // Compute locale-preserving path when switching language
+  const getSwitchPath = useCallback(
+    (targetLang) => {
+      if (targetLang === 'en') {
+        return canonicalPath;
+      }
+      return `/${targetLang}${canonicalPath === '/' ? '' : canonicalPath}`;
+    },
+    [canonicalPath]
+  );
+
+  // Close desktop language dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -68,10 +112,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center gap-6">
             <Link href={localePath("/")} className="flex items-center gap-3">
-              <img
+              <Image
                 alt="Qubital Logo"
                 className="h-8 w-auto object-contain"
                 src={COMPANY_INFO.logoUrl}
+                width={32}
+                height={32}
+                priority
               />
               <span className="text-style-headline-sm tracking-tight text-text-primary font-bold">
                 Qubital
@@ -105,7 +152,58 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Desktop Language Switcher Dropdown */}
+            <div className="relative" ref={langDropdownRef}>
+              <button
+                type="button"
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-300/80 bg-slate-100/90 hover:bg-slate-200/80 transition-all text-xs font-mono font-bold text-slate-800 shadow-2xs cursor-pointer select-none"
+                aria-label="Change Language"
+                aria-expanded={langOpen}
+              >
+                <span className="material-symbols-outlined text-[15px] text-primary">language</span>
+                <span>{LANGUAGES.find((l) => l.code === activeLocale)?.short || "EN"}</span>
+                <span className={`material-symbols-outlined text-[14px] text-secondary transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}>
+                  expand_more
+                </span>
+              </button>
+
+              <AnimatePresence>
+                {langOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 top-full mt-2 w-44 rounded-xl bg-surface-card border border-border-subtle shadow-xl py-1.5 z-[70] backdrop-blur-md"
+                  >
+                    {LANGUAGES.map((lang) => {
+                      const isCurrent = activeLocale === lang.code;
+                      return (
+                        <Link
+                          key={lang.code}
+                          href={getSwitchPath(lang.code)}
+                          onClick={() => {
+                            setLocale(lang.code);
+                            setLangOpen(false);
+                          }}
+                          className={`flex items-center justify-between px-3.5 py-2 text-xs transition-colors ${
+                            isCurrent
+                              ? "bg-primary/10 text-primary font-bold"
+                              : "text-on-surface hover:bg-surface-canvas hover:text-primary"
+                          }`}
+                        >
+                          <span>{lang.label}</span>
+                          <span className="font-mono text-[10px] uppercase text-secondary font-semibold">{lang.short}</span>
+                        </Link>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <Link
               href={localePath("/contact")}
               className="hidden sm:inline-flex items-center text-style-label-md bg-primary-container text-on-primary px-5 py-2 rounded-xl hover:bg-primary transition-colors shadow-xs font-semibold text-xs uppercase tracking-wider"
@@ -136,7 +234,7 @@ export default function Header() {
 
               {/* Text Label */}
               <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-slate-900 select-none">
-                {mobileOpen ? "CLOSE" : "MENU"}
+                {mobileOpen ? (t.header?.close || "CLOSE") : (t.header?.menu || "MENU")}
               </span>
             </button>
           </div>
@@ -168,10 +266,12 @@ export default function Header() {
               {/* Mobile Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle">
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     alt="Qubital Logo"
                     className="h-7 w-auto object-contain"
                     src={COMPANY_INFO.logoUrl}
+                    width={28}
+                    height={28}
                   />
                   <span className="text-style-headline-sm font-semibold tracking-tight text-text-primary">
                     Qubital
@@ -188,8 +288,38 @@ export default function Header() {
                     <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute rotate-45" />
                     <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute -rotate-45" />
                   </span>
-                  <span className="text-[11px] font-mono font-bold tracking-wider uppercase">CLOSE</span>
+                  <span className="text-[11px] font-mono font-bold tracking-wider uppercase">{t.header?.close || "CLOSE"}</span>
                 </button>
+              </div>
+
+              {/* Mobile Language Selector Grid */}
+              <div className="px-6 py-3.5 border-b border-border-subtle bg-surface-canvas/40">
+                <span className="text-[10px] font-mono uppercase text-secondary font-bold tracking-widest block mb-2">
+                  {t.footer?.languages || "Languages"}
+                </span>
+                <div className="grid grid-cols-3 gap-2">
+                  {LANGUAGES.map((lang) => {
+                    const isCurrent = activeLocale === lang.code;
+                    return (
+                      <Link
+                        key={lang.code}
+                        href={getSwitchPath(lang.code)}
+                        onClick={() => {
+                          setLocale(lang.code);
+                          setMobileOpen(false);
+                        }}
+                        className={`flex flex-col items-center py-1.5 px-1 rounded-lg border text-xs transition-all ${
+                          isCurrent
+                            ? "border-primary bg-primary/10 text-primary font-bold shadow-2xs"
+                            : "border-border-subtle bg-surface-card text-on-surface hover:border-primary/40"
+                        }`}
+                      >
+                        <span className="font-mono text-xs font-bold uppercase">{lang.short}</span>
+                        <span className="text-[10px] text-secondary truncate max-w-full">{lang.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Mobile Navigation Links */}

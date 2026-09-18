@@ -1,12 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 
 export default function AboutContent() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const a = t.about_page;
+
+  const localePath = (path) => {
+    if (!locale || locale === 'en') return path;
+    return `/${locale}${path === '/' ? '' : path}`;
+  };
 
   return (
     <main className="flex-1 w-full flex flex-col items-center">
@@ -28,10 +34,13 @@ export default function AboutContent() {
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-12 gap-4 h-auto lg:h-[450px]">
           {/* Left 8 cols */}
           <StaggerItem className="lg:col-span-8 relative rounded-2xl overflow-hidden group h-[260px] sm:h-[360px] lg:h-full">
-            <img 
+            <Image 
               src="/images/image1.png" 
               alt="Engineering Center"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              fill
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              priority
             />
           </StaggerItem>
 
@@ -204,7 +213,7 @@ export default function AboutContent() {
               
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-4">
                 <Link 
-                  href="/contact" 
+                  href={localePath("/contact")} 
                   className="relative flex items-center justify-center px-8 py-4 overflow-hidden font-medium transition-all bg-primary text-inverse-on-surface rounded-lg group w-full sm:w-auto"
                 >
                   <span className="relative w-full text-center flex items-center justify-center gap-2 transition-colors duration-200 ease-in-out">

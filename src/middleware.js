@@ -16,7 +16,17 @@ export function middleware(request) {
         ? '/'
         : pathname.slice(pathLocale.length + 1) || '/';
 
-    const res = NextResponse.rewrite(new URL(actualPath, request.url));
+    const url = request.nextUrl.clone();
+    url.pathname = actualPath;
+
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-locale', pathLocale);
+
+    const res = NextResponse.rewrite(url, {
+      request: {
+        headers: requestHeaders,
+      },
+    });
     res.headers.set('x-locale', pathLocale);
     res.cookies.set('NEXT_LOCALE', pathLocale, {
       path: '/',
@@ -40,12 +50,15 @@ export function middleware(request) {
   }
 
   // ── Default English path ──────────────────────────────────────────────────
-  const locale = (cookieLocale && [...SUPPORTED_LOCALES, 'en'].includes(cookieLocale))
-    ? cookieLocale
-    : 'en';
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-locale', 'en');
 
-  const res = NextResponse.next();
-  res.headers.set('x-locale', locale);
+  const res = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+  res.headers.set('x-locale', 'en');
   return res;
 }
 

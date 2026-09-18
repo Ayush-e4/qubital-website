@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from "@/components/AnimateOnScroll";
 import MarqueeButton from "@/components/MarqueeButton";
-import { Terminal, Server, Cloud, ShieldCheck, Cpu, GitMerge } from "lucide-react";
+import { Terminal, Server, Cloud, ShieldCheck, Cpu, Layers } from "lucide-react";
 import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
 import MethodologySteps from "@/components/MethodologySteps";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -14,7 +14,12 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 export default function HomeParallaxContent() {
   const containerRef = useRef(null);
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+
+  const localePath = (path) => {
+    if (!locale || locale === 'en') return path;
+    return `/${locale}${path === '/' ? '' : path}`;
+  };
 
   // Scroll Parallax Hooks for Mobile & Desktop
   const { scrollYProgress } = useScroll({
@@ -37,7 +42,7 @@ export default function HomeParallaxContent() {
       Icon: <Terminal className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
       name: t.bento.software_title,
       description: t.bento.software_desc,
-      href: "/services#software",
+      href: localePath("/services#software"),
       cta: t.bento.cta,
       className: "md:col-span-2",
       background: (
@@ -50,7 +55,7 @@ export default function HomeParallaxContent() {
       Icon: <Server className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
       name: t.bento.managed_title,
       description: t.bento.managed_desc,
-      href: "/services#managed-it",
+      href: localePath("/services#managed-it"),
       cta: t.bento.cta,
       className: "md:col-span-1",
       background: (
@@ -63,7 +68,7 @@ export default function HomeParallaxContent() {
       Icon: <Cloud className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
       name: t.bento.cloud_title,
       description: t.bento.cloud_desc,
-      href: "/services#cloud",
+      href: localePath("/services#cloud"),
       cta: t.bento.cta,
       className: "md:col-span-1",
       background: (
@@ -76,7 +81,7 @@ export default function HomeParallaxContent() {
       Icon: <ShieldCheck className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
       name: t.bento.cyber_title,
       description: t.bento.cyber_desc,
-      href: "/services#cybersecurity",
+      href: localePath("/services#cybersecurity"),
       cta: t.bento.cta,
       className: "md:col-span-2",
       background: (
@@ -89,7 +94,7 @@ export default function HomeParallaxContent() {
       Icon: <Cpu className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
       name: t.bento.special_title,
       description: t.bento.special_desc,
-      href: "/services#specialized-tech",
+      href: localePath("/services#specialized-tech"),
       cta: t.bento.cta,
       className: "md:col-span-2",
       background: (
@@ -99,15 +104,15 @@ export default function HomeParallaxContent() {
       ),
     },
     {
-      Icon: <GitMerge className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
-      name: t.bento.advisory_title,
-      description: t.bento.advisory_desc,
-      href: "/services#advisory",
+      Icon: <Layers className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />,
+      name: t.bento.sap_title || "SAP Solutions",
+      description: t.bento.sap_desc || "S/4HANA migrations, clean-core architecture, and SAP BTP cloud integrations.",
+      href: localePath("/services#sap"),
       cta: t.bento.cta,
       className: "md:col-span-1",
       background: (
         <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <GitMerge className="w-36 h-36 md:w-48 md:h-48 text-primary" />
+          <Layers className="w-36 h-36 md:w-48 md:h-48 text-primary" />
         </div>
       ),
     },
@@ -165,13 +170,13 @@ export default function HomeParallaxContent() {
               className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 pt-2 sm:pt-4 justify-center items-center w-full max-w-[260px] sm:max-w-none"
             >
               <MarqueeButton 
-                href="/services" 
+                href={localePath("/services")} 
                 className="bg-primary text-on-primary shadow-md shadow-primary/20 font-bold w-full sm:w-auto text-center justify-center text-xs sm:text-sm"
               >
                 {t.hero.cta_primary}
               </MarqueeButton>
               <MarqueeButton 
-                href="/about" 
+                href={localePath("/about")} 
                 className="bg-surface-card text-slate-950 font-bold border border-slate-300 hover:border-primary/40 shadow-2xs w-full sm:w-auto text-center justify-center text-xs sm:text-sm"
               >
                 {t.hero.cta_secondary}
@@ -222,7 +227,7 @@ export default function HomeParallaxContent() {
                 {t.methodology.heading}
               </h2>
             </div>
-            <Link href="/about" className="text-primary group text-sm font-semibold flex items-center gap-1 py-1 w-fit">
+            <Link href={localePath("/about")} className="text-primary group text-sm font-semibold flex items-center gap-1 py-1 w-fit">
               <span className="group-hover:underline">{t.methodology.cta_link}</span>
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </Link>
@@ -321,14 +326,14 @@ export default function HomeParallaxContent() {
                 
                 <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                   <Link 
-                    href="/contact" 
+                    href={localePath("/contact")} 
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-on-primary font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-sm text-sm sm:text-base"
                   >
                     <span>{t.cta_banner.btn_primary}</span>
                     <span className="material-symbols-outlined text-sm">calendar_month</span>
                   </Link>
                   <Link 
-                    href="/careers" 
+                    href={localePath("/careers")} 
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-transparent text-inverse-on-surface font-semibold rounded-xl border border-inverse-on-surface/30 hover:bg-white/5 transition-colors duration-200 text-sm sm:text-base"
                   >
                     <span>{t.cta_banner.btn_secondary}</span>

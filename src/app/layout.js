@@ -36,19 +36,6 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  // hreflang alternate links for European SEO (EN, DE, FR, ES, IT, NL)
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      "en": BASE_URL,
-      "de": `${BASE_URL}/de`,
-      "fr": `${BASE_URL}/fr`,
-      "es": `${BASE_URL}/es`,
-      "it": `${BASE_URL}/it`,
-      "nl": `${BASE_URL}/nl`,
-      "x-default": BASE_URL,
-    },
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -115,7 +102,7 @@ const jsonLd = {
         {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          opens: "08:30",
+          opens: "08:00",
           closes: "18:00",
         },
       ],
@@ -124,7 +111,7 @@ const jsonLd = {
       paymentAccepted: "Invoice",
       areaServed: ["Germany", "Europe"],
       serviceType: [
-        "IT Advisory",
+        "SAP Solutions & Architecture",
         "Systems Architecture",
         "Cloud Services",
         "Cybersecurity",
@@ -155,7 +142,7 @@ export default async function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Google Fonts */}
+        {/* Preconnect for Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -163,18 +150,19 @@ export default async function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
         <link
+          rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
-          rel="stylesheet"
+          precedence="default"
         />
-        {/* Material Symbols */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          precedence="default"
         />
       </head>
       <body className="bg-surface-canvas text-on-surface selection:bg-secondary-container selection:text-on-secondary-fixed min-h-full flex flex-col">
         <PostHogProvider>
-          <LanguageProvider initialLocale={locale}>
+          <LanguageProvider>
             <LenisProvider>
               <Header />
               <main className="w-full pt-16 bg-surface-canvas min-h-screen flex-1 overflow-hidden">

@@ -6,8 +6,13 @@ import MethodologySteps from '@/components/MethodologySteps';
 import { useLanguage } from '@/components/LanguageProvider';
 
 export default function ServicesContent() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const s = t.services_page;
+
+  const localePath = (path) => {
+    if (!locale || locale === 'en') return path;
+    return `/${locale}${path === '/' ? '' : path}`;
+  };
 
   return (
     <main className="flex-grow pt-20 sm:pt-28 pb-16">
@@ -25,7 +30,7 @@ export default function ServicesContent() {
             </p>
             
             <div className="flex justify-center w-full px-4 sm:px-0">
-              <Link href="/contact" className="w-full sm:w-auto text-center justify-center px-8 py-3.5 bg-primary text-on-primary font-label-lg rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md font-semibold text-sm sm:text-base">
+              <Link href={localePath("/contact")} className="w-full sm:w-auto text-center justify-center px-8 py-3.5 bg-primary text-on-primary font-label-lg rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md font-semibold text-sm sm:text-base">
                 {s.hero_cta}
               </Link>
             </div>
@@ -141,7 +146,7 @@ export default function ServicesContent() {
             </div>
             
             <div className="flex flex-col w-full sm:w-auto space-y-4 relative z-10 shrink-0">
-              <Link href="/contact" className="inline-flex justify-center items-center px-8 py-4 bg-primary text-on-primary font-label-lg rounded hover:bg-primary/90 transition-colors duration-200 w-full sm:w-auto">
+              <Link href={localePath("/contact")} className="inline-flex justify-center items-center px-8 py-4 bg-primary text-on-primary font-label-lg rounded hover:bg-primary/90 transition-colors duration-200 w-full sm:w-auto">
                 {s.cta_btn_primary}
               </Link>
               <a href="mailto:contact@qubital.eu" className="inline-flex justify-center items-center px-8 py-4 bg-transparent text-inverse-on-surface border border-inverse-on-surface/30 font-label-lg rounded hover:bg-inverse-on-surface/10 transition-colors duration-200 w-full sm:w-auto">
