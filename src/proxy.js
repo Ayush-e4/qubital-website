@@ -11,7 +11,9 @@ import { PREFIXED_LOCALES, localeFromPath, stripLocale } from '@/lib/i18n/paths'
  * 2. The root `/` is auto-detected for first-time visitors: with no NEXT_LOCALE
  *    cookie, a browser whose top Accept-Language is a supported locale is
  *    redirected to that locale. Only the root redirects — deep links such as
- *    /about always serve English, so a shared URL renders as written.
+ *    /about always serve English, so a shared URL renders as written. The
+ *    redirect is sent `no-store`, since it depends on a request header and must
+ *    not be replayed by a shared cache.
  * 3. Every other unprefixed path serves English.
  *
  * NEXT_LOCALE is written when a visitor uses a prefixed path, and is
@@ -56,7 +58,15 @@ export function proxy(request) {
 
     if (PREFIXED_LOCALES.includes(firstLang)) {
       // First visit from a European browser matching supported language -> auto-redirect
-      return NextResponse.redirect(new URL(`/${firstLang}`, request.url));
+      const redirect = NextResponse.redirect(new URL(`/${firstLang}`, request.url));
+
+      // A redirect decided from Accept-Language must never be stored by a
+      // shared cache, or it would be replayed to visitors whose browser asks
+      // for a different language. This is set here rather than in
+      // next.config.mjs so that the root *page* — the response everyone else
+      // gets — can stay back/forward-cache eligible (see rootCacheHeaders).
+      redirect.headers.set('Cache-Control', 'no-store');
+      return redirect;
     }
   }
 
