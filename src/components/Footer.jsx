@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FOOTER_LINKS, COMPANY_INFO } from "@/lib/constants";
@@ -23,7 +23,6 @@ export default function Footer() {
   const pathname = usePathname();
   const { t, locale, setLocale } = useLanguage();
   const [time, setTime] = useState("--:--:-- CET");
-  const serverSyncedRef = useRef(false);
 
   const currentPrefix = SUPPORTED_LOCALES.find(
     (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
@@ -46,28 +45,22 @@ export default function Footer() {
     ? t.impressum_page.sec_2_hours.replace(/^[^:]+:\s*/, '') 
     : COMPANY_INFO.hours;
 
+  // Live clock for the German office. Derived entirely on the client: the
+  // server's clock is no more authoritative than the visitor's, so the extra
+  // /api/time round-trip bought nothing.
   useEffect(() => {
-    fetch("/api/time")
-      .then((r) => r.json())
-      .then(({ time: serverTime }) => {
-        setTime(serverTime);
-        serverSyncedRef.current = true;
-      })
-      .catch(() => {
-        serverSyncedRef.current = true;
-      });
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Berlin",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
 
-    const interval = setInterval(() => {
-      const formatter = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Europe/Berlin",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-      });
-      setTime(formatter.format(new Date()) + " CET");
-    }, 1000);
+    const tick = () => setTime(formatter.format(new Date()) + " CET");
 
+    tick();
+    const interval = setInterval(tick, 1000);
     return () => clearInterval(interval);
   }, []);
 
