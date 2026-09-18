@@ -545,39 +545,9 @@ const dictionary = {
         traditional: 'Tratado al final o subcontratado a terceros',
       },
     ],
-    pillars_tag: 'VENTAJAS PROBADAS',
-    pillars_title: 'Diseñado para entornos de alta exigencia',
-    pillars: [
-      {
-        id: 1,
-        icon: 'location_city',
-        title: 'Centro de ingeniería bávaro',
-        desc: 'Con sede en Herzogenaurach, Baviera, aplicamos la precisión y disciplina que caracterizan a Alemania.',
-      },
-      {
-        id: 2,
-        icon: 'cloud_done',
-        title: '480+ cargas de trabajo gobernadas',
-        desc: 'Experiencia contrastada gestionando infraestructuras críticas en automoción, industria y finanzas.',
-      },
-      {
-        id: 3,
-        icon: 'speed',
-        title: 'SLA garantizado del 99,98%',
-        desc: 'Disponibilidad respaldada por esquemas automatizados de recuperación ante desastres.',
-      },
-      {
-        id: 4,
-        icon: 'lock',
-        title: 'Confidencialidad y acuerdos NDA',
-        desc: 'Protocolos estrictos de aislamiento de datos para garantizar la protección total de su propiedad intelectual.',
-      },
-    ],
     cta_title: 'Descubra el impacto de la ingeniería dirigida por expertos senior.',
     cta_desc: 'Hable directamente con nuestros arquitectos para analizar sus desafíos técnicos.',
     cta_btn: 'Reservar sesión técnica',
-    advantage_label: 'Ventaja',
-    enterprise_guarantee: 'Garantía Empresarial',
   },
 };
 

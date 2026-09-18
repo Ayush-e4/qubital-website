@@ -542,40 +542,10 @@ const dictionary = {
         traditional: 'Considerati in ritardo o delegati a subfornitori',
       },
     ],
-    pillars_tag: 'VANTAGGI COMPROVATI',
-    pillars_title: 'Progettato per contesti critici',
-    pillars: [
-      {
-        id: 1,
-        icon: 'location_city',
-        title: 'Centro di ingegneria bavarese',
-        desc: 'Con sede a Herzogenaurach in Baviera, applichiamo la precisione e l’affidabilità per cui la Germania è famosa.',
-      },
-      {
-        id: 2,
-        icon: 'cloud_done',
-        title: '480+ carichi di lavoro gestiti',
-        desc: 'Esperienza consolidata nella gestione di ambienti produttivi ad alto traffico.',
-      },
-      {
-        id: 3,
-        icon: 'speed',
-        title: 'SLA di disponibilità 99,98%',
-        desc: 'Continuità garantita da architetture di disaster recovery automatizzate multi-regione.',
-      },
-      {
-        id: 4,
-        icon: 'lock',
-        title: 'Massima riservatezza e standard NDA',
-        desc: 'Protocolli di sicurezza e sovranità del dato a salvaguardia della proprietà intellettuale.',
-      },
-    ],
     cta_title: 'Scopri il valore di un approccio ingegneristico senior-led.',
     cta_desc:
       'Confrontati direttamente con i nostri principal architect sui tuoi obiettivi tecnologici.',
     cta_btn: 'Prenota un briefing architetturale',
-    advantage_label: 'Vantaggio',
-    enterprise_guarantee: 'Garanzia Enterprise',
   },
 };
 

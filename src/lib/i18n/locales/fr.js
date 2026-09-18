@@ -546,39 +546,9 @@ const dictionary = {
         traditional: 'Géré en fin de projet ou sous-traité à des tiers',
       },
     ],
-    pillars_tag: 'AVANTAGES ÉPROUVÉS',
-    pillars_title: 'Conçu pour les environnements critiques',
-    pillars: [
-      {
-        id: 1,
-        icon: 'location_city',
-        title: 'Centre d’ingénierie bavarois',
-        desc: 'Basés à Herzogenaurach en Bavière, nous appliquons les standards de rigueur qui font la réputation de l’Allemagne.',
-      },
-      {
-        id: 2,
-        icon: 'cloud_done',
-        title: '480+ charges de travail gouvernées',
-        desc: 'Expérience éprouvée sur des infrastructures haute cadence dans l’industrie et la finance.',
-      },
-      {
-        id: 3,
-        icon: 'speed',
-        title: 'Garantie de disponibilité SLA 99,98%',
-        desc: 'Haute résilience garantie par des architectures de secours multi-régions automatisées.',
-      },
-      {
-        id: 4,
-        icon: 'lock',
-        title: 'Confidentialité & Normes NDA',
-        desc: 'Ségrégation stricte des données préservant l’intégrité totale de votre propriété intellectuelle.',
-      },
-    ],
     cta_title: 'Découvrez la différence d’une ingénierie menée par des experts seniors.',
     cta_desc: 'Échangez directement avec nos architectes pour analyser vos défis techniques.',
     cta_btn: 'Réserver un briefing d’architecture',
-    advantage_label: 'Avantage',
-    enterprise_guarantee: 'Garantie Entreprise',
   },
 };
 

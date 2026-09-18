@@ -551,39 +551,9 @@ const dictionary = {
         traditional: 'Pas achteraf bekeken of uitbesteed aan derden',
       },
     ],
-    pillars_tag: 'BEWEZEN VOORDELEN',
-    pillars_title: 'Ontworpen voor bedrijfskritische omgevingen',
-    pillars: [
-      {
-        id: 1,
-        icon: 'location_city',
-        title: 'Beiers engineeringcentrum',
-        desc: 'Gevestigd in Herzogenaurach, Beieren, staan we voor de betrouwbaarheid en precisie waar Duitsland om bekendstaat.',
-      },
-      {
-        id: 2,
-        icon: 'cloud_done',
-        title: '480+ beheerde enterprise-workloads',
-        desc: 'Ruime ervaring met het beheer van zware productieomgevingen in industrie en finance.',
-      },
-      {
-        id: 3,
-        icon: 'speed',
-        title: '99,98% beschikbaarheids-SLA',
-        desc: 'Hoge beschikbaarheid gegarandeerd met geautomatiseerde multi-region disaster recovery.',
-      },
-      {
-        id: 4,
-        icon: 'lock',
-        title: 'Vertrouwelijkheid & NDA-normen',
-        desc: 'Strikte data-isolatie en soevereine Europese protocollen ter bescherming van uw intellectueel eigendom.',
-      },
-    ],
     cta_title: 'Ervaar het verschil van senior-led engineering.',
     cta_desc: 'Bespreek uw technische uitdagingen rechtstreeks met onze hoofdarchitecten.',
     cta_btn: 'Plan een architectuur-briefing',
-    advantage_label: 'Voordeel',
-    enterprise_guarantee: 'Enterprise Garantie',
   },
 };
 

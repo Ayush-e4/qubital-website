@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
+import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
 
@@ -103,47 +103,6 @@ export default function WhyUsContent() {
             </table>
           </div>
         </AnimateOnScroll>
-      </section>
-
-      {/* SECTION 3 - Proven Advantages */}
-      <section className="w-full bg-surface py-16 md:py-24 border-y border-outline-variant/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 text-primary text-xs font-mono font-bold tracking-widest uppercase mb-3 justify-center">
-              <span className="material-symbols-outlined text-sm">verified</span>
-              <span>{w.pillars_tag || 'PROVEN ADVANTAGES'}</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-on-surface tracking-tight mb-4">
-              {w.pillars_title || 'Engineered for High-Stakes Environments'}
-            </h2>
-          </AnimateOnScroll>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {(w.pillars || []).map((pillar) => (
-              <StaggerItem key={pillar.id} className="h-full">
-                <div className="h-full bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-2xl p-8 transition-all duration-300 shadow-xs hover:shadow-md flex flex-col justify-between group">
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-on-surface mb-3">{pillar.title}</h3>
-                    <p className="text-secondary text-sm sm:text-base leading-relaxed">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/90 uppercase">
-                    <span>
-                      {w.advantage_label || 'Advantage'} 0{pillar.id}
-                    </span>
-                    <span className="text-primary font-bold">
-                      {w.enterprise_guarantee || 'Enterprise Guarantee'}
-                    </span>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
       </section>
 
       {/* SECTION 4 - Call to Action */}

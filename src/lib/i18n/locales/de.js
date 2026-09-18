@@ -565,40 +565,10 @@ const dictionary = {
         traditional: 'Wird oft nachgelagert behandelt oder an Subunternehmer vergeben',
       },
     ],
-    pillars_tag: 'BEWIESENE VORTEILE',
-    pillars_title: 'Entwickelt für geschäftskritische Umgebungen',
-    pillars: [
-      {
-        id: 1,
-        icon: 'location_city',
-        title: 'Bayerisches Ingenieurszentrum',
-        desc: 'Mit Hauptsitz in Herzogenaurach, Bayern, steht unser Team für die Genauigkeit, Verlässlichkeit und Exzellenz deutscher Ingenieurstradition.',
-      },
-      {
-        id: 2,
-        icon: 'cloud_done',
-        title: '480+ verwaltete Enterprise-Workloads',
-        desc: 'Praxiserprobte Erfahrung im Betrieb hochverfügbarer Produktionssysteme in Industrie, Automotive und Finanzwirtschaft.',
-      },
-      {
-        id: 3,
-        icon: 'speed',
-        title: '99,98% Verfügbarkeits-SLA',
-        desc: 'Wir garantieren höchste Betriebszeit mit automatisierten Failover- und Disaster-Recovery-Konzepten.',
-      },
-      {
-        id: 4,
-        icon: 'lock',
-        title: 'Höchste Vertraulichkeit & NDA-Standards',
-        desc: 'Strikte europäische Datensouveränität schützt Ihr geistiges Eigentum und Ihre Kernsysteme zu jedem Zeitpunkt.',
-      },
-    ],
     cta_title: 'Erleben Sie den Unterschied seniorer Fachexpertise.',
     cta_desc:
       'Sprechen Sie direkt mit unseren Chefarchitekten über Ihre technischen Herausforderungen.',
     cta_btn: 'Architektur-Briefing buchen',
-    advantage_label: 'Vorteil',
-    enterprise_guarantee: 'Enterprise-Garantie',
   },
 };
 
