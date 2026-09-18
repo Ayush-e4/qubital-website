@@ -1,0 +1,20 @@
+Copyright © 2026 Qubital Systems GmbH. All rights reserved.
+
+PROPRIETARY AND CONFIDENTIAL
+
+This repository and everything in it — source code, design, copy, imagery and
+translations — is the property of Qubital Systems GmbH, Herzogenaurach,
+Germany.
+
+No part of it may be copied, modified, distributed, sublicensed, published or
+otherwise used, in whole or in part, without the prior written permission of
+Qubital Systems GmbH. Access to this repository does not grant any licence,
+express or implied, beyond viewing it on GitHub.
+
+For licensing enquiries: contact@qubital.eu
+
+---
+
+Third-party open-source components used by this project remain subject to their
+own licences. See package.json and package-lock.json. Nothing in this notice
+restricts any right granted by those licences.
