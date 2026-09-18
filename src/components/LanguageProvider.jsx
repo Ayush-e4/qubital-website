@@ -3,28 +3,13 @@
 import { createContext, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import { getDictionary } from '@/lib/i18n/translations';
-
-const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
+import { DEFAULT_LOCALE, localeFromPath } from '@/lib/i18n/paths';
 
 const LanguageContext = createContext({
-  locale: 'en',
-  t: getDictionary('en'),
+  locale: DEFAULT_LOCALE,
+  t: getDictionary(DEFAULT_LOCALE),
   setLocale: () => {},
 });
-
-/**
- * The locale implied by a pathname. The middleware rewrites /{locale}/… onto the
- * unprefixed route, but the browser URL keeps the prefix, so the pathname is the
- * single source of truth for the active locale.
- */
-function getPathLocale(pathname) {
-  if (!pathname) return 'en';
-  return (
-    SUPPORTED_LOCALES.find(
-      (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
-    ) || 'en'
-  );
-}
 
 /**
  * Wraps the app and provides the current locale + translation dictionary.
@@ -35,7 +20,7 @@ function getPathLocale(pathname) {
  */
 export function LanguageProvider({ children }) {
   const pathname = usePathname();
-  const locale = getPathLocale(pathname);
+  const locale = localeFromPath(pathname) ?? DEFAULT_LOCALE;
 
   function setLocale(newLocale) {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;

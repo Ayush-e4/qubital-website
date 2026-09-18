@@ -4,15 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
+import { useLocalePath } from '@/lib/i18n/useLocalePath';
 
 export default function AboutContent() {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const a = t.about_page;
 
-  const localePath = (path) => {
-    if (!locale || locale === 'en') return path;
-    return `/${locale}${path === '/' ? '' : path}`;
-  };
+  const localePath = useLocalePath();
 
   return (
     <main className="flex-1 w-full flex flex-col items-center">

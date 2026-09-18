@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS, COMPANY_INFO } from "@/lib/constants";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { useLanguage } from "@/components/LanguageProvider";
+import { localeFromPath, localizedPath, stripLocale } from "@/lib/i18n/paths";
 
 const NAV_KEY_MAP = {
   "/":        "home",
@@ -28,8 +29,6 @@ const LANGUAGES = [
   { code: 'nl', label: 'Nederlands', short: 'NL' },
 ];
 
-const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
-
 export default function Header() {
   const pathname = usePathname();
   const { t, locale, setLocale } = useLanguage();
@@ -39,16 +38,14 @@ export default function Header() {
   const [langOpen,   setLangOpen]   = useState(false);
   const langDropdownRef = useRef(null);
 
-  // Detect if the current path has a locale prefix (e.g., /de, /fr)
-  const currentPrefix = SUPPORTED_LOCALES.find(
-    (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
-  );
+  // Locale of the current URL, or null when unprefixed (English)
+  const currentPrefix = localeFromPath(pathname);
 
-  const activeLocale = currentPrefix || locale || 'en';
+  const activeLocale = currentPrefix || locale || "en";
 
   // Build locale-aware href for navigation links
   const localePath = useCallback(
-    (path) => (currentPrefix ? `/${currentPrefix}${path === "/" ? "" : path}` : path),
+    (path) => localizedPath(path, currentPrefix),
     [currentPrefix]
   );
 
@@ -74,18 +71,11 @@ export default function Header() {
   }, [mobileOpen]);
 
   // Canonical path without locale prefix for active-state matching
-  const canonicalPath = currentPrefix
-    ? pathname.slice(currentPrefix.length + 1) || "/"
-    : pathname;
+  const canonicalPath = stripLocale(pathname).path;
 
   // Compute locale-preserving path when switching language
   const getSwitchPath = useCallback(
-    (targetLang) => {
-      if (targetLang === 'en') {
-        return canonicalPath;
-      }
-      return `/${targetLang}${canonicalPath === '/' ? '' : canonicalPath}`;
-    },
+    (targetLang) => localizedPath(canonicalPath, targetLang),
     [canonicalPath]
   );
 

@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { headers } from 'next/headers';
 import { getDictionary } from '@/lib/i18n/translations';
+import { DEFAULT_LOCALE, localizedPath } from '@/lib/i18n/paths';
 
 export default async function NotFound() {
-  const locale = (await headers()).get('x-locale') || 'en';
+  const locale = (await headers()).get('x-locale') || DEFAULT_LOCALE;
   const t = getDictionary(locale);
   const nf = t.not_found;
 
-  const localePath = (p) => (locale && locale !== 'en' ? `/${locale}${p}` : p);
+  const localePath = (path) => localizedPath(path, locale);
 
   const links = [
     { href: localePath('/about'),    label: t.nav.about },

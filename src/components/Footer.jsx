@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { FOOTER_LINKS, COMPANY_INFO } from "@/lib/constants";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { useLanguage } from "@/components/LanguageProvider";
+import { localeFromPath, localizedPath, stripLocale } from "@/lib/i18n/paths";
 import { cn } from "@/lib/utils";
 
 const LANGUAGES = [
@@ -17,29 +18,18 @@ const LANGUAGES = [
   { code: 'nl', label: 'Nederlands' },
 ];
 
-const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
-
 export default function Footer() {
   const pathname = usePathname();
   const { t, locale, setLocale } = useLanguage();
   const [time, setTime] = useState("--:--:-- CET");
 
-  const currentPrefix = SUPPORTED_LOCALES.find(
-    (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
-  );
-  const canonicalPath = currentPrefix
-    ? pathname.slice(currentPrefix.length + 1) || "/"
-    : pathname;
+  // Locale of the current URL, or null when unprefixed (English)
+  const currentPrefix = localeFromPath(pathname);
+  const canonicalPath = stripLocale(pathname).path;
 
-  const localePath = (path) => {
-    if (!locale || locale === 'en') return path;
-    return `/${locale}${path === '/' ? '' : path}`;
-  };
+  const localePath = (path) => localizedPath(path, currentPrefix);
 
-  const getSwitchPath = (targetLang) => {
-    if (targetLang === 'en') return canonicalPath;
-    return `/${targetLang}${canonicalPath === '/' ? '' : canonicalPath}`;
-  };
+  const getSwitchPath = (targetLang) => localizedPath(canonicalPath, targetLang);
 
   const localizedHours = t.impressum_page?.sec_2_hours 
     ? t.impressum_page.sec_2_hours.replace(/^[^:]+:\s*/, '') 

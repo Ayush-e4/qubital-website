@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { PREFIXED_LOCALES, localeFromPath, stripLocale } from '@/lib/i18n/paths';
 
 /**
  * Locale routing policy — keep this comment in sync with the behaviour below.
@@ -19,24 +20,15 @@ import { NextResponse } from 'next/server';
  * `x-locale` is the header the app renders from; the cookie is only an
  * auto-detect marker.
  */
-const SUPPORTED_LOCALES = ['de', 'fr', 'es', 'it', 'nl'];
-
 export function proxy(request) {
   const { pathname } = request.nextUrl;
 
-  // ── Match URL subpaths like /de, /fr, /es, /it, /nl ───────────────────────
-  const pathLocale = SUPPORTED_LOCALES.find(
-    (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
-  );
+  // ── Prefixed paths: /de, /fr, /es, /it, /nl ───────────────────────────────
+  const pathLocale = localeFromPath(pathname);
 
   if (pathLocale) {
-    const actualPath =
-      pathname === `/${pathLocale}`
-        ? '/'
-        : pathname.slice(pathLocale.length + 1) || '/';
-
     const url = request.nextUrl.clone();
-    url.pathname = actualPath;
+    url.pathname = stripLocale(pathname).path;
 
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set('x-locale', pathLocale);
@@ -62,7 +54,7 @@ export function proxy(request) {
     const acceptLanguage = request.headers.get('accept-language') || '';
     const firstLang = acceptLanguage.split(',')[0].trim().toLowerCase().slice(0, 2);
 
-    if (SUPPORTED_LOCALES.includes(firstLang)) {
+    if (PREFIXED_LOCALES.includes(firstLang)) {
       // First visit from a European browser matching supported language -> auto-redirect
       return NextResponse.redirect(new URL(`/${firstLang}`, request.url));
     }

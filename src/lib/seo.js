@@ -1,9 +1,8 @@
 import { headers } from 'next/headers';
+import { LOCALES, localizedPath } from '@/lib/i18n/paths';
 
 export const SITE_URL = 'https://qubital.eu';
 export const SITE_NAME = 'Qubital';
-
-export const LOCALES = ['en', 'de', 'fr', 'es', 'it', 'nl'];
 
 const OG_LOCALES = {
   en: 'en_US',
@@ -15,15 +14,6 @@ const OG_LOCALES = {
 };
 
 const OG_IMAGE = '/og-image.png';
-
-/**
- * Locale-prefixed path. English lives at the unprefixed path, every other
- * locale is served under /{locale} (see src/middleware.js).
- */
-export function localizedPath(path, locale) {
-  if (!locale || locale === 'en') return path;
-  return `/${locale}${path === '/' ? '' : path}`;
-}
 
 /**
  * Self-referencing canonical plus a full hreflang cluster for one logical
