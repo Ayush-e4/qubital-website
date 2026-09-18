@@ -29,9 +29,7 @@ export function LanguageProvider({ children }) {
   const t = getDictionary(locale);
 
   return (
-    <LanguageContext.Provider value={{ locale, t, setLocale }}>
-      {children}
-    </LanguageContext.Provider>
+    <LanguageContext.Provider value={{ locale, t, setLocale }}>{children}</LanguageContext.Provider>
   );
 }
 

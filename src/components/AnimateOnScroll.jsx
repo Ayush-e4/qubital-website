@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 export function AnimateOnScroll({
   children,
-  className = "",
+  className = '',
   delay = 0,
-  direction = "up",
+  direction = 'up',
   duration = 0.5,
   once = true,
-  amount = "some",
-  margin = "0px 0px -40px 0px",
+  amount = 'some',
+  margin = '0px 0px -40px 0px',
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, amount, margin });
@@ -45,11 +45,11 @@ export function AnimateOnScroll({
 
 export function StaggerContainer({
   children,
-  className = "",
+  className = '',
   staggerDelay = 0.08,
   once = true,
-  amount = "some",
-  margin = "0px 0px -40px 0px",
+  amount = 'some',
+  margin = '0px 0px -40px 0px',
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, amount, margin });
@@ -59,7 +59,7 @@ export function StaggerContainer({
       ref={ref}
       className={className}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={isInView ? 'visible' : 'hidden'}
       variants={{
         hidden: {},
         visible: {
@@ -74,12 +74,7 @@ export function StaggerContainer({
   );
 }
 
-export function StaggerItem({
-  children,
-  className = "",
-  direction = "up",
-  duration = 0.45,
-}) {
+export function StaggerItem({ children, className = '', direction = 'up', duration = 0.45 }) {
   const directions = {
     up: { y: 20, x: 0 },
     down: { y: -20, x: 0 },

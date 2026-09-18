@@ -14,7 +14,7 @@ export default function WhyUsContent() {
   const headers = w.comparison_headers || {
     criteria: 'Criteria',
     qubital: 'Qubital Systems',
-    traditional: 'Traditional Consultancies / Agencies'
+    traditional: 'Traditional Consultancies / Agencies',
   };
 
   return (
@@ -83,13 +83,17 @@ export default function WhyUsContent() {
                     </td>
                     <td className="py-4 px-6 text-sm text-on-surface bg-primary/5 border-x border-primary/20 font-medium">
                       <div className="flex items-start gap-2">
-                        <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                        <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">
+                          check_circle
+                        </span>
                         <span>{row.qubital}</span>
                       </div>
                     </td>
                     <td className="py-4 px-6 text-sm text-secondary">
                       <div className="flex items-start gap-2">
-                        <span className="material-symbols-outlined text-secondary/50 text-[18px] shrink-0 mt-0.5">cancel</span>
+                        <span className="material-symbols-outlined text-secondary/50 text-[18px] shrink-0 mt-0.5">
+                          cancel
+                        </span>
                         <span>{row.traditional}</span>
                       </div>
                     </td>
@@ -123,11 +127,17 @@ export default function WhyUsContent() {
                       <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
                     </div>
                     <h3 className="text-xl font-bold text-on-surface mb-3">{pillar.title}</h3>
-                    <p className="text-secondary text-sm sm:text-base leading-relaxed">{pillar.desc}</p>
+                    <p className="text-secondary text-sm sm:text-base leading-relaxed">
+                      {pillar.desc}
+                    </p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/70 uppercase">
-                    <span>{w.advantage_label || 'Advantage'} 0{pillar.id}</span>
-                    <span className="text-primary font-bold">{w.enterprise_guarantee || 'Enterprise Guarantee'}</span>
+                    <span>
+                      {w.advantage_label || 'Advantage'} 0{pillar.id}
+                    </span>
+                    <span className="text-primary font-bold">
+                      {w.enterprise_guarantee || 'Enterprise Guarantee'}
+                    </span>
                   </div>
                 </div>
               </StaggerItem>
@@ -144,10 +154,11 @@ export default function WhyUsContent() {
             {w.cta_title || 'Experience the difference of senior-led engineering.'}
           </h2>
           <p className="text-inverse-on-surface/75 text-sm sm:text-base md:text-lg mb-8 max-w-2xl leading-relaxed relative z-10">
-            {w.cta_desc || 'Talk directly to our principal architects to review your technical challenges.'}
+            {w.cta_desc ||
+              'Talk directly to our principal architects to review your technical challenges.'}
           </p>
           <Link
-            href={localePath("/contact")}
+            href={localePath('/contact')}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-on-primary font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm sm:text-base relative z-10"
           >
             <span>{w.cta_btn || 'Book an Architecture Briefing'}</span>

@@ -23,7 +23,10 @@ const checks = [
     async (page) => {
       await page.goto(`${BASE}/about`, { waitUntil: 'load' });
       await page.getByRole('button', { name: 'Change Language' }).click();
-      await page.getByRole('link', { name: /Deutsch/ }).first().click();
+      await page
+        .getByRole('link', { name: /Deutsch/ })
+        .first()
+        .click();
       await page.waitForURL('**/de/about');
       assert.match(page.url(), /\/de\/about$/);
     },
