@@ -11,9 +11,9 @@ export default async function NotFound() {
   const localePath = (path) => localizedPath(path, locale);
 
   const links = [
-    { href: localePath('/about'),    label: t.nav.about },
+    { href: localePath('/about'), label: t.nav.about },
     { href: localePath('/services'), label: t.nav.services },
-    { href: localePath('/contact'),  label: t.nav.contact },
+    { href: localePath('/contact'), label: t.nav.contact },
   ];
 
   return (
@@ -37,9 +37,7 @@ export default async function NotFound() {
         <h1 className="text-3xl md:text-4xl font-semibold text-on-surface mb-4 tracking-tight">
           {nf.heading}
         </h1>
-        <p className="text-secondary text-lg mb-10 leading-relaxed">
-          {nf.description}
-        </p>
+        <p className="text-secondary text-lg mb-10 leading-relaxed">{nf.description}</p>
 
         {/* Primary CTA */}
         <Link

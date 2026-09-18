@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useId } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useId } from 'react';
+import { motion } from 'framer-motion';
 
 export const AnimatedBeam = ({
   containerRef,
   fromRef,
   toRef,
-  pathColor = "rgba(0,0,0,0.1)",
+  pathColor = 'rgba(0,0,0,0.1)',
   pathOpacity = 1,
-  gradientStartColor = "#3b82f6",
-  gradientStopColor = "#8b5cf6",
+  gradientStartColor = '#3b82f6',
+  gradientStopColor = '#8b5cf6',
   index = 0,
   timelineSteps = 7,
-  className = "",
+  className = '',
 }) => {
   const id = useId();
-  const [pathD, setPathD] = useState("");
+  const [pathD, setPathD] = useState('');
   const [svgDimensions, setSvgDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -43,13 +43,13 @@ export const AnimatedBeam = ({
     updatePath();
     const observer = new ResizeObserver(updatePath);
     if (containerRef.current) observer.observe(containerRef.current);
-    
+
     // Fallback resize listener
-    window.addEventListener("resize", updatePath);
-    
+    window.addEventListener('resize', updatePath);
+
     return () => {
       observer.disconnect();
-      window.removeEventListener("resize", updatePath);
+      window.removeEventListener('resize', updatePath);
     };
   }, [containerRef, fromRef, toRef]);
 
@@ -64,11 +64,11 @@ export const AnimatedBeam = ({
   // Beam 2: 5-6
   // Box 3: 6-7
   const stepFraction = 1 / timelineSteps;
-  
+
   const start = (2 * index + 1) * stepFraction;
   const mid = start + stepFraction * 0.5;
   const end = start + stepFraction;
-  
+
   // 6 keyframes for perfect snappy visibility and shooting effect
   const times = [0, start, start + 0.001, mid, end, 1];
   const pathLength = [0, 0, 0, 0.4, 0, 0];
@@ -83,39 +83,27 @@ export const AnimatedBeam = ({
       xmlns="http://www.w3.org/2000/svg"
       className={`pointer-events-none absolute left-0 top-0 stroke-2 z-0 ${className}`}
     >
-      <path
-        d={pathD}
-        stroke={pathColor}
-        strokeWidth="2"
-        strokeOpacity={pathOpacity}
-      />
+      <path d={pathD} stroke={pathColor} strokeWidth="2" strokeOpacity={pathOpacity} />
       <motion.path
         d={pathD}
         stroke={`url(#${id})`}
         strokeWidth="4"
         strokeLinecap="round"
         initial={{ pathLength: 0, pathOffset: 0, opacity: 0 }}
-        animate={{ 
-          pathLength: pathLength, 
+        animate={{
+          pathLength: pathLength,
           pathOffset: pathOffset,
-          opacity: opacity 
+          opacity: opacity,
         }}
         transition={{
           duration: timelineSteps, // 1 sec per step
           times: times,
-          ease: "easeInOut",
+          ease: 'easeInOut',
           repeat: Infinity,
         }}
       />
       <defs>
-        <linearGradient
-          id={id}
-          gradientUnits="userSpaceOnUse"
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="0%"
-        >
+        <linearGradient id={id} gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor={gradientStartColor} stopOpacity="1" />
           <stop offset="100%" stopColor={gradientStopColor} stopOpacity="1" />
         </linearGradient>

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FOOTER_LINKS, COMPANY_INFO } from "@/lib/constants";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
-import { useLanguage } from "@/components/LanguageProvider";
-import { localeFromPath, localizedPath, stripLocale } from "@/lib/i18n/paths";
-import { cn } from "@/lib/utils";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { FOOTER_LINKS, COMPANY_INFO } from '@/lib/constants';
+import { InteractiveGridPattern } from '@/components/magicui/interactive-grid-pattern';
+import { useLanguage } from '@/components/LanguageProvider';
+import { localeFromPath, localizedPath, stripLocale } from '@/lib/i18n/paths';
+import { cn } from '@/lib/utils';
 
 const LANGUAGES = [
   { code: 'en', label: 'English' },
@@ -21,7 +21,7 @@ const LANGUAGES = [
 export default function Footer() {
   const pathname = usePathname();
   const { t, locale, setLocale } = useLanguage();
-  const [time, setTime] = useState("--:--:-- CET");
+  const [time, setTime] = useState('--:--:-- CET');
 
   // Locale of the current URL, or null when unprefixed (English)
   const currentPrefix = localeFromPath(pathname);
@@ -31,23 +31,23 @@ export default function Footer() {
 
   const getSwitchPath = (targetLang) => localizedPath(canonicalPath, targetLang);
 
-  const localizedHours = t.impressum_page?.sec_2_hours 
-    ? t.impressum_page.sec_2_hours.replace(/^[^:]+:\s*/, '') 
+  const localizedHours = t.impressum_page?.sec_2_hours
+    ? t.impressum_page.sec_2_hours.replace(/^[^:]+:\s*/, '')
     : COMPANY_INFO.hours;
 
   // Live clock for the German office. Derived entirely on the client: the
   // server's clock is no more authoritative than the visitor's, so the extra
   // /api/time round-trip bought nothing.
   useEffect(() => {
-    const formatter = new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/Berlin",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/Berlin',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
       hour12: false,
     });
 
-    const tick = () => setTime(formatter.format(new Date()) + " CET");
+    const tick = () => setTime(formatter.format(new Date()) + ' CET');
 
     tick();
     const interval = setInterval(tick, 1000);
@@ -60,8 +60,8 @@ export default function Footer() {
       <div className="absolute inset-0 overflow-hidden opacity-80 -z-0">
         <InteractiveGridPattern
           className={cn(
-            "[mask-image:radial-gradient(1200px_circle_at_top,white,transparent)]",
-            "inset-x-0 inset-y-[-10%] h-[150%] skew-y-12"
+            '[mask-image:radial-gradient(1200px_circle_at_top,white,transparent)]',
+            'inset-x-0 inset-y-[-10%] h-[150%] skew-y-12'
           )}
           squares={[40, 40]}
         />
@@ -70,7 +70,6 @@ export default function Footer() {
       {/* Content Layout */}
       <div className="max-w-[72rem] w-full mx-auto relative z-10 pt-[4rem] pointer-events-none">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pointer-events-none">
-
           {/* Company Info */}
           <div className="p-[2rem] md:p-[2.5rem] flex flex-col justify-between gap-[2rem] pointer-events-none">
             <div className="flex flex-col gap-4 pointer-events-auto w-fit">
@@ -90,7 +89,7 @@ export default function Footer() {
           {/* Navigation / Practice Links */}
           <div className="p-[2rem] md:p-[2.5rem] flex flex-col gap-[1rem] pointer-events-none">
             <span className="text-xs font-mono tracking-widest uppercase text-on-surface/90 font-bold pointer-events-auto w-fit">
-              {t.services?.eyebrow || "Navigation"}
+              {t.services?.eyebrow || 'Navigation'}
             </span>
             <div className="flex flex-col gap-2.5 pointer-events-auto w-fit">
               {(FOOTER_LINKS.company || []).map((link) => (
@@ -117,9 +116,7 @@ export default function Footer() {
               >
                 {COMPANY_INFO.email}
               </a>
-              <span className="text-sm text-on-surface/90 font-medium">
-                {localizedHours}
-              </span>
+              <span className="text-sm text-on-surface/90 font-medium">{localizedHours}</span>
             </div>
 
             {/* Live Berlin Time */}
@@ -127,7 +124,9 @@ export default function Footer() {
               title="Current time in Herzogenaurach, Germany (CET/CEST)"
               className="font-mono text-xs text-on-surface font-medium bg-surface p-2 px-3 rounded w-fit border border-outline-variant/60 shadow-inner flex items-center gap-2 pointer-events-auto"
             >
-              <span className="material-symbols-outlined text-[14px] text-on-surface/90">schedule</span>
+              <span className="material-symbols-outlined text-[14px] text-on-surface/90">
+                schedule
+              </span>
               <span suppressHydrationWarning>{time}</span>
             </div>
           </div>
@@ -159,14 +158,18 @@ export default function Footer() {
 
           {/* Minimal Text Language Links with Active Route Preservation */}
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-on-surface/70 pointer-events-auto">
-            <span className="text-on-surface/40 uppercase tracking-widest">{t.footer.languages}:</span>
+            <span className="text-on-surface/40 uppercase tracking-widest">
+              {t.footer.languages}:
+            </span>
             {LANGUAGES.map((lang, idx) => (
               <span key={lang.code} className="flex items-center gap-3">
                 <Link
                   href={getSwitchPath(lang.code)}
                   onClick={() => setLocale(lang.code)}
                   className={`hover:text-primary transition-colors ${
-                    (currentPrefix || locale || 'en') === lang.code ? "text-primary font-bold underline" : "text-on-surface/80"
+                    (currentPrefix || locale || 'en') === lang.code
+                      ? 'text-primary font-bold underline'
+                      : 'text-on-surface/80'
                   }`}
                 >
                   {lang.label}

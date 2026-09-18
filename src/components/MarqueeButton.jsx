@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 export default function MarqueeButton({
   children,
   href,
-  className = "",
+  className = '',
   onClick,
-  type = "button",
+  type = 'button',
 }) {
   const content = (
     <>
@@ -25,14 +25,16 @@ export default function MarqueeButton({
   );
 
   const baseClasses =
-    "marquee-btn relative overflow-hidden rounded-xl font-bold uppercase tracking-wider text-center cursor-pointer transition-colors flex items-center justify-center text-xs sm:text-sm " +
+    'marquee-btn relative overflow-hidden rounded-xl font-bold uppercase tracking-wider text-center cursor-pointer transition-colors flex items-center justify-center text-xs sm:text-sm ' +
     className;
 
   if (href) {
     return (
       <Link href={href} className={baseClasses} onClick={onClick}>
         {/* Invisible placeholder to maintain width/height based on text */}
-        <span className="invisible px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold">{children}</span>
+        <span className="invisible px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold">
+          {children}
+        </span>
         {content}
       </Link>
     );
@@ -40,7 +42,9 @@ export default function MarqueeButton({
 
   return (
     <button type={type} className={baseClasses} onClick={onClick}>
-      <span className="invisible px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold">{children}</span>
+      <span className="invisible px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold">
+        {children}
+      </span>
       {content}
     </button>
   );

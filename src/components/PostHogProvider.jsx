@@ -18,11 +18,11 @@ export function PostHogProvider({ children }) {
       api_host: host,
 
       // GDPR compliance settings (important for Germany)
-      persistence: 'memory',           // No persistent cookie by default
-      respect_dnt: true,               // Honour browser Do Not Track header
-      capture_pageview: false,         // We capture manually for SPA routing
+      persistence: 'memory', // No persistent cookie by default
+      respect_dnt: true, // Honour browser Do Not Track header
+      capture_pageview: false, // We capture manually for SPA routing
       capture_pageleave: true,
-      autocapture: false,              // Only track what we explicitly call
+      autocapture: false, // Only track what we explicitly call
 
       loaded: (ph) => {
         // In development: just log, don't actually send data

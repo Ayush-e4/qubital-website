@@ -40,7 +40,9 @@ export default function MissionContent() {
           <div className="relative rounded-2xl bg-gradient-to-br from-[#16202e] to-[#0f172a] text-white p-8 sm:p-12 border border-slate-700/60 shadow-xl overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 max-w-3xl">
-              <span className="material-symbols-outlined text-sky-400 text-4xl mb-4 block">format_quote</span>
+              <span className="material-symbols-outlined text-sky-400 text-4xl mb-4 block">
+                format_quote
+              </span>
               <p className="text-xl sm:text-2xl font-light text-slate-100 leading-relaxed mb-6">
                 &ldquo;{m.quote_text}&rdquo;
               </p>
@@ -76,16 +78,18 @@ export default function MissionContent() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-on-surface mb-3">
-                    {pillar.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-on-surface mb-3">{pillar.title}</h3>
                   <p className="text-secondary text-sm sm:text-base leading-relaxed">
                     {pillar.desc}
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs font-mono text-secondary/70 uppercase">
-                  <span>{m.tenet_label || 'Tenet'} 0{pillar.id}</span>
-                  <span className="text-primary font-bold">{m.guaranteed_standard || 'Guaranteed Standard'}</span>
+                  <span>
+                    {m.tenet_label || 'Tenet'} 0{pillar.id}
+                  </span>
+                  <span className="text-primary font-bold">
+                    {m.guaranteed_standard || 'Guaranteed Standard'}
+                  </span>
                 </div>
               </div>
             </StaggerItem>
@@ -136,10 +140,11 @@ export default function MissionContent() {
             {m.cta_title || 'Partner with architects who prioritize engineering discipline.'}
           </h2>
           <p className="text-inverse-on-surface/75 text-sm sm:text-base md:text-lg mb-8 max-w-2xl leading-relaxed relative z-10">
-            {m.cta_desc || 'Schedule an introductory review to evaluate your enterprise technical roadmap.'}
+            {m.cta_desc ||
+              'Schedule an introductory review to evaluate your enterprise technical roadmap.'}
           </p>
           <Link
-            href={localePath("/contact")}
+            href={localePath('/contact')}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-on-primary font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm sm:text-base relative z-10"
           >
             <span>{m.cta_btn || 'Schedule Architectural Review'}</span>

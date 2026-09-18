@@ -32,9 +32,7 @@ export default function sitemap() {
       // Slightly lower priority for translated versions vs the English page
       priority: locale === 'en' ? priority : +(priority * 0.9).toFixed(1),
       alternates: {
-        languages: Object.fromEntries(
-          LOCALES.map((l) => [l, absoluteUrl(path, l)])
-        ),
+        languages: Object.fromEntries(LOCALES.map((l) => [l, absoluteUrl(path, l)])),
       },
     }))
   );
