@@ -38,6 +38,11 @@ jobs:
       - name: Check formatting
         run: npm run format:check
 
+      # Type-checks the locale dictionaries against the English one, so a
+      # missing translation is a build error rather than a blank string.
+      - name: Type check
+        run: npm run typecheck
+
       - name: Build
         run: npm run build
 
