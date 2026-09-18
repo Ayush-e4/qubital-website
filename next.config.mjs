@@ -38,15 +38,25 @@ const securityHeaders = [
 // reads `headers()`, which forces a fresh server render per request even though
 // the result never changes for a given URL. Letting the edge cache them avoids
 // that.
-//
-// `/` is excluded on purpose: it redirects on Accept-Language and NEXT_LOCALE,
-// so it is the one route that genuinely varies per request.
 const edgeCacheHeaders = [
   {
     key: 'Cache-Control',
     value: 'public, s-maxage=3600, stale-while-revalidate=86400',
   },
 ];
+
+// `/` is the one route that genuinely varies per request: it redirects on
+// Accept-Language and NEXT_LOCALE. A shared cache must therefore never store
+// it, which is what `private` guarantees.
+//
+// `no-store` — what Next applies by default to a page that reads `headers()` —
+// would also block the back/forward cache, so returning to the homepage via
+// Back forces a full reload. `private, no-cache` keeps it out of the CDN while
+// leaving it bfcache-eligible.
+//
+// The redirect itself is a different response and stays `no-store`; that is set
+// on the response in src/proxy.js, where the redirect is created.
+const rootCacheHeaders = [{ key: 'Cache-Control', value: 'private, no-cache' }];
 
 const nextConfig = {
   poweredByHeader: false,
@@ -70,9 +80,23 @@ const nextConfig = {
   async headers() {
     return [
       { source: '/(.*)', headers: securityHeaders },
-      // `/:path+` needs at least one segment, so it matches every page but not
-      // the root.
-      { source: '/:path+', headers: edgeCacheHeaders },
+      // `.+` needs at least one character after the leading slash, so this
+      // matches every page but not the root. The lookahead must sit inside an
+      // outer group — path-to-regexp rejects a bare `(?…)` group, which is why
+      // this mirrors the matcher in src/proxy.js rather than a plain regex.
+      //
+      // `_next` is excluded because this rule used to be `/:path+`, which also
+      // matched `/_next/static/…`. Those files are content-hashed and belong in
+      // the browser cache for a year; overriding them with `s-maxage=3600` threw
+      // that away and forced a re-download on every repeat visit (Lighthouse:
+      // "Use efficient cache lifetimes, 367 KiB"). Excluding them restores
+      // Next's own `max-age=31536000, immutable`.
+      //
+      // Do not "fix" this by adding a second rule for `/_next/static`: Next
+      // applies every matching entry, so the response would carry two
+      // conflicting Cache-Control headers.
+      { source: '/((?!_next/).+)', headers: edgeCacheHeaders },
+      { source: '/', headers: rootCacheHeaders },
     ];
   },
 };
