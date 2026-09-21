@@ -146,6 +146,10 @@ const dictionary = {
     submitting: 'Verzenden…',
     val_submit_failed:
       'Uw bericht kon niet worden verzonden. Probeer het opnieuw of mail direct naar contact@qubital.eu.',
+    val_too_long: 'Dit veld is te lang',
+    consent_label: 'Ik heb het {link} gelezen en accepteer deze',
+    consent_link_text: 'privacybeleid',
+    val_consent_required: 'Accepteer het privacybeleid om door te gaan',
   },
   about_page: {
     hero_title_1: 'Strategisch IT-Advies &',

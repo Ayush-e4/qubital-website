@@ -5,7 +5,9 @@
  *
  * Order matters and is deliberate:
  *   1. rate limit      — cheapest defence, and it protects everything below it
- *   2. parse + validate — never trust the client; the browser checks are UX, not security
+ *   2. parse + validate — the same rules the browser ran, re-run here because the
+ *                         browser checks are UX, not security (see
+ *                         src/lib/validation/contact.js)
  *   3. honeypot         — silently accept and discard, so a bot learns nothing
  *   4. config check     — a missing key must be a loud failure, not a silent drop
  *   5. send             — notification first (that is the lead), auto-reply second
@@ -17,21 +19,11 @@ import { Resend } from 'resend';
 import { renderAutoReply, renderNotification } from '@/lib/email/contact';
 import { clientIp, rateLimit } from '@/lib/rate-limit';
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/paths';
+import { validateContactSubmission } from '@/lib/validation/contact';
 
 export const runtime = 'nodejs';
 
 const MAX_BODY_BYTES = 20_000;
-
-const LIMITS = {
-  fullName: 100,
-  email: 254,
-  organization: 200,
-  domain: 200,
-  message: 5000,
-};
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PRIORITIES = new Set(['Standard', 'Urgent']);
 
 const DEFAULT_TO = 'contact@qubital.eu';
 const DEFAULT_CC = 'arun1812@gmail.com';
@@ -53,40 +45,23 @@ function recipients(value, fallback) {
 /**
  * Validate and normalise the payload.
  *
+ * The rules live in src/lib/validation/contact.js and are shared with the form,
+ * so the browser and the server cannot disagree about what is acceptable.
+ *
  * Returns `null` when anything is wrong — callers must not learn *which* field
  * failed, and a partial object cannot leak submitted values.
  *
  * @param {any} payload
  */
 function parseSubmission(payload) {
-  if (!payload || typeof payload !== 'object') return null;
-
-  const text = (name) => (typeof payload[name] === 'string' ? payload[name].trim() : '');
-
-  const fullName = text('fullName');
-  const email = text('email');
-  const organization = text('organization');
-  const domain = text('domain');
-  const message = text('message');
-
-  if (fullName.length < 2 || fullName.length > LIMITS.fullName) return null;
-  if (email.length > LIMITS.email || !EMAIL_PATTERN.test(email)) return null;
-  if (organization.length > LIMITS.organization) return null;
-  if (!domain || domain.length > LIMITS.domain) return null;
-  if (message.length < 10 || message.length > LIMITS.message) return null;
-
-  const priority = PRIORITIES.has(payload.priority) ? payload.priority : 'Standard';
-  const locale = LOCALES.includes(payload.locale) ? payload.locale : DEFAULT_LOCALE;
+  const { valid, values } = validateContactSubmission(payload);
+  if (!valid) return null;
 
   return {
-    fullName,
-    email,
-    organization,
-    domain,
-    message,
-    nda: payload.nda === true,
-    priority,
-    locale,
+    ...values,
+    // Not a validation rule — the locale only picks which strings the mail is
+    // drawn from, and an unknown value simply falls back to English.
+    locale: LOCALES.includes(payload?.locale) ? payload.locale : DEFAULT_LOCALE,
   };
 }
 
