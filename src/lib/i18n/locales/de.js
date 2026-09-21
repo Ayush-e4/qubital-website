@@ -146,6 +146,10 @@ const dictionary = {
     val_email_invalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
     val_domain_required: 'Bitte wählen Sie einen Bereich aus',
     val_message_required: 'Projektbeschreibung ist erforderlich',
+    val_message_min: 'Die Projektbeschreibung muss mindestens 10 Zeichen lang sein',
+    submitting: 'Wird gesendet…',
+    val_submit_failed:
+      'Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an contact@qubital.eu.',
   },
   about_page: {
     hero_title_1: 'Strategische IT-Beratung &',
@@ -452,13 +456,13 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Bayern, Deutschland.',
     sec_2_title: 'Erfasste Daten',
     sec_2_desc:
-      'Wir erfassen nur Daten, die für die Erbringung unserer Beratungsdienstleistungen unbedingt erforderlich sind.',
+      'Wir erfassen nur Daten, die für die Erbringung unserer Beratungs- und Engineering-Leistungen unbedingt erforderlich sind. Dazu gehören Anfragen über das Kontaktformular, Korrespondenz und Vertragsdaten. Die Daten aus dem Kontaktformular – Name, geschäftliche E-Mail-Adresse, Unternehmen, Themenbereich und Nachricht – verarbeiten wir zur Beantwortung Ihrer Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO). Der E-Mail-Versand erfolgt über Resend, die Produktanalyse über PostHog; beide handeln als unsere Auftragsverarbeiter nach Art. 28 DSGVO, wobei PostHog in der EU gehostet wird.',
     sec_3_title: 'Ihre Rechte',
     sec_3_desc:
       'Gemäß DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung und Übertragbarkeit Ihrer Daten. Kontaktieren Sie uns unter',
     sec_4_title: 'Cookies',
     sec_4_desc:
-      'Diese Website verwendet keine Tracking-Cookies. Es werden nur technisch notwendige Sitzungs-Cookies eingesetzt.',
+      'Diese Website verwendet keine Tracking-Cookies. Es werden nur technisch notwendige Sitzungs-Cookies eingesetzt. Für die Produktanalyse nutzen wir PostHog, so konfiguriert, dass keine Cookies in Ihrem Browser gespeichert werden und das Do-Not-Track-Signal beachtet wird; die daraus gewonnenen Statistiken sind pseudonym und werden nicht zur Identifizierung Ihrer Person verwendet.',
   },
   mission_page: {
     tag: 'UNSERE MISSION & VISION',

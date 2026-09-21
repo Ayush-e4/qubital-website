@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePostHog } from 'posthog-js/react';
 import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 
 export default function ContactContent() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const c = t.contact_page;
+  const posthog = usePostHog();
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -17,9 +19,13 @@ export default function ContactContent() {
     message: '',
     nda: false,
     priority: 'Standard',
+    // Honeypot. Never shown to a human — see the input at the end of the form.
+    website: '',
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -30,9 +36,10 @@ export default function ContactContent() {
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
+    if (submitError) setSubmitError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
@@ -59,7 +66,7 @@ export default function ContactContent() {
     if (!messageTrimmed) {
       newErrors.message = c.val_message_required || 'Message is required';
     } else if (messageTrimmed.length < 10) {
-      newErrors.message = c.val_message_required || 'Message must be at least 10 characters';
+      newErrors.message = c.val_message_min || 'Message must be at least 10 characters';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -67,7 +74,45 @@ export default function ContactContent() {
       return;
     }
 
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, locale }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Contact endpoint returned ${response.status}`);
+      }
+
+      // After the submission is known to have succeeded, and carrying no PII —
+      // the brief and the sender's address stay out of PostHog deliberately.
+      try {
+        if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+          posthog.capture('contact_form_submitted', {
+            domain: formData.domain,
+            priority: formData.priority,
+            nda: formData.nda,
+            locale,
+          });
+        }
+      } catch {
+        // Analytics must never turn a delivered submission into a visible error.
+      }
+
+      setIsSubmitted(true);
+    } catch {
+      // Keep what was typed on screen — a failed send must not also lose the brief.
+      setSubmitError(
+        c.val_submit_failed ||
+          'We could not send your message. Please try again or email us directly.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -277,11 +322,40 @@ export default function ContactContent() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold px-8 py-3.5 rounded-xl hover:bg-primary/90 transition-colors shadow-md text-sm mt-4"
+                      disabled={isSubmitting}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold px-8 py-3.5 rounded-xl hover:bg-primary/90 transition-colors shadow-md text-sm mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      <span>{c.submit}</span>
+                      <span>{isSubmitting ? c.submitting || 'Sending…' : c.submit}</span>
                       <span className="material-symbols-outlined text-[18px]">send</span>
                     </button>
+
+                    {submitError && (
+                      <p role="alert" className="text-error text-xs sm:text-sm mt-3">
+                        {submitError}
+                      </p>
+                    )}
+
+                    {/*
+                      Honeypot: off-screen rather than display:none, because bots
+                      commonly skip fields that are hidden outright. A human never
+                      reaches it (aria-hidden + tabIndex -1), so any value here
+                      means an automated submitter.
+                    */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute left-[-9999px] top-0 h-0 w-0 overflow-hidden"
+                    >
+                      <label htmlFor="website">Website</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
                   </form>
                 </div>
               )}

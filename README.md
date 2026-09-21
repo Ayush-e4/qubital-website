@@ -81,18 +81,62 @@ locale, that every URL returns 200, and that canonical, hreflang, titles and
 
 ## Environment variables
 
-All optional — analytics is silently disabled when unset.
+All optional — analytics, and the contact form's email delivery, degrade
+gracefully when unset.
 
-| Variable                   | Purpose                       |
-| -------------------------- | ----------------------------- |
-| `NEXT_PUBLIC_POSTHOG_KEY`  | PostHog project key           |
-| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog host (defaults to EU) |
+| Variable                       | Purpose                                                       |
+| ------------------------------ | ------------------------------------------------------------- |
+| `NEXT_PUBLIC_POSTHOG_KEY`      | PostHog project key                                           |
+| `NEXT_PUBLIC_POSTHOG_HOST`     | PostHog host (defaults to EU)                                 |
+| `RESEND_API_KEY`               | Resend API key — contact form delivery                        |
+| `CONTACT_TO_EMAIL`             | Inquiry recipient (default `contact@qubital.eu`)              |
+| `CONTACT_CC_EMAIL`             | Copied on every inquiry (default `arun1812@gmail.com`)        |
+| `CONTACT_FROM_EMAIL`           | Verified sender; unset falls back to Resend's sandbox address |
+| `CONTACT_RATE_LIMIT_MAX`       | Submissions per IP per window (default `5`)                   |
+| `CONTACT_RATE_LIMIT_WINDOW_MS` | Rate-limit window in ms (default `600000`)                    |
+
+The `NEXT_PUBLIC_*` pair is inlined at **build** time, so one build cannot serve
+two environments. The `RESEND_*`/`CONTACT_*` values are read at **request** time
+and never enter the browser bundle — but a change needs the process restarted (a
+redeploy on Vercel, a container restart elsewhere).
+
+## Contact form
+
+`src/app/contact/ContactContent.jsx` posts to `POST /api/contact`.
+
+Without `RESEND_API_KEY` the endpoint returns `500` and the form shows its error
+state. That is deliberate: the handler used to flip a local `isSubmitted` flag
+and claim the message had been received, which was false.
+
+Two emails are sent per inquiry — a notification to `CONTACT_TO_EMAIL` (with
+`CONTACT_CC_EMAIL` copied and `Reply-To` set to the sender, so staff can answer
+directly) and a confirmation to the person who submitted it. The notification
+failing fails the request; the confirmation failing does not, since the lead has
+already been captured by then.
+
+Spam handling is a hidden honeypot field plus an in-memory per-IP rate limit.
+
+Nothing here is tied to a hosting platform: the endpoint is plain Next.js on the
+Node runtime calling Resend over outbound HTTPS — no platform APIs, no cron, no
+queue, no external store. It runs unchanged on Vercel, a container or any Node
+host. Per-IP limiting reads `x-forwarded-for` (first entry) or `x-real-ip`, which
+proxies set and Next's own Node server derives from the socket — verified against
+a direct `next start` with no proxy in front. If neither header is present the
+request is **not** limited, rather than being collapsed into one shared bucket:
+sharing would let the first few submissions lock every visitor out of the form.
+
+**`qubital.eu` must be verified in Resend before `CONTACT_FROM_EMAIL` can be set
+to an address on it** — until then, sending uses Resend's sandbox address. The
+DNS records Resend issues go on the `send.qubital.eu` subdomain; the root MX
+records must be left alone, or `contact@qubital.eu` stops receiving mail.
 
 ## Testing
 
 - **`npm test`** — the suite that gates CI. Plain HTTP against a production
   server: the 60-entry sitemap, self-referencing canonicals, hreflang clusters,
-  titles, `<html lang>` and the locale-routing rules. No browser, ~4s.
+  titles, `<html lang>` and the locale-routing rules. It also drives the contact
+  endpoint (validation, honeypot, per-IP rate limiting) with `RESEND_API_KEY`
+  pinned empty, so the suite can never send real mail. No browser, ~3s.
 - **`npm run test:browser`** — language switcher, locale rendering and the mobile
   drawer. Run locally on demand; it is deliberately kept out of CI because the
   only real cost is a browser download and these failures are visible by eye.
@@ -105,7 +149,8 @@ detection and the `/` redirect run in the proxy.
 Responses are edge-cached: every route except `/` is marked
 `Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400`, because
 each locale has its own URL and the rendered output is deterministic per URL.
-`/` stays uncached since it varies on `Accept-Language`.
+`/` stays uncached since it varies on `Accept-Language`, and `/api/*` is excluded
+because the contact endpoint must never be stored by a shared cache.
 
 Security headers (`HSTS`, `CSP`, `X-Content-Type-Options`, `Referrer-Policy`,
 `X-Frame-Options`, `Permissions-Policy`) are set in `next.config.mjs`.
@@ -155,9 +200,12 @@ Node `>=22.13.0` is required; `.nvmrc` is the version CI uses.
 ```
 src/
   app/            routes, layout, sitemap, robots, not-found
+    api/contact/  contact form endpoint (POST)
   components/     Header, Footer, providers, UI primitives
   lib/
+    email/        contact email templates
     i18n/         locale routing helpers + translation dictionaries
+    rate-limit.js per-IP limiter for the contact endpoint
     seo.js        per-page metadata (canonical, hreflang, Open Graph)
   proxy.js        locale routing policy (prefixed paths, `/` auto-detect)
 tests/

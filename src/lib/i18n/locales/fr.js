@@ -146,6 +146,10 @@ const dictionary = {
     val_email_invalid: 'Veuillez entrer une adresse e-mail valide',
     val_domain_required: 'Veuillez sélectionner un domaine',
     val_message_required: 'La description du projet est requise',
+    val_message_min: 'La description du projet doit comporter au moins 10 caractères',
+    submitting: 'Envoi…',
+    val_submit_failed:
+      "Votre message n'a pas pu être envoyé. Veuillez réessayer ou écrire directement à contact@qubital.eu.",
   },
   about_page: {
     hero_title_1: 'Conseil IT Stratégique &',
@@ -433,13 +437,13 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Bavière, Allemagne.',
     sec_2_title: 'Données Collectées',
     sec_2_desc:
-      'Nous collectons uniquement les données strictement nécessaires au fonctionnement de nos services de conseil.',
+      'Nous collectons uniquement les données strictement nécessaires à la fourniture de nos services de conseil et d’ingénierie. Cela inclut les demandes envoyées via le formulaire de contact, la correspondance et les données contractuelles. Les données du formulaire — nom, adresse e-mail professionnelle, organisation, domaine d’intervention et message — sont traitées pour répondre à votre demande (art. 6, §1, points b et f du RGPD). L’envoi des e-mails est assuré par Resend et l’analyse produit par PostHog, tous deux agissant comme nos sous-traitants au sens de l’art. 28 du RGPD, PostHog étant hébergé dans l’UE.',
     sec_3_title: 'Vos Droits',
     sec_3_desc:
       'En vertu du RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données.',
     sec_4_title: 'Cookies',
     sec_4_desc:
-      'Ce site n’utilise aucun cookie de traçage publicitaire. Seuls les cookies de session essentiels sont utilisés.',
+      'Ce site n’utilise aucun cookie de traçage. Seuls les cookies de session essentiels au fonctionnement du site sont utilisés. Pour l’analyse produit, nous utilisons PostHog, configuré pour ne stocker aucun cookie dans votre navigateur et pour respecter le signal Do Not Track ; les statistiques obtenues sont pseudonymisées et ne servent pas à vous identifier.',
   },
   mission_page: {
     tag: 'NOTRE MISSION & VISION',
