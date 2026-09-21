@@ -20,7 +20,11 @@ export function PostHogProvider({ children }) {
       // GDPR compliance settings (important for Germany)
       persistence: 'memory', // No persistent cookie by default
       respect_dnt: true, // Honour browser Do Not Track header
-      capture_pageview: false, // We capture manually for SPA routing
+      // 'history_change' is PostHog's App Router setting: it captures a pageview
+      // on first load and on every client-side navigation. `false` used to sit
+      // here with a comment about capturing manually — that manual call was never
+      // written, so with autocapture off as well this sent nothing at all.
+      capture_pageview: 'history_change',
       capture_pageleave: true,
       autocapture: false, // Only track what we explicitly call
 

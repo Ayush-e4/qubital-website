@@ -142,6 +142,10 @@ const dictionary = {
     val_email_invalid: 'Voer een geldig e-mailadres in',
     val_domain_required: 'Selecteer een domein',
     val_message_required: 'Projectomschrijving is verplicht',
+    val_message_min: 'De projectomschrijving moet minimaal 10 tekens bevatten',
+    submitting: 'Verzenden…',
+    val_submit_failed:
+      'Uw bericht kon niet worden verzonden. Probeer het opnieuw of mail direct naar contact@qubital.eu.',
   },
   about_page: {
     hero_title_1: 'Strategisch IT-Advies &',
@@ -440,11 +444,12 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Beieren, Duitsland.',
     sec_2_title: 'Gegevens die wij verzamelen',
     sec_2_desc:
-      'Wij verzamelen alleen gegevens die strikt noodzakelijk zijn voor onze adviesdiensten.',
+      'Wij verzamelen alleen gegevens die strikt noodzakelijk zijn voor onze advies- en engineeringdiensten. Dit omvat aanvragen via het contactformulier, correspondentie en contractgegevens. De gegevens uit het contactformulier — naam, zakelijk e-mailadres, organisatie, aandachtsgebied en bericht — verwerken wij om uw aanvraag te beantwoorden (art. 6 lid 1 sub b en f AVG). De e-mailbezorging verloopt via Resend en de productanalyse via PostHog; beide handelen als onze verwerkers conform art. 28 AVG, waarbij PostHog in de EU wordt gehost.',
     sec_3_title: 'Uw Rechten',
     sec_3_desc: 'Onder de AVG heeft u recht op inzage, correctie en verwijdering van uw gegevens.',
     sec_4_title: 'Cookies',
-    sec_4_desc: 'Deze website maakt geen gebruik van tracking cookies voor reclame.',
+    sec_4_desc:
+      'Deze website maakt geen gebruik van trackingcookies. Wij gebruiken uitsluitend essentiële sessiecookies die nodig zijn voor de werking van de site. Voor productanalyse gebruiken wij PostHog, geconfigureerd om geen cookies in uw browser op te slaan en om het Do Not Track-signaal te respecteren; de resulterende statistieken zijn pseudoniem en worden niet gebruikt om u te identificeren.',
   },
   mission_page: {
     tag: 'ONZE MISSIE & VISIE',

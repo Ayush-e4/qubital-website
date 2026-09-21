@@ -143,6 +143,10 @@ const dictionary = {
     val_email_invalid: 'Inserisci un indirizzo e-mail valido',
     val_domain_required: 'Seleziona un settore',
     val_message_required: 'La descrizione del progetto è obbligatoria',
+    val_message_min: 'La descrizione del progetto deve contenere almeno 10 caratteri',
+    submitting: 'Invio in corso…',
+    val_submit_failed:
+      'Non è stato possibile inviare il messaggio. Riprova oppure scrivi direttamente a contact@qubital.eu.',
   },
   about_page: {
     hero_title_1: 'Consulenza IT Strategica &',
@@ -431,12 +435,13 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Baviera, Germania.',
     sec_2_title: 'Dati Raccolti',
     sec_2_desc:
-      'Raccogliamo solo i dati strettamente necessari per la fornitura dei nostri servizi di consulenza.',
+      'Raccogliamo solo i dati strettamente necessari per la fornitura dei nostri servizi di consulenza e ingegneria. Ciò include le richieste inviate tramite il modulo di contatto, la corrispondenza e i dati contrattuali. I dati del modulo di contatto — nome, e-mail aziendale, organizzazione, ambito di intervento e messaggio — sono trattati per rispondere alla sua richiesta (art. 6, par. 1, lett. b e f del GDPR). L’invio delle e-mail è affidato a Resend e l’analisi di prodotto a PostHog, entrambi in qualità di responsabili del trattamento ai sensi dell’art. 28 del GDPR, con PostHog ospitato nell’UE.',
     sec_3_title: 'I Tuoi Diritti',
     sec_3_desc:
       'Ai sensi del GDPR, hai il diritto di accedere, rettificare e cancellare i tuoi dati.',
     sec_4_title: 'Cookie',
-    sec_4_desc: 'Questo sito non utilizza cookie di tracciamento pubblicitario.',
+    sec_4_desc:
+      'Questo sito non utilizza cookie di tracciamento. Utilizziamo solo cookie di sessione essenziali al funzionamento del sito. Per l’analisi di prodotto utilizziamo PostHog, configurato per non memorizzare cookie nel browser e per rispettare il segnale Do Not Track; le statistiche risultanti sono pseudonime e non vengono usate per identificarla.',
   },
   mission_page: {
     tag: 'LA NOSTRA MISSIONE E VISIONE',

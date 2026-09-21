@@ -144,6 +144,10 @@ const dictionary = {
     val_email_invalid: 'Please enter a valid email address',
     val_domain_required: 'Please select a domain',
     val_message_required: 'Message is required',
+    val_message_min: 'Message must be at least 10 characters',
+    submitting: 'Sending…',
+    val_submit_failed:
+      'We could not send your message. Please try again, or email contact@qubital.eu directly.',
   },
   about_page: {
     hero_title_1: 'Strategic IT Advisory &',
@@ -440,13 +444,13 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Bavaria, Germany.',
     sec_2_title: 'Data We Collect',
     sec_2_desc:
-      'We collect only data that is strictly necessary for providing our advisory and engineering services. This includes contact form submissions, correspondence, and contractual data.',
+      'We collect only data that is strictly necessary for providing our advisory and engineering services. This includes contact form submissions, correspondence, and contractual data. Contact form data — your name, corporate email address, organization, engagement domain and message — is processed to answer your inquiry (Art. 6(1)(b) and (f) GDPR). Email delivery is handled by Resend and product analytics by PostHog, both acting as our processors under Art. 28 GDPR, with PostHog hosted in the EU.',
     sec_3_title: 'Your Rights',
     sec_3_desc:
       'Under GDPR, you have the right to access, correct, delete, and port your personal data. To exercise these rights, contact us at',
     sec_4_title: 'Cookies',
     sec_4_desc:
-      'This website does not use tracking cookies. We use only essential session cookies required for site functionality.',
+      'This website does not use tracking cookies. We use only essential session cookies required for site functionality. For product analytics we use PostHog, configured to store no cookies in your browser and to respect the Do Not Track signal; the resulting statistics are pseudonymous and are not used to identify you.',
   },
   mission_page: {
     tag: 'OUR MISSION & VISION',

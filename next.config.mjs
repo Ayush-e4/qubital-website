@@ -92,10 +92,14 @@ const nextConfig = {
       // "Use efficient cache lifetimes, 367 KiB"). Excluding them restores
       // Next's own `max-age=31536000, immutable`.
       //
+      // `api` is excluded for the same reason in the other direction: `/api/*`
+      // is the contact endpoint. A shared cache must never store a form POST,
+      // and a 405 from `GET /api/contact` would otherwise be cached for an hour.
+      //
       // Do not "fix" this by adding a second rule for `/_next/static`: Next
       // applies every matching entry, so the response would carry two
       // conflicting Cache-Control headers.
-      { source: '/((?!_next/).+)', headers: edgeCacheHeaders },
+      { source: '/((?!_next/|api/).+)', headers: edgeCacheHeaders },
       { source: '/', headers: rootCacheHeaders },
     ];
   },
