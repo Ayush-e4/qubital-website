@@ -147,6 +147,10 @@ const dictionary = {
     submitting: 'Invio in corso…',
     val_submit_failed:
       'Non è stato possibile inviare il messaggio. Riprova oppure scrivi direttamente a contact@qubital.eu.',
+    val_too_long: 'Questo campo è troppo lungo',
+    consent_label: 'Ho letto e accetto l’{link}',
+    consent_link_text: 'informativa sulla privacy',
+    val_consent_required: 'Accetta l’informativa sulla privacy per continuare',
   },
   about_page: {
     hero_title_1: 'Consulenza IT Strategica &',

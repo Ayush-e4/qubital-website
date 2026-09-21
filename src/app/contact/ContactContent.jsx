@@ -5,11 +5,14 @@ import Link from 'next/link';
 import { usePostHog } from 'posthog-js/react';
 import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
+import { useLocalePath } from '@/lib/i18n/useLocalePath';
+import { CONTACT_LIMITS, validateContactSubmission } from '@/lib/validation/contact';
 
 export default function ContactContent() {
   const { t, locale } = useLanguage();
   const c = t.contact_page;
   const posthog = usePostHog();
+  const localePath = useLocalePath();
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -18,6 +21,7 @@ export default function ContactContent() {
     domain: '',
     message: '',
     nda: false,
+    consent: false,
     priority: 'Standard',
     // Honeypot. Never shown to a human — see the input at the end of the form.
     website: '',
@@ -26,6 +30,15 @@ export default function ContactContent() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
+
+  // Validation returns translation keys, not sentences (see
+  // src/lib/validation/contact.js); the dictionary supplies the wording.
+  const errorText = (field) => (errors[field] ? c[errors[field]] || errors[field] : '');
+
+  // The label carries a {link} placeholder rather than being split into two keys,
+  // because "Privacy Policy" does not sit at the same point in the sentence in
+  // all six locales.
+  const [consentBefore, consentAfter = ''] = (c.consent_label || '').split('{link}');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -41,38 +54,16 @@ export default function ContactContent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newErrors = {};
 
-    const fullNameTrimmed = formData.fullName.trim();
-    if (!fullNameTrimmed) {
-      newErrors.fullName = c.val_name_required || 'Full Name is required';
-    } else if (fullNameTrimmed.length < 2) {
-      newErrors.fullName = c.val_name_min || 'Name must be at least 2 characters';
-    }
-
-    const emailTrimmed = formData.email.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailTrimmed) {
-      newErrors.email = c.val_email_required || 'Corporate Email is required';
-    } else if (!emailRegex.test(emailTrimmed)) {
-      newErrors.email = c.val_email_invalid || 'Please enter a valid email address';
-    }
-
-    if (!formData.domain) {
-      newErrors.domain = c.val_domain_required || 'Please select a domain';
-    }
-
-    const messageTrimmed = formData.message.trim();
-    if (!messageTrimmed) {
-      newErrors.message = c.val_message_required || 'Message is required';
-    } else if (messageTrimmed.length < 10) {
-      newErrors.message = c.val_message_min || 'Message must be at least 10 characters';
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+    // The same rules the endpoint enforces, imported from the same module. This
+    // copy exists to give immediate feedback; the server's copy is the one that
+    // actually protects anything.
+    const { valid, errors: fieldErrors } = validateContactSubmission(formData);
+    if (!valid) {
+      setErrors(fieldErrors);
       return;
     }
+    setErrors({});
 
     setIsSubmitting(true);
     setSubmitError('');
@@ -189,10 +180,11 @@ export default function ContactContent() {
                           value={formData.fullName}
                           onChange={handleChange}
                           placeholder={c.placeholders?.fullName ?? 'Dr. Marcus Vance'}
+                          maxLength={CONTACT_LIMITS.fullName.max}
                           className={`w-full bg-surface-canvas border ${errors.fullName ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
                         {errors.fullName && (
-                          <p className="text-error text-xs mt-1">{errors.fullName}</p>
+                          <p className="text-error text-xs mt-1">{errorText('fullName')}</p>
                         )}
                       </div>
 
@@ -211,9 +203,12 @@ export default function ContactContent() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder={c.placeholders?.email ?? 'm.vance@company.com'}
+                          maxLength={CONTACT_LIMITS.email.max}
                           className={`w-full bg-surface-canvas border ${errors.email ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
-                        {errors.email && <p className="text-error text-xs mt-1">{errors.email}</p>}
+                        {errors.email && (
+                          <p className="text-error text-xs mt-1">{errorText('email')}</p>
+                        )}
                       </div>
                     </div>
 
@@ -233,8 +228,12 @@ export default function ContactContent() {
                           value={formData.organization}
                           onChange={handleChange}
                           placeholder={c.placeholders?.organization ?? 'Siemens Energy AG'}
-                          className="w-full bg-surface-canvas border border-outline-variant text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90"
+                          maxLength={CONTACT_LIMITS.organization.max}
+                          className={`w-full bg-surface-canvas border ${errors.organization ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
+                        {errors.organization && (
+                          <p className="text-error text-xs mt-1">{errorText('organization')}</p>
+                        )}
                       </div>
 
                       {/* Engagement Domain */}
@@ -260,7 +259,7 @@ export default function ContactContent() {
                           ))}
                         </select>
                         {errors.domain && (
-                          <p className="text-error text-xs mt-1">{errors.domain}</p>
+                          <p className="text-error text-xs mt-1">{errorText('domain')}</p>
                         )}
                       </div>
                     </div>
@@ -282,10 +281,11 @@ export default function ContactContent() {
                         placeholder={
                           c.placeholders?.message ?? 'Detail your operational bottlenecks...'
                         }
+                        maxLength={CONTACT_LIMITS.message.max}
                         className={`w-full bg-surface-canvas border ${errors.message ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                       />
                       {errors.message && (
-                        <p className="text-error text-xs mt-1">{errors.message}</p>
+                        <p className="text-error text-xs mt-1">{errorText('message')}</p>
                       )}
                     </div>
 
@@ -317,6 +317,33 @@ export default function ContactContent() {
                           <option value="Urgent">{c.priority_urg ?? 'Urgent (Same Day)'}</option>
                         </select>
                       </div>
+                    </div>
+
+                    {/* Required acknowledgement. Enforced by the shared rules, so
+                        the endpoint rejects a submission that skipped it. */}
+                    <div className="space-y-1.5 pt-2">
+                      <label className="flex items-start gap-3 cursor-pointer py-1">
+                        <input
+                          type="checkbox"
+                          name="consent"
+                          checked={formData.consent}
+                          onChange={handleChange}
+                          className={`w-4 h-4 mt-0.5 rounded text-primary focus:ring-primary ${errors.consent ? 'border-error' : 'border-outline-variant'}`}
+                        />
+                        <span className="text-xs text-secondary font-medium leading-relaxed">
+                          {consentBefore}
+                          <Link
+                            href={localePath('/privacy-and-gdpr')}
+                            className="text-primary hover:underline"
+                          >
+                            {c.consent_link_text}
+                          </Link>
+                          {consentAfter}
+                        </span>
+                      </label>
+                      {errors.consent && (
+                        <p className="text-error text-xs mt-1">{errorText('consent')}</p>
+                      )}
                     </div>
 
                     {/* Submit Button */}

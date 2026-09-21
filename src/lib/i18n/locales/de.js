@@ -150,6 +150,10 @@ const dictionary = {
     submitting: 'Wird gesendet…',
     val_submit_failed:
       'Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an contact@qubital.eu.',
+    val_too_long: 'Dieses Feld ist zu lang',
+    consent_label: 'Ich habe die {link} gelesen und akzeptiere sie',
+    consent_link_text: 'Datenschutzerklärung',
+    val_consent_required: 'Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren',
   },
   about_page: {
     hero_title_1: 'Strategische IT-Beratung &',

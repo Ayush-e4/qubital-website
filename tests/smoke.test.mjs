@@ -265,6 +265,7 @@ const validSubmission = () => ({
   domain: 'Enterprise Architecture',
   message: 'We need help modernising a legacy estate spread across four regions.',
   nda: false,
+  consent: true,
   priority: 'Standard',
   locale: 'en',
   website: '',
@@ -287,6 +288,12 @@ test('invalid submissions are rejected with 400', async () => {
     'empty message': { ...validSubmission(), message: '' },
     'too-short message': { ...validSubmission(), message: 'too short' },
     'oversized message': { ...validSubmission(), message: 'x'.repeat(5001) },
+    'overlong name': { ...validSubmission(), fullName: 'A'.repeat(101) },
+    'overlong organization': { ...validSubmission(), organization: 'x'.repeat(201) },
+    // The rules are shared with the browser, so anything the form can reject
+    // must be rejected here too — a client-only check is not a check.
+    'consent withheld': { ...validSubmission(), consent: false },
+    'consent not a boolean': { ...validSubmission(), consent: 'yes' },
     'array instead of object': [],
     'null payload': null,
   };
