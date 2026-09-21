@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePostHog } from 'posthog-js/react';
-import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
 import { CONTACT_LIMITS, validateContactSubmission } from '@/lib/validation/contact';
