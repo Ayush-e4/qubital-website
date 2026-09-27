@@ -3,7 +3,8 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 // Third parties the app talks to from the browser:
 //   - PostHog: bundle served from *-assets, events posted to the api host
-//   - Google Fonts: stylesheet + font files
+// Fonts are self-hosted via next/font and icons are inline SVG (Lucide), so
+// neither fonts.googleapis.com nor fonts.gstatic.com is needed here.
 // Next injects inline bootstrap scripts and Tailwind emits inline styles, so
 // 'unsafe-inline' is required until a nonce-based CSP is wired up. 'unsafe-eval'
 // is only needed by the dev-mode React refresh runtime.
@@ -14,8 +15,8 @@ const contentSecurityPolicy = [
   "frame-ancestors 'self'",
   "form-action 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://eu.i.posthog.com https://eu-assets.i.posthog.com`,
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "font-src 'self' data: https://fonts.gstatic.com",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self' data:",
   "img-src 'self' data: blob:",
   "connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com",
 ].join('; ');

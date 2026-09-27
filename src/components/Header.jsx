@@ -9,6 +9,7 @@ import { NAV_LINKS, COMPANY_INFO, LANGUAGES } from '@/lib/constants';
 import { Dock, DockIcon } from '@/components/ui/dock';
 import { useLanguage } from '@/components/LanguageProvider';
 import { localeFromPath, localizedPath, stripLocale } from '@/lib/i18n/paths';
+import { ChevronDown, Languages } from 'lucide-react';
 
 const NAV_KEY_MAP = {
   '/': 'home',
@@ -212,13 +213,11 @@ export default function Header() {
                 aria-expanded={langOpen}
                 aria-controls="header-language-menu"
               >
-                <span className="material-symbols-outlined text-[15px] text-primary">language</span>
+                <Languages className="h-[15px] w-[15px] text-primary" />
                 <span>{LANGUAGES.find((l) => l.code === activeLocale)?.short || 'EN'}</span>
-                <span
-                  className={`material-symbols-outlined text-[14px] text-secondary transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
-                >
-                  expand_more
-                </span>
+                <ChevronDown
+                  className={`h-3.5 w-3.5 text-secondary transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}
+                />
               </button>
 
               <AnimatePresence>

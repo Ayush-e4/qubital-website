@@ -5,6 +5,7 @@ import { AnimatedBeam } from '@/components/magicui/animated-beam';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/components/LanguageProvider';
 import { readToken } from '@/lib/tokens';
+import { DynamicIcon } from '@/lib/icons';
 
 export default function MethodologySteps() {
   const { t } = useLanguage();
@@ -124,9 +125,7 @@ export default function MethodologySteps() {
 
               {/* Title & Icon */}
               <div className="flex items-center justify-center gap-2 mb-2 w-full">
-                <span className="material-symbols-outlined text-primary text-[22px]">
-                  {step.icon}
-                </span>
+                <DynamicIcon name={step.icon} className="h-[22px] w-[22px] text-primary" />
                 <motion.h3
                   className="text-base font-semibold font-title-md text-on-surface text-center"
                   initial={{ color: tokenTitle }}

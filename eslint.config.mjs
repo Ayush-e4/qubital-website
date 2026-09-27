@@ -112,16 +112,6 @@ const eslintConfig = defineConfig([
     },
     rules: { 'local/min-text-alpha': 'error', 'local/no-raw-palette': 'error' },
   },
-  // `no-page-custom-font` guards the Pages Router: a font `<link>` declared
-  // anywhere other than `pages/_document.js` only loads for the page that
-  // declares it. This project has no `pages/` directory — `app/layout.js` *is*
-  // the document, so its `<link>` is already site-wide and the rule is a false
-  // positive. Scoped to that one file rather than turned off globally, so it
-  // would still fire if the router were ever mixed.
-  {
-    files: ['src/app/layout.js'],
-    rules: { '@next/next/no-page-custom-font': 'off' },
-  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

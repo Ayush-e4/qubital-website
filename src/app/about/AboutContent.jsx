@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
+import { ArrowRight, CheckCircle2, Mail, Network, Quote } from 'lucide-react';
+import { DynamicIcon } from '@/lib/icons';
 
 export default function AboutContent() {
   const { t } = useLanguage();
@@ -61,9 +63,10 @@ export default function AboutContent() {
             <div className="flex flex-col gap-3 sm:gap-4 mt-6 sm:mt-8 relative z-10 border-t border-outline-variant/60 pt-5 sm:pt-6">
               {(a.focus_items ?? []).map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-secondary">
-                  <span className="material-symbols-outlined text-primary text-[18px]">
-                    {i === 0 ? 'architecture' : i === 1 ? 'account_tree' : 'security'}
-                  </span>
+                  <DynamicIcon
+                    name={i === 0 ? 'architecture' : i === 1 ? 'account_tree' : 'security'}
+                    className="h-[18px] w-[18px] text-primary"
+                  />
                   <span>{item}</span>
                 </div>
               ))}
@@ -81,13 +84,11 @@ export default function AboutContent() {
 
           <div className="bg-primary/10 border border-primary/20 border-l-4 border-l-primary rounded-r-xl p-5 sm:p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
-              <span className="material-symbols-outlined text-9xl">hub</span>
+              <Network className="h-32 w-32" />
             </div>
 
             <div className="relative z-10 max-w-4xl">
-              <span className="material-symbols-outlined text-primary text-3xl mb-6">
-                format_quote
-              </span>
+              <Quote className="h-8 w-8 text-primary mb-6" />
               <h2 className="text-style-headline-md text-on-surface mb-6">{a.mission_quote}</h2>
               <p className="text-lg text-secondary leading-relaxed max-w-3xl mb-8">
                 {a.mission_desc}
@@ -99,9 +100,10 @@ export default function AboutContent() {
                     key={i}
                     className="px-3 py-1.5 bg-surface-card border border-outline-variant rounded-lg text-sm text-secondary flex items-center gap-2"
                   >
-                    <span className="material-symbols-outlined text-[16px]">
-                      {i === 0 ? 'account_tree' : i === 1 ? 'layers_clear' : 'gavel'}
-                    </span>
+                    <DynamicIcon
+                      name={i === 0 ? 'account_tree' : i === 1 ? 'layers_clear' : 'gavel'}
+                      className="h-4 w-4"
+                    />
                     {badge}
                   </span>
                 ))}
@@ -139,9 +141,7 @@ export default function AboutContent() {
                 <div className="flex flex-col gap-6 mb-16">
                   {(a.principles ?? []).map((principle, i) => (
                     <div key={i} className="flex gap-4 items-start">
-                      <span className="material-symbols-outlined text-primary mt-1">
-                        check_circle
-                      </span>
+                      <CheckCircle2 className="text-primary mt-1" />
                       <div>
                         <h5 className="text-on-surface font-medium mb-1">{principle.title}</h5>
                         <p className="text-secondary text-sm">{principle.desc}</p>
@@ -184,7 +184,7 @@ export default function AboutContent() {
               >
                 <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 md:gap-8 relative z-10">
                   <div className="w-14 h-14 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
-                    <span className="material-symbols-outlined text-2xl">{diff.icon}</span>
+                    <DynamicIcon name={diff.icon} className="h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="text-style-title-md text-on-surface mb-2 text-center sm:text-left">
@@ -219,7 +219,7 @@ export default function AboutContent() {
                 >
                   <span className="relative w-full text-center flex items-center justify-center gap-2 transition-colors duration-200 ease-in-out">
                     {a.cta_btn_primary}
-                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    <ArrowRight className="h-[18px] w-[18px]" />
                   </span>
                 </Link>
 
@@ -228,7 +228,7 @@ export default function AboutContent() {
                   className="relative flex items-center justify-center px-8 py-4 overflow-hidden font-medium transition-all bg-surface border border-outline-variant text-on-surface rounded-lg group w-full sm:w-auto"
                 >
                   <span className="relative w-full text-center flex items-center justify-center gap-2 transition-colors duration-200 ease-in-out">
-                    <span className="material-symbols-outlined text-[18px]">mail</span>
+                    <Mail className="h-[18px] w-[18px]" />
                     {a.cta_btn_secondary}
                   </span>
                 </a>

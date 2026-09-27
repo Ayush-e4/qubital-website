@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
+import { Activity, ArrowRight, CheckCircle2, Flag, Quote, ShieldCheck } from 'lucide-react';
+import { DynamicIcon } from '@/lib/icons';
 
 export default function MissionContent() {
   const { t } = useLanguage();
@@ -18,7 +20,7 @@ export default function MissionContent() {
         <AnimateOnScroll>
           <div className="flex flex-col items-start gap-4 mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-semibold tracking-widest uppercase">
-              <span className="material-symbols-outlined text-[14px]">flag</span>
+              <Flag className="h-3.5 w-3.5" />
               <span>{m.tag || 'OUR MISSION & VISION'}</span>
             </div>
           </div>
@@ -40,9 +42,7 @@ export default function MissionContent() {
           <div className="relative rounded-2xl bg-inverse-surface text-inverse-on-surface p-8 sm:p-12 border border-inverse-on-surface/20 shadow-xl overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 max-w-3xl">
-              <span className="material-symbols-outlined text-inverse-primary text-4xl mb-4 block">
-                format_quote
-              </span>
+              <Quote className="h-9 w-9 text-inverse-primary mb-4 block" />
               <p className="text-xl sm:text-2xl font-normal text-inverse-on-surface/90 leading-relaxed mb-6">
                 &ldquo;{m.quote_text}&rdquo;
               </p>
@@ -62,7 +62,7 @@ export default function MissionContent() {
       <section className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <AnimateOnScroll className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-primary text-xs font-mono font-bold tracking-widest uppercase mb-3 justify-center">
-            <span className="material-symbols-outlined text-sm">verified_user</span>
+            <ShieldCheck className="h-3.5 w-3.5" />
             <span>{m.pillars_tag || 'FOUNDATIONAL TENETS'}</span>
           </div>
           <h2 className="text-style-headline-md text-on-surface mb-4">
@@ -76,7 +76,7 @@ export default function MissionContent() {
               <div className="h-full bg-surface-card border border-outline-variant/60 hover:border-primary/40 rounded-2xl p-8 transition-all duration-300 shadow-xs hover:shadow-md flex flex-col justify-between group">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
+                    <DynamicIcon name={pillar.icon} className="h-6 w-6" />
                   </div>
                   <h3 className="text-style-headline-sm text-on-surface mb-3">{pillar.title}</h3>
                   <p className="text-secondary text-sm sm:text-base leading-relaxed">
@@ -102,7 +102,7 @@ export default function MissionContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 text-primary text-xs font-mono font-bold tracking-widest uppercase mb-3 justify-center">
-              <span className="material-symbols-outlined text-sm">timeline</span>
+              <Activity className="h-3.5 w-3.5" />
               <span>{m.roadmap_tag || 'ARCHITECTURAL TRANSFORMATION'}</span>
             </div>
             <h2 className="text-style-headline-md text-on-surface mb-4">
@@ -122,7 +122,7 @@ export default function MissionContent() {
                     <p className="text-secondary text-sm leading-relaxed">{step.desc}</p>
                   </div>
                   <div className="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-mono text-success font-semibold">
-                    <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                    <CheckCircle2 className="h-4 w-4" />
                     <span>{m.verified_milestone || 'Verified Milestone'}</span>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function MissionContent() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-on-primary font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm sm:text-base relative z-10"
           >
             <span>{m.cta_btn || 'Schedule Architectural Review'}</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </AnimateOnScroll>
       </section>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
+import { ArrowLeftRight, ArrowRight, Award, CheckCircle2, X } from 'lucide-react';
 
 export default function WhyUsContent() {
   const { t } = useLanguage();
@@ -24,7 +25,7 @@ export default function WhyUsContent() {
         <AnimateOnScroll>
           <div className="flex flex-col items-start gap-4 mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-semibold tracking-widest uppercase">
-              <span className="material-symbols-outlined text-[14px]">award_star</span>
+              <Award className="h-3.5 w-3.5" />
               <span>{w.tag || 'WHY QUBITAL'}</span>
             </div>
           </div>
@@ -44,7 +45,7 @@ export default function WhyUsContent() {
       <section className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <AnimateOnScroll className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-primary text-xs font-mono font-bold tracking-widest uppercase mb-3 justify-center">
-            <span className="material-symbols-outlined text-sm">compare_arrows</span>
+            <ArrowLeftRight className="h-3.5 w-3.5" />
             <span>{w.comparison_tag || 'THE DIRECT COMPARISON'}</span>
           </div>
           <h2 className="text-style-headline-md text-on-surface mb-4">
@@ -79,17 +80,13 @@ export default function WhyUsContent() {
                     </td>
                     <td className="py-4 px-6 text-sm text-on-surface bg-primary/5 border-x border-primary/20 font-medium">
                       <div className="flex items-start gap-2">
-                        <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">
-                          check_circle
-                        </span>
+                        <CheckCircle2 className="h-[18px] w-[18px] text-primary shrink-0 mt-0.5" />
                         <span>{row.qubital}</span>
                       </div>
                     </td>
                     <td className="py-4 px-6 text-sm text-secondary">
                       <div className="flex items-start gap-2">
-                        <span className="material-symbols-outlined text-secondary/80 text-[18px] shrink-0 mt-0.5">
-                          cancel
-                        </span>
+                        <X className="h-[18px] w-[18px] text-secondary/80 shrink-0 mt-0.5" />
                         <span>{row.traditional}</span>
                       </div>
                     </td>
@@ -117,7 +114,7 @@ export default function WhyUsContent() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-on-primary font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm sm:text-base relative z-10"
           >
             <span>{w.cta_btn || 'Book an Architecture Briefing'}</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </AnimateOnScroll>
       </section>
