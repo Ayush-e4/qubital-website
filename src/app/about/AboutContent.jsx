@@ -18,7 +18,7 @@ export default function AboutContent() {
       <section className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 pb-12 md:pb-24">
         <AnimateOnScroll>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 w-full mb-8 md:mb-16 lg:items-end">
-            <h1 className="lg:col-span-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-on-surface leading-tight sm:pr-4">
+            <h1 className="lg:col-span-8 text-style-headline-lg text-on-surface sm:pr-4">
               {a.hero_title_1}
               <br />
               <span className="text-secondary font-medium">{a.hero_title_2}</span>
@@ -53,9 +53,7 @@ export default function AboutContent() {
               </div>
 
               <div>
-                <h2 className="text-lg sm:text-xl text-on-surface font-semibold mb-2">
-                  {a.focus_title}
-                </h2>
+                <h2 className="text-style-headline-sm text-on-surface mb-2">{a.focus_title}</h2>
                 <p className="text-sm text-secondary leading-relaxed">{a.focus_desc}</p>
               </div>
             </div>
@@ -78,9 +76,7 @@ export default function AboutContent() {
       <section className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <AnimateOnScroll>
           <div className="flex flex-col gap-4 mb-6 sm:mb-8">
-            <h2 className="text-xs font-mono tracking-widest text-secondary uppercase font-semibold">
-              {a.mission_tag}
-            </h2>
+            <h2 className="text-style-overline text-secondary">{a.mission_tag}</h2>
           </div>
 
           <div className="bg-primary/10 border border-primary/20 border-l-4 border-l-primary rounded-r-xl p-5 sm:p-8 md:p-12 relative overflow-hidden">
@@ -92,9 +88,7 @@ export default function AboutContent() {
               <span className="material-symbols-outlined text-primary text-3xl mb-6">
                 format_quote
               </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-on-surface leading-relaxed mb-6">
-                {a.mission_quote}
-              </h2>
+              <h2 className="text-style-headline-md text-on-surface mb-6">{a.mission_quote}</h2>
               <p className="text-lg text-secondary leading-relaxed max-w-3xl mb-8">
                 {a.mission_desc}
               </p>
@@ -126,9 +120,7 @@ export default function AboutContent() {
               <div className="text-xs font-mono text-secondary pb-4 border-b border-outline-variant">
                 {a.origins_tag}
               </div>
-              <h3 className="text-2xl text-on-surface font-light leading-snug">
-                {a.origins_title}
-              </h3>
+              <h3 className="text-style-headline-sm text-on-surface">{a.origins_title}</h3>
               <p className="text-secondary text-sm leading-relaxed">{a.origins_desc}</p>
             </AnimateOnScroll>
           </div>
@@ -140,7 +132,7 @@ export default function AboutContent() {
                 <p className="text-lg text-secondary leading-relaxed mb-8">{a.story_p1}</p>
                 <p className="text-lg text-secondary leading-relaxed mb-12">{a.story_p2}</p>
 
-                <h4 className="text-xl font-light text-on-surface mb-6 border-b border-outline-variant pb-4">
+                <h4 className="text-style-headline-sm text-on-surface mb-6 border-b border-outline-variant pb-4">
                   {a.principles_title}
                 </h4>
 
@@ -166,7 +158,7 @@ export default function AboutContent() {
                     key={i}
                     className="bg-surface-card border border-outline-variant/60 rounded-xl p-6 flex flex-col gap-2"
                   >
-                    <span className="text-3xl text-on-surface font-light">{stat.value}</span>
+                    <span className="text-3xl text-on-surface font-bold">{stat.value}</span>
                     <span className="text-xs font-mono text-secondary uppercase">{stat.label}</span>
                   </StaggerItem>
                 ))}
@@ -180,10 +172,8 @@ export default function AboutContent() {
       <section className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-outline-variant/60">
         <AnimateOnScroll>
           <div className="flex flex-col gap-2 mb-12">
-            <h2 className="text-xs font-mono tracking-widest text-secondary uppercase">
-              {a.diff_tag}
-            </h2>
-            <h3 className="text-3xl font-light text-on-surface">{a.diff_title}</h3>
+            <h2 className="text-style-overline text-secondary">{a.diff_tag}</h2>
+            <h3 className="text-style-headline-md text-on-surface">{a.diff_title}</h3>
           </div>
 
           <StaggerContainer className="flex flex-col gap-4">
@@ -197,7 +187,7 @@ export default function AboutContent() {
                     <span className="material-symbols-outlined text-2xl">{diff.icon}</span>
                   </div>
                   <div>
-                    <h4 className="text-xl text-on-surface font-medium mb-2 text-center sm:text-left">
+                    <h4 className="text-style-title-md text-on-surface mb-2 text-center sm:text-left">
                       {diff.title}
                     </h4>
                     <p className="text-secondary leading-relaxed max-w-3xl text-center sm:text-left">
@@ -218,9 +208,7 @@ export default function AboutContent() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-surface-canvas to-surface-canvas"></div>
 
             <div className="relative z-10 flex flex-col items-center max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-light text-on-surface mb-6 leading-tight">
-                {a.cta_title}
-              </h2>
+              <h2 className="text-style-headline-md text-on-surface mb-6">{a.cta_title}</h2>
 
               <p className="text-secondary text-lg mb-10">{a.cta_desc}</p>
 

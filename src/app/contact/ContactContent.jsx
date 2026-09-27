@@ -110,9 +110,7 @@ export default function ContactContent() {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Header Area */}
         <div className="mb-6 sm:mb-12">
-          <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-light text-on-surface mb-4 sm:mb-6 tracking-tight">
-            {c.title}
-          </h1>
+          <h1 className="text-style-headline-lg text-on-surface mb-4 sm:mb-6">{c.title}</h1>
           <p className="text-base sm:text-xl text-secondary max-w-2xl leading-relaxed">
             {c.subtitle}
           </p>
@@ -130,9 +128,7 @@ export default function ContactContent() {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 text-success mb-6">
                     <span className="material-symbols-outlined text-4xl">check_circle</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-light text-on-surface mb-4">
-                    {c.success_title}
-                  </h2>
+                  <h2 className="text-style-headline-md text-on-surface mb-4">{c.success_title}</h2>
                   <p className="text-secondary text-sm sm:text-base mb-8 max-w-md mx-auto">
                     {c.success_desc}
                   </p>
@@ -391,7 +387,7 @@ export default function ContactContent() {
           {/* Right Column (5 cols) - Contact Info & Direct Channels */}
           <div className="xl:col-span-5 flex flex-col gap-6">
             <div className="bg-surface-card border border-outline-variant p-6 sm:p-8 rounded-xl shadow-xs space-y-6">
-              <h2 className="text-lg font-bold text-on-surface pb-3 border-b border-outline-variant">
+              <h2 className="text-style-title-md text-on-surface pb-3 border-b border-outline-variant">
                 {c.channels_title}
               </h2>
 
@@ -450,7 +446,7 @@ export default function ContactContent() {
               <span className="text-xs font-mono font-semibold text-primary uppercase tracking-wider block">
                 {c.security_protocol || 'Security Protocol'}
               </span>
-              <h3 className="text-base font-bold text-on-surface">{c.protocol_title}</h3>
+              <h3 className="text-style-title-md text-on-surface">{c.protocol_title}</h3>
               <p className="text-xs sm:text-sm text-secondary leading-relaxed">{c.protocol_desc}</p>
             </div>
           </div>

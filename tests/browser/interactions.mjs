@@ -172,6 +172,40 @@ const checks = [
       assert.deepEqual(tooSmall, [], `controls below 16px: ${JSON.stringify(tooSmall)}`);
     },
   ],
+  [
+    'page headings only ask for font weights that are actually loaded',
+    async (page) => {
+      // next/font loads Plus Jakarta 600/700 and Inter 400/500/600/700. The site
+      // previously declared font-light (300) and font-black (900) in well over a
+      // hundred places, so the browser silently substituted a different weight:
+      // "light" headings rendered at 400 and "black" ones at 700. A declared
+      // weight outside the loaded set is the bug, so assert on the declared value.
+      const bad = [];
+
+      for (const path of [
+        '/',
+        '/about',
+        '/services',
+        '/mission',
+        '/why-us',
+        '/careers',
+        '/contact',
+      ]) {
+        await page.goto(`${BASE}${path}`, { waitUntil: 'load' });
+        const offenders = await page.$$eval('h1, h2, h3, h4', (els) =>
+          els
+            .map((el) => ({
+              text: (el.textContent || '').trim().slice(0, 28),
+              weight: getComputedStyle(el).fontWeight,
+            }))
+            .filter((h) => !['400', '500', '600', '700'].includes(h.weight))
+        );
+        if (offenders.length > 0) bad.push(`${path} -> ${JSON.stringify(offenders)}`);
+      }
+
+      assert.deepEqual(bad, [], `headings declaring an unloaded weight: ${bad.join('; ')}`);
+    },
+  ],
 ];
 
 const browser = await chromium.launch();

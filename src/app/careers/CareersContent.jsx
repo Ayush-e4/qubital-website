@@ -16,7 +16,7 @@ export default function CareersContent() {
       <section className="container mx-auto px-4 lg:px-8 mb-12 sm:mb-20 md:mb-32">
         <AnimateOnScroll className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
           <div className="col-span-12 lg:col-span-7">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-on-surface mb-4 sm:mb-6">
+            <h1 className="text-style-headline-lg text-on-surface mb-4 sm:mb-6">
               {c.hero_title_1} <br className="hidden md:block" />
               <span className="text-secondary font-medium">{c.hero_title_2}</span>
             </h1>
@@ -60,9 +60,7 @@ export default function CareersContent() {
           <div className="inline-flex items-center gap-2 text-sm text-primary mb-4 font-mono">
             {c.benefits_tag}
           </div>
-          <h2 className="text-3xl md:text-4xl font-light text-on-surface tracking-tight">
-            {c.benefits_title}
-          </h2>
+          <h2 className="text-style-headline-md text-on-surface">{c.benefits_title}</h2>
         </AnimateOnScroll>
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -75,7 +73,7 @@ export default function CareersContent() {
                 <span className="material-symbols-outlined">{icons[i % icons.length]}</span>
               </div>
               <div>
-                <h3 className="text-on-surface font-medium mb-1">{ben.title}</h3>
+                <h3 className="text-style-title-md text-on-surface mb-1">{ben.title}</h3>
                 <p className="text-secondary text-sm">{ben.desc}</p>
               </div>
             </StaggerItem>
@@ -94,7 +92,7 @@ export default function CareersContent() {
             <div className="inline-flex px-3 py-1 bg-white/10 backdrop-blur-md rounded-md text-xs font-mono text-white mb-4 w-fit border border-white/20">
               {c.blueprint_tag}
             </div>
-            <h3 className="text-2xl md:text-3xl font-light text-white max-w-2xl">
+            <h3 className="text-style-headline-md text-inverse-on-surface max-w-2xl">
               {c.blueprint_title}
             </h3>
           </div>
@@ -110,9 +108,7 @@ export default function CareersContent() {
               {c.network_tag}
             </span>
           </div>
-          <h3 className="text-xl md:text-2xl font-medium text-on-surface mb-2">
-            {c.network_title}
-          </h3>
+          <h3 className="text-style-headline-sm text-on-surface mb-2">{c.network_title}</h3>
           <p className="text-secondary text-sm leading-relaxed max-w-xl mb-5">{c.network_desc}</p>
           <a
             href="mailto:contact@qubital.eu?subject=Spontaneous%20Application%20-%20Qubital"

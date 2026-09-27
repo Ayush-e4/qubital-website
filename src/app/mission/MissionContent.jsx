@@ -24,7 +24,7 @@ export default function MissionContent() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
-            <h1 className="lg:col-span-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-on-surface leading-tight">
+            <h1 className="lg:col-span-8 text-style-headline-lg text-on-surface">
               {m.hero_title_1} <br />
               <span className="text-primary font-semibold">{m.hero_title_2}</span>
             </h1>
@@ -43,7 +43,7 @@ export default function MissionContent() {
               <span className="material-symbols-outlined text-inverse-primary text-4xl mb-4 block">
                 format_quote
               </span>
-              <p className="text-xl sm:text-2xl font-light text-inverse-on-surface/90 leading-relaxed mb-6">
+              <p className="text-xl sm:text-2xl font-normal text-inverse-on-surface/90 leading-relaxed mb-6">
                 &ldquo;{m.quote_text}&rdquo;
               </p>
               <div className="flex items-center gap-3 text-xs font-mono tracking-wider text-inverse-primary uppercase">
@@ -65,7 +65,7 @@ export default function MissionContent() {
             <span className="material-symbols-outlined text-sm">verified_user</span>
             <span>{m.pillars_tag || 'FOUNDATIONAL TENETS'}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-on-surface tracking-tight mb-4">
+          <h2 className="text-style-headline-md text-on-surface mb-4">
             {m.pillars_title || 'The Principles That Guide Every Architecture'}
           </h2>
         </AnimateOnScroll>
@@ -78,7 +78,7 @@ export default function MissionContent() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-on-surface mb-3">{pillar.title}</h3>
+                  <h3 className="text-style-headline-sm text-on-surface mb-3">{pillar.title}</h3>
                   <p className="text-secondary text-sm sm:text-base leading-relaxed">
                     {pillar.desc}
                   </p>
@@ -105,7 +105,7 @@ export default function MissionContent() {
               <span className="material-symbols-outlined text-sm">timeline</span>
               <span>{m.roadmap_tag || 'ARCHITECTURAL TRANSFORMATION'}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-on-surface tracking-tight mb-4">
+            <h2 className="text-style-headline-md text-on-surface mb-4">
               {m.roadmap_title || 'From Legacy Sprawl to Sovereign Systems'}
             </h2>
           </AnimateOnScroll>
@@ -118,7 +118,7 @@ export default function MissionContent() {
                     <span className="text-xs font-mono font-bold text-primary tracking-widest uppercase block mb-3">
                       {step.phase}
                     </span>
-                    <h3 className="text-xl font-bold text-on-surface mb-3">{step.title}</h3>
+                    <h3 className="text-style-headline-sm text-on-surface mb-3">{step.title}</h3>
                     <p className="text-secondary text-sm leading-relaxed">{step.desc}</p>
                   </div>
                   <div className="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-mono text-success font-semibold">
@@ -136,7 +136,7 @@ export default function MissionContent() {
       <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <AnimateOnScroll className="bg-inverse-surface text-inverse-on-surface rounded-2xl p-8 sm:p-12 shadow-xl relative overflow-hidden text-center flex flex-col items-center">
           <div className="absolute -right-24 -top-24 w-72 md:w-96 h-72 md:h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 relative z-10">
+          <h2 className="text-style-headline-md mb-4 relative z-10">
             {m.cta_title || 'Partner with architects who prioritize engineering discipline.'}
           </h2>
           <p className="text-inverse-on-surface/75 text-sm sm:text-base md:text-lg mb-8 max-w-2xl leading-relaxed relative z-10">
