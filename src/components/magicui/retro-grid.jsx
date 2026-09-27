@@ -329,13 +329,6 @@ function getProgramInfo(gl, program) {
   };
 }
 
-function isDarkMode(colorScheme) {
-  const root = document.documentElement;
-  if (root.classList.contains('dark')) return true;
-  if (root.classList.contains('light')) return false;
-  return colorScheme.matches;
-}
-
 function getColorResolveContext() {
   if (colorResolveContext !== undefined) return colorResolveContext;
   const canvas = document.createElement('canvas');
@@ -385,7 +378,6 @@ export function RetroGrid({
   cellSize = 60,
   opacity = 0.65,
   lightLineColor = '#cbd5e1',
-  darkLineColor = '#475569',
   style,
   ...props
 }) {
@@ -394,17 +386,15 @@ export function RetroGrid({
   const [isWebGlReady, setIsWebGlReady] = useState(false);
   const angleRef = useRef(angle);
   const cellSizeRef = useRef(cellSize);
-  const darkLineColorRef = useRef(darkLineColor);
   const lightLineColorRef = useRef(lightLineColor);
   const syncSceneRef = useRef(null);
 
   useEffect(() => {
     angleRef.current = angle;
     cellSizeRef.current = cellSize;
-    darkLineColorRef.current = darkLineColor;
     lightLineColorRef.current = lightLineColor;
     syncSceneRef.current?.();
-  }, [angle, cellSize, darkLineColor, lightLineColor]);
+  }, [angle, cellSize, lightLineColor]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -413,7 +403,6 @@ export function RetroGrid({
     if (!canvas || !container) return;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     let animationFrameId = null;
     let currentWidth = 0;
@@ -489,10 +478,7 @@ export function RetroGrid({
     };
 
     const updateLineColor = () => {
-      const activeColor = isDarkMode(colorScheme)
-        ? darkLineColorRef.current
-        : lightLineColorRef.current;
-      lineColor = resolveLineColor(activeColor, container);
+      lineColor = resolveLineColor(lightLineColorRef.current, container);
     };
 
     const resizeCanvas = () => {
@@ -620,14 +606,7 @@ export function RetroGrid({
     );
     intersectionObserver.observe(container);
 
-    const themeObserver = new MutationObserver(() => syncScene());
-    themeObserver.observe(document.documentElement, {
-      attributeFilter: ['class'],
-      attributes: true,
-    });
-
     const handleMotionChange = () => syncScene();
-    const handleColorSchemeChange = () => syncScene();
 
     const handleContextLost = (event) => {
       event.preventDefault();
@@ -643,7 +622,6 @@ export function RetroGrid({
     };
 
     reducedMotion.addEventListener('change', handleMotionChange);
-    colorScheme.addEventListener('change', handleColorSchemeChange);
     window.addEventListener('resize', handleWindowResize);
     canvas.addEventListener('webglcontextlost', handleContextLost);
     canvas.addEventListener('webglcontextrestored', handleContextRestored);
@@ -654,9 +632,7 @@ export function RetroGrid({
       stopAnimation();
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
-      themeObserver.disconnect();
       reducedMotion.removeEventListener('change', handleMotionChange);
-      colorScheme.removeEventListener('change', handleColorSchemeChange);
       window.removeEventListener('resize', handleWindowResize);
       canvas.removeEventListener('webglcontextlost', handleContextLost);
       canvas.removeEventListener('webglcontextrestored', handleContextRestored);
@@ -678,7 +654,6 @@ export function RetroGrid({
     transform: `rotateX(${normalizedAngle}deg)`,
   };
   const lightFallbackGridStyles = createFallbackGridStyle(normalizedCellSize, lightLineColor);
-  const darkFallbackGridStyles = createFallbackGridStyle(normalizedCellSize, darkLineColor);
 
   return (
     <div
@@ -692,13 +667,8 @@ export function RetroGrid({
         <div className="absolute inset-0" style={fallbackRotationStyles}>
           <div
             data-retro-grid-scroll="true"
-            className="absolute inset-[0%_0px] ml-[-200%] h-[300vh] w-[600vw] origin-[100%_0_0] dark:hidden"
+            className="absolute inset-[0%_0px] ml-[-200%] h-[300vh] w-[600vw] origin-[100%_0_0]"
             style={lightFallbackGridStyles}
-          />
-          <div
-            data-retro-grid-scroll="true"
-            className="absolute inset-[0%_0px] ml-[-200%] hidden h-[300vh] w-[600vw] origin-[100%_0_0] dark:block"
-            style={darkFallbackGridStyles}
           />
         </div>
       </div>

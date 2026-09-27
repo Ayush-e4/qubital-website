@@ -18,19 +18,19 @@ export default function ServicesContent() {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-6 sm:py-16 md:py-20 lg:py-24">
         <AnimateOnScroll className="max-w-4xl mx-auto text-center">
           <div className="flex flex-col items-center space-y-8">
-            <h1 className="font-display text-display text-4xl sm:text-5xl lg:text-6xl text-on-surface tracking-tight leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-on-surface tracking-tight leading-tight">
               {s.hero_title_1} <br className="hidden sm:inline" />
               <span className="text-primary block sm:inline">{s.hero_title_2}</span>
             </h1>
 
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mx-auto">
+            <p className="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed mx-auto">
               {s.hero_desc}
             </p>
 
             <div className="flex justify-center w-full px-4 sm:px-0">
               <Link
                 href={localePath('/contact')}
-                className="w-full sm:w-auto text-center justify-center px-8 py-3.5 bg-primary text-on-primary font-label-lg rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md font-semibold text-sm sm:text-base"
+                className="w-full sm:w-auto text-center justify-center px-8 py-3.5 bg-primary text-on-primary rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-md font-semibold text-sm sm:text-base"
               >
                 {s.hero_cta}
               </Link>
@@ -49,10 +49,10 @@ export default function ServicesContent() {
               <span className="material-symbols-outlined text-sm">grid_view</span>
               <span>{s.matrix_tag}</span>
             </div>
-            <h2 className="font-headline-lg text-headline-lg text-3xl md:text-4xl text-on-surface mb-6 font-bold">
+            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-surface mb-6 font-bold">
               {s.matrix_title}
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant text-lg max-w-2xl mx-auto">
+            <p className="font-body-lg text-on-surface-variant text-lg max-w-2xl mx-auto">
               {s.matrix_desc}
             </p>
           </div>
@@ -75,10 +75,8 @@ export default function ServicesContent() {
 
                 {/* 3. Solid Dark Navy Card Face */}
                 <div className="relative z-10 bg-[#16202e] rounded-2xl p-6 sm:p-8 flex flex-col h-full text-white border border-slate-700/50 group-hover:border-sky-500/50 transition-colors duration-300 shadow-xl">
-                  <h3 className="font-title-lg text-title-lg text-xl text-white font-bold mb-3">
-                    {card.title}
-                  </h3>
-                  <p className="font-body-md text-body-md text-slate-300 mb-6 flex-grow leading-relaxed">
+                  <h3 className="text-xl text-white font-bold mb-3">{card.title}</h3>
+                  <p className="font-body-md text-slate-300 mb-6 flex-grow leading-relaxed">
                     {card.description}
                   </p>
 
@@ -106,12 +104,10 @@ export default function ServicesContent() {
             <span className="material-symbols-outlined text-sm">settings_timelapse</span>
             <span>{s.methodology_tag}</span>
           </div>
-          <h2 className="font-headline-lg text-headline-lg text-3xl md:text-4xl text-on-surface mb-6">
+          <h2 className="font-headline-lg text-3xl md:text-4xl text-on-surface mb-6">
             {s.methodology_title}
           </h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant text-lg">
-            {s.methodology_desc}
-          </p>
+          <p className="font-body-lg text-on-surface-variant text-lg">{s.methodology_desc}</p>
         </AnimateOnScroll>
 
         <MethodologySteps />
@@ -161,13 +157,13 @@ export default function ServicesContent() {
             <div className="flex flex-col w-full sm:w-auto space-y-4 relative z-10 shrink-0">
               <Link
                 href={localePath('/contact')}
-                className="inline-flex justify-center items-center px-8 py-4 bg-primary text-on-primary font-label-lg rounded hover:bg-primary/90 transition-colors duration-200 w-full sm:w-auto"
+                className="inline-flex justify-center items-center px-8 py-4 bg-primary text-on-primary rounded hover:bg-primary/90 transition-colors duration-200 w-full sm:w-auto"
               >
                 {s.cta_btn_primary}
               </Link>
               <a
                 href="mailto:contact@qubital.eu"
-                className="inline-flex justify-center items-center px-8 py-4 bg-transparent text-inverse-on-surface border border-inverse-on-surface/30 font-label-lg rounded hover:bg-inverse-on-surface/10 transition-colors duration-200 w-full sm:w-auto"
+                className="inline-flex justify-center items-center px-8 py-4 bg-transparent text-inverse-on-surface border border-inverse-on-surface/30 rounded hover:bg-inverse-on-surface/10 transition-colors duration-200 w-full sm:w-auto"
               >
                 {s.cta_btn_secondary}
               </a>

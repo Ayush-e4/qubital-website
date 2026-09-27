@@ -168,9 +168,23 @@ export default async function RootLayout({ children }) {
   return (
     <html
       lang={locale}
+      suppressHydrationWarning
       className={`h-full antialiased ${inter.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable}`}
     >
       <head>
+        {/* Scroll-reveal is scoped to `.js`, which is added here before first
+            paint — and only when IntersectionObserver exists. With scripting
+            unavailable the class is never set, so reveal elements stay visible
+            rather than being stuck at the server-rendered hidden state.
+            suppressHydrationWarning is required because this class is not part
+            of the markup React hydrates (same pattern as next-themes). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if('IntersectionObserver' in window){document.documentElement.classList.add('js')}",
+          }}
+        />
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"

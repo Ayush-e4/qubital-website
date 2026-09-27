@@ -3,6 +3,14 @@
 import { useEffect, useRef } from 'react';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 
+/** Module-level so the animation effect and the initial render share it. */
+function formatNumber(input, decimalPlaces) {
+  return Intl.NumberFormat('en-US', {
+    minimumFractionDigits: decimalPlaces,
+    maximumFractionDigits: decimalPlaces,
+  }).format(input);
+}
+
 export function NumberTicker({
   value,
   direction = 'up',
@@ -29,13 +37,22 @@ export function NumberTicker({
   useEffect(() => {
     return springValue.on('change', (latest) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat('en-US', {
-          minimumFractionDigits: decimalPlaces,
-          maximumFractionDigits: decimalPlaces,
-        }).format(Number(latest.toFixed(decimalPlaces)));
+        ref.current.textContent = formatNumber(
+          Number(latest.toFixed(decimalPlaces)),
+          decimalPlaces
+        );
       }
     });
   }, [springValue, decimalPlaces]);
 
-  return <span className={`inline-block tracking-normal font-bold ${className}`} ref={ref} />;
+  return (
+    <span className={`inline-block tracking-normal font-bold ${className}`} ref={ref}>
+      {/*
+        The final value is rendered as text so the number exists in the
+        server-rendered HTML. The effect above then overwrites `textContent`
+        each frame, which is why this is deliberately not a controlled value.
+      */}
+      {formatNumber(value, decimalPlaces)}
+    </span>
+  );
 }

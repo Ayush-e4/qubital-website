@@ -75,6 +75,103 @@ const checks = [
       assert.notEqual(await page.evaluate(() => document.body.style.overflow), 'hidden');
     },
   ],
+  [
+    'homepage content is readable with JavaScript disabled',
+    async () => {
+      // Scroll-reveal is scoped to the `.js` class, which only exists when
+      // scripting does. With JS off the page must render fully — the old
+      // implementation server-rendered `opacity: 0` and left whole sections
+      // invisible. Playwright's isVisible() ignores opacity, so assert the
+      // computed value directly.
+      const ctx = await browser.newContext({ javaScriptEnabled: false });
+      const noJsPage = await ctx.newPage();
+      await noJsPage.goto(`${BASE}/`, { waitUntil: 'load' });
+
+      const heading = noJsPage.getByRole('heading', { name: /Core Capabilities/i }).first();
+      await heading.waitFor();
+
+      // An ancestor at opacity 0 hides an element just as effectively as the
+      // element itself, and Playwright's isVisible() ignores opacity entirely.
+      // Walk the chain — this is exactly how PageTransition used to blank the
+      // entire document while every element's own opacity read as 1.
+      const hiddenBy = await heading.evaluate((el) => {
+        let node = el;
+        while (node && node !== document.documentElement) {
+          if (Number(getComputedStyle(node).opacity) === 0) {
+            return `${node.tagName.toLowerCase()}.${(node.className || '').toString().split(' ')[0]}`;
+          }
+          node = node.parentElement;
+        }
+        return null;
+      });
+      assert.equal(
+        hiddenBy,
+        null,
+        `services heading hidden by ancestor ${hiddenBy} with JS disabled`
+      );
+
+      // The metrics are drawn by a counter; the value must still exist as text.
+      const metricNumber = await noJsPage
+        .locator('span.inline-block.tracking-normal')
+        .first()
+        .textContent();
+      assert.ok(
+        /\d/.test(metricNumber ?? ''),
+        `metric number should render without JS, got "${metricNumber}"`
+      );
+
+      await ctx.close();
+    },
+  ],
+  [
+    'header does not collide with the language switcher at 320px',
+    async (page) => {
+      await page.setViewportSize({ width: 320, height: 640 });
+      await page.goto(`${BASE}/`, { waitUntil: 'load' });
+
+      // Measure the logo link itself: below `xs` it is the mark alone, above it
+      // the wordmark shows too, and either way it must not reach the switcher.
+      const logo = page.locator('header a[href="/"]').first();
+      const langButton = page.locator('button[aria-controls="header-language-menu"]');
+      const brandBox = await logo.boundingBox();
+      const langBox = await langButton.boundingBox();
+
+      assert.ok(brandBox && langBox, 'logo and language switcher should both be measurable');
+      assert.ok(
+        brandBox.x + brandBox.width <= langBox.x + 1,
+        `logo overlaps the language switcher (ends at ${Math.round(
+          brandBox.x + brandBox.width
+        )}, switcher starts at ${Math.round(langBox.x)})`
+      );
+
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth
+      );
+      assert.ok(overflow <= 1, `page overflows horizontally by ${overflow}px at 320px`);
+    },
+  ],
+  [
+    'form controls are at least 16px on mobile (no iOS focus zoom)',
+    async (page) => {
+      await page.setViewportSize({ width: 375, height: 812 });
+      await page.goto(`${BASE}/contact`, { waitUntil: 'load' });
+      await page.locator('form').first().waitFor();
+
+      const tooSmall = await page.$$eval(
+        'input:not([type="hidden"]):not([type="checkbox"]):not(#website), select, textarea',
+        (els) =>
+          els
+            .map((el) => ({
+              tag: el.tagName.toLowerCase(),
+              id: el.id || el.name,
+              px: parseFloat(getComputedStyle(el).fontSize),
+            }))
+            .filter(({ px }) => px < 16)
+      );
+
+      assert.deepEqual(tooSmall, [], `controls below 16px: ${JSON.stringify(tooSmall)}`);
+    },
+  ],
 ];
 
 const browser = await chromium.launch();
