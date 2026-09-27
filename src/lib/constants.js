@@ -1,3 +1,20 @@
+/** Canonical origin. Used for metadataBase, canonical/hreflang URLs, sitemap and robots. */
+export const SITE_URL = 'https://qubital.eu';
+
+/**
+ * Every language the switcher offers. `code` is the URL prefix (see
+ * src/lib/i18n/paths.js); `label` is the endonym, so it reads correctly in any
+ * locale; `short` is the compact form shown on narrow buttons.
+ */
+export const LANGUAGES = [
+  { code: 'en', label: 'English', short: 'EN' },
+  { code: 'de', label: 'Deutsch', short: 'DE' },
+  { code: 'fr', label: 'Français', short: 'FR' },
+  { code: 'es', label: 'Español', short: 'ES' },
+  { code: 'it', label: 'Italiano', short: 'IT' },
+  { code: 'nl', label: 'Nederlands', short: 'NL' },
+];
+
 export const NAV_LINKS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },

@@ -6,8 +6,6 @@ import es from './locales/es';
 import it from './locales/it';
 import nl from './locales/nl';
 
-export const LOCALES = ['en', 'de', 'fr', 'es', 'it', 'nl'];
-
 /** @type {Record<string, import('./types').Dictionary>} */
 const translations = { en, de, fr, es, it, nl };
 

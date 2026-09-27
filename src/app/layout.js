@@ -6,9 +6,8 @@ import LenisProvider from '@/components/LenisProvider';
 import PageTransition from '@/components/PageTransition';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { PostHogProvider } from '@/components/PostHogProvider';
+import { SITE_URL } from '@/lib/constants';
 import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google';
-
-const BASE_URL = 'https://qubital.eu';
 
 // Self-hosted at build time: `next/font` downloads the woff2 files and serves
 // them from our own origin, so no font request ever reaches Google. That
@@ -43,7 +42,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Qubital — Strategic IT Advisory & Systems Architecture',
   },
@@ -72,7 +71,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'de_DE',
-    url: BASE_URL,
+    url: SITE_URL,
     siteName: 'Qubital',
     title: 'Qubital — Strategic IT Advisory & Systems Architecture',
     description:
@@ -102,12 +101,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': `${BASE_URL}/#organization`,
+      '@id': `${SITE_URL}/#organization`,
       name: 'Qubital Systems GmbH',
-      url: BASE_URL,
+      url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${BASE_URL}/logo.png`,
+        url: `${SITE_URL}/logo.png`,
       },
       contactPoint: {
         '@type': 'ContactPoint',
@@ -119,11 +118,11 @@ const jsonLd = {
     },
     {
       '@type': 'LocalBusiness',
-      '@id': `${BASE_URL}/#localbusiness`,
+      '@id': `${SITE_URL}/#localbusiness`,
       name: 'Qubital Systems GmbH',
       description:
         'Strategic IT Advisory & Systems Architecture firm based in Herzogenaurach, Bavaria, Germany.',
-      url: BASE_URL,
+      url: SITE_URL,
       email: 'contact@qubital.eu',
       address: {
         '@type': 'PostalAddress',
@@ -153,10 +152,10 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': `${BASE_URL}/#website`,
-      url: BASE_URL,
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: 'Qubital',
-      publisher: { '@id': `${BASE_URL}/#organization` },
+      publisher: { '@id': `${SITE_URL}/#organization` },
       inLanguage: ['en', 'de'],
     },
   ],

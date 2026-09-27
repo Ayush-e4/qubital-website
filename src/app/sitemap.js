@@ -1,8 +1,8 @@
+import { SITE_URL } from '@/lib/constants';
 import { LOCALES, localizedPath } from '@/lib/i18n/paths';
 
 // Route source of truth for sitemap.xml. Adding a route here is all that is
 // needed to emit it for every locale with its hreflang cluster.
-const BASE_URL = 'https://qubital.eu';
 
 const PAGES = [
   { path: '/', priority: 1.0, changeFrequency: 'monthly' },
@@ -19,7 +19,7 @@ const PAGES = [
 
 /** Absolute URL for a route+locale. The root has no trailing slash. */
 const absoluteUrl = (path, locale) =>
-  `${BASE_URL}${localizedPath(path, locale)}`.replace(/\/$/, '');
+  `${SITE_URL}${localizedPath(path, locale)}`.replace(/\/$/, '');
 
 export default function sitemap() {
   const lastModified = new Date();
