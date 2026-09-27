@@ -2,7 +2,12 @@
 
 /* ─── Qubital Design System — Tailwind v4 ─── */
 
-@theme inline {
+/* Not `@theme inline`: tokens must exist as real custom properties at runtime so
+   JavaScript can read them. framer-motion colour animation and the WebGL grid
+   have no other way to reach a token — that gap is why those call sites carried
+   hardcoded hex. Under `inline`, Tailwind substitutes each value into the
+   utility and emits no variables at all. */
+@theme {
   /* ─── Colors ─── */
   --color-surface-variant: #d3e4fe;
   --color-surface-canvas: #fafafa;
@@ -58,6 +63,11 @@
   --color-surface-container-highest: #d3e4fe;
   --color-inverse-on-surface: #eaf1ff;
   --color-error: #ba1a1a;
+  /* Semantic status. `success` was referenced by the contact form's success
+     state but never defined, so `text-success`/`bg-success` compiled to nothing
+     and the check icon rendered uncoloured. */
+  --color-success: #047857;
+  --color-success-container: #ecfdf5;
   --color-badge-blue-border: #dbeafe;
   --color-primary-fixed-dim: #b3c5ff;
   --color-primary-fixed-variant: #f8f8ff;

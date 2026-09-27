@@ -61,12 +61,56 @@ const minTextAlpha = {
   },
 };
 
+/**
+ * Guards the token layer.
+ *
+ * An audit found 64 raw palette utilities (`text-slate-900`, `bg-emerald-500`,
+ * `from-blue-700`, …) sitting beside a complete semantic token set. Tailwind's
+ * built-in palette is not themeable, so it bypasses globals.css entirely — a
+ * token change would never reach these. This keeps the sweep from regressing.
+ *
+ * Only utility class names are matched, not hex literals: `src/lib/email/` is
+ * hand-rolled HTML for email clients, where custom properties cannot be used,
+ * so hex is correct there.
+ */
+const PALETTE_UTILITY =
+  /\b(?:bg|text|border|from|via|to|ring|outline|fill|stroke|divide|placeholder|caret|accent|shadow)-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3}\b/;
+
+const noRawPalette = {
+  meta: {
+    type: 'problem',
+    docs: {
+      description: 'Disallow built-in Tailwind palette utilities in favour of semantic tokens',
+    },
+    messages: {
+      raw: '`{{utility}}` uses the built-in Tailwind palette, which bypasses the design tokens. Use a semantic token from globals.css instead.',
+    },
+  },
+  create(context) {
+    const sourceCode = context.sourceCode ?? context.getSourceCode();
+
+    const check = (node) => {
+      const match = sourceCode.getText(node).match(PALETTE_UTILITY);
+      if (match) {
+        context.report({ node, messageId: 'raw', data: { utility: match[0] } });
+      }
+    };
+
+    return {
+      Literal: (node) => typeof node.value === 'string' && check(node),
+      TemplateLiteral: check,
+    };
+  },
+};
+
 const eslintConfig = defineConfig([
   ...nextVitals,
   {
     files: ['src/**/*.{js,jsx}'],
-    plugins: { local: { rules: { 'min-text-alpha': minTextAlpha } } },
-    rules: { 'local/min-text-alpha': 'error' },
+    plugins: {
+      local: { rules: { 'min-text-alpha': minTextAlpha, 'no-raw-palette': noRawPalette } },
+    },
+    rules: { 'local/min-text-alpha': 'error', 'local/no-raw-palette': 'error' },
   },
   // `no-page-custom-font` guards the Pages Router: a font `<link>` declared
   // anywhere other than `pages/_document.js` only loads for the page that
