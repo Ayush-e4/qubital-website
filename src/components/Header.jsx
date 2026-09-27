@@ -207,7 +207,7 @@ export default function Header() {
                 ref={langButtonRef}
                 type="button"
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-300/80 bg-slate-100/90 hover:bg-slate-200/80 transition-all text-xs font-mono font-bold text-slate-800 shadow-2xs cursor-pointer select-none"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-outline-variant bg-surface-container hover:bg-surface-container-high transition-all text-xs font-mono font-bold text-on-surface shadow-2xs cursor-pointer select-none"
                 aria-label={t.header?.change_language || 'Change language'}
                 aria-expanded={langOpen}
                 aria-controls="header-language-menu"
@@ -269,7 +269,7 @@ export default function Header() {
             {/* Custom Animated Executive Mobile Menu Button (Pill + Morphing Dual Lines) */}
             <button
               ref={menuButtonRef}
-              className="md:hidden flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-slate-300/80 bg-slate-100/90 hover:bg-slate-200/80 transition-all duration-200 shadow-2xs active:scale-95"
+              className="md:hidden flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-outline-variant bg-surface-container hover:bg-surface-container-high transition-all duration-200 shadow-2xs active:scale-95"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={
                 mobileOpen
@@ -282,19 +282,19 @@ export default function Header() {
               {/* Morphing Dual-Line Icon */}
               <div className="w-4 h-3 flex flex-col justify-between items-center relative py-0.5">
                 <motion.span
-                  className="w-4 h-[2px] bg-slate-900 rounded-full block transform-gpu"
+                  className="w-4 h-[2px] bg-on-surface rounded-full block transform-gpu"
                   animate={mobileOpen ? { rotate: 45, y: 3.5 } : { rotate: 0, y: 0 }}
                   transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 />
                 <motion.span
-                  className="w-4 h-[2px] bg-slate-900 rounded-full block transform-gpu"
+                  className="w-4 h-[2px] bg-on-surface rounded-full block transform-gpu"
                   animate={mobileOpen ? { rotate: -45, y: -3.5 } : { rotate: 0, y: 0 }}
                   transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 />
               </div>
 
               {/* Text Label */}
-              <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-slate-900 select-none">
+              <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-on-surface select-none">
                 {mobileOpen ? t.header?.close || 'CLOSE' : t.header?.menu || 'MENU'}
               </span>
             </button>
@@ -343,13 +343,13 @@ export default function Header() {
 
                 {/* Close Button Pill */}
                 <button
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
                   onClick={() => setMobileOpen(false)}
                   aria-label={t.header?.close_menu || 'Close menu'}
                 >
                   <span className="w-3.5 h-3.5 flex items-center justify-center relative">
-                    <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute rotate-45" />
-                    <span className="w-3.5 h-[2px] bg-slate-900 rounded-full absolute -rotate-45" />
+                    <span className="w-3.5 h-[2px] bg-on-surface rounded-full absolute rotate-45" />
+                    <span className="w-3.5 h-[2px] bg-on-surface rounded-full absolute -rotate-45" />
                   </span>
                   <span className="text-[11px] font-mono font-bold tracking-wider uppercase">
                     {t.header?.close || 'CLOSE'}

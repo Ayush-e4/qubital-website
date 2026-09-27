@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { readToken } from '@/lib/tokens';
 
 const ANIMATION_DURATION_SECONDS = 15;
 const GRID_HEIGHT_RATIO = 3;
@@ -377,7 +378,7 @@ export function RetroGrid({
   angle = 65,
   cellSize = 60,
   opacity = 0.65,
-  lightLineColor = '#cbd5e1',
+  lightLineColor = readToken('--color-border-strong', '#cbd5e1'),
   style,
   ...props
 }) {

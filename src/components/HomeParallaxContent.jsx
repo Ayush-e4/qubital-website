@@ -12,6 +12,7 @@ import { NumberTicker } from '@/components/magicui/number-ticker';
 import { RetroGrid } from '@/components/magicui/retro-grid';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
+import { readToken } from '@/lib/tokens';
 
 export default function HomeParallaxContent() {
   const containerRef = useRef(null);
@@ -26,8 +27,6 @@ export default function HomeParallaxContent() {
 
   // Parallax transform layers
   const yHeroGrid = useTransform(scrollYProgress, [0, 0.25], [0, 60]);
-  const yHeroTitle = useTransform(scrollYProgress, [0, 0.25], [0, -35]);
-  const opacityHeroTitle = useTransform(scrollYProgress, [0, 0.2], [1, 0.6]);
   const yHeroCtas = useTransform(scrollYProgress, [0, 0.25], [0, -15]);
 
   // Ambient floating background parallax elements
@@ -148,7 +147,7 @@ export default function HomeParallaxContent() {
           style={{ y: yHeroGrid }}
           className="absolute inset-0 size-full pointer-events-none"
         >
-          <RetroGrid lightLineColor="#94a3b8" opacity={0.4} />
+          <RetroGrid lightLineColor={readToken('--color-text-muted', '#94a3b8')} opacity={0.4} />
         </motion.div>
 
         {/* Spacer for top balance */}
@@ -157,21 +156,19 @@ export default function HomeParallaxContent() {
         {/* Centered Hero Content */}
         <div className="max-w-5xl w-full mx-auto flex flex-col items-center text-center relative z-10 my-auto">
           <AnimateOnScroll className="flex flex-col items-center space-y-4 sm:space-y-5 md:space-y-6 w-full">
-            {/* Brand Title with Parallax float */}
-            <motion.span
-              style={{ y: yHeroTitle, opacity: opacityHeroTitle }}
-              className="pointer-events-none z-10 bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-[4.75rem] xs:text-[5.75rem] sm:text-7xl md:text-8xl lg:text-9xl leading-none font-black tracking-tighter whitespace-pre-wrap text-transparent drop-shadow-sm select-none py-1 block"
-            >
-              Qubital
-            </motion.span>
-
-            {/* Sub-headline */}
-            <h1 className="text-base xs:text-lg sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-950 leading-snug max-w-3xl px-2">
+            {/*
+              The `<h1>` leads the hero. It previously sat below a wordmark many
+              times its size, so the squint test saw only "Qubital" and the
+              page's actual heading was visually subordinate — and it repeated
+              the logo already in the header. The rainbow gradient that carried
+              the wordmark is gone with it.
+            */}
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-on-surface leading-[1.05] text-balance max-w-4xl px-2">
               {t.hero.sub_headline}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xs xs:text-sm sm:text-lg md:text-xl font-medium text-slate-800 max-w-2xl leading-relaxed px-2">
+            <p className="text-xs xs:text-sm sm:text-lg md:text-xl font-medium text-on-surface-variant max-w-2xl leading-relaxed px-2">
               {t.hero.subtitle}
             </p>
 
@@ -188,7 +185,7 @@ export default function HomeParallaxContent() {
               </MarqueeButton>
               <MarqueeButton
                 href={localePath('/about')}
-                className="bg-surface-card text-slate-950 font-bold border border-slate-300 hover:border-primary/40 shadow-2xs w-full sm:w-auto text-center justify-center text-xs sm:text-sm"
+                className="bg-surface-card text-on-surface font-bold border border-outline-variant hover:border-primary/40 shadow-2xs w-full sm:w-auto text-center justify-center text-xs sm:text-sm"
               >
                 {t.hero.cta_secondary}
               </MarqueeButton>
@@ -264,45 +261,45 @@ export default function HomeParallaxContent() {
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-12">
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={480} className="text-primary" />
                 <span>+</span>
               </div>
-              <div className="text-xs md:text-sm text-slate-900 font-semibold uppercase tracking-wider">
+              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
                 {t.metrics.labels.cloud_workloads}
               </div>
             </StaggerItem>
 
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={120} className="text-primary" />
                 <span>+</span>
               </div>
-              <div className="text-xs md:text-sm text-slate-900 font-semibold uppercase tracking-wider">
+              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
                 {t.metrics.labels.arch_reviews}
               </div>
             </StaggerItem>
 
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={99.98} decimalPlaces={2} className="text-primary" />
                 <span>%</span>
               </div>
-              <div className="text-xs md:text-sm text-slate-900 font-semibold uppercase tracking-wider">
+              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
                 {t.metrics.labels.sla_guarantee}
               </div>
             </StaggerItem>
 
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={97.3} decimalPlaces={1} className="text-primary" />
                 <span>%</span>
               </div>
-              <div className="text-xs md:text-sm text-slate-900 font-semibold uppercase tracking-wider">
+              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
                 {t.metrics.labels.continuity_rate}
               </div>
             </StaggerItem>
@@ -313,20 +310,20 @@ export default function HomeParallaxContent() {
             delay={0.2}
             className="pt-6 sm:pt-8 border-t border-outline-variant/30 flex flex-wrap justify-center gap-2.5 sm:gap-4"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-mono font-bold hover:border-emerald-500/40 hover:bg-emerald-50/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
               <span>{t.badges.iso}</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-mono font-bold hover:border-emerald-500/40 hover:bg-emerald-50/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
               <span>{t.badges.bsi}</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-mono font-bold hover:border-emerald-500/40 hover:bg-emerald-50/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
               <span>{t.badges.gdpr}</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-mono font-bold hover:border-emerald-500/40 hover:bg-emerald-50/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
               <span>{t.badges.tisax}</span>
             </div>
           </AnimateOnScroll>

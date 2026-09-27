@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useId } from 'react';
 import { motion } from 'framer-motion';
+import { readToken } from '@/lib/tokens';
 
 export const AnimatedBeam = ({
   containerRef,
@@ -9,8 +10,8 @@ export const AnimatedBeam = ({
   toRef,
   pathColor = 'rgba(0,0,0,0.1)',
   pathOpacity = 1,
-  gradientStartColor = '#3b82f6',
-  gradientStopColor = '#8b5cf6',
+  gradientStartColor = readToken('--color-primary', '#0050cb'),
+  gradientStopColor = readToken('--color-primary', '#0050cb'),
   index = 0,
   timelineSteps = 7,
   className = '',

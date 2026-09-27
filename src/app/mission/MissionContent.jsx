@@ -37,16 +37,16 @@ export default function MissionContent() {
 
         {/* Hero Banner Quote Box */}
         <AnimateOnScroll delay={0.1}>
-          <div className="relative rounded-2xl bg-gradient-to-br from-[#16202e] to-[#0f172a] text-white p-8 sm:p-12 border border-slate-700/60 shadow-xl overflow-hidden">
+          <div className="relative rounded-2xl bg-inverse-surface text-inverse-on-surface p-8 sm:p-12 border border-inverse-on-surface/20 shadow-xl overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 max-w-3xl">
-              <span className="material-symbols-outlined text-sky-400 text-4xl mb-4 block">
+              <span className="material-symbols-outlined text-inverse-primary text-4xl mb-4 block">
                 format_quote
               </span>
-              <p className="text-xl sm:text-2xl font-light text-slate-100 leading-relaxed mb-6">
+              <p className="text-xl sm:text-2xl font-light text-inverse-on-surface/90 leading-relaxed mb-6">
                 &ldquo;{m.quote_text}&rdquo;
               </p>
-              <div className="flex items-center gap-3 text-xs font-mono tracking-wider text-sky-400 uppercase">
+              <div className="flex items-center gap-3 text-xs font-mono tracking-wider text-inverse-primary uppercase">
                 <span>{m.quote_author}</span>
                 <span>•</span>
                 <span>{m.quote_location}</span>
@@ -121,7 +121,7 @@ export default function MissionContent() {
                     <h3 className="text-xl font-bold text-on-surface mb-3">{step.title}</h3>
                     <p className="text-secondary text-sm leading-relaxed">{step.desc}</p>
                   </div>
-                  <div className="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-mono text-emerald-700 font-semibold">
+                  <div className="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-mono text-success font-semibold">
                     <span className="material-symbols-outlined text-[16px]">check_circle</span>
                     <span>{m.verified_milestone || 'Verified Milestone'}</span>
                   </div>
