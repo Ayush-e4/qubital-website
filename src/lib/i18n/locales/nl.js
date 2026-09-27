@@ -27,21 +27,7 @@ const dictionary = {
     scroll_hint: 'Scroll om te verkennen',
   },
   bento: {
-    software_title: 'Softwareontwikkeling',
-    software_desc:
-      'Maatwerk enterprise applicaties en microservices gebouwd voor schaalbaarheid en veerkracht.',
-    managed_title: 'Managed IT Services',
-    managed_desc:
-      'Proactief infrastructuurbeheer en Level 3 ondersteuning voor kritische systemen.',
-    cloud_title: 'Cloud Diensten',
-    cloud_desc: 'AWS en Azure cloudmigraties, architectuuroptimalisatie en FinOps.',
-    cyber_title: 'Cyberbeveiliging',
-    cyber_desc: 'Zero-trust architectuurimplementatie, audits en compliancebeheer.',
-    special_title: 'Gespecialiseerde Technologie',
-    special_desc: 'IoT-integratie, modernisering van legacy systemen en hardware-interfaces.',
     cta: 'Meer informatie',
-    sap_title: 'SAP Oplossingen',
-    sap_desc: 'S/4HANA-migratie, clean-core-architectuur en SAP BTP-cloudintegraties.',
   },
   services: {
     eyebrow: 'Kerncompetenties',

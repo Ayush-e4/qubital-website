@@ -27,20 +27,7 @@ const dictionary = {
     scroll_hint: 'Desplace para explorar',
   },
   bento: {
-    software_title: 'Desarrollo de Software',
-    software_desc:
-      'Aplicaciones empresariales y microservicios a medida, diseñados para escalar con resiliencia.',
-    managed_title: 'Servicios IT Gestionados',
-    managed_desc: 'Gestión proactiva de infraestructura y soporte Nivel 3 para sistemas críticos.',
-    cloud_title: 'Servicios Cloud',
-    cloud_desc: 'Migraciones a AWS y Azure, optimización de arquitectura y FinOps.',
-    cyber_title: 'Ciberseguridad',
-    cyber_desc: 'Implementación de arquitectura Zero-Trust, auditorías y gestión de cumplimiento.',
-    special_title: 'Tecnología Especializada',
-    special_desc: 'Integración IoT, modernización de sistemas legados e interfaces de hardware.',
     cta: 'Saber más',
-    sap_title: 'Soluciones SAP',
-    sap_desc: 'Migración S/4HANA, arquitectura clean-core e integraciones cloud SAP BTP.',
   },
   services: {
     eyebrow: 'Capacidades Clave',

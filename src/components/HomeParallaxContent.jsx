@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import MarqueeButton from '@/components/MarqueeButton';
-import { Terminal, Server, Cloud, ShieldCheck, Cpu, Layers } from 'lucide-react';
-import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
+import ServiceCard from '@/components/ServiceCard';
 import MethodologySteps from '@/components/MethodologySteps';
 import { NumberTicker } from '@/components/magicui/number-ticker';
 import { RetroGrid } from '@/components/magicui/retro-grid';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
 import { readToken } from '@/lib/tokens';
+import { DynamicIcon } from '@/lib/icons';
 import { ArrowRight, Calendar, ChevronDown } from 'lucide-react';
 
 export default function HomeParallaxContent() {
@@ -34,100 +34,16 @@ export default function HomeParallaxContent() {
   const yBlob1 = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const yBlob2 = useTransform(scrollYProgress, [0, 1], [0, -140]);
 
-  const serviceFeatures = [
-    {
-      Icon: (
-        <Terminal className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
-      ),
-      name: t.bento.software_title,
-      description: t.bento.software_desc,
-      href: localePath('/services#software'),
-      cta: t.bento.cta,
-      className: 'md:col-span-2',
-      background: (
-        <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <Terminal className="w-48 h-48 md:w-64 md:h-64 text-primary" />
-        </div>
-      ),
-    },
-    {
-      Icon: (
-        <Server className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
-      ),
-      name: t.bento.managed_title,
-      description: t.bento.managed_desc,
-      href: localePath('/services#managed-it'),
-      cta: t.bento.cta,
-      className: 'md:col-span-1',
-      background: (
-        <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <Server className="w-36 h-36 md:w-48 md:h-48 text-primary" />
-        </div>
-      ),
-    },
-    {
-      Icon: (
-        <Cloud className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
-      ),
-      name: t.bento.cloud_title,
-      description: t.bento.cloud_desc,
-      href: localePath('/services#cloud'),
-      cta: t.bento.cta,
-      className: 'md:col-span-1',
-      background: (
-        <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <Cloud className="w-36 h-36 md:w-48 md:h-48 text-primary" />
-        </div>
-      ),
-    },
-    {
-      Icon: (
-        <ShieldCheck className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
-      ),
-      name: t.bento.cyber_title,
-      description: t.bento.cyber_desc,
-      href: localePath('/services#cybersecurity'),
-      cta: t.bento.cta,
-      className: 'md:col-span-2',
-      background: (
-        <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <ShieldCheck className="w-48 h-48 md:w-64 md:h-64 text-primary" />
-        </div>
-      ),
-    },
-    {
-      Icon: (
-        <Cpu className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
-      ),
-      name: t.bento.special_title,
-      description: t.bento.special_desc,
-      href: localePath('/services#specialized-tech'),
-      cta: t.bento.cta,
-      className: 'md:col-span-2',
-      background: (
-        <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <Cpu className="w-48 h-48 md:w-64 md:h-64 text-primary" />
-        </div>
-      ),
-    },
-    {
-      Icon: (
-        <Layers className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
-      ),
-      name: t.bento.sap_title || 'SAP Solutions',
-      description:
-        t.bento.sap_desc ||
-        'S/4HANA migrations, clean-core architecture, and SAP BTP cloud integrations.',
-      href: localePath('/services#sap'),
-      cta: t.bento.cta,
-      className: 'md:col-span-1',
-      background: (
-        <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end pr-4 md:pr-8 opacity-[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-500">
-          <Layers className="w-36 h-36 md:w-48 md:h-48 text-primary" />
-        </div>
-      ),
-    },
-  ];
+  // The homepage teaser keeps the uneven bento arrangement; the card itself is
+  // shared with /services — see src/components/ServiceCard.jsx.
+  const SERVICE_SPANS = {
+    software: 'md:col-span-2',
+    'managed-it': 'md:col-span-1',
+    cloud: 'md:col-span-1',
+    cybersecurity: 'md:col-span-2',
+    'specialized-tech': 'md:col-span-2',
+    sap: 'md:col-span-1',
+  };
 
   return (
     <main ref={containerRef} className="flex flex-col w-full overflow-hidden relative">
@@ -214,11 +130,19 @@ export default function HomeParallaxContent() {
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={0.15} className="w-full">
-            <BentoGrid>
-              {serviceFeatures.map((feature, idx) => (
-                <BentoCard key={idx} {...feature} />
+            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+              {(t.services_page.matrix_cards ?? []).map((card) => (
+                <ServiceCard
+                  key={card.id}
+                  icon={<DynamicIcon name={card.icon} className="h-8 w-8 md:h-9 md:w-9" />}
+                  title={card.title}
+                  description={card.description}
+                  href={localePath(`/services#${card.id}`)}
+                  ctaLabel={t.bento.cta}
+                  className={SERVICE_SPANS[card.id] ?? ''}
+                />
               ))}
-            </BentoGrid>
+            </div>
           </AnimateOnScroll>
         </div>
       </section>
