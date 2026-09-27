@@ -141,17 +141,17 @@ export default function Header() {
       >
         <div className="h-16 max-w-[72rem] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-6">
-            <Link href={localePath('/')} className="flex items-center gap-3">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-6">
+            <Link href={localePath('/')} className="flex min-w-0 items-center gap-3">
               <Image
                 alt="Qubital Logo"
-                className="h-8 w-auto object-contain"
+                className="h-8 w-auto shrink-0 object-contain"
                 src={COMPANY_INFO.logoUrl}
                 width={32}
                 height={32}
                 priority
               />
-              <span className="text-style-headline-sm tracking-tight text-text-primary font-bold">
+              <span className="hidden truncate text-style-headline-sm tracking-tight text-text-primary font-bold xs:inline">
                 Qubital
               </span>
             </Link>
@@ -191,7 +191,7 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             {/* Desktop Language Switcher Dropdown */}
             <div
               className="relative"

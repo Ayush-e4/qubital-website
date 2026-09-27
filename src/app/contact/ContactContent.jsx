@@ -310,7 +310,7 @@ export default function ContactContent() {
                           name="priority"
                           value={formData.priority}
                           onChange={handleChange}
-                          className="bg-surface-canvas border border-outline-variant text-xs text-on-surface px-2.5 py-1.5 rounded focus:outline-none focus:border-primary"
+                          className="bg-surface-canvas border border-outline-variant text-base sm:text-sm text-on-surface px-2.5 py-1.5 rounded focus:outline-none focus:border-primary"
                         >
                           <option value="Standard">{c.priority_std ?? 'Standard (24-48h)'}</option>
                           <option value="Urgent">{c.priority_urg ?? 'Urgent (Same Day)'}</option>
