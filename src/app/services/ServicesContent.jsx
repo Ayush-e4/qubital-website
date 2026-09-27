@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
+import ServiceCard from '@/components/ServiceCard';
 import MethodologySteps from '@/components/MethodologySteps';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
-import { BadgeCheck, CheckCircle2, LayoutGrid, Settings, User } from 'lucide-react';
+import { DynamicIcon } from '@/lib/icons';
+import { BadgeCheck, LayoutGrid, Settings, User } from 'lucide-react';
 
 export default function ServicesContent() {
   const { t } = useLanguage();
@@ -58,42 +60,15 @@ export default function ServicesContent() {
         </AnimateOnScroll>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(s.matrix_cards ?? []).map((card, idx) => (
-            <StaggerItem key={idx} className="h-full">
-              <div
+          {(s.matrix_cards ?? []).map((card) => (
+            <StaggerItem key={card.id} className="h-full">
+              <ServiceCard
                 id={card.id}
-                className="group relative rounded-2xl p-[2px] h-full transition-all duration-500 scroll-mt-28"
-              >
-                {/* 1. Ambient blur glow behind card */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary via-tertiary to-primary blur-xl opacity-20 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500 pointer-events-none z-0" />
-
-                {/* 2. Rotating conic gradient border behind card */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-0">
-                  <div className="absolute -inset-[100%] bg-[conic-gradient(from_0deg,var(--color-on-surface)_0%,var(--color-primary)_25%,var(--color-inverse-primary)_50%,var(--color-on-surface)_75%,var(--color-on-surface)_100%)] opacity-40 group-hover:opacity-100 group-hover:rotate-180 transition-all duration-1000 ease-out" />
-                </div>
-
-                {/* 3. Solid Dark Navy Card Face */}
-                <div className="relative z-10 bg-inverse-surface rounded-2xl p-6 sm:p-8 flex flex-col h-full text-inverse-on-surface border border-inverse-on-surface/20 group-hover:border-primary/50 transition-colors duration-300 shadow-xl">
-                  <h3 className="text-style-headline-sm text-inverse-on-surface mb-3">
-                    {card.title}
-                  </h3>
-                  <p className="font-body-md text-inverse-on-surface/80 mb-6 flex-grow leading-relaxed">
-                    {card.description}
-                  </p>
-
-                  <ul className="space-y-2.5">
-                    {(card.items ?? []).map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center space-x-2.5 text-sm text-inverse-on-surface/90"
-                      >
-                        <CheckCircle2 className="h-[18px] w-[18px] text-inverse-primary shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                icon={<DynamicIcon name={card.icon} className="h-8 w-8 md:h-9 md:w-9" />}
+                title={card.title}
+                description={card.description}
+                items={card.items}
+              />
             </StaggerItem>
           ))}
         </StaggerContainer>
