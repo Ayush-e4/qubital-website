@@ -18,7 +18,7 @@ export default function ServicesContent() {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-6 sm:py-16 md:py-20 lg:py-24">
         <AnimateOnScroll className="max-w-4xl mx-auto text-center">
           <div className="flex flex-col items-center space-y-8">
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-on-surface tracking-tight leading-tight">
+            <h1 className="text-style-headline-lg text-on-surface">
               {s.hero_title_1} <br className="hidden sm:inline" />
               <span className="text-primary block sm:inline">{s.hero_title_2}</span>
             </h1>
@@ -49,9 +49,7 @@ export default function ServicesContent() {
               <span className="material-symbols-outlined text-sm">grid_view</span>
               <span>{s.matrix_tag}</span>
             </div>
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-surface mb-6 font-bold">
-              {s.matrix_title}
-            </h2>
+            <h2 className="text-style-headline-md text-on-surface mb-6">{s.matrix_title}</h2>
             <p className="font-body-lg text-on-surface-variant text-lg max-w-2xl mx-auto">
               {s.matrix_desc}
             </p>
@@ -75,7 +73,9 @@ export default function ServicesContent() {
 
                 {/* 3. Solid Dark Navy Card Face */}
                 <div className="relative z-10 bg-inverse-surface rounded-2xl p-6 sm:p-8 flex flex-col h-full text-inverse-on-surface border border-inverse-on-surface/20 group-hover:border-primary/50 transition-colors duration-300 shadow-xl">
-                  <h3 className="text-xl text-inverse-on-surface font-bold mb-3">{card.title}</h3>
+                  <h3 className="text-style-headline-sm text-inverse-on-surface mb-3">
+                    {card.title}
+                  </h3>
                   <p className="font-body-md text-inverse-on-surface/80 mb-6 flex-grow leading-relaxed">
                     {card.description}
                   </p>
@@ -107,9 +107,7 @@ export default function ServicesContent() {
             <span className="material-symbols-outlined text-sm">settings_timelapse</span>
             <span>{s.methodology_tag}</span>
           </div>
-          <h2 className="font-headline-lg text-3xl md:text-4xl text-on-surface mb-6">
-            {s.methodology_title}
-          </h2>
+          <h2 className="text-style-headline-md text-on-surface mb-6">{s.methodology_title}</h2>
           <p className="font-body-lg text-on-surface-variant text-lg">{s.methodology_desc}</p>
         </AnimateOnScroll>
 
@@ -138,9 +136,7 @@ export default function ServicesContent() {
             </div>
 
             <div className="lg:max-w-2xl relative z-10 text-center lg:text-left mb-10 lg:mb-0">
-              <h2 className="font-display text-4xl sm:text-5xl text-inverse-on-surface mb-6 tracking-tight leading-tight">
-                {s.cta_title}
-              </h2>
+              <h2 className="text-style-headline-md text-inverse-on-surface mb-6">{s.cta_title}</h2>
               <p className="font-body-lg text-inverse-on-surface/80 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
                 {s.cta_desc}
               </p>

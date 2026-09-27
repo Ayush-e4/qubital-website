@@ -78,7 +78,7 @@ const BentoCard = ({ name, className, background, Icon, description, href, cta }
         ) : Icon ? (
           <Icon className="h-9 w-9 md:h-10 md:w-10 origin-left transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-110" />
         ) : null}
-        <h3 className="text-xl sm:text-2xl font-bold text-on-surface tracking-tight">{name}</h3>
+        <h3 className="text-style-headline-sm text-on-surface">{name}</h3>
         <p className="max-w-lg text-secondary text-sm md:text-base leading-relaxed">
           {description}
         </p>

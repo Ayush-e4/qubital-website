@@ -16,13 +16,16 @@ import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 // being sent to Google, which matters for a German site whose privacy page
 // makes GDPR claims.
 //
-// The weights are exactly the ones the design uses, so nothing unused ships.
+// The weights below are the ones the type scale in globals.css actually uses.
+// Anything not listed here is silently substituted by the browser: the site
+// asked for `font-bold`/`font-extrabold` (700/800) in well over a hundred
+// places while loading only 400/500/600, so that text never rendered bold.
 // `latin` covers every character in the six locales (umlauts, accents, ß).
 // `next/font` also emits a size-adjusted fallback face, so text does not shift
 // when the real font swaps in — that is CLS, 25% of the mobile score.
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-inter',
 });

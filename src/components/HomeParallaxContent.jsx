@@ -163,7 +163,7 @@ export default function HomeParallaxContent() {
               the logo already in the header. The rainbow gradient that carried
               the wordmark is gone with it.
             */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-on-surface leading-[1.05] text-balance max-w-4xl px-2">
+            <h1 className="text-style-display text-on-surface max-w-4xl px-2">
               {t.hero.sub_headline}
             </h1>
 
@@ -204,7 +204,7 @@ export default function HomeParallaxContent() {
       <section className="w-full flex flex-col justify-center py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-surface relative z-10">
         <div className="max-w-7xl mx-auto w-full">
           <AnimateOnScroll className="mb-8 md:mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface mb-2 sm:mb-3">
+            <h2 className="text-style-headline-md text-on-surface mb-2 sm:mb-3">
               {t.services.heading}
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-secondary px-2">
@@ -230,9 +230,7 @@ export default function HomeParallaxContent() {
               <span className="text-xs font-mono font-semibold text-primary tracking-wider uppercase mb-1 sm:mb-2 block">
                 {t.methodology.eyebrow}
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface">
-                {t.methodology.heading}
-              </h2>
+              <h2 className="text-style-headline-md text-on-surface">{t.methodology.heading}</h2>
             </div>
             <Link
               href={localePath('/about')}
@@ -254,15 +252,13 @@ export default function HomeParallaxContent() {
             <span className="text-xs font-mono font-semibold text-primary tracking-widest uppercase mb-1 sm:mb-2 block">
               {t.metrics.eyebrow}
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-on-surface tracking-tight">
-              {t.metrics.heading}
-            </h2>
+            <h2 className="text-style-headline-md text-on-surface">{t.metrics.heading}</h2>
           </AnimateOnScroll>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-12">
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={480} className="text-primary" />
                 <span>+</span>
               </div>
@@ -273,7 +269,7 @@ export default function HomeParallaxContent() {
 
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={120} className="text-primary" />
                 <span>+</span>
               </div>
@@ -284,7 +280,7 @@ export default function HomeParallaxContent() {
 
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={99.98} decimalPlaces={2} className="text-primary" />
                 <span>%</span>
               </div>
@@ -295,7 +291,7 @@ export default function HomeParallaxContent() {
 
             <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-1.5 flex items-center justify-center tracking-tight">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
                 <NumberTicker value={97.3} decimalPlaces={1} className="text-primary" />
                 <span>%</span>
               </div>
@@ -338,9 +334,7 @@ export default function HomeParallaxContent() {
 
             <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center justify-between">
               <div className="flex-1">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
-                  {t.cta_banner.heading}
-                </h2>
+                <h2 className="text-style-headline-md mb-3">{t.cta_banner.heading}</h2>
                 <p className="text-inverse-on-surface/75 text-sm sm:text-base md:text-lg mb-6 max-w-xl leading-relaxed">
                   {t.cta_banner.description}
                 </p>
