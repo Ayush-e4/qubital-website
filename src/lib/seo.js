@@ -1,8 +1,7 @@
 import { headers } from 'next/headers';
 import { LOCALES, localizedPath } from '@/lib/i18n/paths';
 
-export const SITE_URL = 'https://qubital.eu';
-export const SITE_NAME = 'Qubital';
+const SITE_NAME = 'Qubital';
 
 const OG_LOCALES = {
   en: 'en_US',

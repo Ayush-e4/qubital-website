@@ -1,3 +1,5 @@
+import { SITE_URL } from '@/lib/constants';
+
 export default function robots() {
   return {
     rules: [
@@ -21,7 +23,7 @@ export default function robots() {
         disallow: '/',
       },
     ],
-    sitemap: 'https://qubital.eu/sitemap.xml',
-    host: 'https://qubital.eu',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NAV_LINKS, COMPANY_INFO } from '@/lib/constants';
+import { NAV_LINKS, COMPANY_INFO, LANGUAGES } from '@/lib/constants';
 import { Dock, DockIcon } from '@/components/ui/dock';
 import { useLanguage } from '@/components/LanguageProvider';
 import { localeFromPath, localizedPath, stripLocale } from '@/lib/i18n/paths';
@@ -19,15 +19,6 @@ const NAV_KEY_MAP = {
   '/careers': 'careers',
   '/contact': 'contact',
 };
-
-const LANGUAGES = [
-  { code: 'en', label: 'English', short: 'EN' },
-  { code: 'de', label: 'Deutsch', short: 'DE' },
-  { code: 'fr', label: 'Français', short: 'FR' },
-  { code: 'es', label: 'Español', short: 'ES' },
-  { code: 'it', label: 'Italiano', short: 'IT' },
-  { code: 'nl', label: 'Nederlands', short: 'NL' },
-];
 
 export default function Header() {
   const pathname = usePathname();

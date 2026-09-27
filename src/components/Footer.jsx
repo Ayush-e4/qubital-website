@@ -3,20 +3,11 @@
 import { useState, useEffect, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FOOTER_LINKS, COMPANY_INFO } from '@/lib/constants';
+import { FOOTER_LINKS, COMPANY_INFO, LANGUAGES } from '@/lib/constants';
 import { InteractiveGridPattern } from '@/components/magicui/interactive-grid-pattern';
 import { useLanguage } from '@/components/LanguageProvider';
 import { localeFromPath, localizedPath, stripLocale } from '@/lib/i18n/paths';
 import { cn } from '@/lib/utils';
-
-const LANGUAGES = [
-  { code: 'en', label: 'English' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'fr', label: 'Français' },
-  { code: 'es', label: 'Español' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'nl', label: 'Nederlands' },
-];
 
 const HOVER_QUERY = '(hover: hover) and (pointer: fine)';
 
