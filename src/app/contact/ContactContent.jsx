@@ -6,6 +6,7 @@ import { usePostHog } from 'posthog-js/react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
 import { CONTACT_LIMITS, validateContactSubmission } from '@/lib/validation/contact';
+import { CheckCircle2, Clock, Mail, MapPin, Send } from 'lucide-react';
 
 export default function ContactContent() {
   const { t, locale } = useLanguage();
@@ -126,7 +127,7 @@ export default function ContactContent() {
               {isSubmitted ? (
                 <div className="py-12 sm:py-20 text-center relative z-10">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 text-success mb-6">
-                    <span className="material-symbols-outlined text-4xl">check_circle</span>
+                    <CheckCircle2 className="h-9 w-9" />
                   </div>
                   <h2 className="text-style-headline-md text-on-surface mb-4">{c.success_title}</h2>
                   <p className="text-secondary text-sm sm:text-base mb-8 max-w-md mx-auto">
@@ -146,9 +147,7 @@ export default function ContactContent() {
                 <div className="relative z-10">
                   <div className="flex flex-wrap items-center justify-between border-b border-outline-variant pb-5 mb-6 sm:mb-8 gap-3">
                     <div className="flex items-center gap-2.5">
-                      <span className="material-symbols-outlined text-primary text-[20px]">
-                        mail
-                      </span>
+                      <Mail className="h-5 w-5 text-primary" />
                       <span className="text-xs font-mono font-semibold tracking-widest text-secondary uppercase">
                         {c.form_title}
                       </span>
@@ -348,7 +347,7 @@ export default function ContactContent() {
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold px-8 py-3.5 rounded-xl hover:bg-primary/90 transition-colors shadow-md text-sm mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       <span>{isSubmitting ? c.submitting || 'Sending…' : c.submit}</span>
-                      <span className="material-symbols-outlined text-[18px]">send</span>
+                      <Send className="h-[18px] w-[18px]" />
                     </button>
 
                     {submitError && (
@@ -394,7 +393,7 @@ export default function ContactContent() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3.5">
                   <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-[20px]">location_on</span>
+                    <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <span className="text-xs font-mono font-semibold text-secondary uppercase block mb-0.5">
@@ -411,7 +410,7 @@ export default function ContactContent() {
 
                 <div className="flex items-start gap-3.5">
                   <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-[20px]">mail</span>
+                    <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <span className="text-xs font-mono font-semibold text-secondary uppercase block mb-0.5">
@@ -428,7 +427,7 @@ export default function ContactContent() {
 
                 <div className="flex items-start gap-3.5">
                   <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-[20px]">schedule</span>
+                    <Clock className="h-5 w-5" />
                   </div>
                   <div>
                     <span className="text-xs font-mono font-semibold text-secondary uppercase block mb-0.5">

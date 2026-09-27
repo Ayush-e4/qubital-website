@@ -5,6 +5,7 @@ import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/Ani
 import MethodologySteps from '@/components/MethodologySteps';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
+import { BadgeCheck, CheckCircle2, LayoutGrid, Settings, User } from 'lucide-react';
 
 export default function ServicesContent() {
   const { t } = useLanguage();
@@ -46,7 +47,7 @@ export default function ServicesContent() {
         <AnimateOnScroll>
           <div className="mb-12 md:mb-16 max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 text-primary font-label-md tracking-widest uppercase mb-4 justify-center">
-              <span className="material-symbols-outlined text-sm">grid_view</span>
+              <LayoutGrid className="h-3.5 w-3.5" />
               <span>{s.matrix_tag}</span>
             </div>
             <h2 className="text-style-headline-md text-on-surface mb-6">{s.matrix_title}</h2>
@@ -86,9 +87,7 @@ export default function ServicesContent() {
                         key={i}
                         className="flex items-center space-x-2.5 text-sm text-inverse-on-surface/90"
                       >
-                        <span className="material-symbols-outlined text-[18px] text-inverse-primary shrink-0">
-                          check_circle
-                        </span>
+                        <CheckCircle2 className="h-[18px] w-[18px] text-inverse-primary shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -104,7 +103,7 @@ export default function ServicesContent() {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 md:py-24 bg-surface">
         <AnimateOnScroll className="mb-12 text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center space-x-2 text-primary font-label-md tracking-widest uppercase mb-4 justify-center">
-            <span className="material-symbols-outlined text-sm">settings_timelapse</span>
+            <Settings className="h-3.5 w-3.5" />
             <span>{s.methodology_tag}</span>
           </div>
           <h2 className="text-style-headline-md text-on-surface mb-6">{s.methodology_title}</h2>
@@ -143,11 +142,11 @@ export default function ServicesContent() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-6 text-sm text-inverse-on-surface/70">
                 <div className="flex items-center space-x-2">
-                  <span className="material-symbols-outlined text-[18px]">verified</span>
+                  <BadgeCheck className="h-[18px] w-[18px]" />
                   <span>{s.cta_nda}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <span className="material-symbols-outlined text-[18px]">person</span>
+                  <User className="h-[18px] w-[18px]" />
                   <span>{s.cta_direct}</span>
                 </div>
               </div>

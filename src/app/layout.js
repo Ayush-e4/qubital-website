@@ -193,19 +193,6 @@ export default async function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
-        {/* The text families are self-hosted via `next/font` above, so no
-            preconnect or stylesheet is needed for them.
-            Material Symbols is the one remaining third-party font request: it
-            is a variable icon font with a wght/FILL axis that `next/font` does
-            not serve, and its 47 usages are spread across 12 files. Replacing
-            it with `lucide-react` (already a dependency) would remove this
-            request and the two Google origins from the CSP below. */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          precedence="default"
-        />
       </head>
       <body className="bg-surface-canvas text-on-surface selection:bg-secondary-container selection:text-on-secondary-fixed min-h-full flex flex-col">
         <PostHogProvider>

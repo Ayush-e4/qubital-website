@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { headers } from 'next/headers';
 import { getDictionary } from '@/lib/i18n/translations';
 import { DEFAULT_LOCALE, localizedPath } from '@/lib/i18n/paths';
+import { ArrowLeft, MapPin } from 'lucide-react';
 
 export default async function NotFound() {
   const locale = (await headers()).get('x-locale') || DEFAULT_LOCALE;
@@ -44,7 +45,7 @@ export default async function NotFound() {
           href={localePath('/')}
           className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-on-primary font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200 mb-10 shadow-md"
         >
-          <span className="material-symbols-outlined text-[18px]">arrow_back</span>
+          <ArrowLeft className="h-[18px] w-[18px]" />
           {nf.cta}
         </Link>
 
@@ -67,7 +68,7 @@ export default async function NotFound() {
 
       {/* Bottom location badge */}
       <div className="absolute bottom-8 flex items-center gap-2 text-xs font-mono text-secondary/90">
-        <span className="material-symbols-outlined text-[14px]">location_on</span>
+        <MapPin className="h-3.5 w-3.5" />
         <span>Herzogenaurach, Bavaria · qubital.eu</span>
       </div>
     </main>

@@ -13,6 +13,7 @@ import { RetroGrid } from '@/components/magicui/retro-grid';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
 import { readToken } from '@/lib/tokens';
+import { ArrowRight, Calendar, ChevronDown } from 'lucide-react';
 
 export default function HomeParallaxContent() {
   const containerRef = useRef(null);
@@ -196,7 +197,7 @@ export default function HomeParallaxContent() {
         {/* Subtle Scroll Hint Indicator */}
         <div className="relative z-10 pt-4 flex flex-col items-center justify-center text-secondary/90 text-[11px] font-mono tracking-widest uppercase animate-bounce pointer-events-none">
           <span>{t.hero.scroll_hint}</span>
-          <span className="material-symbols-outlined text-[16px]">expand_more</span>
+          <ChevronDown className="h-4 w-4" />
         </div>
       </section>
 
@@ -237,7 +238,7 @@ export default function HomeParallaxContent() {
               className="text-primary group text-sm font-semibold flex items-center gap-1 py-1 w-fit"
             >
               <span className="group-hover:underline">{t.methodology.cta_link}</span>
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </AnimateOnScroll>
 
@@ -345,14 +346,14 @@ export default function HomeParallaxContent() {
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-on-primary font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-200 shadow-sm text-sm sm:text-base"
                   >
                     <span>{t.cta_banner.btn_primary}</span>
-                    <span className="material-symbols-outlined text-sm">calendar_month</span>
+                    <Calendar className="h-3.5 w-3.5" />
                   </Link>
                   <Link
                     href={localePath('/careers')}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-transparent text-inverse-on-surface font-semibold rounded-xl border border-inverse-on-surface/30 hover:bg-white/5 transition-colors duration-200 text-sm sm:text-base"
                   >
                     <span>{t.cta_banner.btn_secondary}</span>
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>

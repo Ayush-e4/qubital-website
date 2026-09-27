@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 const BentoGrid = ({ children, className }) => {
   return (
@@ -96,9 +97,7 @@ const BentoCard = ({ name, className, background, Icon, description, href, cta }
           className="inline-flex items-center gap-2 text-primary font-semibold group/link text-sm uppercase tracking-wider py-1 hover:underline"
         >
           <span>{cta}</span>
-          <span className="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover/link:translate-x-1">
-            arrow_forward
-          </span>
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
         </Link>
       </div>
     </div>

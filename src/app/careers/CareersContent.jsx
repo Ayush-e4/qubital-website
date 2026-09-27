@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import { useLanguage } from '@/components/LanguageProvider';
+import { Mail } from 'lucide-react';
+import { DynamicIcon } from '@/lib/icons';
 
 export default function CareersContent() {
   const { t } = useLanguage();
@@ -70,7 +72,7 @@ export default function CareersContent() {
               className="bg-surface-canvas border border-outline-variant rounded-xl p-6 flex flex-col items-start gap-4 hover:bg-surface-card transition-colors"
             >
               <div className="w-10 h-10 rounded-lg bg-surface-card border border-outline-variant flex items-center justify-center text-primary">
-                <span className="material-symbols-outlined">{icons[i % icons.length]}</span>
+                <DynamicIcon name={icons[i % icons.length]} className="" />
               </div>
               <div>
                 <h3 className="text-style-title-md text-on-surface mb-1">{ben.title}</h3>
@@ -103,7 +105,7 @@ export default function CareersContent() {
       <section id="reach-out" className="container mx-auto px-4 lg:px-8 mb-16 scroll-mt-24">
         <AnimateOnScroll className="max-w-3xl mx-auto bg-surface-canvas border border-outline-variant rounded-2xl p-6 md:p-7 text-center flex flex-col items-center">
           <div className="flex items-center justify-center gap-2 mb-2.5 text-primary">
-            <span className="material-symbols-outlined text-xl">mail</span>
+            <Mail className="h-5 w-5" />
             <span className="text-xs font-mono tracking-wider uppercase text-secondary">
               {c.network_tag}
             </span>

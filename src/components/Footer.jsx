@@ -8,6 +8,7 @@ import { InteractiveGridPattern } from '@/components/magicui/interactive-grid-pa
 import { useLanguage } from '@/components/LanguageProvider';
 import { localeFromPath, localizedPath, stripLocale } from '@/lib/i18n/paths';
 import { cn } from '@/lib/utils';
+import { Clock, MapPin } from 'lucide-react';
 
 const HOVER_QUERY = '(hover: hover) and (pointer: fine)';
 
@@ -105,7 +106,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-on-surface/90 font-semibold pointer-events-auto w-fit">
-              <span className="material-symbols-outlined text-[16px]">location_on</span>
+              <MapPin className="h-4 w-4" />
               <span>{COMPANY_INFO.location}</span>
             </div>
           </div>
@@ -148,9 +149,7 @@ export default function Footer() {
               title="Current time in Herzogenaurach, Germany (CET/CEST)"
               className="font-mono text-xs text-on-surface font-medium bg-surface p-2 px-3 rounded w-fit border border-outline-variant/60 shadow-inner flex items-center gap-2 pointer-events-auto"
             >
-              <span className="material-symbols-outlined text-[14px] text-on-surface/90">
-                schedule
-              </span>
+              <Clock className="h-3.5 w-3.5 text-on-surface/90" />
               <span suppressHydrationWarning>{time}</span>
             </div>
           </div>
