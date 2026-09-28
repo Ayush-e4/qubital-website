@@ -47,10 +47,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Qubital — Strategic IT Advisory & Systems Architecture',
+    default: 'Qubital — The IT Partner for Growing Companies',
   },
   description:
-    'Qubital engineers clarity across distributed architectures. Based in Bavaria, Germany, we partner with enterprises to turn technical complexity into operational simplicity.',
+    'IT advisory and systems architecture for growing companies. Software, cloud, security and SAP, delivered by senior engineers. Based in Herzogenaurach, Germany.',
   keywords: [
     'IT Advisory',
     'Systems Architecture',
@@ -76,23 +76,23 @@ export const metadata = {
     alternateLocale: 'de_DE',
     url: SITE_URL,
     siteName: 'Qubital',
-    title: 'Qubital — Strategic IT Advisory & Systems Architecture',
+    title: 'Qubital — The IT Partner for Growing Companies',
     description:
-      'Qubital engineers clarity across distributed architectures. Based in Bavaria, Germany.',
+      'IT advisory and systems architecture for growing companies. Based in Herzogenaurach, Germany.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Qubital — Strategic IT Advisory',
+        alt: 'Qubital — IT partner for growing companies',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Qubital — Strategic IT Advisory & Systems Architecture',
+    title: 'Qubital — The IT Partner for Growing Companies',
     description:
-      'Enterprise IT advisory and systems architecture. Based in Herzogenaurach, Bavaria.',
+      'IT advisory and systems architecture for growing companies. Based in Herzogenaurach, Bavaria.',
     images: ['/og-image.png'],
   },
 };
@@ -124,7 +124,7 @@ const jsonLd = {
       '@id': `${SITE_URL}/#localbusiness`,
       name: 'Qubital Systems GmbH',
       description:
-        'Strategic IT Advisory & Systems Architecture firm based in Herzogenaurach, Bavaria, Germany.',
+        'IT advisory and systems architecture for growing companies. Based in Herzogenaurach, Bavaria, Germany.',
       url: SITE_URL,
       email: 'contact@qubital.eu',
       address: {

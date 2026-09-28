@@ -1,6 +1,58 @@
 // @ts-check
 /** @type {import('../types').Dictionary} */
 const dictionary = {
+  meta: {
+    home: {
+      title: 'Qubital | De IT-partner voor groeiende bedrijven',
+      description:
+        'IT-advies en systeemarchitectuur voor groeiende bedrijven. Software, cloud, security en SAP, geleverd door ervaren engineers. Gevestigd in Herzogenaurach, Duitsland.',
+    },
+    about: {
+      title: 'Over ons | Qubital',
+      description:
+        'Wie wij zijn: een middelgrote IT-partner die groeiende bedrijven helpt hun systemen te ontwerpen, te bouwen en te beheren.',
+    },
+    services: {
+      title: 'Diensten | Qubital',
+      description:
+        'Software, cloud, cyberbeveiliging, AI en SAP, gepland, gebouwd en beheerd door ervaren engineers, passend bij groeiende bedrijven.',
+    },
+    why_us: {
+      title: 'Waarom Qubital | IT-partner voor groeiende bedrijven',
+      description:
+        'Qubital vergeleken met IT in eigen huis: ervaren engineers, gedocumenteerde systemen en vaste mijlpaalprijzen.',
+    },
+    mission: {
+      title: 'Missie | Qubital',
+      description:
+        'Onze missie: bedrijven de controle over hun systemen teruggeven, met heldere architectuur, zonder vendor lock-in en goed gedocumenteerd.',
+    },
+    careers: {
+      title: 'Carrières | Qubital',
+      description:
+        'Werken bij Qubital: interessant werk, competitieve beloning, goede apparatuur en flexibele uren.',
+    },
+    contact: {
+      title: 'Contact | Qubital',
+      description:
+        'Vertel ons waar u hulp bij nodig hebt. U spreekt direct met de ervaren engineers; we reageren binnen één werkdag.',
+    },
+    compliance: {
+      title: 'Beveiliging & Compliance | Qubital',
+      description:
+        'Onze aanpak van informatiebeveiliging en gegevensbescherming: erkende normen, privacy by design en hosting in de EU.',
+    },
+    privacy: {
+      title: 'Privacy & AVG | Qubital',
+      description:
+        'Hoe Qubital Systems GmbH persoonsgegevens verzamelt, verwerkt en beschermt volgens de AVG.',
+    },
+    impressum: {
+      title: 'Colofon | Qubital',
+      description:
+        'Colofon van Qubital Systems GmbH volgens § 5 TMG: bedrijfsgegevens, vestiging in Herzogenaurach en contact.',
+    },
+  },
   nav: {
     home: 'Home',
     about: 'Over ons',

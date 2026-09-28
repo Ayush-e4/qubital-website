@@ -1,5 +1,6 @@
 import { headers } from 'next/headers';
 import { LOCALES, localizedPath } from '@/lib/i18n/paths';
+import { getDictionary } from '@/lib/i18n/translations';
 
 const SITE_NAME = 'Qubital';
 
@@ -31,10 +32,12 @@ export function buildAlternates(path, locale) {
 /**
  * Metadata for a single logical page, resolved for the locale the middleware
  * rewrote into the `x-locale` header. `path` is the unprefixed route, e.g.
- * '/about' or '/'.
+ * '/about' or '/'. `page` is the key into the dictionary's `meta` map, so the
+ * title and description are taken from the locale actually being served.
  */
-export async function pageMetadata({ title, description, path }) {
+export async function pageMetadata({ page, path }) {
   const locale = (await headers()).get('x-locale') || 'en';
+  const { title, description } = getDictionary(locale).meta[page];
 
   return {
     // `title` is the complete, final title (e.g. 'About | Qubital'). Using
