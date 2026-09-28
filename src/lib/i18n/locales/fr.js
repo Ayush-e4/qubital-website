@@ -64,7 +64,7 @@ const dictionary = {
   },
   footer: {
     tagline:
-      'Conseil stratégique en IT, architecture système et gouvernance technique. Basé sur la rigueur analytique européenne.',
+      'Conseil IT, architecture système et gouvernance technique pour les entreprises en croissance. Basés en Allemagne.',
     regulatory: 'Réglementations',
     communications: 'Communications',
     languages: 'Langues',
@@ -163,7 +163,7 @@ const dictionary = {
     story_p1:
       'Qubital est né d’un constat simple : à mesure que les systèmes gagnent en puissance, ils deviennent paradoxalement plus opaques.',
     story_p2:
-      "Nous avons bâti notre cabinet autour du concept d’'Isolation Technique' — définir des frontières claires entre les systèmes pour éliminer les défaillances en cascade.",
+      'Nous avons bâti notre cabinet sur une idée simple : des frontières claires entre les systèmes. Un changement ou une panne dans une partie ne doit pas forcer des réécritures partout.',
     principles_title: 'Nos Principes Directeurs',
     principles: [
       {
@@ -362,25 +362,25 @@ const dictionary = {
     benefits_title: 'Conçu pour la longévité, la concentration et le travail en profondeur.',
     benefits: [
       {
-        title: 'Rémunération Attractives',
-        desc: 'Salaire de Base Transparent & Primes',
+        title: 'Rémunération compétitive',
+        desc: 'Un salaire de base clair et des primes',
       },
       {
         title: 'Perfectionnement Continu',
         desc: 'Budget Dédié à la Formation & Recherche',
       },
       {
-        title: 'Matériel Haute Performance',
-        desc: 'Stations de Travail sur Mesure & Écrans Flagship',
+        title: 'Bon matériel',
+        desc: 'Un poste de travail bien équipé et des écrans',
       },
       {
         title: 'Autonomie de Travail',
         desc: 'Congés Généreux, Horaires Flexibles & Télétravail',
       },
     ],
-    blueprint_tag: 'Modèle Hybride Spatial',
+    blueprint_tag: 'Notre façon de travailler',
     blueprint_title:
-      'Nous combinons la concentration du travail à distance avec la collaboration intense sur site.',
+      'Nous combinons le travail à distance concentré et des sessions sur site où l’équipe construit ensemble.',
     network_tag: 'Réseau de Talents',
     network_title: 'Intéressé par Qubital ?',
     network_desc:
@@ -438,7 +438,7 @@ const dictionary = {
   mission_page: {
     tag: 'NOTRE MISSION & VISION',
     hero_title_1: 'La clarté architecturale dans une ère',
-    hero_title_2: 'D’entropie technologique.',
+    hero_title_2: 'Complexité croissante.',
     hero_desc:
       'Les entreprises sont ralenties par des systèmes hérités et la dépendance aux éditeurs. Qubital a été fondée pour restaurer la rigueur architecturale avec la précision de l’ingénierie européenne.',
     pillars_tag: 'PRINCIPES FONDATEURS',
@@ -447,7 +447,7 @@ const dictionary = {
       {
         id: 1,
         icon: 'hub',
-        title: 'Souveraineté & Clean Core',
+        title: 'Contrôle & Clean Core',
         desc: 'Zéro dépendance fournisseur. Nous concevons des systèmes modulaires où vos données restent sous votre contrôle.',
       },
       {
@@ -470,12 +470,12 @@ const dictionary = {
       },
     ],
     roadmap_tag: 'TRANSFORMATION ARCHITECTURALE',
-    roadmap_title: 'Du désordre hérité à la souveraineté numérique',
+    roadmap_title: 'Du désordre hérité à des systèmes sous votre contrôle',
     roadmap_steps: [
       {
         phase: 'PHASE 01',
-        title: 'Découplage systémique',
-        desc: 'Isolation des monolithes et audit des dépendances pour redéfinir les frontières applicatives.',
+        title: 'Démêler ce qui est emmêlé',
+        desc: 'Séparer les systèmes hérités fortement couplés et cartographier les dépendances cachées entre eux.',
       },
       {
         phase: 'PHASE 02',
