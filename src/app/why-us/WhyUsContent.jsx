@@ -15,7 +15,7 @@ export default function WhyUsContent() {
   const headers = w.comparison_headers || {
     criteria: 'Criteria',
     qubital: 'Qubital Systems',
-    traditional: 'Traditional Consultancies / Agencies',
+    traditional: 'In-House IT / Status Quo',
   };
 
   return (

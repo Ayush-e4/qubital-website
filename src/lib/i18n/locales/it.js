@@ -114,9 +114,9 @@ const dictionary = {
       'Consulenza Virtual CIO',
     ],
     placeholders: {
-      fullName: 'Dr. Marcus Vance',
-      email: 'm.vance@company.it',
-      organization: 'Siemens Energy AG',
+      fullName: 'Anna Keller',
+      email: 'a.keller@company.it',
+      organization: 'Nordwerk GmbH',
       message: 'Descrivi i tuoi requisiti e obiettivi di migrazione...',
     },
     security_protocol: 'Protocollo di Sicurezza',

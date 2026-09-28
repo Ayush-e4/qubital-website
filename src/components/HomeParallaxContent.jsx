@@ -7,7 +7,6 @@ import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/Ani
 import MarqueeButton from '@/components/MarqueeButton';
 import ServiceCard from '@/components/ServiceCard';
 import MethodologySteps from '@/components/MethodologySteps';
-import { NumberTicker } from '@/components/magicui/number-ticker';
 import { RetroGrid } from '@/components/magicui/retro-grid';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
@@ -181,46 +180,30 @@ export default function HomeParallaxContent() {
           </AnimateOnScroll>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-12">
-            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
+            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex items-center justify-center min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
-                <NumberTicker value={480} className="text-primary" />
-                <span>+</span>
-              </div>
-              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
+              <div className="text-base sm:text-lg font-semibold text-primary text-center leading-snug px-1">
                 {t.metrics.labels.cloud_workloads}
               </div>
             </StaggerItem>
 
-            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
+            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex items-center justify-center min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
-                <NumberTicker value={120} className="text-primary" />
-                <span>+</span>
-              </div>
-              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
+              <div className="text-base sm:text-lg font-semibold text-primary text-center leading-snug px-1">
                 {t.metrics.labels.arch_reviews}
               </div>
             </StaggerItem>
 
-            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
+            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex items-center justify-center min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
-                <NumberTicker value={99.98} decimalPlaces={2} className="text-primary" />
-                <span>%</span>
-              </div>
-              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
+              <div className="text-base sm:text-lg font-semibold text-primary text-center leading-snug px-1">
                 {t.metrics.labels.sla_guarantee}
               </div>
             </StaggerItem>
 
-            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-between min-h-[140px] sm:min-h-[160px]">
+            <StaggerItem className="group bg-surface-canvas border border-outline-variant/60 hover:border-primary/40 rounded-xl p-5 sm:p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden flex items-center justify-center min-h-[140px] sm:min-h-[160px]">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/40 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1.5 flex items-center justify-center tracking-tight">
-                <NumberTicker value={97.3} decimalPlaces={1} className="text-primary" />
-                <span>%</span>
-              </div>
-              <div className="text-xs md:text-sm text-on-surface font-semibold uppercase tracking-wider">
+              <div className="text-base sm:text-lg font-semibold text-primary text-center leading-snug px-1">
                 {t.metrics.labels.continuity_rate}
               </div>
             </StaggerItem>
@@ -232,19 +215,19 @@ export default function HomeParallaxContent() {
             className="pt-6 sm:pt-8 border-t border-outline-variant/30 flex flex-wrap justify-center gap-2.5 sm:gap-4"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary/70" />
               <span>{t.badges.iso}</span>
             </div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary/70" />
               <span>{t.badges.bsi}</span>
             </div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary/70" />
               <span>{t.badges.gdpr}</span>
             </div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface text-xs font-mono font-bold hover:border-success/40 hover:bg-success-container/50 transition-all duration-200 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary/70" />
               <span>{t.badges.tisax}</span>
             </div>
           </AnimateOnScroll>
