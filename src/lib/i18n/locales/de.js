@@ -20,12 +20,12 @@ const dictionary = {
     why_us: {
       title: 'Warum Qubital | IT-Partner für wachsende Unternehmen',
       description:
-        'Wie Qubital im Vergleich zu IT im eigenen Haus abschneidet: erfahrene Ingenieure, dokumentierte Systeme und feste Meilensteinpreise.',
+        'Qubital im Vergleich zu interner IT: erfahrene Ingenieure, dokumentierte Systeme und feste Meilensteinpreise.',
     },
     mission: {
       title: 'Mission | Qubital',
       description:
-        'Unsere Mission: Unternehmen die Kontrolle über ihre Systeme zurückgeben, mit klarer Architektur, ohne Vendor-Lock-in und sauber dokumentiert.',
+        'Unsere Mission: Unternehmen die Kontrolle über ihre Systeme zurückzugeben – mit klarer Architektur, ohne Vendor-Lock-in und mit sauber dokumentierten Systemen.',
     },
     careers: {
       title: 'Karriere | Qubital',
@@ -40,7 +40,7 @@ const dictionary = {
     compliance: {
       title: 'Sicherheit & Compliance | Qubital',
       description:
-        'Wie Qubital Informationssicherheit und Datenschutz angeht: Standards, an denen wir uns orientieren, DSGVO by Design und EU-Hosting.',
+        'Wie Qubital Informationssicherheit und Datenschutz angeht: Standards, an denen wir uns orientieren, Datenschutz by Design und EU-Hosting.',
     },
     privacy: {
       title: 'Datenschutz & DSGVO | Qubital',
@@ -73,8 +73,8 @@ const dictionary = {
   hero: {
     sub_headline: 'Der IT-Partner für wachsende Unternehmen.',
     subtitle:
-      'Software, Cloud, Sicherheit und SAP – geplant und betrieben von erfahrenen Ingenieuren, damit Ihre Systeme ohne Chaos wachsen können.',
-    cta_primary: 'Leistungen erkunden',
+      'Software, Cloud, Sicherheit und SAP – geplant und betrieben von erfahrenen Ingenieuren, damit Ihre Systeme zuverlässig mit Ihrem Unternehmen wachsen.',
+    cta_primary: 'Leistungen ansehen',
     cta_secondary: 'Unser Ansatz',
     scroll_hint: 'Scrollen zum Erkunden',
   },
@@ -83,7 +83,7 @@ const dictionary = {
   },
   services: {
     heading: 'Kernkompetenzen',
-    description: 'Ganzheitliche technische Führung und Engineering-Exzellenz.',
+    description: 'Ganzheitliche technische Führung und Engineering-Kompetenz.',
   },
   methodology: {
     eyebrow: 'METHODIK',
@@ -92,37 +92,37 @@ const dictionary = {
   },
   metrics: {
     eyebrow: 'WIE WIR ARBEITEN',
-    heading: 'Standards und Praktiken, die Sie überprüfen können.',
+    heading: 'Standards und Prozesse, die transparent und nachvollziehbar sind.',
     labels: {
-      cloud_workloads: 'EU-gehostete Daten',
+      cloud_workloads: 'Datenhosting in der EU',
       arch_reviews: 'Keine Tracking-Cookies',
       sla_guarantee: 'Datenschutz by Design',
       continuity_rate: 'Herstellerneutrale Beratung',
     },
   },
   badges: {
-    iso: 'Ausgelegt auf ISO/IEC 27001',
-    bsi: 'Ausgelegt auf BSI C5',
-    gdpr: 'DSGVO-Datenschutz',
+    iso: 'An ISO/IEC 27001 ausgerichtet',
+    bsi: 'An BSI C5 ausgerichtet',
+    gdpr: 'Datenschutz nach DSGVO',
     tisax: 'NDA auf Anfrage',
   },
   cta_banner: {
     heading: 'Bereit für Ihr nächstes Kapitel?',
     description:
-      'Vereinbaren Sie ein Erstgespräch mit unseren Hauptarchitekten, um Ihre technischen Herausforderungen zu besprechen.',
+      'Vereinbaren Sie ein Erstgespräch mit unseren erfahrenen Architekten, um Ihre technischen Herausforderungen zu besprechen.',
     btn_primary: 'Beratungsgespräch vereinbaren',
     btn_secondary: 'Offene Stellen ansehen',
   },
   footer: {
     tagline:
-      'IT-Beratung, Systemarchitektur und Engineering-Governance für wachsende Unternehmen. Mit Sitz in Deutschland.',
+      'IT-Beratung, Systemarchitektur und Engineering-Standards für wachsende Unternehmen. Mit Sitz in Deutschland.',
     regulatory: 'Rechtliches',
     communications: 'Kommunikation',
     languages: 'Sprachen',
     regulatory_links: {
       gdpr: 'DSGVO & Datenschutz',
       impressum: 'Impressum (§ 5 TMG)',
-      compliance: 'Informationssicherheits-Governance',
+      compliance: 'Governance für Informationssicherheit',
     },
   },
   not_found: {
@@ -133,15 +133,15 @@ const dictionary = {
     links_heading: 'Oder navigieren Sie zu:',
   },
   contact_page: {
-    title: 'Gespräch beginnen.',
+    title: 'Lassen Sie uns sprechen.',
     subtitle:
-      'Treten Sie mit unserem Chef-Engineering-Team in Kontakt, um Ihre digitalen Initiativen und Architektur-Anforderungen zu besprechen.',
+      'Treten Sie mit unserem erfahrenen Engineering-Team in Kontakt, um Ihre digitalen Initiativen und Architekturanforderungen zu besprechen.',
     form_title: 'Projektanfrage',
     security_badge: 'SICHER & VERTRAULICH',
     full_name: 'Vollständiger Name*',
     email: 'Geschäftliche E-Mail*',
     organization: 'Unternehmen / Organisation',
-    domain: 'Interessensgebiet*',
+    domain: 'Thema*',
     domain_select: 'Bereich auswählen...',
     message: 'Ihre Nachricht*',
     submit: 'Senden',
@@ -163,7 +163,7 @@ const dictionary = {
       'Cybersicherheit',
       'KI & Automatisierung',
       'SAP-Lösungen',
-      'Etwas anderes',
+      'Sonstiges',
     ],
     placeholders: {
       fullName: 'Anna Keller',
@@ -192,36 +192,36 @@ const dictionary = {
   },
   about_page: {
     hero_title_1: 'Strategische IT-Beratung &',
-    hero_title_2: 'Skalierbare digitale Systeme.',
+    hero_title_2: 'skalierbare digitale Systeme.',
     hero_desc:
-      'Wir schaffen Klarheit in verteilten Architekturen und bieten IT-Führungskräften die strategische Orientierung und Governance für reibungsloses Wachstum.',
+      'Wir schaffen Klarheit in komplexen IT-Landschaften und geben IT-Verantwortlichen die Orientierung und Strukturen, die sie für nachhaltiges Wachstum brauchen.',
     focus_tag: 'UNSER FOKUS',
     focus_title: 'Betriebliche Zuverlässigkeit',
     focus_desc:
-      'Unsere Arbeit macht Migrationen planbar und hält Ihre Systeme konsistent, während sie sich verändern.',
+      'Unsere Arbeit macht Migrationen planbarer und sorgt dafür, dass Ihre Systeme auch während Veränderungen stabil und konsistent bleiben.',
     focus_items: ['Systemarchitektur', 'Cloud-Orchestrierung', 'Sicherheits-Governance'],
     mission_tag: 'KERNAUFTRAG / MISSION',
     mission_quote:
-      '"Unternehmen die Kontrolle über ihre Systeme zurückgeben – durch klare Governance und transparente Architektur."',
+      '"Unternehmen wieder die Kontrolle über ihre Systeme geben – durch klare Governance und transparente Architektur."',
     mission_desc:
-      'Wir sind überzeugt, dass Unternehmenstechnologie Klarheit schaffen sollte. Unsere Mission ist es, Geschäftslogik von Komplexität zu entkoppeln.',
+      'Wir sind überzeugt, dass Technologie Unternehmen Klarheit und Kontrolle geben sollte. Unsere Mission ist es, Geschäftslogik und technische Komplexität klar voneinander zu trennen.',
     mission_badges: ['Strategie-Ausrichtung', 'System-Entkopplung', 'Engineering-Souveränität'],
     origins_tag: 'HERKUNFT & HALTUNG',
-    origins_title: 'Gebaut für die Multi-Cloud- und KI-Realität.',
+    origins_title: 'Entwickelt für die Multi-Cloud- und KI-Welt.',
     origins_desc:
       'Gegründet von ehemaligen IT-Führungskräften in Herzogenaurach schließt Qubital die Lücke zwischen IT-Strategie und technischer Umsetzung.',
     story_p1:
-      'Die Gründung von Qubital geht auf eine einfache Beobachtung zurück: Je leistungsfähiger Enterprise-Systeme werden, desto undurchsichtiger werden sie.',
+      'Die Gründung von Qubital geht auf eine einfache Beobachtung zurück: Je leistungsfähiger Unternehmenssysteme werden, desto komplexer und schwerer überschaubar werden sie.',
     story_p2:
-      'Wir haben unsere Praxis auf einer einfachen Idee aufgebaut: klare Grenzen zwischen Systemen. Eine Änderung oder ein Ausfall in einem Teil darf nicht überall Umbauten erzwingen.',
+      'Wir haben unsere Praxis auf einer einfachen Idee aufgebaut: klare Grenzen zwischen Systemen. Eine Änderung oder ein Ausfall in einem Teil des Systems darf nicht umfangreiche Anpassungen an anderer Stelle erforderlich machen.',
     principles_title: 'Unsere Leitprinzipien',
     principles: [
       {
-        title: 'Strukturelle Integrität vor Feature-Geschwindigkeit',
+        title: 'Stabile Strukturen vor schneller Feature-Entwicklung',
         desc: 'Wir bauen Systeme, die Teamwechsel und Skalierungen dauerhaft überstehen.',
       },
       {
-        title: 'Beobachten, Dokumentieren, Architekturskizze, dann Bauen',
+        title: 'Beobachten, dokumentieren, Architektur planen, dann bauen.',
         desc: 'Kein Code wird geschrieben, bevor der Ist-Zustand nicht vollständig kartiert ist.',
       },
       {
@@ -229,7 +229,7 @@ const dictionary = {
         desc: 'Jede Drittanbieter-Integration wird als potenzieller Ausfallvektor gesteuert.',
       },
       {
-        title: 'Für Übergabe entwickeln, nicht für Heldenleistungen',
+        title: 'Systeme für eine saubere Übergabe entwickeln, nicht für Einzelhelden.',
         desc: 'Systeme müssen für nachfolgende Entwickler sofort verständlich sein.',
       },
     ],
@@ -261,12 +261,12 @@ const dictionary = {
       },
       {
         icon: 'shield_locked',
-        title: 'Deutsche Engineering-Governance',
+        title: 'Deutsche Engineering-Standards',
         desc: 'Mit Sitz in Herzogenaurach und nach anerkannten Sicherheits- und Datenschutzstandards arbeiten wir an Systemen, die einer Prüfung standhalten.',
       },
       {
         icon: 'support_agent',
-        title: 'Direkter Zugang zu Chefarchitekten',
+        title: 'Direkter Zugang zu unseren Architekten',
         desc: 'Bei Qubital sprechen Sie direkt mit den erfahrenen Ingenieuren, die die Arbeit machen – ohne Account-Manager dazwischen.',
       },
     ],
@@ -274,13 +274,13 @@ const dictionary = {
     cta_desc:
       'Starten Sie eine vertrauliche Bewertung Ihrer aktuellen Infrastruktur. Wir identifizieren Engpässe und Sicherheitsrisiken.',
     cta_btn_primary: 'Executive-Briefing anfordern',
-    cta_btn_secondary: 'Direkte Beratungsleitung',
+    cta_btn_secondary: 'Direkter Kontakt zu unserem Beratungsteam',
   },
   services_page: {
     hero_title_1: 'Kernkompetenzen &',
     hero_title_2: 'Beratungsleistungen.',
     hero_desc:
-      'Technische Komplexität in betriebliche Einfachheit verwandeln. Wir bieten strukturierte Ingenieurskunst für moderne Unternehmen.',
+      'Technische Komplexität beherrschbar machen. Wir bieten strukturierte Engineering-Leistungen für moderne Unternehmen.',
     hero_cta: 'Beratungspraxis beauftragen',
     matrix_tag: 'PRAXIS-MATRIX',
     matrix_title: 'Strukturierte Kompetenzdisziplinen',
@@ -333,7 +333,7 @@ const dictionary = {
         tag: 'SEC',
         icon: 'security',
         id: 'cybersecurity',
-        title: 'Cybersicherheit & Schutz',
+        title: 'Cybersicherheit',
         description:
           'Einfache, wirksame Sicherheitsstandards zum Schutz von Unternehmensdaten und Endgeräten.',
         items: [
@@ -375,7 +375,7 @@ const dictionary = {
     methodology_tag: 'AUSFÜHRUNGSMETHODIK',
     methodology_title: 'Wie Qubital arbeitet',
     methodology_desc:
-      'Unser standardisierter Vier-Phasen-Lebenszyklus sorgt für Transparenz, Risikominimierung und planbare Ergebnisse.',
+      'Unser standardisierter Prozess in vier Phasen sorgt für Transparenz, reduziert Risiken und schafft planbare Ergebnisse.',
     cta_title: 'Besprechen Sie Ihre Roadmap mit unserem Beratungsteam.',
     cta_desc: 'Vereinbaren Sie ein Erstgespräch zur Bewertung der Machbarkeit.',
     cta_nda: 'Vertraulicher NDA-Standard',
@@ -418,10 +418,10 @@ const dictionary = {
     },
   ],
   careers_page: {
-    hero_title_1: 'Intelligente Systeme bauen',
-    hero_title_2: 'mit Qubital.',
+    hero_title_1: 'Intelligente Systeme',
+    hero_title_2: 'mit Qubital entwickeln.',
     hero_desc:
-      'Wir laden Ingenieure, Forscher und Architekten ein, mit uns robuste, intelligente Lösungen zu entwickeln. Wir schätzen tiefe Expertise und Neugier.',
+      'Wir laden Ingenieure, Forscher und Architekten ein, mit uns robuste, intelligente Lösungen zu entwickeln. Wir schätzen fundiertes Fachwissen und Neugier.',
     btn_reach: 'Kontaktieren Sie uns',
     btn_principles: 'Unsere Prinzipien & Vorteile',
     benefits_tag: 'Vergütung & Rahmenbedingungen',
@@ -446,19 +446,19 @@ const dictionary = {
     ],
     blueprint_tag: 'Wie wir arbeiten',
     blueprint_title:
-      'Wir verbinden fokussierte Remote-Arbeit mit Präsenzphasen, in denen das Team gemeinsam baut.',
+      'Wir verbinden konzentriertes Arbeiten im Remote-Modell mit Präsenzphasen, in denen das Team gemeinsam arbeitet.',
     network_tag: 'Talent-Netzwerk',
     network_title: 'Interesse an einer Karriere bei Qubital?',
     network_desc:
-      'Auch ohne spezifische offene Stellen freuen wir uns jederzeit über Initiativbewerbungen von herausragenden Talenten.',
+      'Auch ohne spezifische offene Stellen freuen wir uns jederzeit über Initiativbewerbungen von Menschen, die fachlich und menschlich zu uns passen.',
     network_email: 'E-Mail: contact@qubital.eu',
   },
   compliance_page: {
-    title: 'Informationssicherheits-Governance',
+    title: 'Governance für Informationssicherheit',
     subtitle: 'Sicherheits- & Compliance-Framework',
     sec_1_title: 'Unsere Sicherheitsstandards',
     sec_1_desc:
-      'Wir arbeiten nach anerkannten Informationssicherheitsstandards, darunter ISO/IEC 27001 und die BSI-C5-Kriterien, sowie nach den Anforderungen der DSGVO.',
+      'Wir orientieren uns an anerkannten Standards für Informationssicherheit, darunter ISO/IEC 27001 und die BSI-C5-Kriterien, sowie an den Anforderungen der DSGVO.',
     sec_2_title: 'ISO/IEC 27001',
     sec_2_desc:
       'Wir gestalten unsere Informationssicherheitspraktiken nach ISO/IEC 27001 – mit Risikomanagement, Schutz von Werten und kontinuierlicher Verbesserung unserer Kontrollen.',
@@ -505,10 +505,10 @@ const dictionary = {
   },
   mission_page: {
     tag: 'UNSERE MISSION & VISION',
-    hero_title_1: 'Architektonische Klarheit in einer Ära von',
-    hero_title_2: 'Zunehmender Komplexität.',
+    hero_title_1: 'Architektonische Klarheit in einer zunehmend komplexen',
+    hero_title_2: 'IT-Welt.',
     hero_desc:
-      'Unternehmen leiden unter fragmentierten Altsystemen, Anbieterabhängigkeiten und unkontrollierter Softwarekomplexität. Qubital wurde gegründet, um mit europäischer Ingenieursdisziplin nachhaltige architektonische Klarheit zu schaffen.',
+      'Unternehmen leiden unter fragmentierten Altsystemen, Anbieterabhängigkeiten und unkontrollierter Softwarekomplexität. Qubital wurde gegründet, um mit einem klaren europäischen Anspruch an Engineering und Technologie nachhaltige architektonische Klarheit zu schaffen.',
     pillars_tag: 'GRUNDLEGENDE PRINZIPIEN',
     pillars_title: 'Die Leitlinien jeder unserer Architekturen',
     pillars: [
@@ -542,7 +542,7 @@ const dictionary = {
     roadmap_steps: [
       {
         phase: 'PHASE 01',
-        title: 'Verzahntes entwirren',
+        title: 'Komplexe Abhängigkeiten entwirren',
         desc: 'Starre Altsysteme trennen und die versteckten Abhängigkeiten zwischen ihnen sichtbar machen.',
       },
       {
@@ -552,16 +552,16 @@ const dictionary = {
       },
       {
         phase: 'PHASE 03',
-        title: 'Autonome Skalierbarkeit',
+        title: 'Skalierbare Systeme',
         desc: 'Bereitstellung einer resilienten Multi-Cloud-Topologie mit Zero-Trust-Sicherheit und proaktivem Monitoring.',
       },
     ],
-    cta_title: 'Arbeiten Sie mit Architekten, die echte Ingenieurskunst leben.',
+    cta_title: 'Arbeiten Sie mit Architekten, die Engineering ernst nehmen.',
     cta_desc:
       'Vereinbaren Sie ein unverbindliches Erstgespräch zur Evaluierung Ihrer technischen Roadmap.',
     cta_btn: 'Architektur-Review vereinbaren',
     quote_text:
-      'Wahre architektonische Klarheit entsteht nicht durch mehr Abstraktionen, sondern durch die ingenieurmäßige Überzeugung, Systemgrenzen zu isolieren, Abhängigkeiten zu beseitigen und langlebige, souveräne Systeme zu bauen.',
+      'Wahre architektonische Klarheit entsteht nicht durch mehr Abstraktionen, sondern durch die konsequente Trennung von Systemgrenzen, den Abbau unnötiger Abhängigkeiten und den Bau langlebiger, souveräner Systeme.',
     quote_author: 'Qubital Architektur-Manifest',
     quote_location: 'Herzogenaurach, Bayern',
     tenet_label: 'Grundsatz',
@@ -570,8 +570,8 @@ const dictionary = {
   },
   why_us_page: {
     tag: 'WARUM QUBITAL',
-    hero_title_1: 'Präzisions-Engineering.',
-    hero_title_2: 'Ohne Agentur-Overhead.',
+    hero_title_1: 'Präzises Engineering.',
+    hero_title_2: 'Ohne unnötigen Agentur-Overhead.',
     comparison_tag: 'DER DIREKTE VERGLEICH',
     comparison_title: 'Wie Qubital im Vergleich zu Inhouse-IT abschneidet',
     comparison_headers: {
@@ -610,9 +610,9 @@ const dictionary = {
         traditional: 'Erst spät angegangen, wenn ein Audit oder Vorfall dazu zwingt',
       },
     ],
-    cta_title: 'Erleben Sie den Unterschied seniorer Fachexpertise.',
+    cta_title: 'Arbeiten Sie direkt mit erfahrenen Fachleuten.',
     cta_desc:
-      'Sprechen Sie direkt mit unseren Chefarchitekten über Ihre technischen Herausforderungen.',
+      'Sprechen Sie direkt mit unseren erfahrenen Architekten über Ihre technischen Herausforderungen.',
     cta_btn: 'Architektur-Briefing buchen',
   },
 };
