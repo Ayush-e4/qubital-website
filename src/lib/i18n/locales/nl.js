@@ -19,9 +19,9 @@ const dictionary = {
     change_language: 'Taal wijzigen',
   },
   hero: {
-    sub_headline: 'Enterprise IT Advies & Digitale Architectuur',
+    sub_headline: 'De IT-partner voor groeiende bedrijven.',
     subtitle:
-      'Vereenvoudiging van technologische systemen voor groeiende bedrijven en moderne enterprise teams.',
+      'Software, cloud, security en SAP, gepland en beheerd door ervaren engineers, zodat uw systemen kunnen groeien zonder chaos.',
     cta_primary: 'Ontdek Onze Diensten',
     cta_secondary: 'Ontmoet het Team',
     scroll_hint: 'Scroll om te verkennen',
@@ -40,20 +40,20 @@ const dictionary = {
     cta_link: 'Ontdek Onze Aanpak',
   },
   metrics: {
-    eyebrow: 'OPERATIONELE METRICS',
-    heading: 'Bewezen op Enterprise Schaal',
+    eyebrow: 'HOE WIJ WERKEN',
+    heading: 'Normen en werkwijzen die u kunt controleren.',
     labels: {
-      cloud_workloads: 'Beheerde Cloud Workloads',
-      arch_reviews: 'Architectuur Reviews',
-      sla_guarantee: 'Gemiddelde SLA Garantie',
-      continuity_rate: 'Klantretentie',
+      cloud_workloads: 'In de EU gehoste data',
+      arch_reviews: 'Geen trackingcookies',
+      sla_guarantee: 'Privacy by design',
+      continuity_rate: 'Leveranciersneutraal advies',
     },
   },
   badges: {
-    iso: 'ISO 27001 Gecertificeerd',
-    bsi: 'BSI C5 Conform',
-    gdpr: 'AVG / GDPR Conform',
-    tisax: 'TISAX Niveau 3',
+    iso: 'Ontworpen volgens ISO/IEC 27001',
+    bsi: 'Ontworpen volgens BSI C5',
+    gdpr: 'AVG-gegevensbescherming',
+    tisax: 'NDA op verzoek',
   },
   cta_banner: {
     heading: 'Klaar om uw volgende hoofdstuk vorm te geven?',
@@ -145,11 +145,11 @@ const dictionary = {
     focus_tag: 'ONZE FOCUS',
     focus_title: 'Operationele Betrouwbaarheid',
     focus_desc:
-      'Onze methodologieën zijn ontworpen om vlekkeloze migraties en absolute consistentie te garanderen.',
+      'Ons werk maakt migraties voorspelbaar en houdt uw systemen consistent terwijl ze veranderen.',
     focus_items: ['Systeemarchitectuur', 'Cloud Orchestratie', 'Security Governance'],
     mission_tag: 'KERNMANDAAT / MISSIE',
     mission_quote:
-      '"Herdefiniëren hoe organisaties omgaan met hun digitale ecosystemen door onveranderlijke governance en transparante architectuur."',
+      '"Bedrijven de controle over hun systemen teruggeven via heldere governance en transparante architectuur."',
     mission_desc:
       'Wij geloven dat IT helderheid moet brengen. Onze missie is het ontkoppelen van bedrijfslogica en complexiteit.',
     mission_badges: [
@@ -186,20 +186,20 @@ const dictionary = {
     ],
     stats: [
       {
-        value: '480+',
-        label: 'Beheerde Cloud Workloads',
+        value: '6',
+        label: 'Diensten',
       },
       {
-        value: '120+',
-        label: 'Architectuur Reviews',
+        value: '6',
+        label: 'Talen',
       },
       {
-        value: '<12min',
-        label: 'Gemiddelde Oplostijd',
+        value: 'EU',
+        label: 'Dataresidentie',
       },
       {
-        value: '97.3%',
-        label: 'Klantretentie',
+        value: '0',
+        label: 'Trackingcookies',
       },
     ],
     diff_tag: 'ONDERSCHEIDEND VERMOGEN',
@@ -208,17 +208,17 @@ const dictionary = {
       {
         icon: 'verified',
         title: 'Leveranciersneutraliteit & Open Standaarden',
-        desc: 'Wij hebben geen exclusieve vennootschappen. Onze adviezen zijn 100% gebaseerd op technische kwaliteit.',
+        desc: 'Wij zijn niet gebonden aan verkoopquota of leverancierscommissies; ons advies is gebaseerd op wat bij uw systemen en budget past.',
       },
       {
         icon: 'shield_locked',
         title: 'Duitse Engineering Governance',
-        desc: 'Vanuit Herzogenaurach passen wij de strengste DIN/ISO-normen toe op software-architectuur.',
+        desc: 'Gevestigd in Herzogenaurach en werkend volgens erkende beveiligings- en privacynormen, bouwen wij systemen die een toets doorstaan.',
       },
       {
         icon: 'support_agent',
         title: 'Direct Contact met Hoofdarchitecten',
-        desc: 'Geen tussenkomst van accountmanagers. U communiceert rechtstreeks met de uitvoerende experts.',
+        desc: 'Bij Qubital spreekt u rechtstreeks met de ervaren engineers die het werk doen, zonder accountmanagers ertussen.',
       },
     ],
     cta_title: 'Laat ons uw IT-landschap analyseren.',
@@ -399,14 +399,16 @@ const dictionary = {
     subtitle: 'Beveiligings- & Compliancekader',
     sec_1_title: 'Onze Beveiligingsnormen',
     sec_1_desc:
-      'Qubital werkt onder een strikt kader dat is afgestemd op ISO/IEC 27001, BSI C5 en AVG/GDPR.',
-    sec_2_title: 'ISO 27001 Certificering',
-    sec_2_desc: 'Ons informatiebeveiligingssysteem (ISMS) is gecertificeerd volgens ISO/IEC 27001.',
-    sec_3_title: 'BSI C5 Naleving',
+      'Wij werken volgens erkende normen voor informatiebeveiliging, waaronder ISO/IEC 27001 en de BSI C5-criteria, naast de eisen van de AVG.',
+    sec_2_title: 'ISO/IEC 27001',
+    sec_2_desc:
+      'Wij ontwerpen onze informatiebeveiligingspraktijken volgens ISO/IEC 27001: risicobeheer, bescherming van assets en continue verbetering van onze controles.',
+    sec_3_title: 'BSI C5',
     sec_3_desc:
       'Wij sluiten aan bij de C5-criteria van het Duitse federale bureau voor beveiliging.',
     sec_4_title: 'Zero-Trust Architectuur',
-    sec_4_desc: 'Alle interne systemen maken gebruik van Zero-Trust netwerkprincipes met mTLS.',
+    sec_4_desc:
+      'Wij passen Zero-Trust-principes toe op onze interne systemen en klantomgevingen, waaronder sterke authenticatie en gescheiden netwerken.',
     sec_5_title: 'Beveiligingsvragen',
     sec_5_desc: 'Voor vragen over beveiliging of naleving kunt u contact opnemen via',
   },
@@ -459,8 +461,8 @@ const dictionary = {
       {
         id: 2,
         icon: 'verified_user',
-        title: 'DIN- & ISO-Governance als norm',
-        desc: 'Europese precisie toegepast op software. Elk ontwerp voldoet aan strenge ISO 27001-, BSI C5- en AVG-normen.',
+        title: 'Beveiligings- en datanormen standaard',
+        desc: 'Wij ontwerpen elke architectuur volgens erkende normen zoals ISO/IEC 27001 en de BSI C5-criteria, en om aan de AVG te voldoen.',
       },
       {
         id: 3,
@@ -472,7 +474,7 @@ const dictionary = {
         id: 4,
         icon: 'analytics',
         title: 'Transparantie per mijlpaal',
-        desc: 'Vaste fasen, meetbare RFC-opleveringen en voorspelbare budgetten zonder verrassingen.',
+        desc: 'Vaste fasen, heldere opleveringen en transparante facturering per mijlpaal. Direct contact met de ervaren engineers.',
       },
     ],
     roadmap_tag: 'ARCHITECTURALE TRANSFORMATIE',
@@ -511,37 +513,39 @@ const dictionary = {
     hero_title_1: 'Precisie-engineering.',
     hero_title_2: 'Zonder bureau-overhead.',
     comparison_tag: 'DE RECHTSTREEKSE VERGELIJKING',
-    comparison_title: 'Hoe Qubital technisch advies opnieuw definieert',
+    comparison_title: 'Hoe Qubital zich verhoudt tot IT in eigen huis',
     comparison_headers: {
       criteria: 'Criterium',
       qubital: 'Qubital Systems',
-      traditional: 'Traditionele consultancies / Bureaus',
+      traditional: 'IT in eigen huis / status quo',
     },
     comparison_rows: [
       {
-        criteria: 'Projectteam',
-        qubital: 'Directe samenwerking met Principal Architects en Senior Engineers',
-        traditional: 'Seniors verkopen; onervaren juniors voeren uit',
+        criteria: 'Capaciteit & vaardigheden',
+        qubital:
+          'Ervaren engineers voor software, cloud, security en SAP, beschikbaar wanneer u ze nodig hebt',
+        traditional: 'Een klein team dat alles doet, met gaten die u opvult door te werven',
       },
       {
-        criteria: 'Belangrijkste resultaat',
-        qubital: 'Productiewaardige code, infrastructuur-blueprints & RFC’s',
-        traditional: 'Theoretische presentaties en algemene aanbevelingen',
+        criteria: 'Oplevering',
+        qubital: 'Systemen in productie, heldere documentatie en werk dat wordt opgeleverd',
+        traditional: 'Een groeiende backlog; projecten stagneren als het team het druk heeft',
       },
       {
-        criteria: 'Onafhankelijkheid',
-        qubital: '100% onafhankelijk; geen provisies of verborgen verkoopdoelen',
-        traditional: 'Financiële prikkels om specifieke softwarepakketten op te dringen',
+        criteria: 'Continuïteit',
+        qubital: 'Gedocumenteerde systemen die uw team kan overnemen en beheren',
+        traditional: 'Kritische kennis bij wie het bouwde, en bij niemand anders',
       },
       {
-        criteria: 'Tarieven & Verantwoording',
-        qubital: 'Vaste mijlpaalprijzen met gegarandeerde SLA-normen',
-        traditional: 'Uurtje-factuurtje met onbeheersbare scopeverruiming',
+        criteria: 'Kosten & focus',
+        qubital: 'Vaste trajecten per mijlpaal, goed te plannen',
+        traditional:
+          'Salarissen, tooling en wervingsrisico voor vaardigheden die u maar af en toe nodig hebt',
       },
       {
-        criteria: 'Beveiliging & Normen',
-        qubital: 'ISO 27001, BSI C5 en AVG direct in de architectuur verwerkt',
-        traditional: 'Pas achteraf bekeken of uitbesteed aan derden',
+        criteria: 'Beveiliging & compliance',
+        qubital: 'Beveiliging en gegevensbescherming vanaf het begin meegenomen',
+        traditional: 'Pas laat aangepakt, als een audit of incident daarom vraagt',
       },
     ],
     cta_title: 'Ervaar het verschil van senior-led engineering.',
