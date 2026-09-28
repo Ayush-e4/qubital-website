@@ -93,13 +93,11 @@ function fieldRows(rows) {
  *
  * @param {{
  *   fullName: string, email: string, organization: string, domain: string,
- *   message: string, nda: boolean, priority: string, locale: string,
- *   submittedAt: string,
+ *   message: string, locale: string, submittedAt: string,
  * }} submission
  */
 export function renderNotification(submission) {
-  const { fullName, email, organization, domain, message, nda, priority, locale, submittedAt } =
-    submission;
+  const { fullName, email, organization, domain, message, locale, submittedAt } = submission;
 
   const subject = `New ${oneLine(domain, 40)} inquiry — ${oneLine(fullName, 60)}`;
 
@@ -111,11 +109,6 @@ export function renderNotification(submission) {
     ],
     ['Organization', escapeHtml(organization || '—')],
     ['Engagement domain', escapeHtml(domain)],
-    [
-      'Priority',
-      `<span style="display:inline-block;padding:2px 9px;border-radius:999px;font-size:13px;background:${priority === 'Urgent' ? '#fdeaea' : '#eef1f6'};color:${priority === 'Urgent' ? '#b3261e' : '#3d4453'};">${escapeHtml(priority)}</span>`,
-    ],
-    ['Mutual NDA requested', nda ? 'Yes' : 'No'],
     ['Site locale', escapeHtml(locale)],
     ['Received', escapeHtml(submittedAt)],
   ]);
@@ -137,8 +130,6 @@ export function renderNotification(submission) {
     `Email:              ${email}`,
     `Organization:       ${organization || '—'}`,
     `Engagement domain:  ${domain}`,
-    `Priority:           ${priority}`,
-    `Mutual NDA:         ${nda ? 'Yes' : 'No'}`,
     `Site locale:        ${locale}`,
     `Received:           ${submittedAt}`,
     '',
@@ -160,8 +151,8 @@ export function renderAutoReply(submission) {
 
   const html = shell({
     heading: 'We have received your inquiry',
-    // The turnaround is a fixed phrase, not read from the submitted priority —
-    // this sentence must not be rewritable by the sender.
+    // The turnaround is a fixed phrase, not read from anything the sender
+    // controls; this sentence must not be rewritable by them.
     intro: `Thank you for reaching out${fullName ? `, ${escapeHtml(fullName)}` : ''}. Your brief has reached our engineering team and we will respond within one business day. A copy of what you sent is below.`,
     body: `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">
           ${fieldRows([

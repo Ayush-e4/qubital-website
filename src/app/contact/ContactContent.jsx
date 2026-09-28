@@ -20,9 +20,7 @@ export default function ContactContent() {
     organization: '',
     domain: '',
     message: '',
-    nda: false,
     consent: false,
-    priority: 'Standard',
     // Honeypot. Never shown to a human — see the input at the end of the form.
     website: '',
   });
@@ -85,8 +83,6 @@ export default function ContactContent() {
         if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
           posthog.capture('contact_form_submitted', {
             domain: formData.domain,
-            priority: formData.priority,
-            nda: formData.nda,
             locale,
           });
         }
@@ -281,36 +277,6 @@ export default function ContactContent() {
                       {errors.message && (
                         <p className="text-error text-xs mt-1">{errorText('message')}</p>
                       )}
-                    </div>
-
-                    {/* Checkboxes & Priority */}
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-                      <label className="flex items-center gap-3 cursor-pointer py-1">
-                        <input
-                          type="checkbox"
-                          name="nda"
-                          checked={formData.nda}
-                          onChange={handleChange}
-                          className="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary"
-                        />
-                        <span className="text-xs text-secondary font-medium">{c.nda}</span>
-                      </label>
-
-                      <div className="flex items-center gap-2">
-                        <label htmlFor="priority" className="text-xs text-secondary font-medium">
-                          {c.priority}
-                        </label>
-                        <select
-                          id="priority"
-                          name="priority"
-                          value={formData.priority}
-                          onChange={handleChange}
-                          className="bg-surface-canvas border border-outline-variant text-base sm:text-sm text-on-surface px-2.5 py-1.5 rounded focus:outline-none focus:border-primary"
-                        >
-                          <option value="Standard">{c.priority_std ?? 'Standard (24-48h)'}</option>
-                          <option value="Urgent">{c.priority_urg ?? 'Urgent (Same Day)'}</option>
-                        </select>
-                      </div>
                     </div>
 
                     {/* Required acknowledgement. Enforced by the shared rules, so

@@ -30,8 +30,6 @@ export const CONTACT_LIMITS = {
  */
 export const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export const PRIORITIES = ['Standard', 'Urgent'];
-
 /** Coerce to trimmed text, so a non-string field cannot throw or slip through. */
 const asText = (value) => (typeof value === 'string' ? value.trim() : '');
 
@@ -44,7 +42,7 @@ const asText = (value) => (typeof value === 'string' ? value.trim() : '');
  *   errors: Record<string, string>,
  *   values: {
  *     fullName: string, email: string, organization: string, domain: string,
- *     message: string, nda: boolean, consent: boolean, priority: string,
+ *     message: string, consent: boolean,
  *   },
  * }}
  */
@@ -57,10 +55,8 @@ export function validateContactSubmission(input) {
     organization: asText(source.organization),
     domain: asText(source.domain),
     message: asText(source.message),
-    // Checkboxes: anything other than a literal boolean true is not consent.
-    nda: source.nda === true,
+    // Checkbox: anything other than a literal boolean true is not consent.
     consent: source.consent === true,
-    priority: PRIORITIES.includes(source.priority) ? source.priority : 'Standard',
   };
 
   /** @type {Record<string, string>} */
