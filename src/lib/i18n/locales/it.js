@@ -30,7 +30,6 @@ const dictionary = {
     cta: 'Scopri di più',
   },
   services: {
-    eyebrow: 'Competenze Chiave',
     heading: 'Competenze Chiave',
     description: 'Leadership tecnica end-to-end ed eccellenza ingegneristica.',
   },

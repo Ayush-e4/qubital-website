@@ -30,7 +30,6 @@ const dictionary = {
     cta: 'Mehr erfahren',
   },
   services: {
-    eyebrow: 'Kernkompetenzen',
     heading: 'Kernkompetenzen',
     description: 'Ganzheitliche technische Führung und Engineering-Exzellenz.',
   },
