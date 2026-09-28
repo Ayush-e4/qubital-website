@@ -483,7 +483,7 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Bavaria, Germany.',
     sec_2_title: 'Data We Collect',
     sec_2_desc:
-      'We collect only data that is strictly necessary for providing our advisory and engineering services. This includes contact form submissions, correspondence, and contractual data. Contact form data — your name, corporate email address, organization, engagement domain and message — is processed to answer your inquiry (Art. 6(1)(b) and (f) GDPR). Email delivery is handled by Resend and product analytics by PostHog, both acting as our processors under Art. 28 GDPR, with PostHog hosted in the EU.',
+      'We collect only data that is strictly necessary for providing our advisory and engineering services. This includes contact form submissions, correspondence, and contractual data. Contact form data — your name, corporate email address, organization, area of interest and message — is processed to answer your inquiry (Art. 6(1)(b) and (f) GDPR). Email delivery is handled by Resend and product analytics by PostHog, both acting as our processors under Art. 28 GDPR, with PostHog hosted in the EU.',
     sec_3_title: 'Your Rights',
     sec_3_desc:
       'Under GDPR, you have the right to access, correct, delete, and port your personal data. To exercise these rights, contact us at',
