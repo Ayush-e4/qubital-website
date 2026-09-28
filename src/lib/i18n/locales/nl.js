@@ -62,7 +62,8 @@ const dictionary = {
     btn_secondary: 'Bekijk Vacatures',
   },
   footer: {
-    tagline: 'Strategisch IT-advies, systeemarchitectuur en engineering governance.',
+    tagline:
+      'IT-advies, systeemarchitectuur en engineering governance voor groeiende bedrijven. Gevestigd in Duitsland.',
     regulatory: 'Regelgeving',
     communications: 'Communicatie',
     languages: 'Talen',
@@ -164,7 +165,7 @@ const dictionary = {
     story_p1:
       'Qubital is ontstaan uit een eenvoudige observatie: naarmate systemen krachtiger worden, worden ze ook ondoorzichtiger.',
     story_p2:
-      "Wij bouwen op het principe van 'Technische Isolatie' — duidelijke grenzen om ketenuitval te voorkomen.",
+      'Wij bouwen op een simpel idee: heldere grenzen tussen systemen. Een wijziging of storing in één deel mag niet overal herschrijvingen afdwingen.',
     principles_title: 'Onze Leidende Principes',
     principles: [
       {
@@ -370,25 +371,25 @@ const dictionary = {
     benefits_title: 'Ontworpen voor continuïteit, focus en diepgaand werk.',
     benefits: [
       {
-        title: 'Marktconforme Beloning',
-        desc: 'Transparant Basissalaris & Prestatie-bonussen',
+        title: 'Competitieve beloning',
+        desc: 'Een helder basissalaris en prestatiebonussen',
       },
       {
         title: 'Continu Leren',
         desc: 'Gereserveerd Budget voor Training & Onderzoek',
       },
       {
-        title: 'High-Performance Hardware',
-        desc: 'Maatwerk Workstations & Topsegment Schermen',
+        title: 'Goede apparatuur',
+        desc: 'Een goed uitgeruste werkplek en schermen',
       },
       {
         title: 'Werknemersautonomie',
         desc: 'Ruime Vakantiedagen, Flexibele Uren & Hybride Werken',
       },
     ],
-    blueprint_tag: 'Ruimtelijk Hybride Model',
+    blueprint_tag: 'Hoe wij werken',
     blueprint_title:
-      'Wij combineren de focus van thuiswerken met de intensieve samenwerking op locatie.',
+      'Wij combineren geconcentreerd thuiswerken met sessies op locatie waarin het team samen bouwt.',
     network_tag: 'Talentennetwerk',
     network_title: 'Interesse in werken bij Qubital?',
     network_desc: 'Wij staan altijd open voor open sollicitaties van uitzonderlijk talent.',
@@ -446,7 +447,7 @@ const dictionary = {
   mission_page: {
     tag: 'ONZE MISSIE & VISIE',
     hero_title_1: 'Architecturale helderheid in een tijd van',
-    hero_title_2: 'Technologische entropie.',
+    hero_title_2: 'Groeiende complexiteit.',
     hero_desc:
       'Bedrijven worden afgeremd door verouderde systemen en afhankelijkheid van leveranciers. Qubital is opgericht om met Europese ingenieursdiscipline structurele orde te herstellen.',
     pillars_tag: 'KERNPRINCIPES',
@@ -455,7 +456,7 @@ const dictionary = {
       {
         id: 1,
         icon: 'hub',
-        title: 'Systeemonafhankelijkheid & Clean Core',
+        title: 'Controle & Clean Core',
         desc: 'Geen vendor lock-in. Wij bouwen modulaire architecturen waarin uw bedrijfslogica en data volledig in uw beheer blijven.',
       },
       {
@@ -478,12 +479,12 @@ const dictionary = {
       },
     ],
     roadmap_tag: 'ARCHITECTURALE TRANSFORMATIE',
-    roadmap_title: 'Van versnipperde systemen naar soevereine architectuur',
+    roadmap_title: 'Van versnipperde systemen naar systemen in uw beheer',
     roadmap_steps: [
       {
         phase: 'FASE 01',
-        title: 'Systemische ontkoppeling',
-        desc: 'Isoleren van verouderde monolieten en auditen van koppelingen om duidelijke grenzen te trekken.',
+        title: 'Ontwarren wat verstrengeld is',
+        desc: 'Verweven legacy-systemen scheiden en de verborgen afhankelijkheden ertussen in kaart brengen.',
       },
       {
         phase: 'FASE 02',

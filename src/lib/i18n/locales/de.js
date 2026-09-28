@@ -64,7 +64,7 @@ const dictionary = {
   },
   footer: {
     tagline:
-      'Strategische IT-Beratung, Systemarchitektur und Engineering-Governance. Gegründet auf europäischer Analysepräzision.',
+      'IT-Beratung, Systemarchitektur und Engineering-Governance für wachsende Unternehmen. Mit Sitz in Deutschland.',
     regulatory: 'Rechtliches',
     communications: 'Kommunikation',
     languages: 'Sprachen',
@@ -164,7 +164,7 @@ const dictionary = {
     story_p1:
       'Die Gründung von Qubital geht auf eine einfache Beobachtung zurück: Je leistungsfähiger Enterprise-Systeme werden, desto undurchsichtiger werden sie.',
     story_p2:
-      "Wir haben unsere Beratungspraxis auf dem Konzept der 'Technischen Isolation' aufgebaut — klare Grenzen zwischen Systemen für minimale Ausfallrisiken.",
+      'Wir haben unsere Praxis auf einer einfachen Idee aufgebaut: klare Grenzen zwischen Systemen. Eine Änderung oder ein Ausfall in einem Teil darf nicht überall Umbauten erzwingen.',
     principles_title: 'Unsere Leitprinzipien',
     principles: [
       {
@@ -379,25 +379,25 @@ const dictionary = {
     benefits_title: 'Entworfen für Langlebigkeit, Fokus und tiefes Arbeiten.',
     benefits: [
       {
-        title: 'Marktführende Vergütung',
-        desc: 'Transparente Grundvergütung & Erfolgsprämien',
+        title: 'Wettbewerbsfähige Vergütung',
+        desc: 'Klares Grundgehalt und Erfolgsprämien',
       },
       {
         title: 'Kontinuierliches Lernen',
         desc: 'Budget für Weiterbildung & Forschung',
       },
       {
-        title: 'Hochleistungs-Hardware',
-        desc: 'Individuelle Workstations & Flaggschiff-Monitore',
+        title: 'Gute Ausstattung',
+        desc: 'Ein gut ausgestatteter Arbeitsplatz und Monitore',
       },
       {
         title: 'Autonomie & Flexibilität',
         desc: 'Großzügiger Urlaub, flexible Zeiten & Remote',
       },
     ],
-    blueprint_tag: 'Räumliches Hybrid-Modell',
+    blueprint_tag: 'Wie wir arbeiten',
     blueprint_title:
-      'Wir kombinieren den Fokus von Remote-Arbeit mit intensiver Zusammenarbeit vor Ort.',
+      'Wir verbinden fokussierte Remote-Arbeit mit Präsenzphasen, in denen das Team gemeinsam baut.',
     network_tag: 'Talent-Netzwerk',
     network_title: 'Interesse an einer Karriere bei Qubital?',
     network_desc:
@@ -457,7 +457,7 @@ const dictionary = {
   mission_page: {
     tag: 'UNSERE MISSION & VISION',
     hero_title_1: 'Architektonische Klarheit in einer Ära von',
-    hero_title_2: 'Technologischer Entropie.',
+    hero_title_2: 'Zunehmender Komplexität.',
     hero_desc:
       'Unternehmen leiden unter fragmentierten Altsystemen, Anbieterabhängigkeiten und unkontrollierter Softwarekomplexität. Qubital wurde gegründet, um mit europäischer Ingenieursdisziplin nachhaltige architektonische Klarheit zu schaffen.',
     pillars_tag: 'GRUNDLEGENDE PRINZIPIEN',
@@ -466,7 +466,7 @@ const dictionary = {
       {
         id: 1,
         icon: 'hub',
-        title: 'Architektonische Souveränität & Clean Core',
+        title: 'Kontrolle & Clean Core',
         desc: 'Kein Vendor-Lock-in. Wir entwickeln modulare, API-gestützte Systeme, bei denen Unternehmenslogik und Daten vollständig unter Ihrer Kontrolle bleiben.',
       },
       {
@@ -489,12 +489,12 @@ const dictionary = {
       },
     ],
     roadmap_tag: 'ARCHITEKTONISCHE TRANSFORMATION',
-    roadmap_title: 'Vom Systemchaos zur souveränen Architektur',
+    roadmap_title: 'Vom Systemchaos zu Systemen unter Ihrer Kontrolle',
     roadmap_steps: [
       {
         phase: 'PHASE 01',
-        title: 'Systemische Entkopplung',
-        desc: 'Isolation starrer Monolithen und präzise Prüfung von Schnittstellenabhängigkeiten zur Schaffung klarer Systemgrenzen.',
+        title: 'Verzahntes entwirren',
+        desc: 'Starre Altsysteme trennen und die versteckten Abhängigkeiten zwischen ihnen sichtbar machen.',
       },
       {
         phase: 'PHASE 02',

@@ -62,7 +62,7 @@ const dictionary = {
   },
   footer: {
     tagline:
-      'Strategic IT advisory, systems architecture, and engineering governance. Grounded in European analytical rigor.',
+      'IT advice, systems architecture and engineering governance for growing companies. Based in Germany.',
     regulatory: 'Regulatory',
     communications: 'Communications',
     languages: 'Languages',
@@ -163,7 +163,7 @@ const dictionary = {
     story_p1:
       'The genesis of Qubital came from a simple observation: as enterprise systems grow more capable, they paradoxically become more opaque. Organizations were losing control of their own architectures to vendor lock-in, shadow IT, and undocumented legacy dependencies.',
     story_p2:
-      "We built our advisory practice around the concept of 'Technical Isolation' — the ability to clearly define boundaries between different systems, ensuring that a failure or necessary upgrade in one quadrant doesn't trigger cascading rewrites across the entire enterprise.",
+      'We built our practice around a simple idea: clear boundaries between systems. A change or failure in one part should not force rewrites everywhere else.',
     principles_title: 'Our Guiding Principles',
     principles: [
       {
@@ -367,25 +367,25 @@ const dictionary = {
     benefits_title: 'Designed for longevity, focus, and deep work.',
     benefits: [
       {
-        title: 'Market-Leading Compensation',
-        desc: 'Transparent Base & Performance Incentives',
+        title: 'Competitive Pay',
+        desc: 'Clear base salary and performance bonuses',
       },
       {
         title: 'Continuous Mastery',
         desc: 'Dedicated Upskilling & Research Budget',
       },
       {
-        title: 'High-Performance Hardware',
-        desc: 'Custom Flagship Workstations & Displays',
+        title: 'Proper Hardware',
+        desc: 'A well-specced workstation and monitors',
       },
       {
         title: 'Work-Life Autonomy',
         desc: 'Generous PTO, Flexible Hours & Remote',
       },
     ],
-    blueprint_tag: 'Spatial Hybrid Blueprint',
+    blueprint_tag: 'How We Work',
     blueprint_title:
-      'We combine the focus of remote deep work with the high-bandwidth collaboration of in-person engineering sprints.',
+      'We combine focused remote work with in-person sessions where the team builds together.',
     network_tag: 'Talent Network',
     network_title: 'Interested in joining Qubital?',
     network_desc:
@@ -446,7 +446,7 @@ const dictionary = {
   mission_page: {
     tag: 'OUR MISSION & VISION',
     hero_title_1: 'Engineering Clarity in an Era of',
-    hero_title_2: 'Architectural Entropy.',
+    hero_title_2: 'Rising Complexity.',
     hero_desc:
       'Enterprises are weighed down by fragmented legacy tech stacks, vendor dependency, and spiraling software complexity. Qubital was founded to restore architectural discipline through European engineering precision.',
     pillars_tag: 'FOUNDATIONAL TENETS',
@@ -455,8 +455,8 @@ const dictionary = {
       {
         id: 1,
         icon: 'hub',
-        title: 'Architectural Sovereignty & Clean Core',
-        desc: 'Zero vendor lock-in. We build modular, API-first distributed topologies where your core business data and logic remain completely within your control.',
+        title: 'Control & Clean Core',
+        desc: 'No vendor lock-in. We build modular, API-first systems where your data and core logic stay under your control.',
       },
       {
         id: 2,
@@ -478,12 +478,12 @@ const dictionary = {
       },
     ],
     roadmap_tag: 'ARCHITECTURAL TRANSFORMATION',
-    roadmap_title: 'From Legacy Sprawl to Sovereign Systems',
+    roadmap_title: 'From Legacy Sprawl to Systems You Control',
     roadmap_steps: [
       {
         phase: 'PHASE 01',
-        title: 'Systemic Decoupling',
-        desc: 'Isolating tightly coupled legacy monoliths and auditing hidden integration dependencies to establish clear boundary lines.',
+        title: 'Untangle What Is Stuck Together',
+        desc: 'Separate tightly coupled legacy systems and map the hidden dependencies between them.',
       },
       {
         phase: 'PHASE 02',
