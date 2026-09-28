@@ -264,9 +264,7 @@ const validSubmission = () => ({
   organization: 'Analytical Engines Ltd',
   domain: 'Enterprise Architecture',
   message: 'We need help modernising a legacy estate spread across four regions.',
-  nda: false,
   consent: true,
-  priority: 'Standard',
   locale: 'en',
   website: '',
 });
