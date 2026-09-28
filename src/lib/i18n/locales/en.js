@@ -28,7 +28,6 @@ const dictionary = {
     cta: 'Learn more',
   },
   services: {
-    eyebrow: 'Core Capabilities',
     heading: 'Core Capabilities',
     description: 'End-to-end technical leadership and engineering excellence.',
   },

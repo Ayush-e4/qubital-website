@@ -30,7 +30,6 @@ const dictionary = {
     cta: 'En savoir plus',
   },
   services: {
-    eyebrow: 'Compétences clés',
     heading: 'Compétences clés',
     description: 'Direction technique stratégique et excellence en ingénierie.',
   },

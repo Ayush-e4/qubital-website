@@ -30,7 +30,6 @@ const dictionary = {
     cta: 'Meer informatie',
   },
   services: {
-    eyebrow: 'Kerncompetenties',
     heading: 'Kerncompetenties',
     description: 'Eind-tot-eind technisch leiderschap en engineering uitmuntendheid.',
   },

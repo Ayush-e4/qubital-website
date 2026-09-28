@@ -114,7 +114,7 @@ export default function Footer() {
           {/* Navigation / Practice Links */}
           <div className="p-[2rem] md:p-[2.5rem] flex flex-col gap-[1rem] pointer-events-none">
             <span className="text-xs font-mono tracking-widest uppercase text-on-surface/90 font-bold pointer-events-auto w-fit">
-              {t.services?.eyebrow || 'Navigation'}
+              {t.nav.services || 'Navigation'}
             </span>
             <div className="flex flex-col gap-2.5 pointer-events-auto w-fit">
               {(FOOTER_LINKS.company || []).map((link) => (

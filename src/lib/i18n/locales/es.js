@@ -30,7 +30,6 @@ const dictionary = {
     cta: 'Saber más',
   },
   services: {
-    eyebrow: 'Capacidades Clave',
     heading: 'Capacidades Clave',
     description: 'Liderazgo técnico integral y excelencia en ingeniería.',
   },

@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/AnimateOnScroll';
 import MarqueeButton from '@/components/MarqueeButton';
 import ServiceCard from '@/components/ServiceCard';
-import MethodologySteps from '@/components/MethodologySteps';
 import { RetroGrid } from '@/components/magicui/retro-grid';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useLocalePath } from '@/lib/i18n/useLocalePath';
@@ -146,10 +145,10 @@ export default function HomeParallaxContent() {
         </div>
       </section>
 
-      {/* SECTION 3 - Methodology Snapshot */}
-      <section className="w-full flex flex-col justify-center py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-surface-canvas relative border-y border-outline-variant/30 z-10">
+      {/* SECTION 3 - Methodology teaser (the full process lives on /services) */}
+      <section className="w-full flex flex-col justify-center py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-surface-canvas relative border-y border-outline-variant/30 z-10">
         <div className="max-w-7xl mx-auto w-full">
-          <AnimateOnScroll className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <AnimateOnScroll className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="text-xs font-mono font-semibold text-primary tracking-wider uppercase mb-1 sm:mb-2 block">
                 {t.methodology.eyebrow}
@@ -157,15 +156,13 @@ export default function HomeParallaxContent() {
               <h2 className="text-style-headline-md text-on-surface">{t.methodology.heading}</h2>
             </div>
             <Link
-              href={localePath('/about')}
+              href={localePath('/services')}
               className="text-primary group text-sm font-semibold flex items-center gap-1 py-1 w-fit"
             >
               <span className="group-hover:underline">{t.methodology.cta_link}</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </AnimateOnScroll>
-
-          <MethodologySteps />
         </div>
       </section>
 
