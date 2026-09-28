@@ -133,7 +133,7 @@ const dictionary = {
   contact_page: {
     title: 'Start a Conversation.',
     subtitle:
-      'Reach out to our principal engineering team to discuss your digital transformation initiatives and architectural requirements.',
+      'Get in touch with our experienced engineering team to talk through your digital initiatives and architecture requirements.',
     form_title: 'Project Inquiry',
     security_badge: 'SECURE & CONFIDENTIAL',
     full_name: 'Full Name*',
@@ -192,7 +192,7 @@ const dictionary = {
     hero_title_1: 'Strategic IT Advisory &',
     hero_title_2: 'Scalable Digital Systems.',
     hero_desc:
-      'We engineer clarity across distributed architectures, providing enterprise technology leaders with the strategic insight and structural governance needed to scale without friction.',
+      'We bring clarity to complex IT landscapes and give IT leaders the orientation and structures they need for sustainable growth.',
     focus_tag: 'OUR FOCUS',
     focus_title: 'Operational Reliability',
     focus_desc:
@@ -272,7 +272,7 @@ const dictionary = {
     cta_desc:
       "Initiate a confidential assessment of your current infrastructure. We'll identify architectural bottlenecks, security vulnerabilities, and scalability constraints.",
     cta_btn_primary: 'Request Executive Briefing',
-    cta_btn_secondary: 'Direct Advisory Line',
+    cta_btn_secondary: 'Direct line to our team',
   },
   services_page: {
     hero_title_1: 'Core Capabilities &',
@@ -496,7 +496,7 @@ const dictionary = {
     hero_title_1: 'Engineering Clarity in an Era of',
     hero_title_2: 'Rising Complexity.',
     hero_desc:
-      'Enterprises are weighed down by fragmented legacy tech stacks, vendor dependency, and spiraling software complexity. Qubital was founded to restore architectural discipline through European engineering precision.',
+      'Enterprises are weighed down by fragmented legacy systems, vendor dependency, and spiraling software complexity. Qubital was founded to bring lasting architectural clarity, with a clear European commitment to engineering.',
     pillars_tag: 'FOUNDATIONAL TENETS',
     pillars_title: 'The Principles That Guide Every Architecture',
     pillars: [
@@ -597,7 +597,7 @@ const dictionary = {
     ],
     cta_title: 'Experience the difference of senior-led engineering.',
     cta_desc:
-      'Talk directly to our principal architects to review your technical challenges and architectural goals.',
+      'Talk directly to our senior engineers to review your technical challenges and architectural goals.',
     cta_btn: 'Book an Architecture Briefing',
   },
 };
