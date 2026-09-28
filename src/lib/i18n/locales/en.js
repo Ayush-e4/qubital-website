@@ -1,4 +1,56 @@
 const dictionary = {
+  meta: {
+    home: {
+      title: 'Qubital | The IT Partner for Growing Companies',
+      description:
+        'IT advisory and systems architecture for growing companies. Software, cloud, security and SAP, delivered by senior engineers. Based in Herzogenaurach, Germany.',
+    },
+    about: {
+      title: 'About | Qubital',
+      description:
+        'Who we are: a mid-sized IT partner helping growing companies design, build and run the systems they depend on.',
+    },
+    services: {
+      title: 'Services | Qubital',
+      description:
+        'Software, cloud, cybersecurity, AI and SAP, planned, built and supported by senior engineers, sized for growing companies.',
+    },
+    why_us: {
+      title: 'Why Qubital | IT Partner for Growing Companies',
+      description:
+        'How Qubital compares with keeping IT in-house: senior engineers when you need them, documented systems your team can own, fixed milestone pricing.',
+    },
+    mission: {
+      title: 'Mission | Qubital',
+      description:
+        'Our mission: help companies take back control of their systems with clear architecture, no vendor lock-in, and plainly documented work.',
+    },
+    careers: {
+      title: 'Careers | Qubital',
+      description:
+        'Join Qubital: interesting engineering work, competitive pay, proper hardware and flexible working.',
+    },
+    contact: {
+      title: 'Contact | Qubital',
+      description:
+        'Tell us what you need help with. Reach the senior engineers directly and we will reply within one business day.',
+    },
+    compliance: {
+      title: 'Security & Compliance | Qubital',
+      description:
+        'How Qubital approaches information security and data protection: the standards we design to, GDPR by default, and EU-hosted infrastructure.',
+    },
+    privacy: {
+      title: 'Privacy & GDPR | Qubital',
+      description:
+        'How Qubital Systems GmbH collects, processes and protects personal data under the EU GDPR.',
+    },
+    impressum: {
+      title: 'Impressum | Qubital',
+      description:
+        'Legal disclosure (Impressum) for Qubital Systems GmbH under § 5 TMG: company details, registered office in Herzogenaurach, Germany, and contact information.',
+    },
+  },
   nav: {
     home: 'Home',
     about: 'About',

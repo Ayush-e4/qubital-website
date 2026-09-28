@@ -1,6 +1,58 @@
 // @ts-check
 /** @type {import('../types').Dictionary} */
 const dictionary = {
+  meta: {
+    home: {
+      title: 'Qubital | Der IT-Partner für wachsende Unternehmen',
+      description:
+        'IT-Beratung und Systemarchitektur für wachsende Unternehmen. Software, Cloud, Sicherheit und SAP, umgesetzt von erfahrenen Ingenieuren. Sitz in Herzogenaurach, Deutschland.',
+    },
+    about: {
+      title: 'Über uns | Qubital',
+      description:
+        'Wer wir sind: ein mittelständischer IT-Partner, der wachsenden Unternehmen hilft, ihre Systeme zu planen, zu bauen und zu betreiben.',
+    },
+    services: {
+      title: 'Leistungen | Qubital',
+      description:
+        'Software, Cloud, Cybersicherheit, KI und SAP, geplant, gebaut und betreut von erfahrenen Ingenieuren, passend für wachsende Unternehmen.',
+    },
+    why_us: {
+      title: 'Warum Qubital | IT-Partner für wachsende Unternehmen',
+      description:
+        'Wie Qubital im Vergleich zu IT im eigenen Haus abschneidet: erfahrene Ingenieure, dokumentierte Systeme und feste Meilensteinpreise.',
+    },
+    mission: {
+      title: 'Mission | Qubital',
+      description:
+        'Unsere Mission: Unternehmen die Kontrolle über ihre Systeme zurückgeben, mit klarer Architektur, ohne Vendor-Lock-in und sauber dokumentiert.',
+    },
+    careers: {
+      title: 'Karriere | Qubital',
+      description:
+        'Arbeiten bei Qubital: spannende Projekte, wettbewerbsfähige Vergütung, gute Ausstattung und flexible Arbeitszeiten.',
+    },
+    contact: {
+      title: 'Kontakt | Qubital',
+      description:
+        'Sagen Sie uns, wobei Sie Unterstützung brauchen. Sie erreichen die erfahrenen Ingenieure direkt, wir antworten innerhalb eines Werktags.',
+    },
+    compliance: {
+      title: 'Sicherheit & Compliance | Qubital',
+      description:
+        'Wie Qubital Informationssicherheit und Datenschutz angeht: Standards, an denen wir uns orientieren, DSGVO by Design und EU-Hosting.',
+    },
+    privacy: {
+      title: 'Datenschutz & DSGVO | Qubital',
+      description:
+        'Wie die Qubital Systems GmbH personenbezogene Daten gemäß DSGVO erhebt, verarbeitet und schützt.',
+    },
+    impressum: {
+      title: 'Impressum | Qubital',
+      description:
+        'Impressum der Qubital Systems GmbH gemäß § 5 TMG: Unternehmensangaben, Sitz in Herzogenaurach und Kontaktinformationen.',
+    },
+  },
   nav: {
     home: 'Startseite',
     about: 'Über uns',

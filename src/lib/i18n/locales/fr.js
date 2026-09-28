@@ -1,6 +1,58 @@
 // @ts-check
 /** @type {import('../types').Dictionary} */
 const dictionary = {
+  meta: {
+    home: {
+      title: 'Qubital | Le partenaire IT des entreprises en croissance',
+      description:
+        'Conseil IT et architecture système pour les entreprises en croissance. Logiciel, cloud, sécurité et SAP, livrés par des ingénieurs expérimentés. Basés à Herzogenaurach, Allemagne.',
+    },
+    about: {
+      title: 'À propos | Qubital',
+      description:
+        'Qui nous sommes : un partenaire IT de taille moyenne qui aide les entreprises en croissance à concevoir, construire et exploiter leurs systèmes.',
+    },
+    services: {
+      title: 'Services | Qubital',
+      description:
+        'Logiciel, cloud, cybersécurité, IA et SAP, conçus, construits et maintenus par des ingénieurs expérimentés, adaptés aux entreprises en croissance.',
+    },
+    why_us: {
+      title: 'Pourquoi Qubital | Partenaire IT des entreprises en croissance',
+      description:
+        'Qubital face à une IT interne : des ingénieurs expérimentés, des systèmes documentés et des prix forfaitaires par jalons.',
+    },
+    mission: {
+      title: 'Mission | Qubital',
+      description:
+        'Notre mission : rendre aux entreprises le contrôle de leurs systèmes, avec une architecture claire, sans dépendance fournisseur et bien documentée.',
+    },
+    careers: {
+      title: 'Carrières | Qubital',
+      description:
+        'Rejoignez Qubital : des projets intéressants, une rémunération compétitive, du bon matériel et des horaires flexibles.',
+    },
+    contact: {
+      title: 'Contact | Qubital',
+      description:
+        'Dites-nous ce dont vous avez besoin. Vous parlez directement aux ingénieurs expérimentés ; nous répondons sous un jour ouvré.',
+    },
+    compliance: {
+      title: 'Sécurité & Conformité | Qubital',
+      description:
+        "Notre approche de la sécurité de l'information et de la protection des données : des standards reconnus, la confidentialité par défaut et un hébergement dans l'UE.",
+    },
+    privacy: {
+      title: 'Confidentialité & RGPD | Qubital',
+      description:
+        'Comment Qubital Systems GmbH collecte, traite et protège les données personnelles conformément au RGPD.',
+    },
+    impressum: {
+      title: 'Mentions légales | Qubital',
+      description:
+        'Mentions légales de Qubital Systems GmbH conformément au § 5 TMG : informations sur la société, siège à Herzogenaurach et contact.',
+    },
+  },
   nav: {
     home: 'Accueil',
     about: 'À propos',
