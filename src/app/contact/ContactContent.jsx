@@ -173,7 +173,7 @@ export default function ContactContent() {
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleChange}
-                          placeholder={c.placeholders?.fullName ?? 'Dr. Marcus Vance'}
+                          placeholder={c.placeholders?.fullName ?? 'Anna Keller'}
                           maxLength={CONTACT_LIMITS.fullName.max}
                           className={`w-full bg-surface-canvas border ${errors.fullName ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
@@ -196,7 +196,7 @@ export default function ContactContent() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          placeholder={c.placeholders?.email ?? 'm.vance@company.com'}
+                          placeholder={c.placeholders?.email ?? 'a.keller@company.de'}
                           maxLength={CONTACT_LIMITS.email.max}
                           className={`w-full bg-surface-canvas border ${errors.email ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />
@@ -221,7 +221,7 @@ export default function ContactContent() {
                           name="organization"
                           value={formData.organization}
                           onChange={handleChange}
-                          placeholder={c.placeholders?.organization ?? 'Siemens Energy AG'}
+                          placeholder={c.placeholders?.organization ?? 'Nordwerk GmbH'}
                           maxLength={CONTACT_LIMITS.organization.max}
                           className={`w-full bg-surface-canvas border ${errors.organization ? 'border-error' : 'border-outline-variant'} text-on-surface px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-base sm:text-sm placeholder:text-secondary/90`}
                         />

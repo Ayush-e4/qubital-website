@@ -3,9 +3,9 @@ import { pageMetadata } from '@/lib/seo';
 
 export async function generateMetadata() {
   return pageMetadata({
-    title: 'Qubital | Enterprise-Grade IT Advisory & Digital Architecture',
+    title: 'Qubital | The IT Partner for Growing Companies',
     description:
-      'Engineering clarity for mid-market enterprises and global leaders. Headquartered in Herzogenaurach, Germany.',
+      'IT advisory and systems architecture for growing companies. Software, cloud, security and SAP, delivered by senior engineers. Based in Herzogenaurach, Germany.',
     path: '/',
   });
 }

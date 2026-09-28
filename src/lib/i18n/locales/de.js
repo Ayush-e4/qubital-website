@@ -19,9 +19,9 @@ const dictionary = {
     change_language: 'Sprache ändern',
   },
   hero: {
-    sub_headline: 'IT-Beratung & Digitale Architektur für Unternehmen',
+    sub_headline: 'Der IT-Partner für wachsende Unternehmen.',
     subtitle:
-      'Wir vereinfachen Technologiesysteme für wachsende Unternehmen und moderne Enterprise-Teams.',
+      'Software, Cloud, Sicherheit und SAP – geplant und betrieben von erfahrenen Ingenieuren, damit Ihre Systeme ohne Chaos wachsen können.',
     cta_primary: 'Leistungen erkunden',
     cta_secondary: 'Unser Ansatz',
     scroll_hint: 'Scrollen zum Erkunden',
@@ -40,20 +40,20 @@ const dictionary = {
     cta_link: 'Unseren Ansatz erkunden',
   },
   metrics: {
-    eyebrow: 'BETRIEBSKENNZAHLEN',
-    heading: 'Bewährt im Enterprise-Maßstab',
+    eyebrow: 'WIE WIR ARBEITEN',
+    heading: 'Standards und Praktiken, die Sie überprüfen können.',
     labels: {
-      cloud_workloads: 'Verwaltete Cloud-Workloads',
-      arch_reviews: 'Architektur-Reviews',
-      sla_guarantee: 'Durchschnittliche SLA-Garantie',
-      continuity_rate: 'Kundenbindungsrate',
+      cloud_workloads: 'EU-gehostete Daten',
+      arch_reviews: 'Keine Tracking-Cookies',
+      sla_guarantee: 'Datenschutz by Design',
+      continuity_rate: 'Herstellerneutrale Beratung',
     },
   },
   badges: {
-    iso: 'ISO 27001 Zertifiziert',
-    bsi: 'BSI C5 Konform',
-    gdpr: 'DSGVO Konform',
-    tisax: 'TISAX Level 3',
+    iso: 'Ausgelegt auf ISO/IEC 27001',
+    bsi: 'Ausgelegt auf BSI C5',
+    gdpr: 'DSGVO-Datenschutz',
+    tisax: 'NDA auf Anfrage',
   },
   cta_banner: {
     heading: 'Bereit für Ihr nächstes Kapitel?',
@@ -117,9 +117,9 @@ const dictionary = {
       'Virtuelle CIO-Beratung',
     ],
     placeholders: {
-      fullName: 'Dr. Marcus Vance',
-      email: 'm.vance@company.de',
-      organization: 'Siemens Energy AG',
+      fullName: 'Anna Keller',
+      email: 'a.keller@company.de',
+      organization: 'Nordwerk GmbH',
       message: 'Beschreiben Sie Ihre betrieblichen Engpässe oder Migrationsziele...',
     },
     security_protocol: 'Sicherheitsprotokoll',
@@ -149,11 +149,11 @@ const dictionary = {
     focus_tag: 'UNSER FOKUS',
     focus_title: 'Betriebliche Zuverlässigkeit',
     focus_desc:
-      'Unsere Methodiken garantieren migrationsfreie Ausfälle und absolute Konsistenz in komplexen Cloud-Umgebungen.',
+      'Unsere Arbeit macht Migrationen planbar und hält Ihre Systeme konsistent, während sie sich verändern.',
     focus_items: ['Systemarchitektur', 'Cloud-Orchestrierung', 'Sicherheits-Governance'],
     mission_tag: 'KERNAUFTRAG / MISSION',
     mission_quote:
-      '"Die Interaktion von Unternehmen mit ihren digitalen Ökosystemen durch unveränderliche Governance und transparente Architektur neu definieren."',
+      '"Unternehmen die Kontrolle über ihre Systeme zurückgeben – durch klare Governance und transparente Architektur."',
     mission_desc:
       'Wir sind überzeugt, dass Unternehmenstechnologie Klarheit schaffen sollte. Unsere Mission ist es, Geschäftslogik von Komplexität zu entkoppeln.',
     mission_badges: ['Strategie-Ausrichtung', 'System-Entkopplung', 'Engineering-Souveränität'],
@@ -186,20 +186,20 @@ const dictionary = {
     ],
     stats: [
       {
-        value: '480+',
-        label: 'Verwaltete Cloud-Workloads',
+        value: '6',
+        label: 'Leistungsbereiche',
       },
       {
-        value: '120+',
-        label: 'Gelieferte Architektur-Reviews',
+        value: '6',
+        label: 'Sprachen',
       },
       {
-        value: '<12min',
-        label: 'Mittlere Vorfallsbehebungszeit',
+        value: 'EU',
+        label: 'Datenstandort',
       },
       {
-        value: '97.3%',
-        label: 'Kundenbindungsrate',
+        value: '0',
+        label: 'Tracking-Cookies',
       },
     ],
     diff_tag: 'ALLEINSTELLUNGSMERKMALE',
@@ -208,17 +208,17 @@ const dictionary = {
       {
         icon: 'verified',
         title: 'Herstellerneutralität & Offene Standards',
-        desc: 'Wir unterhalten keinerlei exklusive Partnerschaften. Unsere Architekturempfehlungen basieren rein auf technischer Exzellenz.',
+        desc: 'Wir sind nicht an Reseller-Quoten oder Herstellerprovisionen gebunden – unsere Empfehlungen richten sich danach, was zu Ihren Systemen und Ihrem Budget passt.',
       },
       {
         icon: 'shield_locked',
         title: 'Deutsche Engineering-Governance',
-        desc: 'Vom Standort Herzogenaurach aus wenden wir strenge DIN/ISO-Standards auf moderne Softwarearchitekturen an.',
+        desc: 'Mit Sitz in Herzogenaurach und nach anerkannten Sicherheits- und Datenschutzstandards arbeiten wir an Systemen, die einer Prüfung standhalten.',
       },
       {
         icon: 'support_agent',
         title: 'Direkter Zugang zu Chefarchitekten',
-        desc: 'Bei uns gibt es keine Zwischenschaltung von Account-Managern. Sie sprechen direkt mit den ausführenden Ingenieuren.',
+        desc: 'Bei Qubital sprechen Sie direkt mit den erfahrenen Ingenieuren, die die Arbeit machen – ohne Account-Manager dazwischen.',
       },
     ],
     cta_title: 'Lassen Sie uns Ihre IT-Landschaft analysieren.',
@@ -409,16 +409,16 @@ const dictionary = {
     subtitle: 'Sicherheits- & Compliance-Framework',
     sec_1_title: 'Unsere Sicherheitsstandards',
     sec_1_desc:
-      'Qubital arbeitet unter einem strengen Governance-Framework im Einklang mit ISO/IEC 27001, BSI C5, TISAX Level 3 und DSGVO.',
-    sec_2_title: 'ISO 27001 Zertifizierung',
+      'Wir arbeiten nach anerkannten Informationssicherheitsstandards, darunter ISO/IEC 27001 und die BSI-C5-Kriterien, sowie nach den Anforderungen der DSGVO.',
+    sec_2_title: 'ISO/IEC 27001',
     sec_2_desc:
-      'Unser Informationssicherheits-Managementsystem (ISMS) ist nach ISO/IEC 27001 zertifiziert und sichert Risikomanagement ab.',
-    sec_3_title: 'BSI C5 Konformität',
+      'Wir gestalten unsere Informationssicherheitspraktiken nach ISO/IEC 27001 – mit Risikomanagement, Schutz von Werten und kontinuierlicher Verbesserung unserer Kontrollen.',
+    sec_3_title: 'BSI C5',
     sec_3_desc:
       'Wir richten uns nach dem C5-Kriterienkatalog des Bundesamts für Sicherheit in der Informationstechnik (BSI).',
     sec_4_title: 'Zero-Trust-Architektur',
     sec_4_desc:
-      'Alle internen Systeme setzen auf Zero-Trust-Netzwerkprinzipien mit mTLS-Verifizierung und segmentierten VPCs.',
+      'Wir wenden Zero-Trust-Prinzipien auf unsere internen Systeme und Kundenumgebungen an, einschließlich starker Authentifizierung und getrennter Netze.',
     sec_5_title: 'Sicherheitsanfragen',
     sec_5_desc: 'Für Sicherheitsauskünfte oder Compliance-Dokumente kontaktieren Sie bitte',
   },
@@ -472,8 +472,8 @@ const dictionary = {
       {
         id: 2,
         icon: 'verified_user',
-        title: 'DIN- & ISO-Governance als Standard',
-        desc: 'Deutsche Präzision angewandt auf Software. Jede Architektur erfüllt strikte ISO 27001-, BSI C5- und DSGVO-Standards.',
+        title: 'Sicherheits- & Datenstandards als Standard',
+        desc: 'Wir entwerfen jede Architektur anhand anerkannter Standards wie ISO/IEC 27001 und der BSI-C5-Kriterien und auf DSGVO-Konformität hin.',
       },
       {
         id: 3,
@@ -485,7 +485,7 @@ const dictionary = {
         id: 4,
         icon: 'analytics',
         title: 'Meilensteinbasierte Transparenz',
-        desc: 'Feste Projektphasen, messbare RFC-Ergebnisse und verlässliche Budgets ohne versteckte Mehrkosten. Direkter Zugang zu leitenden Architekten.',
+        desc: 'Feste Projektphasen, klare Ergebnisse und transparente, meilensteinbasierte Abrechnung. Direkter Zugang zu den erfahrenen Ingenieuren.',
       },
     ],
     roadmap_tag: 'ARCHITEKTONISCHE TRANSFORMATION',
@@ -524,37 +524,41 @@ const dictionary = {
     hero_title_1: 'Präzisions-Engineering.',
     hero_title_2: 'Ohne Agentur-Overhead.',
     comparison_tag: 'DER DIREKTE VERGLEICH',
-    comparison_title: 'Wie Qubital Beratung neu definiert',
+    comparison_title: 'Wie Qubital im Vergleich zu Inhouse-IT abschneidet',
     comparison_headers: {
       criteria: 'Kriterium',
       qubital: 'Qubital Systems',
-      traditional: 'Klassische Beratungen / Agenturen',
+      traditional: 'Inhouse-IT / Status quo',
     },
     comparison_rows: [
       {
-        criteria: 'Projektteam',
-        qubital: 'Direkte Zusammenarbeit mit Principal Architects und Senior Engineers',
-        traditional: 'Senior Partner verkaufen; unerfahrene Junioren setzen um',
+        criteria: 'Kapazität & Kompetenzen',
+        qubital:
+          'Erfahrene Ingenieure für Software, Cloud, Sicherheit und SAP, verfügbar, wenn Sie sie brauchen',
+        traditional:
+          'Ein kleines Team, über alles verteilt, mit Lücken, die Sie durch Neueinstellungen schließen',
       },
       {
-        criteria: 'Kern-Ergebnis',
-        qubital: 'Produktionsreifer Code, tragfähige Systemarchitekturen & RFCs',
-        traditional: 'Theoretische Folienpräsentationen und generische Ratschläge',
+        criteria: 'Umsetzung',
+        qubital: 'Produktive Systeme, klare Dokumentation und Arbeit, die ausgeliefert wird',
+        traditional: 'Ein wachsender Backlog; Projekte stocken, wenn das Team ausgelastet ist',
       },
       {
-        criteria: 'Anbieterunabhängigkeit',
-        qubital: '100% unabhängig; keine Provisionen oder versteckten Partnerquoten',
-        traditional: 'Versteckte Anreize zur Bindung an bevorzugte Software-Ökosysteme',
+        criteria: 'Kontinuität',
+        qubital: 'Dokumentierte Systeme, die Ihr Team übernehmen und weiterführen kann',
+        traditional:
+          'Kritisches Wissen liegt bei denen, die es gebaut haben – und bei niemandem sonst',
       },
       {
-        criteria: 'Kosten & Verlässlichkeit',
-        qubital: 'Feste Meilenstein-Preise mit garantierten SLA-Benchmarks',
-        traditional: 'Abrechnung nach Aufwand mit unkontrolliertem Scope Creep',
+        criteria: 'Kosten & Fokus',
+        qubital: 'Feste, meilensteinbasierte Projekte, mit denen Sie planen können',
+        traditional:
+          'Gehälter, Tools und Einstellungsrisiko für Kompetenzen, die Sie nur zeitweise brauchen',
       },
       {
         criteria: 'Sicherheit & Compliance',
-        qubital: 'ISO 27001, BSI C5 und DSGVO von Beginn an in die Architektur integriert',
-        traditional: 'Wird oft nachgelagert behandelt oder an Subunternehmer vergeben',
+        qubital: 'Sicherheit und Datenschutz von Anfang an mitgedacht',
+        traditional: 'Erst spät angegangen, wenn ein Audit oder Vorfall dazu zwingt',
       },
     ],
     cta_title: 'Erleben Sie den Unterschied seniorer Fachexpertise.',

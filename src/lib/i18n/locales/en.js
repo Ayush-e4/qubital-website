@@ -17,8 +17,9 @@ const dictionary = {
     change_language: 'Change language',
   },
   hero: {
-    sub_headline: 'Enterprise IT Advisory & Digital Architecture',
-    subtitle: 'Simplifying technology systems for growing businesses and modern enterprise teams.',
+    sub_headline: 'The IT partner for growing companies.',
+    subtitle:
+      'Software, cloud, security, and SAP, planned and run by senior engineers, so your systems scale without the chaos.',
     cta_primary: 'Explore Our Services',
     cta_secondary: 'Meet the Practice',
     scroll_hint: 'Scroll to explore',
@@ -37,20 +38,20 @@ const dictionary = {
     cta_link: 'Explore Our Approach',
   },
   metrics: {
-    eyebrow: 'OPERATIONAL METRICS',
-    heading: 'Proven at Enterprise Scale',
+    eyebrow: 'HOW WE WORK',
+    heading: 'Standards and practices you can check.',
     labels: {
-      cloud_workloads: 'Cloud Workloads Governed',
-      arch_reviews: 'Architecture Reviews',
-      sla_guarantee: 'Mean SLA Guarantee',
-      continuity_rate: 'Client Continuity Rate',
+      cloud_workloads: 'EU-hosted data',
+      arch_reviews: 'No tracking cookies',
+      sla_guarantee: 'Privacy by design',
+      continuity_rate: 'Vendor-neutral advice',
     },
   },
   badges: {
-    iso: 'ISO 27001 Certified',
-    bsi: 'BSI C5 Compliant',
-    gdpr: 'GDPR Compliant',
-    tisax: 'TISAX Level 3',
+    iso: 'Designed to ISO/IEC 27001',
+    bsi: 'Designed to meet BSI C5',
+    gdpr: 'GDPR data protection',
+    tisax: 'NDA on request',
   },
   cta_banner: {
     heading: 'Ready to architect your next chapter?',
@@ -114,9 +115,9 @@ const dictionary = {
       'Virtual CIO Advisory',
     ],
     placeholders: {
-      fullName: 'Dr. Marcus Vance',
-      email: 'm.vance@company.com',
-      organization: 'Siemens Energy AG',
+      fullName: 'Anna Keller',
+      email: 'a.keller@company.de',
+      organization: 'Nordwerk GmbH',
       message:
         'Detail your operational bottlenecks, system constraints, or upcoming migration goals...',
     },
@@ -147,11 +148,11 @@ const dictionary = {
     focus_tag: 'OUR FOCUS',
     focus_title: 'Operational Reliability',
     focus_desc:
-      'Our methodologies are built to ensure zero-regression migrations and absolute state consistency across distributed cloud environments.',
+      'Our work is built to make migrations predictable and keep your systems consistent while they change.',
     focus_items: ['System Architecture', 'Cloud Orchestration', 'Security Governance'],
     mission_tag: 'Core Mandate / Mission Statement',
     mission_quote:
-      '"Redefining how enterprises interact with their digital ecosystems by establishing immutable governance and transparent architectural design."',
+      '"Helping companies take back control of their systems through clear governance and transparent architecture."',
     mission_desc:
       'We believe that enterprise technology should be a lever for clarity, not a source of operational friction. Our mission is to decouple business logic from underlying complexity, giving organizations true sovereignty over their digital infrastructure.',
     mission_badges: ['Strategy Alignment', 'Systems Decoupling', 'Engineering Sovereignty'],
@@ -184,20 +185,20 @@ const dictionary = {
     ],
     stats: [
       {
-        value: '480+',
-        label: 'Cloud Workloads Governed',
+        value: '6',
+        label: 'Service Areas',
       },
       {
-        value: '120+',
-        label: 'Architecture Reviews Delivered',
+        value: '6',
+        label: 'Languages Supported',
       },
       {
-        value: '<12min',
-        label: 'Mean Incident Resolution',
+        value: 'EU',
+        label: 'Data Residency',
       },
       {
-        value: '97.3%',
-        label: 'Client Continuity Rate',
+        value: '0',
+        label: 'Tracking Cookies',
       },
     ],
     diff_tag: 'DIFFERENTIATORS',
@@ -206,17 +207,17 @@ const dictionary = {
       {
         icon: 'verified',
         title: 'Vendor Neutrality & Open Standards',
-        desc: 'We maintain zero exclusive partnerships or reseller agreements. Our architectural recommendations are based solely on technical merit, operational viability, and your specific enterprise constraints.',
+        desc: "We're not tied to reseller quotas or vendor commissions, so our advice is based on what fits your systems and budget.",
       },
       {
         icon: 'shield_locked',
         title: 'German Engineering Governance',
-        desc: 'Operating out of Herzogenaurach, we apply stringent DIN/ISO compliance mindsets to software architecture. Every system we design is built to withstand rigorous audit scrutiny.',
+        desc: 'Based in Herzogenaurach and working to recognised security and data-protection standards, we build systems that hold up to review.',
       },
       {
         icon: 'support_agent',
         title: 'Direct Principal Access',
-        desc: 'We do not employ account managers or generalized consultants. When you engage Qubital, you communicate directly with the principal architects doing the actual work.',
+        desc: 'When you work with Qubital, you talk directly to the senior engineers doing the work, with no account managers in between.',
       },
     ],
     cta_title: 'Let us map your technical landscape.',
@@ -396,16 +397,16 @@ const dictionary = {
     subtitle: 'Security & Compliance Framework',
     sec_1_title: 'Our Security Standards',
     sec_1_desc:
-      'Qubital operates under a rigorous information security governance framework aligned with international standards including ISO/IEC 27001, BSI C5, TISAX Level 3, and full GDPR compliance.',
-    sec_2_title: 'ISO 27001 Certification',
+      'We work to recognised information security standards, including ISO/IEC 27001 and the BSI C5 criteria, alongside GDPR requirements.',
+    sec_2_title: 'ISO/IEC 27001',
     sec_2_desc:
-      'Our information security management system (ISMS) is certified against ISO/IEC 27001, ensuring systematic risk management, asset protection, and continual improvement of security controls.',
-    sec_3_title: 'BSI C5 Compliance',
+      'We design our information security management practices against ISO/IEC 27001, covering risk management, asset protection and continual improvement of our controls.',
+    sec_3_title: 'BSI C5',
     sec_3_desc:
       'We align with the BSI Cloud Computing Compliance Criteria Catalogue (C5), the German Federal Office for Information Security standard for cloud service providers.',
     sec_4_title: 'Zero-Trust Architecture',
     sec_4_desc:
-      'All internal systems and client delivery environments implement zero-trust network principles with mandatory mTLS verification, segmented VPCs, and policy-as-code enforcement.',
+      'We apply zero-trust principles across our internal systems and client environments, including strong authentication and separated networks.',
     sec_5_title: 'Security Inquiries',
     sec_5_desc:
       'For security disclosures or compliance documentation requests, contact our security team at',
@@ -460,8 +461,8 @@ const dictionary = {
       {
         id: 2,
         icon: 'verified_user',
-        title: 'DIN & ISO Governance by Default',
-        desc: 'European precision applied to software. Every system blueprint is engineered to satisfy ISO 27001, BSI C5, and strict GDPR data governance standards.',
+        title: 'Security & Data Standards by Default',
+        desc: 'We design every blueprint against recognised standards such as ISO/IEC 27001 and the BSI C5 criteria, and to meet GDPR requirements.',
       },
       {
         id: 3,
@@ -473,7 +474,7 @@ const dictionary = {
         id: 4,
         icon: 'analytics',
         title: 'Milestone-Driven Transparency',
-        desc: 'Fixed delivery phases, quantifiable RFC deliverables, and zero surprise billing. Direct access and accountability from senior principal architects.',
+        desc: 'Fixed delivery phases, clear deliverables, and transparent milestone-based billing. Direct access to the senior engineers doing the work.',
       },
     ],
     roadmap_tag: 'ARCHITECTURAL TRANSFORMATION',
@@ -512,37 +513,38 @@ const dictionary = {
     hero_title_1: 'Precision Engineering.',
     hero_title_2: 'Zero Agency Overhead.',
     comparison_tag: 'THE DIRECT COMPARISON',
-    comparison_title: 'How Qubital Redefines Advisory Engagements',
+    comparison_title: 'How Qubital Compares with Keeping IT In-House',
     comparison_headers: {
       criteria: 'Criteria',
       qubital: 'Qubital Systems',
-      traditional: 'Traditional Consultancies / Agencies',
+      traditional: 'In-House IT / Status Quo',
     },
     comparison_rows: [
       {
-        criteria: 'Delivery Team',
-        qubital: 'Direct collaboration with Principal Architects and Senior Engineers',
-        traditional: 'Senior partners sell; inexperienced junior staff execute',
+        criteria: 'Capacity & Skills',
+        qubital:
+          'Senior engineers across software, cloud, security and SAP, available when you need them',
+        traditional: 'A small team stretched across everything, with gaps you fill by hiring',
       },
       {
-        criteria: 'Core Deliverable',
-        qubital: 'Battle-tested production code, infrastructure blueprints & RFCs',
-        traditional: 'Theoretical slide decks and generic high-level recommendations',
+        criteria: 'Delivery',
+        qubital: 'Production systems, clear documentation, and work that ships',
+        traditional: 'A growing backlog; projects stall when the team is busy',
       },
       {
-        criteria: 'Vendor Independence',
-        qubital: '100% vendor-agnostic; zero kickbacks or hidden reseller quotas',
-        traditional: 'Heavily incentivized to push preferred vendor ecosystem lock-in',
+        criteria: 'Continuity',
+        qubital: 'Documented systems your team can pick up and own',
+        traditional: 'Critical knowledge held by whoever built it, and no one else',
       },
       {
-        criteria: 'Pricing & Accountability',
-        qubital: 'Fixed milestone deliverables with guaranteed SLA benchmarks',
-        traditional: 'Open-ended time & materials billing with uncontrolled scope creep',
+        criteria: 'Cost & Focus',
+        qubital: 'Fixed, milestone-based engagements you can plan around',
+        traditional: 'Salaries, tooling and hiring risk for skills you only need sometimes',
       },
       {
         criteria: 'Security & Compliance',
-        qubital: 'ISO 27001, BSI C5, and GDPR governance engineered directly into architecture',
-        traditional: 'Treated as an afterthought or outsourced to third-party sub-contractors',
+        qubital: 'Security and data protection designed in from the start',
+        traditional: 'Addressed late, when an audit or incident forces it',
       },
     ],
     cta_title: 'Experience the difference of senior-led engineering.',

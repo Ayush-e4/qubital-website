@@ -19,9 +19,9 @@ const dictionary = {
     change_language: 'Cambiar idioma',
   },
   hero: {
-    sub_headline: 'Consultoría IT & Arquitectura Digital para Empresas',
+    sub_headline: 'El socio tecnológico de las empresas en crecimiento.',
     subtitle:
-      'Simplificando sistemas tecnológicos para empresas en crecimiento y equipos corporativos.',
+      'Software, cloud, seguridad y SAP, planificados y gestionados por ingenieros senior, para que sus sistemas escalen sin caos.',
     cta_primary: 'Explorar Servicios',
     cta_secondary: 'Conozca al Equipo',
     scroll_hint: 'Desplace para explorar',
@@ -40,20 +40,20 @@ const dictionary = {
     cta_link: 'Explorar Nuestro Enfoque',
   },
   metrics: {
-    eyebrow: 'MÉTRICAS OPERATIVAS',
-    heading: 'Demostrado a Escala Empresarial',
+    eyebrow: 'CÓMO TRABAJAMOS',
+    heading: 'Estándares y prácticas que puede verificar.',
     labels: {
-      cloud_workloads: 'Cargas Cloud Gestionadas',
-      arch_reviews: 'Revisiones de Arquitectura',
-      sla_guarantee: 'Garantía SLA Promedio',
-      continuity_rate: 'Tasa de Continuidad',
+      cloud_workloads: 'Datos alojados en la UE',
+      arch_reviews: 'Sin cookies de seguimiento',
+      sla_guarantee: 'Privacidad desde el diseño',
+      continuity_rate: 'Asesoría neutral',
     },
   },
   badges: {
-    iso: 'Certificado ISO 27001',
-    bsi: 'Conforme BSI C5',
-    gdpr: 'Conforme RGPD',
-    tisax: 'TISAX Nivel 3',
+    iso: 'Diseñado según ISO/IEC 27001',
+    bsi: 'Diseñado según BSI C5',
+    gdpr: 'Protección RGPD',
+    tisax: 'NDA a petición',
   },
   cta_banner: {
     heading: '¿Listo para diseñar su próximo capítulo?',
@@ -114,9 +114,9 @@ const dictionary = {
       'Asesoría CIO Virtual',
     ],
     placeholders: {
-      fullName: 'Dr. Marcus Vance',
-      email: 'm.vance@company.es',
-      organization: 'Siemens Energy AG',
+      fullName: 'Anna Keller',
+      email: 'a.keller@company.es',
+      organization: 'Nordwerk GmbH',
       message: 'Detalle los cuellos de botella y objetivos de su infraestructura...',
     },
     security_protocol: 'Protocolo de Seguridad',
@@ -146,11 +146,11 @@ const dictionary = {
     focus_tag: 'NUESTRO ENFOQUE',
     focus_title: 'Fiabilidad Operativa',
     focus_desc:
-      'Nuestras metodologías garantizan migraciones sin regresiones y una consistencia absoluta del estado.',
+      'Nuestro trabajo busca que las migraciones sean predecibles y mantener sus sistemas consistentes mientras cambian.',
     focus_items: ['Arquitectura de Sistemas', 'Orquestación Cloud', 'Gobernanza de Seguridad'],
     mission_tag: 'MANDATO PRINCIPAL / MISIÓN',
     mission_quote:
-      '"Redefinir la forma en que las empresas interactúan con sus ecosistemas digitales estableciendo una gobernanza inmutable y transparente."',
+      '"Devolver a las empresas el control de sus sistemas mediante una gobernanza clara y una arquitectura transparente."',
     mission_desc:
       'Creemos que la tecnología debe ser una palanca de claridad. Nuestra misión es desacoplar la lógica de negocio de la complejidad subyacente.',
     mission_badges: ['Alineación Estratégica', 'Desacoplamiento de Sistemas', 'Soberanía Técnica'],
@@ -183,20 +183,20 @@ const dictionary = {
     ],
     stats: [
       {
-        value: '480+',
-        label: 'Cargas Cloud Gestionadas',
+        value: '6',
+        label: 'Áreas de servicio',
       },
       {
-        value: '120+',
-        label: 'Revisiones de Arquitectura',
+        value: '6',
+        label: 'Idiomas',
       },
       {
-        value: '<12min',
-        label: 'Tiempo Medio de Resolución',
+        value: 'UE',
+        label: 'Ubicación de datos',
       },
       {
-        value: '97.3%',
-        label: 'Tasa de Continuidad',
+        value: '0',
+        label: 'Cookies de seguimiento',
       },
     ],
     diff_tag: 'DIFERENCIADORES',
@@ -205,17 +205,17 @@ const dictionary = {
       {
         icon: 'verified',
         title: 'Neutralidad de Proveedores y Estándares Abiertos',
-        desc: 'No mantenemos alianzas exclusivas. Nuestras recomendaciones se basan únicamente en el mérito técnico.',
+        desc: 'No dependemos de cuotas de reventa ni comisiones de proveedores; nuestras recomendaciones se basan en lo que conviene a sus sistemas y su presupuesto.',
       },
       {
         icon: 'shield_locked',
         title: 'Gobernanza de Ingeniería Alemana',
-        desc: 'Desde Herzogenaurach, aplicamos la máxima exigencia DIN/ISO al diseño de software.',
+        desc: 'Con sede en Herzogenaurach y trabajando según estándares reconocidos de seguridad y protección de datos, construimos sistemas que resisten una revisión.',
       },
       {
         icon: 'support_agent',
         title: 'Acceso Directo a los Arquitectos Principales',
-        desc: 'Sin intermediarios comerciales. Se comunica directamente con los ingenieros a cargo.',
+        desc: 'En Qubital habla directamente con los ingenieros senior que hacen el trabajo, sin gestores de cuenta de por medio.',
       },
     ],
     cta_title: 'Permítanos mapear su ecosistema técnico.',
@@ -394,15 +394,16 @@ const dictionary = {
     subtitle: 'Marco de Seguridad y Cumplimiento',
     sec_1_title: 'Nuestros Estándares de Seguridad',
     sec_1_desc:
-      'Qubital opera bajo un estricto marco de gobernanza alineado con ISO/IEC 27001, BSI C5 y RGPD.',
-    sec_2_title: 'Certificación ISO 27001',
+      'Trabajamos según estándares reconocidos de seguridad de la información, incluidos ISO/IEC 27001 y los criterios BSI C5, junto con los requisitos del RGPD.',
+    sec_2_title: 'ISO/IEC 27001',
     sec_2_desc:
-      'Nuestro sistema de gestión de seguridad (SGSI) está certificado según ISO/IEC 27001.',
-    sec_3_title: 'Conformidad BSI C5',
+      'Diseñamos nuestras prácticas de gestión de seguridad de la información según ISO/IEC 27001: gestión de riesgos, protección de activos y mejora continua de nuestros controles.',
+    sec_3_title: 'BSI C5',
     sec_3_desc:
       'Nos alineamos con el catálogo de criterios C5 de la Oficina Federal de Seguridad en la Información de Alemania.',
     sec_4_title: 'Arquitectura Zero-Trust',
-    sec_4_desc: 'Todos los sistemas internos aplican principios de red Zero-Trust con mTLS.',
+    sec_4_desc:
+      'Aplicamos principios Zero-Trust en nuestros sistemas internos y entornos de cliente, incluida la autenticación fuerte y redes segmentadas.',
     sec_5_title: 'Consultas de Seguridad',
     sec_5_desc: 'Para consultas relativas a seguridad o cumplimiento, contacte con',
   },
@@ -455,8 +456,8 @@ const dictionary = {
       {
         id: 2,
         icon: 'verified_user',
-        title: 'Gobernanza DIN e ISO',
-        desc: 'Precisión europea aplicada al software. Cada diseño cumple rigurosamente con ISO 27001, BSI C5 y RGPD.',
+        title: 'Estándares de seguridad y datos por defecto',
+        desc: 'Diseñamos cada arquitectura según estándares reconocidos como ISO/IEC 27001 y los criterios BSI C5, y para cumplir el RGPD.',
       },
       {
         id: 3,
@@ -468,7 +469,7 @@ const dictionary = {
         id: 4,
         icon: 'analytics',
         title: 'Transparencia por hitos',
-        desc: 'Fases fijas, entregables RFC cuantificables y presupuestos sin sorpresas.',
+        desc: 'Fases fijas, entregables claros y facturación transparente por hitos. Acceso directo a los ingenieros senior.',
       },
     ],
     roadmap_tag: 'TRANSFORMACIÓN ARQUITECTÓNICA',
@@ -506,37 +507,39 @@ const dictionary = {
     hero_title_1: 'Ingeniería de precisión.',
     hero_title_2: 'Sin sobrecostes de agencia.',
     comparison_tag: 'COMPARATIVA DIRECTA',
-    comparison_title: 'Cómo Qubital redefine los servicios de asesoría',
+    comparison_title: 'Cómo se compara Qubital con mantener la IT interna',
     comparison_headers: {
       criteria: 'Criterio',
       qubital: 'Qubital Systems',
-      traditional: 'Consultoras tradicionales / Agencias',
+      traditional: 'IT interna / statu quo',
     },
     comparison_rows: [
       {
-        criteria: 'Equipo de entrega',
-        qubital: 'Colaboración directa con arquitectos principales e ingenieros senior',
-        traditional: 'Socios venden; personal junior inexperto ejecuta',
+        criteria: 'Capacidad y perfiles',
+        qubital:
+          'Ingenieros senior en software, cloud, seguridad y SAP, disponibles cuando los necesita',
+        traditional: 'Un equipo pequeño repartido entre todo, con huecos que cubre contratando',
       },
       {
-        criteria: 'Entregable principal',
-        qubital: 'Código de producción probado, planos de infraestructura y RFCs',
-        traditional: 'Presentaciones teóricas y recomendaciones genéricas',
+        criteria: 'Entrega',
+        qubital: 'Sistemas en producción, documentación clara y trabajo que se entrega',
+        traditional:
+          'Un backlog que crece; los proyectos se estancan cuando el equipo está ocupado',
       },
       {
-        criteria: 'Independencia',
-        qubital: '100% independiente; sin comisiones ni acuerdos ocultos de reventa',
-        traditional: 'Incentivos para imponer ecosistemas de proveedores preferidos',
+        criteria: 'Continuidad',
+        qubital: 'Sistemas documentados que su equipo puede asumir y mantener',
+        traditional: 'Conocimiento crítico en manos de quien lo construyó, y de nadie más',
       },
       {
-        criteria: 'Tarifas y rigor',
-        qubital: 'Presupuestos fijos por hitos con compromisos de SLA garantizados',
-        traditional: 'Facturación por horas con desviaciones continuas de alcance',
+        criteria: 'Coste y enfoque',
+        qubital: 'Proyectos fijos por hitos, fáciles de planificar',
+        traditional: 'Salarios, herramientas y riesgo de contratación para perfiles puntuales',
       },
       {
-        criteria: 'Seguridad y normas',
-        qubital: 'ISO 27001, BSI C5 y RGPD incorporados desde el inicio en el diseño',
-        traditional: 'Tratado al final o subcontratado a terceros',
+        criteria: 'Seguridad y cumplimiento',
+        qubital: 'Seguridad y protección de datos desde el primer momento',
+        traditional: 'Se abordan tarde, cuando un audit o un incidente obliga',
       },
     ],
     cta_title: 'Descubra el impacto de la ingeniería dirigida por expertos senior.',
