@@ -103,11 +103,13 @@ const dictionary = {
     protocol_desc:
       'Todas las consultas se procesan bajo normativas europeas (RGPD) y cifrado TLS 1.3.',
     domains: [
-      'Arquitectura Empresarial',
-      'Gobernanza Cloud & FinOps',
-      'Ciberseguridad Zero-Trust',
-      'Modernización de Sistemas Legados',
-      'Asesoría CIO Virtual',
+      'Desarrollo de Software',
+      'Soporte IT Gestionado',
+      'Infraestructura Cloud',
+      'Ciberseguridad',
+      'IA y Automatización',
+      'Soluciones SAP',
+      'Otro',
     ],
     placeholders: {
       fullName: 'Anna Keller',

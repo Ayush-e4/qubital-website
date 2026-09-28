@@ -104,11 +104,13 @@ const dictionary = {
     protocol_desc:
       'Toutes les demandes sont traitées selon les normes européennes strictes (RGPD) et chiffrées via TLS 1.3.',
     domains: [
-      'Architecture d’Entreprise',
-      'Gouvernance Cloud & FinOps',
-      'Cybersécurité Zero-Trust',
-      'Modernisation des Systèmes Existants',
-      'Conseil CIO Virtuel',
+      'Développement Logiciel',
+      'Support IT Géré',
+      'Infrastructure Cloud',
+      'Cybersécurité',
+      'IA & Automatisation',
+      'Solutions SAP',
+      'Autre chose',
     ],
     placeholders: {
       fullName: 'Anna Keller',

@@ -103,11 +103,13 @@ const dictionary = {
     protocol_desc:
       'All inquiries are processed under strict European data protection standards (GDPR) and encrypted in transit via TLS 1.3.',
     domains: [
-      'Enterprise Architecture',
-      'Cloud Governance & FinOps',
-      'Zero-Trust Cybersecurity',
-      'Legacy Systems Modernization',
-      'Virtual CIO Advisory',
+      'Software Development',
+      'Managed IT Support',
+      'Cloud Infrastructure',
+      'Cybersecurity',
+      'AI & Automation',
+      'SAP Solutions',
+      'Something else',
     ],
     placeholders: {
       fullName: 'Anna Keller',

@@ -103,11 +103,13 @@ const dictionary = {
     protocol_desc:
       'Tutte le richieste sono gestite secondo le normative GDPR e crittografate via TLS 1.3.',
     domains: [
-      'Architettura Enterprise',
-      'Governance Cloud & FinOps',
-      'Sicurezza Zero-Trust',
-      'Modernizzazione Sistemi Legacy',
-      'Consulenza Virtual CIO',
+      'Sviluppo Software',
+      'Supporto IT Gestito',
+      'Infrastruttura Cloud',
+      'Sicurezza Informatica',
+      'IA e Automazione',
+      'Soluzioni SAP',
+      'Altro',
     ],
     placeholders: {
       fullName: 'Anna Keller',

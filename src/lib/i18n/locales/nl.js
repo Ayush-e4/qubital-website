@@ -102,11 +102,13 @@ const dictionary = {
     protocol_desc:
       'Alle aanvragen worden verwerkt onder strenge Europese wetgeving (AVG) en TLS 1.3 versleuteling.',
     domains: [
-      'Enterprise Architectuur',
-      'Cloud Governance & FinOps',
-      'Zero-Trust Cyberbeveiliging',
-      'Modernisering van Legacy Systemen',
-      'Virtuele CIO Advies',
+      'Softwareontwikkeling',
+      'Managed IT Support',
+      'Cloudinfrastructuur',
+      'Cyberbeveiliging',
+      'AI & Automatisering',
+      'SAP-oplossingen',
+      'Iets anders',
     ],
     placeholders: {
       fullName: 'Anna Keller',

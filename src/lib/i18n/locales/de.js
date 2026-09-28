@@ -105,11 +105,13 @@ const dictionary = {
     protocol_desc:
       'Alle Anfragen werden nach strengen europäischen Datenschutzstandards (DSGVO) verarbeitet und per TLS 1.3 verschlüsselt.',
     domains: [
-      'Unternehmensarchitektur',
-      'Cloud-Governance & FinOps',
-      'Zero-Trust Cybersicherheit',
-      'Modernisierung von Altsystemen',
-      'Virtuelle CIO-Beratung',
+      'Softwareentwicklung',
+      'Managed IT Support',
+      'Cloud-Infrastruktur',
+      'Cybersicherheit',
+      'KI & Automatisierung',
+      'SAP-Lösungen',
+      'Etwas anderes',
     ],
     placeholders: {
       fullName: 'Anna Keller',
