@@ -476,7 +476,7 @@ const dictionary = {
     sec_1_desc: 'Qubital Systems GmbH, Herzogenaurach, Bavière, Allemagne.',
     sec_2_title: 'Données Collectées',
     sec_2_desc:
-      'Nous collectons uniquement les données strictement nécessaires à la fourniture de nos services de conseil et d’ingénierie. Cela inclut les demandes envoyées via le formulaire de contact, la correspondance et les données contractuelles. Les données du formulaire — nom, adresse e-mail professionnelle, organisation, domaine d’intervention et message — sont traitées pour répondre à votre demande (art. 6, §1, points b et f du RGPD). L’envoi des e-mails est assuré par Resend et l’analyse produit par PostHog, tous deux agissant comme nos sous-traitants au sens de l’art. 28 du RGPD, PostHog étant hébergé dans l’UE.',
+      'Nous collectons uniquement les données strictement nécessaires à la fourniture de nos services de conseil et d’ingénierie. Cela inclut les demandes envoyées via le formulaire de contact, la correspondance et les données contractuelles. Les données du formulaire — nom, adresse e-mail professionnelle, organisation, domaine d’intérêt et message — sont traitées pour répondre à votre demande (art. 6, §1, points b et f du RGPD). L’envoi des e-mails est assuré par Resend et l’analyse produit par PostHog, tous deux agissant comme nos sous-traitants au sens de l’art. 28 du RGPD, PostHog étant hébergé dans l’UE.',
     sec_3_title: 'Vos Droits',
     sec_3_desc:
       'En vertu du RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données.',
