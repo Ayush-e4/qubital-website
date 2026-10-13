@@ -30,7 +30,7 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
           <div className="lg:col-span-5">
             <SectionHeading title={t.rich('story.title', rich)} />
             <Reveal delay={0.15} className="mt-10">
-              <BitVsQubit />
+              <BitVsQubit bit={t.raw('story.bit')} qubit={t.raw('story.qubit')} />
             </Reveal>
           </div>
           <div className="flex flex-col gap-8 lg:col-span-7 lg:pt-24">

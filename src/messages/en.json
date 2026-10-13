@@ -248,7 +248,15 @@
         "A classical bit is either 0 or 1. A qubit, the building block of quantum computers, can be both at once until it is measured. It holds every possibility at the same time.",
         "That is how we approach a project. Before we commit to a solution, we keep the options open, listen carefully and explore what is possible. When the picture is clear, we decide and build with precision.",
         "Qubital combines qubit and digital. In identity security that balance is everything: access has to be easy enough for people to do their work, and strict enough to keep attackers out."
-      ]
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 or 1"
+      },
+      "qubit": {
+        "label": "Qubit",
+        "value": "0 and 1"
+      }
     },
     "mission": {
       "title": "We make identity security <em>understandable, manageable and effective</em> for every organisation, regardless of size.",

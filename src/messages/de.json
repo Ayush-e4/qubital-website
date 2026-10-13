@@ -248,7 +248,15 @@
         "Ein klassisches Bit ist entweder 0 oder 1. Ein Qubit, der Baustein des Quantencomputers, kann beides gleichzeitig sein, bis es gemessen wird. Es hält alle Möglichkeiten zugleich offen.",
         "Genau so gehen wir an Projekte heran. Bevor wir uns auf eine Lösung festlegen, halten wir die Optionen offen, hören genau zu und loten aus, was möglich ist. Wenn das Bild klar ist, entscheiden wir und setzen präzise um.",
         "Qubital verbindet Qubit und digital. In der Identity Security ist genau diese Balance entscheidend: Zugriff muss einfach genug sein, damit Menschen arbeiten können, und streng genug, um Angreifer draußen zu halten."
-      ]
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 oder 1"
+      },
+      "qubit": {
+        "label": "Qubit",
+        "value": "0 und 1"
+      }
     },
     "mission": {
       "title": "Wir machen Identity Security <em>verständlich, beherrschbar und wirksam</em> für jedes Unternehmen, unabhängig von seiner Größe.",
