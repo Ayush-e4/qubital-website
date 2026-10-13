@@ -1,0 +1,633 @@
+{
+  "meta": {
+    "title": "Qubital: Identity & Access Management Beratung aus Deutschland",
+    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie KI- & Agentic Identity Security.",
+    "pages": {
+      "services": {
+        "title": "Leistungen",
+        "description": "Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie KI- & Agentic Identity Security von Qubital."
+      },
+      "about": {
+        "title": "Über uns & Mission",
+        "description": "Warum wir Qubital heißen, was uns antreibt und welche Werte hinter jedem Projekt stehen."
+      },
+      "approach": {
+        "title": "Unser Vorgehen",
+        "description": "Analysieren, konzipieren, umsetzen, weiterentwickeln: So führt Qubital Identity-Programme vom Assessment bis zum sicheren Betrieb."
+      },
+      "industries": {
+        "title": "Branchen",
+        "description": "Identity & Access Management für Unternehmen aller Branchen."
+      },
+      "careers": {
+        "title": "Karriere",
+        "description": "Gestalte mit uns die Zukunft der Identity Security. Werde Teil von Qubital."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "description": "Erzählen Sie uns von Ihrem Projekt. Qubital antwortet innerhalb eines Werktags."
+      },
+      "imprint": {
+        "title": "Impressum",
+        "description": "Impressum von Qubital."
+      },
+      "privacy": {
+        "title": "Datenschutzerklärung",
+        "description": "Wie Qubital Ihre personenbezogenen Daten verarbeitet."
+      }
+    }
+  },
+  "nav": {
+    "services": "Leistungen",
+    "about": "Über uns",
+    "approach": "Vorgehen",
+    "industries": "Branchen",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "cta": "Gespräch starten",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "language": "Sprache",
+    "skip": "Zum Inhalt springen",
+    "home": "Qubital Startseite",
+    "themeLight": "Zum hellen Modus wechseln",
+    "themeDark": "Zum dunklen Modus wechseln"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "startProject": "Projekt starten",
+    "allServices": "Alle Leistungen",
+    "readMore": "Weiterlesen"
+  },
+  "cta": {
+    "title": "Bereit für den Schritt von <em>0 auf 1</em>?",
+    "description": "Erzählen Sie uns, wo Sie heute stehen und wo Sie hinwollen. Wir melden uns innerhalb eines Werktags, ohne Verkaufsgespräch, mit einem ehrlichen Austausch.",
+    "primary": "Projekt starten",
+    "secondary": "E-Mail schreiben"
+  },
+  "home": {
+    "hero": {
+      "title": "Jeder Zugriff ist eine <zero>0</zero> oder eine <one>1</one>. <em>Wir sorgen für die richtige.</em>",
+      "description": "Qubital ist eine Beratung für Identity & Access Management. Wir helfen Unternehmen zu steuern, wer und was auf ihre Systeme zugreifen darf: von privilegierten Konten und Identity Governance bis zu Kunden-, Mitarbeitenden- und KI-Agenten-Identitäten.",
+      "primary": "Projekt starten",
+      "secondary": "Leistungen entdecken"
+    },
+    "marquee": "Standards & Prinzipien, auf denen wir aufbauen",
+    "statement": "Unser Name geht auf das Qubit zurück, das gleichzeitig 0 und 1 sein kann. Zugriff kann das nicht. Jeder Login, jede Berechtigung, jede Aktion eines KI-Agenten endet in einer Entscheidung: erlaubt oder verweigert. Wir sorgen dafür, dass jede davon richtig ist.",
+    "services": {
+      "title": "Identity Security, <em>durchgängig.</em>",
+      "description": "Fünf Identity-Bereiche, ein Team. Wir beraten, implementieren und betreiben, damit die richtigen Menschen und Maschinen die richtigen Zugriffe haben, und sonst niemand."
+    },
+    "why": {
+      "title": "Klein genug, um sich zu kümmern. <em>Stark genug,</em> um zu liefern.",
+      "description": "Wir sind ein junges Unternehmen mit Senior-Expertise. Das bedeutet kurze Entscheidungswege, ehrliche Beratung und Menschen, die Ihr Projekt wirklich kennen.",
+      "items": [
+        {
+          "prefix": "<",
+          "value": 24,
+          "suffix": "h",
+          "label": "Reaktionszeit",
+          "text": "Jede Anfrage erhält innerhalb eines Werktags eine echte Antwort."
+        },
+        {
+          "prefix": "",
+          "value": 100,
+          "suffix": "%",
+          "label": "DSGVO-first",
+          "text": "Datenschutz und Compliance sind von Anfang an eingebaut, nicht nachträglich angeflanscht."
+        },
+        {
+          "prefix": "",
+          "value": 2,
+          "suffix": "",
+          "label": "Sprachen",
+          "text": "Wir arbeiten auf Deutsch und Englisch, mit Ihrem Team und Ihren Partnern."
+        },
+        {
+          "prefix": "",
+          "value": 1,
+          "suffix": "",
+          "label": "Ansprechpartner",
+          "text": "Eine feste Person, vom Kickoff über den Go-live bis darüber hinaus."
+        }
+      ]
+    },
+    "process": {
+      "title": "Von der ersten Idee zum <em>laufenden System.</em>",
+      "description": "Ein klarer Prozess in vier Schritten, bei dem Sie in jeder Phase die Kontrolle behalten.",
+      "link": "Unser Vorgehen ansehen"
+    },
+    "industries": {
+      "title": "Identity Security für <em>jede</em> Branche.",
+      "description": "Überall, wo sensible Daten und kritische Systeme geschützt werden müssen, ist Identität die erste Verteidigungslinie.",
+      "link": "Branchen entdecken"
+    },
+    "photos": {
+      "team": {
+        "alt": "Berater erklärt einem Kollegen ein Diagramm am Whiteboard",
+        "caption": "Workshops mit Ihrem Team, vor Ort oder remote"
+      },
+      "signin": {
+        "alt": "Smartphone mit einer Abfrage zur Identitätsprüfung",
+        "caption": "Ein Login, dem Ihre Kunden vertrauen"
+      },
+      "key": {
+        "alt": "Hardware-Sicherheitsschlüssel auf einem Holztisch",
+        "caption": "Starke Authentifizierung für privilegierte Zugriffe"
+      }
+    },
+    "practice": {
+      "title": "Zugriff, entschieden <em>in Sekunden.</em>",
+      "description": "Eine neue Kollegin braucht Zugriff. Die Richtlinien werden automatisch geprüft, die Führungskraft gibt mit einem Klick frei, und alles wird für das Audit protokolliert."
+    }
+  },
+  "services": {
+    "items": {
+      "pam": {
+        "title": "Privileged Access Management (PAM)",
+        "short": "Sichern, steuern und überwachen Sie die Konten mit den weitreichendsten Rechten.",
+        "description": "Privilegierte Konten sind bei fast jedem Angriff das Hauptziel. Wir helfen Ihnen, sie aufzuspüren, ihre Zugangsdaten sicher zu verwahren, Just-in-Time-Zugriffe durchzusetzen und Sitzungen aufzuzeichnen, damit Admin-Rechte nur genutzt werden, wenn sie gebraucht werden, und jederzeit nachvollziehbar bleiben.",
+        "points": [
+          "Erkennung privilegierter Konten",
+          "Passwort-Vaulting & -Rotation",
+          "Just-in-Time- & Least-Privilege-Zugriff",
+          "Sitzungsüberwachung & -aufzeichnung"
+        ]
+      },
+      "iga": {
+        "title": "Identity Governance & Administration (IGA)",
+        "short": "Jede Person hat genau die Zugriffe, die sie braucht, und Sie können es belegen.",
+        "description": "Wir automatisieren den Identitätslebenszyklus vom Eintritt bis zum Austritt, entwickeln Rollenmodelle, die zu Ihrer Organisation passen, und richten Rezertifizierungen und Reports ein, die Prüfer überzeugen, ohne Ihre Führungskräfte zu überlasten.",
+        "points": [
+          "Joiner-Mover-Leaver-Automatisierung",
+          "Rollenmodellierung (RBAC/ABAC)",
+          "Zugriffsrezertifizierungen & Reviews",
+          "Funktionstrennung (SoD) & Audit-Reporting"
+        ]
+      },
+      "ciam": {
+        "title": "Customer Identity (CIAM)",
+        "short": "Nahtlose, sichere Anmeldung, der Ihre Kundinnen und Kunden vertrauen.",
+        "description": "Registrierung, Login und Einwilligungen prägen den ersten Eindruck Ihrer digitalen Produkte. Wir gestalten Kundenidentitäten, die für Nutzer reibungslos funktionieren, Kontoübernahmen abwehren und DSGVO-konform bleiben.",
+        "points": [
+          "Registrierungs- & Login-Journeys",
+          "Passwortlos & Passkeys",
+          "Einwilligungs- & Präferenzmanagement (DSGVO)",
+          "Schutz vor Betrug & Kontoübernahme"
+        ]
+      },
+      "wiam": {
+        "title": "Workforce Identity (WIAM)",
+        "short": "Eine sichere Identität für alle Mitarbeitenden, in jeder App und auf jedem Gerät.",
+        "description": "Wir bringen Single Sign-on, starke Multi-Faktor-Authentifizierung und Conditional Access in Ihr Unternehmen und verbinden Cloud- und On-Premises-Anwendungen zu einer einheitlichen Identitätsschicht auf Basis von Zero Trust.",
+        "points": [
+          "Single Sign-on (SSO)",
+          "Multi-Faktor- & passwortlose Authentifizierung",
+          "Conditional Access & Zero Trust",
+          "Verzeichnisintegration & -modernisierung"
+        ]
+      },
+      "ai": {
+        "title": "KI- & Agentic Identity Security",
+        "short": "Steuern Sie, was KI-Agenten und Maschinenidentitäten sehen und tun dürfen.",
+        "description": "KI-Agenten, Bots und Servicekonten handeln zunehmend im Auftrag Ihrer Mitarbeitenden, oft mit weitreichenden, unüberwachten Rechten. Wir bringen sie unter Identity Governance: klare Verantwortlichkeiten, eng begrenzte Berechtigungen, kurzlebige Zugangsdaten und lückenlose Nachvollziehbarkeit.",
+        "points": [
+          "Inventar von KI-Agenten & Maschinenidentitäten",
+          "Eng begrenzte, kurzlebige Zugangsdaten",
+          "Leitplanken & delegierte Autorisierung",
+          "Monitoring & Audit-Trails"
+        ]
+      }
+    },
+    "page": {
+      "title": "Identity Security. <em>Richtig gemacht.</em>",
+      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden und KI-Agenten.",
+      "deliverables": "Das ist enthalten",
+      "models": {
+        "title": "Arbeiten Sie mit uns, <em>wie es passt.</em>",
+        "items": [
+          {
+            "title": "Beratung",
+            "text": "Assessments, Identity-Strategie, Zielarchitektur und Plattformauswahl, ausgerichtet an Ihren Risiken und Anforderungen."
+          },
+          {
+            "title": "Implementierung",
+            "text": "Wir führen Identity-Plattformen ein, konfigurieren und integrieren sie, binden Ihre Anwendungen an und migrieren Benutzer, mit festen Meilensteinen."
+          },
+          {
+            "title": "Managed Services",
+            "text": "Wir betreiben Ihre Identity-Plattformen nach dem Go-live: Monitoring, Updates, Rezertifizierungen und Support mit klaren SLAs."
+          },
+          {
+            "title": "Team-Erweiterung",
+            "text": "Unsere Identity-Spezialisten arbeiten in Ihrem Team, mit Ihren Tools und in Ihrem Rhythmus, so lange Sie sie brauchen."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Fragen, die wir <em>oft hören.</em>",
+        "items": [
+          {
+            "q": "Arbeiten Sie auch mit kleinen und mittelständischen Unternehmen?",
+            "a": "Auf jeden Fall. Identity Security ist in jeder Unternehmensgröße wichtig. Wir passen unser Vorgehen, vom fokussierten Assessment bis zum umfassenden Programm, an Ihre Organisation und Ihr Budget an."
+          },
+          {
+            "q": "Wir sind von NIS2 oder DORA betroffen. Können Sie helfen?",
+            "a": "Ja. Identitäts- und Zugriffskontrollen stehen im Zentrum von NIS2, DORA und ISO 27001. Wir ermitteln, wo Sie stehen, schließen die Lücken und helfen Ihnen, die Nachweise zu erbringen, die Prüfer verlangen."
+          },
+          {
+            "q": "Können Sie unsere Identity-Plattform nach dem Go-live betreiben?",
+            "a": "Ja. Mit unseren Managed Services übernehmen wir Betrieb, Updates, Rezertifizierungen und Support, mit klaren SLAs."
+          },
+          {
+            "q": "Was kostet ein Projekt?",
+            "a": "Das hängt vom Umfang ab. Nach einem kostenlosen Erstgespräch erhalten Sie ein transparentes Angebot mit Festpreisen oder klaren Tagessätzen, ohne versteckte Kosten."
+          },
+          {
+            "q": "Arbeiten Sie auch remote?",
+            "a": "Ja. Wir arbeiten remote in ganz Deutschland und Europa und kommen vor Ort, wann immer es sinnvoll ist, etwa für Workshops oder Go-lives."
+          },
+          {
+            "q": "Wie schnell können Sie starten?",
+            "a": "In der Regel innerhalb von ein bis zwei Wochen. Bei dringenden Vorfällen können wir oft noch am selben Tag helfen."
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Benannt nach dem Qubit. <em>Gebaut auf Klarheit.</em>",
+      "description": "Qubital wurde in Deutschland mit einem klaren Fokus gegründet: Identität ist der neue Sicherheitsperimeter, und sie verdient Spezialisten."
+    },
+    "story": {
+      "title": "Warum <em>Qubital?</em>",
+      "paragraphs": [
+        "Ein klassisches Bit ist entweder 0 oder 1. Ein Qubit, der Baustein des Quantencomputers, kann beides gleichzeitig sein, bis es gemessen wird. Es hält alle Möglichkeiten zugleich offen.",
+        "Genau so gehen wir an Projekte heran. Bevor wir uns auf eine Lösung festlegen, halten wir die Optionen offen, hören genau zu und loten aus, was möglich ist. Wenn das Bild klar ist, entscheiden wir und setzen präzise um.",
+        "Qubital verbindet Qubit und digital. In der Identity Security ist genau diese Balance entscheidend: Zugriff muss einfach genug sein, damit Menschen arbeiten können, und streng genug, um Angreifer draußen zu halten."
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 oder 1"
+      },
+      "qubit": {
+        "label": "Qubit",
+        "value": "0 und 1"
+      }
+    },
+    "mission": {
+      "title": "Wir machen Identity Security <em>verständlich, beherrschbar und wirksam</em> für jedes Unternehmen, unabhängig von seiner Größe.",
+      "label": "Mission"
+    },
+    "vision": {
+      "title": "Eine Welt, in der jede Zugriffsentscheidung, ob Mensch oder Maschine, bewusst, nachvollziehbar und sicher ist.",
+      "label": "Vision"
+    },
+    "values": {
+      "title": "Wofür wir <em>stehen.</em>",
+      "items": [
+        {
+          "title": "Klarheit",
+          "text": "Kein Fachchinesisch, keine Blackbox. Wir erklären, was wir tun und warum, damit Sie fundiert entscheiden können."
+        },
+        {
+          "title": "Verantwortung",
+          "text": "Wir behandeln Ihr Projekt wie unser eigenes und stehen dafür ein, vom ersten Workshop bis lange nach dem Go-live."
+        },
+        {
+          "title": "Security by Design",
+          "text": "Least Privilege und Datenschutz stecken in jeder Architektur und jeder Konfiguration."
+        },
+        {
+          "title": "Neugier",
+          "text": "Identity verändert sich rasant, von Passkeys bis zu KI-Agenten. Wir lernen ständig dazu, damit Sie vom Neuen profitieren, nicht vom Veralteten."
+        },
+        {
+          "title": "Partnerschaft",
+          "text": "Wir arbeiten auf Augenhöhe, ehrlich und offen, auch wenn die Antwort lautet: „Das brauchen Sie nicht.“"
+        },
+        {
+          "title": "Nachhaltigkeit",
+          "text": "Wir bauen Identity-Lösungen, die lange halten, einfach zu betreiben sind und keine technischen Schulden von morgen erzeugen."
+        }
+      ]
+    },
+    "location": {
+      "title": "Verwurzelt in Deutschland. <em>Unterwegs überall.</em>",
+      "text": "Wir sitzen in Herzogenaurach in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch.",
+      "photoAlt": "Kopfsteinpflasterstraße in Herzogenaurach",
+      "photoCaption": "Herzogenaurach, Bayern"
+    }
+  },
+  "approach": {
+    "hero": {
+      "title": "Komplex rein, <em>klar raus.</em>",
+      "description": "Jedes Projekt folgt einem bewährten Weg. Sie wissen immer, wo wir stehen, was als Nächstes kommt und was es kostet."
+    },
+    "steps": {
+      "title": "Vier Schritte. <em>Null Überraschungen.</em>",
+      "items": [
+        {
+          "title": "Analysieren",
+          "duration": "1–2 Wochen",
+          "text": "Wir erfassen Ihre Identitäten, Konten, Rollen und Zugriffswege, menschliche wie maschinelle, und bewerten sie anhand Ihrer Risiken und regulatorischen Anforderungen wie NIS2, DORA und ISO 27001.",
+          "outputs": [
+            "Identitäts- & Zugriffsinventar",
+            "Risiko- & Compliance-Gap-Analyse",
+            "Priorisierte Handlungsfelder"
+          ]
+        },
+        {
+          "title": "Konzipieren",
+          "duration": "1–3 Wochen",
+          "text": "Wir entwerfen das Zielbild gemeinsam: Identity-Architektur, Rollen- und Richtlinienmodell, Zeitplan und Budget. Sie erhalten einen konkreten Plan statt eines 100-seitigen Foliensatzes.",
+          "outputs": [
+            "Identity-Zielarchitektur",
+            "Rollen- & Richtlinienmodell",
+            "Verbindliche Roadmap & Angebot"
+          ]
+        },
+        {
+          "title": "Umsetzen",
+          "duration": "Iterativ",
+          "text": "Wir setzen in kurzen Sprints mit regelmäßigen Demos um: Anwendungen anbinden, Konten migrieren und Lebenszyklusprozesse automatisieren. Sie sehen alle zwei Wochen Fortschritt und können jederzeit steuern.",
+          "outputs": [
+            "Angebundene Anwendungen",
+            "Automatisierte Joiner-Mover-Leaver-Prozesse",
+            "Dokumentation & Runbooks"
+          ]
+        },
+        {
+          "title": "Weiterentwickeln",
+          "duration": "Fortlaufend",
+          "text": "Der Go-live ist erst der Anfang. Wir betreiben und entwickeln Ihre Identity-Plattform weiter, führen regelmäßige Rezertifizierungen durch und schulen Ihr Team, damit das Wissen in Ihrem Unternehmen bleibt.",
+          "outputs": ["Managed Operations", "Regelmäßige Rezertifizierungen", "Team-Schulungen"]
+        }
+      ]
+    },
+    "principles": {
+      "title": "Wie wir <em>denken.</em>",
+      "items": [
+        {
+          "title": "Transparente Preise",
+          "text": "Festpreise oder klare Tagessätze. Sie kennen die Kosten, bevor wir starten."
+        },
+        {
+          "title": "Offene Standards",
+          "text": "SAML, OpenID Connect und SCIM statt Lock-in. Ihre Konfigurationen, Daten und Dokumentation gehören Ihnen."
+        },
+        {
+          "title": "Least Privilege als Standard",
+          "text": "Jedes Konzept beginnt bei 0: standardmäßig kein Zugriff, nur was nötig ist, und nur so lange wie nötig."
+        },
+        {
+          "title": "Wissenstransfer",
+          "text": "Wir dokumentieren alles und schulen Ihr Team, damit Sie unabhängig bleiben."
+        }
+      ]
+    },
+    "photoAlt": "Zwei Kollegen arbeiten an ihren Laptops gemeinsam einen Plan durch"
+  },
+  "industries": {
+    "hero": {
+      "title": "Identity Security für <em>jede Branche.</em>",
+      "description": "Überall, wo sensible Daten und kritische Systeme geschützt werden müssen, helfen wir Unternehmen, Zugriffe richtig zu steuern."
+    },
+    "items": [
+      {
+        "key": "manufacturing",
+        "title": "Industrie & Mittelstand"
+      },
+      {
+        "key": "logistics",
+        "title": "Logistik & Mobilität"
+      },
+      {
+        "key": "health",
+        "title": "Gesundheitswesen"
+      },
+      {
+        "key": "finance",
+        "title": "Finanzen & Versicherungen"
+      },
+      {
+        "key": "retail",
+        "title": "Handel & E-Commerce"
+      },
+      {
+        "key": "startups",
+        "title": "Startups & Scale-ups"
+      },
+      {
+        "key": "services",
+        "title": "Freie Berufe & Dienstleister"
+      },
+      {
+        "key": "public",
+        "title": "Öffentlicher Sektor & Non-Profit"
+      }
+    ]
+  },
+  "careers": {
+    "hero": {
+      "title": "Gestalte mit uns, was <em>als Nächstes</em> kommt.",
+      "description": "Wir bauen ein Team aus neugierigen, freundlichen und richtig guten Identity-Spezialistinnen und -Spezialisten auf. Wenn Identity Security dein Ding ist, lass uns reden."
+    },
+    "perks": {
+      "title": "Ein Ort für deine <em>beste Arbeit.</em>",
+      "items": [
+        {
+          "title": "Hybrid & flexibel",
+          "text": "Arbeite von zu Hause, im Büro oder dort, wo du am besten denkst. Vertrauen statt Kontrolle."
+        },
+        {
+          "title": "Weiterbildungsbudget",
+          "text": "Konferenzen, Zertifizierungen, Bücher: Wir investieren jedes Jahr in deine Entwicklung."
+        },
+        {
+          "title": "Moderne Ausstattung",
+          "text": "Top-Hardware und die Tools, mit denen du wirklich arbeiten willst."
+        },
+        {
+          "title": "Echter Impact",
+          "text": "Kurze Entscheidungswege, abwechslungsreiche Projekte und Verantwortung ab Tag eins."
+        },
+        {
+          "title": "Flache Hierarchien",
+          "text": "Deine Ideen zählen, egal ob du seit einem Tag oder einem Jahr dabei bist."
+        },
+        {
+          "title": "Teamkultur",
+          "text": "Regelmäßige Teamtage, offenes Feedback und Menschen, die füreinander einstehen."
+        }
+      ]
+    },
+    "open": {
+      "title": "Aktuell keine offenen Stellen",
+      "text": "Im Moment suchen wir nicht für konkrete Positionen. Wenn Identity Security dein Fachgebiet ist, freuen wir uns trotzdem von dir zu hören.",
+      "button": "Initiativ bewerben"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Lassen Sie uns <em>gemeinsam</em> etwas bauen.",
+      "description": "Erzählen Sie uns von Ihrem Projekt, Ihrer Herausforderung oder einfach Ihrer Idee. Wir antworten innerhalb eines Werktags."
+    },
+    "info": {
+      "email": "E-Mail",
+      "location": "Standort",
+      "response": "An Werktagen antworten wir meist innerhalb weniger Stunden.",
+      "hours": "Geschäftszeiten",
+      "hoursValue": "Mo bis Fr, 8:00 bis 18:00 Uhr (MEZ)"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Max Mustermann",
+      "email": "E-Mail",
+      "emailPlaceholder": "max@unternehmen.de",
+      "company": "Unternehmen",
+      "companyPlaceholder": "Optional",
+      "topic": "Wobei können wir helfen?",
+      "topics": {
+        "pam": "PAM",
+        "iga": "IGA",
+        "ciam": "CIAM",
+        "wiam": "Workforce Identity",
+        "ai": "KI & Agenten",
+        "other": "Etwas anderes"
+      },
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie uns kurz von Ihrem Projekt…",
+      "consent": "Ich bin damit einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden. Weitere Informationen in der <link>Datenschutzerklärung</link>.",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet…",
+      "success": {
+        "title": "Nachricht gesendet!",
+        "text": "Vielen Dank. Wir melden uns innerhalb eines Werktags bei Ihnen.",
+        "again": "Weitere Nachricht senden"
+      },
+      "errors": {
+        "name": "Bitte geben Sie Ihren Namen ein.",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "message": "Bitte erzählen Sie uns etwas mehr (mindestens 10 Zeichen).",
+        "consent": "Bitte stimmen Sie der Datenschutzerklärung zu.",
+        "server": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt eine E-Mail.",
+        "tooLong": "Das ist zu lang. Bitte kürzen Sie den Text.",
+        "rateLimited": "Zu viele Nachrichten in kurzer Zeit. Bitte warten Sie einige Minuten und versuchen Sie es erneut."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Identity & Access Management Beratung aus Deutschland. PAM, IGA, CIAM, Workforce und KI-Identity-Security aus einer Hand.",
+    "company": "Unternehmen",
+    "services": "Leistungen",
+    "legal": "Rechtliches",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten.",
+    "made": "Gestaltet & entwickelt in Deutschland"
+  },
+  "legal": {
+    "updated": "Stand",
+    "bindingNote": "Rechtlich verbindlich ist ausschließlich die deutsche Fassung dieser Seite.",
+    "imprint": {
+      "title": "Impressum",
+      "sections": [
+        {
+          "heading": "Angaben gemäß § 5 DDG",
+          "body": ["Qubital Systems GmbH", "Herzogenaurach, Bayern, Deutschland"]
+        },
+        {
+          "heading": "Kontakt",
+          "body": [
+            "E-Mail: contact@qubital.eu",
+            "Geschäftszeiten: Mo bis Fr, 8:00 bis 18:00 Uhr (MEZ)"
+          ]
+        },
+        {
+          "heading": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+          "body": ["Qubital Systems GmbH, Herzogenaurach, Bayern, Deutschland"]
+        },
+        {
+          "heading": "Verbraucherstreitbeilegung",
+          "body": [
+            "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+          ]
+        },
+        {
+          "heading": "Haftung für Inhalte und Links",
+          "body": [
+            "Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "sections": [
+        {
+          "heading": "1. Verantwortlicher",
+          "body": [
+            "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
+            "Qubital Systems GmbH, Herzogenaurach, Bayern, Deutschland",
+            "E-Mail: contact@qubital.eu"
+          ]
+        },
+        {
+          "heading": "2. Hosting",
+          "body": [
+            "Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Besuch der Website verarbeitet der Hoster technische Daten wie Ihre IP-Adresse sowie Datum und Uhrzeit des Zugriffs in Server-Logfiles. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der sicheren und zuverlässigen Bereitstellung der Website. Übermittlungen in die USA erfolgen auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder eines Angemessenheitsbeschlusses wie des EU-U.S. Data Privacy Framework."
+          ]
+        },
+        {
+          "heading": "3. Kontaktformular und E-Mail",
+          "body": [
+            "Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (Name, E-Mail-Adresse, Unternehmen, Themenbereich und Nachricht) zur Beantwortung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO. Der E-Mail-Versand erfolgt über Resend als unser Auftragsverarbeiter nach Art. 28 DSGVO. Wir löschen die Daten, sobald sie nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten bestehen."
+          ]
+        },
+        {
+          "heading": "4. Webanalyse",
+          "body": [
+            "Für die Produktanalyse nutzen wir PostHog, in der EU gehostet und als unser Auftragsverarbeiter nach Art. 28 DSGVO tätig. PostHog ist so konfiguriert, dass keine Cookies oder sonstigen Kennungen in Ihrem Browser gespeichert werden und das Do-Not-Track-Signal beachtet wird. Die daraus gewonnenen Statistiken sind pseudonym und werden nicht zur Identifizierung Ihrer Person verwendet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt darin, die Nutzung der Website zu verstehen und sie zu verbessern."
+          ]
+        },
+        {
+          "heading": "5. Cookies und lokaler Speicher",
+          "body": [
+            "Diese Website verwendet keine Tracking- oder Marketing-Cookies. Sie setzt ein technisch notwendiges Cookie (NEXT_LOCALE), um Ihre Sprachauswahl zu speichern, und legt Ihr gewähltes Farbschema (hell oder dunkel) im lokalen Speicher Ihres Browsers ab. Keine dieser Informationen verlässt Ihr Gerät zu Tracking-Zwecken. Rechtsgrundlage ist § 25 Abs. 2 TDDDG."
+          ]
+        },
+        {
+          "heading": "6. Schriftarten",
+          "body": [
+            "Alle Schriftarten werden von unserem eigenen Server ausgeliefert. Beim Besuch der Website wird keine Verbindung zu externen Schriftanbietern (z. B. Google) aufgebaut."
+          ]
+        },
+        {
+          "heading": "7. Ihre Rechte",
+          "body": [
+            "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Wenden Sie sich dazu an contact@qubital.eu. Zudem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, beispielsweise beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA)."
+          ]
+        },
+        {
+          "heading": "8. Änderungen",
+          "body": [
+            "Wir passen diese Datenschutzerklärung an, wenn sich rechtliche Vorgaben oder unsere Leistungen ändern. Die aktuelle Fassung finden Sie stets auf dieser Seite."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Diese Seite befindet sich in <em>Superposition.</em>",
+    "text": "Sie existiert und existiert nicht zugleich, aber eher nicht. Wir bringen Sie zurück auf Kurs.",
+    "button": "Zur Startseite"
+  },
+  "clips": {
+    "accessRequest": "Animation: Eine Zugriffsanfrage wird gegen Richtlinien geprüft, von der Führungskraft freigegeben und protokolliert",
+    "justInTime": "Animation: Admin-Zugriff wird für zwei Stunden vergeben, aufgezeichnet und automatisch entzogen",
+    "passkey": "Animation: Eine Kundin meldet sich mit Passkey und Fingerabdruck statt Passwort an",
+    "agentScope": "Animation: Ein KI-Agent wird daran gehindert, außerhalb seiner Berechtigungen eine Zahlung anzulegen",
+    "workforce": "Animation: Eine neue Mitarbeiterin erhält am ersten Tag Single Sign-on und alle Apps und verliert am letzten Tag alle Zugriffe"
+  }
+}

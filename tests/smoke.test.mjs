@@ -1,12 +1,13 @@
 /**
  * Browser-free smoke suite.
  *
- * Covers the things that break silently: locale routing, canonical/hreflang,
- * titles and the sitemap. Everything here is plain HTTP against a production
- * server, so it runs in a couple of seconds and is safe to gate CI on.
+ * Covers the things that break silently: locale routing, redirects from the old
+ * site's URLs, canonical/hreflang, titles, the sitemap, cache headers and the
+ * contact endpoint. Everything here is plain HTTP against a production server,
+ * so it runs in a few seconds and is safe to gate CI on.
  *
- * Interactive behaviour (language switcher, mobile drawer) is deliberately NOT
- * here — that is tests/browser/interactions.mjs, run locally on demand.
+ * Interactive behaviour (language switcher, mobile menu, theme toggle) is
+ * deliberately NOT here — that is tests/browser/interactions.mjs, run locally.
  *
  * Requires a build first:  npm run build && npm test
  */
@@ -34,25 +35,24 @@ const LIMITER_IP = '198.51.100.10';
 const OTHER_IP = '198.51.100.20';
 const SITE = 'https://qubital.eu';
 
-const ROUTES = [
-  '/',
-  '/about',
-  '/mission',
-  '/why-us',
-  '/services',
-  '/careers',
-  '/contact',
-  '/compliance',
-  '/privacy-and-gdpr',
-  '/impressum',
-];
-const LOCALES = ['en', 'de', 'fr', 'es', 'it', 'nl'];
-
-const pathFor = (route, locale) =>
-  locale === 'en' ? route : `/${locale}${route === '/' ? '' : route}`;
-
-/** Absolute URL for a route+locale. The root has no trailing slash. */
-const absoluteFor = (route, locale) => SITE + pathFor(route, locale).replace(/\/$/, '');
+/**
+ * Every page and its URL per locale. This mirrors `pathnames` in
+ * src/i18n/routing.ts on purpose: it is the public URL contract, so a change
+ * there should be a deliberate change here too.
+ */
+const ROUTES = {
+  home: { de: '/de', en: '/en' },
+  services: { de: '/de/leistungen', en: '/en/services' },
+  about: { de: '/de/ueber-uns', en: '/en/about' },
+  approach: { de: '/de/vorgehen', en: '/en/approach' },
+  industries: { de: '/de/branchen', en: '/en/industries' },
+  careers: { de: '/de/karriere', en: '/en/careers' },
+  contact: { de: '/de/kontakt', en: '/en/contact' },
+  imprint: { de: '/de/impressum', en: '/en/imprint' },
+  privacy: { de: '/de/datenschutz', en: '/en/privacy' },
+};
+const LOCALES = ['de', 'en'];
+const DEFAULT_LOCALE = 'de';
 
 /** @type {{route: string, locale: string, path: string, html: string}[]} */
 const entries = [];
@@ -65,7 +65,7 @@ async function waitForReady(base = BASE, timeoutMs = 60_000) {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
     try {
-      if ((await fetch(`${base}/`)).ok) return;
+      if ((await fetch(`${base}/en`)).ok) return;
     } catch {
       /* not up yet */
     }
@@ -117,9 +117,9 @@ before(async () => {
   const sitemap = await (await fetch(`${BASE}/sitemap.xml`)).text();
   sitemapLocs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 
-  for (const route of ROUTES) {
+  for (const [route, paths] of Object.entries(ROUTES)) {
     for (const locale of LOCALES) {
-      const path = pathFor(route, locale);
+      const path = paths[locale];
       entries.push({ route, locale, path, html: await (await fetch(BASE + path)).text() });
     }
   }
@@ -131,12 +131,13 @@ after(() => {
 });
 
 const attr = (html, re) => html.match(re)?.[1];
+const routeCount = Object.keys(ROUTES).length;
 
 test('sitemap lists every route for every locale', () => {
-  assert.equal(sitemapLocs.length, ROUTES.length * LOCALES.length);
-  for (const route of ROUTES) {
+  assert.equal(sitemapLocs.length, routeCount * LOCALES.length);
+  for (const paths of Object.values(ROUTES)) {
     for (const locale of LOCALES) {
-      const expected = absoluteFor(route, locale);
+      const expected = SITE + paths[locale];
       assert.ok(sitemapLocs.includes(expected), `sitemap missing ${expected}`);
     }
   }
@@ -145,7 +146,7 @@ test('sitemap lists every route for every locale', () => {
 test('every sitemap URL returns 200', async () => {
   const bad = [];
   for (const url of sitemapLocs) {
-    const res = await fetch(url.replace(SITE, BASE));
+    const res = await fetch(url.replace(SITE, BASE), { redirect: 'manual' });
     if (res.status !== 200) bad.push(`${url} -> ${res.status}`);
   }
   assert.deepEqual(bad, []);
@@ -155,8 +156,7 @@ test('canonical is self-referencing for every route and locale', () => {
   const bad = [];
   for (const { path, html } of entries) {
     const canonical = attr(html, /<link rel="canonical" href="([^"]*)"/);
-    const expected = SITE + (path === '/' ? '' : path);
-    if (canonical !== expected) bad.push(`${path}: got ${canonical}, want ${expected}`);
+    if (canonical !== SITE + path) bad.push(`${path}: got ${canonical}, want ${SITE + path}`);
   }
   assert.deepEqual(bad, []);
 });
@@ -166,11 +166,11 @@ test('hreflang cluster covers every locale plus x-default', () => {
   for (const { route, path, html } of entries) {
     for (const locale of LOCALES) {
       const href = attr(html, new RegExp(`hreflang="${locale}" href="([^"]*)"`, 'i'));
-      const expected = absoluteFor(route, locale);
+      const expected = SITE + ROUTES[route][locale];
       if (href !== expected) bad.push(`${path} [${locale}]: got ${href}, want ${expected}`);
     }
     const xDefault = attr(html, /hreflang="x-default" href="([^"]*)"/i);
-    const expectedDefault = absoluteFor(route, 'en');
+    const expectedDefault = SITE + ROUTES[route][DEFAULT_LOCALE];
     if (xDefault !== expectedDefault) {
       bad.push(`${path} [x-default]: got ${xDefault}, want ${expectedDefault}`);
     }
@@ -203,42 +203,96 @@ test('html lang matches the locale being served', () => {
   assert.deepEqual(bad, []);
 });
 
-// --- locale routing policy (src/proxy.js) -----------------------------------
+// --- locale routing policy (src/proxy.ts) -----------------------------------
 
-test('root auto-detects a supported Accept-Language on a first visit', async () => {
-  const res = await fetch(`${BASE}/`, {
-    redirect: 'manual',
-    headers: { 'accept-language': 'de-DE,de;q=0.9' },
-  });
-  assert.equal(res.status, 307, 'expected a redirect for a German first-time visitor');
-  assert.equal(res.headers.get('location'), '/de');
+const rootRedirect = (headers) => fetch(`${BASE}/`, { redirect: 'manual', headers });
+const locationPath = (res) => new URL(res.headers.get('location'), BASE).pathname;
+
+test('root redirects a German browser to /de', async () => {
+  const res = await rootRedirect({ 'accept-language': 'de-DE,de;q=0.9' });
+  assert.equal(res.status, 307);
+  assert.equal(locationPath(res), '/de');
 });
 
-test('root serves English when the browser prefers English', async () => {
-  const res = await fetch(`${BASE}/`, {
-    redirect: 'manual',
-    headers: { 'accept-language': 'en-US,en;q=0.9' },
-  });
+test('root redirects an English browser to /en', async () => {
+  const res = await rootRedirect({ 'accept-language': 'en-US,en;q=0.9' });
+  assert.equal(res.status, 307);
+  assert.equal(locationPath(res), '/en');
+});
+
+test('root falls back to German for an unsupported language', async () => {
+  const res = await rootRedirect({ 'accept-language': 'fr-FR,fr;q=0.9' });
+  assert.equal(res.status, 307);
+  assert.equal(locationPath(res), '/de');
+});
+
+test('the NEXT_LOCALE cookie wins over Accept-Language', async () => {
+  const res = await rootRedirect({ 'accept-language': 'de-DE,de;q=0.9', cookie: 'NEXT_LOCALE=en' });
+  assert.equal(res.status, 307);
+  assert.equal(locationPath(res), '/en');
+});
+
+test('the language redirect is never stored by a shared cache', async () => {
+  const res = await rootRedirect({ 'accept-language': 'de-DE,de;q=0.9' });
+  assert.equal(res.headers.get('cache-control'), 'no-store');
+});
+
+test('locale pages are edge-cacheable', async () => {
+  const res = await fetch(`${BASE}/de/leistungen`, { redirect: 'manual' });
+  assert.equal(res.status, 200);
+  assert.match(res.headers.get('cache-control') ?? '', /public, s-maxage=3600/);
+});
+
+test('security headers are sent', async () => {
+  const res = await fetch(`${BASE}/en`, { redirect: 'manual' });
+  const csp = res.headers.get('content-security-policy') ?? '';
+  assert.match(csp, /default-src 'self'/);
+  assert.match(csp, /connect-src 'self' https:\/\/eu\.i\.posthog\.com/);
+  assert.equal(res.headers.get('x-content-type-options'), 'nosniff');
+  assert.ok(res.headers.get('strict-transport-security'));
+});
+
+// --- redirects from the previous site (next.config.ts) ----------------------
+
+test('old URLs redirect permanently to their new pages', async () => {
+  const cases = {
+    '/about': '/en/about',
+    '/mission': '/en/about',
+    '/why-us': '/en',
+    '/services': '/en/services',
+    '/careers': '/en/careers',
+    '/contact': '/en/contact',
+    '/compliance': '/en/services',
+    '/privacy-and-gdpr': '/en/privacy',
+    '/impressum': '/en/imprint',
+    '/de/about': '/de/ueber-uns',
+    '/de/services': '/de/leistungen',
+    '/de/careers': '/de/karriere',
+    '/de/contact': '/de/kontakt',
+    '/de/privacy-and-gdpr': '/de/datenschutz',
+    '/fr': '/en',
+    '/fr/services': '/en/services',
+    '/es/about': '/en/about',
+    '/it/contact': '/en/contact',
+    '/nl/impressum': '/en/imprint',
+    '/nl/some-old-page': '/en',
+  };
+  const bad = [];
+  for (const [from, to] of Object.entries(cases)) {
+    const res = await fetch(BASE + from, { redirect: 'manual' });
+    if (res.status !== 308 || locationPath(res) !== to) {
+      bad.push(`${from}: ${res.status} -> ${res.headers.get('location')}, want 308 -> ${to}`);
+    }
+  }
+  assert.deepEqual(bad, []);
+});
+
+test('/de/impressum keeps working unchanged', async () => {
+  const res = await fetch(`${BASE}/de/impressum`, { redirect: 'manual' });
   assert.equal(res.status, 200);
 });
 
-test('root does not redirect once NEXT_LOCALE is set', async () => {
-  const res = await fetch(`${BASE}/`, {
-    redirect: 'manual',
-    headers: { 'accept-language': 'de-DE,de;q=0.9', cookie: 'NEXT_LOCALE=de' },
-  });
-  assert.equal(res.status, 200, 'a returning visitor must not be redirected again');
-});
-
-test('un-prefixed deep links always serve English', async () => {
-  const res = await fetch(`${BASE}/about`, {
-    headers: { 'accept-language': 'de-DE,de;q=0.9' },
-  });
-  assert.equal(res.status, 200);
-  assert.equal(res.headers.get('x-locale'), 'en');
-});
-
-// --- contact endpoint (src/app/api/contact/route.js) ------------------------
+// --- contact endpoint (src/app/api/contact/route.ts) ------------------------
 //
 // The server is started with RESEND_API_KEY='' above, so the "not configured"
 // path is what a valid submission hits. That is what makes the honeypot case
@@ -262,7 +316,7 @@ const validSubmission = () => ({
   fullName: 'Ada Lovelace',
   email: 'ada@example.com',
   organization: 'Analytical Engines Ltd',
-  domain: 'Enterprise Architecture',
+  domain: 'pam',
   message: 'We need help modernising a legacy estate spread across four regions.',
   consent: true,
   locale: 'en',
