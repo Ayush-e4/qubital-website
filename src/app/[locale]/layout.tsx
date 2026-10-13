@@ -78,7 +78,6 @@ function organizationJsonLd(description: string) {
         email: site.email,
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Herzogenaurach',
           addressRegion: 'Bavaria',
           addressCountry: 'DE',
         },

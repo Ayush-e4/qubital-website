@@ -25,6 +25,7 @@ const BASE = process.env.BASE_URL ?? 'http://localhost:3000';
 const PAGES = [
   '/de',
   '/de/leistungen',
+  '/de/plattformen',
   '/de/ueber-uns',
   '/de/vorgehen',
   '/de/branchen',
@@ -34,6 +35,7 @@ const PAGES = [
   '/de/datenschutz',
   '/en',
   '/en/services',
+  '/en/platforms',
   '/en/about',
   '/en/approach',
   '/en/industries',

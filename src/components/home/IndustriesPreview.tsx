@@ -20,16 +20,16 @@ export function IndustriesPreview() {
         />
       </Container>
       <div className="mt-16 flex flex-col gap-4">
-        {[items.slice(0, 4), items.slice(4)].map((row, r) => (
+        {[items.slice(0, 5), items.slice(5)].map((row, r) => (
           <Marquee key={r} duration={40} reverse={r === 1}>
             {row.map((item) => {
               const Icon = industryIcons[item.key];
               return (
                 <span
                   key={item.key}
-                  className="mx-2 flex items-center gap-4 rounded-full border border-line bg-surface/70 py-3 pl-3 pr-7"
+                  className="mx-2 flex items-center gap-4 rounded-2xl border border-line bg-surface/70 py-3 pl-3 pr-7"
                 >
-                  <span className="flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-violet/25 to-cyan/10 text-cyan">
+                  <span className="flex size-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet/25 to-cyan/10 text-cyan">
                     <Icon className="size-5" strokeWidth={1.6} />
                   </span>
                   <span className="whitespace-nowrap text-lg font-medium">{item.title}</span>

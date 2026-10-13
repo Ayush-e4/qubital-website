@@ -23,7 +23,7 @@ export default async function IndustriesPage({ params }: PageProps<'/[locale]/in
 
       <section className="pb-24 sm:pb-32">
         <Container>
-          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" stagger={0.05}>
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
             {items.map((item) => {
               const Icon = industryIcons[item.key];
               return (

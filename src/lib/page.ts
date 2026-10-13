@@ -28,7 +28,15 @@ export function alternates(locale: Locale, href: Pathname) {
 }
 
 type PageKey =
-  'services' | 'about' | 'approach' | 'industries' | 'careers' | 'contact' | 'imprint' | 'privacy';
+  | 'services'
+  | 'platforms'
+  | 'about'
+  | 'approach'
+  | 'industries'
+  | 'careers'
+  | 'contact'
+  | 'imprint'
+  | 'privacy';
 
 export async function pageMetadata(
   params: Promise<{ locale: string }>,
