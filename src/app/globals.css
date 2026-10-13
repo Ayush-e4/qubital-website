@@ -3,26 +3,10 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Theme tokens. Dark is the default; light applies via [data-theme="light"]
-   (set by the inline script in the layout) or the OS preference without JS. */
+/* Theme tokens. Light is the default for everyone (also without JS); dark
+   applies only via [data-theme="dark"], which the inline script in the layout
+   sets when the visitor chose dark with the toggle. */
 :root,
-[data-theme='dark'] {
-  color-scheme: dark;
-  --bg: #05050a;
-  --surface: #0b0b13;
-  --surface-2: #11111b;
-  --line: rgb(255 255 255 / 0.08);
-  --line-strong: rgb(255 255 255 / 0.16);
-  --fg: #f3f3f8;
-  --muted: #9d9db3;
-  --faint: #5d5d73;
-  --violet: #8b7bff;
-  --cyan: #3fe3f2;
-  --danger: #fca5a5;
-  --grid: rgb(255 255 255 / 0.045);
-  --grain: 0.035;
-}
-
 [data-theme='light'] {
   color-scheme: light;
   --bg: #f6f6f9;
@@ -40,23 +24,21 @@
   --grain: 0.05;
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    color-scheme: light;
-    --bg: #f6f6f9;
-    --surface: #ffffff;
-    --surface-2: #eeeef4;
-    --line: rgb(16 16 40 / 0.09);
-    --line-strong: rgb(16 16 40 / 0.17);
-    --fg: #0c0c16;
-    --muted: #55556c;
-    --faint: #8a8aa0;
-    --violet: #6650f2;
-    --cyan: #0a9fbd;
-    --danger: #dc2626;
-    --grid: rgb(16 16 40 / 0.06);
-    --grain: 0.05;
-  }
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #05050a;
+  --surface: #0b0b13;
+  --surface-2: #11111b;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.16);
+  --fg: #f3f3f8;
+  --muted: #9d9db3;
+  --faint: #5d5d73;
+  --violet: #8b7bff;
+  --cyan: #3fe3f2;
+  --danger: #fca5a5;
+  --grid: rgb(255 255 255 / 0.045);
+  --grain: 0.035;
 }
 
 @theme inline {
