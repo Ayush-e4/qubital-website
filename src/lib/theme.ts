@@ -2,11 +2,12 @@ export type Theme = 'light' | 'dark';
 
 export const THEME_STORAGE_KEY = 'theme';
 
-// Runs in <head> before first paint: applies the saved theme, else the OS preference.
-export const themeScript = `(function(){var d=document.documentElement;try{var t=localStorage.getItem("${THEME_STORAGE_KEY}");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}d.setAttribute("data-theme",t)}catch(e){d.setAttribute("data-theme","dark")}})()`;
+// Runs in <head> before first paint. Light is the default for everyone; dark only
+// when the visitor picked it with the toggle (saved in localStorage).
+export const themeScript = `(function(){var d=document.documentElement;var t="light";try{if(localStorage.getItem("${THEME_STORAGE_KEY}")==="dark"){t="dark"}}catch(e){}d.setAttribute("data-theme",t)})()`;
 
 export function getTheme(): Theme {
-  return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+  return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 }
 
 /** Calls `callback` whenever the theme attribute on <html> changes. */

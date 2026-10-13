@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { Moon, Sun } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useEffect, useSyncExternalStore, type MouseEvent } from 'react';
+import { useSyncExternalStore, type MouseEvent } from 'react';
 import { cn } from '@/lib/cn';
 import { getTheme, subscribeTheme, THEME_STORAGE_KEY, type Theme } from '@/lib/theme';
 
@@ -20,20 +20,6 @@ export function ThemeToggle({ className }: { className?: string }) {
   const t = useTranslations('nav');
   // null on the server: the real theme is only known after the inline script ran
   const theme = useSyncExternalStore<Theme | null>(subscribeTheme, getTheme, () => null);
-
-  // Follow OS changes until the visitor picks a theme explicitly
-  useEffect(() => {
-    const mq = matchMedia('(prefers-color-scheme: light)');
-    const onChange = () => {
-      let saved: string | null = null;
-      try {
-        saved = localStorage.getItem(THEME_STORAGE_KEY);
-      } catch {}
-      if (!saved) applyTheme(mq.matches ? 'light' : 'dark', false);
-    };
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
 
   const toggle = (e: MouseEvent<HTMLButtonElement>) => {
     const next: Theme = getTheme() === 'dark' ? 'light' : 'dark';
