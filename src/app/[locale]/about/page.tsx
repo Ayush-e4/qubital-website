@@ -1,9 +1,10 @@
-import { MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import herzogenaurach from '@/assets/photos/herzogenaurach.jpg';
 import { BitVsQubit } from '@/components/sections/BitVsQubit';
 import { CTASection } from '@/components/sections/CTASection';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container } from '@/components/ui/Container';
+import { Photo } from '@/components/ui/Photo';
 import { Reveal, Stagger, StaggerItem } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
@@ -112,27 +113,13 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
                   {t('location.text')}
                 </p>
               </div>
-              <div className="relative flex aspect-[4/3] items-center justify-center">
-                {[0, 1, 2, 3].map((r) => (
-                  <span
-                    key={r}
-                    aria-hidden
-                    className="absolute rounded-full border border-cyan/20 animate-ping"
-                    style={{
-                      width: `${30 + r * 22}%`,
-                      aspectRatio: '1',
-                      animationDuration: '4s',
-                      animationDelay: `${r * 0.8}s`,
-                    }}
-                  />
-                ))}
-                <span className="relative flex size-20 items-center justify-center rounded-full bg-gradient-to-br from-violet to-cyan text-bg shadow-[0_0_80px_-10px_rgb(63_227_242/0.8)]">
-                  <MapPin className="size-8" />
-                </span>
-                <span className="absolute bottom-2 right-2 font-mono text-xs text-faint">
-                  DE · 51.1657° N, 10.4515° E
-                </span>
-              </div>
+              <Photo
+                src={herzogenaurach}
+                alt={t('location.photoAlt')}
+                caption={t('location.photoCaption')}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="relative aspect-[4/3]"
+              />
             </div>
           </Reveal>
         </Container>

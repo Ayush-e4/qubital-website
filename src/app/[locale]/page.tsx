@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Hero } from '@/components/home/Hero';
 import { IndustriesPreview } from '@/components/home/IndustriesPreview';
+import { PhotoStrip } from '@/components/home/PhotoStrip';
 import { TechMarquee } from '@/components/home/TechMarquee';
 import { WhySection } from '@/components/home/WhySection';
 import { CTASection } from '@/components/sections/CTASection';
@@ -32,6 +33,8 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
           />
         </Container>
       </section>
+
+      <PhotoStrip />
 
       <section className="py-24 sm:py-32">
         <Container>

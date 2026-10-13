@@ -3,8 +3,10 @@ import { getTranslations } from 'next-intl/server';
 import { CTASection } from '@/components/sections/CTASection';
 import { PageHero } from '@/components/sections/PageHero';
 import { ProcessTimeline, type Step } from '@/components/sections/ProcessSteps';
+import teamLaptop from '@/assets/photos/team-laptop.jpg';
 import { Container } from '@/components/ui/Container';
-import { Stagger, StaggerItem } from '@/components/ui/Reveal';
+import { Photo } from '@/components/ui/Photo';
+import { Reveal, Stagger, StaggerItem } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { initPage, pageMetadata } from '@/lib/page';
@@ -24,6 +26,18 @@ export default async function ApproachPage({ params }: PageProps<'/[locale]/appr
   return (
     <>
       <PageHero title={t.rich('hero.title', rich)} description={t('hero.description')} />
+
+      <Container>
+        <Reveal>
+          <Photo
+            src={teamLaptop}
+            alt={t('photoAlt')}
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            priority
+            className="aspect-[16/10] sm:aspect-[21/9]"
+          />
+        </Reveal>
+      </Container>
 
       <section className="py-24 sm:py-32">
         <Container>

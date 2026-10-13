@@ -121,6 +121,20 @@
       "title": "Identity Security für <em>jede</em> Branche.",
       "description": "Überall, wo sensible Daten und kritische Systeme geschützt werden müssen, ist Identität die erste Verteidigungslinie.",
       "link": "Branchen entdecken"
+    },
+    "photos": {
+      "team": {
+        "alt": "Berater erklärt einem Kollegen ein Diagramm am Whiteboard",
+        "caption": "Workshops mit Ihrem Team, vor Ort oder remote"
+      },
+      "signin": {
+        "alt": "Smartphone mit einer Abfrage zur Identitätsprüfung",
+        "caption": "Ein Login, dem Ihre Kunden vertrauen"
+      },
+      "key": {
+        "alt": "Hardware-Sicherheitsschlüssel auf einem Holztisch",
+        "caption": "Starke Authentifizierung für privilegierte Zugriffe"
+      }
     }
   },
   "services": {
@@ -297,7 +311,9 @@
     },
     "location": {
       "title": "Verwurzelt in Deutschland. <em>Unterwegs überall.</em>",
-      "text": "Wir sitzen in Herzogenaurach in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch."
+      "text": "Wir sitzen in Herzogenaurach in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch.",
+      "photoAlt": "Kopfsteinpflasterstraße in Herzogenaurach",
+      "photoCaption": "Herzogenaurach, Bayern"
     }
   },
   "approach": {
@@ -366,7 +382,8 @@
           "text": "Wir dokumentieren alles und schulen Ihr Team, damit Sie unabhängig bleiben."
         }
       ]
-    }
+    },
+    "photoAlt": "Zwei Kollegen arbeiten an ihren Laptops gemeinsam einen Plan durch"
   },
   "industries": {
     "hero": {

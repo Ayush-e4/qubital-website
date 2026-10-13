@@ -121,6 +121,20 @@
       "title": "Identity security for <em>every</em> industry.",
       "description": "Wherever sensitive data and critical systems need protection, identity is the first line of defence.",
       "link": "Explore industries"
+    },
+    "photos": {
+      "team": {
+        "alt": "Consultant explaining a diagram on a whiteboard to a colleague",
+        "caption": "Workshops with your team, on site or remote"
+      },
+      "signin": {
+        "alt": "Phone showing an identity verification prompt",
+        "caption": "Sign-in your customers can trust"
+      },
+      "key": {
+        "alt": "Hardware security key on a wooden desk",
+        "caption": "Strong authentication for privileged access"
+      }
     }
   },
   "services": {
@@ -297,7 +311,9 @@
     },
     "location": {
       "title": "Rooted in Germany. <em>Working everywhere.</em>",
-      "text": "We are based in Herzogenaurach, Bavaria, and work with clients across Germany, Europe and beyond: remotely, on-site, in German or English."
+      "text": "We are based in Herzogenaurach, Bavaria, and work with clients across Germany, Europe and beyond: remotely, on-site, in German or English.",
+      "photoAlt": "Cobblestone street in Herzogenaurach",
+      "photoCaption": "Herzogenaurach, Bavaria"
     }
   },
   "approach": {
@@ -366,7 +382,8 @@
           "text": "We document everything and train your team, so you stay independent."
         }
       ]
-    }
+    },
+    "photoAlt": "Two colleagues working through a plan on their laptops"
   },
   "industries": {
     "hero": {

@@ -80,6 +80,23 @@ The sitemap expands every pathname across both locales automatically, and
 `npm test` asserts that every URL returns 200 with the right canonical, hreflang,
 title and `<html lang>`. Add the new route to `ROUTES` in `tests/smoke.test.mjs`.
 
+## Photos
+
+Stock photos live in `src/assets/photos/` and are imported statically, so
+`next/image` knows their size and generates a blur placeholder. All are from
+Unsplash under the [Unsplash License](https://unsplash.com/license) (free for
+commercial use, no attribution required). Credited here anyway:
+
+| File                     | Photographer                                                |
+| ------------------------ | ----------------------------------------------------------- |
+| `team-whiteboard.jpg`    | [Kaleidico](https://unsplash.com/photos/3V8xo5Gbusk)        |
+| `team-laptop.jpg`        | [Jeremy](https://unsplash.com/photos/PF-rZraOOOo)           |
+| `phone-verification.jpg` | [Zulfugar Karimov](https://unsplash.com/photos/hvbjTynPt7A) |
+| `security-key.jpg`       | [Andy Kennedy](https://unsplash.com/photos/CpbI_SbiKqs)     |
+| `herzogenaurach.jpg`     | [Markus Spiske](https://unsplash.com/photos/81afy0aF5vw)    |
+
+Swap any of them for real photos of the team when those exist.
+
 ## Environment variables
 
 All optional: analytics, and the contact form's email delivery, degrade
