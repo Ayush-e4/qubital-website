@@ -1,12 +1,13 @@
 import {
-  Briefcase,
-  Building,
+  Car,
   Factory,
-  HeartPulse,
   Landmark,
-  Rocket,
+  Luggage,
+  Pill,
+  Plane,
+  RadioTower,
   ShoppingBag,
-  Truck,
+  Umbrella,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -15,13 +16,15 @@ export type Industry = {
   title: string;
 };
 
+// The client's sectors (copy in messages: industries.items)
 export const industryIcons: Record<string, LucideIcon> = {
-  manufacturing: Factory,
-  logistics: Truck,
-  health: HeartPulse,
-  finance: Landmark,
+  automotive: Car,
+  aviation: Plane,
+  banking: Landmark,
+  pharma: Pill,
   retail: ShoppingBag,
-  startups: Rocket,
-  services: Briefcase,
-  public: Building,
+  telecom: RadioTower,
+  tourism: Luggage,
+  insurance: Umbrella,
+  manufacturing: Factory,
 };

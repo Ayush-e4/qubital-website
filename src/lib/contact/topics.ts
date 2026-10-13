@@ -8,7 +8,7 @@ export const CONTACT_TOPICS = {
   iga: 'Identity Governance & Administration (IGA)',
   ciam: 'Customer Identity (CIAM)',
   wiam: 'Workforce Identity (WIAM)',
-  ai: 'AI & Agentic Identity Security',
+  ai: 'Non-Human Identity (NHI) & AI Agent Identity Governance',
   other: 'Something else',
 } as const;
 

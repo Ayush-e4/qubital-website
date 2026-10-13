@@ -5,5 +5,5 @@ export const site = {
   legalName: 'Qubital Systems GmbH',
   url: 'https://qubital.eu',
   email: 'contact@qubital.eu',
-  location: 'Herzogenaurach, Germany',
+  location: 'Bavaria, Germany',
 } as const;

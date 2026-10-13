@@ -1,28 +1,23 @@
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { Marquee } from '../ui/Marquee';
 
-// Vendor-neutral standards and practices (no product names until the client confirms platforms)
+// The IAM products the client works with (names only, no logos; see the Platforms page)
 const rowA = [
-  'Zero Trust',
-  'Least Privilege',
-  'Just-in-Time Access',
-  'Passkeys',
-  'FIDO2',
-  'Single Sign-On',
-  'MFA',
-  'Access Reviews',
-  'RBAC / ABAC',
+  'One Identity Manager',
+  'SailPoint IdentityIQ',
+  'Omada',
+  'Saviynt',
+  'Microsoft Entra ID',
+  'Active Directory',
 ];
 const rowB = [
-  'SAML 2.0',
-  'OpenID Connect',
-  'OAuth 2.0',
-  'SCIM',
-  'LDAP',
-  'Kerberos',
-  'NIS2',
-  'DORA',
-  'ISO 27001',
+  'Okta',
+  'OneLogin',
+  'ForgeRock',
+  'SAP Cloud Identity Services',
+  'CyberArk',
+  'BeyondTrust',
 ];
 
 function Item({ label, i }: { label: string; i: number }) {
@@ -41,7 +36,9 @@ export function TechMarquee() {
   return (
     <section className="border-y border-line py-10 sm:py-14">
       <p className="mb-8 text-center font-mono text-xs uppercase tracking-[0.2em] text-faint">
-        {t('marquee')}
+        <Link href="/platforms" className="transition-colors hover:text-fg">
+          {t('marquee')}
+        </Link>
       </p>
       <div className="flex flex-col gap-4">
         <Marquee duration={50}>

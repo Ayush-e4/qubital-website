@@ -43,6 +43,7 @@ const SITE = 'https://qubital.eu';
 const ROUTES = {
   home: { de: '/de', en: '/en' },
   services: { de: '/de/leistungen', en: '/en/services' },
+  platforms: { de: '/de/plattformen', en: '/en/platforms' },
   about: { de: '/de/ueber-uns', en: '/en/about' },
   approach: { de: '/de/vorgehen', en: '/en/approach' },
   industries: { de: '/de/branchen', en: '/en/industries' },

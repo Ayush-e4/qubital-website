@@ -1,11 +1,15 @@
 {
   "meta": {
     "title": "Qubital: Identity & Access Management Beratung aus Deutschland",
-    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie KI- & Agentic Identity Security.",
+    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie Non-Human Identities (NHI) und Identity Governance für KI-Agenten.",
     "pages": {
       "services": {
         "title": "Leistungen",
-        "description": "Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie KI- & Agentic Identity Security von Qubital."
+        "description": "Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie Non-Human Identities (NHI) und Identity Governance für KI-Agenten von Qubital."
+      },
+      "platforms": {
+        "title": "Plattformen",
+        "description": "Die IAM-Produkte, mit denen Qubital arbeitet: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, ForgeRock, Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk und BeyondTrust."
       },
       "about": {
         "title": "Über uns & Mission",
@@ -51,7 +55,8 @@
     "skip": "Zum Inhalt springen",
     "home": "Qubital Startseite",
     "themeLight": "Zum hellen Modus wechseln",
-    "themeDark": "Zum dunklen Modus wechseln"
+    "themeDark": "Zum dunklen Modus wechseln",
+    "platforms": "Plattformen"
   },
   "common": {
     "learnMore": "Mehr erfahren",
@@ -72,7 +77,7 @@
       "primary": "Projekt starten",
       "secondary": "Leistungen entdecken"
     },
-    "marquee": "Standards & Prinzipien, auf denen wir aufbauen",
+    "marquee": "IAM-Plattformen, mit denen wir arbeiten",
     "statement": "Unser Name geht auf das Qubit zurück, das gleichzeitig 0 und 1 sein kann. Zugriff kann das nicht. Jeder Login, jede Berechtigung, jede Aktion eines KI-Agenten endet in einer Entscheidung: erlaubt oder verweigert. Wir sorgen dafür, dass jede davon richtig ist.",
     "services": {
       "title": "Identity Security, <em>durchgängig.</em>",
@@ -188,20 +193,20 @@
         ]
       },
       "ai": {
-        "title": "KI- & Agentic Identity Security",
-        "short": "Steuern Sie, was KI-Agenten und Maschinenidentitäten sehen und tun dürfen.",
-        "description": "KI-Agenten, Bots und Servicekonten handeln zunehmend im Auftrag Ihrer Mitarbeitenden, oft mit weitreichenden, unüberwachten Rechten. Wir bringen sie unter Identity Governance: klare Verantwortlichkeiten, eng begrenzte Berechtigungen, kurzlebige Zugangsdaten und lückenlose Nachvollziehbarkeit.",
+        "title": "Non-Human Identities (NHI) und Identity Governance für KI-Agenten",
+        "short": "Servicekonten, API-Keys, Bots und KI-Agenten steuern wie jede andere Identität.",
+        "description": "Servicekonten, API-Keys, Zertifikate, Bots und jetzt KI-Agenten: Non-Human Identities sind meist zahlreicher als Ihre Mitarbeitenden, und viele haben keinen klaren Verantwortlichen. Wir bringen sie unter Identity Governance: vollständiges Inventar, klare Zuständigkeit, eng begrenzte und kurzlebige Berechtigungen und ein lückenloser Audit-Trail.",
         "points": [
-          "Inventar von KI-Agenten & Maschinenidentitäten",
-          "Eng begrenzte, kurzlebige Zugangsdaten",
-          "Leitplanken & delegierte Autorisierung",
-          "Monitoring & Audit-Trails"
+          "Inventar von Non-Human Identities & KI-Agenten",
+          "Zuständigkeit & Lifecycle für Servicekonten",
+          "Begrenzte, kurzlebige Credentials & Secrets",
+          "Leitplanken, Monitoring & Audit-Trails"
         ]
       }
     },
     "page": {
       "title": "Identity Security. <em>Richtig gemacht.</em>",
-      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden und KI-Agenten.",
+      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden, Servicekonten und KI-Agenten.",
       "deliverables": "Das ist enthalten",
       "models": {
         "title": "Arbeiten Sie mit uns, <em>wie es passt.</em>",
@@ -315,9 +320,9 @@
     },
     "location": {
       "title": "Verwurzelt in Deutschland. <em>Unterwegs überall.</em>",
-      "text": "Wir sitzen in Herzogenaurach in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch.",
-      "photoAlt": "Kopfsteinpflasterstraße in Herzogenaurach",
-      "photoCaption": "Herzogenaurach, Bayern"
+      "text": "Wir sitzen in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch.",
+      "photoAlt": "Heustadel auf einer Almwiese in Bayern",
+      "photoCaption": "Bayern, Deutschland"
     }
   },
   "approach": {
@@ -396,36 +401,40 @@
     },
     "items": [
       {
-        "key": "manufacturing",
-        "title": "Industrie & Mittelstand"
+        "key": "automotive",
+        "title": "Automobilindustrie"
       },
       {
-        "key": "logistics",
-        "title": "Logistik & Mobilität"
+        "key": "aviation",
+        "title": "Luftfahrt"
       },
       {
-        "key": "health",
-        "title": "Gesundheitswesen"
+        "key": "banking",
+        "title": "Banken & Finanzdienstleistungen"
       },
       {
-        "key": "finance",
-        "title": "Finanzen & Versicherungen"
+        "key": "pharma",
+        "title": "Pharma"
       },
       {
         "key": "retail",
-        "title": "Handel & E-Commerce"
+        "title": "Handel"
       },
       {
-        "key": "startups",
-        "title": "Startups & Scale-ups"
+        "key": "telecom",
+        "title": "Telekommunikation"
       },
       {
-        "key": "services",
-        "title": "Freie Berufe & Dienstleister"
+        "key": "tourism",
+        "title": "Tourismus"
       },
       {
-        "key": "public",
-        "title": "Öffentlicher Sektor & Non-Profit"
+        "key": "insurance",
+        "title": "Versicherungen"
+      },
+      {
+        "key": "manufacturing",
+        "title": "Fertigung & Industrie"
       }
     ]
   },
@@ -494,7 +503,7 @@
         "iga": "IGA",
         "ciam": "CIAM",
         "wiam": "Workforce Identity",
-        "ai": "KI & Agenten",
+        "ai": "NHI & KI-Agenten",
         "other": "Etwas anderes"
       },
       "message": "Nachricht",
@@ -519,7 +528,7 @@
     }
   },
   "footer": {
-    "tagline": "Identity & Access Management Beratung aus Deutschland. PAM, IGA, CIAM, Workforce und KI-Identity-Security aus einer Hand.",
+    "tagline": "Identity & Access Management Beratung aus Deutschland. PAM, IGA, CIAM, Workforce Identity und Non-Human Identities (NHI) aus einer Hand.",
     "company": "Unternehmen",
     "services": "Leistungen",
     "legal": "Rechtliches",
@@ -629,5 +638,116 @@
     "passkey": "Animation: Eine Kundin meldet sich mit Passkey und Fingerabdruck statt Passwort an",
     "agentScope": "Animation: Ein KI-Agent wird daran gehindert, außerhalb seiner Berechtigungen eine Zahlung anzulegen",
     "workforce": "Animation: Eine neue Mitarbeiterin erhält am ersten Tag Single Sign-on und alle Apps und verliert am letzten Tag alle Zugriffe"
+  },
+  "platforms": {
+    "hero": {
+      "title": "Die IAM-Produkte, <em>mit denen wir arbeiten.</em>",
+      "description": "Wir planen, implementieren und betreiben die führenden Identity-Plattformen und helfen bei der Auswahl, wenn sie noch nicht feststeht."
+    },
+    "groups": [
+      {
+        "key": "iga",
+        "service": "iga",
+        "title": "Identity Governance (IGA)",
+        "text": "Wer welchen Zugriff haben soll: Anträge, Freigaben, Rezertifizierung, Ein- und Austritte.",
+        "items": [
+          {
+            "name": "One Identity Manager",
+            "vendor": "One Identity",
+            "text": "Identity-Lifecycle, Rollen und Access Governance."
+          },
+          {
+            "name": "SailPoint IdentityIQ",
+            "vendor": "SailPoint",
+            "text": "Identity Governance: Lifecycle, Berechtigungsanträge und Rezertifizierung."
+          },
+          {
+            "name": "Omada",
+            "vendor": "Omada",
+            "text": "Identity Governance und Administration, on-premises oder als Cloud-Service."
+          },
+          {
+            "name": "Saviynt",
+            "vendor": "Saviynt",
+            "text": "Cloud-native Identity Governance."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IPS",
+            "vendor": "SAP",
+            "text": "Identity Provisioning: Benutzer und Rollen über SAP-Systeme hinweg."
+          }
+        ]
+      },
+      {
+        "key": "access",
+        "service": "ciam",
+        "title": "Access Management & Single Sign-on",
+        "text": "Der Login selbst, für Mitarbeitende und Kunden: Single Sign-on, MFA, Föderation.",
+        "items": [
+          {
+            "name": "Okta",
+            "vendor": "Okta",
+            "text": "Single Sign-on, MFA und Lifecycle für Mitarbeitende und Kunden."
+          },
+          {
+            "name": "OneLogin",
+            "vendor": "One Identity",
+            "text": "Single Sign-on und MFA aus der Cloud."
+          },
+          {
+            "name": "ForgeRock",
+            "vendor": "Ping Identity",
+            "text": "Access Management für Kunden- und Mitarbeiteridentitäten in großem Maßstab."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IAS",
+            "vendor": "SAP",
+            "text": "Identity Authentication: Anmeldung und Single Sign-on für SAP-Anwendungen."
+          }
+        ]
+      },
+      {
+        "key": "directory",
+        "service": "wiam",
+        "title": "Verzeichnisse & Microsoft Identity",
+        "text": "Wo die Konten liegen, und die Identitätsschicht der meisten Microsoft-Umgebungen.",
+        "items": [
+          {
+            "name": "Microsoft Entra ID",
+            "vendor": "Microsoft",
+            "text": "Cloud-Identität für Microsoft 365 und darüber hinaus: Anmeldung, Conditional Access, MFA."
+          },
+          {
+            "name": "Active Directory",
+            "vendor": "Microsoft",
+            "text": "Das On-Premises-Verzeichnis hinter den meisten Unternehmens-Logins."
+          }
+        ]
+      },
+      {
+        "key": "pam",
+        "service": "pam",
+        "title": "Privileged Access (PAM)",
+        "text": "Admin- und Servicekonten: im Tresor, zeitlich begrenzt und aufgezeichnet.",
+        "items": [
+          {
+            "name": "CyberArk",
+            "vendor": "CyberArk",
+            "text": "Privilegierter Zugriff: Credential Vaulting, Session-Isolation und Aufzeichnung."
+          },
+          {
+            "name": "BeyondTrust",
+            "vendor": "BeyondTrust",
+            "text": "Privileged Password Management, Endpoint Privilege und sicherer Fernzugriff."
+          }
+        ]
+      }
+    ],
+    "service": "Passende Leistung",
+    "note": {
+      "title": "Sie nutzen etwas anderes?",
+      "text": "Die meisten Identity-Projekte verbinden mehrere Produkte. Erzählen Sie uns, was heute bei Ihnen läuft, und wir sagen Ihnen ehrlich, wie wir helfen können.",
+      "button": "Sprechen Sie uns an"
+    }
   }
 }
