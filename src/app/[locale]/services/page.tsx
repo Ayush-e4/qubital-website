@@ -26,11 +26,7 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
 
   return (
     <>
-      <PageHero
-        eyebrow={t('page.eyebrow')}
-        title={t.rich('page.title', rich)}
-        description={t('page.description')}
-      />
+      <PageHero title={t.rich('page.title', rich)} description={t('page.description')} />
 
       <section className="pb-24 sm:pb-32">
         <Container>
@@ -83,10 +79,7 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
 
       <section className="py-24 sm:py-32">
         <Container>
-          <SectionHeading
-            eyebrow={t('page.models.eyebrow')}
-            title={t.rich('page.models.title', rich)}
-          />
+          <SectionHeading title={t.rich('page.models.title', rich)} />
           <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {models.map((m, i) => {
               const ModelIcon = modelIcons[i];
@@ -111,10 +104,7 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
       <section className="py-24 sm:py-32">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <SectionHeading
-              eyebrow={t('page.faq.eyebrow')}
-              title={t.rich('page.faq.title', rich)}
-            />
+            <SectionHeading title={t.rich('page.faq.title', rich)} />
           </div>
           <Reveal className="lg:col-span-8" delay={0.1}>
             <Accordion items={faq} />

@@ -60,7 +60,6 @@
     "readMore": "Weiterlesen"
   },
   "cta": {
-    "eyebrow": "Nächster Schritt",
     "title": "Bereit für den Schritt von <em>0 auf 1</em>?",
     "description": "Erzählen Sie uns, wo Sie heute stehen und wo Sie hinwollen. Wir melden uns innerhalb eines Werktags, ohne Verkaufsgespräch, mit einem ehrlichen Austausch.",
     "primary": "Projekt starten",
@@ -76,12 +75,10 @@
     "marquee": "Standards & Prinzipien, auf denen wir aufbauen",
     "statement": "Unser Name geht auf das Qubit zurück, das gleichzeitig 0 und 1 sein kann. Zugriff kann das nicht. Jeder Login, jede Berechtigung, jede Aktion eines KI-Agenten endet in einer Entscheidung: erlaubt oder verweigert. Wir sorgen dafür, dass jede davon richtig ist.",
     "services": {
-      "eyebrow": "Was wir tun",
       "title": "Identity Security, <em>durchgängig.</em>",
       "description": "Fünf Identity-Bereiche, ein Team. Wir beraten, implementieren und betreiben, damit die richtigen Menschen und Maschinen die richtigen Zugriffe haben, und sonst niemand."
     },
     "why": {
-      "eyebrow": "Warum Qubital",
       "title": "Klein genug, um sich zu kümmern. <em>Stark genug,</em> um zu liefern.",
       "description": "Wir sind ein junges Unternehmen mit Senior-Expertise. Das bedeutet kurze Entscheidungswege, ehrliche Beratung und Menschen, die Ihr Projekt wirklich kennen.",
       "items": [
@@ -116,13 +113,11 @@
       ]
     },
     "process": {
-      "eyebrow": "So arbeiten wir",
       "title": "Von der ersten Idee zum <em>laufenden System.</em>",
       "description": "Ein klarer Prozess in vier Schritten, bei dem Sie in jeder Phase die Kontrolle behalten.",
       "link": "Unser Vorgehen ansehen"
     },
     "industries": {
-      "eyebrow": "Für wen wir arbeiten",
       "title": "Identity Security für <em>jede</em> Branche.",
       "description": "Überall, wo sensible Daten und kritische Systeme geschützt werden müssen, ist Identität die erste Verteidigungslinie.",
       "link": "Branchen entdecken"
@@ -187,12 +182,10 @@
       }
     },
     "page": {
-      "eyebrow": "Leistungen",
       "title": "Identity Security. <em>Richtig gemacht.</em>",
       "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden und KI-Agenten.",
       "deliverables": "Das ist enthalten",
       "models": {
-        "eyebrow": "Zusammenarbeit",
         "title": "Arbeiten Sie mit uns, <em>wie es passt.</em>",
         "items": [
           {
@@ -214,7 +207,6 @@
         ]
       },
       "faq": {
-        "eyebrow": "FAQ",
         "title": "Fragen, die wir <em>oft hören.</em>",
         "items": [
           {
@@ -247,12 +239,10 @@
   },
   "about": {
     "hero": {
-      "eyebrow": "Über uns & Mission",
       "title": "Benannt nach dem Qubit. <em>Gebaut auf Klarheit.</em>",
       "description": "Qubital wurde in Deutschland mit einem klaren Fokus gegründet: Identität ist der neue Sicherheitsperimeter, und sie verdient Spezialisten."
     },
     "story": {
-      "eyebrow": "Der Name",
       "title": "Warum <em>Qubital?</em>",
       "paragraphs": [
         "Ein klassisches Bit ist entweder 0 oder 1. Ein Qubit, der Baustein des Quantencomputers, kann beides gleichzeitig sein, bis es gemessen wird. Es hält alle Möglichkeiten zugleich offen.",
@@ -261,15 +251,14 @@
       ]
     },
     "mission": {
-      "eyebrow": "Mission",
-      "title": "Wir machen Identity Security <em>verständlich, beherrschbar und wirksam</em> für jedes Unternehmen, unabhängig von seiner Größe."
+      "title": "Wir machen Identity Security <em>verständlich, beherrschbar und wirksam</em> für jedes Unternehmen, unabhängig von seiner Größe.",
+      "label": "Mission"
     },
     "vision": {
-      "eyebrow": "Vision",
-      "title": "Eine Welt, in der jede Zugriffsentscheidung, ob Mensch oder Maschine, bewusst, nachvollziehbar und sicher ist."
+      "title": "Eine Welt, in der jede Zugriffsentscheidung, ob Mensch oder Maschine, bewusst, nachvollziehbar und sicher ist.",
+      "label": "Vision"
     },
     "values": {
-      "eyebrow": "Unsere Werte",
       "title": "Wofür wir <em>stehen.</em>",
       "items": [
         {
@@ -299,19 +288,16 @@
       ]
     },
     "location": {
-      "eyebrow": "Wo wir sind",
       "title": "Verwurzelt in Deutschland. <em>Unterwegs überall.</em>",
       "text": "Wir sitzen in Herzogenaurach in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch."
     }
   },
   "approach": {
     "hero": {
-      "eyebrow": "Unser Vorgehen",
       "title": "Komplex rein, <em>klar raus.</em>",
       "description": "Jedes Projekt folgt einem bewährten Weg. Sie wissen immer, wo wir stehen, was als Nächstes kommt und was es kostet."
     },
     "steps": {
-      "eyebrow": "Der Prozess",
       "title": "Vier Schritte. <em>Null Überraschungen.</em>",
       "items": [
         {
@@ -353,7 +339,6 @@
       ]
     },
     "principles": {
-      "eyebrow": "Prinzipien",
       "title": "Wie wir <em>denken.</em>",
       "items": [
         {
@@ -377,7 +362,6 @@
   },
   "industries": {
     "hero": {
-      "eyebrow": "Branchen",
       "title": "Identity Security für <em>jede Branche.</em>",
       "description": "Überall, wo sensible Daten und kritische Systeme geschützt werden müssen, helfen wir Unternehmen, Zugriffe richtig zu steuern."
     },
@@ -418,12 +402,10 @@
   },
   "careers": {
     "hero": {
-      "eyebrow": "Karriere",
       "title": "Gestalte mit uns, was <em>als Nächstes</em> kommt.",
       "description": "Wir bauen ein Team aus neugierigen, freundlichen und richtig guten Identity-Spezialistinnen und -Spezialisten auf. Wenn Identity Security dein Ding ist, lass uns reden."
     },
     "perks": {
-      "eyebrow": "Warum Qubital",
       "title": "Ein Ort für deine <em>beste Arbeit.</em>",
       "items": [
         {
@@ -452,38 +434,14 @@
         }
       ]
     },
-    "roles": {
-      "eyebrow": "Wen wir suchen",
-      "title": "Profile, die wir <em>suchen.</em>",
-      "apply": "Jetzt bewerben",
-      "items": [
-        {
-          "title": "IAM Consultant (m/w/d)",
-          "meta": "Vollzeit · Hybrid"
-        },
-        {
-          "title": "PAM Engineer (m/w/d)",
-          "meta": "Vollzeit · Hybrid"
-        },
-        {
-          "title": "IGA Engineer (m/w/d)",
-          "meta": "Vollzeit · Hybrid"
-        },
-        {
-          "title": "CIAM Developer (m/w/d)",
-          "meta": "Vollzeit · Hybrid"
-        }
-      ]
-    },
     "open": {
-      "title": "Nichts Passendes dabei?",
-      "text": "Schick uns eine Initiativbewerbung. Großartige Menschen finden bei Qubital immer einen Platz.",
+      "title": "Aktuell keine offenen Stellen",
+      "text": "Im Moment suchen wir nicht für konkrete Positionen. Wenn Identity Security dein Fachgebiet ist, freuen wir uns trotzdem von dir zu hören.",
       "button": "Initiativ bewerben"
     }
   },
   "contact": {
     "hero": {
-      "eyebrow": "Kontakt",
       "title": "Lassen Sie uns <em>gemeinsam</em> etwas bauen.",
       "description": "Erzählen Sie uns von Ihrem Projekt, Ihrer Herausforderung oder einfach Ihrer Idee. Wir antworten innerhalb eines Werktags."
     },
@@ -544,7 +502,6 @@
     "updated": "Stand",
     "bindingNote": "Rechtlich verbindlich ist ausschließlich die deutsche Fassung dieser Seite.",
     "imprint": {
-      "eyebrow": "Rechtliches",
       "title": "Impressum",
       "sections": [
         {
@@ -577,7 +534,6 @@
       ]
     },
     "privacy": {
-      "eyebrow": "Rechtliches",
       "title": "Datenschutzerklärung",
       "sections": [
         {

@@ -3,7 +3,6 @@ import { site } from '@/config/site';
 import { rich } from '@/lib/rich';
 import { ButtonAnchor, ButtonLink } from '../ui/Button';
 import { Container } from '../ui/Container';
-import { Eyebrow } from '../ui/Eyebrow';
 import { Reveal } from '../ui/Reveal';
 
 export function CTASection() {
@@ -29,8 +28,7 @@ export function CTASection() {
             />
             <div aria-hidden className="absolute inset-0 -z-10 bg-grid opacity-70" />
 
-            <Eyebrow>{t('eyebrow')}</Eyebrow>
-            <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+            <h2 className="mx-auto max-w-3xl text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
               {t.rich('title', rich)}
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted text-pretty">

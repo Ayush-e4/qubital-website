@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Fragment } from 'react';
 import { Container } from '../ui/Container';
-import { Eyebrow } from '../ui/Eyebrow';
 import { Reveal } from '../ui/Reveal';
 
 type Section = { heading: string; body: string[] };
@@ -27,10 +26,7 @@ export async function LegalPage({ page, locale }: { page: 'imprint' | 'privacy';
     <section className="pb-24 pt-40 sm:pb-32 sm:pt-48">
       <Container className="max-w-4xl">
         <Reveal>
-          <Eyebrow>{t(`${page}.eyebrow`)}</Eyebrow>
-          <h1 className="mt-6 text-5xl font-medium tracking-tight sm:text-7xl">
-            {t(`${page}.title`)}
-          </h1>
+          <h1 className="text-5xl font-medium tracking-tight sm:text-7xl">{t(`${page}.title`)}</h1>
         </Reveal>
         {/* The English legal texts are a courtesy translation */}
         {locale !== 'de' && (

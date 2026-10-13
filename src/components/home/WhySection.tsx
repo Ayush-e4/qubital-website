@@ -17,11 +17,7 @@ export function WhySection() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:sticky lg:top-32 lg:col-span-5 lg:self-start">
-            <SectionHeading
-              eyebrow={t('eyebrow')}
-              title={t.rich('title', rich)}
-              description={t('description')}
-            />
+            <SectionHeading title={t.rich('title', rich)} description={t('description')} />
           </div>
           <Stagger className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
             {items.map((item, i) => (

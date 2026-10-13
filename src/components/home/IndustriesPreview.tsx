@@ -15,7 +15,6 @@ export function IndustriesPreview() {
       <Container>
         <SectionHeading
           align="center"
-          eyebrow={t('home.industries.eyebrow')}
           title={t.rich('home.industries.title', rich)}
           description={t('home.industries.description')}
         />

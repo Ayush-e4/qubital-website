@@ -1,16 +1,13 @@
 import type { ReactNode } from 'react';
 import { BinaryRain } from '../ui/BinaryRain';
 import { Container } from '../ui/Container';
-import { Eyebrow } from '../ui/Eyebrow';
 import { Reveal } from '../ui/Reveal';
 
 export function PageHero({
-  eyebrow,
   title,
   description,
   children,
 }: {
-  eyebrow: string;
   title: ReactNode;
   description?: ReactNode;
   children?: ReactNode;
@@ -25,10 +22,7 @@ export function PageHero({
       <BinaryRain className="absolute inset-y-0 right-0 hidden w-1/3 md:block" />
       <Container className="relative">
         <Reveal>
-          <Eyebrow>{eyebrow}</Eyebrow>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <h1 className="mt-6 max-w-4xl text-5xl font-medium leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className="max-w-4xl text-5xl font-medium leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-7xl xl:text-8xl">
             {title}
           </h1>
         </Reveal>

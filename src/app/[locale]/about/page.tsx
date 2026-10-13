@@ -4,7 +4,6 @@ import { BitVsQubit } from '@/components/sections/BitVsQubit';
 import { CTASection } from '@/components/sections/CTASection';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container } from '@/components/ui/Container';
-import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Reveal, Stagger, StaggerItem } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
@@ -23,17 +22,13 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
 
   return (
     <>
-      <PageHero
-        eyebrow={t('hero.eyebrow')}
-        title={t.rich('hero.title', rich)}
-        description={t('hero.description')}
-      />
+      <PageHero title={t.rich('hero.title', rich)} description={t('hero.description')} />
 
       {/* Story behind the name */}
       <section className="py-24 sm:py-32">
         <Container className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <SectionHeading eyebrow={t('story.eyebrow')} title={t.rich('story.title', rich)} />
+            <SectionHeading title={t.rich('story.title', rich)} />
             <Reveal delay={0.15} className="mt-10">
               <BitVsQubit />
             </Reveal>
@@ -70,8 +65,8 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
                   }
                 />
                 <div className="relative">
-                  <Eyebrow>{t(`${key}.eyebrow`)}</Eyebrow>
-                  <p className="mt-8 text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
+                  <h2 className="text-sm font-medium text-muted">{t(`${key}.label`)}</h2>
+                  <p className="mt-4 text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl">
                     {key === 'mission' ? t.rich('mission.title', rich) : t('vision.title')}
                   </p>
                   <span className="mt-12 block font-mono text-7xl font-light text-fg/[0.06]">
@@ -87,7 +82,7 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
       {/* Values */}
       <section className="py-24 sm:py-32">
         <Container>
-          <SectionHeading eyebrow={t('values.eyebrow')} title={t.rich('values.title', rich)} />
+          <SectionHeading title={t.rich('values.title', rich)} />
           <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v) => (
               <StaggerItem key={v.title}>
@@ -110,8 +105,7 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
             <div className="relative grid items-center gap-10 overflow-hidden rounded-[2rem] border border-line bg-surface p-8 sm:p-14 lg:grid-cols-2">
               <div aria-hidden className="absolute inset-0 bg-grid opacity-80" />
               <div className="relative">
-                <Eyebrow>{t('location.eyebrow')}</Eyebrow>
-                <h2 className="mt-6 text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-5xl">
+                <h2 className="text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-5xl">
                   {t.rich('location.title', rich)}
                 </h2>
                 <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">

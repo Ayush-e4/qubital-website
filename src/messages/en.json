@@ -60,7 +60,6 @@
     "readMore": "Read more"
   },
   "cta": {
-    "eyebrow": "Next step",
     "title": "Ready to go from <em>0 to 1</em>?",
     "description": "Tell us where you are today and where you want to be. We’ll reply within one business day, with no sales pitch, just a straight conversation.",
     "primary": "Start a project",
@@ -76,12 +75,10 @@
     "marquee": "Standards & principles we build on",
     "statement": "Our name comes from the qubit, which can be 0 and 1 at the same time. Access can't. Every login, every permission, every action of an AI agent ends in one decision: granted or denied. We make sure each one is right.",
     "services": {
-      "eyebrow": "What we do",
       "title": "Identity security, <em>end to end.</em>",
       "description": "Five identity areas, one team. We advise, implement and operate, so the right people and machines get the right access, and nobody else does."
     },
     "why": {
-      "eyebrow": "Why Qubital",
       "title": "Small enough to care. <em>Sharp enough</em> to deliver.",
       "description": "We are a young company with senior expertise. That means short decision paths, honest advice and people who actually know your project.",
       "items": [
@@ -116,13 +113,11 @@
       ]
     },
     "process": {
-      "eyebrow": "How we work",
       "title": "From first idea to <em>running system.</em>",
       "description": "A clear, four-step process that keeps you in control at every stage.",
       "link": "See our approach"
     },
     "industries": {
-      "eyebrow": "Who we work with",
       "title": "Identity security for <em>every</em> industry.",
       "description": "Wherever sensitive data and critical systems need protection, identity is the first line of defence.",
       "link": "Explore industries"
@@ -187,12 +182,10 @@
       }
     },
     "page": {
-      "eyebrow": "Services",
       "title": "Identity security. <em>Done right.</em>",
       "description": "Five specialised areas covering every identity in your organisation: administrators, employees, customers and AI agents.",
       "deliverables": "What’s included",
       "models": {
-        "eyebrow": "Engagement models",
         "title": "Work with us <em>your way.</em>",
         "items": [
           {
@@ -214,7 +207,6 @@
         ]
       },
       "faq": {
-        "eyebrow": "FAQ",
         "title": "Questions we hear <em>often.</em>",
         "items": [
           {
@@ -247,12 +239,10 @@
   },
   "about": {
     "hero": {
-      "eyebrow": "About & Mission",
       "title": "Named after the qubit. <em>Built on clarity.</em>",
       "description": "Qubital was founded in Germany with a clear focus: identity is the new security perimeter, and it deserves specialists."
     },
     "story": {
-      "eyebrow": "The name",
       "title": "Why <em>Qubital?</em>",
       "paragraphs": [
         "A classical bit is either 0 or 1. A qubit, the building block of quantum computers, can be both at once until it is measured. It holds every possibility at the same time.",
@@ -261,15 +251,14 @@
       ]
     },
     "mission": {
-      "eyebrow": "Mission",
-      "title": "We make identity security <em>understandable, manageable and effective</em> for every organisation, regardless of size."
+      "title": "We make identity security <em>understandable, manageable and effective</em> for every organisation, regardless of size.",
+      "label": "Mission"
     },
     "vision": {
-      "eyebrow": "Vision",
-      "title": "A world where every access decision, human or machine, is deliberate, traceable and secure."
+      "title": "A world where every access decision, human or machine, is deliberate, traceable and secure.",
+      "label": "Vision"
     },
     "values": {
-      "eyebrow": "Our values",
       "title": "What we <em>stand for.</em>",
       "items": [
         {
@@ -299,19 +288,16 @@
       ]
     },
     "location": {
-      "eyebrow": "Where we are",
       "title": "Rooted in Germany. <em>Working everywhere.</em>",
       "text": "We are based in Herzogenaurach, Bavaria, and work with clients across Germany, Europe and beyond: remotely, on-site, in German or English."
     }
   },
   "approach": {
     "hero": {
-      "eyebrow": "Our approach",
       "title": "Complex in, <em>clear out.</em>",
       "description": "Every project follows a proven path. You always know where we stand, what comes next and what it costs."
     },
     "steps": {
-      "eyebrow": "The process",
       "title": "Four steps. <em>Zero surprises.</em>",
       "items": [
         {
@@ -353,7 +339,6 @@
       ]
     },
     "principles": {
-      "eyebrow": "Principles",
       "title": "How we <em>think.</em>",
       "items": [
         {
@@ -377,7 +362,6 @@
   },
   "industries": {
     "hero": {
-      "eyebrow": "Industries",
       "title": "Identity security for <em>every sector.</em>",
       "description": "Wherever sensitive data and critical systems need protection, we help organisations get access right."
     },
@@ -418,12 +402,10 @@
   },
   "careers": {
     "hero": {
-      "eyebrow": "Careers",
       "title": "Shape what’s <em>next</em> with us.",
       "description": "We are building a team of curious, kind and highly skilled identity specialists. If identity security is your thing, let’s talk."
     },
     "perks": {
-      "eyebrow": "Why join",
       "title": "A place to do your <em>best work.</em>",
       "items": [
         {
@@ -452,38 +434,14 @@
         }
       ]
     },
-    "roles": {
-      "eyebrow": "Who we’re looking for",
-      "title": "Profiles we’re <em>hiring for.</em>",
-      "apply": "Apply now",
-      "items": [
-        {
-          "title": "IAM Consultant (m/f/d)",
-          "meta": "Full-time · Hybrid"
-        },
-        {
-          "title": "PAM Engineer (m/f/d)",
-          "meta": "Full-time · Hybrid"
-        },
-        {
-          "title": "IGA Engineer (m/f/d)",
-          "meta": "Full-time · Hybrid"
-        },
-        {
-          "title": "CIAM Developer (m/f/d)",
-          "meta": "Full-time · Hybrid"
-        }
-      ]
-    },
     "open": {
-      "title": "Nothing that fits?",
-      "text": "Send us an open application. Great people always find a place at Qubital.",
+      "title": "No open positions right now",
+      "text": "We are not hiring for specific roles at the moment. If identity security is your field, we are still happy to hear from you.",
       "button": "Send open application"
     }
   },
   "contact": {
     "hero": {
-      "eyebrow": "Contact",
       "title": "Let’s build something <em>together.</em>",
       "description": "Tell us about your project, your challenge or just your idea. We reply within one business day."
     },
@@ -544,7 +502,6 @@
     "updated": "Last updated",
     "bindingNote": "Only the German version of this page is legally binding.",
     "imprint": {
-      "eyebrow": "Legal",
       "title": "Imprint",
       "sections": [
         {
@@ -574,7 +531,6 @@
       ]
     },
     "privacy": {
-      "eyebrow": "Legal",
       "title": "Privacy Policy",
       "sections": [
         {

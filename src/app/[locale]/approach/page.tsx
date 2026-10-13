@@ -23,15 +23,11 @@ export default async function ApproachPage({ params }: PageProps<'/[locale]/appr
 
   return (
     <>
-      <PageHero
-        eyebrow={t('hero.eyebrow')}
-        title={t.rich('hero.title', rich)}
-        description={t('hero.description')}
-      />
+      <PageHero title={t.rich('hero.title', rich)} description={t('hero.description')} />
 
       <section className="py-24 sm:py-32">
         <Container>
-          <SectionHeading eyebrow={t('steps.eyebrow')} title={t.rich('steps.title', rich)} />
+          <SectionHeading title={t.rich('steps.title', rich)} />
           <div className="mt-20">
             <ProcessTimeline steps={t.raw('steps.items') as Step[]} />
           </div>
@@ -40,10 +36,7 @@ export default async function ApproachPage({ params }: PageProps<'/[locale]/appr
 
       <section className="py-24 sm:py-32">
         <Container>
-          <SectionHeading
-            eyebrow={t('principles.eyebrow')}
-            title={t.rich('principles.title', rich)}
-          />
+          <SectionHeading title={t.rich('principles.title', rich)} />
           <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {principles.map((p, i) => {
               const Icon = principleIcons[i];

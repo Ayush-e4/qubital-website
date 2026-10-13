@@ -37,7 +37,6 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
         <Container>
           <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading
-              eyebrow={t('services.eyebrow')}
               title={t.rich('services.title', rich)}
               description={t('services.description')}
             />
@@ -55,7 +54,6 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
         <Container>
           <div className="mb-16 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading
-              eyebrow={t('process.eyebrow')}
               title={t.rich('process.title', rich)}
               description={t('process.description')}
             />

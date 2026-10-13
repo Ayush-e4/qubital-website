@@ -19,11 +19,7 @@ export default async function IndustriesPage({ params }: PageProps<'/[locale]/in
 
   return (
     <>
-      <PageHero
-        eyebrow={t('hero.eyebrow')}
-        title={t.rich('hero.title', rich)}
-        description={t('hero.description')}
-      />
+      <PageHero title={t.rich('hero.title', rich)} description={t('hero.description')} />
 
       <section className="pb-24 sm:pb-32">
         <Container>

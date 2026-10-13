@@ -25,11 +25,7 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
 
   return (
     <>
-      <PageHero
-        eyebrow={t('hero.eyebrow')}
-        title={t.rich('hero.title', rich)}
-        description={t('hero.description')}
-      />
+      <PageHero title={t.rich('hero.title', rich)} description={t('hero.description')} />
 
       <section className="pb-24 sm:pb-32">
         <Container className="grid gap-6 lg:grid-cols-12">

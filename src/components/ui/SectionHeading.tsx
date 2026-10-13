@@ -1,17 +1,14 @@
 import type { ReactNode } from 'react';
 import { cn } from '@/lib/cn';
-import { Eyebrow } from './Eyebrow';
 import { Reveal } from './Reveal';
 
 export function SectionHeading({
-  eyebrow,
   title,
   description,
   align = 'left',
   className,
   children,
 }: {
-  eyebrow?: ReactNode;
   title: ReactNode;
   description?: ReactNode;
   align?: 'left' | 'center';
@@ -26,11 +23,6 @@ export function SectionHeading({
         className
       )}
     >
-      {eyebrow && (
-        <Reveal>
-          <Eyebrow>{eyebrow}</Eyebrow>
-        </Reveal>
-      )}
       <Reveal delay={0.05}>
         <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
           {title}
