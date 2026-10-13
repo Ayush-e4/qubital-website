@@ -3,6 +3,7 @@ import { site } from '@/config/site';
 import { Link } from '@/i18n/navigation';
 import { serviceKeys } from '../sections/services';
 import { Logo } from '../Logo';
+import { AuroraWordmark } from '../ui/AuroraWordmark';
 import { Container } from '../ui/Container';
 import { mainNav } from './nav';
 
@@ -71,10 +72,7 @@ export function Footer() {
         aria-hidden
         className="pointer-events-none select-none px-4 [mask-image:linear-gradient(to_bottom,black_20%,transparent_85%)] sm:px-8"
       >
-        <Logo
-          mono
-          className="mx-auto -mb-[3%] h-auto w-full max-w-[1400px] text-fg opacity-[0.07]"
-        />
+        <AuroraWordmark className="mx-auto -mb-[3%] w-full max-w-[1400px] opacity-[0.4] dark:opacity-[0.32]" />
       </div>
 
       <div className="border-t border-line">
