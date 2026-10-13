@@ -135,6 +135,10 @@
         "alt": "Hardware-Sicherheitsschlüssel auf einem Holztisch",
         "caption": "Starke Authentifizierung für privilegierte Zugriffe"
       }
+    },
+    "practice": {
+      "title": "Zugriff, entschieden <em>in Sekunden.</em>",
+      "description": "Eine neue Kollegin braucht Zugriff. Die Richtlinien werden automatisch geprüft, die Führungskraft gibt mit einem Klick frei, und alles wird für das Audit protokolliert."
     }
   },
   "services": {
@@ -618,5 +622,12 @@
     "title": "Diese Seite befindet sich in <em>Superposition.</em>",
     "text": "Sie existiert und existiert nicht zugleich, aber eher nicht. Wir bringen Sie zurück auf Kurs.",
     "button": "Zur Startseite"
+  },
+  "clips": {
+    "accessRequest": "Animation: Eine Zugriffsanfrage wird gegen Richtlinien geprüft, von der Führungskraft freigegeben und protokolliert",
+    "justInTime": "Animation: Admin-Zugriff wird für zwei Stunden vergeben, aufgezeichnet und automatisch entzogen",
+    "passkey": "Animation: Eine Kundin meldet sich mit Passkey und Fingerabdruck statt Passwort an",
+    "agentScope": "Animation: Ein KI-Agent wird daran gehindert, außerhalb seiner Berechtigungen eine Zahlung anzulegen",
+    "workforce": "Animation: Eine neue Mitarbeiterin erhält am ersten Tag Single Sign-on und alle Apps und verliert am letzten Tag alle Zugriffe"
   }
 }

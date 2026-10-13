@@ -135,6 +135,10 @@
         "alt": "Hardware security key on a wooden desk",
         "caption": "Strong authentication for privileged access"
       }
+    },
+    "practice": {
+      "title": "Access, decided <em>in seconds.</em>",
+      "description": "A new colleague needs access. Policy checks run on their own, the manager approves with one click, and everything is logged for the audit."
     }
   },
   "services": {
@@ -615,5 +619,12 @@
     "title": "This page is in a <em>superposition.</em>",
     "text": "It both exists and doesn’t, but mostly doesn’t. Let’s get you back on track.",
     "button": "Back to home"
+  },
+  "clips": {
+    "accessRequest": "Animation: an access request is checked against policy, approved by the manager and logged",
+    "justInTime": "Animation: admin access is granted for two hours, recorded, and removed automatically",
+    "passkey": "Animation: a customer signs in with a passkey and a fingerprint instead of a password",
+    "agentScope": "Animation: an AI agent is blocked from creating a payment outside its permissions",
+    "workforce": "Animation: a new employee gets single sign-on and every app on day one, and loses all access on their last day"
   }
 }

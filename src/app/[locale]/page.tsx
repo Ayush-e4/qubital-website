@@ -8,7 +8,9 @@ import { CTASection } from '@/components/sections/CTASection';
 import { ProcessRow, type Step } from '@/components/sections/ProcessSteps';
 import { ServicesGrid } from '@/components/sections/ServicesGrid';
 import { ButtonLink } from '@/components/ui/Button';
+import { Clip } from '@/components/ui/Clip';
 import { Container } from '@/components/ui/Container';
+import { Reveal } from '@/components/ui/Reveal';
 import { ScrollText } from '@/components/ui/ScrollText';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { initPage } from '@/lib/page';
@@ -19,6 +21,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
   const t = await getTranslations('home');
   const tSteps = await getTranslations('approach.steps');
   const tCommon = await getTranslations('common');
+  const tClips = await getTranslations('clips');
 
   return (
     <>
@@ -48,6 +51,20 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
             </ButtonLink>
           </div>
           <ServicesGrid />
+        </Container>
+      </section>
+
+      <section className="py-24 sm:py-32">
+        <Container className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              title={t.rich('practice.title', rich)}
+              description={t('practice.description')}
+            />
+          </div>
+          <Reveal delay={0.1} className="lg:col-span-7">
+            <Clip name="access-request" label={tClips('accessRequest')} />
+          </Reveal>
         </Container>
       </section>
 

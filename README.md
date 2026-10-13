@@ -97,6 +97,15 @@ commercial use, no attribution required). Credited here anyway:
 
 Swap any of them for real photos of the team when those exist.
 
+## Product clips
+
+The short animations on Home and Services are rendered with Remotion from the
+separate project in `video/` (see `video/README.md`). The site only ships the
+rendered files in `public/videos/` and plays them with
+`src/components/ui/Clip.tsx`, picking the file for the current locale and
+theme. To change a clip, edit it in `video/src/clips/` and run `npm run render`
+there.
+
 ## Environment variables
 
 All optional: analytics, and the contact form's email delivery, degrade
