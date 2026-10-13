@@ -106,7 +106,7 @@ const noRawPalette = {
 const eslintConfig = defineConfig([
   ...nextVitals,
   {
-    files: ['src/**/*.{js,jsx}'],
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
     plugins: {
       local: { rules: { 'min-text-alpha': minTextAlpha, 'no-raw-palette': noRawPalette } },
     },

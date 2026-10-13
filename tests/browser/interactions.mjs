@@ -1,225 +1,217 @@
 /**
  * Local-only browser checks — deliberately NOT run in CI.
  *
- * The interactive parts of this site (language switcher, mobile drawer) fail
- * visibly when broken, so they are covered by manual checks and by running this
- * on demand. CI runs only the browser-free suite in tests/smoke.test.mjs, which
- * keeps the pipeline fast and avoids a browser download.
+ * The interactive parts of this site (language switcher, mobile menu, theme
+ * toggle, navigation hover, contact form) fail visibly when broken, so they are
+ * covered by running this on demand. CI runs only the browser-free suite in
+ * tests/smoke.test.mjs, which keeps the pipeline fast and avoids a browser
+ * download.
+ *
+ * Every check also fails on any uncaught page error, which is how React runtime
+ * problems (e.g. a DOM insertBefore crash) show up.
  *
  * Usage — needs a running server first:
  *   npm run build && npm run start      # or: npm run dev
  *   npm run test:browser
  *
- * Set BASE_URL to point somewhere else, e.g. a Vercel preview.
+ * BASE_URL points somewhere else (e.g. a Vercel preview). PW_CHANNEL=chrome uses
+ * the installed Google Chrome instead of Playwright's bundled Chromium.
  */
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:3000';
 
+const PAGES = [
+  '/de',
+  '/de/leistungen',
+  '/de/ueber-uns',
+  '/de/vorgehen',
+  '/de/branchen',
+  '/de/karriere',
+  '/de/kontakt',
+  '/de/impressum',
+  '/de/datenschutz',
+  '/en',
+  '/en/services',
+  '/en/about',
+  '/en/approach',
+  '/en/industries',
+  '/en/careers',
+  '/en/contact',
+  '/en/imprint',
+  '/en/privacy',
+];
+
+/** Replace every text node like Chrome's page translation does. */
+async function simulateTranslation(page) {
+  await page.evaluate(() => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) =>
+        n.parentElement &&
+        !['SCRIPT', 'STYLE'].includes(n.parentElement.tagName) &&
+        n.nodeValue.trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT,
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      const outer = document.createElement('font');
+      const inner = document.createElement('font');
+      inner.textContent = node.nodeValue;
+      outer.appendChild(inner);
+      node.parentNode.replaceChild(outer, node);
+    }
+  });
+}
+
+const languageButton = (page, code) =>
+  page.locator('header [role="group"] button', { hasText: new RegExp(`^${code}$`, 'i') });
+
 const checks = [
   [
-    'language switcher preserves the page (header dropdown)',
+    'every page renders without a runtime error',
     async (page) => {
-      await page.goto(`${BASE}/about`, { waitUntil: 'load' });
-      // Selected by aria-controls, not by accessible name: the labels are
-      // localised, so matching on English wording would only pass on /en.
-      await page.locator('button[aria-controls="header-language-menu"]').click();
-      await page
-        .getByRole('link', { name: /Deutsch/ })
-        .first()
-        .click();
-      await page.waitForURL('**/de/about');
-      assert.match(page.url(), /\/de\/about$/);
+      for (const path of PAGES) {
+        const res = await page.goto(`${BASE}${path}`, { waitUntil: 'load' });
+        assert.equal(res?.status(), 200, `${path} returned ${res?.status()}`);
+      }
     },
   ],
   [
-    'switching back to English drops the locale prefix',
+    'language switcher keeps the page and switches the slug',
     async (page) => {
-      await page.goto(`${BASE}/de/about`, { waitUntil: 'load' });
-      await page.getByRole('link', { name: 'English', exact: true }).first().click();
-      await page.waitForURL('**/about');
-      assert.match(page.url(), /\/about$/);
+      await page.goto(`${BASE}/de/leistungen`, { waitUntil: 'load' });
+      await languageButton(page, 'en').click();
+      await page.waitForURL('**/en/services');
+      await languageButton(page, 'de').click();
+      await page.waitForURL('**/de/leistungen');
     },
   ],
   [
-    'locale content actually renders in that language',
+    'hovering every navigation link works (dock + hover pill)',
     async (page) => {
-      await page.goto(`${BASE}/fr/services`, { waitUntil: 'load' });
-      assert.equal(await page.locator('html').getAttribute('lang'), 'fr');
-      await page.getByRole('link', { name: 'Pourquoi nous' }).first().waitFor();
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await page.goto(`${BASE}/en`, { waitUntil: 'load' });
+      const links = page.locator('header nav a');
+      const count = await links.count();
+      assert.ok(count >= 5, `expected the desktop nav, found ${count} links`);
+      for (let i = 0; i < count; i += 1) await links.nth(i).hover();
+      await page.mouse.move(700, 600);
     },
   ],
   [
-    'mobile drawer closes on navigation and releases the scroll lock',
+    'a translated page survives hover and a language switch',
     async (page) => {
-      await page.setViewportSize({ width: 390, height: 844 });
-      await page.goto(`${BASE}/de/about`, { waitUntil: 'load' });
-
-      const trigger = page.locator('button[aria-controls="header-mobile-menu"]');
-      await trigger.click();
-
-      // Focus must land inside the panel, otherwise the drawer is unreachable
-      // by keyboard.
-      assert.equal(
-        await page.evaluate(() =>
-          Boolean(document.querySelector('#header-mobile-menu')?.contains(document.activeElement))
-        ),
-        true,
-        'focus should move into the drawer when it opens'
-      );
-
-      await page.getByRole('link', { name: 'Leistungen' }).first().click();
-      await page.waitForURL('**/de/services');
-      assert.equal(await trigger.getAttribute('aria-expanded'), 'false');
-      assert.notEqual(await page.evaluate(() => document.body.style.overflow), 'hidden');
+      await page.setViewportSize({ width: 1440, height: 900 });
+      // Chrome translates after the page has loaded and hydrated; translating
+      // before hydration is a different (unavoidable) mismatch, not this bug.
+      await page.goto(`${BASE}/de`, { waitUntil: 'networkidle' });
+      await page.waitForTimeout(500);
+      await simulateTranslation(page);
+      const links = page.locator('header nav a');
+      for (let i = 0; i < (await links.count()); i += 1) await links.nth(i).hover();
+      await languageButton(page, 'en').click();
+      await page.waitForURL('**/en');
     },
   ],
   [
-    'homepage content is readable with JavaScript disabled',
-    async () => {
-      // Scroll-reveal is scoped to the `.js` class, which only exists when
-      // scripting does. With JS off the page must render fully — the old
-      // implementation server-rendered `opacity: 0` and left whole sections
-      // invisible. Playwright's isVisible() ignores opacity, so assert the
-      // computed value directly.
-      const ctx = await browser.newContext({ javaScriptEnabled: false });
-      const noJsPage = await ctx.newPage();
-      await noJsPage.goto(`${BASE}/`, { waitUntil: 'load' });
-
-      const heading = noJsPage.getByRole('heading', { name: /Core Capabilities/i }).first();
-      await heading.waitFor();
-
-      // An ancestor at opacity 0 hides an element just as effectively as the
-      // element itself, and Playwright's isVisible() ignores opacity entirely.
-      // Walk the chain — this is exactly how PageTransition used to blank the
-      // entire document while every element's own opacity read as 1.
-      const hiddenBy = await heading.evaluate((el) => {
-        let node = el;
-        while (node && node !== document.documentElement) {
-          if (Number(getComputedStyle(node).opacity) === 0) {
-            return `${node.tagName.toLowerCase()}.${(node.className || '').toString().split(' ')[0]}`;
-          }
-          node = node.parentElement;
-        }
-        return null;
-      });
-      assert.equal(
-        hiddenBy,
-        null,
-        `services heading hidden by ancestor ${hiddenBy} with JS disabled`
-      );
-
-      // The metrics are drawn by a counter; the value must still exist as text.
-      const metricNumber = await noJsPage
-        .locator('span.inline-block.tracking-normal')
-        .first()
-        .textContent();
-      assert.ok(
-        /\d/.test(metricNumber ?? ''),
-        `metric number should render without JS, got "${metricNumber}"`
-      );
-
-      await ctx.close();
-    },
-  ],
-  [
-    'header does not collide with the language switcher at 320px',
+    'theme toggle switches, survives rapid clicks and persists',
     async (page) => {
-      await page.setViewportSize({ width: 320, height: 640 });
-      await page.goto(`${BASE}/`, { waitUntil: 'load' });
+      await page.goto(`${BASE}/en`, { waitUntil: 'networkidle' });
+      const html = page.locator('html');
+      const toggle = page.locator('header button[title]');
+      const before = await html.getAttribute('data-theme');
+      await toggle.click();
+      // The circular reveal runs ~750ms; clicks during it land on the overlay
+      await page.waitForTimeout(1000);
+      const flipped = await html.getAttribute('data-theme');
+      assert.notEqual(flipped, before, 'one click should flip the theme');
 
-      // Measure the logo link itself: below `xs` it is the mark alone, above it
-      // the wordmark shows too, and either way it must not reach the switcher.
-      const logo = page.locator('header a[href="/"]').first();
-      const langButton = page.locator('button[aria-controls="header-language-menu"]');
-      const brandBox = await logo.boundingBox();
-      const langBox = await langButton.boundingBox();
+      // Rapid clicks must not throw (an interrupted transition used to)
+      await toggle.click();
+      await toggle.click({ force: true });
+      await toggle.click({ force: true });
+      await page.waitForTimeout(1000);
 
-      assert.ok(brandBox && langBox, 'logo and language switcher should both be measurable');
-      assert.ok(
-        brandBox.x + brandBox.width <= langBox.x + 1,
-        `logo overlaps the language switcher (ends at ${Math.round(
-          brandBox.x + brandBox.width
-        )}, switcher starts at ${Math.round(langBox.x)})`
-      );
-
-      const overflow = await page.evaluate(
-        () => document.documentElement.scrollWidth - document.documentElement.clientWidth
-      );
-      assert.ok(overflow <= 1, `page overflows horizontally by ${overflow}px at 320px`);
+      const settled = await html.getAttribute('data-theme');
+      await page.reload({ waitUntil: 'load' });
+      assert.equal(await html.getAttribute('data-theme'), settled, 'theme did not persist');
+      await page.evaluate(() => localStorage.removeItem('theme'));
     },
   ],
   [
-    'form controls are at least 16px on mobile (no iOS focus zoom)',
+    'mobile menu opens, switches language and closes on navigation',
     async (page) => {
       await page.setViewportSize({ width: 375, height: 812 });
-      await page.goto(`${BASE}/contact`, { waitUntil: 'load' });
-      await page.locator('form').first().waitFor();
-
-      const tooSmall = await page.$$eval(
-        'input:not([type="hidden"]):not([type="checkbox"]):not(#website), select, textarea',
-        (els) =>
-          els
-            .map((el) => ({
-              tag: el.tagName.toLowerCase(),
-              id: el.id || el.name,
-              px: parseFloat(getComputedStyle(el).fontSize),
-            }))
-            .filter(({ px }) => px < 16)
-      );
-
-      assert.deepEqual(tooSmall, [], `controls below 16px: ${JSON.stringify(tooSmall)}`);
+      await page.goto(`${BASE}/en`, { waitUntil: 'load' });
+      await page.locator('[aria-controls="mobile-menu"]').click();
+      const menu = page.locator('#mobile-menu');
+      await menu.waitFor();
+      await menu.getByRole('link', { name: 'Services' }).click();
+      await page.waitForURL('**/en/services');
+      await menu.waitFor({ state: 'detached' });
+      await page.setViewportSize({ width: 1440, height: 900 });
     },
   ],
   [
-    'page headings only ask for font weights that are actually loaded',
+    'contact form validates, and never fakes success without email configured',
     async (page) => {
-      // next/font loads Plus Jakarta 600/700 and Inter 400/500/600/700. The site
-      // previously declared font-light (300) and font-black (900) in well over a
-      // hundred places, so the browser silently substituted a different weight:
-      // "light" headings rendered at 400 and "black" ones at 700. A declared
-      // weight outside the loaded set is the bug, so assert on the declared value.
-      const bad = [];
+      await page.goto(`${BASE}/en/contact`, { waitUntil: 'load' });
+      await page.locator('form button[type="submit"]').click();
+      assert.equal(await page.locator('form [role="alert"]').count(), 4);
 
-      for (const path of [
-        '/',
-        '/about',
-        '/services',
-        '/mission',
-        '/why-us',
-        '/careers',
-        '/contact',
-      ]) {
-        await page.goto(`${BASE}${path}`, { waitUntil: 'load' });
-        const offenders = await page.$$eval('h1, h2, h3, h4', (els) =>
-          els
-            .map((el) => ({
-              text: (el.textContent || '').trim().slice(0, 28),
-              weight: getComputedStyle(el).fontWeight,
-            }))
-            .filter((h) => !['400', '500', '600', '700'].includes(h.weight))
-        );
-        if (offenders.length > 0) bad.push(`${path} -> ${JSON.stringify(offenders)}`);
+      await page.fill('input[name="fullName"]', 'Browser Check');
+      await page.fill('input[name="email"]', 'check@example.com');
+      await page.fill('textarea[name="message"]', 'Local browser check of the contact form.');
+      await page.locator('input[name="consent"]').check({ force: true });
+      const response = page.waitForResponse('**/api/contact');
+      await page.locator('form button[type="submit"]').click();
+      const res = await response;
+      if (res.status() === 200) {
+        await page.locator('[role="status"]').waitFor();
+      } else {
+        // Without RESEND_API_KEY the endpoint answers 500: the form must show its
+        // error state, not a success message.
+        await page.locator('form [role="alert"]').first().waitFor();
+        assert.equal(await page.locator('[role="status"]').count(), 0);
       }
-
-      assert.deepEqual(bad, [], `headings declaring an unloaded weight: ${bad.join('; ')}`);
+    },
+  ],
+  [
+    'old URLs land on the new pages',
+    async (page) => {
+      for (const [from, to] of [
+        ['/about', '/en/about'],
+        ['/de/services', '/de/leistungen'],
+        ['/fr/contact', '/en/contact'],
+      ]) {
+        await page.goto(`${BASE}${from}`, { waitUntil: 'load' });
+        assert.equal(new URL(page.url()).pathname, to, `${from} ended at ${page.url()}`);
+      }
     },
   ],
 ];
 
-const browser = await chromium.launch();
-const page = await (await browser.newContext()).newPage();
+const browser = await chromium.launch(
+  process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {}
+);
 
 let failed = 0;
 for (const [name, run] of checks) {
+  const page = await (await browser.newContext()).newPage();
+  const errors = [];
+  page.on('pageerror', (err) => errors.push(err.message));
   try {
     await run(page);
+    assert.deepEqual(errors, [], `uncaught page error: ${errors[0]}`);
     console.log(`  PASS  ${name}`);
   } catch (err) {
     failed += 1;
     console.log(`  FAIL  ${name}\n        ${String(err.message).split('\n')[0]}`);
   }
+  await page.context().close();
 }
 
 await browser.close();

@@ -1,15 +1,16 @@
 # Qubital Website
 
-Marketing site for Qubital Systems GmbH — Next.js 16 (App Router), React 19 and
-Tailwind CSS 4, serving six locales (English, German, French, Spanish, Italian,
-Dutch) from a single codebase.
+Marketing site for Qubital Systems GmbH, an Identity & Access Management
+consultancy (PAM, IGA, CIAM, workforce IAM, AI and agentic identity security).
+Next.js 16 (App Router), React 19, Tailwind CSS 4 and next-intl, served in German
+and English with localized URLs.
 
 ## Getting started
 
 ```bash
 nvm use                      # picks up .nvmrc
 npm ci
-cp .env.example .env.local   # optional — see Environment variables
+cp .env.example .env.local   # optional, see Environment variables
 npm run dev
 ```
 
@@ -18,77 +19,77 @@ version CI uses).
 
 ## Scripts
 
-| Script                 | What it does                                                   |
-| ---------------------- | -------------------------------------------------------------- |
-| `npm run dev`          | Dev server (Turbopack)                                         |
-| `npm run build`        | Production build                                               |
-| `npm run start`        | Serve the production build                                     |
-| `npm run lint`         | ESLint                                                         |
-| `npm run format`       | Format everything with Prettier                                |
-| `npm run format:check` | Verify formatting without writing (runs in CI)                 |
-| `npm test`             | Browser-free smoke suite — **needs a build first**             |
-| `npm run test:browser` | Interactive checks — needs a running server, **not run in CI** |
+| Script                 | What it does                                                  |
+| ---------------------- | ------------------------------------------------------------- |
+| `npm run dev`          | Dev server (Turbopack)                                        |
+| `npm run build`        | Production build                                              |
+| `npm run start`        | Serve the production build                                    |
+| `npm run lint`         | ESLint                                                        |
+| `npm run typecheck`    | Generate route types, then `tsc --noEmit`                     |
+| `npm run format`       | Format everything with Prettier                               |
+| `npm run format:check` | Verify formatting without writing (runs in CI)                |
+| `npm test`             | Browser-free smoke suite, **needs a build first**             |
+| `npm run test:browser` | Interactive checks, needs a running server, **not run in CI** |
 
 A pre-commit hook runs ESLint and Prettier over staged files.
 
 ## Locale routing
 
-This is the least obvious part of the codebase, so it is worth reading before
-touching anything under `src/app`.
+Routing is handled by next-intl and configured in one place,
+`src/i18n/routing.ts`.
 
-**English is served unprefixed**; every other locale is prefixed:
+- **Both locales are prefixed**, German is the default, and each page has a
+  localized slug:
 
-```
-/about        → English
-/de/about     → German
-/fr/services  → French
-```
+  ```
+  /de/leistungen   /en/services
+  /de/ueber-uns    /en/about
+  /de/kontakt      /en/contact
+  ```
 
-The authoritative rules live as a comment at the top of `src/proxy.js`, and the
-helpers live in `src/lib/i18n/paths.js`. In short:
+- **`/` auto-detects.** `src/proxy.ts` redirects it to `/de` or `/en` from the
+  `NEXT_LOCALE` cookie, then `Accept-Language`, then the default (`de`). The
+  redirect is marked `no-store` so a shared cache never keeps one visitor's
+  language for everyone.
+- **Never build a URL by hand.** Use `Link`, `useRouter` and `getPathname` from
+  `src/i18n/navigation.ts` with the internal pathname (`/services`), and the
+  locale-specific slug is filled in for you.
+- Copy lives in `src/messages/de.json` and `src/messages/en.json`. The German
+  legal texts are binding; the English pages say so.
 
-- **Prefixed paths** render in that language. The proxy tags the request with
-  `x-locale`, which the layout and `pageMetadata()` read. The browser URL keeps
-  its prefix, so **the pathname is the source of truth** for the active locale —
-  the client derives it with `usePathname()`, never from a cookie.
-- **`/` auto-detects.** On a first visit (no `NEXT_LOCALE` cookie) a browser whose
-  top `Accept-Language` is a supported locale is redirected there. Only `/`
-  redirects: deep links such as `/about` always serve English, so a shared URL
-  renders as written.
-- **`NEXT_LOCALE` is not a language switch.** It only suppresses the redirect so
-  a returning visitor is not bounced off `/` repeatedly.
+### Redirects from the previous site
 
-Never build a locale-aware URL by hand — use `localizedPath(path, locale)` from
-`src/lib/i18n/paths.js`, or `useLocalePath()` in a client component.
+The old site served English unprefixed and six locales. `next.config.ts` builds
+permanent (308) redirects from every old URL to its new page: `/about` goes to
+`/en/about`, `/de/services` to `/de/leistungen`, and pages that no longer exist go
+to the page that now carries their content (`/mission` to About, `/compliance` to
+Services, `/privacy-and-gdpr` to Privacy). French, Spanish, Italian and Dutch URLs
+go to the English page.
 
 ## Adding a page
 
-1. Create `src/app/<route>/page.js` as a server component that exports
-   `generateMetadata()` via `pageMetadata()` from `src/lib/seo.js` — that is what
-   produces the canonical URL, the hreflang cluster and the Open Graph tags.
-2. Put the interactive markup in a sibling `*Content.jsx` client component, and
-   read copy through `useLanguage()`.
-3. Add the copy to **all six locales** in `src/lib/i18n/translations.js`.
-4. To list it in navigation, add it to `NAV_LINKS` in `src/lib/constants.js`,
-   to `NAV_KEY_MAP` in `src/components/Header.jsx`, and to the `nav` dictionary
-   of every locale.
-5. Add it to `PAGES` in `src/app/sitemap.js` — the sitemap expands each entry
-   across all six locales automatically.
+1. Add the internal pathname and its two slugs to `pathnames` in
+   `src/i18n/routing.ts`.
+2. Create `src/app/[locale]/<route>/page.tsx` that exports `generateMetadata()`
+   via `pageMetadata()` from `src/lib/page.ts`. That produces the canonical URL,
+   the hreflang cluster and the Open Graph and Twitter tags.
+3. Add the copy to **both** `src/messages/de.json` and `src/messages/en.json`.
+4. To list it in navigation, add it to `src/components/layout/nav.ts`.
 
-`npm test` covers all of the above: it asserts the sitemap lists every route ×
-locale, that every URL returns 200, and that canonical, hreflang, titles and
-`<html lang>` are correct.
+The sitemap expands every pathname across both locales automatically, and
+`npm test` asserts that every URL returns 200 with the right canonical, hreflang,
+title and `<html lang>`. Add the new route to `ROUTES` in `tests/smoke.test.mjs`.
 
 ## Environment variables
 
-All optional — analytics, and the contact form's email delivery, degrade
+All optional: analytics, and the contact form's email delivery, degrade
 gracefully when unset.
 
 | Variable                       | Purpose                                                       |
 | ------------------------------ | ------------------------------------------------------------- |
 | `NEXT_PUBLIC_POSTHOG_KEY`      | PostHog project key                                           |
 | `NEXT_PUBLIC_POSTHOG_HOST`     | PostHog host (defaults to EU)                                 |
-| `RESEND_API_KEY`               | Resend API key — contact form delivery                        |
+| `RESEND_API_KEY`               | Resend API key for contact form delivery                      |
 | `CONTACT_TO_EMAIL`             | Inquiry recipient (default `contact@qubital.eu`)              |
 | `CONTACT_CC_EMAIL`             | Copied on every inquiry (default `arun1812@gmail.com`)        |
 | `CONTACT_FROM_EMAIL`           | Verified sender; unset falls back to Resend's sandbox address |
@@ -97,18 +98,20 @@ gracefully when unset.
 
 The `NEXT_PUBLIC_*` pair is inlined at **build** time, so one build cannot serve
 two environments. The `RESEND_*`/`CONTACT_*` values are read at **request** time
-and never enter the browser bundle — but a change needs the process restarted (a
+and never enter the browser bundle, but a change needs the process restarted (a
 redeploy on Vercel, a container restart elsewhere).
 
 ## Contact form
 
-`src/app/contact/ContactContent.jsx` posts to `POST /api/contact`.
+`src/components/sections/ContactForm.tsx` posts JSON to `POST /api/contact`
+(`src/app/api/contact/route.ts`). Both sides run the same rules from
+`src/lib/contact/validation.ts`, so most mistakes are caught before a request.
 
 Without `RESEND_API_KEY` the endpoint returns `500` and the form shows its error
-state. That is deliberate: the handler used to flip a local `isSubmitted` flag
-and claim the message had been received, which was false.
+state. That is deliberate: a lead must never be silently lost behind a fake
+success message.
 
-Two emails are sent per inquiry — a notification to `CONTACT_TO_EMAIL` (with
+Two emails are sent per inquiry: a notification to `CONTACT_TO_EMAIL` (with
 `CONTACT_CC_EMAIL` copied and `Reply-To` set to the sender, so staff can answer
 directly) and a confirmation to the person who submitted it. The notification
 failing fails the request; the confirmation failing does not, since the lead has
@@ -117,29 +120,33 @@ already been captured by then.
 Spam handling is a hidden honeypot field plus an in-memory per-IP rate limit.
 
 Nothing here is tied to a hosting platform: the endpoint is plain Next.js on the
-Node runtime calling Resend over outbound HTTPS — no platform APIs, no cron, no
+Node runtime calling Resend over outbound HTTPS: no platform APIs, no cron, no
 queue, no external store. It runs unchanged on Vercel, a container or any Node
 host. Per-IP limiting reads `x-forwarded-for` (first entry) or `x-real-ip`, which
-proxies set and Next's own Node server derives from the socket — verified against
+proxies set and Next's own Node server derives from the socket, verified against
 a direct `next start` with no proxy in front. If neither header is present the
 request is **not** limited, rather than being collapsed into one shared bucket:
 sharing would let the first few submissions lock every visitor out of the form.
 
 **`qubital.eu` must be verified in Resend before `CONTACT_FROM_EMAIL` can be set
-to an address on it** — until then, sending uses Resend's sandbox address. The
+to an address on it**. Until then, sending uses Resend's sandbox address. The
 DNS records Resend issues go on the `send.qubital.eu` subdomain; the root MX
 records must be left alone, or `contact@qubital.eu` stops receiving mail.
 
 ## Testing
 
-- **`npm test`** — the suite that gates CI. Plain HTTP against a production
-  server: the 60-entry sitemap, self-referencing canonicals, hreflang clusters,
-  titles, `<html lang>` and the locale-routing rules. It also drives the contact
-  endpoint (validation, honeypot, per-IP rate limiting) with `RESEND_API_KEY`
-  pinned empty, so the suite can never send real mail. No browser, ~3s.
-- **`npm run test:browser`** — language switcher, locale rendering and the mobile
-  drawer. Run locally on demand; it is deliberately kept out of CI because the
-  only real cost is a browser download and these failures are visible by eye.
+- **`npm test`** is the suite that gates CI. Plain HTTP against a production
+  server: the 18-entry sitemap, self-referencing canonicals, hreflang clusters,
+  titles, `<html lang>`, the `/` redirect rules, cache and security headers, and
+  the redirects from the old site's URLs. It also drives the contact endpoint
+  (validation, honeypot, per-IP rate limiting) with `RESEND_API_KEY` pinned
+  empty, so the suite can never send real mail. No browser, a few seconds.
+- **`npm run test:browser`** renders every page, then checks the language
+  switcher, navigation hover, a page translated the way Chrome's translator does
+  it, the theme toggle, the mobile menu, contact form validation and the old URLs.
+  Every check also fails on an uncaught page error. Run it locally on demand
+  (`PW_CHANNEL=chrome` uses the installed Chrome instead of a browser download);
+  it is kept out of CI on purpose.
 
 ## Deployment
 
@@ -149,24 +156,24 @@ detection and the `/` redirect run in the proxy.
 Responses are edge-cached: every route except `/` is marked
 `Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400`, because
 each locale has its own URL and the rendered output is deterministic per URL.
-`/` stays uncached since it varies on `Accept-Language`, and `/api/*` is excluded
+`/` stays uncached since it varies on `Accept-Language` and `NEXT_LOCALE`, and `/api/*` is excluded
 because the contact endpoint must never be stored by a shared cache.
 
 Security headers (`HSTS`, `CSP`, `X-Content-Type-Options`, `Referrer-Policy`,
-`X-Frame-Options`, `Permissions-Policy`) are set in `next.config.mjs`.
+`X-Frame-Options`, `Permissions-Policy`) are set in `next.config.ts`.
 
 ### Self-hosting (Azure, containers, any Node host)
 
 The app runs off Vercel unchanged, but three things must be done deliberately.
 
 **1. There has to be a CDN in front, or the cache headers do nothing.**
-`Cache-Control: public, s-maxage=…` is plain HTTP — it only helps if a shared
+`Cache-Control: public, s-maxage=…` is plain HTTP; it only helps if a shared
 cache honours it. On Azure that means **Front Door** (or Azure CDN). With no CDN,
 every request re-renders on your compute, which is the slow and expensive case on
 App Service. On Vercel the edge does this for you.
 
 **2. `output: 'standalone'` is on, and its assets must be copied.**
-The build emits `.next/standalone` — a self-contained server. **Running it
+The build emits `.next/standalone`, a self-contained server. **Running it
 without copying the static assets serves a 200 page with a 404 stylesheet, i.e.
 an unstyled site.** Verified:
 
@@ -182,7 +189,7 @@ which is what App Service and Container Apps inject.
 
 **3. `NEXT_PUBLIC_*` values are inlined at build time.**
 `NEXT_PUBLIC_POSTHOG_KEY` is baked into the bundle during `next build`, so a
-single artifact cannot serve two environments — build per environment, or supply
+single artifact cannot serve two environments. Build per environment, or supply
 the values during the build step in the pipeline.
 
 `sharp` is a direct dependency rather than an optional one. Next declares it
@@ -199,16 +206,24 @@ Node `>=22.13.0` is required; `.nvmrc` is the version CI uses.
 
 ```
 src/
-  app/            routes, layout, sitemap, robots, not-found
-    api/contact/  contact form endpoint (POST)
-  components/     Header, Footer, providers, UI primitives
+  app/
+    [locale]/       pages, layout, not-found (one folder per internal pathname)
+    api/contact/    contact form endpoint (POST)
+    sitemap.ts, robots.ts, manifest.ts
+  components/
+    home/           home page sections
+    layout/         Header, Dock, Footer, LocaleSwitcher, ThemeToggle, nav
+    sections/       shared page sections, ContactForm, LegalPage
+    ui/             primitives (Button, Container, Reveal, ...)
+    PostHogProvider.tsx
+  config/site.ts    name, legal name, domain, email, location
+  i18n/             next-intl routing, navigation helpers, request config
   lib/
-    email/        contact email templates
-    i18n/         locale routing helpers + translation dictionaries
-    rate-limit.js per-IP limiter for the contact endpoint
-    seo.js        per-page metadata (canonical, hreflang, Open Graph)
-  proxy.js        locale routing policy (prefixed paths, `/` auto-detect)
+    contact/        validation, rate limiter, email templates, topics
+    page.ts         per-page metadata (canonical, hreflang, Open Graph)
+  messages/         de.json, en.json
+  proxy.ts          locale detection and redirect for `/`
 tests/
-  smoke.test.mjs          browser-free suite, runs in CI
+  smoke.test.mjs           browser-free suite, runs in CI
   browser/interactions.mjs local-only Playwright checks
 ```
