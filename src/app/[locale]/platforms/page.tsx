@@ -14,20 +14,22 @@ import { rich } from '@/lib/rich';
 // "Work with" rather than "partner": nothing here claims an official
 // partnership the client has not confirmed. Logos are the vendors' own
 // (public/logos/platforms), shown on a light plate so they read in both themes.
-const LOGOS: Record<string, string> = {
-  'One Identity Manager': 'one-identity',
-  'SailPoint IdentityIQ': 'sailpoint',
-  Omada: 'omada',
-  Saviynt: 'saviynt',
-  'SAP Cloud Identity Services: IPS': 'sap',
-  'SAP Cloud Identity Services: IAS': 'sap',
-  Okta: 'okta',
-  OneLogin: 'onelogin',
-  ForgeRock: 'ping-identity', // ForgeRock is part of Ping Identity
-  'Microsoft Entra ID': 'microsoft',
-  'Active Directory': 'microsoft',
-  CyberArk: 'cyberark',
-  BeyondTrust: 'beyondtrust',
+// The logo names the vendor, so a card only adds the part of the product name
+// the logo doesn't already say (none when they are the same).
+const LOGOS: Record<string, { logo: string; label?: string }> = {
+  'One Identity Manager': { logo: 'one-identity', label: 'Identity Manager' },
+  'SailPoint IdentityIQ': { logo: 'sailpoint', label: 'IdentityIQ' },
+  Omada: { logo: 'omada' },
+  Saviynt: { logo: 'saviynt' },
+  'SAP Cloud Identity Services: IPS': { logo: 'sap', label: 'Identity Provisioning (IPS)' },
+  'SAP Cloud Identity Services: IAS': { logo: 'sap', label: 'Identity Authentication (IAS)' },
+  Okta: { logo: 'okta' },
+  OneLogin: { logo: 'onelogin' },
+  ForgeRock: { logo: 'ping-identity', label: 'ForgeRock' }, // ForgeRock is part of Ping Identity
+  'Microsoft Entra ID': { logo: 'microsoft', label: 'Entra ID' },
+  'Active Directory': { logo: 'microsoft', label: 'Active Directory' },
+  CyberArk: { logo: 'cyberark' },
+  BeyondTrust: { logo: 'beyondtrust' },
 };
 
 type Group = {
@@ -82,25 +84,24 @@ export default async function PlatformsPage({ params }: PageProps<'/[locale]/pla
                     <StaggerItem key={item.name}>
                       <SpotlightCard className="h-full">
                         <div className="flex h-full flex-col p-7">
-                          {LOGOS[item.name] && (
-                            <div className="logo-plate mb-6 flex h-16 items-center rounded-2xl px-5">
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={`/logos/platforms/${LOGOS[item.name]}.svg`}
-                                alt={item.vendor}
-                                className={cn(
-                                  'w-auto max-w-[170px] object-contain',
-                                  LOGOS[item.name] === 'sap' ? 'h-10' : 'h-7'
-                                )}
-                                loading="lazy"
-                              />
-                            </div>
+                          <div className="logo-plate flex h-16 items-center rounded-2xl px-5">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={`/logos/platforms/${LOGOS[item.name].logo}.svg`}
+                              alt={item.name}
+                              className={cn(
+                                'w-auto max-w-[170px] object-contain',
+                                LOGOS[item.name].logo === 'sap' ? 'h-10' : 'h-7'
+                              )}
+                              loading="lazy"
+                            />
+                          </div>
+                          {LOGOS[item.name].label && (
+                            <h3 className="mt-5 text-xl font-medium tracking-tight">
+                              {LOGOS[item.name].label}
+                            </h3>
                           )}
-                          <span className="font-mono text-xs uppercase tracking-[0.16em] text-faint">
-                            {item.vendor}
-                          </span>
-                          <h3 className="mt-3 text-2xl font-medium tracking-tight">{item.name}</h3>
-                          <p className="mt-3 leading-relaxed text-muted">{item.text}</p>
+                          <p className="mt-4 leading-relaxed text-muted">{item.text}</p>
                         </div>
                       </SpotlightCard>
                     </StaggerItem>

@@ -725,7 +725,7 @@
           {
             "name": "SAP Cloud Identity Services: IPS",
             "vendor": "SAP",
-            "text": "Identity Provisioning: users and roles across SAP systems."
+            "text": "Users and roles provisioned across SAP systems."
           }
         ]
       },
@@ -753,7 +753,7 @@
           {
             "name": "SAP Cloud Identity Services: IAS",
             "vendor": "SAP",
-            "text": "Identity Authentication: sign-in and single sign-on for SAP applications."
+            "text": "Sign-in and single sign-on for SAP applications."
           }
         ]
       },
