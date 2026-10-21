@@ -547,11 +547,19 @@
       "sections": [
         {
           "heading": "Information pursuant to § 5 DDG",
-          "body": ["Qubital GmbH", "Herzogenaurach, Bavaria, Germany"]
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Germany"]
+        },
+        {
+          "heading": "Represented by",
+          "body": ["Managing director: Arun Kumar"]
         },
         {
           "heading": "Register entry",
           "body": ["Register court: Amtsgericht Fürth", "Registration number: HRB 20875"]
+        },
+        {
+          "heading": "VAT ID",
+          "body": ["VAT identification number pursuant to § 27a UStG: DE460765001"]
         },
         {
           "heading": "Contact",
@@ -559,7 +567,7 @@
         },
         {
           "heading": "Responsible for content according to § 18 (2) MStV",
-          "body": ["Qubital GmbH, Herzogenaurach, Bavaria, Germany"]
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Germany"]
         },
         {
           "heading": "Consumer dispute resolution",
@@ -583,7 +591,9 @@
           "body": [
             "Thank you for your interest in our website. Protecting your personal data matters to us. This privacy policy explains which personal data we process when you use this website, for which purposes and on which legal basis, and which rights you have.",
             "The controller within the meaning of the General Data Protection Regulation (GDPR) is:",
-            "Qubital GmbH, Herzogenaurach, Bavaria, Germany",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Germany",
+            "Represented by the managing director, Arun Kumar",
             "Email: hello@qubital.eu",
             "If you have any questions about data protection, you can reach us at any time at the email address above."
           ]

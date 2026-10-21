@@ -547,11 +547,19 @@
       "sections": [
         {
           "heading": "Angaben gemäß § 5 DDG",
-          "body": ["Qubital GmbH", "Herzogenaurach, Bayern, Deutschland"]
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Deutschland"]
+        },
+        {
+          "heading": "Vertreten durch",
+          "body": ["Geschäftsführer: Arun Kumar"]
         },
         {
           "heading": "Registereintrag",
           "body": ["Registergericht: Amtsgericht Fürth", "Registernummer: HRB 20875"]
+        },
+        {
+          "heading": "Umsatzsteuer-ID",
+          "body": ["Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE460765001"]
         },
         {
           "heading": "Kontakt",
@@ -562,7 +570,7 @@
         },
         {
           "heading": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-          "body": ["Qubital GmbH, Herzogenaurach, Bayern, Deutschland"]
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Deutschland"]
         },
         {
           "heading": "Verbraucherstreitbeilegung",
@@ -586,7 +594,9 @@
           "body": [
             "Vielen Dank für Ihr Interesse an unserer Website. Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten wir bei der Nutzung dieser Website verarbeiten, zu welchen Zwecken und auf welcher Rechtsgrundlage dies geschieht und welche Rechte Ihnen zustehen.",
             "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
-            "Qubital GmbH, Herzogenaurach, Bayern, Deutschland",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Deutschland",
+            "Vertreten durch den Geschäftsführer Arun Kumar",
             "E-Mail: hello@qubital.eu",
             "Bei Fragen zum Datenschutz erreichen Sie uns jederzeit unter der oben genannten E-Mail-Adresse."
           ]
