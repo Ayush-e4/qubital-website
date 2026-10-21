@@ -1,6 +1,6 @@
 # Qubital Website
 
-Marketing site for Qubital Systems GmbH, an Identity & Access Management
+Marketing site for Qubital GmbH, an Identity & Access Management
 consultancy (PAM, IGA, CIAM, workforce IAM, AI and agentic identity security).
 Next.js 16 (App Router), React 19, Tailwind CSS 4 and next-intl, served in German
 and English with localized URLs.
