@@ -7,9 +7,8 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 // Organisations Qubital has worked with (per the client). The logos are the
 // companies' own, in public/logos/clients. Heights are tuned per logo so a
-// round mark and a wide wordmark look about the same size. Belgacom is shown
-// under that name (it has traded as Proximus since 2015) because that is what
-// it was called when Qubital worked with it.
+// round mark and a wide wordmark look about the same size. Proximus is the
+// former Belgacom (renamed in 2015).
 const CLIENTS = [
   { file: 'bmw', name: 'BMW', size: 'h-14' },
   { file: 'luxair', name: 'Luxair', size: 'h-6' },
@@ -18,7 +17,7 @@ const CLIENTS = [
   { file: 'intersnack', name: 'Intersnack', size: 'h-12' },
   { file: 'ahold-delhaize', name: 'Ahold Delhaize', size: 'h-10' },
   { file: 'currys', name: 'Currys', size: 'h-14' },
-  { file: 'belgacom', name: 'Belgacom', size: 'h-7' },
+  { file: 'proximus', name: 'Proximus', size: 'h-7' },
 ];
 
 /** Logo wall with its own heading; used on Home, About and Industries. */
