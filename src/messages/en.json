@@ -9,7 +9,7 @@
       },
       "platforms": {
         "title": "Platforms",
-        "description": "The IAM products Qubital works with: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, ForgeRock, Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk and BeyondTrust."
+        "description": "The IAM products Qubital works with: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, Ping Identity (formerly ForgeRock), Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk and BeyondTrust."
       },
       "about": {
         "title": "About & Mission",
@@ -76,9 +76,6 @@
       "description": "Qubital is an identity & access management consultancy. We help organisations control who and what can access their systems, from privileged accounts and identity governance to customer, workforce and AI agent identities.",
       "primary": "Start a project",
       "secondary": "Explore services"
-    },
-    "clients": {
-      "title": "Organisations we have worked with"
     },
     "marquee": "IAM platforms we work with",
     "statement": "Our name comes from the qubit, which can be 0 and 1 at the same time. Access can't. Every login, every permission, every action of an AI agent ends in one decision: granted or denied. We make sure each one is right.",
@@ -746,7 +743,7 @@
             "text": "Cloud single sign-on and MFA."
           },
           {
-            "name": "ForgeRock",
+            "name": "Ping Identity (formerly ForgeRock)",
             "vendor": "Ping Identity",
             "text": "Access management for large-scale customer and workforce identity."
           },
@@ -800,5 +797,9 @@
       "text": "Most identity projects connect several products. Tell us what you run today and we will tell you honestly how we can help.",
       "button": "Talk to us"
     }
+  },
+  "clients": {
+    "title": "Organisations we have <em>worked with.</em>",
+    "description": "From automotive and aviation to banking, pharma, retail and telecom."
   }
 }

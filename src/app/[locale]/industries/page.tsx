@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { ClientLogos } from '@/components/home/ClientLogos';
 import { CTASection } from '@/components/sections/CTASection';
 import Image from 'next/image';
 import { industryIcons, industryImages, type Industry } from '@/components/sections/industries';
@@ -55,6 +56,7 @@ export default async function IndustriesPage({ params }: PageProps<'/[locale]/in
         </Container>
       </section>
 
+      <ClientLogos />
       <CTASection />
     </>
   );

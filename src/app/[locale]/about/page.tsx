@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import bavaria from '@/assets/photos/bavaria.jpg';
 import { BitVsQubit } from '@/components/sections/BitVsQubit';
+import { ClientLogos } from '@/components/home/ClientLogos';
 import { CTASection } from '@/components/sections/CTASection';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container } from '@/components/ui/Container';
@@ -125,6 +126,7 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
         </Container>
       </section>
 
+      <ClientLogos />
       <CTASection />
     </>
   );

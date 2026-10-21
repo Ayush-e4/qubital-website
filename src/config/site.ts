@@ -5,5 +5,6 @@ export const site = {
   legalName: 'Qubital GmbH',
   url: 'https://qubital.eu',
   email: 'hello@qubital.eu',
+  linkedin: 'https://www.linkedin.com/company/qubital-gmbh/',
   location: 'Bavaria, Germany',
 } as const;

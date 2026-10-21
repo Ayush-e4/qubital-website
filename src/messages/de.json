@@ -9,7 +9,7 @@
       },
       "platforms": {
         "title": "Plattformen",
-        "description": "Die IAM-Produkte, mit denen Qubital arbeitet: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, ForgeRock, Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk und BeyondTrust."
+        "description": "Die IAM-Produkte, mit denen Qubital arbeitet: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, Ping Identity (ehemals ForgeRock), Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk und BeyondTrust."
       },
       "about": {
         "title": "Über uns & Mission",
@@ -76,9 +76,6 @@
       "description": "Qubital ist eine Beratung für Identity & Access Management. Wir helfen Unternehmen zu steuern, wer und was auf ihre Systeme zugreifen darf: von privilegierten Konten und Identity Governance bis zu Kunden-, Mitarbeitenden- und KI-Agenten-Identitäten.",
       "primary": "Projekt starten",
       "secondary": "Leistungen entdecken"
-    },
-    "clients": {
-      "title": "Unternehmen, mit denen wir gearbeitet haben"
     },
     "marquee": "IAM-Plattformen, mit denen wir arbeiten",
     "statement": "Unser Name geht auf das Qubit zurück, das gleichzeitig 0 und 1 sein kann. Zugriff kann das nicht. Jeder Login, jede Berechtigung, jede Aktion eines KI-Agenten endet in einer Entscheidung: erlaubt oder verweigert. Wir sorgen dafür, dass jede davon richtig ist.",
@@ -749,7 +746,7 @@
             "text": "Single Sign-on und MFA aus der Cloud."
           },
           {
-            "name": "ForgeRock",
+            "name": "Ping Identity (ehemals ForgeRock)",
             "vendor": "Ping Identity",
             "text": "Access Management für Kunden- und Mitarbeiteridentitäten in großem Maßstab."
           },
@@ -803,5 +800,9 @@
       "text": "Die meisten Identity-Projekte verbinden mehrere Produkte. Erzählen Sie uns, was heute bei Ihnen läuft, und wir sagen Ihnen ehrlich, wie wir helfen können.",
       "button": "Sprechen Sie uns an"
     }
+  },
+  "clients": {
+    "title": "Unternehmen, mit denen wir <em>gearbeitet haben.</em>",
+    "description": "Von Automobilindustrie und Luftfahrt bis zu Banken, Pharma, Handel und Telekommunikation."
   }
 }
