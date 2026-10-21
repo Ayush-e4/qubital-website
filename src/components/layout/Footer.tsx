@@ -5,6 +5,7 @@ import { serviceKeys } from '../sections/services';
 import { Logo } from '../Logo';
 import { AuroraWordmark } from '../ui/AuroraWordmark';
 import { Container } from '../ui/Container';
+import { LinkedInIcon } from '../ui/LinkedInIcon';
 import { mainNav } from './nav';
 
 export function Footer() {
@@ -63,6 +64,17 @@ export function Footer() {
             </li>
             <li className="text-sm text-muted">{t('contact.info.hoursValue')}</li>
             <li className="text-sm text-muted">{site.location}</li>
+            <li>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link inline-flex items-center gap-2"
+              >
+                <LinkedInIcon className="size-4" />
+                LinkedIn
+              </a>
+            </li>
           </FooterCol>
         </div>
       </Container>
