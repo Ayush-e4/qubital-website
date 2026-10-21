@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { CTASection } from '@/components/sections/CTASection';
-import { industryIcons, type Industry } from '@/components/sections/industries';
+import Image from 'next/image';
+import { industryIcons, industryImages, type Industry } from '@/components/sections/industries';
 import { PageHero } from '@/components/sections/PageHero';
 import { Container } from '@/components/ui/Container';
 import { Stagger, StaggerItem } from '@/components/ui/Reveal';
@@ -29,12 +30,19 @@ export default async function IndustriesPage({ params }: PageProps<'/[locale]/in
               return (
                 <StaggerItem key={item.key}>
                   <SpotlightCard className="h-full">
-                    <div className="flex h-full min-h-44 flex-col justify-between gap-8 p-7">
-                      <div className="flex items-start justify-between">
-                        <span className="flex size-12 items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-violet/20 to-cyan/10 text-cyan transition-transform duration-700 group-hover/card:scale-110">
-                          <Icon className="size-5" strokeWidth={1.6} />
-                        </span>
-                      </div>
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={industryImages[item.key]}
+                        alt=""
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        placeholder="blur"
+                        className="size-full object-cover transition-transform duration-700 ease-out-expo group-hover/card:scale-105"
+                      />
+                    </div>
+                    <div className="flex items-center gap-4 p-6">
+                      <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-violet/20 to-cyan/10 text-cyan">
+                        <Icon className="size-5" strokeWidth={1.6} />
+                      </span>
                       <h2 className="text-xl font-medium tracking-tight text-balance">
                         {item.title}
                       </h2>

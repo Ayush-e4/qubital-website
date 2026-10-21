@@ -14,7 +14,7 @@ cp .env.example .env.local   # optional, see Environment variables
 npm run dev
 ```
 
-Node `>=22.13.0` is required (see `engines` in `package.json`; `.nvmrc` is the
+Node 22 (`>=22.13.0 <23`) is required (see `engines` in `package.json`; `.nvmrc` is the
 version CI uses).
 
 ## Scripts
@@ -97,6 +97,30 @@ commercial use, no attribution required). Credited here anyway:
 
 Swap any of them for real photos of the team when those exist.
 
+Industry card photos (`src/assets/industries/`) are Unsplash photos too
+(Unsplash License), cropped to 16:10. Source IDs:
+
+| File                | Unsplash photo                     |
+| ------------------- | ---------------------------------- |
+| `automotive.jpg`    | `photo-1589320012458-ce28bd1c86b1` |
+| `aviation.jpg`      | `photo-1610642372677-bcddb69f3531` |
+| `banking.jpg`       | `photo-1773775098057-bc43ea51c347` |
+| `pharma.jpg`        | `photo-1581093577421-f561a654a353` |
+| `retail.jpg`        | `photo-1578916171728-46686eac8d58` |
+| `telecom.jpg`       | `photo-1673798880756-889117cacb7e` |
+| `tourism.jpg`       | `photo-1619680939776-4eadd78709a4` |
+| `insurance.jpg`     | `photo-1606788075819-9574a6edfab3` |
+| `manufacturing.jpg` | `photo-1761195696590-3490ea770aa1` |
+
+## Logos
+
+Third-party logos live in `public/logos/` and are trademarks of their owners.
+They are shown to name the products Qubital works with (`platforms/`) and the
+organisations it has worked with (`clients/`), as confirmed by the client;
+nothing on the site claims an official partnership. Sources: the company's own
+website (One Identity, SailPoint, Omada, Saviynt, Intersnack, and Novo Nordisk,
+whose logo is a glyph in its site's icon font) or Wikimedia Commons (the rest).
+
 ## Product clips
 
 The short animations on Home and Services are rendered with Remotion from the
@@ -116,7 +140,7 @@ gracefully when unset.
 | `NEXT_PUBLIC_POSTHOG_KEY`      | PostHog project key                                           |
 | `NEXT_PUBLIC_POSTHOG_HOST`     | PostHog host (defaults to EU)                                 |
 | `RESEND_API_KEY`               | Resend API key for contact form delivery                      |
-| `CONTACT_TO_EMAIL`             | Inquiry recipient (default `contact@qubital.eu`)              |
+| `CONTACT_TO_EMAIL`             | Inquiry recipient (default `hello@qubital.eu`)                |
 | `CONTACT_CC_EMAIL`             | Copied on every inquiry (default `arun1812@gmail.com`)        |
 | `CONTACT_FROM_EMAIL`           | Verified sender; unset falls back to Resend's sandbox address |
 | `CONTACT_RATE_LIMIT_MAX`       | Submissions per IP per window (default `5`)                   |
@@ -157,7 +181,7 @@ sharing would let the first few submissions lock every visitor out of the form.
 **`qubital.eu` must be verified in Resend before `CONTACT_FROM_EMAIL` can be set
 to an address on it**. Until then, sending uses Resend's sandbox address. The
 DNS records Resend issues go on the `send.qubital.eu` subdomain; the root MX
-records must be left alone, or `contact@qubital.eu` stops receiving mail.
+records must be left alone, or `hello@qubital.eu` stops receiving mail.
 
 ## Testing
 
@@ -210,6 +234,12 @@ cp -r public      .next/standalone/public
 node .next/standalone/server.js                    # page 200, css 200
 ```
 
+`npm run build:azure` is `next build` plus those two copies. Use it instead of
+`npm run build` in any pipeline that ships `.next/standalone`; on Azure Static
+Web Apps, set `app_build_command: 'npm run build:azure'` in the workflow. The
+plain `build` script cannot do the copies, because Vercel builds without
+`standalone` and the `cp` would fail there.
+
 Run it with `node .next/standalone/server.js`. It honours `PORT` and `HOSTNAME`,
 which is what App Service and Container Apps inject.
 
@@ -222,7 +252,9 @@ the values during the build step in the pipeline.
 _optional_, which npm is allowed to skip, and self-hosted `next/image`
 optimisation needs it. Vercel bundles its own, so this only matters off Vercel.
 
-Node `>=22.13.0` is required; `.nvmrc` is the version CI uses.
+Node 22 (`>=22.13.0 <23`) is required; `.nvmrc` is the version CI uses. The upper
+bound matters on Azure Static Web Apps: its builder picks the newest Node that
+satisfies `engines`, and the hosted Next.js runtime only accepts 18, 20 and 22.
 
 > **Note:** `qubital.eu` currently serves a separate legacy static site from
 > S3/CloudFront, not this application. This app is the replacement; the domain

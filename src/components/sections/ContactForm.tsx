@@ -187,7 +187,7 @@ export function ContactForm() {
                       defaultChecked={i === 0}
                       className="peer sr-only"
                     />
-                    <span className="block rounded-full border border-line bg-fg/[0.02] px-4 py-2 text-sm text-muted transition-all duration-300 hover:border-line-strong hover:text-fg peer-checked:border-transparent peer-checked:bg-fg peer-checked:text-bg peer-focus-visible:outline-2 peer-focus-visible:outline-cyan">
+                    <span className="block rounded-xl border border-line bg-fg/[0.02] px-4 py-2 text-sm text-muted transition-all duration-300 hover:border-line-strong hover:text-fg peer-checked:border-transparent peer-checked:bg-fg peer-checked:text-bg peer-focus-visible:outline-2 peer-focus-visible:outline-cyan">
                       {t(`topics.${topic}`)}
                     </span>
                   </label>

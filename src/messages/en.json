@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Qubital: Identity & Access Management consulting from Germany",
-    "description": "Qubital is an identity & access management consultancy from Germany: privileged access (PAM), identity governance (IGA), customer identity (CIAM), workforce identity (WIAM) and non-human identity (NHI) and AI agent identity governance.",
+    "description": "Qubital is an identity & access management consultancy from Germany: identity governance (IGA), Non-Human Identity (NHI) and AI agent identity governance, privileged access (PAM), customer identity (CIAM) and workforce identity (WIAM).",
     "pages": {
       "services": {
         "title": "Services",
-        "description": "Privileged access (PAM), identity governance (IGA), customer identity (CIAM), workforce identity (WIAM) and non-human identity (NHI) and AI agent identity governance from Qubital."
+        "description": "Identity governance (IGA), Non-Human Identity (NHI) and AI agent identity governance, privileged access (PAM), customer identity (CIAM) and workforce identity (WIAM) from Qubital."
       },
       "platforms": {
         "title": "Platforms",
@@ -76,6 +76,9 @@
       "description": "Qubital is an identity & access management consultancy. We help organisations control who and what can access their systems, from privileged accounts and identity governance to customer, workforce and AI agent identities.",
       "primary": "Start a project",
       "secondary": "Explore services"
+    },
+    "clients": {
+      "title": "Organisations we have worked with"
     },
     "marquee": "IAM platforms we work with",
     "statement": "Our name comes from the qubit, which can be 0 and 1 at the same time. Access can't. Every login, every permission, every action of an AI agent ends in one decision: granted or denied. We make sure each one is right.",
@@ -206,7 +209,7 @@
     },
     "page": {
       "title": "Identity security. <em>Done right.</em>",
-      "description": "Five specialised areas covering every identity in your organisation: administrators, employees, customers, service accounts and AI agents.",
+      "description": "Five specialised areas covering every identity in your organisation: administrators, employees, customers, service accounts, contractors and AI agents.",
       "deliverables": "What’s included",
       "models": {
         "title": "Work with us <em>your way.</em>",
@@ -528,7 +531,7 @@
     }
   },
   "footer": {
-    "tagline": "Identity & access management consulting from Germany. PAM, IGA, CIAM, workforce identity and non-human identity (NHI) from one partner.",
+    "tagline": "Identity & access management consulting from Germany. IGA, Non-Human Identity (NHI), PAM, CIAM and workforce identity from one partner.",
     "company": "Company",
     "services": "Services",
     "legal": "Legal",
@@ -548,7 +551,7 @@
         },
         {
           "heading": "Contact",
-          "body": ["Email: contact@qubital.eu", "Business hours: Mon to Fri, 8:00 to 18:00 CET"]
+          "body": ["Email: hello@qubital.eu", "Business hours: Mon to Fri, 8:00 to 18:00 CET"]
         },
         {
           "heading": "Responsible for content according to § 18 (2) MStV",
@@ -576,7 +579,7 @@
           "body": [
             "The controller responsible for data processing on this website is:",
             "Qubital Systems GmbH, Herzogenaurach, Bavaria, Germany",
-            "Email: contact@qubital.eu"
+            "Email: hello@qubital.eu"
           ]
         },
         {
@@ -612,7 +615,7 @@
         {
           "heading": "7. Your rights",
           "body": [
-            "You have the right to access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21). To exercise these rights, contact us at contact@qubital.eu. You also have the right to lodge a complaint with a data protection supervisory authority, for example the Bavarian State Office for Data Protection Supervision (BayLDA)."
+            "You have the right to access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21). To exercise these rights, contact us at hello@qubital.eu. You also have the right to lodge a complaint with a data protection supervisory authority, for example the Bavarian State Office for Data Protection Supervision (BayLDA)."
           ]
         },
         {

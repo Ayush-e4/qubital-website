@@ -7,11 +7,29 @@ import { Container } from '@/components/ui/Container';
 import { Reveal, Stagger, StaggerItem } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { Link } from '@/i18n/navigation';
+import { cn } from '@/lib/cn';
 import { initPage, pageMetadata } from '@/lib/page';
 import { rich } from '@/lib/rich';
 
-// Names only, no vendor logos, and "work with" rather than "partner": nothing
-// here claims an official partnership the client has not confirmed.
+// "Work with" rather than "partner": nothing here claims an official
+// partnership the client has not confirmed. Logos are the vendors' own
+// (public/logos/platforms), shown on a light plate so they read in both themes.
+const LOGOS: Record<string, string> = {
+  'One Identity Manager': 'one-identity',
+  'SailPoint IdentityIQ': 'sailpoint',
+  Omada: 'omada',
+  Saviynt: 'saviynt',
+  'SAP Cloud Identity Services: IPS': 'sap',
+  'SAP Cloud Identity Services: IAS': 'sap',
+  Okta: 'okta',
+  OneLogin: 'onelogin',
+  ForgeRock: 'ping-identity', // ForgeRock is part of Ping Identity
+  'Microsoft Entra ID': 'microsoft',
+  'Active Directory': 'microsoft',
+  CyberArk: 'cyberark',
+  BeyondTrust: 'beyondtrust',
+};
+
 type Group = {
   key: string;
   service: ServiceKey;
@@ -64,6 +82,20 @@ export default async function PlatformsPage({ params }: PageProps<'/[locale]/pla
                     <StaggerItem key={item.name}>
                       <SpotlightCard className="h-full">
                         <div className="flex h-full flex-col p-7">
+                          {LOGOS[item.name] && (
+                            <div className="logo-plate mb-6 flex h-16 items-center rounded-2xl px-5">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={`/logos/platforms/${LOGOS[item.name]}.svg`}
+                                alt={item.vendor}
+                                className={cn(
+                                  'w-auto max-w-[170px] object-contain',
+                                  LOGOS[item.name] === 'sap' ? 'h-10' : 'h-7'
+                                )}
+                                loading="lazy"
+                              />
+                            </div>
+                          )}
                           <span className="font-mono text-xs uppercase tracking-[0.16em] text-faint">
                             {item.vendor}
                           </span>

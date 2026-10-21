@@ -8,11 +8,12 @@ import { serviceIcons, serviceKeys } from './services';
 
 // Bento layout for five cards: three across the top, two wider ones below.
 const spans = [
-  'lg:col-span-2',
-  'lg:col-span-2',
-  'lg:col-span-2',
+  // two wide cards on top (the NHI title is long), three below
   'lg:col-span-3',
-  'sm:col-span-2 lg:col-span-3',
+  'lg:col-span-3',
+  'lg:col-span-2',
+  'lg:col-span-2',
+  'sm:col-span-2 lg:col-span-2',
 ];
 
 export function ServicesGrid() {

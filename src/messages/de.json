@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Qubital: Identity & Access Management Beratung aus Deutschland",
-    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie Non-Human Identities (NHI) und Identity Governance für KI-Agenten.",
+    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Identity Governance (IGA), Non-Human Identities (NHI) und Identity Governance für KI-Agenten, Privileged Access (PAM), Customer Identity (CIAM) und Workforce Identity (WIAM).",
     "pages": {
       "services": {
         "title": "Leistungen",
-        "description": "Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie Non-Human Identities (NHI) und Identity Governance für KI-Agenten von Qubital."
+        "description": "Identity Governance (IGA), Non-Human Identities (NHI) und Identity Governance für KI-Agenten, Privileged Access (PAM), Customer Identity (CIAM) und Workforce Identity (WIAM) von Qubital."
       },
       "platforms": {
         "title": "Plattformen",
@@ -76,6 +76,9 @@
       "description": "Qubital ist eine Beratung für Identity & Access Management. Wir helfen Unternehmen zu steuern, wer und was auf ihre Systeme zugreifen darf: von privilegierten Konten und Identity Governance bis zu Kunden-, Mitarbeitenden- und KI-Agenten-Identitäten.",
       "primary": "Projekt starten",
       "secondary": "Leistungen entdecken"
+    },
+    "clients": {
+      "title": "Unternehmen, mit denen wir gearbeitet haben"
     },
     "marquee": "IAM-Plattformen, mit denen wir arbeiten",
     "statement": "Unser Name geht auf das Qubit zurück, das gleichzeitig 0 und 1 sein kann. Zugriff kann das nicht. Jeder Login, jede Berechtigung, jede Aktion eines KI-Agenten endet in einer Entscheidung: erlaubt oder verweigert. Wir sorgen dafür, dass jede davon richtig ist.",
@@ -206,7 +209,7 @@
     },
     "page": {
       "title": "Identity Security. <em>Richtig gemacht.</em>",
-      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden, Servicekonten und KI-Agenten.",
+      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden, Servicekonten, externe Dienstleister und KI-Agenten.",
       "deliverables": "Das ist enthalten",
       "models": {
         "title": "Arbeiten Sie mit uns, <em>wie es passt.</em>",
@@ -528,7 +531,7 @@
     }
   },
   "footer": {
-    "tagline": "Identity & Access Management Beratung aus Deutschland. PAM, IGA, CIAM, Workforce Identity und Non-Human Identities (NHI) aus einer Hand.",
+    "tagline": "Identity & Access Management Beratung aus Deutschland. IGA, Non-Human Identities (NHI), PAM, CIAM und Workforce Identity aus einer Hand.",
     "company": "Unternehmen",
     "services": "Leistungen",
     "legal": "Rechtliches",
@@ -549,7 +552,7 @@
         {
           "heading": "Kontakt",
           "body": [
-            "E-Mail: contact@qubital.eu",
+            "E-Mail: hello@qubital.eu",
             "Geschäftszeiten: Mo bis Fr, 8:00 bis 18:00 Uhr (MEZ)"
           ]
         },
@@ -579,7 +582,7 @@
           "body": [
             "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
             "Qubital Systems GmbH, Herzogenaurach, Bayern, Deutschland",
-            "E-Mail: contact@qubital.eu"
+            "E-Mail: hello@qubital.eu"
           ]
         },
         {
@@ -615,7 +618,7 @@
         {
           "heading": "7. Ihre Rechte",
           "body": [
-            "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Wenden Sie sich dazu an contact@qubital.eu. Zudem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, beispielsweise beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA)."
+            "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Wenden Sie sich dazu an hello@qubital.eu. Zudem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, beispielsweise beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA)."
           ]
         },
         {
