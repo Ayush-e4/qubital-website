@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Qubital: Identity & Access Management consulting from Germany",
-    "description": "Qubital is an identity & access management consultancy from Germany: privileged access (PAM), identity governance (IGA), customer identity (CIAM), workforce identity (WIAM) and non-human identity (NHI) and AI agent identity governance.",
+    "description": "Qubital is an identity & access management consultancy from Germany: identity governance (IGA), Non-Human Identity (NHI) and AI agent identity governance, privileged access (PAM), customer identity (CIAM) and workforce identity (WIAM).",
     "pages": {
       "services": {
         "title": "Services",
-        "description": "Privileged access (PAM), identity governance (IGA), customer identity (CIAM), workforce identity (WIAM) and non-human identity (NHI) and AI agent identity governance from Qubital."
+        "description": "Identity governance (IGA), Non-Human Identity (NHI) and AI agent identity governance, privileged access (PAM), customer identity (CIAM) and workforce identity (WIAM) from Qubital."
       },
       "platforms": {
         "title": "Platforms",
@@ -76,6 +76,9 @@
       "description": "Qubital is an identity & access management consultancy. We help organisations control who and what can access their systems, from privileged accounts and identity governance to customer, workforce and AI agent identities.",
       "primary": "Start a project",
       "secondary": "Explore services"
+    },
+    "clients": {
+      "title": "Organisations we have worked with"
     },
     "marquee": "IAM platforms we work with",
     "statement": "Our name comes from the qubit, which can be 0 and 1 at the same time. Access can't. Every login, every permission, every action of an AI agent ends in one decision: granted or denied. We make sure each one is right.",
@@ -206,7 +209,7 @@
     },
     "page": {
       "title": "Identity security. <em>Done right.</em>",
-      "description": "Five specialised areas covering every identity in your organisation: administrators, employees, customers, service accounts and AI agents.",
+      "description": "Five specialised areas covering every identity in your organisation: administrators, employees, customers, service accounts, contractors and AI agents.",
       "deliverables": "What’s included",
       "models": {
         "title": "Work with us <em>your way.</em>",
@@ -528,7 +531,7 @@
     }
   },
   "footer": {
-    "tagline": "Identity & access management consulting from Germany. PAM, IGA, CIAM, workforce identity and non-human identity (NHI) from one partner.",
+    "tagline": "Identity & access management consulting from Germany. IGA, Non-Human Identity (NHI), PAM, CIAM and workforce identity from one partner.",
     "company": "Company",
     "services": "Services",
     "legal": "Legal",
@@ -544,15 +547,27 @@
       "sections": [
         {
           "heading": "Information pursuant to § 5 DDG",
-          "body": ["Qubital Systems GmbH", "Herzogenaurach, Bavaria, Germany"]
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Germany"]
+        },
+        {
+          "heading": "Represented by",
+          "body": ["Managing director: Arun Kumar"]
+        },
+        {
+          "heading": "Register entry",
+          "body": ["Register court: Amtsgericht Fürth", "Registration number: HRB 20875"]
+        },
+        {
+          "heading": "VAT ID",
+          "body": ["VAT identification number pursuant to § 27a UStG: DE460765001"]
         },
         {
           "heading": "Contact",
-          "body": ["Email: contact@qubital.eu", "Business hours: Mon to Fri, 8:00 to 18:00 CET"]
+          "body": ["Email: hello@qubital.eu", "Business hours: Mon to Fri, 8:00 to 18:00 CET"]
         },
         {
           "heading": "Responsible for content according to § 18 (2) MStV",
-          "body": ["Qubital Systems GmbH, Herzogenaurach, Bavaria, Germany"]
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Germany"]
         },
         {
           "heading": "Consumer dispute resolution",
@@ -572,56 +587,95 @@
       "title": "Privacy Policy",
       "sections": [
         {
-          "heading": "1. Controller",
+          "heading": "1. Introduction and controller",
           "body": [
-            "The controller responsible for data processing on this website is:",
-            "Qubital Systems GmbH, Herzogenaurach, Bavaria, Germany",
-            "Email: contact@qubital.eu"
+            "Thank you for your interest in our website. Protecting your personal data matters to us. This privacy policy explains which personal data we process when you use this website, for which purposes and on which legal basis, and which rights you have.",
+            "The controller within the meaning of the General Data Protection Regulation (GDPR) is:",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Germany",
+            "Represented by the managing director, Arun Kumar",
+            "Email: hello@qubital.eu",
+            "If you have any questions about data protection, you can reach us at any time at the email address above."
           ]
         },
         {
-          "heading": "2. Hosting",
+          "heading": "2. Data collected when you visit our website",
           "body": [
-            "This website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. When you visit the website, the hosting provider processes technical data such as your IP address and the date and time of access in server log files. The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest is the secure and reliable provision of the website. Transfers to the USA are based on the European Commission's standard contractual clauses or an adequacy decision such as the EU-U.S. Data Privacy Framework."
+            "## 2.1 Server log files",
+            "When you visit our website for information only, without contacting us, your browser automatically sends data to the server that delivers the website. This data is stored in server log files: the IP address of the requesting device, the date and time of access, the page or file requested, the website from which you were referred, the browser and operating system used, and the amount of data transferred.",
+            "We use this data to deliver the website, to keep it stable and secure, and to detect and prevent misuse. The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest lies in these purposes. The data is not combined with other data sources and is not used to identify you. Log files are deleted automatically after a short period, unless they are needed to investigate a specific security incident.",
+            "## 2.2 Encryption",
+            "For security reasons and to protect confidential content, such as enquiries you send us, this website uses SSL/TLS encryption. You can recognise an encrypted connection by \"https://\" in your browser’s address bar and the lock symbol. With encryption active, the data you send us cannot be read by third parties."
           ]
         },
         {
-          "heading": "3. Contact form and email",
+          "heading": "3. Hosting and content delivery",
           "body": [
-            "If you contact us via the contact form or by email, we process the data you provide (name, email address, organisation, area of interest and message) to answer your inquiry. The legal basis is Art. 6 (1) (b) GDPR where your inquiry relates to a contract, and otherwise Art. 6 (1) (f) GDPR. Email delivery is handled by Resend, acting as our processor under Art. 28 GDPR. We delete the data once it is no longer needed, unless statutory retention obligations apply."
+            "This website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel operates a global content delivery network, so the website can be delivered from a server close to you. In doing so, Vercel processes the data described in section 2.1 on our behalf.",
+            "Vercel acts as our processor under a data processing agreement pursuant to Art. 28 GDPR. The legal basis for using Vercel is Art. 6 (1) (f) GDPR; our legitimate interest is the secure, fast and reliable provision of our website. Transfers to the USA are based on the European Commission’s standard contractual clauses or an adequacy decision such as the EU-U.S. Data Privacy Framework."
           ]
         },
         {
-          "heading": "4. Analytics",
+          "heading": "4. Cookies and local storage",
           "body": [
-            "For product analytics we use PostHog, hosted in the EU and acting as our processor under Art. 28 GDPR. PostHog is configured to store no cookies or other identifiers in your browser and to respect the Do Not Track signal. The resulting statistics are pseudonymous and are not used to identify you. The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest is understanding how the website is used in order to improve it."
+            "Cookies are small text files that your browser stores on your device. This website uses no tracking or marketing cookies.",
+            "We set one technically necessary cookie, NEXT_LOCALE. It contains only your language (for example \"de\" or \"en\") and is used solely to show the website in the language you chose. In addition, your chosen colour theme (light or dark) is stored in your browser’s local storage. Neither is used to track you or shared with third parties.",
+            "The legal basis is § 25 (2) No. 2 TDDDG, as this storage is strictly necessary to provide the website you requested, together with Art. 6 (1) (f) GDPR. You can delete cookies and local storage in your browser settings at any time or block them; the website will then use its default language and theme.",
+            "Because we use no cookies or similar technologies that require consent, we do not show a cookie banner."
           ]
         },
         {
-          "heading": "5. Cookies and local storage",
+          "heading": "5. Contacting us",
           "body": [
-            "This website uses no tracking or marketing cookies. It sets one technically necessary cookie (NEXT_LOCALE) to remember your language, and stores your chosen colour theme (light or dark) in your browser's local storage. Neither leaves your device for tracking purposes. The legal basis is § 25 (2) TDDDG."
+            "## 5.1 Contact form",
+            "If you send us a message via the contact form, we process the data you enter: your name, email address, organisation (optional), the topic you select and your message. We use this data only to handle your enquiry and any follow-up questions. You will also receive an automatic confirmation of receipt by email.",
+            "The legal basis is Art. 6 (1) (b) GDPR where your enquiry relates to a contract or to pre-contractual measures, and otherwise Art. 6 (1) (f) GDPR; our legitimate interest lies in responding to enquiries addressed to us. Emails from the contact form are delivered via Resend, Inc. (USA), acting as our processor under Art. 28 GDPR. Transfers to the USA are based on the European Commission’s standard contractual clauses or the EU-U.S. Data Privacy Framework.",
+            "## 5.2 Email",
+            "If you contact us by email, we process your email address and the information contained in your message in order to answer it. The legal basis is the same as for the contact form (section 5.1).",
+            "We delete the data from your enquiry once it has been dealt with and is no longer needed, unless statutory retention obligations apply, for example under commercial or tax law."
           ]
         },
         {
-          "heading": "6. Fonts",
+          "heading": "6. Web analytics",
           "body": [
-            "All fonts are served from our own server. No connection to external font providers (such as Google) is made when you visit the website."
+            "To understand how our website is used and to improve it, we use the analytics service PostHog (PostHog Inc.). Data is stored on servers in the European Union, and PostHog acts as our processor under Art. 28 GDPR.",
+            "PostHog is configured on this website so that no cookies or other identifiers are stored on your device. It records which pages are viewed and basic technical information about the visit, such as the browser and device type. Browsers that send a Do Not Track signal are not recorded. The resulting statistics are pseudonymous and are not used to identify you.",
+            "The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest lies in the anonymous evaluation of how our website is used. You can object to this processing at any time (see section 8.2), for example by enabling Do Not Track in your browser."
           ]
         },
         {
-          "heading": "7. Your rights",
+          "heading": "7. Website functions",
           "body": [
-            "You have the right to access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21). To exercise these rights, contact us at contact@qubital.eu. You also have the right to lodge a complaint with a data protection supervisory authority, for example the Bavarian State Office for Data Protection Supervision (BayLDA)."
+            "## 7.1 Fonts",
+            "All fonts on this website are delivered from our own hosting. No connection to external font providers, such as Google Fonts, is established when you visit the website.",
+            "## 7.2 Images and animations",
+            "All images and animations on this website are delivered from our own hosting. We do not embed content from third-party platforms, such as video services or social networks."
           ]
         },
         {
-          "heading": "8. Changes",
+          "heading": "8. Your rights",
           "body": [
-            "We may update this privacy policy to reflect changes in legal requirements or our services. The current version is always available on this page."
+            "## 8.1 Rights under the GDPR",
+            "You have the right to access your personal data (Art. 15 GDPR), to rectification (Art. 16 GDPR), to erasure (Art. 17 GDPR), to restriction of processing (Art. 18 GDPR), to notification (Art. 19 GDPR) and to data portability (Art. 20 GDPR). Where processing is based on your consent, you can withdraw it at any time with effect for the future (Art. 7 (3) GDPR). To exercise these rights, simply write to hello@qubital.eu.",
+            "You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR). The authority responsible for us is the Bavarian State Office for Data Protection Supervision (BayLDA), Promenade 18, 91522 Ansbach, Germany.",
+            "## 8.2 Right to object",
+            "Where we process your personal data on the basis of our legitimate interests (Art. 6 (1) (f) GDPR), you have the right to object to this processing at any time on grounds relating to your particular situation (Art. 21 GDPR). We will then no longer process the data unless we can demonstrate compelling legitimate grounds that override your interests, rights and freedoms, or the processing serves the establishment, exercise or defence of legal claims."
+          ]
+        },
+        {
+          "heading": "9. Storage duration",
+          "body": [
+            "We store personal data only for as long as is necessary for the purpose for which it was collected, or as long as statutory retention periods require. Sections 2 to 6 describe the storage periods for the individual processing activities. Once the purpose no longer applies and no retention obligation exists, the data is deleted."
+          ]
+        },
+        {
+          "heading": "10. Changes to this privacy policy",
+          "body": [
+            "We update this privacy policy when our website, our services or the legal requirements change. The current version is always available on this page."
           ]
         }
-      ]
+      ],
+      "date": "22 October 2026"
     }
   },
   "notFound": {
@@ -671,7 +725,7 @@
           {
             "name": "SAP Cloud Identity Services: IPS",
             "vendor": "SAP",
-            "text": "Identity Provisioning: users and roles across SAP systems."
+            "text": "Users and roles provisioned across SAP systems."
           }
         ]
       },
@@ -699,7 +753,7 @@
           {
             "name": "SAP Cloud Identity Services: IAS",
             "vendor": "SAP",
-            "text": "Identity Authentication: sign-in and single sign-on for SAP applications."
+            "text": "Sign-in and single sign-on for SAP applications."
           }
         ]
       },

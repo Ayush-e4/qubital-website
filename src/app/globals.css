@@ -134,6 +134,12 @@
   background-size: 200% 100%;
 }
 
+/* A light plate for third-party logos, which are designed for white */
+@utility logo-plate {
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
 @utility bg-grid {
   background-image:
     linear-gradient(to right, var(--grid) 1px, transparent 1px),

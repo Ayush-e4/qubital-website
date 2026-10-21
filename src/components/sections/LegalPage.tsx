@@ -5,6 +5,9 @@ import { Reveal } from '../ui/Reveal';
 
 type Section = { heading: string; body: string[] };
 
+// A body line starting with "## " is a numbered sub-heading (e.g. "## 2.1 Server log files")
+const SUBHEADING = '## ';
+
 // Highlights [placeholders] so the client can spot what still needs filling in.
 function withPlaceholders(text: string) {
   return text.split(/(\[[^\]]+\])/g).map((part, i) =>
@@ -42,14 +45,25 @@ export async function LegalPage({ page, locale }: { page: 'imprint' | 'privacy';
               <div className="grid gap-4 py-10 md:grid-cols-3 md:gap-10">
                 <h2 className="text-lg font-medium tracking-tight">{s.heading}</h2>
                 <div className="flex flex-col gap-2 text-muted leading-relaxed md:col-span-2">
-                  {s.body.map((line, i) => (
-                    <p key={i}>{withPlaceholders(line)}</p>
-                  ))}
+                  {s.body.map((line, i) =>
+                    line.startsWith(SUBHEADING) ? (
+                      <h3 key={i} className="mt-4 font-medium text-fg first:mt-0">
+                        {line.slice(SUBHEADING.length)}
+                      </h3>
+                    ) : (
+                      <p key={i}>{withPlaceholders(line)}</p>
+                    )
+                  )}
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
+        {t.has(`${page}.date`) && (
+          <p className="mt-10 text-sm text-muted">
+            {t('updated')}: {t(`${page}.date`)}
+          </p>
+        )}
       </Container>
     </section>
   );
