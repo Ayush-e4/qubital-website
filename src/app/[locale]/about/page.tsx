@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import bavaria from '@/assets/photos/bavaria.jpg';
+import frankfurt from '@/assets/photos/frankfurt.jpg';
 import { BitVsQubit } from '@/components/sections/BitVsQubit';
 import { ClientLogos } from '@/components/home/ClientLogos';
 import { CTASection } from '@/components/sections/CTASection';
@@ -115,7 +115,7 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
                 </p>
               </div>
               <Photo
-                src={bavaria}
+                src={frankfurt}
                 alt={t('location.photoAlt')}
                 caption={t('location.photoCaption')}
                 sizes="(min-width: 1024px) 50vw, 100vw"

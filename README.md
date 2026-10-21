@@ -93,7 +93,7 @@ commercial use, no attribution required). Credited here anyway:
 | `team-laptop.jpg`        | [Jeremy](https://unsplash.com/photos/PF-rZraOOOo)           |
 | `phone-verification.jpg` | [Zulfugar Karimov](https://unsplash.com/photos/hvbjTynPt7A) |
 | `security-key.jpg`       | [Andy Kennedy](https://unsplash.com/photos/CpbI_SbiKqs)     |
-| `bavaria.jpg`            | [Mario Dobelmann](https://unsplash.com/photos/ZXXA5Pdx2UM)  |
+| `frankfurt.jpg`          | [NIR HIMI](https://unsplash.com/photos/pfWSXfrrItg)         |
 
 Swap any of them for real photos of the team when those exist.
 
