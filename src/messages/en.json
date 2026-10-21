@@ -9,7 +9,7 @@
       },
       "platforms": {
         "title": "Platforms",
-        "description": "The IAM products Qubital works with: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, ForgeRock, Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk and BeyondTrust."
+        "description": "The IAM products Qubital works with: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, Ping Identity (formerly ForgeRock), Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk and BeyondTrust."
       },
       "about": {
         "title": "About & Mission",
@@ -746,7 +746,7 @@
             "text": "Cloud single sign-on and MFA."
           },
           {
-            "name": "ForgeRock",
+            "name": "Ping Identity (formerly ForgeRock)",
             "vendor": "Ping Identity",
             "text": "Access management for large-scale customer and workforce identity."
           },

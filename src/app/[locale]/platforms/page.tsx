@@ -16,7 +16,8 @@ import { rich } from '@/lib/rich';
 // (public/logos/platforms), shown on a light plate so they read in both themes.
 // The logo names the vendor, so a card only adds the part of the product name
 // the logo doesn't already say (none when they are the same).
-const LOGOS: Record<string, { logo: string; label?: string }> = {
+// `label: true` shows the card's translated name as it is.
+const LOGOS: Record<string, { logo: string; label?: string | true }> = {
   'One Identity Manager': { logo: 'one-identity', label: 'Identity Manager' },
   'SailPoint IdentityIQ': { logo: 'sailpoint', label: 'IdentityIQ' },
   Omada: { logo: 'omada' },
@@ -25,7 +26,9 @@ const LOGOS: Record<string, { logo: string; label?: string }> = {
   'SAP Cloud Identity Services: IAS': { logo: 'sap', label: 'Identity Authentication (IAS)' },
   Okta: { logo: 'okta' },
   OneLogin: { logo: 'onelogin' },
-  ForgeRock: { logo: 'ping-identity', label: 'ForgeRock' }, // ForgeRock is part of Ping Identity
+  // ForgeRock was merged into Ping Identity; the card says so in both languages
+  'Ping Identity (formerly ForgeRock)': { logo: 'ping-identity', label: true },
+  'Ping Identity (ehemals ForgeRock)': { logo: 'ping-identity', label: true },
   'Microsoft Entra ID': { logo: 'microsoft', label: 'Entra ID' },
   'Active Directory': { logo: 'microsoft', label: 'Active Directory' },
   CyberArk: { logo: 'cyberark' },
@@ -98,7 +101,7 @@ export default async function PlatformsPage({ params }: PageProps<'/[locale]/pla
                           </div>
                           {LOGOS[item.name].label && (
                             <h3 className="mt-5 text-xl font-medium tracking-tight">
-                              {LOGOS[item.name].label}
+                              {LOGOS[item.name].label === true ? item.name : LOGOS[item.name].label}
                             </h3>
                           )}
                           <p className="mt-4 leading-relaxed text-muted">{item.text}</p>
