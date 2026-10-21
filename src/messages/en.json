@@ -77,9 +77,6 @@
       "primary": "Start a project",
       "secondary": "Explore services"
     },
-    "clients": {
-      "title": "Organisations we have worked with"
-    },
     "marquee": "IAM platforms we work with",
     "statement": "Our name comes from the qubit, which can be 0 and 1 at the same time. Access can't. Every login, every permission, every action of an AI agent ends in one decision: granted or denied. We make sure each one is right.",
     "services": {
@@ -800,5 +797,9 @@
       "text": "Most identity projects connect several products. Tell us what you run today and we will tell you honestly how we can help.",
       "button": "Talk to us"
     }
+  },
+  "clients": {
+    "title": "Organisations we have <em>worked with.</em>",
+    "description": "From automotive and aviation to banking, pharma, retail and telecom."
   }
 }

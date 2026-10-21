@@ -51,3 +51,9 @@ export const industryImages: Record<string, StaticImageData> = {
   insurance,
   manufacturing,
 };
+
+// Where to aim the crop when a photo is shown in a tall card (CSS object-position)
+export const industryFocus: Record<string, string> = {
+  pharma: '78% 50%',
+  telecom: '12% 50%',
+};

@@ -77,9 +77,6 @@
       "primary": "Projekt starten",
       "secondary": "Leistungen entdecken"
     },
-    "clients": {
-      "title": "Unternehmen, mit denen wir gearbeitet haben"
-    },
     "marquee": "IAM-Plattformen, mit denen wir arbeiten",
     "statement": "Unser Name geht auf das Qubit zurück, das gleichzeitig 0 und 1 sein kann. Zugriff kann das nicht. Jeder Login, jede Berechtigung, jede Aktion eines KI-Agenten endet in einer Entscheidung: erlaubt oder verweigert. Wir sorgen dafür, dass jede davon richtig ist.",
     "services": {
@@ -803,5 +800,9 @@
       "text": "Die meisten Identity-Projekte verbinden mehrere Produkte. Erzählen Sie uns, was heute bei Ihnen läuft, und wir sagen Ihnen ehrlich, wie wir helfen können.",
       "button": "Sprechen Sie uns an"
     }
+  },
+  "clients": {
+    "title": "Unternehmen, mit denen wir <em>gearbeitet haben.</em>",
+    "description": "Von Automobilindustrie und Luftfahrt bis zu Banken, Pharma, Handel und Telekommunikation."
   }
 }
