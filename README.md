@@ -14,7 +14,7 @@ cp .env.example .env.local   # optional, see Environment variables
 npm run dev
 ```
 
-Node `>=22.13.0` is required (see `engines` in `package.json`; `.nvmrc` is the
+Node `>=22.13.0 <23` is required (see `engines` in `package.json`; `.nvmrc` is the
 version CI uses).
 
 ## Scripts
@@ -222,7 +222,7 @@ the values during the build step in the pipeline.
 _optional_, which npm is allowed to skip, and self-hosted `next/image`
 optimisation needs it. Vercel bundles its own, so this only matters off Vercel.
 
-Node `>=22.13.0` is required; `.nvmrc` is the version CI uses.
+Node `>=22.13.0 <23` is required; `.nvmrc` is the version CI uses.
 
 > **Note:** `qubital.eu` currently serves a separate legacy static site from
 > S3/CloudFront, not this application. This app is the replacement; the domain
