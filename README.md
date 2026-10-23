@@ -1,4 +1,4 @@
-# Qubital Website
+# Qubital Website..
 
 Marketing site for Qubital GmbH, an Identity & Access Management
 consultancy (PAM, IGA, CIAM, workforce IAM, AI and agentic identity security).
