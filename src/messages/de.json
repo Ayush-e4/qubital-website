@@ -537,26 +537,17 @@
     "made": "Gestaltet & entwickelt in Deutschland",
     "seals": {
       "title": "Compliance",
+      "europe": {
+        "label": "Made in Europe: ein europäisches Unternehmen mit Sitz in Deutschland",
+        "mark": "Made in\nEurope"
+      },
       "gdpr": {
         "label": "DSGVO: Privacy by Design, Datenhaltung in der EU",
-        "top": "Datenschutz",
-        "mark": "DSGVO",
-        "sub": "Privacy by Design",
-        "bottom": "EU-Hosting · EU-Daten"
+        "mark": "DSGVO"
       },
       "nis2": {
         "label": "NIS2-Readiness: Gap-Analyse und Nachweise",
-        "top": "EU-Cybersicherheit",
-        "mark": "NIS2",
-        "sub": "Readiness",
-        "bottom": "Gap-Analyse · Nachweise"
-      },
-      "eu": {
-        "label": "Identity Security aus Deutschland, Europäische Union",
-        "top": "Identity Security",
-        "mark": "EU",
-        "sub": "Aus Deutschland",
-        "bottom": "Bayern · Europäische Union"
+        "mark": "NIS2"
       }
     }
   },

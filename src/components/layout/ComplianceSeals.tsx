@@ -1,29 +1,40 @@
+import { Box, Check, Lock, type LucideIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-// Round seals for the footer. They describe what we do (GDPR-aligned processing,
-// NIS2 readiness work, an EU base), not a certification: there is no official
-// GDPR or NIS2 logo, and seal wording must never say "certified" or "approved".
-// The ECSO "Cybersecurity Made in Europe" label can only be shown, with its own
-// artwork, once it has been awarded.
-const sealKeys = ['gdpr', 'nis2', 'eu'] as const;
+// Monochrome badges for the footer: a ring of twelve stars around a short mark
+// and an icon. They describe what we do (European company, GDPR-aligned
+// processing, NIS2 readiness work), not a certification: there is no official
+// GDPR or NIS2 logo, and badge wording must never say "certified" or
+// "approved". The ECSO "Cybersecurity Made in Europe" label is a separate,
+// awarded mark and can only be shown, with its own artwork, once awarded.
+const seals: { key: 'europe' | 'gdpr' | 'nis2'; icon: LucideIcon }[] = [
+  { key: 'europe', icon: Box },
+  { key: 'gdpr', icon: Check },
+  { key: 'nis2', icon: Lock },
+];
+
+// A five-pointed star centred on the origin, outer radius 5.
+const STAR = Array.from({ length: 10 }, (_, i) => {
+  const r = i % 2 === 0 ? 5 : 2.1;
+  const a = (Math.PI / 5) * i - Math.PI / 2;
+  return `${(r * Math.cos(a)).toFixed(2)},${(r * Math.sin(a)).toFixed(2)}`;
+}).join(' ');
+
+// Twelve stars on a circle, like the European flag.
+const RING = Array.from({ length: 12 }, (_, i) => {
+  const a = (Math.PI / 6) * i - Math.PI / 2;
+  return { x: 60 + 46 * Math.cos(a), y: 60 + 46 * Math.sin(a) };
+});
 
 export function ComplianceSeals() {
   const t = useTranslations('footer.seals');
 
   return (
-    <div className="flex flex-col gap-6 border-t border-line py-10 sm:flex-row sm:items-center sm:gap-10">
-      <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-faint">{t('title')}</h3>
-      <ul className="flex flex-wrap gap-4 sm:gap-5">
-        {sealKeys.map((key) => (
+    <div className="border-t border-line py-10">
+      <ul aria-label={t('title')} className="flex flex-wrap items-center gap-6 sm:gap-10">
+        {seals.map(({ key, icon }) => (
           <li key={key}>
-            <Seal
-              id={key}
-              label={t(`${key}.label`)}
-              top={t(`${key}.top`)}
-              mark={t(`${key}.mark`)}
-              sub={t(`${key}.sub`)}
-              bottom={t(`${key}.bottom`)}
-            />
+            <Seal label={t(`${key}.label`)} lines={t(`${key}.mark`).split('\n')} icon={icon} />
           </li>
         ))}
       </ul>
@@ -31,83 +42,52 @@ export function ComplianceSeals() {
   );
 }
 
-function Seal({
-  id,
-  label,
-  top,
-  mark,
-  sub,
-  bottom,
-}: {
-  id: string;
-  label: string;
-  top: string;
-  mark: string;
-  sub: string;
-  bottom: string;
-}) {
-  // One footer per page, so the key alone keeps the path ids unique.
-  const topArc = `seal-${id}-top`;
-  const bottomArc = `seal-${id}-bottom`;
+function Seal({ label, lines, icon: Icon }: { label: string; lines: string[]; icon: LucideIcon }) {
+  // One line is a big mark (GDPR, NIS2); two lines are small caps (Made in / Europe).
+  const big = lines.length === 1;
 
   return (
     <svg
-      viewBox="0 0 150 150"
+      viewBox="0 0 120 120"
       role="img"
       aria-label={label}
-      className="size-[100px] uppercase sm:size-36"
+      className="size-20 fill-fg text-fg uppercase sm:size-24"
     >
-      <defs>
-        <path id={topArc} d="M 22 75 A 53 53 0 0 1 128 75" />
-        <path id={bottomArc} d="M 18 75 A 57 57 0 0 0 132 75" />
-      </defs>
-      <circle cx="75" cy="75" r="72" className="fill-surface stroke-violet" strokeWidth="2" />
-      <circle
-        cx="75"
-        cy="75"
-        r="66"
-        fill="none"
-        className="stroke-violet"
-        strokeWidth="0.75"
-        strokeDasharray="1.5 3"
-      />
-      <text className="fill-muted font-mono" fontSize="9" letterSpacing="1.4">
-        <textPath href={`#${topArc}`} startOffset="50%" textAnchor="middle">
-          {top}
-        </textPath>
-      </text>
-      <text
-        className="fill-muted font-mono"
-        fontSize="8"
-        letterSpacing="1"
-        dominantBaseline="hanging"
-      >
-        <textPath href={`#${bottomArc}`} startOffset="50%" textAnchor="middle">
-          {bottom}
-        </textPath>
-      </text>
-      <circle cx="21" cy="75" r="1.8" className="fill-violet" />
-      <circle cx="129" cy="75" r="1.8" className="fill-violet" />
-      <text
-        x="75"
-        y="81"
-        textAnchor="middle"
-        className="fill-fg font-sans"
-        fontSize="28"
-        fontWeight="500"
-      >
-        {mark}
-      </text>
-      <text
-        x="75"
-        y="97"
-        textAnchor="middle"
-        className="fill-violet font-mono"
-        fontSize="7"
-        letterSpacing="0.8"
-      >
-        {sub}
-      </text>
+      {RING.map(({ x, y }, i) => (
+        <polygon key={i} points={STAR} transform={`translate(${x.toFixed(2)} ${y.toFixed(2)})`} />
+      ))}
+      {big ? (
+        <>
+          <text
+            x="60"
+            y="61"
+            textAnchor="middle"
+            fontSize="19"
+            fontWeight="700"
+            letterSpacing="0.5"
+          >
+            {lines[0]}
+          </text>
+          <Icon x="51" y="66" width="18" height="18" strokeWidth={3} fill="none" />
+        </>
+      ) : (
+        <>
+          <Icon x="52" y="34" width="16" height="16" strokeWidth={2.25} fill="none" />
+          {lines.map((line, i) => (
+            <text
+              key={line}
+              x="60"
+              y={64 + i * 13}
+              textAnchor="middle"
+              fontSize="11"
+              fontWeight="700"
+              letterSpacing="0.3"
+            >
+              {line}
+            </text>
+          ))}
+        </>
+      )}
     </svg>
   );
 }
