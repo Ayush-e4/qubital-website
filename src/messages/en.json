@@ -537,26 +537,17 @@
     "made": "Designed & built in Germany",
     "seals": {
       "title": "Compliance",
+      "europe": {
+        "label": "Made in Europe: a European company based in Germany",
+        "mark": "Made in\nEurope"
+      },
       "gdpr": {
         "label": "GDPR: privacy by design, EU-hosted data",
-        "top": "Data protection",
-        "mark": "GDPR",
-        "sub": "Privacy by design",
-        "bottom": "EU hosted · EU data"
+        "mark": "GDPR"
       },
       "nis2": {
         "label": "NIS2 readiness: gap analysis and evidence",
-        "top": "EU cybersecurity",
-        "mark": "NIS2",
-        "sub": "Readiness",
-        "bottom": "Gap analysis · evidence"
-      },
-      "eu": {
-        "label": "Identity security based in Germany, European Union",
-        "top": "Identity security",
-        "mark": "EU",
-        "sub": "Based in Germany",
-        "bottom": "Bavaria · European Union"
+        "mark": "NIS2"
       }
     }
   },
