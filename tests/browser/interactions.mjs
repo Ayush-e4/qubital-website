@@ -174,7 +174,7 @@ const checks = [
       if (res.status() === 200) {
         await page.locator('[role="status"]').waitFor();
       } else {
-        // Without RESEND_API_KEY the endpoint answers 500: the form must show its
+        // Without the Graph credentials the endpoint answers 500: the form must show its
         // error state, not a success message.
         await page.locator('form [role="alert"]').first().waitFor();
         assert.equal(await page.locator('[role="status"]').count(), 0);

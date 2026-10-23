@@ -23,7 +23,7 @@ export const CONTACT_LIMITS = {
 
 /**
  * Deliberately permissive. A stricter pattern mostly rejects valid addresses,
- * and deliverability is Resend's problem, not the regex's.
+ * and deliverability is the mail server's problem, not the regex's.
  */
 export const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

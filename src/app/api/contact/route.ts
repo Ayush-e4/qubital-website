@@ -1,7 +1,8 @@
 /**
  * POST /api/contact — the contact form's backend.
  *
- * Runs on the Node runtime because the Resend SDK expects it.
+ * Runs on the Node runtime. Mail goes out through Microsoft Graph from the
+ * Microsoft 365 mailbox (src/lib/contact/graph-mail.ts).
  *
  * Order matters and is deliberate:
  *   1. rate limit       — cheapest defence, and it protects everything below it
@@ -15,10 +16,10 @@
  * Nothing submitted is ever echoed back in a response body.
  */
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
 import { site } from '@/config/site';
 import { routing } from '@/i18n/routing';
 import { renderAutoReply, renderNotification, type ContactSubmission } from '@/lib/contact/email';
+import { graphConfig, sendMail } from '@/lib/contact/graph-mail';
 import { clientIp, rateLimit } from '@/lib/contact/rate-limit';
 import { validateContactSubmission } from '@/lib/contact/validation';
 
@@ -28,11 +29,8 @@ const MAX_BODY_BYTES = 20_000;
 
 const DEFAULT_TO = site.email;
 const DEFAULT_CC = 'arun1812@gmail.com';
-/**
- * Until qubital.eu is verified in Resend, sending must come from the sandbox
- * address — Resend rejects any other `from` for an unverified domain.
- */
-const DEFAULT_FROM = 'Qubital Website <onboarding@resend.dev>';
+/** The mailbox Graph sends as. The Entra app must be allowed to send from it. */
+const DEFAULT_FROM = site.email;
 
 /** Split a comma-separated env value into a clean recipient list. */
 function recipients(value: string | undefined, fallback: string) {
@@ -118,9 +116,11 @@ export async function POST(request: Request) {
   }
 
   // 4. Config ----------------------------------------------------------------
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error('[contact] RESEND_API_KEY is not set — submission could not be delivered');
+  const graph = graphConfig();
+  if (!graph) {
+    console.error(
+      '[contact] GRAPH_TENANT_ID / GRAPH_CLIENT_ID / GRAPH_CLIENT_SECRET not set — submission could not be delivered'
+    );
     return NextResponse.json({ error: 'not_configured' }, { status: 500 });
   }
 
@@ -129,45 +129,37 @@ export async function POST(request: Request) {
   const cc = recipients(process.env.CONTACT_CC_EMAIL, DEFAULT_CC);
 
   const submittedAt = new Date().toISOString();
-  const resend = new Resend(apiKey);
 
+  // 5a. Notification — this is the lead, so a failure here is a failed request.
   try {
-    // 5a. Notification — this is the lead, so a failure here is a failed request.
     const notification = renderNotification({ ...submission, submittedAt });
-    const { error } = await resend.emails.send({
-      from,
+    await sendMail(graph, from, {
       to,
       cc,
-      // Reply reaches the sender, not our own noreply address.
+      // Reply reaches the sender, not our own mailbox.
       replyTo: submission.email,
       subject: notification.subject,
       html: notification.html,
-      text: notification.text,
     });
+  } catch (cause) {
+    console.error('[contact] notification failed:', cause);
+    return NextResponse.json({ error: 'send_failed' }, { status: 502 });
+  }
 
-    if (error) {
-      console.error('[contact] notification rejected by Resend:', error);
-      return NextResponse.json({ error: 'send_failed' }, { status: 502 });
-    }
-
-    // 5b. Auto-reply — best effort. The lead is already captured, so losing the
-    // confirmation is cosmetic and must never turn a good submission into an
-    // error the visitor sees.
+  // 5b. Auto-reply — best effort. The lead is already captured, so losing the
+  // confirmation is cosmetic and must never turn a good submission into an
+  // error the visitor sees. Kept in Sent Items, so staff can see what went out.
+  try {
     const autoReply = renderAutoReply(submission);
-    const echo = await resend.emails.send({
-      from,
+    await sendMail(graph, from, {
       to: [submission.email],
       replyTo: process.env.CONTACT_TO_EMAIL || DEFAULT_TO,
       subject: autoReply.subject,
       html: autoReply.html,
-      text: autoReply.text,
+      save: true,
     });
-    if (echo.error) {
-      console.error('[contact] auto-reply rejected by Resend:', echo.error);
-    }
   } catch (cause) {
-    console.error('[contact] send failed:', cause);
-    return NextResponse.json({ error: 'send_failed' }, { status: 502 });
+    console.error('[contact] auto-reply failed:', cause);
   }
 
   return NextResponse.json({ ok: true });

@@ -135,19 +135,21 @@ there.
 All optional: analytics, and the contact form's email delivery, degrade
 gracefully when unset.
 
-| Variable                       | Purpose                                                       |
-| ------------------------------ | ------------------------------------------------------------- |
-| `NEXT_PUBLIC_POSTHOG_KEY`      | PostHog project key                                           |
-| `NEXT_PUBLIC_POSTHOG_HOST`     | PostHog host (defaults to EU)                                 |
-| `RESEND_API_KEY`               | Resend API key for contact form delivery                      |
-| `CONTACT_TO_EMAIL`             | Inquiry recipient (default `hello@qubital.eu`)                |
-| `CONTACT_CC_EMAIL`             | Copied on every inquiry (default `arun1812@gmail.com`)        |
-| `CONTACT_FROM_EMAIL`           | Verified sender; unset falls back to Resend's sandbox address |
-| `CONTACT_RATE_LIMIT_MAX`       | Submissions per IP per window (default `5`)                   |
-| `CONTACT_RATE_LIMIT_WINDOW_MS` | Rate-limit window in ms (default `600000`)                    |
+| Variable                       | Purpose                                                     |
+| ------------------------------ | ----------------------------------------------------------- |
+| `NEXT_PUBLIC_POSTHOG_KEY`      | PostHog project key                                         |
+| `NEXT_PUBLIC_POSTHOG_HOST`     | PostHog host (defaults to EU)                               |
+| `GRAPH_TENANT_ID`              | Entra tenant ID for contact form delivery (Microsoft Graph) |
+| `GRAPH_CLIENT_ID`              | Entra app (client) ID                                       |
+| `GRAPH_CLIENT_SECRET`          | Entra app client secret                                     |
+| `CONTACT_TO_EMAIL`             | Inquiry recipient (default `hello@qubital.eu`)              |
+| `CONTACT_CC_EMAIL`             | Copied on every inquiry (default `arun1812@gmail.com`)      |
+| `CONTACT_FROM_EMAIL`           | Mailbox Graph sends as (default `hello@qubital.eu`)         |
+| `CONTACT_RATE_LIMIT_MAX`       | Submissions per IP per window (default `5`)                 |
+| `CONTACT_RATE_LIMIT_WINDOW_MS` | Rate-limit window in ms (default `600000`)                  |
 
 The `NEXT_PUBLIC_*` pair is inlined at **build** time, so one build cannot serve
-two environments. The `RESEND_*`/`CONTACT_*` values are read at **request** time
+two environments. The `GRAPH_*`/`CONTACT_*` values are read at **request** time
 and never enter the browser bundle, but a change needs the process restarted (a
 redeploy on Vercel, a container restart elsewhere).
 
@@ -157,7 +159,7 @@ redeploy on Vercel, a container restart elsewhere).
 (`src/app/api/contact/route.ts`). Both sides run the same rules from
 `src/lib/contact/validation.ts`, so most mistakes are caught before a request.
 
-Without `RESEND_API_KEY` the endpoint returns `500` and the form shows its error
+Without the three `GRAPH_*` values the endpoint returns `500` and the form shows its error
 state. That is deliberate: a lead must never be silently lost behind a fake
 success message.
 
@@ -170,7 +172,7 @@ already been captured by then.
 Spam handling is a hidden honeypot field plus an in-memory per-IP rate limit.
 
 Nothing here is tied to a hosting platform: the endpoint is plain Next.js on the
-Node runtime calling Resend over outbound HTTPS: no platform APIs, no cron, no
+Node runtime calling Microsoft Graph over outbound HTTPS: no platform APIs, no cron, no
 queue, no external store. It runs unchanged on Vercel, a container or any Node
 host. Per-IP limiting reads `x-forwarded-for` (first entry) or `x-real-ip`, which
 proxies set and Next's own Node server derives from the socket, verified against
@@ -178,10 +180,48 @@ a direct `next start` with no proxy in front. If neither header is present the
 request is **not** limited, rather than being collapsed into one shared bucket:
 sharing would let the first few submissions lock every visitor out of the form.
 
-**`qubital.eu` must be verified in Resend before `CONTACT_FROM_EMAIL` can be set
-to an address on it**. Until then, sending uses Resend's sandbox address. The
-DNS records Resend issues go on the `send.qubital.eu` subdomain; the root MX
-records must be left alone, or `hello@qubital.eu` stops receiving mail.
+### Sending through Microsoft 365
+
+`qubital.eu` mail is Exchange Online, so the form sends from the
+`CONTACT_FROM_EMAIL` mailbox through Microsoft Graph
+(`src/lib/contact/graph-mail.ts`). That costs nothing beyond the existing
+mailbox and needs no DNS changes: SPF and DKIM already cover Microsoft 365. Both
+emails come from that mailbox, and the confirmation is kept in its Sent Items.
+
+One-time setup, by a Microsoft 365 admin, all in the browser:
+
+1. **Shared mailbox** (Exchange admin center → Recipients → Mailboxes → Add a
+   shared mailbox). Ours is "Qubital Website": primary address and user
+   principal name `hello@qubital.eu`, with `website@qubital.eu` as a second
+   address. Give staff **Full Access** under Delegation. Shared mailboxes need
+   no licence; leave the account disabled, nobody signs in to it.
+2. **Register an app** in Entra ID (App registrations → New registration,
+   single tenant). Ours is "Qubital Website Mailer". Copy the **Application
+   (client) ID** and **Directory (tenant) ID** into `GRAPH_CLIENT_ID` and
+   `GRAPH_TENANT_ID`.
+3. **Add the permission** API permissions → Add a permission → Microsoft Graph
+   → **Application** permissions → `Mail.Send`, then **Grant admin consent**.
+   The row must show "Granted".
+4. **Create a client secret** (Certificates & secrets → New client secret,
+   24 months) and put its **Value** in `GRAPH_CLIENT_SECRET`. Note the expiry:
+   when it expires the form returns errors until a new secret is set.
+
+Application `Mail.Send` granted this way can send as _any_ mailbox in the
+tenant. The code only ever sends as `CONTACT_FROM_EMAIL`, and the secret lives
+only in the hosting environment. To restrict the app to the one mailbox, replace
+the Entra grant with an Exchange-scoped one (RBAC for Applications, PowerShell
+only):
+
+```
+New-ServicePrincipal -AppId <client-id> -ObjectId <enterprise-app-object-id> -DisplayName "Qubital Website Mailer"
+New-ManagementScope -Name "Website mailbox" -RecipientRestrictionFilter "PrimarySmtpAddress -eq 'hello@qubital.eu'"
+New-ManagementRoleAssignment -App <client-id> -Role "Application Mail.Send" -CustomResourceScope "Website mailbox"
+```
+
+then remove the `Mail.Send` grant in Entra, and check with
+`Test-ServicePrincipalAuthorization -Identity <client-id> -Resource hello@qubital.eu`.
+
+Exchange Online allows 30 messages a minute per mailbox; each inquiry sends two.
 
 ## Testing
 
@@ -189,8 +229,8 @@ records must be left alone, or `hello@qubital.eu` stops receiving mail.
   server: the 18-entry sitemap, self-referencing canonicals, hreflang clusters,
   titles, `<html lang>`, the `/` redirect rules, cache and security headers, and
   the redirects from the old site's URLs. It also drives the contact endpoint
-  (validation, honeypot, per-IP rate limiting) with `RESEND_API_KEY` pinned
-  empty, so the suite can never send real mail. No browser, a few seconds.
+  (validation, honeypot, per-IP rate limiting) with `GRAPH_CLIENT_SECRET`
+  pinned empty, so the suite can never send real mail. No browser, a few seconds.
 - **`npm run test:browser`** renders every page, then checks the language
   switcher, navigation hover, a page translated the way Chrome's translator does
   it, the theme toggle, the mobile menu, contact form validation and the old URLs.
