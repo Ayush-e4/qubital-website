@@ -81,6 +81,7 @@ function organizationJsonLd(description: string) {
           addressRegion: 'Bavaria',
           addressCountry: 'DE',
         },
+        sameAs: [site.linkedin],
         areaServed: ['Germany', 'Europe'],
         contactPoint: {
           '@type': 'ContactPoint',

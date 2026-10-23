@@ -14,7 +14,7 @@ const rowA = [
 const rowB = [
   'Okta',
   'OneLogin',
-  'ForgeRock',
+  'Ping Identity (formerly ForgeRock)',
   'SAP Cloud Identity Services',
   'CyberArk',
   'BeyondTrust',

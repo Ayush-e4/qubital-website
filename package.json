@@ -4,11 +4,12 @@
   "private": true,
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=22.13.0"
+    "node": ">=22.13.0 <23"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:azure": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",

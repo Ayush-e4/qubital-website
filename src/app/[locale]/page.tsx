@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { ClientLogos } from '@/components/home/ClientLogos';
 import { Hero } from '@/components/home/Hero';
 import { IndustriesPreview } from '@/components/home/IndustriesPreview';
 import { PhotoStrip } from '@/components/home/PhotoStrip';
@@ -26,6 +27,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
   return (
     <>
       <Hero />
+      <ClientLogos />
       <TechMarquee />
 
       <section className="py-28 sm:py-40">

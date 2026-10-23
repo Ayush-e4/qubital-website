@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "Qubital: Identity & Access Management Beratung aus Deutschland",
-    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie Non-Human Identities (NHI) und Identity Governance für KI-Agenten.",
+    "description": "Qubital ist eine Beratung für Identity & Access Management aus Deutschland: Identity Governance (IGA), Non-Human Identities (NHI) und Identity Governance für KI-Agenten, Privileged Access (PAM), Customer Identity (CIAM) und Workforce Identity (WIAM).",
     "pages": {
       "services": {
         "title": "Leistungen",
-        "description": "Privileged Access (PAM), Identity Governance (IGA), Customer Identity (CIAM), Workforce Identity (WIAM) sowie Non-Human Identities (NHI) und Identity Governance für KI-Agenten von Qubital."
+        "description": "Identity Governance (IGA), Non-Human Identities (NHI) und Identity Governance für KI-Agenten, Privileged Access (PAM), Customer Identity (CIAM) und Workforce Identity (WIAM) von Qubital."
       },
       "platforms": {
         "title": "Plattformen",
-        "description": "Die IAM-Produkte, mit denen Qubital arbeitet: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, ForgeRock, Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk und BeyondTrust."
+        "description": "Die IAM-Produkte, mit denen Qubital arbeitet: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, Ping Identity (ehemals ForgeRock), Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk und BeyondTrust."
       },
       "about": {
         "title": "Über uns & Mission",
@@ -206,7 +206,7 @@
     },
     "page": {
       "title": "Identity Security. <em>Richtig gemacht.</em>",
-      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Administratoren, Mitarbeitende, Kunden, Servicekonten und KI-Agenten.",
+      "description": "Fünf spezialisierte Bereiche für jede Identität in Ihrem Unternehmen: Mitarbeitende, externe Dienstleister, Kunden, Administratoren, Servicekonten und KI-Agenten.",
       "deliverables": "Das ist enthalten",
       "models": {
         "title": "Arbeiten Sie mit uns, <em>wie es passt.</em>",
@@ -321,8 +321,8 @@
     "location": {
       "title": "Verwurzelt in Deutschland. <em>Unterwegs überall.</em>",
       "text": "Wir sitzen in Bayern und arbeiten mit Kunden in ganz Deutschland, in Europa und darüber hinaus: remote, vor Ort, auf Deutsch oder Englisch.",
-      "photoAlt": "Heustadel auf einer Almwiese in Bayern",
-      "photoCaption": "Bayern, Deutschland"
+      "photoAlt": "Skyline von Frankfurt am Main an einem sonnigen Tag, mit Ausflugsschiffen am Ufer",
+      "photoCaption": "Frankfurt am Main, Deutschland"
     }
   },
   "approach": {
@@ -528,7 +528,7 @@
     }
   },
   "footer": {
-    "tagline": "Identity & Access Management Beratung aus Deutschland. PAM, IGA, CIAM, Workforce Identity und Non-Human Identities (NHI) aus einer Hand.",
+    "tagline": "Identity & Access Management Beratung aus Deutschland. IGA, Non-Human Identities (NHI), PAM, CIAM und Workforce Identity aus einer Hand.",
     "company": "Unternehmen",
     "services": "Leistungen",
     "legal": "Rechtliches",
@@ -544,18 +544,30 @@
       "sections": [
         {
           "heading": "Angaben gemäß § 5 DDG",
-          "body": ["Qubital Systems GmbH", "Herzogenaurach, Bayern, Deutschland"]
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Deutschland"]
+        },
+        {
+          "heading": "Vertreten durch",
+          "body": ["Geschäftsführer: Arun Kumar"]
+        },
+        {
+          "heading": "Registereintrag",
+          "body": ["Registergericht: Amtsgericht Fürth", "Registernummer: HRB 20875"]
+        },
+        {
+          "heading": "Umsatzsteuer-ID",
+          "body": ["Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE460765001"]
         },
         {
           "heading": "Kontakt",
           "body": [
-            "E-Mail: contact@qubital.eu",
+            "E-Mail: hello@qubital.eu",
             "Geschäftszeiten: Mo bis Fr, 8:00 bis 18:00 Uhr (MEZ)"
           ]
         },
         {
           "heading": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-          "body": ["Qubital Systems GmbH, Herzogenaurach, Bayern, Deutschland"]
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Deutschland"]
         },
         {
           "heading": "Verbraucherstreitbeilegung",
@@ -575,56 +587,95 @@
       "title": "Datenschutzerklärung",
       "sections": [
         {
-          "heading": "1. Verantwortlicher",
+          "heading": "1. Einleitung und Verantwortlicher",
           "body": [
-            "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
-            "Qubital Systems GmbH, Herzogenaurach, Bayern, Deutschland",
-            "E-Mail: contact@qubital.eu"
+            "Vielen Dank für Ihr Interesse an unserer Website. Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten wir bei der Nutzung dieser Website verarbeiten, zu welchen Zwecken und auf welcher Rechtsgrundlage dies geschieht und welche Rechte Ihnen zustehen.",
+            "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Deutschland",
+            "Vertreten durch den Geschäftsführer Arun Kumar",
+            "E-Mail: hello@qubital.eu",
+            "Bei Fragen zum Datenschutz erreichen Sie uns jederzeit unter der oben genannten E-Mail-Adresse."
           ]
         },
         {
-          "heading": "2. Hosting",
+          "heading": "2. Datenerfassung beim Besuch unserer Website",
           "body": [
-            "Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Besuch der Website verarbeitet der Hoster technische Daten wie Ihre IP-Adresse sowie Datum und Uhrzeit des Zugriffs in Server-Logfiles. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der sicheren und zuverlässigen Bereitstellung der Website. Übermittlungen in die USA erfolgen auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder eines Angemessenheitsbeschlusses wie des EU-U.S. Data Privacy Framework."
+            "## 2.1 Server-Logfiles",
+            "Wenn Sie unsere Website rein informatorisch besuchen, also ohne uns zu kontaktieren, übermittelt Ihr Browser automatisch Daten an den Server, der die Website ausliefert. Diese Daten werden in Server-Logfiles gespeichert: die IP-Adresse des anfragenden Geräts, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite oder Datei, die Website, von der aus Sie zu uns gelangt sind, der verwendete Browser und das Betriebssystem sowie die übertragene Datenmenge.",
+            "Wir verwenden diese Daten, um die Website auszuliefern, ihre Stabilität und Sicherheit zu gewährleisten sowie Missbrauch zu erkennen und abzuwehren. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in diesen Zwecken. Eine Zusammenführung mit anderen Datenquellen findet nicht statt, und die Daten werden nicht genutzt, um Sie zu identifizieren. Die Logfiles werden nach kurzer Zeit automatisch gelöscht, sofern sie nicht zur Aufklärung eines konkreten Sicherheitsvorfalls benötigt werden.",
+            "## 2.2 Verschlüsselung",
+            "Aus Sicherheitsgründen und zum Schutz vertraulicher Inhalte, etwa Anfragen, die Sie an uns senden, nutzt diese Website eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers und am Schloss-Symbol. Ist die Verschlüsselung aktiv, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden."
           ]
         },
         {
-          "heading": "3. Kontaktformular und E-Mail",
+          "heading": "3. Hosting und Content Delivery",
           "body": [
-            "Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (Name, E-Mail-Adresse, Unternehmen, Themenbereich und Nachricht) zur Beantwortung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO. Der E-Mail-Versand erfolgt über Resend als unser Auftragsverarbeiter nach Art. 28 DSGVO. Wir löschen die Daten, sobald sie nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten bestehen."
+            "Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Vercel betreibt ein weltweites Content Delivery Network, sodass die Website von einem Server in Ihrer Nähe ausgeliefert werden kann. Dabei verarbeitet Vercel die in Abschnitt 2.1 beschriebenen Daten in unserem Auftrag.",
+            "Vercel ist auf Grundlage eines Vertrags zur Auftragsverarbeitung nach Art. 28 DSGVO für uns tätig. Rechtsgrundlage für den Einsatz von Vercel ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in einer sicheren, schnellen und zuverlässigen Bereitstellung unserer Website. Übermittlungen in die USA erfolgen auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder eines Angemessenheitsbeschlusses wie des EU-U.S. Data Privacy Framework."
           ]
         },
         {
-          "heading": "4. Webanalyse",
+          "heading": "4. Cookies und lokaler Speicher",
           "body": [
-            "Für die Produktanalyse nutzen wir PostHog, in der EU gehostet und als unser Auftragsverarbeiter nach Art. 28 DSGVO tätig. PostHog ist so konfiguriert, dass keine Cookies oder sonstigen Kennungen in Ihrem Browser gespeichert werden und das Do-Not-Track-Signal beachtet wird. Die daraus gewonnenen Statistiken sind pseudonym und werden nicht zur Identifizierung Ihrer Person verwendet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt darin, die Nutzung der Website zu verstehen und sie zu verbessern."
+            "Cookies sind kleine Textdateien, die Ihr Browser auf Ihrem Endgerät speichert. Diese Website verwendet keine Tracking- oder Marketing-Cookies.",
+            "Wir setzen ein technisch notwendiges Cookie, NEXT_LOCALE. Es enthält ausschließlich Ihre Sprache (zum Beispiel „de“ oder „en“) und dient allein dazu, Ihnen die Website in der gewählten Sprache anzuzeigen. Zusätzlich wird Ihr gewähltes Farbschema (hell oder dunkel) im lokalen Speicher Ihres Browsers abgelegt. Beides wird weder zu Ihrer Nachverfolgung genutzt noch an Dritte weitergegeben.",
+            "Rechtsgrundlage ist § 25 Abs. 2 Nr. 2 TDDDG, da diese Speicherung für die Bereitstellung der von Ihnen aufgerufenen Website unbedingt erforderlich ist, in Verbindung mit Art. 6 Abs. 1 lit. f DSGVO. Sie können Cookies und den lokalen Speicher jederzeit in Ihren Browsereinstellungen löschen oder blockieren; die Website verwendet dann ihre Standardsprache und ihr Standard-Farbschema.",
+            "Da wir keine Cookies oder vergleichbaren Technologien einsetzen, die eine Einwilligung erfordern, zeigen wir kein Cookie-Banner an."
           ]
         },
         {
-          "heading": "5. Cookies und lokaler Speicher",
+          "heading": "5. Kontaktaufnahme",
           "body": [
-            "Diese Website verwendet keine Tracking- oder Marketing-Cookies. Sie setzt ein technisch notwendiges Cookie (NEXT_LOCALE), um Ihre Sprachauswahl zu speichern, und legt Ihr gewähltes Farbschema (hell oder dunkel) im lokalen Speicher Ihres Browsers ab. Keine dieser Informationen verlässt Ihr Gerät zu Tracking-Zwecken. Rechtsgrundlage ist § 25 Abs. 2 TDDDG."
+            "## 5.1 Kontaktformular",
+            "Wenn Sie uns über das Kontaktformular eine Nachricht senden, verarbeiten wir die von Ihnen eingegebenen Daten: Ihren Namen, Ihre E-Mail-Adresse, Ihr Unternehmen (freiwillig), das gewählte Thema und Ihre Nachricht. Wir verwenden diese Daten ausschließlich zur Bearbeitung Ihrer Anfrage und für eventuelle Rückfragen. Zusätzlich erhalten Sie eine automatische Eingangsbestätigung per E-Mail.",
+            "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der Beantwortung der an uns gerichteten Anfragen. E-Mails aus dem Kontaktformular werden über Resend, Inc. (USA) zugestellt, die als unser Auftragsverarbeiter nach Art. 28 DSGVO tätig ist. Übermittlungen in die USA erfolgen auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder des EU-U.S. Data Privacy Framework.",
+            "## 5.2 E-Mail",
+            "Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir Ihre E-Mail-Adresse und die in Ihrer Nachricht enthaltenen Angaben, um Ihre Anfrage zu beantworten. Es gelten dieselben Rechtsgrundlagen wie beim Kontaktformular (Abschnitt 5.1).",
+            "Wir löschen die Daten aus Ihrer Anfrage, sobald diese abschließend bearbeitet ist und die Daten nicht mehr benötigt werden, sofern keine gesetzlichen Aufbewahrungspflichten, etwa nach Handels- oder Steuerrecht, bestehen."
           ]
         },
         {
-          "heading": "6. Schriftarten",
+          "heading": "6. Webanalyse",
           "body": [
-            "Alle Schriftarten werden von unserem eigenen Server ausgeliefert. Beim Besuch der Website wird keine Verbindung zu externen Schriftanbietern (z. B. Google) aufgebaut."
+            "Um zu verstehen, wie unsere Website genutzt wird, und sie zu verbessern, setzen wir den Analysedienst PostHog (PostHog Inc.) ein. Die Daten werden auf Servern in der Europäischen Union gespeichert; PostHog ist als unser Auftragsverarbeiter nach Art. 28 DSGVO tätig.",
+            "PostHog ist auf dieser Website so konfiguriert, dass keine Cookies oder sonstigen Kennungen auf Ihrem Endgerät gespeichert werden. Erfasst werden die aufgerufenen Seiten sowie grundlegende technische Angaben zum Besuch, etwa Browser- und Gerätetyp. Browser, die ein Do-Not-Track-Signal senden, werden nicht erfasst. Die daraus gewonnenen Statistiken sind pseudonym und werden nicht zu Ihrer Identifizierung verwendet.",
+            "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der anonymen Auswertung der Nutzung unserer Website. Sie können dieser Verarbeitung jederzeit widersprechen (siehe Abschnitt 8.2), zum Beispiel indem Sie Do Not Track in Ihrem Browser aktivieren."
           ]
         },
         {
-          "heading": "7. Ihre Rechte",
+          "heading": "7. Funktionen der Website",
           "body": [
-            "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Wenden Sie sich dazu an contact@qubital.eu. Zudem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, beispielsweise beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA)."
+            "## 7.1 Schriftarten",
+            "Alle Schriftarten dieser Website werden von unserem eigenen Hosting ausgeliefert. Beim Besuch der Website wird keine Verbindung zu externen Schriftanbietern wie Google Fonts aufgebaut.",
+            "## 7.2 Bilder und Animationen",
+            "Alle Bilder und Animationen dieser Website werden von unserem eigenen Hosting ausgeliefert. Inhalte von Drittplattformen, etwa Videodiensten oder sozialen Netzwerken, binden wir nicht ein."
           ]
         },
         {
-          "heading": "8. Änderungen",
+          "heading": "8. Ihre Rechte",
           "body": [
-            "Wir passen diese Datenschutzerklärung an, wenn sich rechtliche Vorgaben oder unsere Leistungen ändern. Die aktuelle Fassung finden Sie stets auf dieser Seite."
+            "## 8.1 Rechte nach der DSGVO",
+            "Sie haben das Recht auf Auskunft über Ihre personenbezogenen Daten (Art. 15 DSGVO), auf Berichtigung (Art. 16 DSGVO), auf Löschung (Art. 17 DSGVO), auf Einschränkung der Verarbeitung (Art. 18 DSGVO), auf Unterrichtung (Art. 19 DSGVO) und auf Datenübertragbarkeit (Art. 20 DSGVO). Soweit eine Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Zur Ausübung dieser Rechte genügt eine Nachricht an hello@qubital.eu.",
+            "Zudem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Die für uns zuständige Behörde ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.",
+            "## 8.2 Widerspruchsrecht",
+            "Soweit wir Ihre personenbezogenen Daten auf Grundlage unserer berechtigten Interessen verarbeiten (Art. 6 Abs. 1 lit. f DSGVO), haben Sie das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit Widerspruch gegen diese Verarbeitung einzulegen (Art. 21 DSGVO). Wir verarbeiten die Daten dann nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen."
+          ]
+        },
+        {
+          "heading": "9. Speicherdauer",
+          "body": [
+            "Wir speichern personenbezogene Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen es verlangen. Die Speicherdauer der einzelnen Verarbeitungen ist in den Abschnitten 2 bis 6 beschrieben. Entfällt der Zweck und besteht keine Aufbewahrungspflicht, werden die Daten gelöscht."
+          ]
+        },
+        {
+          "heading": "10. Änderungen dieser Datenschutzerklärung",
+          "body": [
+            "Wir passen diese Datenschutzerklärung an, wenn sich unsere Website, unsere Leistungen oder die rechtlichen Vorgaben ändern. Die jeweils aktuelle Fassung finden Sie stets auf dieser Seite."
           ]
         }
-      ]
+      ],
+      "date": "22. Oktober 2026"
     }
   },
   "notFound": {
@@ -674,7 +725,7 @@
           {
             "name": "SAP Cloud Identity Services: IPS",
             "vendor": "SAP",
-            "text": "Identity Provisioning: Benutzer und Rollen über SAP-Systeme hinweg."
+            "text": "Benutzer und Rollen über SAP-Systeme hinweg bereitstellen."
           }
         ]
       },
@@ -695,14 +746,14 @@
             "text": "Single Sign-on und MFA aus der Cloud."
           },
           {
-            "name": "ForgeRock",
+            "name": "Ping Identity (ehemals ForgeRock)",
             "vendor": "Ping Identity",
             "text": "Access Management für Kunden- und Mitarbeiteridentitäten in großem Maßstab."
           },
           {
             "name": "SAP Cloud Identity Services: IAS",
             "vendor": "SAP",
-            "text": "Identity Authentication: Anmeldung und Single Sign-on für SAP-Anwendungen."
+            "text": "Anmeldung und Single Sign-on für SAP-Anwendungen."
           }
         ]
       },
@@ -749,5 +800,9 @@
       "text": "Die meisten Identity-Projekte verbinden mehrere Produkte. Erzählen Sie uns, was heute bei Ihnen läuft, und wir sagen Ihnen ehrlich, wie wir helfen können.",
       "button": "Sprechen Sie uns an"
     }
+  },
+  "clients": {
+    "title": "Unternehmen, mit denen wir <em>gearbeitet haben.</em>",
+    "description": "Von Automobilindustrie und Luftfahrt bis zu Banken, Pharma, Handel und Telekommunikation."
   }
 }

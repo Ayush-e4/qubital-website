@@ -6,6 +6,7 @@ import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { site } from '@/config/site';
+import { LinkedInIcon } from '@/components/ui/LinkedInIcon';
 import { initPage, pageMetadata } from '@/lib/page';
 import { rich } from '@/lib/rich';
 
@@ -19,6 +20,7 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
 
   const info = [
     { icon: Mail, label: t('info.email'), value: site.email, href: `mailto:${site.email}` },
+    { icon: LinkedInIcon, label: 'LinkedIn', value: 'Qubital GmbH', href: site.linkedin },
     { icon: CalendarClock, label: t('info.hours'), value: t('info.hoursValue') },
     { icon: MapPin, label: t('info.location'), value: site.location },
   ];
@@ -51,7 +53,19 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
               );
               return (
                 <Reveal key={label} delay={0.1 + i * 0.08}>
-                  {href ? <a href={href}>{content}</a> : content}
+                  {href ? (
+                    <a
+                      href={href}
+                      {...(href.startsWith('http') && {
+                        target: '_blank',
+                        rel: 'noopener noreferrer',
+                      })}
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    content
+                  )}
                 </Reveal>
               );
             })}
