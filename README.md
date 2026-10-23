@@ -188,27 +188,38 @@ sharing would let the first few submissions lock every visitor out of the form.
 mailbox and needs no DNS changes: SPF and DKIM already cover Microsoft 365. Both
 emails come from that mailbox, and the confirmation is kept in its Sent Items.
 
-One-time setup, by a Microsoft 365 admin:
+One-time setup, by a Microsoft 365 admin, all in the browser:
 
-1. **Register an app** in Entra ID (App registrations → New registration,
-   single tenant). Note the tenant ID and client ID.
-2. **Add the permission** Microsoft Graph → Application permissions →
-   `Mail.Send`, then **Grant admin consent**.
-3. **Create a client secret** and put it in `GRAPH_CLIENT_SECRET`. Note its
-   expiry: when it expires the form returns errors until a new one is set.
-4. **Limit the app to the one mailbox.** On its own, application `Mail.Send`
-   can send as _any_ mailbox in the tenant. In Exchange Online PowerShell, with
-   the app's client ID and its enterprise application's object ID:
+1. **Shared mailbox** (Exchange admin center → Recipients → Mailboxes → Add a
+   shared mailbox). Ours is "Qubital Website": primary address and user
+   principal name `hello@qubital.eu`, with `website@qubital.eu` as a second
+   address. Give staff **Full Access** under Delegation. Shared mailboxes need
+   no licence; leave the account disabled, nobody signs in to it.
+2. **Register an app** in Entra ID (App registrations → New registration,
+   single tenant). Ours is "Qubital Website Mailer". Copy the **Application
+   (client) ID** and **Directory (tenant) ID** into `GRAPH_CLIENT_ID` and
+   `GRAPH_TENANT_ID`.
+3. **Add the permission** API permissions → Add a permission → Microsoft Graph
+   → **Application** permissions → `Mail.Send`, then **Grant admin consent**.
+   The row must show "Granted".
+4. **Create a client secret** (Certificates & secrets → New client secret,
+   24 months) and put its **Value** in `GRAPH_CLIENT_SECRET`. Note the expiry:
+   when it expires the form returns errors until a new secret is set.
 
-   ```
-   New-ServicePrincipal -AppId <client-id> -ObjectId <enterprise-app-object-id> -DisplayName "Qubital website"
-   New-ManagementScope -Name "Website mailbox" -RecipientRestrictionFilter "PrimarySmtpAddress -eq 'hello@qubital.eu'"
-   New-ManagementRoleAssignment -App <client-id> -Role "Application Mail.Send" -CustomResourceScope "Website mailbox"
-   ```
+Application `Mail.Send` granted this way can send as _any_ mailbox in the
+tenant. The code only ever sends as `CONTACT_FROM_EMAIL`, and the secret lives
+only in the hosting environment. To restrict the app to the one mailbox, replace
+the Entra grant with an Exchange-scoped one (RBAC for Applications, PowerShell
+only):
 
-   Then **remove** the tenant-wide `Mail.Send` grant from step 2 in Entra, so
-   only the scoped Exchange assignment remains. Check it with
-   `Test-ServicePrincipalAuthorization -Identity <client-id> -Resource hello@qubital.eu`.
+```
+New-ServicePrincipal -AppId <client-id> -ObjectId <enterprise-app-object-id> -DisplayName "Qubital Website Mailer"
+New-ManagementScope -Name "Website mailbox" -RecipientRestrictionFilter "PrimarySmtpAddress -eq 'hello@qubital.eu'"
+New-ManagementRoleAssignment -App <client-id> -Role "Application Mail.Send" -CustomResourceScope "Website mailbox"
+```
+
+then remove the `Mail.Send` grant in Entra, and check with
+`Test-ServicePrincipalAuthorization -Identity <client-id> -Resource hello@qubital.eu`.
 
 Exchange Online allows 30 messages a minute per mailbox; each inquiry sends two.
 
