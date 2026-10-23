@@ -534,7 +534,22 @@
     "legal": "Legal",
     "contact": "Contact",
     "rights": "All rights reserved.",
-    "made": "Designed & built in Germany"
+    "made": "Designed & built in Germany",
+    "seals": {
+      "title": "Compliance",
+      "europe": {
+        "label": "Made in Europe: a European company based in Germany",
+        "mark": "Made in\nEurope"
+      },
+      "gdpr": {
+        "label": "GDPR: privacy by design, EU-hosted data",
+        "mark": "GDPR"
+      },
+      "nis2": {
+        "label": "NIS2 readiness: gap analysis and evidence",
+        "mark": "NIS2"
+      }
+    }
   },
   "legal": {
     "updated": "Last updated",
@@ -622,7 +637,7 @@
           "body": [
             "## 5.1 Contact form",
             "If you send us a message via the contact form, we process the data you enter: your name, email address, organisation (optional), the topic you select and your message. We use this data only to handle your enquiry and any follow-up questions. You will also receive an automatic confirmation of receipt by email.",
-            "The legal basis is Art. 6 (1) (b) GDPR where your enquiry relates to a contract or to pre-contractual measures, and otherwise Art. 6 (1) (f) GDPR; our legitimate interest lies in responding to enquiries addressed to us. Emails from the contact form are delivered via Resend, Inc. (USA), acting as our processor under Art. 28 GDPR. Transfers to the USA are based on the European Commission’s standard contractual clauses or the EU-U.S. Data Privacy Framework.",
+            "The legal basis is Art. 6 (1) (b) GDPR where your enquiry relates to a contract or to pre-contractual measures, and otherwise Art. 6 (1) (f) GDPR; our legitimate interest lies in responding to enquiries addressed to us. Emails from the contact form are sent through our Microsoft 365 mailbox, provided by Microsoft Ireland Operations Limited, acting as our processor under Art. 28 GDPR. Where Microsoft transfers data to the USA, this is based on the European Commission’s standard contractual clauses or the EU-U.S. Data Privacy Framework.",
             "## 5.2 Email",
             "If you contact us by email, we process your email address and the information contained in your message in order to answer it. The legal basis is the same as for the contact form (section 5.1).",
             "We delete the data from your enquiry once it has been dealt with and is no longer needed, unless statutory retention obligations apply, for example under commercial or tax law."
@@ -668,7 +683,7 @@
           ]
         }
       ],
-      "date": "22 October 2026"
+      "date": "24 October 2026"
     }
   },
   "notFound": {

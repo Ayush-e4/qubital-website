@@ -6,6 +6,7 @@ import { Logo } from '../Logo';
 import { AuroraWordmark } from '../ui/AuroraWordmark';
 import { Container } from '../ui/Container';
 import { LinkedInIcon } from '../ui/LinkedInIcon';
+import { ComplianceSeals } from './ComplianceSeals';
 import { mainNav } from './nav';
 
 export function Footer() {
@@ -77,6 +78,8 @@ export function Footer() {
             </li>
           </FooterCol>
         </div>
+
+        <ComplianceSeals />
       </Container>
 
       {/* Oversized wordmark */}

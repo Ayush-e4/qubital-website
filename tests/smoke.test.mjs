@@ -81,7 +81,7 @@ async function waitForReady(base = BASE, timeoutMs = 60_000) {
 /**
  * Start a production server.
  *
- * RESEND_API_KEY is pinned to the empty string, not deleted. The contact
+ * GRAPH_CLIENT_SECRET is pinned to the empty string, not deleted. The contact
  * endpoint then takes its "not configured" path, so the suite can never send
  * real email — and because Next will not let .env.local override a variable
  * that is already present in process.env, an empty string pins that behaviour
@@ -89,7 +89,7 @@ async function waitForReady(base = BASE, timeoutMs = 60_000) {
  */
 function startServer(port, extraEnv) {
   const child = spawn(process.execPath, [NEXT_BIN, 'start', '--port', String(port)], {
-    env: { ...process.env, NODE_ENV: 'production', RESEND_API_KEY: '', ...extraEnv },
+    env: { ...process.env, NODE_ENV: 'production', GRAPH_CLIENT_SECRET: '', ...extraEnv },
     stdio: ['ignore', 'ignore', 'pipe'],
   });
   child.stderr.on('data', (d) => {
@@ -295,7 +295,7 @@ test('/de/impressum keeps working unchanged', async () => {
 
 // --- contact endpoint (src/app/api/contact/route.ts) ------------------------
 //
-// The server is started with RESEND_API_KEY='' above, so the "not configured"
+// The server is started with GRAPH_CLIENT_SECRET='' above, so the "not configured"
 // path is what a valid submission hits. That is what makes the honeypot case
 // below meaningful: reaching 200 proves the request short-circuited before the
 // config check, i.e. nothing was sent.

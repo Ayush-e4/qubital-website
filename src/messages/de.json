@@ -534,7 +534,22 @@
     "legal": "Rechtliches",
     "contact": "Kontakt",
     "rights": "Alle Rechte vorbehalten.",
-    "made": "Gestaltet & entwickelt in Deutschland"
+    "made": "Gestaltet & entwickelt in Deutschland",
+    "seals": {
+      "title": "Compliance",
+      "europe": {
+        "label": "Made in Europe: ein europäisches Unternehmen mit Sitz in Deutschland",
+        "mark": "Made in\nEurope"
+      },
+      "gdpr": {
+        "label": "DSGVO: Privacy by Design, Datenhaltung in der EU",
+        "mark": "DSGVO"
+      },
+      "nis2": {
+        "label": "NIS2-Readiness: Gap-Analyse und Nachweise",
+        "mark": "NIS2"
+      }
+    }
   },
   "legal": {
     "updated": "Stand",
@@ -625,7 +640,7 @@
           "body": [
             "## 5.1 Kontaktformular",
             "Wenn Sie uns über das Kontaktformular eine Nachricht senden, verarbeiten wir die von Ihnen eingegebenen Daten: Ihren Namen, Ihre E-Mail-Adresse, Ihr Unternehmen (freiwillig), das gewählte Thema und Ihre Nachricht. Wir verwenden diese Daten ausschließlich zur Bearbeitung Ihrer Anfrage und für eventuelle Rückfragen. Zusätzlich erhalten Sie eine automatische Eingangsbestätigung per E-Mail.",
-            "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der Beantwortung der an uns gerichteten Anfragen. E-Mails aus dem Kontaktformular werden über Resend, Inc. (USA) zugestellt, die als unser Auftragsverarbeiter nach Art. 28 DSGVO tätig ist. Übermittlungen in die USA erfolgen auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder des EU-U.S. Data Privacy Framework.",
+            "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag oder vorvertraglichen Maßnahmen zusammenhängt, andernfalls Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der Beantwortung der an uns gerichteten Anfragen. E-Mails aus dem Kontaktformular werden über unser Microsoft-365-Postfach versendet, bereitgestellt von der Microsoft Ireland Operations Limited, die als unser Auftragsverarbeiter nach Art. 28 DSGVO tätig ist. Soweit Microsoft Daten in die USA übermittelt, erfolgt dies auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder des EU-U.S. Data Privacy Framework.",
             "## 5.2 E-Mail",
             "Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir Ihre E-Mail-Adresse und die in Ihrer Nachricht enthaltenen Angaben, um Ihre Anfrage zu beantworten. Es gelten dieselben Rechtsgrundlagen wie beim Kontaktformular (Abschnitt 5.1).",
             "Wir löschen die Daten aus Ihrer Anfrage, sobald diese abschließend bearbeitet ist und die Daten nicht mehr benötigt werden, sofern keine gesetzlichen Aufbewahrungspflichten, etwa nach Handels- oder Steuerrecht, bestehen."
@@ -671,7 +686,7 @@
           ]
         }
       ],
-      "date": "22. Oktober 2026"
+      "date": "24. Oktober 2026"
     }
   },
   "notFound": {
