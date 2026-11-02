@@ -2,8 +2,9 @@
 
 Marketing site for Qubital GmbH, an Identity & Access Management
 consultancy (PAM, IGA, CIAM, workforce IAM, AI and agentic identity security).
-Next.js 16 (App Router), React 19, Tailwind CSS 4 and next-intl, served in German
-and English with localized URLs.
+Next.js 16 (App Router), React 19, Tailwind CSS 4 and next-intl, served in ten languages
+(German, English, French, Italian, Spanish, Dutch, Polish, Portuguese, Swedish,
+Danish) with localized URLs.
 
 ## Getting started
 
@@ -38,24 +39,28 @@ A pre-commit hook runs ESLint and Prettier over staged files.
 Routing is handled by next-intl and configured in one place,
 `src/i18n/routing.ts`.
 
-- **Both locales are prefixed**, English is the fallback for every other language (so visitors from across Europe get a page they can read), and each page has a
-  localized slug:
+- **Every locale is prefixed** and each page has a localized slug. English is the
+  fallback for any language the site does not offer:
 
   ```
-  /de/leistungen   /en/services
-  /de/ueber-uns    /en/about
-  /de/kontakt      /en/contact
+  /de/leistungen   /en/services   /fr/services   /it/servizi   /pl/uslugi …
+  /de/ueber-uns    /en/about      /fr/a-propos   /es/sobre-nosotros …
   ```
 
-- **`/` auto-detects.** `src/proxy.ts` redirects it to `/de` or `/en` from the
-  `NEXT_LOCALE` cookie, then `Accept-Language`, then the default (`en`). The
+- **`/` auto-detects.** `src/proxy.ts` redirects it to the visitor's language from the
+  `NEXT_LOCALE` cookie, then `Accept-Language` (so a French browser in France or
+  Belgium gets `/fr`, a Dutch one `/nl`, an Austrian one `/de`), then the default
+  (`en`). The
   redirect is marked `no-store` so a shared cache never keeps one visitor's
   language for everyone.
 - **Never build a URL by hand.** Use `Link`, `useRouter` and `getPathname` from
   `src/i18n/navigation.ts` with the internal pathname (`/services`), and the
   locale-specific slug is filled in for you.
-- Copy lives in `src/messages/de.json` and `src/messages/en.json`. The German
-  legal texts are binding; the English pages say so.
+- Copy lives in `src/messages/<locale>.json`; `en.json` is the reference every
+  other file must match key for key. The German legal texts are binding; every
+  other language says so.
+- The language picker (`src/components/layout/LocaleSwitcher.tsx`) shows each
+  language with its flag (`src/components/ui/Flag.tsx`) and native name.
 
 ### Redirects from the previous site
 
@@ -63,20 +68,20 @@ The old site served English unprefixed and six locales. `next.config.ts` builds
 permanent (308) redirects from every old URL to its new page: `/about` goes to
 `/en/about`, `/de/services` to `/de/leistungen`, and pages that no longer exist go
 to the page that now carries their content (`/mission` to About, `/compliance` to
-Services, `/privacy-and-gdpr` to Privacy). French, Spanish, Italian and Dutch URLs
-go to the English page.
+Services, `/privacy-and-gdpr` to Privacy). Old French, Spanish, Italian and Dutch URLs
+go to the same page in that language.
 
 ## Adding a page
 
-1. Add the internal pathname and its two slugs to `pathnames` in
+1. Add the internal pathname and its slug for every locale to `pathnames` in
    `src/i18n/routing.ts`.
 2. Create `src/app/[locale]/<route>/page.tsx` that exports `generateMetadata()`
    via `pageMetadata()` from `src/lib/page.ts`. That produces the canonical URL,
    the hreflang cluster and the Open Graph and Twitter tags.
-3. Add the copy to **both** `src/messages/de.json` and `src/messages/en.json`.
+3. Add the copy to **every** `src/messages/<locale>.json`.
 4. To list it in navigation, add it to `src/components/layout/nav.ts`.
 
-The sitemap expands every pathname across both locales automatically, and
+The sitemap expands every pathname across all locales automatically, and
 `npm test` asserts that every URL returns 200 with the right canonical, hreflang,
 title and `<html lang>`. Add the new route to `ROUTES` in `tests/smoke.test.mjs`.
 
@@ -86,10 +91,11 @@ Posts live in `src/content/blog/` as typed data, one file per post with both lan
 (`posts/<id>.ts`), so there is no Markdown pipeline. Each post has its own slug per
 language, listed in `meta.ts`. To add one:
 
-1. Write `src/content/blog/posts/<id>.ts` with `en` and `de` content (title, a 140–160
+1. Write `src/content/blog/posts/<id>.ts` with `en` and `de` content, and the
+   other languages under the same id in `translations/<locale>.json` (title, a 140–160
    character description, excerpt, category, keywords, body blocks).
-2. Add its id, dates and both slugs to `postMeta` in `meta.ts` (newest first).
-3. Register it in `src/content/blog/index.ts` and add its two URLs to `ROUTES` in
+2. Add its id, dates and one slug per language to `postMeta` in `meta.ts` (newest first).
+3. Register it in `src/content/blog/index.ts` and add its URLs to `ROUTES` in
    `tests/smoke.test.mjs`.
 
 The blog index, sitemap, hreflang pair, `BlogPosting`/`BreadcrumbList` structured data
@@ -240,7 +246,7 @@ Exchange Online allows 30 messages a minute per mailbox; each inquiry sends two.
 ## Testing
 
 - **`npm test`** is the suite that gates CI. Plain HTTP against a production
-  server: the 28-entry sitemap (blog posts included), self-referencing canonicals, hreflang clusters,
+  server: the 130-entry sitemap (10 languages, blog posts included), self-referencing canonicals, hreflang clusters,
   titles, `<html lang>`, the `/` redirect rules, cache and security headers, and
   the redirects from the old site's URLs. It also drives the contact endpoint
   (validation, honeypot, per-IP rate limiting) with `GRAPH_CLIENT_SECRET`

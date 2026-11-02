@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { routing, type Pathname } from './src/i18n/routing';
+import { routing, type Locale, type Pathname } from './src/i18n/routing';
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -61,10 +61,10 @@ const rootCacheHeaders = [{ key: 'Cache-Control', value: 'private, no-cache' }];
  * Permanent redirects from the previous site's URLs.
  *
  * The old site served English unprefixed (/about) and five more locales under a
- * prefix (/de/about, /fr/about, …). The new site serves German and English only,
- * both prefixed, with localized slugs. Old French, Spanish, Italian and Dutch
- * URLs go to the English page. Pages that no longer exist map to the page that
- * now carries their content.
+ * prefix (/de/about, /fr/about, …) with English slugs. Every one of those
+ * languages exists again, so each old URL goes to the same page in its own
+ * language, under the localized slug. Pages that no longer exist map to the page
+ * that now carries their content.
  */
 const OLD_ROUTES: Record<string, Pathname> = {
   '/about': '/about',
@@ -77,9 +77,9 @@ const OLD_ROUTES: Record<string, Pathname> = {
   '/privacy-and-gdpr': '/privacy',
   '/impressum': '/imprint',
 };
-const DROPPED_LOCALES = ['fr', 'es', 'it', 'nl'];
+const OLD_LOCALES = ['de', 'fr', 'es', 'it', 'nl'] as const;
 
-function localized(locale: 'de' | 'en', href: Pathname) {
+function localized(locale: Locale, href: Exclude<Pathname, '/blog/[slug]'>) {
   const entry = routing.pathnames[href];
   const path = typeof entry === 'string' ? entry : entry[locale];
   return path === '/' ? `/${locale}` : `/${locale}${path}`;
@@ -91,14 +91,10 @@ function legacyRedirects() {
     if (source !== destination) rules.push({ source, destination, permanent: true });
   };
   for (const [old, href] of Object.entries(OLD_ROUTES)) {
-    add(old, localized('en', href));
-    add(`/de${old}`, localized('de', href));
-    for (const locale of DROPPED_LOCALES) add(`/${locale}${old}`, localized('en', href));
-  }
-  for (const locale of DROPPED_LOCALES) {
-    add(`/${locale}`, '/en');
-    // Anything else under a dropped locale (an old deep link we did not list).
-    add(`/${locale}/:path*`, '/en');
+    add(old, localized('en', href as Exclude<Pathname, '/blog/[slug]'>));
+    for (const locale of OLD_LOCALES) {
+      add(`/${locale}${old}`, localized(locale, href as Exclude<Pathname, '/blog/[slug]'>));
+    }
   }
   return rules;
 }
