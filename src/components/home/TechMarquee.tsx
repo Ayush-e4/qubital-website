@@ -24,9 +24,7 @@ const rowB = [
 function Item({ label, i }: { label: string; i: number }) {
   return (
     <span className="flex items-center gap-8 px-4 sm:gap-12 sm:px-6">
-      <span className="text-gradient text-2xl font-medium tracking-tight sm:text-4xl">
-        {label}
-      </span>
+      <span className="text-gradient text-2xl font-medium tracking-tight sm:text-4xl">{label}</span>
       <span className="font-mono text-sm text-gradient">{i % 2 ? '1' : '0'}</span>
     </span>
   );
