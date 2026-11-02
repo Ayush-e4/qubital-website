@@ -14,7 +14,7 @@ import { site } from '@/config/site';
 import { getPost, getPosts, type Post } from '@/content/blog';
 import { getPathname, Link } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
-import { initPage, ogImage } from '@/lib/page';
+import { initPage, ogImage, ogLocale } from '@/lib/page';
 
 // Only the slugs listed here exist; anything else is a 404.
 export const dynamicParams = false;
@@ -56,7 +56,7 @@ export async function generateMetadata({
       title: `${post.title} · ${site.name}`,
       description: post.description,
       url,
-      locale: locale === 'de' ? 'de_DE' : 'en_GB',
+      ...ogLocale(locale),
       publishedTime: post.published,
       modifiedTime: post.updated,
       section: post.category,
