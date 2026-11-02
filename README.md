@@ -38,7 +38,7 @@ A pre-commit hook runs ESLint and Prettier over staged files.
 Routing is handled by next-intl and configured in one place,
 `src/i18n/routing.ts`.
 
-- **Both locales are prefixed**, German is the default, and each page has a
+- **Both locales are prefixed**, English is the fallback for every other language (so visitors from across Europe get a page they can read), and each page has a
   localized slug:
 
   ```
@@ -48,7 +48,7 @@ Routing is handled by next-intl and configured in one place,
   ```
 
 - **`/` auto-detects.** `src/proxy.ts` redirects it to `/de` or `/en` from the
-  `NEXT_LOCALE` cookie, then `Accept-Language`, then the default (`de`). The
+  `NEXT_LOCALE` cookie, then `Accept-Language`, then the default (`en`). The
   redirect is marked `no-store` so a shared cache never keeps one visitor's
   language for everyone.
 - **Never build a URL by hand.** Use `Link`, `useRouter` and `getPathname` from
