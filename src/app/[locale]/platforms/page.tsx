@@ -20,6 +20,7 @@ import { rich } from '@/lib/rich';
 const LOGOS: Record<string, { logo: string; label?: string | true }> = {
   'One Identity Manager': { logo: 'one-identity', label: 'Identity Manager' },
   'SailPoint IdentityIQ': { logo: 'sailpoint', label: 'IdentityIQ' },
+  'SailPoint Identity Security Cloud': { logo: 'sailpoint', label: 'Identity Security Cloud' },
   Omada: { logo: 'omada' },
   Saviynt: { logo: 'saviynt' },
   'SAP Cloud Identity Services: IPS': { logo: 'sap', label: 'Identity Provisioning (IPS)' },
