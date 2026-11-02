@@ -48,6 +48,19 @@ const ROUTES = {
   approach: { de: '/de/vorgehen', en: '/en/approach' },
   industries: { de: '/de/branchen', en: '/en/industries' },
   careers: { de: '/de/karriere', en: '/en/careers' },
+  blog: { de: '/de/blog', en: '/en/blog' },
+  'blog/iam-query-performance': {
+    de: '/de/blog/iam-performance-abfrage-70-sekunden-unter-eine',
+    en: '/en/blog/iam-query-performance-70-seconds-to-under-one',
+  },
+  'blog/non-human-identity-ai-agents': {
+    de: '/de/blog/non-human-identities-und-ki-agenten-steuern',
+    en: '/en/blog/governing-non-human-identities-and-ai-agents',
+  },
+  'blog/iga-for-sap': {
+    de: '/de/blog/identity-governance-fuer-sap-landschaften',
+    en: '/en/blog/identity-governance-for-sap-landscapes',
+  },
   contact: { de: '/de/kontakt', en: '/en/contact' },
   imprint: { de: '/de/impressum', en: '/en/imprint' },
   privacy: { de: '/de/datenschutz', en: '/en/privacy' },
@@ -248,7 +261,7 @@ test('security headers are sent', async () => {
   const res = await fetch(`${BASE}/en`, { redirect: 'manual' });
   const csp = res.headers.get('content-security-policy') ?? '';
   assert.match(csp, /default-src 'self'/);
-  assert.match(csp, /connect-src 'self' https:\/\/eu\.i\.posthog\.com/);
+  assert.match(csp, /connect-src 'self' https:\/\/[a-z0-9-]+\.in\.applicationinsights\.azure\.com/);
   assert.equal(res.headers.get('x-content-type-options'), 'nosniff');
   assert.ok(res.headers.get('strict-transport-security'));
 });
