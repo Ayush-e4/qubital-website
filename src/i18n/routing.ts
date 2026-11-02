@@ -11,6 +11,8 @@ export const routing = defineRouting({
     '/approach': { de: '/vorgehen', en: '/approach' },
     '/industries': { de: '/branchen', en: '/industries' },
     '/careers': { de: '/karriere', en: '/careers' },
+    '/blog': '/blog',
+    '/blog/[slug]': '/blog/[slug]',
     '/contact': { de: '/kontakt', en: '/contact' },
     '/imprint': { de: '/impressum', en: '/imprint' },
     '/privacy': { de: '/datenschutz', en: '/privacy' },
