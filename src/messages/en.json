@@ -1,34 +1,34 @@
 {
   "meta": {
     "title": "Qubital: Identity & Access Management consulting from Germany",
-    "description": "Qubital is an identity & access management consultancy from Germany: identity governance (IGA), Non-Human Identity (NHI) and AI agent identity governance, privileged access (PAM), customer identity (CIAM) and workforce identity (WIAM).",
+    "description": "Qubital is an IAM consultancy from Germany: identity governance (IGA), PAM, CIAM, workforce identity and governance for non-human identities and AI agents.",
     "pages": {
       "services": {
-        "title": "Services",
-        "description": "Identity governance (IGA), Non-Human Identity (NHI) and AI agent identity governance, privileged access (PAM), customer identity (CIAM) and workforce identity (WIAM) from Qubital."
+        "title": "IAM Consulting Services: IGA, PAM, CIAM & NHI",
+        "description": "IAM consulting: identity governance (IGA), privileged access (PAM), customer and workforce identity, plus non-human and AI agent identity governance."
       },
       "platforms": {
-        "title": "Platforms",
-        "description": "The IAM products Qubital works with: One Identity, SailPoint, Omada, Saviynt, Okta, OneLogin, Ping Identity (formerly ForgeRock), Microsoft Entra ID, Active Directory, SAP Cloud Identity Services, CyberArk and BeyondTrust."
+        "title": "IAM Platforms: SailPoint, One Identity, Entra ID",
+        "description": "IAM platforms we implement: One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk and more."
       },
       "about": {
-        "title": "About & Mission",
-        "description": "Why we are called Qubital, what drives us and the values behind every project."
+        "title": "About Qubital: IAM Consultancy from Bavaria",
+        "description": "Why we are called Qubital, what drives our identity & access management consultants and the values behind every IAM project."
       },
       "approach": {
-        "title": "Our Approach",
+        "title": "Our IAM Project Approach: Assess to Operate",
         "description": "Discover, design, build, evolve: how Qubital takes identity programmes from assessment to secure operations."
       },
       "industries": {
-        "title": "Industries",
-        "description": "Identity & access management for organisations across industries."
+        "title": "Identity & Access Management by Industry",
+        "description": "IAM for automotive, aviation, banking, pharma, retail, telecom, tourism, insurance and manufacturing: access governance that fits your sector."
       },
       "careers": {
-        "title": "Careers",
-        "description": "Build the future of identity security with us. Join Qubital."
+        "title": "IAM Consultant Careers in Germany",
+        "description": "Build the future of identity security with us. Explore IAM consulting careers at Qubital in Germany."
       },
       "contact": {
-        "title": "Contact",
+        "title": "Contact Our IAM Consultants",
         "description": "Tell us about your project. Qubital replies within one business day."
       },
       "imprint": {
@@ -646,8 +646,8 @@
         {
           "heading": "6. Web analytics",
           "body": [
-            "To understand how our website is used and to improve it, we use the analytics service PostHog (PostHog Inc.). Data is stored on servers in the European Union, and PostHog acts as our processor under Art. 28 GDPR.",
-            "PostHog is configured on this website so that no cookies or other identifiers are stored on your device. It records which pages are viewed and basic technical information about the visit, such as the browser and device type. Browsers that send a Do Not Track signal are not recorded. The resulting statistics are pseudonymous and are not used to identify you.",
+            "To understand how our website is used and to improve it, we use Azure Application Insights, a service of Microsoft Ireland Operations Limited. The data is stored in a Microsoft data centre in Germany (region Germany West Central), and Microsoft acts as our processor under Art. 28 GDPR.",
+            "Application Insights is configured on this website so that no cookies, local storage or other identifiers are stored on your device. It records which pages are viewed and basic technical information about the visit, such as the browser, the device type and the approximate location (country and city) derived from your IP address. The IP address itself is not stored. Browsers that send a Do Not Track signal are not recorded. The resulting statistics are pseudonymous, are kept for 90 days and are not used to identify you.",
             "The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest lies in the anonymous evaluation of how our website is used. You can object to this processing at any time (see section 8.2), for example by enabling Do Not Track in your browser."
           ]
         },
@@ -683,7 +683,7 @@
           ]
         }
       ],
-      "date": "24 October 2026"
+      "date": "29 October 2026"
     }
   },
   "notFound": {

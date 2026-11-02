@@ -11,7 +11,8 @@
  *                         (src/lib/contact/validation.ts)
  *   3. honeypot         — silently accept and discard, so a bot learns nothing
  *   4. config check     — a missing key must be a loud failure, not a silent drop
- *   5. send             — notification first (that is the lead), auto-reply second
+ *   5. send             — notification first (that is the lead), auto-reply second,
+ *                         then an optional WhatsApp ping (src/lib/contact/whatsapp.ts)
  *
  * Nothing submitted is ever echoed back in a response body.
  */
@@ -22,13 +23,14 @@ import { renderAutoReply, renderNotification, type ContactSubmission } from '@/l
 import { graphConfig, sendMail } from '@/lib/contact/graph-mail';
 import { clientIp, rateLimit } from '@/lib/contact/rate-limit';
 import { validateContactSubmission } from '@/lib/contact/validation';
+import { sendWhatsAppNotification, whatsappConfig } from '@/lib/contact/whatsapp';
 
 export const runtime = 'nodejs';
 
 const MAX_BODY_BYTES = 20_000;
 
 const DEFAULT_TO = site.email;
-const DEFAULT_CC = 'arun1812@gmail.com';
+const DEFAULT_CC = 'arun1812@hotmail.com';
 /** The mailbox Graph sends as. The Entra app must be allowed to send from it. */
 const DEFAULT_FROM = site.email;
 
@@ -160,6 +162,16 @@ export async function POST(request: Request) {
     });
   } catch (cause) {
     console.error('[contact] auto-reply failed:', cause);
+  }
+
+  // 5c. WhatsApp ping — optional and best effort, like the auto-reply.
+  const whatsapp = whatsappConfig();
+  if (whatsapp) {
+    try {
+      await sendWhatsAppNotification(whatsapp, submission);
+    } catch (cause) {
+      console.error('[contact] WhatsApp notification failed:', cause);
+    }
   }
 
   return NextResponse.json({ ok: true });

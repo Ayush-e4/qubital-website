@@ -7,7 +7,8 @@ const withNextIntl = createNextIntlPlugin();
 const isDev = process.env.NODE_ENV !== 'production';
 
 // Third parties the app talks to from the browser:
-//   - PostHog: bundle served from *-assets, events posted to the api host
+//   - Azure Application Insights: page views posted to the EU ingestion host
+//     (SDK is bundled, so no script host is needed)
 // Fonts are self-hosted via next/font and icons are inline SVG (Lucide), so
 // neither fonts.googleapis.com nor fonts.gstatic.com is needed here.
 // Next injects inline bootstrap scripts, the layout inlines the theme script and
@@ -20,11 +21,11 @@ const contentSecurityPolicy = [
   "object-src 'none'",
   "frame-ancestors 'self'",
   "form-action 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://eu.i.posthog.com https://eu-assets.i.posthog.com`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",
   "img-src 'self' data: blob:",
-  "connect-src 'self' https://eu.i.posthog.com https://eu-assets.i.posthog.com",
+  "connect-src 'self' https://germanywestcentral-1.in.applicationinsights.azure.com",
 ].join('; ');
 
 const securityHeaders = [

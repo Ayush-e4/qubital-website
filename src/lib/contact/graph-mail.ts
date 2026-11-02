@@ -103,7 +103,7 @@ export async function sendMail(config: GraphConfig, sender: string, message: Gra
   // Graph answers 202 Accepted with an empty body on success.
   if (!res.ok) {
     const body = (await res.json().catch(() => ({}))) as { error?: { code?: string } };
-    if (res.status === 401) cached = null;
+    if (res.status === 401 || res.status === 403) cached = null;
     throw new GraphMailError('send', res.status, body.error?.code ?? 'unknown');
   }
 }

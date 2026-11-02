@@ -3,11 +3,11 @@ import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Analytics } from '@/components/Analytics';
 import { InlineScript } from '@/components/InlineScript';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
-import { PostHogProvider } from '@/components/PostHogProvider';
 import { site } from '@/config/site';
 import { routing } from '@/i18n/routing';
 import { alternates, ogImage } from '@/lib/page';
@@ -82,7 +82,18 @@ function organizationJsonLd(description: string) {
           addressCountry: 'DE',
         },
         sameAs: [site.linkedin],
+        image: `${site.url}${ogImage.url}`,
         areaServed: ['Germany', 'Europe'],
+        knowsAbout: [
+          'Identity and Access Management (IAM)',
+          'Identity Governance and Administration (IGA)',
+          'Privileged Access Management (PAM)',
+          'Customer Identity and Access Management (CIAM)',
+          'Workforce Identity',
+          'Non-Human Identity (NHI) governance',
+          'AI agent identity governance',
+          'SAP identity integration',
+        ],
         contactPoint: {
           '@type': 'ContactPoint',
           email: site.email,
@@ -125,15 +136,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
         />
       </head>
       <body className="grain min-h-svh overflow-x-clip">
-        <PostHogProvider>
-          <NextIntlClientProvider>
-            <SmoothScroll>
-              <Header />
-              <main id="main">{children}</main>
-              <Footer />
-            </SmoothScroll>
-          </NextIntlClientProvider>
-        </PostHogProvider>
+        <Analytics />
+        <NextIntlClientProvider>
+          <SmoothScroll>
+            <Header />
+            <main id="main">{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

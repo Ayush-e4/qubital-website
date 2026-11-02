@@ -43,8 +43,24 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
   const models = t.raw('page.models.items') as { title: string; text: string }[];
   const faq = t.raw('page.faq.items') as { q: string; a: string }[];
 
+  // FAQ structured data, built from the same items the accordion renders.
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // `<` escaped so no value can close the script element
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }}
+      />
       <PageHero title={t.rich('page.title', rich)} description={t('page.description')} />
 
       <section className="pb-24 sm:pb-32">

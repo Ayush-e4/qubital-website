@@ -1,4 +1,4 @@
-# Qubital Website
+# Qubital Website..
 
 Marketing site for Qubital GmbH, an Identity & Access Management
 consultancy (PAM, IGA, CIAM, workforce IAM, AI and agentic identity security).
@@ -132,13 +132,12 @@ there.
 
 ## Environment variables
 
-All optional: analytics, and the contact form's email delivery, degrade
-gracefully when unset.
+All optional: the contact form's email delivery degrades gracefully when
+unset. Web analytics (Azure Application Insights, cookieless) needs no
+variable; its connection string is in `src/config/site.ts`.
 
 | Variable                       | Purpose                                                     |
 | ------------------------------ | ----------------------------------------------------------- |
-| `NEXT_PUBLIC_POSTHOG_KEY`      | PostHog project key                                         |
-| `NEXT_PUBLIC_POSTHOG_HOST`     | PostHog host (defaults to EU)                               |
 | `GRAPH_TENANT_ID`              | Entra tenant ID for contact form delivery (Microsoft Graph) |
 | `GRAPH_CLIENT_ID`              | Entra app (client) ID                                       |
 | `GRAPH_CLIENT_SECRET`          | Entra app client secret                                     |
@@ -284,7 +283,7 @@ Run it with `node .next/standalone/server.js`. It honours `PORT` and `HOSTNAME`,
 which is what App Service and Container Apps inject.
 
 **3. `NEXT_PUBLIC_*` values are inlined at build time.**
-`NEXT_PUBLIC_POSTHOG_KEY` is baked into the bundle during `next build`, so a
+Any `NEXT_PUBLIC_*` value is baked into the bundle during `next build`, so a
 single artifact cannot serve two environments. Build per environment, or supply
 the values during the build step in the pipeline.
 
@@ -313,7 +312,7 @@ src/
     layout/         Header, Dock, Footer, LocaleSwitcher, ThemeToggle, nav
     sections/       shared page sections, ContactForm, LegalPage
     ui/             primitives (Button, Container, Reveal, ...)
-    PostHogProvider.tsx
+    Analytics.tsx   cookieless Azure Application Insights page views
   config/site.ts    name, legal name, domain, email, location
   i18n/             next-intl routing, navigation helpers, request config
   lib/
