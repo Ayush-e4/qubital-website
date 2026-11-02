@@ -12,7 +12,7 @@
         "description": "IAM-Plattformen, die wir umsetzen: One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk u. a."
       },
       "about": {
-        "title": "Über Qubital: IAM-Beratung aus Bayern",
+        "title": "Über uns: IAM-Beratung aus Bayern",
         "description": "Warum wir Qubital heißen, was unsere Identity & Access Management Berater antreibt und welche Werte hinter jedem IAM-Projekt stehen."
       },
       "approach": {
@@ -38,6 +38,10 @@
       "privacy": {
         "title": "Datenschutzerklärung",
         "description": "Wie Qubital Ihre personenbezogenen Daten verarbeitet."
+      },
+      "blog": {
+        "title": "IAM-Blog: Identity Governance, PAM & SAP",
+        "description": "Praxisnahe Artikel zu Identity & Access Management: IGA, Non-Human Identities und KI-Agenten, SAP-Berechtigungen und IAM-Performance, von Qubital."
       }
     }
   },
@@ -56,7 +60,8 @@
     "home": "Qubital Startseite",
     "themeLight": "Zum hellen Modus wechseln",
     "themeDark": "Zum dunklen Modus wechseln",
-    "platforms": "Plattformen"
+    "platforms": "Plattformen",
+    "blog": "Blog"
   },
   "common": {
     "learnMore": "Mehr erfahren",
@@ -820,5 +825,16 @@
   "clients": {
     "title": "Unternehmen, mit denen wir <em>gearbeitet haben.</em>",
     "description": "Von Automobilindustrie und Luftfahrt bis zu Banken, Pharma, Handel und Telekommunikation."
+  },
+  "blog": {
+    "hero": {
+      "title": "Wissen rund um <em>Identity Security.</em>",
+      "description": "Praxisnahe Artikel aus unseren Projekten: Identity Governance, privilegierte Zugriffe, SAP und Identitäten, die keine Menschen sind."
+    },
+    "readMore": "Artikel lesen",
+    "minRead": "{minutes} Min. Lesezeit",
+    "back": "Alle Artikel",
+    "breadcrumb": "Brotkrumennavigation",
+    "more": "Weitere Artikel"
   }
 }

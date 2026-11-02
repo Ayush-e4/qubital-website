@@ -12,7 +12,7 @@
         "description": "IAM platforms we implement: One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk and more."
       },
       "about": {
-        "title": "About Qubital: IAM Consultancy from Bavaria",
+        "title": "About Us: IAM Consultancy from Bavaria",
         "description": "Why we are called Qubital, what drives our identity & access management consultants and the values behind every IAM project."
       },
       "approach": {
@@ -38,6 +38,10 @@
       "privacy": {
         "title": "Privacy Policy",
         "description": "How Qubital processes your personal data."
+      },
+      "blog": {
+        "title": "IAM Blog: Identity Governance, PAM & SAP Insights",
+        "description": "Practical articles on identity and access management: IGA, non-human and AI agent identities, SAP access governance and IAM performance, from Qubital."
       }
     }
   },
@@ -56,7 +60,8 @@
     "home": "Qubital home",
     "themeLight": "Switch to light mode",
     "themeDark": "Switch to dark mode",
-    "platforms": "Platforms"
+    "platforms": "Platforms",
+    "blog": "Blog"
   },
   "common": {
     "learnMore": "Learn more",
@@ -817,5 +822,16 @@
   "clients": {
     "title": "Organisations we have <em>worked with.</em>",
     "description": "From automotive and aviation to banking, pharma, retail and telecom."
+  },
+  "blog": {
+    "hero": {
+      "title": "Insights on <em>identity security.</em>",
+      "description": "Practical articles from our projects: identity governance, privileged access, SAP, and the identities that are not people."
+    },
+    "readMore": "Read article",
+    "minRead": "{minutes} min read",
+    "back": "All articles",
+    "breadcrumb": "Breadcrumb",
+    "more": "More articles"
   }
 }
