@@ -721,6 +721,11 @@
             "text": "Identity governance: lifecycle, access requests and certifications."
           },
           {
+            "name": "SailPoint Identity Security Cloud",
+            "vendor": "SailPoint",
+            "text": "SaaS identity governance: lifecycle, access requests, certifications and AI-driven role insights."
+          },
+          {
             "name": "Omada",
             "vendor": "Omada",
             "text": "Identity governance and administration, on-premises or as a cloud service."

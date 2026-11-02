@@ -724,6 +724,11 @@
             "text": "Identity Governance: Lifecycle, Berechtigungsanträge und Rezertifizierung."
           },
           {
+            "name": "SailPoint Identity Security Cloud",
+            "vendor": "SailPoint",
+            "text": "Identity Governance als SaaS: Lifecycle, Berechtigungsanträge, Rezertifizierung und KI-gestützte Rollenanalyse."
+          },
+          {
             "name": "Omada",
             "vendor": "Omada",
             "text": "Identity Governance und Administration, on-premises oder als Cloud-Service."
