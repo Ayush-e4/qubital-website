@@ -7,6 +7,28 @@ export const site = {
   email: 'hello@qubital.eu',
   linkedin: 'https://www.linkedin.com/company/qubital-gmbh/',
   location: 'Bavaria, Germany',
+  // Markets served, for structured data: the DACH region first, then the rest of
+  // the EU/EEA, Switzerland and the UK (where the client logos already are).
+  areaServed: [
+    'Germany',
+    'Austria',
+    'Switzerland',
+    'Luxembourg',
+    'Belgium',
+    'Netherlands',
+    'France',
+    'Denmark',
+    'Sweden',
+    'Norway',
+    'Finland',
+    'Poland',
+    'Czechia',
+    'Italy',
+    'Spain',
+    'Portugal',
+    'Ireland',
+    'United Kingdom',
+  ],
   // Azure Application Insights (appi-websites, Germany West Central). Public by
   // design: it only allows sending telemetry, not reading it. If the ingestion
   // host changes, update connect-src in next.config.ts too.
