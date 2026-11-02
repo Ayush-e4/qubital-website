@@ -113,7 +113,7 @@ function organizationJsonLd(description: string) {
         url: site.url,
         name: site.name,
         publisher: { '@id': `${site.url}/#organization` },
-        inLanguage: ['de', 'en'],
+        inLanguage: [...routing.locales],
       },
     ],
   };
