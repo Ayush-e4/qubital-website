@@ -136,8 +136,33 @@
 
 /* A light plate for third-party logos, which are designed for white */
 @utility logo-plate {
-  background: #ffffff;
+  background: linear-gradient(135deg, #f1eeff 0%, #ffffff 50%, #e2f8fb 100%);
   border: 1px solid var(--line);
+}
+
+/* Tile fills: a soft violet-to-cyan wash over the surface */
+@utility card-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--violet) 9%, transparent) 0%,
+      transparent 50%,
+      color-mix(in oklab, var(--cyan) 8%, transparent) 100%
+    ),
+    color-mix(in oklab, var(--surface) 70%, transparent);
+}
+
+/* Same idea for logo tiles, kept light in both themes since logos are made for white */
+@utility card-gradient-light {
+  background: linear-gradient(135deg, #f1eeff 0%, #ffffff 50%, #e2f8fb 100%);
+}
+
+/* Gradient marquee labels */
+@utility text-gradient-aurora {
+  background-image: linear-gradient(90deg, var(--violet), #f472b6, #5b8cff, var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @utility bg-grid {
