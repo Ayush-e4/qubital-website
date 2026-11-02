@@ -1,0 +1,837 @@
+{
+  "meta": {
+    "title": "Qubital: doradztwo w zakresie IAM w całej Europie",
+    "description": "Doradztwo IAM z Niemiec dla klientów w całej Europie: zarządzanie tożsamością (IGA), PAM, CIAM, tożsamości pracowników oraz tożsamości maszyn i agentów AI.",
+    "pages": {
+      "services": {
+        "title": "Usługi doradcze IAM: IGA, PAM, CIAM i NHI",
+        "description": "Doradztwo IAM w całej Europie: zarządzanie tożsamością (IGA), dostęp uprzywilejowany (PAM), tożsamości klientów i pracowników oraz maszyn i agentów AI."
+      },
+      "platforms": {
+        "title": "Platformy IAM: SailPoint, One Identity, Entra ID",
+        "description": "Wdrażane przez nas platformy IAM: One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk i inne."
+      },
+      "about": {
+        "title": "O nas: doradztwo IAM z Bawarii",
+        "description": "Skąd nazwa Qubital, co motywuje naszych konsultantów ds. zarządzania tożsamością i dostępem oraz jakie wartości stoją za każdym projektem IAM w Europie."
+      },
+      "approach": {
+        "title": "Podejście do projektów IAM: od analizy do eksploatacji",
+        "description": "Analiza, projekt, wdrożenie, rozwój: w ten sposób Qubital prowadzi programy zarządzania tożsamością od wstępnej oceny aż po bezpieczną eksploatację."
+      },
+      "industries": {
+        "title": "Zarządzanie tożsamością i dostępem według branż",
+        "description": "IAM dla motoryzacji, lotnictwa, bankowości, farmacji, handlu, telekomunikacji, turystyki, ubezpieczeń i przemysłu w Europie: dostęp dopasowany do branży."
+      },
+      "careers": {
+        "title": "Kariera konsultanta IAM w Niemczech i Europie",
+        "description": "Twórzmy razem przyszłość bezpieczeństwa tożsamości. Poznaj możliwości kariery w doradztwie IAM w firmie Qubital w Niemczech i dołącz do naszego zespołu."
+      },
+      "contact": {
+        "title": "Kontakt z naszymi konsultantami IAM",
+        "description": "Prosimy opowiedzieć nam o projekcie zarządzania tożsamością i dostępem. Qubital odpowiada w ciągu jednego dnia roboczego, bez prezentacji sprzedażowych."
+      },
+      "imprint": {
+        "title": "Nota prawna",
+        "description": "Nota prawna (Impressum) spółki Qubital GmbH: dane firmy, osoby uprawnione do reprezentacji, wpis do rejestru handlowego oraz dane kontaktowe."
+      },
+      "privacy": {
+        "title": "Polityka prywatności",
+        "description": "Jak Qubital przetwarza Państwa dane osobowe: hosting, pliki cookie, formularz kontaktowy, analityka internetowa oraz Państwa prawa wynikające z RODO."
+      },
+      "blog": {
+        "title": "Blog IAM: zarządzanie tożsamością, PAM i SAP",
+        "description": "Praktyczne artykuły o zarządzaniu tożsamością i dostępem: IGA, tożsamości maszyn i agentów AI, kontrola dostępu w SAP oraz wydajność IAM. Od Qubital."
+      }
+    }
+  },
+  "nav": {
+    "services": "Usługi",
+    "about": "O nas",
+    "approach": "Podejście",
+    "industries": "Branże",
+    "careers": "Kariera",
+    "contact": "Kontakt",
+    "cta": "Porozmawiajmy",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "language": "Język",
+    "skip": "Przejdź do treści",
+    "home": "Qubital – strona główna",
+    "themeLight": "Przełącz na tryb jasny",
+    "themeDark": "Przełącz na tryb ciemny",
+    "platforms": "Platformy",
+    "blog": "Blog"
+  },
+  "common": {
+    "learnMore": "Dowiedz się więcej",
+    "startProject": "Rozpocznij projekt",
+    "allServices": "Wszystkie usługi",
+    "readMore": "Czytaj dalej"
+  },
+  "cta": {
+    "title": "Gotowi przejść <em>od 0 do 1</em>?",
+    "description": "Proszę nam powiedzieć, gdzie są Państwo dziś i dokąd chcą Państwo dojść. Odpowiemy w ciągu jednego dnia roboczego – bez prezentacji sprzedażowej, za to w formie rzeczowej rozmowy.",
+    "primary": "Rozpocznij projekt",
+    "secondary": "Napisz do nas"
+  },
+  "home": {
+    "hero": {
+      "title": "Każdy dostęp to <zero>0</zero> albo <one>1</one>. <em>Dbamy o to, by był właściwy.</em>",
+      "description": "Qubital to firma doradcza specjalizująca się w zarządzaniu tożsamością i dostępem. Pomagamy organizacjom kontrolować, kto i co ma dostęp do ich systemów – od kont uprzywilejowanych i zarządzania tożsamością po tożsamości klientów, pracowników i agentów AI.",
+      "primary": "Rozpocznij projekt",
+      "secondary": "Poznaj usługi"
+    },
+    "marquee": "Platformy IAM, z którymi pracujemy",
+    "statement": "Nasza nazwa pochodzi od kubitu, który może być jednocześnie 0 i 1. Dostęp tak nie może. Każde logowanie, każde uprawnienie, każde działanie agenta AI kończy się jedną decyzją: przyznano lub odmówiono. Dbamy o to, by każda z nich była właściwa.",
+    "services": {
+      "title": "Bezpieczeństwo tożsamości <em>kompleksowo.</em>",
+      "description": "Pięć obszarów tożsamości, jeden zespół. Doradzamy, wdrażamy i utrzymujemy rozwiązania, aby właściwi ludzie i maszyny mieli właściwy dostęp – i nikt poza nimi."
+    },
+    "why": {
+      "title": "Wystarczająco mali, by dbać. <em>Wystarczająco bystrzy</em>, by dowozić.",
+      "description": "Jesteśmy młodą firmą z doświadczonymi ekspertami. Oznacza to krótkie ścieżki decyzyjne, uczciwe doradztwo i ludzi, którzy naprawdę znają Państwa projekt.",
+      "items": [
+        {
+          "prefix": "<",
+          "value": 24,
+          "suffix": "h",
+          "label": "Czas odpowiedzi",
+          "text": "Każde zapytanie otrzymuje rzeczową odpowiedź w ciągu jednego dnia roboczego."
+        },
+        {
+          "prefix": "",
+          "value": 100,
+          "suffix": "%",
+          "label": "RODO na pierwszym miejscu",
+          "text": "Prywatność i zgodność z przepisami uwzględniamy od pierwszego dnia, a nie dokładamy później."
+        },
+        {
+          "prefix": "",
+          "value": 2,
+          "suffix": "",
+          "label": "Języki",
+          "text": "Pracujemy po niemiecku i po angielsku – z Państwa zespołem i partnerami."
+        },
+        {
+          "prefix": "",
+          "value": 1,
+          "suffix": "",
+          "label": "Osoba kontaktowa",
+          "text": "Jedna dedykowana osoba – od rozpoczęcia projektu po uruchomienie produkcyjne i dalej."
+        }
+      ]
+    },
+    "process": {
+      "title": "Od pierwszego pomysłu do <em>działającego systemu.</em>",
+      "description": "Przejrzysty, czteroetapowy proces, w którym na każdym etapie zachowują Państwo kontrolę.",
+      "link": "Poznaj nasze podejście"
+    },
+    "industries": {
+      "title": "Bezpieczeństwo tożsamości dla <em>każdej</em> branży.",
+      "description": "Wszędzie tam, gdzie wrażliwe dane i krytyczne systemy wymagają ochrony, tożsamość stanowi pierwszą linię obrony.",
+      "link": "Poznaj branże"
+    },
+    "photos": {
+      "team": {
+        "alt": "Konsultant objaśnia koledze diagram na tablicy",
+        "caption": "Warsztaty z Państwa zespołem – na miejscu lub zdalnie"
+      },
+      "signin": {
+        "alt": "Telefon wyświetlający monit weryfikacji tożsamości",
+        "caption": "Logowanie, któremu ufają Państwa klienci"
+      },
+      "key": {
+        "alt": "Sprzętowy klucz bezpieczeństwa na drewnianym biurku",
+        "caption": "Silne uwierzytelnianie dla dostępu uprzywilejowanego"
+      }
+    },
+    "practice": {
+      "title": "Decyzja o dostępie <em>w kilka sekund.</em>",
+      "description": "Nowy pracownik potrzebuje dostępu. Polityki są sprawdzane automatycznie, przełożony zatwierdza wniosek jednym kliknięciem, a wszystko jest rejestrowane na potrzeby audytu."
+    }
+  },
+  "services": {
+    "items": {
+      "pam": {
+        "title": "Zarządzanie dostępem uprzywilejowanym (PAM)",
+        "short": "Zabezpieczanie, kontrola i monitorowanie kont o najszerszych uprawnieniach.",
+        "description": "Konta uprzywilejowane są głównym celem niemal każdego ataku. Pomagamy je wykryć, przechowywać ich dane uwierzytelniające w sejfie, wymuszać dostęp just-in-time i nagrywać sesje – tak aby uprawnienia administracyjne były używane tylko wtedy, gdy są potrzebne, i zawsze dało się je prześledzić.",
+        "points": [
+          "Wykrywanie kont uprzywilejowanych",
+          "Sejf i rotacja danych uwierzytelniających",
+          "Dostęp just-in-time i zasada najmniejszych uprawnień",
+          "Monitorowanie i nagrywanie sesji"
+        ]
+      },
+      "iga": {
+        "title": "Zarządzanie tożsamością i administracja (IGA)",
+        "short": "Każdy ma dokładnie taki dostęp, jakiego potrzebuje – i można to udowodnić.",
+        "description": "Automatyzujemy cykl życia tożsamości od zatrudnienia po odejście, budujemy modele ról dopasowane do Państwa organizacji oraz wdrażamy przeglądy dostępu i raportowanie, które spełniają wymagania audytorów, nie obciążając nadmiernie menedżerów.",
+        "points": [
+          "Automatyzacja procesów joiner-mover-leaver",
+          "Modelowanie ról (RBAC/ABAC)",
+          "Certyfikacje i przeglądy dostępu",
+          "Rozdział obowiązków (SoD) i raportowanie audytowe"
+        ]
+      },
+      "ciam": {
+        "title": "Tożsamość klientów (CIAM)",
+        "short": "Płynne i bezpieczne logowanie, któremu ufają Państwa klienci.",
+        "description": "Rejestracja, logowanie i wyrażanie zgód kształtują pierwsze wrażenie o Państwa produktach cyfrowych. Projektujemy rozwiązania tożsamości klientów, które są wygodne dla użytkowników, odporne na przejęcia kont i zgodne z RODO.",
+        "points": [
+          "Ścieżki rejestracji i logowania",
+          "Logowanie bez hasła i passkeys",
+          "Zarządzanie zgodami i preferencjami (RODO)",
+          "Ochrona przed oszustwami i przejęciem kont"
+        ]
+      },
+      "wiam": {
+        "title": "Tożsamość pracowników (WIAM)",
+        "short": "Jedna bezpieczna tożsamość dla każdego pracownika – w każdej aplikacji i na każdym urządzeniu.",
+        "description": "Zapewniamy Państwa pracownikom jednokrotne logowanie, silne uwierzytelnianie wieloskładnikowe i dostęp warunkowy, łącząc aplikacje chmurowe i lokalne w jedną spójną warstwę tożsamości opartą na modelu Zero Trust.",
+        "points": [
+          "Jednokrotne logowanie (SSO)",
+          "Uwierzytelnianie wieloskładnikowe i bez hasła",
+          "Dostęp warunkowy i Zero Trust",
+          "Integracja i modernizacja usług katalogowych"
+        ]
+      },
+      "ai": {
+        "title": "Zarządzanie tożsamościami nieosobowymi (NHI) i tożsamościami agentów AI",
+        "short": "Konta usługowe, klucze API, boty i agenci AI zarządzani jak każda inna tożsamość.",
+        "description": "Konta usługowe, klucze API, certyfikaty, boty, a teraz także agenci AI: tożsamości nieosobowe zwykle przewyższają liczbą pracowników, a wiele z nich nie ma jasno określonego właściciela. Obejmujemy je zarządzaniem tożsamością: pełna inwentaryzacja, jasna odpowiedzialność, ściśle ograniczone i krótkotrwałe dane uwierzytelniające oraz ślad audytowy wszystkich ich działań.",
+        "points": [
+          "Inwentaryzacja tożsamości nieosobowych i agentów AI",
+          "Odpowiedzialność i cykl życia kont usługowych",
+          "Ograniczone, krótkotrwałe dane uwierzytelniające i sekrety",
+          "Zabezpieczenia, monitorowanie i ślady audytowe"
+        ]
+      }
+    },
+    "page": {
+      "title": "Bezpieczeństwo tożsamości. <em>Zrobione dobrze.</em>",
+      "description": "Pięć wyspecjalizowanych obszarów obejmujących każdą tożsamość w Państwa organizacji: pracowników, wykonawców zewnętrznych, klientów, administratorów, konta usługowe i agentów AI.",
+      "deliverables": "Co obejmuje usługa",
+      "models": {
+        "title": "Współpraca <em>na Państwa zasadach.</em>",
+        "items": [
+          {
+            "title": "Doradztwo",
+            "text": "Oceny, strategia tożsamości, architektura docelowa i wybór platformy – w oparciu o Państwa ryzyka i wymagania."
+          },
+          {
+            "title": "Wdrożenie",
+            "text": "Wdrażamy, konfigurujemy i integrujemy platformy tożsamości, podłączamy Państwa aplikacje i migrujemy użytkowników – według ustalonych kamieni milowych."
+          },
+          {
+            "title": "Usługi zarządzane",
+            "text": "Po uruchomieniu produkcyjnym utrzymujemy Państwa platformy tożsamości: monitorowanie, aktualizacje, przeglądy dostępu i wsparcie w oparciu o jasne SLA."
+          },
+          {
+            "title": "Wzmocnienie zespołu",
+            "text": "Nasi specjaliści ds. tożsamości dołączają do Państwa zespołu – w Państwa narzędziach i Państwa rytmie pracy – na tak długo, jak będzie to potrzebne."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Pytania, które słyszymy <em>najczęściej.</em>",
+        "items": [
+          {
+            "q": "Czy pracujecie z małymi i średnimi firmami?",
+            "a": "Oczywiście. Bezpieczeństwo tożsamości ma znaczenie przy każdej wielkości firmy. Dopasowujemy nasze podejście – od ukierunkowanej oceny po pełny program – do Państwa organizacji i budżetu."
+          },
+          {
+            "q": "Obejmuje nas NIS2 lub DORA. Czy możecie pomóc?",
+            "a": "Tak. Kontrola tożsamości i dostępu ma kluczowe znaczenie dla NIS2, DORA i ISO 27001. Oceniamy stan obecny, eliminujemy luki i pomagamy przygotować dowody, których wymagają audytorzy."
+          },
+          {
+            "q": "Czy możecie utrzymywać naszą platformę tożsamości po uruchomieniu produkcyjnym?",
+            "a": "Tak. W ramach usług zarządzanych zajmujemy się eksploatacją, aktualizacjami, przeglądami dostępu i wsparciem w oparciu o jasne SLA."
+          },
+          {
+            "q": "Ile kosztuje projekt?",
+            "a": "To zależy od zakresu. Po bezpłatnej rozmowie wstępnej przesyłamy przejrzystą ofertę z ceną ryczałtową lub jasnymi stawkami dziennymi – bez ukrytych kosztów."
+          },
+          {
+            "q": "Czy pracujecie zdalnie?",
+            "a": "Tak. Pracujemy zdalnie na terenie Niemiec i całej Europy, a na miejscu pojawiamy się zawsze wtedy, gdy ma to sens – na warsztatach lub przy uruchomieniach produkcyjnych."
+          },
+          {
+            "q": "Jak szybko możecie zacząć?",
+            "a": "Zazwyczaj w ciągu jednego do dwóch tygodni. W przypadku pilnych incydentów często możemy pomóc jeszcze tego samego dnia."
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Nazwani na cześć kubitu. <em>Zbudowani na przejrzystości.</em>",
+      "description": "Qubital powstał w Niemczech z jasnym celem: tożsamość jest nową granicą bezpieczeństwa i zasługuje na specjalistów."
+    },
+    "story": {
+      "title": "Dlaczego <em>Qubital?</em>",
+      "paragraphs": [
+        "Klasyczny bit ma wartość 0 albo 1. Kubit, podstawowy element komputerów kwantowych, może być jednym i drugim jednocześnie – aż do momentu pomiaru. Mieści w sobie wszystkie możliwości naraz.",
+        "Tak właśnie podchodzimy do projektu. Zanim zdecydujemy się na rozwiązanie, pozostawiamy otwarte opcje, uważnie słuchamy i sprawdzamy, co jest możliwe. Gdy obraz jest jasny, podejmujemy decyzję i budujemy z precyzją.",
+        "Qubital łączy słowa „qubit” i „digital”. W bezpieczeństwie tożsamości ta równowaga jest wszystkim: dostęp musi być na tyle prosty, by ludzie mogli wykonywać swoją pracę, i na tyle restrykcyjny, by zatrzymać atakujących."
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 albo 1"
+      },
+      "qubit": {
+        "label": "Kubit",
+        "value": "0 i 1"
+      }
+    },
+    "mission": {
+      "title": "Sprawiamy, że bezpieczeństwo tożsamości jest <em>zrozumiałe, łatwe w zarządzaniu i skuteczne</em> dla każdej organizacji, niezależnie od jej wielkości.",
+      "label": "Misja"
+    },
+    "vision": {
+      "title": "Świat, w którym każda decyzja o dostępie – człowieka czy maszyny – jest przemyślana, możliwa do prześledzenia i bezpieczna.",
+      "label": "Wizja"
+    },
+    "values": {
+      "title": "Co jest dla nas <em>ważne.</em>",
+      "items": [
+        {
+          "title": "Przejrzystość",
+          "text": "Bez żargonu i bez czarnych skrzynek. Wyjaśniamy, co robimy i dlaczego, aby mogli Państwo podejmować świadome decyzje."
+        },
+        {
+          "title": "Odpowiedzialność",
+          "text": "Traktujemy Państwa projekt jak własny i odpowiadamy za niego od pierwszych warsztatów aż długo po uruchomieniu produkcyjnym."
+        },
+        {
+          "title": "Security by design",
+          "text": "Zasada najmniejszych uprawnień i ochrona prywatności są wbudowane w każdą architekturę i każdą konfigurację."
+        },
+        {
+          "title": "Ciekawość",
+          "text": "Świat tożsamości zmienia się szybko – od passkeys po agentów AI. Stale się uczymy, aby korzystali Państwo z tego, co nadchodzi, a nie z tego, co przestarzałe."
+        },
+        {
+          "title": "Partnerstwo",
+          "text": "Współpracujemy z Państwem na równych zasadach, uczciwie i otwarcie – nawet wtedy, gdy odpowiedź brzmi: „tego Państwo nie potrzebują”."
+        },
+        {
+          "title": "Trwałość",
+          "text": "Tworzymy rozwiązania tożsamości, które są trwałe, łatwe w utrzymaniu i nie generują jutrzejszego długu technicznego."
+        }
+      ]
+    },
+    "location": {
+      "title": "Zakorzenieni w Niemczech. <em>Działamy wszędzie.</em>",
+      "text": "Mamy siedzibę w Bawarii i współpracujemy z klientami w całych Niemczech, Europie i poza nią: zdalnie, na miejscu, po niemiecku lub po angielsku.",
+      "photoAlt": "Panorama Frankfurtu nad Menem w słoneczny dzień, ze statkami wycieczkowymi przy nabrzeżu",
+      "photoCaption": "Frankfurt nad Menem, Niemcy"
+    }
+  },
+  "approach": {
+    "hero": {
+      "title": "Złożoność na wejściu, <em>przejrzystość na wyjściu.</em>",
+      "description": "Każdy projekt przebiega według sprawdzonej ścieżki. Zawsze wiedzą Państwo, na jakim etapie jesteśmy, co nastąpi dalej i ile to kosztuje."
+    },
+    "steps": {
+      "title": "Cztery kroki. <em>Zero niespodzianek.</em>",
+      "items": [
+        {
+          "title": "Analiza",
+          "duration": "1–2 tygodnie",
+          "text": "Mapujemy Państwa tożsamości, konta, role i ścieżki dostępu – ludzi i maszyn – oraz oceniamy je pod kątem ryzyk i wymogów regulacyjnych, takich jak NIS2, DORA i ISO 27001.",
+          "outputs": [
+            "Inwentaryzacja tożsamości i dostępów",
+            "Analiza luk w zakresie ryzyka i zgodności",
+            "Ustalenia uszeregowane według priorytetów"
+          ]
+        },
+        {
+          "title": "Projekt",
+          "duration": "1–3 tygodnie",
+          "text": "Wspólnie projektujemy stan docelowy: architekturę tożsamości, model ról i polityk, harmonogram i budżet. Otrzymują Państwo konkretny plan, a nie 100-slajdową prezentację.",
+          "outputs": [
+            "Docelowa architektura tożsamości",
+            "Model ról i polityk",
+            "Wiążąca mapa drogowa i oferta"
+          ]
+        },
+        {
+          "title": "Wdrożenie",
+          "duration": "Iteracyjnie",
+          "text": "Wdrażamy w krótkich sprintach z regularnymi prezentacjami: podłączamy aplikacje, migrujemy konta i automatyzujemy procesy cyklu życia. Postępy widzą Państwo co dwa tygodnie i w każdej chwili mogą korygować kierunek.",
+          "outputs": [
+            "Podłączone aplikacje",
+            "Zautomatyzowane procesy joiner-mover-leaver",
+            "Dokumentacja i runbooki"
+          ]
+        },
+        {
+          "title": "Rozwój",
+          "duration": "Na bieżąco",
+          "text": "Uruchomienie produkcyjne to dopiero początek. Utrzymujemy i rozwijamy Państwa platformę tożsamości, prowadzimy regularne przeglądy dostępu i szkolimy Państwa zespół, aby wiedza pozostała w firmie.",
+          "outputs": ["Zarządzana eksploatacja", "Regularne przeglądy dostępu", "Szkolenia zespołu"]
+        }
+      ]
+    },
+    "principles": {
+      "title": "Jak <em>myślimy.</em>",
+      "items": [
+        {
+          "title": "Przejrzyste ceny",
+          "text": "Ceny ryczałtowe lub jasne stawki dzienne. Znają Państwo koszty, zanim zaczniemy."
+        },
+        {
+          "title": "Otwarte standardy",
+          "text": "SAML, OpenID Connect i SCIM zamiast uzależnienia od dostawcy. Konfiguracje, dane i dokumentacja należą do Państwa."
+        },
+        {
+          "title": "Domyślnie najmniejsze uprawnienia",
+          "text": "Każdy projekt zaczyna się od 0: domyślnie brak dostępu, tylko to, co niezbędne, i tylko na tak długo, jak to konieczne."
+        },
+        {
+          "title": "Transfer wiedzy",
+          "text": "Wszystko dokumentujemy i szkolimy Państwa zespół, dzięki czemu pozostają Państwo niezależni."
+        }
+      ]
+    },
+    "photoAlt": "Dwoje współpracowników omawia plan na swoich laptopach"
+  },
+  "industries": {
+    "hero": {
+      "title": "Bezpieczeństwo tożsamości dla <em>każdego sektora.</em>",
+      "description": "Wszędzie tam, gdzie wrażliwe dane i krytyczne systemy wymagają ochrony, pomagamy organizacjom właściwie zarządzać dostępem."
+    },
+    "items": [
+      {
+        "key": "automotive",
+        "title": "Motoryzacja"
+      },
+      {
+        "key": "aviation",
+        "title": "Lotnictwo"
+      },
+      {
+        "key": "banking",
+        "title": "Bankowość i usługi finansowe"
+      },
+      {
+        "key": "pharma",
+        "title": "Farmacja"
+      },
+      {
+        "key": "retail",
+        "title": "Handel detaliczny"
+      },
+      {
+        "key": "telecom",
+        "title": "Telekomunikacja"
+      },
+      {
+        "key": "tourism",
+        "title": "Turystyka"
+      },
+      {
+        "key": "insurance",
+        "title": "Ubezpieczenia"
+      },
+      {
+        "key": "manufacturing",
+        "title": "Przemysł wytwórczy"
+      }
+    ]
+  },
+  "careers": {
+    "hero": {
+      "title": "Kształtujmy razem to, co <em>nadchodzi.</em>",
+      "description": "Budujemy zespół ciekawych świata, życzliwych i wysoko wykwalifikowanych specjalistów ds. tożsamości. Jeśli bezpieczeństwo tożsamości to Państwa pasja – porozmawiajmy."
+    },
+    "perks": {
+      "title": "Miejsce, w którym można dawać <em>z siebie wszystko.</em>",
+      "items": [
+        {
+          "title": "Praca hybrydowa i elastyczna",
+          "text": "Praca z domu, z biura lub z dowolnego miejsca, w którym najlepiej się myśli. Zaufanie zamiast kontroli."
+        },
+        {
+          "title": "Budżet szkoleniowy",
+          "text": "Konferencje, certyfikaty, książki: co roku inwestujemy w rozwój naszych pracowników."
+        },
+        {
+          "title": "Nowoczesny sprzęt",
+          "text": "Sprzęt najwyższej klasy i narzędzia, z których naprawdę chce się korzystać."
+        },
+        {
+          "title": "Realny wpływ",
+          "text": "Krótkie ścieżki decyzyjne, różnorodne projekty i odpowiedzialność od pierwszego dnia."
+        },
+        {
+          "title": "Płaska struktura",
+          "text": "Każdy pomysł się liczy – niezależnie od tego, czy ktoś jest z nami jeden dzień, czy rok."
+        },
+        {
+          "title": "Kultura zespołowa",
+          "text": "Regularne dni zespołowe, otwarty feedback i ludzie, którzy wzajemnie się wspierają."
+        }
+      ]
+    },
+    "open": {
+      "title": "Obecnie brak otwartych stanowisk",
+      "text": "W tej chwili nie prowadzimy rekrutacji na konkretne stanowiska. Jeśli bezpieczeństwo tożsamości to Państwa dziedzina, i tak chętnie się z Państwem poznamy.",
+      "button": "Wyślij aplikację otwartą"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Zbudujmy coś <em>razem.</em>",
+      "description": "Prosimy opowiedzieć nam o swoim projekcie, wyzwaniu lub po prostu pomyśle. Odpowiadamy w ciągu jednego dnia roboczego."
+    },
+    "info": {
+      "email": "E-mail",
+      "location": "Lokalizacja",
+      "response": "W dni robocze zwykle odpowiadamy w ciągu kilku godzin.",
+      "hours": "Godziny pracy",
+      "hoursValue": "Pon.–pt., 8:00–18:00 CET"
+    },
+    "form": {
+      "name": "Imię i nazwisko",
+      "namePlaceholder": "Jan Kowalski",
+      "email": "E-mail",
+      "emailPlaceholder": "jan@firma.pl",
+      "company": "Firma",
+      "companyPlaceholder": "Opcjonalnie",
+      "topic": "W czym możemy pomóc?",
+      "topics": {
+        "pam": "PAM",
+        "iga": "IGA",
+        "ciam": "CIAM",
+        "wiam": "Tożsamość pracowników",
+        "ai": "NHI i agenci AI",
+        "other": "Coś innego"
+      },
+      "message": "Wiadomość",
+      "messagePlaceholder": "Prosimy krótko opisać projekt…",
+      "consent": "Wyrażam zgodę na przetwarzanie moich danych w celu udzielenia odpowiedzi na zapytanie. Więcej informacji w <link>polityce prywatności</link>.",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie…",
+      "success": {
+        "title": "Wiadomość wysłana!",
+        "text": "Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.",
+        "again": "Wyślij kolejną wiadomość"
+      },
+      "errors": {
+        "name": "Proszę podać imię i nazwisko.",
+        "email": "Proszę podać prawidłowy adres e-mail.",
+        "message": "Prosimy o nieco więcej szczegółów (co najmniej 10 znaków).",
+        "consent": "Proszę zaakceptować politykę prywatności.",
+        "server": "Coś poszło nie tak. Proszę spróbować ponownie lub napisać do nas bezpośrednio.",
+        "tooLong": "Tekst jest za długi. Proszę go skrócić.",
+        "rateLimited": "Zbyt wiele wiadomości w krótkim czasie. Proszę odczekać kilka minut i spróbować ponownie."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Doradztwo w zakresie zarządzania tożsamością i dostępem z Niemiec. IGA, tożsamości nieosobowe (NHI), PAM, CIAM i tożsamość pracowników od jednego partnera.",
+    "company": "Firma",
+    "services": "Usługi",
+    "legal": "Informacje prawne",
+    "contact": "Kontakt",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "made": "Zaprojektowano i zbudowano w Niemczech",
+    "seals": {
+      "title": "Zgodność",
+      "europe": {
+        "label": "Made in Europe: europejska firma z siedzibą w Niemczech",
+        "mark": "Made in\nEurope"
+      },
+      "gdpr": {
+        "label": "RODO: privacy by design, dane hostowane w UE",
+        "mark": "RODO"
+      },
+      "nis2": {
+        "label": "Gotowość na NIS2: analiza luk i dowody zgodności",
+        "mark": "NIS2"
+      }
+    }
+  },
+  "legal": {
+    "updated": "Ostatnia aktualizacja",
+    "bindingNote": "Prawnie wiążąca jest wyłącznie niemiecka wersja tej strony. Niniejszy tekst stanowi tłumaczenie udostępnione wyłącznie w celach informacyjnych.",
+    "imprint": {
+      "title": "Nota prawna",
+      "sections": [
+        {
+          "heading": "Informacje zgodnie z § 5 DDG",
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Niemcy"]
+        },
+        {
+          "heading": "Reprezentacja",
+          "body": ["Dyrektor zarządzający (Geschäftsführer): Arun Kumar"]
+        },
+        {
+          "heading": "Wpis do rejestru",
+          "body": ["Sąd rejestrowy: Amtsgericht Fürth", "Numer rejestrowy: HRB 20875"]
+        },
+        {
+          "heading": "Kontakt",
+          "body": ["E-mail: hello@qubital.eu", "Godziny pracy: pon.–pt., 8:00–18:00 CET"]
+        },
+        {
+          "heading": "Osoba odpowiedzialna za treść zgodnie z § 18 ust. 2 MStV",
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Niemcy"]
+        },
+        {
+          "heading": "Rozstrzyganie sporów konsumenckich",
+          "body": [
+            "Nie jesteśmy gotowi ani zobowiązani do udziału w postępowaniu w sprawie rozstrzygania sporów przed konsumenckim sądem polubownym."
+          ]
+        },
+        {
+          "heading": "Odpowiedzialność za treści i linki",
+          "body": [
+            "Jako usługodawca ponosimy odpowiedzialność za własne treści na tych stronach zgodnie z przepisami ogólnymi. Nie jesteśmy jednak zobowiązani do monitorowania przekazywanych lub przechowywanych informacji osób trzecich. Nasza strona internetowa zawiera linki do zewnętrznych stron internetowych osób trzecich, na których treść nie mamy wpływu. Za treść stron, do których prowadzą linki, odpowiada zawsze ich dostawca lub operator."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Polityka prywatności",
+      "sections": [
+        {
+          "heading": "1. Wprowadzenie i administrator danych",
+          "body": [
+            "Dziękujemy za zainteresowanie naszą stroną internetową. Ochrona Państwa danych osobowych jest dla nas ważna. Niniejsza polityka prywatności wyjaśnia, jakie dane osobowe przetwarzamy podczas korzystania z tej strony, w jakich celach i na jakiej podstawie prawnej, a także jakie prawa Państwu przysługują.",
+            "Administratorem w rozumieniu ogólnego rozporządzenia o ochronie danych (RODO) jest:",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Niemcy",
+            "Reprezentowana przez dyrektora zarządzającego, Aruna Kumara",
+            "E-mail: hello@qubital.eu",
+            "W przypadku pytań dotyczących ochrony danych mogą Państwo w każdej chwili skontaktować się z nami pod powyższym adresem e-mail."
+          ]
+        },
+        {
+          "heading": "2. Dane zbierane podczas odwiedzin naszej strony",
+          "body": [
+            "## 2.1 Pliki dziennika serwera",
+            "Gdy odwiedzają Państwo naszą stronę wyłącznie w celach informacyjnych, bez kontaktowania się z nami, Państwa przeglądarka automatycznie przesyła dane do serwera, który udostępnia stronę. Dane te są zapisywane w plikach dziennika serwera: adres IP urządzenia wysyłającego żądanie, data i godzina dostępu, żądana strona lub plik, strona, z której nastąpiło przekierowanie, używana przeglądarka i system operacyjny oraz ilość przesłanych danych.",
+            "Wykorzystujemy te dane do udostępniania strony, zapewnienia jej stabilności i bezpieczeństwa oraz do wykrywania nadużyć i zapobiegania im. Podstawą prawną jest art. 6 ust. 1 lit. f RODO; nasz prawnie uzasadniony interes polega na realizacji tych celów. Dane nie są łączone z innymi źródłami danych i nie są wykorzystywane do Państwa identyfikacji. Pliki dziennika są automatycznie usuwane po krótkim czasie, chyba że są potrzebne do wyjaśnienia konkretnego incydentu bezpieczeństwa.",
+            "## 2.2 Szyfrowanie",
+            "Ze względów bezpieczeństwa oraz w celu ochrony poufnych treści, takich jak przesyłane nam zapytania, ta strona korzysta z szyfrowania SSL/TLS. Szyfrowane połączenie można rozpoznać po prefiksie \"https://\" w pasku adresu przeglądarki oraz symbolu kłódki. Przy aktywnym szyfrowaniu przesyłane nam dane nie mogą zostać odczytane przez osoby trzecie."
+          ]
+        },
+        {
+          "heading": "3. Hosting i dostarczanie treści",
+          "body": [
+            "Ta strona internetowa jest hostowana przez Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel prowadzi globalną sieć dostarczania treści (CDN), dzięki czemu strona może być dostarczana z serwera znajdującego się blisko Państwa. W tym zakresie Vercel przetwarza w naszym imieniu dane opisane w punkcie 2.1.",
+            "Vercel działa jako nasz podmiot przetwarzający na podstawie umowy powierzenia przetwarzania danych zgodnie z art. 28 RODO. Podstawą prawną korzystania z usług Vercel jest art. 6 ust. 1 lit. f RODO; naszym prawnie uzasadnionym interesem jest bezpieczne, szybkie i niezawodne udostępnianie naszej strony. Przekazywanie danych do USA odbywa się na podstawie standardowych klauzul umownych Komisji Europejskiej lub decyzji stwierdzającej odpowiedni stopień ochrony, takiej jak EU-U.S. Data Privacy Framework."
+          ]
+        },
+        {
+          "heading": "4. Pliki cookie i pamięć lokalna",
+          "body": [
+            "Pliki cookie to niewielkie pliki tekstowe zapisywane przez przeglądarkę na Państwa urządzeniu. Ta strona nie używa plików cookie śledzących ani marketingowych.",
+            "Ustawiamy jeden technicznie niezbędny plik cookie, NEXT_LOCALE. Zawiera on wyłącznie Państwa język (na przykład \"de\" lub \"en\") i służy jedynie do wyświetlania strony w wybranym przez Państwa języku. Ponadto wybrany motyw kolorystyczny (jasny lub ciemny) jest zapisywany w pamięci lokalnej przeglądarki. Żadna z tych informacji nie jest wykorzystywana do śledzenia ani przekazywana osobom trzecim.",
+            "Podstawą prawną jest § 25 ust. 2 pkt 2 TDDDG, ponieważ takie przechowywanie jest bezwzględnie niezbędne do udostępnienia żądanej przez Państwa strony, w związku z art. 6 ust. 1 lit. f RODO. W każdej chwili mogą Państwo usunąć pliki cookie i dane pamięci lokalnej w ustawieniach przeglądarki lub je zablokować; strona będzie wówczas używać domyślnego języka i motywu.",
+            "Ponieważ nie używamy plików cookie ani podobnych technologii wymagających zgody, nie wyświetlamy banera cookie."
+          ]
+        },
+        {
+          "heading": "5. Kontakt z nami",
+          "body": [
+            "## 5.1 Formularz kontaktowy",
+            "Jeśli wyślą Państwo do nas wiadomość za pośrednictwem formularza kontaktowego, przetwarzamy wprowadzone dane: imię i nazwisko, adres e-mail, organizację (opcjonalnie), wybrany temat oraz treść wiadomości. Wykorzystujemy te dane wyłącznie do obsługi zapytania i ewentualnych pytań uzupełniających. Otrzymają Państwo również automatyczne potwierdzenie otrzymania wiadomości e-mailem.",
+            "Podstawą prawną jest art. 6 ust. 1 lit. b RODO, jeżeli zapytanie dotyczy umowy lub działań przed zawarciem umowy, a w pozostałych przypadkach art. 6 ust. 1 lit. f RODO; nasz prawnie uzasadniony interes polega na odpowiadaniu na kierowane do nas zapytania. Wiadomości e-mail z formularza kontaktowego są wysyłane za pośrednictwem naszej skrzynki Microsoft 365, udostępnianej przez Microsoft Ireland Operations Limited, działającą jako nasz podmiot przetwarzający zgodnie z art. 28 RODO. Jeżeli Microsoft przekazuje dane do USA, odbywa się to na podstawie standardowych klauzul umownych Komisji Europejskiej lub EU-U.S. Data Privacy Framework.",
+            "## 5.2 E-mail",
+            "Jeśli kontaktują się Państwo z nami e-mailem, przetwarzamy Państwa adres e-mail oraz informacje zawarte w wiadomości w celu udzielenia odpowiedzi. Podstawa prawna jest taka sama jak w przypadku formularza kontaktowego (punkt 5.1).",
+            "Usuwamy dane dotyczące zapytania po jego załatwieniu, gdy nie są już potrzebne, chyba że obowiązują ustawowe obowiązki przechowywania, na przykład wynikające z prawa handlowego lub podatkowego."
+          ]
+        },
+        {
+          "heading": "6. Analityka internetowa",
+          "body": [
+            "Aby zrozumieć, w jaki sposób korzysta się z naszej strony, i ją ulepszać, używamy Azure Application Insights – usługi Microsoft Ireland Operations Limited. Dane są przechowywane w centrum danych Microsoft w Niemczech (region Germany West Central), a Microsoft działa jako nasz podmiot przetwarzający zgodnie z art. 28 RODO.",
+            "Application Insights jest skonfigurowane na tej stronie w taki sposób, że na Państwa urządzeniu nie są zapisywane żadne pliki cookie, dane pamięci lokalnej ani inne identyfikatory. Rejestruje ono, które strony są wyświetlane, oraz podstawowe informacje techniczne o wizycie, takie jak przeglądarka, typ urządzenia i przybliżona lokalizacja (kraj i miasto) ustalona na podstawie adresu IP. Sam adres IP nie jest zapisywany. Wizyty z przeglądarek wysyłających sygnał Do Not Track nie są rejestrowane. Uzyskane statystyki są pseudonimowe, przechowywane przez 90 dni i nie są wykorzystywane do Państwa identyfikacji.",
+            "Podstawą prawną jest art. 6 ust. 1 lit. f RODO; nasz prawnie uzasadniony interes polega na anonimowej ocenie sposobu korzystania z naszej strony. W każdej chwili mogą Państwo wnieść sprzeciw wobec tego przetwarzania (zob. punkt 8.2), na przykład włączając w przeglądarce funkcję Do Not Track."
+          ]
+        },
+        {
+          "heading": "7. Funkcje strony",
+          "body": [
+            "## 7.1 Czcionki",
+            "Wszystkie czcionki na tej stronie są dostarczane z naszego własnego hostingu. Podczas odwiedzin strony nie jest nawiązywane połączenie z zewnętrznymi dostawcami czcionek, takimi jak Google Fonts.",
+            "## 7.2 Obrazy i animacje",
+            "Wszystkie obrazy i animacje na tej stronie są dostarczane z naszego własnego hostingu. Nie osadzamy treści z platform zewnętrznych, takich jak serwisy wideo czy sieci społecznościowe."
+          ]
+        },
+        {
+          "heading": "8. Państwa prawa",
+          "body": [
+            "## 8.1 Prawa wynikające z RODO",
+            "Przysługuje Państwu prawo dostępu do danych osobowych (art. 15 RODO), ich sprostowania (art. 16 RODO), usunięcia (art. 17 RODO), ograniczenia przetwarzania (art. 18 RODO), powiadomienia (art. 19 RODO) oraz przenoszenia danych (art. 20 RODO). Jeżeli przetwarzanie odbywa się na podstawie zgody, mogą ją Państwo w każdej chwili wycofać ze skutkiem na przyszłość (art. 7 ust. 3 RODO). Aby skorzystać z tych praw, wystarczy napisać na adres hello@qubital.eu.",
+            "Przysługuje Państwu również prawo wniesienia skargi do organu nadzorczego ds. ochrony danych (art. 77 RODO). Właściwym dla nas organem jest Bawarski Krajowy Urząd Nadzoru Ochrony Danych (BayLDA), Promenade 18, 91522 Ansbach, Niemcy.",
+            "## 8.2 Prawo do sprzeciwu",
+            "Jeżeli przetwarzamy Państwa dane osobowe na podstawie naszych prawnie uzasadnionych interesów (art. 6 ust. 1 lit. f RODO), mają Państwo prawo w każdej chwili wnieść sprzeciw wobec tego przetwarzania z przyczyn związanych z Państwa szczególną sytuacją (art. 21 RODO). Wówczas nie będziemy już przetwarzać tych danych, chyba że wykażemy istnienie ważnych prawnie uzasadnionych podstaw, które są nadrzędne wobec Państwa interesów, praw i wolności, lub przetwarzanie służy ustaleniu, dochodzeniu lub obronie roszczeń."
+          ]
+        },
+        {
+          "heading": "9. Okres przechowywania",
+          "body": [
+            "Przechowujemy dane osobowe wyłącznie tak długo, jak jest to niezbędne do celu, w którym zostały zebrane, lub tak długo, jak wymagają tego ustawowe okresy przechowywania. Okresy przechowywania dla poszczególnych czynności przetwarzania opisano w punktach 2–6. Gdy cel przestaje istnieć i nie obowiązuje żaden obowiązek przechowywania, dane są usuwane."
+          ]
+        },
+        {
+          "heading": "10. Zmiany niniejszej polityki prywatności",
+          "body": [
+            "Aktualizujemy niniejszą politykę prywatności w przypadku zmian naszej strony, naszych usług lub wymogów prawnych. Aktualna wersja jest zawsze dostępna na tej stronie."
+          ]
+        }
+      ],
+      "date": "29 października 2026"
+    }
+  },
+  "notFound": {
+    "title": "Ta strona jest w stanie <em>superpozycji.</em>",
+    "text": "Jednocześnie istnieje i nie istnieje – ale raczej nie istnieje. Pomożemy Państwu wrócić na właściwą ścieżkę.",
+    "button": "Powrót na stronę główną"
+  },
+  "clips": {
+    "accessRequest": "Animacja: wniosek o dostęp jest sprawdzany pod kątem polityk, zatwierdzany przez przełożonego i rejestrowany",
+    "justInTime": "Animacja: dostęp administracyjny zostaje przyznany na dwie godziny, jest nagrywany i automatycznie odbierany",
+    "passkey": "Animacja: klient loguje się za pomocą passkey i odcisku palca zamiast hasła",
+    "agentScope": "Animacja: agent AI zostaje zablokowany przy próbie utworzenia płatności wykraczającej poza jego uprawnienia",
+    "workforce": "Animacja: nowy pracownik otrzymuje jednokrotne logowanie i dostęp do wszystkich aplikacji pierwszego dnia, a ostatniego dnia traci wszystkie dostępy"
+  },
+  "platforms": {
+    "hero": {
+      "title": "Produkty IAM, <em>z którymi pracujemy.</em>",
+      "description": "Planujemy, wdrażamy i utrzymujemy wiodące platformy tożsamości, a jeśli wybór nie został jeszcze dokonany, pomagamy wybrać właściwą."
+    },
+    "groups": [
+      {
+        "key": "iga",
+        "service": "iga",
+        "title": "Zarządzanie tożsamością (IGA)",
+        "text": "Kto powinien mieć jaki dostęp: wnioski, zatwierdzenia, przeglądy, nowi i odchodzący pracownicy.",
+        "items": [
+          {
+            "name": "One Identity Manager",
+            "vendor": "One Identity",
+            "text": "Cykl życia tożsamości, role i nadzór nad dostępem."
+          },
+          {
+            "name": "SailPoint IdentityIQ",
+            "vendor": "SailPoint",
+            "text": "Zarządzanie tożsamością: cykl życia, wnioski o dostęp i certyfikacje."
+          },
+          {
+            "name": "SailPoint Identity Security Cloud",
+            "vendor": "SailPoint",
+            "text": "Zarządzanie tożsamością w modelu SaaS: cykl życia, wnioski o dostęp, certyfikacje i analiza ról wspierana przez AI."
+          },
+          {
+            "name": "Omada",
+            "vendor": "Omada",
+            "text": "Zarządzanie tożsamością i administracja – lokalnie lub jako usługa w chmurze."
+          },
+          {
+            "name": "Saviynt",
+            "vendor": "Saviynt",
+            "text": "Natywne chmurowe zarządzanie tożsamością."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IPS",
+            "vendor": "SAP",
+            "text": "Provisioning użytkowników i ról w systemach SAP."
+          }
+        ]
+      },
+      {
+        "key": "access",
+        "service": "ciam",
+        "title": "Zarządzanie dostępem i jednokrotne logowanie",
+        "text": "Samo logowanie – dla pracowników i klientów: jednokrotne logowanie, MFA, federacja.",
+        "items": [
+          {
+            "name": "Okta",
+            "vendor": "Okta",
+            "text": "Jednokrotne logowanie, MFA i cykl życia dla tożsamości pracowników i klientów."
+          },
+          {
+            "name": "OneLogin",
+            "vendor": "One Identity",
+            "text": "Chmurowe jednokrotne logowanie i MFA."
+          },
+          {
+            "name": "Ping Identity (dawniej ForgeRock)",
+            "vendor": "Ping Identity",
+            "text": "Zarządzanie dostępem dla tożsamości klientów i pracowników na dużą skalę."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IAS",
+            "vendor": "SAP",
+            "text": "Logowanie i jednokrotne logowanie do aplikacji SAP."
+          }
+        ]
+      },
+      {
+        "key": "directory",
+        "service": "wiam",
+        "title": "Usługi katalogowe i tożsamość Microsoft",
+        "text": "Miejsce, w którym znajdują się konta, oraz warstwa tożsamości większości środowisk Microsoft.",
+        "items": [
+          {
+            "name": "Microsoft Entra ID",
+            "vendor": "Microsoft",
+            "text": "Tożsamość w chmurze dla Microsoft 365 i nie tylko: logowanie, dostęp warunkowy, MFA."
+          },
+          {
+            "name": "Active Directory",
+            "vendor": "Microsoft",
+            "text": "Lokalna usługa katalogowa stojąca za większością logowań w firmach."
+          }
+        ]
+      },
+      {
+        "key": "pam",
+        "service": "pam",
+        "title": "Dostęp uprzywilejowany (PAM)",
+        "text": "Konta administracyjne i usługowe: w sejfie, ograniczone czasowo i nagrywane.",
+        "items": [
+          {
+            "name": "CyberArk",
+            "vendor": "CyberArk",
+            "text": "Dostęp uprzywilejowany: sejf danych uwierzytelniających, izolacja i nagrywanie sesji."
+          },
+          {
+            "name": "BeyondTrust",
+            "vendor": "BeyondTrust",
+            "text": "Zarządzanie hasłami uprzywilejowanymi, uprawnieniami na stacjach końcowych i bezpiecznym dostępem zdalnym."
+          }
+        ]
+      }
+    ],
+    "service": "Powiązana usługa",
+    "note": {
+      "title": "Korzystają Państwo z innego rozwiązania?",
+      "text": "Większość projektów tożsamości łączy kilka produktów. Proszę nam powiedzieć, z czego korzystają Państwo dziś, a uczciwie odpowiemy, jak możemy pomóc.",
+      "button": "Porozmawiajmy"
+    }
+  },
+  "clients": {
+    "title": "Organizacje, z którymi <em>współpracowaliśmy.</em>",
+    "description": "Od motoryzacji i lotnictwa po bankowość, farmację, handel i telekomunikację."
+  },
+  "blog": {
+    "hero": {
+      "title": "Wiedza o <em>bezpieczeństwie tożsamości.</em>",
+      "description": "Praktyczne artykuły z naszych projektów: zarządzanie tożsamością, dostęp uprzywilejowany, SAP oraz tożsamości, które nie są ludźmi."
+    },
+    "readMore": "Przeczytaj artykuł",
+    "minRead": "{minutes} min czytania",
+    "back": "Wszystkie artykuły",
+    "breadcrumb": "Ścieżka nawigacji",
+    "more": "Więcej artykułów"
+  }
+}

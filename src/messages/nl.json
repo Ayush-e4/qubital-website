@@ -1,0 +1,837 @@
+{
+  "meta": {
+    "title": "Qubital: Identity & Access Management-advies in Europa",
+    "description": "IAM-adviesbureau uit Duitsland voor klanten in heel Europa: identity governance (IGA), PAM, CIAM, workforce identity en identiteiten van machines en AI-agents.",
+    "pages": {
+      "services": {
+        "title": "IAM-adviesdiensten: IGA, PAM, CIAM & NHI",
+        "description": "IAM-advies in heel Europa: identity governance (IGA), privileged access (PAM), klant- en medewerkersidentiteiten en identiteiten van machines en AI-agents."
+      },
+      "platforms": {
+        "title": "IAM-platforms: SailPoint, One Identity, Entra ID",
+        "description": "IAM-platforms die wij implementeren: One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk en meer."
+      },
+      "about": {
+        "title": "Over ons: IAM-adviesbureau uit Beieren",
+        "description": "Waarom wij Qubital heten, wat onze identity & access management-consultants drijft en welke waarden achter elk IAM-project in heel Europa staan."
+      },
+      "approach": {
+        "title": "Onze IAM-projectaanpak: van assessment tot beheer",
+        "description": "Verkennen, ontwerpen, bouwen, doorontwikkelen: zo brengt Qubital identityprogramma's van het eerste assessment naar een veilige, stabiele bedrijfsvoering."
+      },
+      "industries": {
+        "title": "Identity & Access Management per sector",
+        "description": "IAM voor automotive, luchtvaart, banken, farma, retail, telecom, toerisme, verzekeringen en maakindustrie in Europa: access governance die past bij uw sector."
+      },
+      "careers": {
+        "title": "Werken als IAM-consultant in Duitsland & Europa",
+        "description": "Bouw met ons aan de toekomst van identity security. Ontdek de carrièremogelijkheden als IAM-consultant bij Qubital in Duitsland en werk aan boeiende projecten."
+      },
+      "contact": {
+        "title": "Neem contact op met onze IAM-consultants",
+        "description": "Vertel ons over uw project, uw uitdaging of uw idee. Qubital reageert binnen één werkdag, zonder verkooppraatje, met een helder en eerlijk antwoord."
+      },
+      "imprint": {
+        "title": "Colofon",
+        "description": "Wettelijke vermelding (colofon) van Qubital."
+      },
+      "privacy": {
+        "title": "Privacyverklaring",
+        "description": "Hoe Qubital uw persoonsgegevens verwerkt."
+      },
+      "blog": {
+        "title": "IAM-blog: identity governance, PAM & SAP",
+        "description": "Praktische artikelen over identity & access management: IGA, identiteiten van machines en AI-agents, SAP access governance en IAM-performance, van Qubital."
+      }
+    }
+  },
+  "nav": {
+    "services": "Diensten",
+    "about": "Over ons",
+    "approach": "Aanpak",
+    "industries": "Sectoren",
+    "careers": "Vacatures",
+    "contact": "Contact",
+    "cta": "Neem contact op",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "language": "Taal",
+    "skip": "Naar de inhoud",
+    "home": "Qubital startpagina",
+    "themeLight": "Naar lichte modus",
+    "themeDark": "Naar donkere modus",
+    "platforms": "Platforms",
+    "blog": "Blog"
+  },
+  "common": {
+    "learnMore": "Meer informatie",
+    "startProject": "Start een project",
+    "allServices": "Alle diensten",
+    "readMore": "Lees meer"
+  },
+  "cta": {
+    "title": "Klaar om van <em>0 naar 1</em> te gaan?",
+    "description": "Vertel ons waar u nu staat en waar u naartoe wilt. We reageren binnen één werkdag, zonder verkooppraatje, gewoon een eerlijk gesprek.",
+    "primary": "Start een project",
+    "secondary": "Stuur ons een e-mail"
+  },
+  "home": {
+    "hero": {
+      "title": "Elke toegang is een <zero>0</zero> of een <one>1</one>. <em>Wij zorgen dat het de juiste is.</em>",
+      "description": "Qubital is een adviesbureau voor identity & access management. Wij helpen organisaties bepalen wie en wat toegang heeft tot hun systemen, van geprivilegieerde accounts en identity governance tot identiteiten van klanten, medewerkers en AI-agents.",
+      "primary": "Start een project",
+      "secondary": "Bekijk onze diensten"
+    },
+    "marquee": "IAM-platforms waarmee wij werken",
+    "statement": "Onze naam is afgeleid van de qubit, die tegelijk 0 en 1 kan zijn. Toegang kan dat niet. Elke login, elke autorisatie, elke actie van een AI-agent eindigt in één beslissing: toegestaan of geweigerd. Wij zorgen dat elke beslissing klopt.",
+    "services": {
+      "title": "Identity security, <em>van begin tot eind.</em>",
+      "description": "Vijf identity-domeinen, één team. Wij adviseren, implementeren en beheren, zodat de juiste mensen en machines de juiste toegang krijgen, en verder niemand."
+    },
+    "why": {
+      "title": "Klein genoeg om betrokken te zijn. <em>Scherp genoeg</em> om te leveren.",
+      "description": "Wij zijn een jong bedrijf met senior expertise. Dat betekent korte lijnen, eerlijk advies en mensen die uw project echt kennen.",
+      "items": [
+        {
+          "prefix": "<",
+          "value": 24,
+          "suffix": "u",
+          "label": "Reactietijd",
+          "text": "Elke aanvraag krijgt binnen één werkdag een echt antwoord."
+        },
+        {
+          "prefix": "",
+          "value": 100,
+          "suffix": "%",
+          "label": "AVG voorop",
+          "text": "Privacy en compliance zijn vanaf dag één ingebouwd, niet achteraf toegevoegd."
+        },
+        {
+          "prefix": "",
+          "value": 2,
+          "suffix": "",
+          "label": "Talen",
+          "text": "Wij werken in het Duits en Engels, met uw team en uw partners."
+        },
+        {
+          "prefix": "",
+          "value": 1,
+          "suffix": "",
+          "label": "Aanspreekpunt",
+          "text": "Eén vaste contactpersoon, van kick-off tot go-live en daarna."
+        }
+      ]
+    },
+    "process": {
+      "title": "Van eerste idee tot <em>draaiend systeem.</em>",
+      "description": "Een helder proces in vier stappen waarbij u in elke fase de regie houdt.",
+      "link": "Bekijk onze aanpak"
+    },
+    "industries": {
+      "title": "Identity security voor <em>elke</em> sector.",
+      "description": "Overal waar gevoelige gegevens en kritieke systemen bescherming nodig hebben, is identiteit de eerste verdedigingslinie.",
+      "link": "Bekijk de sectoren"
+    },
+    "photos": {
+      "team": {
+        "alt": "Consultant licht een schema op een whiteboard toe aan een collega",
+        "caption": "Workshops met uw team, op locatie of op afstand"
+      },
+      "signin": {
+        "alt": "Telefoon met een verzoek om identiteitsverificatie",
+        "caption": "Inloggen waar uw klanten op vertrouwen"
+      },
+      "key": {
+        "alt": "Hardwarebeveiligingssleutel op een houten bureau",
+        "caption": "Sterke authenticatie voor geprivilegieerde toegang"
+      }
+    },
+    "practice": {
+      "title": "Toegang, beslist <em>in seconden.</em>",
+      "description": "Een nieuwe collega heeft toegang nodig. De beleidscontroles lopen automatisch, de manager keurt met één klik goed en alles wordt vastgelegd voor de audit."
+    }
+  },
+  "services": {
+    "items": {
+      "pam": {
+        "title": "Privileged Access Management (PAM)",
+        "short": "Beveilig, beheer en monitor de accounts met de meest verstrekkende rechten.",
+        "description": "Geprivilegieerde accounts zijn bij vrijwel elke aanval het belangrijkste doelwit. Wij helpen u ze op te sporen, hun inloggegevens in een kluis op te slaan, just-in-time-toegang af te dwingen en sessies vast te leggen, zodat beheerdersrechten alleen worden gebruikt wanneer dat nodig is en altijd herleidbaar zijn.",
+        "points": [
+          "Opsporen van geprivilegieerde accounts",
+          "Credential vaulting & rotatie",
+          "Just-in-time- & least-privilege-toegang",
+          "Sessiemonitoring & -opname"
+        ]
+      },
+      "iga": {
+        "title": "Identity Governance & Administration (IGA)",
+        "short": "Iedereen heeft precies de toegang die nodig is, en u kunt het aantonen.",
+        "description": "Wij automatiseren de identiteitslevenscyclus van indiensttreding tot uitdiensttreding, bouwen rollenmodellen die bij uw organisatie passen en richten access reviews en rapportages in die auditors tevredenstellen zonder uw managers te overbelasten.",
+        "points": [
+          "Automatisering van joiner-mover-leaver",
+          "Rollenmodellering (RBAC/ABAC)",
+          "Toegangscertificeringen & reviews",
+          "Functiescheiding & auditrapportage"
+        ]
+      },
+      "ciam": {
+        "title": "Customer Identity (CIAM)",
+        "short": "Naadloze, veilige inlogervaringen waar uw klanten op vertrouwen.",
+        "description": "Registratie, login en toestemming bepalen de eerste indruk van uw digitale producten. Wij ontwerpen klantidentiteit die frictieloos is voor gebruikers, bestand is tegen accountovername en voldoet aan de AVG (GDPR).",
+        "points": [
+          "Registratie- & inlogtrajecten",
+          "Wachtwoordloos & passkeys",
+          "Toestemmings- & voorkeurenbeheer (AVG)",
+          "Bescherming tegen fraude & accountovername"
+        ]
+      },
+      "wiam": {
+        "title": "Workforce Identity (WIAM)",
+        "short": "Eén veilige identiteit voor elke medewerker, in elke app en op elk apparaat.",
+        "description": "Wij bieden uw medewerkers single sign-on, sterke multifactorauthenticatie en conditional access, en verbinden cloud- en on-premises-applicaties tot één consistente identiteitslaag gebaseerd op Zero Trust.",
+        "points": [
+          "Single sign-on (SSO)",
+          "Multifactor- & wachtwoordloze authenticatie",
+          "Conditional access & Zero Trust",
+          "Directory-integratie & -modernisering"
+        ]
+      },
+      "ai": {
+        "title": "Non-Human Identity (NHI) en governance van AI-agentidentiteiten",
+        "short": "Beheer serviceaccounts, API-sleutels, bots en AI-agents zoals elke andere identiteit.",
+        "description": "Serviceaccounts, API-sleutels, certificaten, bots en nu ook AI-agents: niet-menselijke identiteiten zijn doorgaans talrijker dan uw medewerkers, en vele hebben geen duidelijke eigenaar. Wij brengen ze onder identity governance: een volledige inventaris, helder eigenaarschap, strak afgebakende en kortlevende credentials en een audittrail van alles wat ze doen.",
+        "points": [
+          "Inventaris van niet-menselijke identiteiten & AI-agents",
+          "Eigenaarschap & levenscyclus voor serviceaccounts",
+          "Afgebakende, kortlevende credentials & secrets",
+          "Guardrails, monitoring & audittrails"
+        ]
+      }
+    },
+    "page": {
+      "title": "Identity security. <em>Zoals het hoort.</em>",
+      "description": "Vijf specialistische domeinen voor elke identiteit in uw organisatie: medewerkers, externe krachten, klanten, beheerders, serviceaccounts en AI-agents.",
+      "deliverables": "Wat u krijgt",
+      "models": {
+        "title": "Samenwerken <em>op uw manier.</em>",
+        "items": [
+          {
+            "title": "Advies",
+            "text": "Assessments, identitystrategie, doelarchitectuur en platformselectie, gebaseerd op uw risico's en eisen."
+          },
+          {
+            "title": "Implementatie",
+            "text": "Wij installeren, configureren en integreren identityplatforms, koppelen uw applicaties en migreren gebruikers, met vaste mijlpalen."
+          },
+          {
+            "title": "Managed services",
+            "text": "Wij beheren uw identityplatforms na de go-live: monitoring, updates, access reviews en support met heldere SLA's."
+          },
+          {
+            "title": "Teamuitbreiding",
+            "text": "Onze identityspecialisten versterken uw team, in uw tools en uw ritme, zo lang als u ze nodig hebt."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Vragen die we <em>vaak horen.</em>",
+        "items": [
+          {
+            "q": "Werkt u ook met kleine en middelgrote bedrijven?",
+            "a": "Zeker. Identity security is belangrijk voor organisaties van elke omvang. Wij stemmen onze aanpak, van een gericht assessment tot een volledig programma, af op uw organisatie en budget."
+          },
+          {
+            "q": "NIS2 of DORA is op ons van toepassing. Kunt u helpen?",
+            "a": "Ja. Identity- en toegangscontroles staan centraal in NIS2, DORA en ISO 27001. Wij brengen in kaart waar u staat, dichten de hiaten en helpen u het bewijs te leveren waar auditors om vragen."
+          },
+          {
+            "q": "Kunt u ons identityplatform na de go-live beheren?",
+            "a": "Ja. Met onze managed services nemen wij beheer, updates, access reviews en support voor onze rekening, met heldere SLA's."
+          },
+          {
+            "q": "Wat kost een project?",
+            "a": "Dat hangt af van de scope. Na een vrijblijvend kennismakingsgesprek sturen wij u een transparant voorstel met vaste prijzen of heldere dagtarieven, zonder verborgen kosten."
+          },
+          {
+            "q": "Werkt u op afstand?",
+            "a": "Ja. Wij werken op afstand in heel Duitsland en Europa en komen op locatie wanneer dat zinvol is, voor workshops of go-lives."
+          },
+          {
+            "q": "Hoe snel kunt u starten?",
+            "a": "Meestal binnen één tot twee weken. Bij urgente incidenten kunnen we vaak nog dezelfde dag helpen."
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Vernoemd naar de qubit. <em>Gebouwd op helderheid.</em>",
+      "description": "Qubital is in Duitsland opgericht met een duidelijke focus: identiteit is de nieuwe beveiligingsperimeter en verdient specialisten."
+    },
+    "story": {
+      "title": "Waarom <em>Qubital?</em>",
+      "paragraphs": [
+        "Een klassieke bit is 0 of 1. Een qubit, de bouwsteen van kwantumcomputers, kan beide tegelijk zijn, totdat hij wordt gemeten. Hij bevat alle mogelijkheden tegelijk.",
+        "Zo benaderen wij een project. Voordat we voor een oplossing kiezen, houden we de opties open, luisteren we goed en verkennen we wat mogelijk is. Zodra het beeld helder is, beslissen we en bouwen we met precisie.",
+        "Qubital combineert qubit en digitaal. In identity security is die balans alles: toegang moet eenvoudig genoeg zijn zodat mensen hun werk kunnen doen, en streng genoeg om aanvallers buiten te houden."
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 of 1"
+      },
+      "qubit": {
+        "label": "Qubit",
+        "value": "0 en 1"
+      }
+    },
+    "mission": {
+      "title": "Wij maken identity security <em>begrijpelijk, beheersbaar en effectief</em> voor elke organisatie, ongeacht de omvang.",
+      "label": "Missie"
+    },
+    "vision": {
+      "title": "Een wereld waarin elke toegangsbeslissing, van mens of machine, weloverwogen, herleidbaar en veilig is.",
+      "label": "Visie"
+    },
+    "values": {
+      "title": "Waar wij <em>voor staan.</em>",
+      "items": [
+        {
+          "title": "Helderheid",
+          "text": "Geen jargon, geen black boxes. Wij leggen uit wat we doen en waarom, zodat u weloverwogen beslissingen kunt nemen."
+        },
+        {
+          "title": "Eigenaarschap",
+          "text": "Wij behandelen uw project als ons eigen project en blijven verantwoordelijk, van de eerste workshop tot lang na de go-live."
+        },
+        {
+          "title": "Security by design",
+          "text": "Least privilege en privacy zijn ingebouwd in elke architectuur en elke configuratie."
+        },
+        {
+          "title": "Nieuwsgierigheid",
+          "text": "Identiteit verandert snel, van passkeys tot AI-agents. Wij blijven leren, zodat u profiteert van wat komt en niet van wat achterhaald is."
+        },
+        {
+          "title": "Partnerschap",
+          "text": "Wij werken met u samen als gelijken, eerlijk en open, ook als het antwoord luidt: “dit hebt u niet nodig”."
+        },
+        {
+          "title": "Duurzaamheid",
+          "text": "Wij bouwen identityoplossingen die lang meegaan, eenvoudig te beheren zijn en geen technische schuld voor morgen opleveren."
+        }
+      ]
+    },
+    "location": {
+      "title": "Geworteld in Duitsland. <em>Overal actief.</em>",
+      "text": "Wij zijn gevestigd in Beieren en werken met klanten in heel Duitsland, Europa en daarbuiten: op afstand, op locatie, in het Duits of Engels.",
+      "photoAlt": "Skyline van Frankfurt aan de Main op een zonnige dag, met rondvaartboten langs de oever",
+      "photoCaption": "Frankfurt am Main, Duitsland"
+    }
+  },
+  "approach": {
+    "hero": {
+      "title": "Complex erin, <em>helder eruit.</em>",
+      "description": "Elk project volgt een beproefd traject. U weet altijd waar we staan, wat de volgende stap is en wat het kost."
+    },
+    "steps": {
+      "title": "Vier stappen. <em>Nul verrassingen.</em>",
+      "items": [
+        {
+          "title": "Verkennen",
+          "duration": "1–2 weken",
+          "text": "Wij brengen uw identiteiten, accounts, rollen en toegangspaden in kaart, van mensen en machines, en toetsen ze aan uw risico's en wettelijke eisen zoals NIS2, DORA en ISO 27001.",
+          "outputs": [
+            "Inventaris van identiteiten & toegang",
+            "Gap-analyse op risico & compliance",
+            "Geprioriteerde bevindingen"
+          ]
+        },
+        {
+          "title": "Ontwerpen",
+          "duration": "1–3 weken",
+          "text": "Samen ontwerpen we het doelbeeld: identityarchitectuur, rollen- en beleidsmodel, planning en budget. U krijgt een concreet plan, geen slidedeck van 100 pagina's.",
+          "outputs": [
+            "Doelarchitectuur voor identiteit",
+            "Rollen- & beleidsmodel",
+            "Vaste roadmap & voorstel"
+          ]
+        },
+        {
+          "title": "Bouwen",
+          "duration": "Iteratief",
+          "text": "Wij implementeren in korte sprints met regelmatige demo's: applicaties koppelen, accounts migreren en levenscyclusprocessen automatiseren. U ziet elke twee weken voortgang en kunt op elk moment bijsturen.",
+          "outputs": [
+            "Gekoppelde applicaties",
+            "Geautomatiseerde joiner-mover-leaver-processen",
+            "Documentatie & runbooks"
+          ]
+        },
+        {
+          "title": "Doorontwikkelen",
+          "duration": "Doorlopend",
+          "text": "De go-live is pas het begin. Wij beheren en ontwikkelen uw identityplatform verder, voeren regelmatig access reviews uit en trainen uw team, zodat de kennis in uw organisatie blijft.",
+          "outputs": ["Beheer als managed service", "Regelmatige access reviews", "Teamtraining"]
+        }
+      ]
+    },
+    "principles": {
+      "title": "Hoe wij <em>denken.</em>",
+      "items": [
+        {
+          "title": "Transparante prijzen",
+          "text": "Vaste prijzen of heldere dagtarieven. U kent de kosten voordat we beginnen."
+        },
+        {
+          "title": "Open standaarden",
+          "text": "SAML, OpenID Connect en SCIM in plaats van lock-in. Uw configuraties, gegevens en documentatie zijn van u."
+        },
+        {
+          "title": "Standaard least privilege",
+          "text": "Elk ontwerp begint bij 0: standaard geen toegang, alleen wat nodig is, zo lang als het nodig is."
+        },
+        {
+          "title": "Kennisoverdracht",
+          "text": "Wij documenteren alles en trainen uw team, zodat u onafhankelijk blijft."
+        }
+      ]
+    },
+    "photoAlt": "Twee collega's werken samen een plan uit op hun laptops"
+  },
+  "industries": {
+    "hero": {
+      "title": "Identity security voor <em>elke sector.</em>",
+      "description": "Overal waar gevoelige gegevens en kritieke systemen bescherming nodig hebben, helpen wij organisaties hun toegang goed te regelen."
+    },
+    "items": [
+      {
+        "key": "automotive",
+        "title": "Automotive"
+      },
+      {
+        "key": "aviation",
+        "title": "Luchtvaart"
+      },
+      {
+        "key": "banking",
+        "title": "Banken & financiële dienstverlening"
+      },
+      {
+        "key": "pharma",
+        "title": "Farmacie"
+      },
+      {
+        "key": "retail",
+        "title": "Retail"
+      },
+      {
+        "key": "telecom",
+        "title": "Telecom"
+      },
+      {
+        "key": "tourism",
+        "title": "Toerisme"
+      },
+      {
+        "key": "insurance",
+        "title": "Verzekeringen"
+      },
+      {
+        "key": "manufacturing",
+        "title": "Maakindustrie"
+      }
+    ]
+  },
+  "careers": {
+    "hero": {
+      "title": "Bouw met ons aan wat <em>komt.</em>",
+      "description": "Wij bouwen aan een team van nieuwsgierige, vriendelijke en uiterst bekwame identityspecialisten. Is identity security jouw vak? Laten we kennismaken."
+    },
+    "perks": {
+      "title": "Een plek om je <em>beste werk</em> te doen.",
+      "items": [
+        {
+          "title": "Hybride & flexibel",
+          "text": "Werk thuis, op kantoor of waar je het best kunt nadenken. Vertrouwen boven controle."
+        },
+        {
+          "title": "Opleidingsbudget",
+          "text": "Congressen, certificeringen, boeken: we investeren elk jaar in je groei."
+        },
+        {
+          "title": "Moderne uitrusting",
+          "text": "Hardware van topniveau en de tools die je echt wilt gebruiken."
+        },
+        {
+          "title": "Echte impact",
+          "text": "Korte lijnen, afwisselende projecten en verantwoordelijkheid vanaf dag één."
+        },
+        {
+          "title": "Platte organisatie",
+          "text": "Jouw ideeën tellen, of je hier nu één dag of één jaar werkt."
+        },
+        {
+          "title": "Teamcultuur",
+          "text": "Regelmatige teamdagen, open feedback en collega's die elkaar steunen."
+        }
+      ]
+    },
+    "open": {
+      "title": "Momenteel geen openstaande vacatures",
+      "text": "Op dit moment werven we niet voor specifieke functies. Is identity security jouw vakgebied, dan horen we toch graag van je.",
+      "button": "Open sollicitatie sturen"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Laten we samen iets <em>bouwen.</em>",
+      "description": "Vertel ons over uw project, uw uitdaging of gewoon uw idee. Wij reageren binnen één werkdag."
+    },
+    "info": {
+      "email": "E-mail",
+      "location": "Locatie",
+      "response": "Op werkdagen reageren we meestal binnen enkele uren.",
+      "hours": "Openingstijden",
+      "hoursValue": "Ma t/m vr, 8:00 tot 18:00 CET"
+    },
+    "form": {
+      "name": "Naam",
+      "namePlaceholder": "Jane Doe",
+      "email": "E-mail",
+      "emailPlaceholder": "jane@company.com",
+      "company": "Bedrijf",
+      "companyPlaceholder": "Optioneel",
+      "topic": "Waarmee kunnen we u helpen?",
+      "topics": {
+        "pam": "PAM",
+        "iga": "IGA",
+        "ciam": "CIAM",
+        "wiam": "Workforce identity",
+        "ai": "NHI & AI-agents",
+        "other": "Iets anders"
+      },
+      "message": "Bericht",
+      "messagePlaceholder": "Vertel ons iets over uw project…",
+      "consent": "Ik ga ermee akkoord dat mijn gegevens worden verwerkt om mijn aanvraag te beantwoorden. Meer informatie vindt u in de <link>privacyverklaring</link>.",
+      "submit": "Bericht versturen",
+      "sending": "Bezig met versturen…",
+      "success": {
+        "title": "Bericht verstuurd!",
+        "text": "Hartelijk dank. Wij nemen binnen één werkdag contact met u op.",
+        "again": "Nog een bericht versturen"
+      },
+      "errors": {
+        "name": "Vul uw naam in.",
+        "email": "Vul een geldig e-mailadres in.",
+        "message": "Vertel ons iets meer (minimaal 10 tekens).",
+        "consent": "Ga akkoord met de privacyverklaring.",
+        "server": "Er is iets misgegaan. Probeer het opnieuw of stuur ons direct een e-mail.",
+        "tooLong": "Dit is te lang. Maak de tekst korter.",
+        "rateLimited": "Te veel berichten in korte tijd. Wacht een paar minuten en probeer het opnieuw."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Identity & access management-advies uit Duitsland. IGA, Non-Human Identity (NHI), PAM, CIAM en workforce identity van één partner.",
+    "company": "Bedrijf",
+    "services": "Diensten",
+    "legal": "Juridisch",
+    "contact": "Contact",
+    "rights": "Alle rechten voorbehouden.",
+    "made": "Ontworpen & gebouwd in Duitsland",
+    "seals": {
+      "title": "Compliance",
+      "europe": {
+        "label": "Made in Europe: een Europees bedrijf gevestigd in Duitsland",
+        "mark": "Made in\nEurope"
+      },
+      "gdpr": {
+        "label": "AVG (GDPR): privacy by design, gegevens gehost in de EU",
+        "mark": "AVG"
+      },
+      "nis2": {
+        "label": "NIS2-gereedheid: gap-analyse en bewijsvoering",
+        "mark": "NIS2"
+      }
+    }
+  },
+  "legal": {
+    "updated": "Laatst bijgewerkt",
+    "bindingNote": "Dit is een vrijblijvende vertaling ter informatie. Alleen de Duitse versie van deze pagina is juridisch bindend.",
+    "imprint": {
+      "title": "Colofon",
+      "sections": [
+        {
+          "heading": "Gegevens conform § 5 DDG",
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Duitsland"]
+        },
+        {
+          "heading": "Vertegenwoordigd door",
+          "body": ["Bestuurder (Geschäftsführer): Arun Kumar"]
+        },
+        {
+          "heading": "Inschrijving in het handelsregister",
+          "body": ["Registerrechtbank: Amtsgericht Fürth", "Registratienummer: HRB 20875"]
+        },
+        {
+          "heading": "Contact",
+          "body": ["E-mail: hello@qubital.eu", "Openingstijden: ma t/m vr, 8:00 tot 18:00 CET"]
+        },
+        {
+          "heading": "Verantwoordelijk voor de inhoud conform § 18 lid 2 MStV",
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Duitsland"]
+        },
+        {
+          "heading": "Geschillenbeslechting voor consumenten",
+          "body": [
+            "Wij zijn niet bereid en niet verplicht om deel te nemen aan een geschillenbeslechtingsprocedure voor een geschillencommissie voor consumenten."
+          ]
+        },
+        {
+          "heading": "Aansprakelijkheid voor inhoud en links",
+          "body": [
+            "Als dienstverlener zijn wij overeenkomstig de algemene wetgeving verantwoordelijk voor onze eigen inhoud op deze pagina's. Wij zijn echter niet verplicht om doorgegeven of opgeslagen informatie van derden te controleren. Onze website bevat links naar externe websites van derden, op de inhoud waarvan wij geen invloed hebben. Voor de inhoud van de gelinkte pagina's is altijd de betreffende aanbieder of beheerder van die pagina's verantwoordelijk."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacyverklaring",
+      "sections": [
+        {
+          "heading": "1. Inleiding en verwerkingsverantwoordelijke",
+          "body": [
+            "Hartelijk dank voor uw interesse in onze website. De bescherming van uw persoonsgegevens vinden wij belangrijk. In deze privacyverklaring leggen wij uit welke persoonsgegevens wij verwerken wanneer u deze website gebruikt, voor welke doeleinden en op welke rechtsgrond, en welke rechten u hebt.",
+            "Verwerkingsverantwoordelijke in de zin van de Algemene Verordening Gegevensbescherming (AVG, GDPR) is:",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Duitsland",
+            "Vertegenwoordigd door de bestuurder (Geschäftsführer), Arun Kumar",
+            "E-mail: hello@qubital.eu",
+            "Hebt u vragen over gegevensbescherming, dan kunt u ons altijd bereiken via het bovenstaande e-mailadres."
+          ]
+        },
+        {
+          "heading": "2. Gegevens die worden verzameld wanneer u onze website bezoekt",
+          "body": [
+            "## 2.1 Serverlogbestanden",
+            "Wanneer u onze website uitsluitend ter informatie bezoekt, zonder contact met ons op te nemen, stuurt uw browser automatisch gegevens naar de server die de website levert. Deze gegevens worden opgeslagen in serverlogbestanden: het IP-adres van het aanvragende apparaat, de datum en tijd van toegang, de opgevraagde pagina of het opgevraagde bestand, de website waarvandaan u bent doorverwezen, de gebruikte browser en het besturingssysteem, en de hoeveelheid overgedragen gegevens.",
+            "Wij gebruiken deze gegevens om de website te leveren, stabiel en veilig te houden en misbruik op te sporen en te voorkomen. De rechtsgrond is art. 6 lid 1 sub f AVG; ons gerechtvaardigd belang ligt in deze doeleinden. De gegevens worden niet gecombineerd met andere gegevensbronnen en niet gebruikt om u te identificeren. Logbestanden worden na korte tijd automatisch verwijderd, tenzij ze nodig zijn om een specifiek beveiligingsincident te onderzoeken.",
+            "## 2.2 Versleuteling",
+            "Om veiligheidsredenen en ter bescherming van vertrouwelijke inhoud, zoals aanvragen die u ons stuurt, gebruikt deze website SSL/TLS-versleuteling. U herkent een versleutelde verbinding aan \"https://\" in de adresbalk van uw browser en aan het slotsymbool. Wanneer de versleuteling actief is, kunnen de gegevens die u ons stuurt niet door derden worden gelezen."
+          ]
+        },
+        {
+          "heading": "3. Hosting en contentlevering",
+          "body": [
+            "Deze website wordt gehost door Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, VS. Vercel exploiteert een wereldwijd content delivery network, zodat de website kan worden geleverd vanaf een server bij u in de buurt. Daarbij verwerkt Vercel namens ons de in paragraaf 2.1 beschreven gegevens.",
+            "Vercel treedt op als onze verwerker op basis van een verwerkersovereenkomst conform art. 28 AVG. De rechtsgrond voor het gebruik van Vercel is art. 6 lid 1 sub f AVG; ons gerechtvaardigd belang is het veilig, snel en betrouwbaar aanbieden van onze website. Doorgiften naar de VS zijn gebaseerd op de standaardcontractbepalingen van de Europese Commissie of op een adequaatheidsbesluit zoals het EU-U.S. Data Privacy Framework."
+          ]
+        },
+        {
+          "heading": "4. Cookies en lokale opslag",
+          "body": [
+            "Cookies zijn kleine tekstbestanden die uw browser op uw apparaat opslaat. Deze website gebruikt geen tracking- of marketingcookies.",
+            "Wij plaatsen één technisch noodzakelijke cookie, NEXT_LOCALE. Deze bevat alleen uw taal (bijvoorbeeld \"de\" of \"en\") en wordt uitsluitend gebruikt om de website te tonen in de taal die u hebt gekozen. Daarnaast wordt uw gekozen kleurthema (licht of donker) opgeslagen in de lokale opslag van uw browser. Geen van beide wordt gebruikt om u te volgen of gedeeld met derden.",
+            "De rechtsgrond is § 25 lid 2 nr. 2 TDDDG, omdat deze opslag strikt noodzakelijk is om de door u gevraagde website te leveren, in samenhang met art. 6 lid 1 sub f AVG. U kunt cookies en lokale opslag op elk moment via uw browserinstellingen verwijderen of blokkeren; de website gebruikt dan de standaardtaal en het standaardthema.",
+            "Omdat wij geen cookies of vergelijkbare technieken gebruiken waarvoor toestemming vereist is, tonen wij geen cookiebanner."
+          ]
+        },
+        {
+          "heading": "5. Contact met ons opnemen",
+          "body": [
+            "## 5.1 Contactformulier",
+            "Wanneer u ons een bericht stuurt via het contactformulier, verwerken wij de gegevens die u invult: uw naam, e-mailadres, organisatie (optioneel), het gekozen onderwerp en uw bericht. Wij gebruiken deze gegevens uitsluitend om uw aanvraag en eventuele vervolgvragen af te handelen. U ontvangt bovendien per e-mail een automatische ontvangstbevestiging.",
+            "De rechtsgrond is art. 6 lid 1 sub b AVG voor zover uw aanvraag verband houdt met een overeenkomst of met precontractuele maatregelen, en anders art. 6 lid 1 sub f AVG; ons gerechtvaardigd belang ligt in het beantwoorden van aan ons gerichte aanvragen. E-mails vanuit het contactformulier worden verstuurd via onze Microsoft 365-mailbox, geleverd door Microsoft Ireland Operations Limited, die optreedt als onze verwerker conform art. 28 AVG. Voor zover Microsoft gegevens doorgeeft naar de VS, gebeurt dit op basis van de standaardcontractbepalingen van de Europese Commissie of het EU-U.S. Data Privacy Framework.",
+            "## 5.2 E-mail",
+            "Wanneer u per e-mail contact met ons opneemt, verwerken wij uw e-mailadres en de informatie in uw bericht om dit te kunnen beantwoorden. De rechtsgrond is dezelfde als voor het contactformulier (paragraaf 5.1).",
+            "Wij verwijderen de gegevens van uw aanvraag zodra deze is afgehandeld en niet langer nodig is, tenzij wettelijke bewaarplichten gelden, bijvoorbeeld op grond van handels- of belastingrecht."
+          ]
+        },
+        {
+          "heading": "6. Webanalyse",
+          "body": [
+            "Om te begrijpen hoe onze website wordt gebruikt en om deze te verbeteren, gebruiken wij Azure Application Insights, een dienst van Microsoft Ireland Operations Limited. De gegevens worden opgeslagen in een Microsoft-datacenter in Duitsland (regio Germany West Central), en Microsoft treedt op als onze verwerker conform art. 28 AVG.",
+            "Application Insights is op deze website zo geconfigureerd dat er geen cookies, lokale opslag of andere identificatoren op uw apparaat worden opgeslagen. Het registreert welke pagina's worden bekeken en technische basisinformatie over het bezoek, zoals de browser, het type apparaat en de bij benadering bepaalde locatie (land en stad), afgeleid van uw IP-adres. Het IP-adres zelf wordt niet opgeslagen. Browsers die een Do Not Track-signaal sturen, worden niet geregistreerd. De resulterende statistieken zijn gepseudonimiseerd, worden 90 dagen bewaard en worden niet gebruikt om u te identificeren.",
+            "De rechtsgrond is art. 6 lid 1 sub f AVG; ons gerechtvaardigd belang ligt in de anonieme analyse van het gebruik van onze website. U kunt op elk moment bezwaar maken tegen deze verwerking (zie paragraaf 8.2), bijvoorbeeld door Do Not Track in uw browser in te schakelen."
+          ]
+        },
+        {
+          "heading": "7. Websitefuncties",
+          "body": [
+            "## 7.1 Lettertypen",
+            "Alle lettertypen op deze website worden geleverd vanaf onze eigen hosting. Bij het bezoeken van de website wordt geen verbinding gemaakt met externe aanbieders van lettertypen, zoals Google Fonts.",
+            "## 7.2 Afbeeldingen en animaties",
+            "Alle afbeeldingen en animaties op deze website worden geleverd vanaf onze eigen hosting. Wij embedden geen content van platforms van derden, zoals videodiensten of sociale netwerken."
+          ]
+        },
+        {
+          "heading": "8. Uw rechten",
+          "body": [
+            "## 8.1 Rechten op grond van de AVG",
+            "U hebt het recht op inzage in uw persoonsgegevens (art. 15 AVG), op rectificatie (art. 16 AVG), op wissing (art. 17 AVG), op beperking van de verwerking (art. 18 AVG), op kennisgeving (art. 19 AVG) en op overdraagbaarheid van gegevens (art. 20 AVG). Voor zover de verwerking is gebaseerd op uw toestemming, kunt u deze op elk moment met werking voor de toekomst intrekken (art. 7 lid 3 AVG). Om deze rechten uit te oefenen, stuurt u eenvoudig een e-mail naar hello@qubital.eu.",
+            "U hebt bovendien het recht een klacht in te dienen bij een toezichthoudende autoriteit voor gegevensbescherming (art. 77 AVG). De voor ons bevoegde autoriteit is de Beierse toezichthouder voor gegevensbescherming (Bayerisches Landesamt für Datenschutzaufsicht, BayLDA), Promenade 18, 91522 Ansbach, Duitsland.",
+            "## 8.2 Recht van bezwaar",
+            "Voor zover wij uw persoonsgegevens verwerken op basis van ons gerechtvaardigd belang (art. 6 lid 1 sub f AVG), hebt u het recht om op grond van uw specifieke situatie op elk moment bezwaar te maken tegen deze verwerking (art. 21 AVG). Wij verwerken de gegevens dan niet langer, tenzij wij dwingende gerechtvaardigde gronden kunnen aantonen die zwaarder wegen dan uw belangen, rechten en vrijheden, of de verwerking dient voor de instelling, uitoefening of onderbouwing van een rechtsvordering."
+          ]
+        },
+        {
+          "heading": "9. Bewaartermijn",
+          "body": [
+            "Wij bewaren persoonsgegevens slechts zo lang als nodig is voor het doel waarvoor ze zijn verzameld, of zo lang als wettelijke bewaartermijnen dat vereisen. In de paragrafen 2 tot en met 6 worden de bewaartermijnen voor de afzonderlijke verwerkingen beschreven. Zodra het doel is vervallen en er geen bewaarplicht meer geldt, worden de gegevens verwijderd."
+          ]
+        },
+        {
+          "heading": "10. Wijzigingen in deze privacyverklaring",
+          "body": [
+            "Wij passen deze privacyverklaring aan wanneer onze website, onze diensten of de wettelijke eisen veranderen. De actuele versie is altijd op deze pagina beschikbaar."
+          ]
+        }
+      ],
+      "date": "29 oktober 2026"
+    }
+  },
+  "notFound": {
+    "title": "Deze pagina bevindt zich in een <em>superpositie.</em>",
+    "text": "Ze bestaat en bestaat tegelijk niet, maar vooral niet. We helpen u weer op weg.",
+    "button": "Terug naar de startpagina"
+  },
+  "clips": {
+    "accessRequest": "Animatie: een toegangsaanvraag wordt aan het beleid getoetst, door de manager goedgekeurd en vastgelegd",
+    "justInTime": "Animatie: beheerderstoegang wordt voor twee uur verleend, vastgelegd en automatisch weer ingetrokken",
+    "passkey": "Animatie: een klant logt in met een passkey en een vingerafdruk in plaats van een wachtwoord",
+    "agentScope": "Animatie: een AI-agent wordt tegengehouden bij het aanmaken van een betaling buiten zijn bevoegdheden",
+    "workforce": "Animatie: een nieuwe medewerker krijgt op de eerste dag single sign-on en alle apps, en verliest op de laatste dag alle toegang"
+  },
+  "platforms": {
+    "hero": {
+      "title": "De IAM-producten <em>waarmee wij werken.</em>",
+      "description": "Wij plannen, implementeren en beheren de toonaangevende identityplatforms, en helpen u het juiste te kiezen als die keuze nog niet is gemaakt."
+    },
+    "groups": [
+      {
+        "key": "iga",
+        "service": "iga",
+        "title": "Identity governance (IGA)",
+        "text": "Wie welke toegang hoort te hebben: aanvragen, goedkeuringen, reviews, nieuwe en vertrekkende medewerkers.",
+        "items": [
+          {
+            "name": "One Identity Manager",
+            "vendor": "One Identity",
+            "text": "Identiteitslevenscyclus, rollen en access governance."
+          },
+          {
+            "name": "SailPoint IdentityIQ",
+            "vendor": "SailPoint",
+            "text": "Identity governance: levenscyclus, toegangsaanvragen en certificeringen."
+          },
+          {
+            "name": "SailPoint Identity Security Cloud",
+            "vendor": "SailPoint",
+            "text": "Identity governance als SaaS: levenscyclus, toegangsaanvragen, certificeringen en AI-gestuurde inzichten in rollen."
+          },
+          {
+            "name": "Omada",
+            "vendor": "Omada",
+            "text": "Identity governance en administration, on-premises of als clouddienst."
+          },
+          {
+            "name": "Saviynt",
+            "vendor": "Saviynt",
+            "text": "Cloud-native identity governance."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IPS",
+            "vendor": "SAP",
+            "text": "Gebruikers en rollen geprovisioned over SAP-systemen heen."
+          }
+        ]
+      },
+      {
+        "key": "access",
+        "service": "ciam",
+        "title": "Access management & single sign-on",
+        "text": "De login zelf, voor medewerkers en klanten: single sign-on, MFA, federatie.",
+        "items": [
+          {
+            "name": "Okta",
+            "vendor": "Okta",
+            "text": "Single sign-on, MFA en levenscyclus voor medewerkers- en klantidentiteiten."
+          },
+          {
+            "name": "OneLogin",
+            "vendor": "One Identity",
+            "text": "Single sign-on en MFA in de cloud."
+          },
+          {
+            "name": "Ping Identity (voorheen ForgeRock)",
+            "vendor": "Ping Identity",
+            "text": "Access management voor klant- en medewerkersidentiteiten op grote schaal."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IAS",
+            "vendor": "SAP",
+            "text": "Inloggen en single sign-on voor SAP-applicaties."
+          }
+        ]
+      },
+      {
+        "key": "directory",
+        "service": "wiam",
+        "title": "Directories & Microsoft-identiteit",
+        "text": "Waar de accounts staan, en de identiteitslaag van de meeste Microsoft-omgevingen.",
+        "items": [
+          {
+            "name": "Microsoft Entra ID",
+            "vendor": "Microsoft",
+            "text": "Cloudidentiteit voor Microsoft 365 en verder: inloggen, conditional access, MFA."
+          },
+          {
+            "name": "Active Directory",
+            "vendor": "Microsoft",
+            "text": "De on-premises directory achter de meeste zakelijke logins."
+          }
+        ]
+      },
+      {
+        "key": "pam",
+        "service": "pam",
+        "title": "Privileged access (PAM)",
+        "text": "Beheerders- en serviceaccounts: in een kluis, tijdgebonden en vastgelegd.",
+        "items": [
+          {
+            "name": "CyberArk",
+            "vendor": "CyberArk",
+            "text": "Privileged access: credential vaulting, sessie-isolatie en sessieopname."
+          },
+          {
+            "name": "BeyondTrust",
+            "vendor": "BeyondTrust",
+            "text": "Beheer van geprivilegieerde wachtwoorden, endpoint privilege management en veilige toegang op afstand."
+          }
+        ]
+      }
+    ],
+    "service": "Bijbehorende dienst",
+    "note": {
+      "title": "Gebruikt u iets anders?",
+      "text": "De meeste identityprojecten verbinden meerdere producten. Vertel ons wat u vandaag gebruikt, dan vertellen wij u eerlijk hoe we kunnen helpen.",
+      "button": "Neem contact op"
+    }
+  },
+  "clients": {
+    "title": "Organisaties waarmee wij <em>hebben gewerkt.</em>",
+    "description": "Van automotive en luchtvaart tot banken, farma, retail en telecom."
+  },
+  "blog": {
+    "hero": {
+      "title": "Inzichten over <em>identity security.</em>",
+      "description": "Praktische artikelen uit onze projecten: identity governance, privileged access, SAP en de identiteiten die geen mensen zijn."
+    },
+    "readMore": "Lees het artikel",
+    "minRead": "{minutes} min. leestijd",
+    "back": "Alle artikelen",
+    "breadcrumb": "Kruimelpad",
+    "more": "Meer artikelen"
+  }
+}

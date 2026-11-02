@@ -1,0 +1,841 @@
+{
+  "meta": {
+    "title": "Qubital: konsulter inom identitets- och åtkomsthantering",
+    "description": "IAM-konsulter från Tyskland för kunder i hela Europa: identitetsstyrning (IGA), PAM, CIAM, medarbetaridentiteter samt icke-mänskliga identiteter och AI-agenter.",
+    "pages": {
+      "services": {
+        "title": "IAM-konsulttjänster: IGA, PAM, CIAM och NHI",
+        "description": "IAM-konsulting i Europa: identitetsstyrning (IGA), privilegierad åtkomst (PAM), kund- och medarbetaridentiteter samt icke-mänskliga identiteter och AI-agenter."
+      },
+      "platforms": {
+        "title": "IAM-plattformar: SailPoint, One Identity, Entra ID",
+        "description": "IAM-plattformar vi implementerar: One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk med flera."
+      },
+      "about": {
+        "title": "Om oss: IAM-konsulter från Bayern",
+        "description": "Varför vi heter Qubital, vad som driver våra konsulter inom identitets- och åtkomsthantering och värderingarna bakom varje IAM-projekt i Europa."
+      },
+      "approach": {
+        "title": "Vårt arbetssätt i IAM-projekt: från analys till drift",
+        "description": "Kartlägga, utforma, bygga, vidareutveckla: så tar Qubital identitetsprogram hela vägen från den första analysen till säker och stabil drift i vardagen."
+      },
+      "industries": {
+        "title": "Identitets- och åtkomsthantering per bransch",
+        "description": "IAM för fordon, flyg, bank, läkemedel, handel, telekom, turism, försäkring och tillverkning i Europa: åtkomststyrning som passar just er bransch."
+      },
+      "careers": {
+        "title": "Karriär som IAM-konsult i Tyskland och Europa",
+        "description": "Bygg framtidens identitetssäkerhet tillsammans med oss. Upptäck karriärmöjligheterna som IAM-konsult hos Qubital i Tyskland och bli en del av vårt team."
+      },
+      "contact": {
+        "title": "Kontakta våra IAM-konsulter",
+        "description": "Berätta om ert projekt inom identitets- och åtkomsthantering, er utmaning eller bara er idé. Qubital svarar på varje förfrågan inom en arbetsdag."
+      },
+      "imprint": {
+        "title": "Företagsinformation",
+        "description": "Juridisk information om Qubital."
+      },
+      "privacy": {
+        "title": "Integritetspolicy",
+        "description": "Så behandlar Qubital dina personuppgifter."
+      },
+      "blog": {
+        "title": "IAM-blogg: identitetsstyrning, PAM och SAP",
+        "description": "Praktiska artiklar om identitets- och åtkomsthantering: IGA, icke-mänskliga identiteter och AI-agenter, SAP-behörigheter och IAM-prestanda, från Qubital."
+      }
+    }
+  },
+  "nav": {
+    "services": "Tjänster",
+    "about": "Om oss",
+    "approach": "Arbetssätt",
+    "industries": "Branscher",
+    "careers": "Karriär",
+    "contact": "Kontakt",
+    "cta": "Hör av er",
+    "openMenu": "Öppna menyn",
+    "closeMenu": "Stäng menyn",
+    "language": "Språk",
+    "skip": "Hoppa till innehållet",
+    "home": "Qubital startsida",
+    "themeLight": "Byt till ljust läge",
+    "themeDark": "Byt till mörkt läge",
+    "platforms": "Plattformar",
+    "blog": "Blogg"
+  },
+  "common": {
+    "learnMore": "Läs mer",
+    "startProject": "Starta ett projekt",
+    "allServices": "Alla tjänster",
+    "readMore": "Läs mer"
+  },
+  "cta": {
+    "title": "Redo att gå från <em>0 till 1</em>?",
+    "description": "Berätta var ni står i dag och vart ni vill nå. Vi svarar inom en arbetsdag, utan säljsnack, bara ett rakt samtal.",
+    "primary": "Starta ett projekt",
+    "secondary": "Skicka ett mejl"
+  },
+  "home": {
+    "hero": {
+      "title": "All åtkomst är en <zero>0</zero> eller en <one>1</one>. <em>Vi ser till att det blir rätt.</em>",
+      "description": "Qubital är ett konsultbolag inom identitets- och åtkomsthantering. Vi hjälper organisationer att styra vem och vad som får åtkomst till deras system, från privilegierade konton och identitetsstyrning till kund-, medarbetar- och AI-agentidentiteter.",
+      "primary": "Starta ett projekt",
+      "secondary": "Utforska tjänsterna"
+    },
+    "marquee": "IAM-plattformar vi arbetar med",
+    "statement": "Vårt namn kommer från kvantbiten, qubiten, som kan vara 0 och 1 samtidigt. Det kan inte åtkomst. Varje inloggning, varje behörighet, varje handling av en AI-agent slutar i ett beslut: beviljad eller nekad. Vi ser till att varje beslut blir rätt.",
+    "services": {
+      "title": "Identitetssäkerhet, <em>från början till slut.</em>",
+      "description": "Fem identitetsområden, ett team. Vi ger råd, implementerar och driftar, så att rätt personer och maskiner får rätt åtkomst, och ingen annan."
+    },
+    "why": {
+      "title": "Små nog att bry oss. <em>Vassa nog</em> att leverera.",
+      "description": "Vi är ett ungt företag med senior expertis. Det betyder korta beslutsvägar, ärliga råd och människor som faktiskt känner till ert projekt.",
+      "items": [
+        {
+          "prefix": "<",
+          "value": 24,
+          "suffix": "h",
+          "label": "Svarstid",
+          "text": "Varje förfrågan får ett riktigt svar inom en arbetsdag."
+        },
+        {
+          "prefix": "",
+          "value": 100,
+          "suffix": "%",
+          "label": "GDPR först",
+          "text": "Integritet och regelefterlevnad finns med från första dagen, inte påskruvade i efterhand."
+        },
+        {
+          "prefix": "",
+          "value": 2,
+          "suffix": "",
+          "label": "Språk",
+          "text": "Vi arbetar på tyska och engelska, med ert team och era partner."
+        },
+        {
+          "prefix": "",
+          "value": 1,
+          "suffix": "",
+          "label": "Kontaktperson",
+          "text": "En dedikerad person, från projektstart till driftsättning och vidare."
+        }
+      ]
+    },
+    "process": {
+      "title": "Från första idé till <em>system i drift.</em>",
+      "description": "En tydlig process i fyra steg som ger er kontrollen i varje fas.",
+      "link": "Se vårt arbetssätt"
+    },
+    "industries": {
+      "title": "Identitetssäkerhet för <em>alla</em> branscher.",
+      "description": "Överallt där känsliga data och kritiska system behöver skyddas är identiteten den första försvarslinjen.",
+      "link": "Utforska branscherna"
+    },
+    "photos": {
+      "team": {
+        "alt": "Konsult som förklarar ett diagram på en whiteboard för en kollega",
+        "caption": "Workshoppar med ert team, på plats eller på distans"
+      },
+      "signin": {
+        "alt": "Mobiltelefon som visar en uppmaning om identitetsverifiering",
+        "caption": "Inloggning som era kunder kan lita på"
+      },
+      "key": {
+        "alt": "Hårdvarubaserad säkerhetsnyckel på ett skrivbord i trä",
+        "caption": "Stark autentisering för privilegierad åtkomst"
+      }
+    },
+    "practice": {
+      "title": "Åtkomst, avgjord <em>på sekunder.</em>",
+      "description": "En ny kollega behöver åtkomst. Policykontrollerna körs automatiskt, chefen godkänner med ett klick och allt loggas inför revisionen."
+    }
+  },
+  "services": {
+    "items": {
+      "pam": {
+        "title": "Privileged Access Management (PAM)",
+        "short": "Skydda, styr och övervaka kontona med de mest kraftfulla behörigheterna.",
+        "description": "Privilegierade konton är det främsta målet i nästan varje attack. Vi hjälper er att hitta dem, förvara deras inloggningsuppgifter i ett valv, införa just-in-time-åtkomst och spela in sessioner, så att administratörsrättigheter bara används när de behövs och alltid är spårbara.",
+        "points": [
+          "Identifiering av privilegierade konton",
+          "Valv och rotation av inloggningsuppgifter",
+          "Just-in-time-åtkomst och minsta möjliga behörighet",
+          "Övervakning och inspelning av sessioner"
+        ]
+      },
+      "iga": {
+        "title": "Identity Governance & Administration (IGA)",
+        "short": "Alla har exakt den åtkomst de behöver, och ni kan bevisa det.",
+        "description": "Vi automatiserar identitetens livscykel från anställning till avslut, bygger rollmodeller som passar er organisation och sätter upp behörighetsgranskningar och rapportering som tillfredsställer revisorerna utan att överbelasta era chefer.",
+        "points": [
+          "Automatisering av joiner-mover-leaver",
+          "Rollmodellering (RBAC/ABAC)",
+          "Attestering och granskning av behörigheter",
+          "Funktionsseparation och revisionsrapportering"
+        ]
+      },
+      "ciam": {
+        "title": "Kundidentiteter (CIAM)",
+        "short": "Smidiga och säkra inloggningsupplevelser som era kunder litar på.",
+        "description": "Registrering, inloggning och samtycke formar första intrycket av era digitala produkter. Vi utformar kundidentiteter som är friktionsfria för användarna, motståndskraftiga mot kontokapning och förenliga med GDPR.",
+        "points": [
+          "Flöden för registrering och inloggning",
+          "Lösenordsfritt och passkeys",
+          "Hantering av samtycken och preferenser (GDPR)",
+          "Skydd mot bedrägerier och kontokapning"
+        ]
+      },
+      "wiam": {
+        "title": "Medarbetaridentiteter (WIAM)",
+        "short": "En säker identitet för varje medarbetare, i alla appar och på alla enheter.",
+        "description": "Vi ger era medarbetare single sign-on, stark multifaktorautentisering och villkorsstyrd åtkomst, och kopplar samman moln- och lokala applikationer i ett enhetligt identitetslager byggt på Zero Trust.",
+        "points": [
+          "Single sign-on (SSO)",
+          "Multifaktor- och lösenordsfri autentisering",
+          "Villkorsstyrd åtkomst och Zero Trust",
+          "Katalogintegration och modernisering"
+        ]
+      },
+      "ai": {
+        "title": "Styrning av icke-mänskliga identiteter (NHI) och AI-agenter",
+        "short": "Styr tjänstekonton, API-nycklar, botar och AI-agenter som vilken annan identitet som helst.",
+        "description": "Tjänstekonton, API-nycklar, certifikat, botar och nu AI-agenter: icke-mänskliga identiteter är oftast fler än era medarbetare, och många saknar en tydlig ägare. Vi för in dem under identitetsstyrning: en fullständig inventering, tydligt ägarskap, snävt avgränsade och kortlivade inloggningsuppgifter samt en granskningslogg över allt de gör.",
+        "points": [
+          "Inventering av icke-mänskliga identiteter och AI-agenter",
+          "Ägarskap och livscykel för tjänstekonton",
+          "Avgränsade, kortlivade inloggningsuppgifter och hemligheter",
+          "Skyddsräcken, övervakning och granskningsloggar"
+        ]
+      }
+    },
+    "page": {
+      "title": "Identitetssäkerhet. <em>Rätt gjord.</em>",
+      "description": "Fem specialområden som täcker varje identitet i er organisation: medarbetare, konsulter, kunder, administratörer, tjänstekonton och AI-agenter.",
+      "deliverables": "Det här ingår",
+      "models": {
+        "title": "Arbeta med oss <em>på ert sätt.</em>",
+        "items": [
+          {
+            "title": "Rådgivning",
+            "text": "Analyser, identitetsstrategi, målarkitektur och plattformsval, förankrade i era risker och krav."
+          },
+          {
+            "title": "Implementering",
+            "text": "Vi driftsätter, konfigurerar och integrerar identitetsplattformar, ansluter era applikationer och migrerar användare, med fasta milstolpar."
+          },
+          {
+            "title": "Förvaltade tjänster",
+            "text": "Vi driftar era identitetsplattformar efter driftsättningen: övervakning, uppdateringar, behörighetsgranskningar och support med tydliga SLA:er."
+          },
+          {
+            "title": "Teamförstärkning",
+            "text": "Våra identitetsspecialister ansluter till ert team, i era verktyg och i er takt, så länge ni behöver dem."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frågor vi <em>ofta får.</em>",
+        "items": [
+          {
+            "q": "Arbetar ni med små och medelstora företag?",
+            "a": "Absolut. Identitetssäkerhet är viktig oavsett storlek. Vi anpassar vårt upplägg, från en fokuserad analys till ett helt program, efter er organisation och budget."
+          },
+          {
+            "q": "Vi omfattas av NIS2 eller DORA. Kan ni hjälpa oss?",
+            "a": "Ja. Identitets- och åtkomstkontroller är centrala i NIS2, DORA och ISO 27001. Vi bedömer var ni står, täpper till luckorna och hjälper er att ta fram det underlag som revisorerna efterfrågar."
+          },
+          {
+            "q": "Kan ni drifta vår identitetsplattform efter driftsättningen?",
+            "a": "Ja. Med våra förvaltade tjänster tar vi hand om drift, uppdateringar, behörighetsgranskningar och support, med tydliga SLA:er."
+          },
+          {
+            "q": "Vad kostar ett projekt?",
+            "a": "Det beror på omfattningen. Efter ett kostnadsfritt inledande samtal skickar vi en transparent offert med fasta priser eller tydliga dagspriser, utan dolda kostnader."
+          },
+          {
+            "q": "Arbetar ni på distans?",
+            "a": "Ja. Vi arbetar på distans i hela Tyskland och Europa och kommer på plats när det är meningsfullt, för workshoppar eller driftsättningar."
+          },
+          {
+            "q": "Hur snabbt kan ni komma i gång?",
+            "a": "Oftast inom en till två veckor. Vid akuta incidenter kan vi ofta hjälpa till samma dag."
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Uppkallade efter qubiten. <em>Byggda på tydlighet.</em>",
+      "description": "Qubital grundades i Tyskland med ett tydligt fokus: identiteten är den nya säkerhetsperimetern, och den förtjänar specialister."
+    },
+    "story": {
+      "title": "Varför <em>Qubital?</em>",
+      "paragraphs": [
+        "En klassisk bit är antingen 0 eller 1. En qubit, kvantdatorns byggsten, kan vara båda samtidigt tills den mäts. Den rymmer alla möjligheter på en gång.",
+        "Så närmar vi oss ett projekt. Innan vi bestämmer oss för en lösning håller vi alternativen öppna, lyssnar noga och utforskar vad som är möjligt. När bilden är klar fattar vi beslut och bygger med precision.",
+        "Qubital förenar qubit och digital. Inom identitetssäkerhet är den balansen allt: åtkomsten måste vara enkel nog för att människor ska kunna göra sitt jobb, och strikt nog för att hålla angripare ute."
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 eller 1"
+      },
+      "qubit": {
+        "label": "Qubit",
+        "value": "0 och 1"
+      }
+    },
+    "mission": {
+      "title": "Vi gör identitetssäkerhet <em>begriplig, hanterbar och effektiv</em> för varje organisation, oavsett storlek.",
+      "label": "Uppdrag"
+    },
+    "vision": {
+      "title": "En värld där varje åtkomstbeslut, för människa som maskin, är medvetet, spårbart och säkert.",
+      "label": "Vision"
+    },
+    "values": {
+      "title": "Det här <em>står vi för.</em>",
+      "items": [
+        {
+          "title": "Tydlighet",
+          "text": "Ingen jargong, inga svarta lådor. Vi förklarar vad vi gör och varför, så att ni kan fatta välgrundade beslut."
+        },
+        {
+          "title": "Ansvar",
+          "text": "Vi behandlar ert projekt som vårt eget och tar ansvar från den första workshoppen till långt efter driftsättningen."
+        },
+        {
+          "title": "Inbyggd säkerhet",
+          "text": "Minsta möjliga behörighet och integritet är inbyggda i varje arkitektur och varje konfiguration."
+        },
+        {
+          "title": "Nyfikenhet",
+          "text": "Identitetsområdet förändras snabbt, från passkeys till AI-agenter. Vi fortsätter att lära oss så att ni drar nytta av det som kommer, inte det som är förlegat."
+        },
+        {
+          "title": "Partnerskap",
+          "text": "Vi arbetar med er som jämlikar, ärligt och öppet, även när svaret är ”det här behöver ni inte”."
+        },
+        {
+          "title": "Hållbarhet",
+          "text": "Vi bygger identitetslösningar som håller, är enkla att drifta och inte skapar morgondagens tekniska skuld."
+        }
+      ]
+    },
+    "location": {
+      "title": "Rotade i Tyskland. <em>Verksamma överallt.</em>",
+      "text": "Vi har vår bas i Bayern och arbetar med kunder i hela Tyskland, Europa och längre bort: på distans, på plats, på tyska eller engelska.",
+      "photoAlt": "Frankfurts skyline vid floden Main en solig dag, med turistbåtar längs kajen",
+      "photoCaption": "Frankfurt am Main, Tyskland"
+    }
+  },
+  "approach": {
+    "hero": {
+      "title": "Komplext in, <em>tydligt ut.</em>",
+      "description": "Varje projekt följer en beprövad väg. Ni vet alltid var vi står, vad som kommer härnäst och vad det kostar."
+    },
+    "steps": {
+      "title": "Fyra steg. <em>Noll överraskningar.</em>",
+      "items": [
+        {
+          "title": "Kartlägga",
+          "duration": "1–2 veckor",
+          "text": "Vi kartlägger era identiteter, konton, roller och åtkomstvägar, för både människor och maskiner, och bedömer dem mot era risker och regulatoriska krav som NIS2, DORA och ISO 27001.",
+          "outputs": [
+            "Inventering av identiteter och åtkomst",
+            "Gapanalys av risker och regelefterlevnad",
+            "Prioriterade iakttagelser"
+          ]
+        },
+        {
+          "title": "Utforma",
+          "duration": "1–3 veckor",
+          "text": "Vi tar fram målbilden tillsammans: identitetsarkitektur, roll- och policymodell, tidsplan och budget. Ni får en konkret plan, inte en presentation på 100 bilder.",
+          "outputs": [
+            "Målarkitektur för identiteter",
+            "Roll- och policymodell",
+            "Fast färdplan och offert"
+          ]
+        },
+        {
+          "title": "Bygga",
+          "duration": "Iterativt",
+          "text": "Vi implementerar i korta sprintar med regelbundna demonstrationer: ansluter applikationer, migrerar konton och automatiserar livscykelprocesser. Ni ser framstegen varannan vecka och kan styra när som helst.",
+          "outputs": [
+            "Anslutna applikationer",
+            "Automatiserade joiner-mover-leaver-processer",
+            "Dokumentation och driftmanualer"
+          ]
+        },
+        {
+          "title": "Vidareutveckla",
+          "duration": "Löpande",
+          "text": "Driftsättningen är bara början. Vi driftar och vidareutvecklar er identitetsplattform, genomför regelbundna behörighetsgranskningar och utbildar ert team, så att kunskapen stannar i företaget.",
+          "outputs": [
+            "Förvaltad drift",
+            "Regelbundna behörighetsgranskningar",
+            "Utbildning av teamet"
+          ]
+        }
+      ]
+    },
+    "principles": {
+      "title": "Så <em>tänker vi.</em>",
+      "items": [
+        {
+          "title": "Transparenta priser",
+          "text": "Fasta priser eller tydliga dagspriser. Ni vet kostnaden innan vi börjar."
+        },
+        {
+          "title": "Öppna standarder",
+          "text": "SAML, OpenID Connect och SCIM i stället för inlåsning. Era konfigurationer, data och dokumentation tillhör er."
+        },
+        {
+          "title": "Minsta möjliga behörighet som standard",
+          "text": "Varje design börjar på 0: ingen åtkomst som standard, bara det som behövs, så länge det behövs."
+        },
+        {
+          "title": "Kunskapsöverföring",
+          "text": "Vi dokumenterar allt och utbildar ert team, så att ni förblir oberoende."
+        }
+      ]
+    },
+    "photoAlt": "Två kollegor som går igenom en plan på sina bärbara datorer"
+  },
+  "industries": {
+    "hero": {
+      "title": "Identitetssäkerhet för <em>alla branscher.</em>",
+      "description": "Överallt där känsliga data och kritiska system behöver skyddas hjälper vi organisationer att få åtkomsten rätt."
+    },
+    "items": [
+      {
+        "key": "automotive",
+        "title": "Fordonsindustri"
+      },
+      {
+        "key": "aviation",
+        "title": "Flyg"
+      },
+      {
+        "key": "banking",
+        "title": "Bank och finans"
+      },
+      {
+        "key": "pharma",
+        "title": "Läkemedel"
+      },
+      {
+        "key": "retail",
+        "title": "Handel"
+      },
+      {
+        "key": "telecom",
+        "title": "Telekom"
+      },
+      {
+        "key": "tourism",
+        "title": "Turism"
+      },
+      {
+        "key": "insurance",
+        "title": "Försäkring"
+      },
+      {
+        "key": "manufacturing",
+        "title": "Tillverkning"
+      }
+    ]
+  },
+  "careers": {
+    "hero": {
+      "title": "Forma det som <em>kommer</em> tillsammans med oss.",
+      "description": "Vi bygger ett team av nyfikna, omtänksamma och mycket kompetenta identitetsspecialister. Om identitetssäkerhet är din grej, hör av dig."
+    },
+    "perks": {
+      "title": "En plats där du gör <em>ditt bästa arbete.</em>",
+      "items": [
+        {
+          "title": "Hybrid och flexibelt",
+          "text": "Arbeta hemifrån, på kontoret eller där du tänker bäst. Tillit framför kontroll."
+        },
+        {
+          "title": "Utbildningsbudget",
+          "text": "Konferenser, certifieringar, böcker: vi investerar i din utveckling varje år."
+        },
+        {
+          "title": "Modern utrustning",
+          "text": "Hårdvara i toppklass och de verktyg du faktiskt vill använda."
+        },
+        {
+          "title": "Verklig påverkan",
+          "text": "Korta beslutsvägar, varierande projekt och ansvar från första dagen."
+        },
+        {
+          "title": "Platt organisation",
+          "text": "Dina idéer räknas, oavsett om du har varit här en dag eller ett år."
+        },
+        {
+          "title": "Teamkultur",
+          "text": "Regelbundna teamdagar, öppen feedback och kollegor som ställer upp för varandra."
+        }
+      ]
+    },
+    "open": {
+      "title": "Inga lediga tjänster just nu",
+      "text": "Vi rekryterar inte till specifika roller för tillfället. Om identitetssäkerhet är ditt område vill vi ändå gärna höra från dig.",
+      "button": "Skicka en spontanansökan"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Låt oss bygga något <em>tillsammans.</em>",
+      "description": "Berätta om ert projekt, er utmaning eller bara er idé. Vi svarar inom en arbetsdag."
+    },
+    "info": {
+      "email": "E-post",
+      "location": "Plats",
+      "response": "Vi svarar oftast inom några timmar på arbetsdagar.",
+      "hours": "Kontorstider",
+      "hoursValue": "Mån–fre, 8.00–18.00 CET"
+    },
+    "form": {
+      "name": "Namn",
+      "namePlaceholder": "Anna Andersson",
+      "email": "E-post",
+      "emailPlaceholder": "anna@foretag.se",
+      "company": "Företag",
+      "companyPlaceholder": "Valfritt",
+      "topic": "Vad kan vi hjälpa till med?",
+      "topics": {
+        "pam": "PAM",
+        "iga": "IGA",
+        "ciam": "CIAM",
+        "wiam": "Medarbetaridentiteter",
+        "ai": "NHI och AI-agenter",
+        "other": "Något annat"
+      },
+      "message": "Meddelande",
+      "messagePlaceholder": "Berätta lite om ert projekt…",
+      "consent": "Jag samtycker till att mina uppgifter behandlas för att besvara min förfrågan. Mer information finns i <link>integritetspolicyn</link>.",
+      "submit": "Skicka meddelande",
+      "sending": "Skickar…",
+      "success": {
+        "title": "Meddelandet har skickats!",
+        "text": "Tack. Vi återkommer inom en arbetsdag.",
+        "again": "Skicka ett nytt meddelande"
+      },
+      "errors": {
+        "name": "Ange ditt namn.",
+        "email": "Ange en giltig e-postadress.",
+        "message": "Berätta lite mer (minst 10 tecken).",
+        "consent": "Godkänn integritetspolicyn.",
+        "server": "Något gick fel. Försök igen eller mejla oss direkt.",
+        "tooLong": "Texten är för lång. Korta ned den.",
+        "rateLimited": "För många meddelanden på kort tid. Vänta några minuter och försök igen."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Konsulting inom identitets- och åtkomsthantering från Tyskland. IGA, icke-mänskliga identiteter (NHI), PAM, CIAM och medarbetaridentiteter från en och samma partner.",
+    "company": "Företaget",
+    "services": "Tjänster",
+    "legal": "Juridiskt",
+    "contact": "Kontakt",
+    "rights": "Alla rättigheter förbehållna.",
+    "made": "Designad och byggd i Tyskland",
+    "seals": {
+      "title": "Regelefterlevnad",
+      "europe": {
+        "label": "Made in Europe: ett europeiskt företag med säte i Tyskland",
+        "mark": "Made in\nEurope"
+      },
+      "gdpr": {
+        "label": "GDPR: inbyggt integritetsskydd, data lagrade inom EU",
+        "mark": "GDPR"
+      },
+      "nis2": {
+        "label": "NIS2-beredskap: gapanalys och underlag",
+        "mark": "NIS2"
+      }
+    }
+  },
+  "legal": {
+    "updated": "Senast uppdaterad",
+    "bindingNote": "Detta är en översättning som tillhandahålls som en service. Endast den tyska versionen av denna sida är juridiskt bindande.",
+    "imprint": {
+      "title": "Företagsinformation",
+      "sections": [
+        {
+          "heading": "Uppgifter enligt § 5 DDG",
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Tyskland"]
+        },
+        {
+          "heading": "Företräds av",
+          "body": ["Verkställande direktör: Arun Kumar"]
+        },
+        {
+          "heading": "Registrering",
+          "body": ["Registerdomstol: Amtsgericht Fürth", "Registreringsnummer: HRB 20875"]
+        },
+        {
+          "heading": "Kontakt",
+          "body": ["E-post: hello@qubital.eu", "Kontorstider: mån–fre, 8.00–18.00 CET"]
+        },
+        {
+          "heading": "Ansvarig för innehållet enligt § 18 (2) MStV",
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Tyskland"]
+        },
+        {
+          "heading": "Tvistlösning för konsumenter",
+          "body": [
+            "Vi är varken villiga eller skyldiga att delta i tvistlösningsförfaranden inför en nämnd för konsumenttvister."
+          ]
+        },
+        {
+          "heading": "Ansvar för innehåll och länkar",
+          "body": [
+            "Som tjänsteleverantör ansvarar vi för vårt eget innehåll på dessa sidor i enlighet med allmän lagstiftning. Vi är dock inte skyldiga att övervaka överförd eller lagrad information från tredje part. Vår webbplats innehåller länkar till externa webbplatser som tillhör tredje part och över vars innehåll vi inte har något inflytande. Ansvaret för innehållet på de länkade sidorna ligger alltid hos respektive leverantör eller operatör av sidorna."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Integritetspolicy",
+      "sections": [
+        {
+          "heading": "1. Inledning och personuppgiftsansvarig",
+          "body": [
+            "Tack för ditt intresse för vår webbplats. Skyddet av dina personuppgifter är viktigt för oss. Denna integritetspolicy förklarar vilka personuppgifter vi behandlar när du använder webbplatsen, för vilka ändamål och på vilken rättslig grund, samt vilka rättigheter du har.",
+            "Personuppgiftsansvarig i den mening som avses i dataskyddsförordningen (GDPR) är:",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Tyskland",
+            "Företrädd av verkställande direktören Arun Kumar",
+            "E-post: hello@qubital.eu",
+            "Om du har frågor om dataskydd kan du när som helst nå oss på e-postadressen ovan."
+          ]
+        },
+        {
+          "heading": "2. Uppgifter som samlas in när du besöker vår webbplats",
+          "body": [
+            "## 2.1 Serverloggfiler",
+            "När du besöker vår webbplats enbart i informationssyfte, utan att kontakta oss, skickar din webbläsare automatiskt uppgifter till den server som levererar webbplatsen. Dessa uppgifter lagras i serverloggfiler: den begärande enhetens IP-adress, datum och tid för åtkomsten, den begärda sidan eller filen, den webbplats som hänvisade dig, den webbläsare och det operativsystem som används samt den överförda datamängden.",
+            "Vi använder dessa uppgifter för att leverera webbplatsen, hålla den stabil och säker samt upptäcka och förhindra missbruk. Den rättsliga grunden är art. 6.1 f GDPR; vårt berättigade intresse ligger i dessa ändamål. Uppgifterna kombineras inte med andra datakällor och används inte för att identifiera dig. Loggfilerna raderas automatiskt efter en kort tid, om de inte behövs för att utreda en specifik säkerhetsincident.",
+            "## 2.2 Kryptering",
+            "Av säkerhetsskäl och för att skydda konfidentiellt innehåll, till exempel förfrågningar som du skickar till oss, använder denna webbplats SSL/TLS-kryptering. Du känner igen en krypterad anslutning på \"https://\" i webbläsarens adressfält och på hänglåssymbolen. När krypteringen är aktiv kan de uppgifter du skickar till oss inte läsas av tredje part."
+          ]
+        },
+        {
+          "heading": "3. Webbhotell och innehållsleverans",
+          "body": [
+            "Denna webbplats drivs på servrar hos Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel driver ett globalt nätverk för innehållsleverans (CDN), så att webbplatsen kan levereras från en server nära dig. Därvid behandlar Vercel de uppgifter som beskrivs i avsnitt 2.1 för vår räkning.",
+            "Vercel är vårt personuppgiftsbiträde enligt ett personuppgiftsbiträdesavtal i enlighet med art. 28 GDPR. Den rättsliga grunden för att använda Vercel är art. 6.1 f GDPR; vårt berättigade intresse är att tillhandahålla vår webbplats på ett säkert, snabbt och tillförlitligt sätt. Överföringar till USA grundar sig på Europeiska kommissionens standardavtalsklausuler eller ett beslut om adekvat skyddsnivå, såsom EU–US Data Privacy Framework."
+          ]
+        },
+        {
+          "heading": "4. Cookies och lokal lagring",
+          "body": [
+            "Cookies är små textfiler som din webbläsare lagrar på din enhet. Denna webbplats använder inga spårnings- eller marknadsföringscookies.",
+            "Vi sätter en tekniskt nödvändig cookie, NEXT_LOCALE. Den innehåller endast ditt språk (till exempel \"de\" eller \"en\") och används enbart för att visa webbplatsen på det språk du har valt. Dessutom lagras ditt valda färgtema (ljust eller mörkt) i webbläsarens lokala lagring. Ingen av dem används för att spåra dig eller delas med tredje part.",
+            "Den rättsliga grunden är § 25 (2) nr 2 TDDDG, eftersom denna lagring är absolut nödvändig för att tillhandahålla den webbplats du har begärt, tillsammans med art. 6.1 f GDPR. Du kan när som helst radera cookies och lokal lagring i webbläsarens inställningar eller blockera dem; webbplatsen använder då sitt standardspråk och standardtema.",
+            "Eftersom vi inte använder några cookies eller liknande tekniker som kräver samtycke visar vi ingen cookiebanner."
+          ]
+        },
+        {
+          "heading": "5. Kontakt med oss",
+          "body": [
+            "## 5.1 Kontaktformulär",
+            "Om du skickar ett meddelande till oss via kontaktformuläret behandlar vi de uppgifter du anger: ditt namn, din e-postadress, din organisation (valfritt), det ämne du väljer och ditt meddelande. Vi använder dessa uppgifter enbart för att hantera din förfrågan och eventuella följdfrågor. Du får också en automatisk mottagningsbekräftelse via e-post.",
+            "Den rättsliga grunden är art. 6.1 b GDPR när din förfrågan avser ett avtal eller åtgärder före ingående av avtal, och i övrigt art. 6.1 f GDPR; vårt berättigade intresse ligger i att besvara förfrågningar som riktas till oss. E-post från kontaktformuläret skickas via vår Microsoft 365-brevlåda, som tillhandahålls av Microsoft Ireland Operations Limited i egenskap av vårt personuppgiftsbiträde enligt art. 28 GDPR. I den mån Microsoft överför uppgifter till USA grundar sig detta på Europeiska kommissionens standardavtalsklausuler eller EU–US Data Privacy Framework.",
+            "## 5.2 E-post",
+            "Om du kontaktar oss via e-post behandlar vi din e-postadress och informationen i ditt meddelande för att kunna besvara det. Den rättsliga grunden är densamma som för kontaktformuläret (avsnitt 5.1).",
+            "Vi raderar uppgifterna från din förfrågan när den har hanterats och uppgifterna inte längre behövs, såvida inte lagstadgade lagringsskyldigheter gäller, till exempel enligt handels- eller skattelagstiftning."
+          ]
+        },
+        {
+          "heading": "6. Webbanalys",
+          "body": [
+            "För att förstå hur vår webbplats används och för att förbättra den använder vi Azure Application Insights, en tjänst från Microsoft Ireland Operations Limited. Uppgifterna lagras i ett av Microsofts datacenter i Tyskland (regionen Germany West Central), och Microsoft är vårt personuppgiftsbiträde enligt art. 28 GDPR.",
+            "Application Insights är konfigurerat på denna webbplats så att inga cookies, ingen lokal lagring och inga andra identifierare lagras på din enhet. Tjänsten registrerar vilka sidor som visas och grundläggande teknisk information om besöket, såsom webbläsare, enhetstyp och ungefärlig plats (land och stad) som härleds från din IP-adress. Själva IP-adressen lagras inte. Webbläsare som skickar en Do Not Track-signal registreras inte. Den statistik som tas fram är pseudonym, sparas i 90 dagar och används inte för att identifiera dig.",
+            "Den rättsliga grunden är art. 6.1 f GDPR; vårt berättigade intresse ligger i en anonym utvärdering av hur vår webbplats används. Du kan när som helst invända mot denna behandling (se avsnitt 8.2), till exempel genom att aktivera Do Not Track i din webbläsare."
+          ]
+        },
+        {
+          "heading": "7. Webbplatsens funktioner",
+          "body": [
+            "## 7.1 Typsnitt",
+            "Alla typsnitt på denna webbplats levereras från vårt eget webbhotell. Ingen anslutning till externa typsnittsleverantörer, såsom Google Fonts, upprättas när du besöker webbplatsen.",
+            "## 7.2 Bilder och animationer",
+            "Alla bilder och animationer på denna webbplats levereras från vårt eget webbhotell. Vi bäddar inte in innehåll från tredjepartsplattformar, såsom videotjänster eller sociala nätverk."
+          ]
+        },
+        {
+          "heading": "8. Dina rättigheter",
+          "body": [
+            "## 8.1 Rättigheter enligt GDPR",
+            "Du har rätt till tillgång till dina personuppgifter (art. 15 GDPR), till rättelse (art. 16 GDPR), till radering (art. 17 GDPR), till begränsning av behandlingen (art. 18 GDPR), till underrättelse (art. 19 GDPR) och till dataportabilitet (art. 20 GDPR). Om behandlingen grundar sig på ditt samtycke kan du när som helst återkalla det med verkan för framtiden (art. 7.3 GDPR). För att utöva dessa rättigheter räcker det att du skriver till hello@qubital.eu.",
+            "Du har också rätt att lämna in ett klagomål till en tillsynsmyndighet för dataskydd (art. 77 GDPR). Den myndighet som ansvarar för oss är den bayerska tillsynsmyndigheten för dataskydd (BayLDA), Promenade 18, 91522 Ansbach, Tyskland.",
+            "## 8.2 Rätt att invända",
+            "När vi behandlar dina personuppgifter på grundval av våra berättigade intressen (art. 6.1 f GDPR) har du rätt att när som helst, av skäl som hänför sig till din specifika situation, invända mot denna behandling (art. 21 GDPR). Vi behandlar då inte längre uppgifterna, såvida vi inte kan påvisa tvingande berättigade skäl som väger tyngre än dina intressen, rättigheter och friheter, eller om behandlingen sker för att fastställa, göra gällande eller försvara rättsliga anspråk."
+          ]
+        },
+        {
+          "heading": "9. Lagringstid",
+          "body": [
+            "Vi lagrar personuppgifter endast så länge det är nödvändigt för det ändamål för vilket de samlades in, eller så länge lagstadgade lagringstider kräver. Avsnitt 2 till 6 beskriver lagringstiderna för de enskilda behandlingarna. När ändamålet inte längre föreligger och ingen lagringsskyldighet finns raderas uppgifterna."
+          ]
+        },
+        {
+          "heading": "10. Ändringar i denna integritetspolicy",
+          "body": [
+            "Vi uppdaterar denna integritetspolicy när vår webbplats, våra tjänster eller de rättsliga kraven ändras. Den aktuella versionen finns alltid tillgänglig på denna sida."
+          ]
+        }
+      ],
+      "date": "29 oktober 2026"
+    }
+  },
+  "notFound": {
+    "title": "Den här sidan befinner sig i en <em>superposition.</em>",
+    "text": "Den både finns och finns inte, men mest inte. Vi hjälper dig tillbaka på rätt spår.",
+    "button": "Tillbaka till startsidan"
+  },
+  "clips": {
+    "accessRequest": "Animation: en åtkomstbegäran kontrolleras mot policyn, godkänns av chefen och loggas",
+    "justInTime": "Animation: administratörsåtkomst beviljas i två timmar, spelas in och tas bort automatiskt",
+    "passkey": "Animation: en kund loggar in med en passkey och ett fingeravtryck i stället för ett lösenord",
+    "agentScope": "Animation: en AI-agent stoppas från att skapa en betalning utanför sina behörigheter",
+    "workforce": "Animation: en ny medarbetare får single sign-on och alla appar redan första dagen, och förlorar all åtkomst på sin sista dag"
+  },
+  "platforms": {
+    "hero": {
+      "title": "IAM-produkterna <em>vi arbetar med.</em>",
+      "description": "Vi planerar, implementerar och driftar de ledande identitetsplattformarna, och hjälper er att välja rätt när valet ännu inte är gjort."
+    },
+    "groups": [
+      {
+        "key": "iga",
+        "service": "iga",
+        "title": "Identitetsstyrning (IGA)",
+        "text": "Vem som ska ha vilken åtkomst: beställningar, godkännanden, granskningar, nyanställda och avgångar.",
+        "items": [
+          {
+            "name": "One Identity Manager",
+            "vendor": "One Identity",
+            "text": "Identitetslivscykel, roller och åtkomststyrning."
+          },
+          {
+            "name": "SailPoint IdentityIQ",
+            "vendor": "SailPoint",
+            "text": "Identitetsstyrning: livscykel, åtkomstbeställningar och attesteringar."
+          },
+          {
+            "name": "SailPoint Identity Security Cloud",
+            "vendor": "SailPoint",
+            "text": "Identitetsstyrning som SaaS: livscykel, åtkomstbeställningar, attesteringar och AI-drivna rollinsikter."
+          },
+          {
+            "name": "Omada",
+            "vendor": "Omada",
+            "text": "Identitetsstyrning och administration, lokalt eller som molntjänst."
+          },
+          {
+            "name": "Saviynt",
+            "vendor": "Saviynt",
+            "text": "Molnbaserad identitetsstyrning."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IPS",
+            "vendor": "SAP",
+            "text": "Användare och roller provisioneras i SAP-systemen."
+          }
+        ]
+      },
+      {
+        "key": "access",
+        "service": "ciam",
+        "title": "Åtkomsthantering och single sign-on",
+        "text": "Själva inloggningen, för medarbetare och kunder: single sign-on, MFA, federation.",
+        "items": [
+          {
+            "name": "Okta",
+            "vendor": "Okta",
+            "text": "Single sign-on, MFA och livscykel för medarbetar- och kundidentiteter."
+          },
+          {
+            "name": "OneLogin",
+            "vendor": "One Identity",
+            "text": "Single sign-on och MFA i molnet."
+          },
+          {
+            "name": "Ping Identity (tidigare ForgeRock)",
+            "vendor": "Ping Identity",
+            "text": "Åtkomsthantering för kund- och medarbetaridentiteter i stor skala."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IAS",
+            "vendor": "SAP",
+            "text": "Inloggning och single sign-on för SAP-applikationer."
+          }
+        ]
+      },
+      {
+        "key": "directory",
+        "service": "wiam",
+        "title": "Kataloger och Microsoft-identiteter",
+        "text": "Där kontona finns, och identitetslagret i de flesta Microsoft-miljöer.",
+        "items": [
+          {
+            "name": "Microsoft Entra ID",
+            "vendor": "Microsoft",
+            "text": "Molnidentitet för Microsoft 365 och mer: inloggning, villkorsstyrd åtkomst, MFA."
+          },
+          {
+            "name": "Active Directory",
+            "vendor": "Microsoft",
+            "text": "Den lokala katalogtjänsten bakom de flesta inloggningar i företag."
+          }
+        ]
+      },
+      {
+        "key": "pam",
+        "service": "pam",
+        "title": "Privilegierad åtkomst (PAM)",
+        "text": "Administratörs- och tjänstekonton: förvarade i valv, tidsbegränsade och inspelade.",
+        "items": [
+          {
+            "name": "CyberArk",
+            "vendor": "CyberArk",
+            "text": "Privilegierad åtkomst: valv för inloggningsuppgifter, sessionsisolering och inspelning."
+          },
+          {
+            "name": "BeyondTrust",
+            "vendor": "BeyondTrust",
+            "text": "Hantering av privilegierade lösenord, behörigheter på slutpunkter och säker fjärråtkomst."
+          }
+        ]
+      }
+    ],
+    "service": "Relaterad tjänst",
+    "note": {
+      "title": "Använder ni något annat?",
+      "text": "De flesta identitetsprojekt kopplar samman flera produkter. Berätta vad ni kör i dag, så berättar vi ärligt hur vi kan hjälpa till.",
+      "button": "Prata med oss"
+    }
+  },
+  "clients": {
+    "title": "Organisationer vi har <em>arbetat med.</em>",
+    "description": "Från fordon och flyg till bank, läkemedel, handel och telekom."
+  },
+  "blog": {
+    "hero": {
+      "title": "Insikter om <em>identitetssäkerhet.</em>",
+      "description": "Praktiska artiklar från våra projekt: identitetsstyrning, privilegierad åtkomst, SAP och de identiteter som inte är människor."
+    },
+    "readMore": "Läs artikeln",
+    "minRead": "{minutes} min läsning",
+    "back": "Alla artiklar",
+    "breadcrumb": "Brödsmulor",
+    "more": "Fler artiklar"
+  }
+}

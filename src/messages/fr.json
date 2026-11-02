@@ -1,0 +1,843 @@
+{
+  "meta": {
+    "title": "Qubital : conseil en identités et accès (IAM) en Europe",
+    "description": "Cabinet IAM allemand pour des clients dans toute l’Europe : gouvernance des identités (IGA), PAM, CIAM, identités des collaborateurs, machines et agents IA.",
+    "pages": {
+      "services": {
+        "title": "Services de conseil IAM : IGA, PAM, CIAM et NHI",
+        "description": "Conseil IAM en Europe : gouvernance des identités (IGA), accès à privilèges (PAM), identités clients et collaborateurs, identités non humaines et agents IA."
+      },
+      "platforms": {
+        "title": "Plateformes IAM : SailPoint, One Identity, Entra ID",
+        "description": "Les plateformes IAM que nous déployons : One Identity, SailPoint, Omada, Saviynt, Okta, Ping Identity, Microsoft Entra ID, SAP Cloud Identity, CyberArk, etc."
+      },
+      "about": {
+        "title": "À propos : cabinet de conseil IAM en Bavière",
+        "description": "Pourquoi nous nous appelons Qubital, ce qui anime nos consultants en gestion des identités et des accès, et les valeurs de chacun de nos projets IAM en Europe."
+      },
+      "approach": {
+        "title": "Notre démarche projet IAM : de l’audit à l’exploitation",
+        "description": "Analyser, concevoir, déployer, faire évoluer : comment Qubital mène les programmes d’identité de l’évaluation initiale jusqu’à une exploitation sécurisée."
+      },
+      "industries": {
+        "title": "Gestion des identités et des accès par secteur",
+        "description": "IAM pour l’automobile, l’aéronautique, la banque, la pharma, le retail, les télécoms, le tourisme, l’assurance et l’industrie : une gouvernance sur mesure."
+      },
+      "careers": {
+        "title": "Carrières de consultant IAM en Allemagne et en Europe",
+        "description": "Construisez avec nous l’avenir de la sécurité des identités. Découvrez les carrières de consultant IAM chez Qubital en Allemagne et rejoignez notre équipe."
+      },
+      "contact": {
+        "title": "Contactez nos consultants IAM",
+        "description": "Parlez-nous de votre projet de gestion des identités et des accès (IAM). Les consultants de Qubital vous répondent sous un jour ouvré, en toute simplicité."
+      },
+      "imprint": {
+        "title": "Mentions légales",
+        "description": "Mentions légales de Qubital."
+      },
+      "privacy": {
+        "title": "Politique de confidentialité",
+        "description": "Comment Qubital traite vos données personnelles."
+      },
+      "blog": {
+        "title": "Blog IAM : gouvernance des identités, PAM et SAP",
+        "description": "Articles pratiques sur la gestion des identités et des accès : IGA, identités non humaines et agents IA, gouvernance des accès SAP et performance IAM."
+      }
+    }
+  },
+  "nav": {
+    "services": "Services",
+    "about": "À propos",
+    "approach": "Démarche",
+    "industries": "Secteurs",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "cta": "Parlons-en",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue",
+    "skip": "Aller au contenu",
+    "home": "Accueil Qubital",
+    "themeLight": "Passer en mode clair",
+    "themeDark": "Passer en mode sombre",
+    "platforms": "Plateformes",
+    "blog": "Blog"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "startProject": "Lancer un projet",
+    "allServices": "Tous les services",
+    "readMore": "Lire la suite"
+  },
+  "cta": {
+    "title": "Prêt à passer <em>de 0 à 1</em> ?",
+    "description": "Dites-nous où vous en êtes aujourd’hui et où vous souhaitez aller. Nous vous répondons sous un jour ouvré, sans discours commercial, simplement par un échange franc.",
+    "primary": "Lancer un projet",
+    "secondary": "Nous écrire un e-mail"
+  },
+  "home": {
+    "hero": {
+      "title": "Chaque accès est un <zero>0</zero> ou un <one>1</one>. <em>Nous veillons à ce que ce soit le bon.</em>",
+      "description": "Qubital est un cabinet de conseil en gestion des identités et des accès. Nous aidons les organisations à maîtriser qui et quoi peut accéder à leurs systèmes : des comptes à privilèges et de la gouvernance des identités aux identités des clients, des collaborateurs et des agents IA.",
+      "primary": "Lancer un projet",
+      "secondary": "Découvrir nos services"
+    },
+    "marquee": "Les plateformes IAM avec lesquelles nous travaillons",
+    "statement": "Notre nom vient du qubit, qui peut valoir 0 et 1 en même temps. Un accès, lui, ne le peut pas. Chaque connexion, chaque autorisation, chaque action d’un agent IA aboutit à une seule décision : accordé ou refusé. Nous veillons à ce que chacune soit la bonne.",
+    "services": {
+      "title": "La sécurité des identités, <em>de bout en bout.</em>",
+      "description": "Cinq domaines de l’identité, une seule équipe. Nous conseillons, déployons et exploitons, pour que les bonnes personnes et les bonnes machines obtiennent les bons accès, et personne d’autre."
+    },
+    "why": {
+      "title": "Assez petits pour nous impliquer. <em>Assez pointus</em> pour livrer.",
+      "description": "Nous sommes une jeune entreprise dotée d’une expertise senior. Cela signifie des circuits de décision courts, des conseils honnêtes et des interlocuteurs qui connaissent réellement votre projet.",
+      "items": [
+        {
+          "prefix": "<",
+          "value": 24,
+          "suffix": "h",
+          "label": "Délai de réponse",
+          "text": "Chaque demande reçoit une vraie réponse sous un jour ouvré."
+        },
+        {
+          "prefix": "",
+          "value": 100,
+          "suffix": "%",
+          "label": "RGPD dès la conception",
+          "text": "Confidentialité et conformité sont intégrées dès le premier jour, et non ajoutées après coup."
+        },
+        {
+          "prefix": "",
+          "value": 2,
+          "suffix": "",
+          "label": "Langues",
+          "text": "Nous travaillons en allemand et en anglais, avec vos équipes et vos partenaires."
+        },
+        {
+          "prefix": "",
+          "value": 1,
+          "suffix": "",
+          "label": "Interlocuteur unique",
+          "text": "Une personne dédiée, du lancement à la mise en production et au-delà."
+        }
+      ]
+    },
+    "process": {
+      "title": "De la première idée au <em>système en production.</em>",
+      "description": "Une démarche claire en quatre étapes, qui vous laisse la maîtrise à chaque phase.",
+      "link": "Découvrir notre démarche"
+    },
+    "industries": {
+      "title": "La sécurité des identités pour <em>tous</em> les secteurs.",
+      "description": "Partout où des données sensibles et des systèmes critiques doivent être protégés, l’identité est la première ligne de défense.",
+      "link": "Découvrir les secteurs"
+    },
+    "photos": {
+      "team": {
+        "alt": "Consultant expliquant un schéma au tableau blanc à un collègue",
+        "caption": "Ateliers avec votre équipe, sur site ou à distance"
+      },
+      "signin": {
+        "alt": "Téléphone affichant une demande de vérification d’identité",
+        "caption": "Une connexion à laquelle vos clients peuvent se fier"
+      },
+      "key": {
+        "alt": "Clé de sécurité matérielle posée sur un bureau en bois",
+        "caption": "Authentification forte pour les accès à privilèges"
+      }
+    },
+    "practice": {
+      "title": "Un accès, décidé <em>en quelques secondes.</em>",
+      "description": "Un nouveau collègue a besoin d’un accès. Les contrôles de conformité s’exécutent automatiquement, le manager valide en un clic, et tout est journalisé pour l’audit."
+    }
+  },
+  "services": {
+    "items": {
+      "pam": {
+        "title": "Gestion des accès à privilèges (PAM)",
+        "short": "Sécurisez, contrôlez et surveillez les comptes dotés des droits les plus étendus.",
+        "description": "Les comptes à privilèges sont la cible prioritaire de presque toutes les attaques. Nous vous aidons à les identifier, à placer leurs identifiants dans un coffre-fort, à imposer un accès juste-à-temps et à enregistrer les sessions, afin que les droits d’administration ne soient utilisés qu’en cas de besoin et restent toujours traçables.",
+        "points": [
+          "Découverte des comptes à privilèges",
+          "Coffre-fort et rotation des identifiants",
+          "Accès juste-à-temps et moindre privilège",
+          "Surveillance et enregistrement des sessions"
+        ]
+      },
+      "iga": {
+        "title": "Gouvernance et administration des identités (IGA)",
+        "short": "Chacun dispose exactement des accès dont il a besoin, et vous pouvez le prouver.",
+        "description": "Nous automatisons le cycle de vie des identités, de l’arrivée au départ, construisons des modèles de rôles adaptés à votre organisation et mettons en place des revues d’accès et des rapports qui satisfont les auditeurs sans surcharger vos managers.",
+        "points": [
+          "Automatisation des arrivées, mobilités et départs",
+          "Modélisation des rôles (RBAC/ABAC)",
+          "Certifications et revues des accès",
+          "Séparation des tâches et rapports d’audit"
+        ]
+      },
+      "ciam": {
+        "title": "Identité des clients (CIAM)",
+        "short": "Des parcours de connexion fluides et sécurisés, en lesquels vos clients ont confiance.",
+        "description": "L’inscription, la connexion et le recueil du consentement façonnent la première impression laissée par vos produits numériques. Nous concevons une identité client sans friction pour les utilisateurs, résistante aux prises de contrôle de compte et conforme au RGPD.",
+        "points": [
+          "Parcours d’inscription et de connexion",
+          "Sans mot de passe et passkeys",
+          "Gestion du consentement et des préférences (RGPD)",
+          "Protection contre la fraude et la prise de contrôle de compte"
+        ]
+      },
+      "wiam": {
+        "title": "Identité des collaborateurs (WIAM)",
+        "short": "Une identité sécurisée unique pour chaque collaborateur, sur chaque application et chaque appareil.",
+        "description": "Nous offrons à vos collaborateurs l’authentification unique, une authentification multifacteur robuste et l’accès conditionnel, en reliant applications cloud et sur site au sein d’une couche d’identité cohérente fondée sur le Zero Trust.",
+        "points": [
+          "Authentification unique (SSO)",
+          "Authentification multifacteur et sans mot de passe",
+          "Accès conditionnel et Zero Trust",
+          "Intégration et modernisation des annuaires"
+        ]
+      },
+      "ai": {
+        "title": "Gouvernance des identités non humaines (NHI) et des agents IA",
+        "short": "Gouvernez comptes de service, clés API, bots et agents IA comme n’importe quelle autre identité.",
+        "description": "Comptes de service, clés API, certificats, bots et désormais agents IA : les identités non humaines sont généralement plus nombreuses que vos collaborateurs, et beaucoup n’ont pas de propriétaire clairement défini. Nous les plaçons sous gouvernance des identités : un inventaire complet, une responsabilité clairement attribuée, des identifiants au périmètre restreint et à durée de vie courte, et une piste d’audit pour tout ce qu’elles font.",
+        "points": [
+          "Inventaire des identités non humaines et des agents IA",
+          "Responsabilité et cycle de vie des comptes de service",
+          "Identifiants et secrets à périmètre restreint et durée de vie courte",
+          "Garde-fous, surveillance et pistes d’audit"
+        ]
+      }
+    },
+    "page": {
+      "title": "La sécurité des identités. <em>Bien faite.</em>",
+      "description": "Cinq domaines spécialisés couvrant toutes les identités de votre organisation : collaborateurs, prestataires, clients, administrateurs, comptes de service et agents IA.",
+      "deliverables": "Ce qui est inclus",
+      "models": {
+        "title": "Travaillez avec nous <em>à votre façon.</em>",
+        "items": [
+          {
+            "title": "Conseil",
+            "text": "Évaluations, stratégie d’identité, architecture cible et choix de la plateforme, fondés sur vos risques et vos exigences."
+          },
+          {
+            "title": "Mise en œuvre",
+            "text": "Nous déployons, configurons et intégrons les plateformes d’identité, connectons vos applications et migrons les utilisateurs, avec des jalons fixes."
+          },
+          {
+            "title": "Services managés",
+            "text": "Nous exploitons vos plateformes d’identité après la mise en production : supervision, mises à jour, revues d’accès et support avec des SLA clairs."
+          },
+          {
+            "title": "Renfort d’équipe",
+            "text": "Nos spécialistes de l’identité rejoignent votre équipe, avec vos outils et à votre rythme, aussi longtemps que nécessaire."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Les questions que l’on nous pose <em>souvent.</em>",
+        "items": [
+          {
+            "q": "Travaillez-vous avec les PME et ETI ?",
+            "a": "Absolument. La sécurité des identités compte quelle que soit la taille de l’organisation. Nous adaptons notre approche, d’une évaluation ciblée à un programme complet, à votre structure et à votre budget."
+          },
+          {
+            "q": "Nous sommes concernés par NIS2 ou DORA. Pouvez-vous nous aider ?",
+            "a": "Oui. Les contrôles d’identité et d’accès sont au cœur de NIS2, DORA et ISO 27001. Nous évaluons votre situation, comblons les écarts et vous aidons à produire les preuves demandées par les auditeurs."
+          },
+          {
+            "q": "Pouvez-vous exploiter notre plateforme d’identité après la mise en production ?",
+            "a": "Oui. Avec nos services managés, nous prenons en charge l’exploitation, les mises à jour, les revues d’accès et le support, avec des SLA clairs."
+          },
+          {
+            "q": "Combien coûte un projet ?",
+            "a": "Cela dépend du périmètre. Après un premier échange gratuit, nous vous envoyons une proposition transparente, au forfait ou avec des taux journaliers clairs, sans coûts cachés."
+          },
+          {
+            "q": "Travaillez-vous à distance ?",
+            "a": "Oui. Nous travaillons à distance dans toute l’Allemagne et l’Europe, et nous nous déplaçons sur site chaque fois que c’est pertinent, pour des ateliers ou des mises en production."
+          },
+          {
+            "q": "Dans quels délais pouvez-vous démarrer ?",
+            "a": "Généralement sous une à deux semaines. En cas d’incident urgent, nous pouvons souvent intervenir le jour même."
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Nommés d’après le qubit. <em>Fondés sur la clarté.</em>",
+      "description": "Qubital a été fondée en Allemagne avec une conviction claire : l’identité est le nouveau périmètre de sécurité, et elle mérite des spécialistes."
+    },
+    "story": {
+      "title": "Pourquoi <em>Qubital ?</em>",
+      "paragraphs": [
+        "Un bit classique vaut soit 0, soit 1. Un qubit, la brique élémentaire des ordinateurs quantiques, peut valoir les deux à la fois jusqu’à ce qu’il soit mesuré. Il contient toutes les possibilités en même temps.",
+        "C’est ainsi que nous abordons un projet. Avant de nous engager sur une solution, nous gardons les options ouvertes, écoutons attentivement et explorons ce qui est possible. Une fois la situation claire, nous décidons et construisons avec précision.",
+        "Qubital associe qubit et digital. En sécurité des identités, cet équilibre est essentiel : l’accès doit être assez simple pour que chacun puisse travailler, et assez strict pour tenir les attaquants à distance."
+      ],
+      "bit": {
+        "label": "Bit",
+        "value": "0 ou 1"
+      },
+      "qubit": {
+        "label": "Qubit",
+        "value": "0 et 1"
+      }
+    },
+    "mission": {
+      "title": "Nous rendons la sécurité des identités <em>compréhensible, maîtrisable et efficace</em> pour toute organisation, quelle que soit sa taille.",
+      "label": "Mission"
+    },
+    "vision": {
+      "title": "Un monde où chaque décision d’accès, humaine ou machine, est délibérée, traçable et sûre.",
+      "label": "Vision"
+    },
+    "values": {
+      "title": "Ce que nous <em>défendons.</em>",
+      "items": [
+        {
+          "title": "Clarté",
+          "text": "Pas de jargon, pas de boîtes noires. Nous expliquons ce que nous faisons et pourquoi, pour que vous puissiez décider en connaissance de cause."
+        },
+        {
+          "title": "Responsabilité",
+          "text": "Nous considérons votre projet comme le nôtre et en restons responsables du premier atelier jusqu’à bien après la mise en production."
+        },
+        {
+          "title": "Sécurité dès la conception",
+          "text": "Le moindre privilège et la protection des données sont intégrés à chaque architecture et à chaque configuration."
+        },
+        {
+          "title": "Curiosité",
+          "text": "L’identité évolue vite, des passkeys aux agents IA. Nous continuons d’apprendre pour que vous profitiez de ce qui arrive, et non de ce qui est dépassé."
+        },
+        {
+          "title": "Partenariat",
+          "text": "Nous travaillons avec vous d’égal à égal, avec honnêteté et transparence, même lorsque la réponse est « vous n’en avez pas besoin »."
+        },
+        {
+          "title": "Durabilité",
+          "text": "Nous construisons des solutions d’identité pérennes, simples à exploiter et qui ne créent pas la dette technique de demain."
+        }
+      ]
+    },
+    "location": {
+      "title": "Ancrés en Allemagne. <em>Présents partout.</em>",
+      "text": "Nous sommes basés en Bavière et travaillons avec des clients en Allemagne, en Europe et au-delà : à distance, sur site, en allemand ou en anglais.",
+      "photoAlt": "Panorama de Francfort au bord du Main par une journée ensoleillée, avec des bateaux de croisière le long de la rive",
+      "photoCaption": "Francfort-sur-le-Main, Allemagne"
+    }
+  },
+  "approach": {
+    "hero": {
+      "title": "Du complexe en entrée, <em>du clair en sortie.</em>",
+      "description": "Chaque projet suit une démarche éprouvée. Vous savez toujours où nous en sommes, quelle est la suite et ce qu’elle coûte."
+    },
+    "steps": {
+      "title": "Quatre étapes. <em>Zéro surprise.</em>",
+      "items": [
+        {
+          "title": "Analyser",
+          "duration": "1 à 2 semaines",
+          "text": "Nous cartographions vos identités, comptes, rôles et chemins d’accès, humains comme machines, et les évaluons au regard de vos risques et des exigences réglementaires telles que NIS2, DORA et ISO 27001.",
+          "outputs": [
+            "Inventaire des identités et des accès",
+            "Analyse des écarts de risque et de conformité",
+            "Constats priorisés"
+          ]
+        },
+        {
+          "title": "Concevoir",
+          "duration": "1 à 3 semaines",
+          "text": "Nous définissons ensemble la cible : architecture d’identité, modèle de rôles et de règles, calendrier et budget. Vous obtenez un plan concret, pas une présentation de 100 diapositives.",
+          "outputs": [
+            "Architecture d’identité cible",
+            "Modèle de rôles et de règles",
+            "Feuille de route et proposition fermes"
+          ]
+        },
+        {
+          "title": "Déployer",
+          "duration": "Itératif",
+          "text": "Nous mettons en œuvre par sprints courts avec des démonstrations régulières : connexion des applications, migration des comptes et automatisation des processus de cycle de vie. Vous constatez l’avancement toutes les deux semaines et pouvez réorienter à tout moment.",
+          "outputs": [
+            "Applications connectées",
+            "Processus d’arrivée, de mobilité et de départ automatisés",
+            "Documentation et runbooks"
+          ]
+        },
+        {
+          "title": "Faire évoluer",
+          "duration": "En continu",
+          "text": "La mise en production n’est qu’un début. Nous exploitons et faisons évoluer votre plateforme d’identité, menons des revues d’accès régulières et formons votre équipe, pour que le savoir reste dans votre entreprise.",
+          "outputs": ["Exploitation managée", "Revues d’accès régulières", "Formation des équipes"]
+        }
+      ]
+    },
+    "principles": {
+      "title": "Notre façon de <em>penser.</em>",
+      "items": [
+        {
+          "title": "Tarification transparente",
+          "text": "Prix forfaitaires ou taux journaliers clairs. Vous connaissez le coût avant que nous commencions."
+        },
+        {
+          "title": "Standards ouverts",
+          "text": "SAML, OpenID Connect et SCIM plutôt que la dépendance à un fournisseur. Vos configurations, vos données et votre documentation vous appartiennent."
+        },
+        {
+          "title": "Moindre privilège par défaut",
+          "text": "Toute conception part de 0 : aucun accès par défaut, uniquement ce qui est nécessaire, et seulement le temps nécessaire."
+        },
+        {
+          "title": "Transfert de compétences",
+          "text": "Nous documentons tout et formons votre équipe, pour que vous restiez autonomes."
+        }
+      ]
+    },
+    "photoAlt": "Deux collègues travaillant sur un plan sur leurs ordinateurs portables"
+  },
+  "industries": {
+    "hero": {
+      "title": "La sécurité des identités pour <em>chaque secteur.</em>",
+      "description": "Partout où des données sensibles et des systèmes critiques doivent être protégés, nous aidons les organisations à maîtriser leurs accès."
+    },
+    "items": [
+      {
+        "key": "automotive",
+        "title": "Automobile"
+      },
+      {
+        "key": "aviation",
+        "title": "Aéronautique"
+      },
+      {
+        "key": "banking",
+        "title": "Banque et services financiers"
+      },
+      {
+        "key": "pharma",
+        "title": "Industrie pharmaceutique"
+      },
+      {
+        "key": "retail",
+        "title": "Commerce de détail"
+      },
+      {
+        "key": "telecom",
+        "title": "Télécommunications"
+      },
+      {
+        "key": "tourism",
+        "title": "Tourisme"
+      },
+      {
+        "key": "insurance",
+        "title": "Assurance"
+      },
+      {
+        "key": "manufacturing",
+        "title": "Industrie manufacturière"
+      }
+    ]
+  },
+  "careers": {
+    "hero": {
+      "title": "Façonnez <em>l’avenir</em> avec nous.",
+      "description": "Nous constituons une équipe de spécialistes de l’identité curieux, bienveillants et hautement qualifiés. Si la sécurité des identités vous passionne, parlons-en."
+    },
+    "perks": {
+      "title": "Un cadre pour donner <em>le meilleur de vous-même.</em>",
+      "items": [
+        {
+          "title": "Hybride et flexible",
+          "text": "Travaillez depuis chez vous, au bureau ou là où vous réfléchissez le mieux. La confiance plutôt que le contrôle."
+        },
+        {
+          "title": "Budget formation",
+          "text": "Conférences, certifications, livres : nous investissons chaque année dans votre développement."
+        },
+        {
+          "title": "Équipement moderne",
+          "text": "Du matériel haut de gamme et les outils que vous avez vraiment envie d’utiliser."
+        },
+        {
+          "title": "Un impact réel",
+          "text": "Des circuits de décision courts, des projets variés et des responsabilités dès le premier jour."
+        },
+        {
+          "title": "Hiérarchie plate",
+          "text": "Vos idées comptent, que vous soyez là depuis un jour ou depuis un an."
+        },
+        {
+          "title": "Culture d’équipe",
+          "text": "Des journées d’équipe régulières, des retours francs et des collègues qui se soutiennent."
+        }
+      ]
+    },
+    "open": {
+      "title": "Aucun poste ouvert pour le moment",
+      "text": "Nous ne recrutons pas sur des postes précis en ce moment. Si la sécurité des identités est votre domaine, nous serons néanmoins ravis d’avoir de vos nouvelles.",
+      "button": "Envoyer une candidature spontanée"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Construisons quelque chose <em>ensemble.</em>",
+      "description": "Parlez-nous de votre projet, de votre défi ou simplement de votre idée. Nous vous répondons sous un jour ouvré."
+    },
+    "info": {
+      "email": "E-mail",
+      "location": "Adresse",
+      "response": "Nous répondons généralement en quelques heures les jours ouvrés.",
+      "hours": "Horaires",
+      "hoursValue": "Du lundi au vendredi, de 8 h à 18 h (CET)"
+    },
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Marie Dupont",
+      "email": "E-mail",
+      "emailPlaceholder": "marie@entreprise.com",
+      "company": "Entreprise",
+      "companyPlaceholder": "Facultatif",
+      "topic": "En quoi pouvons-nous vous aider ?",
+      "topics": {
+        "pam": "PAM",
+        "iga": "IGA",
+        "ciam": "CIAM",
+        "wiam": "Identité des collaborateurs",
+        "ai": "NHI et agents IA",
+        "other": "Autre sujet"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Décrivez-nous brièvement votre projet…",
+      "consent": "J’accepte que mes données soient traitées afin de répondre à ma demande. Plus d’informations dans la <link>politique de confidentialité</link>.",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "success": {
+        "title": "Message envoyé !",
+        "text": "Merci. Nous revenons vers vous sous un jour ouvré.",
+        "again": "Envoyer un autre message"
+      },
+      "errors": {
+        "name": "Veuillez saisir votre nom.",
+        "email": "Veuillez saisir une adresse e-mail valide.",
+        "message": "Merci d’en dire un peu plus (au moins 10 caractères).",
+        "consent": "Veuillez accepter la politique de confidentialité.",
+        "server": "Une erreur s’est produite. Veuillez réessayer ou nous écrire directement par e-mail.",
+        "tooLong": "Ce texte est trop long. Veuillez le raccourcir.",
+        "rateLimited": "Trop de messages en peu de temps. Veuillez patienter quelques minutes et réessayer."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Conseil en gestion des identités et des accès depuis l’Allemagne. IGA, identités non humaines (NHI), PAM, CIAM et identité des collaborateurs auprès d’un seul partenaire.",
+    "company": "Entreprise",
+    "services": "Services",
+    "legal": "Informations légales",
+    "contact": "Contact",
+    "rights": "Tous droits réservés.",
+    "made": "Conçu et développé en Allemagne",
+    "seals": {
+      "title": "Conformité",
+      "europe": {
+        "label": "Made in Europe : une entreprise européenne basée en Allemagne",
+        "mark": "Made in\nEurope"
+      },
+      "gdpr": {
+        "label": "RGPD : protection des données dès la conception, données hébergées dans l’UE",
+        "mark": "RGPD"
+      },
+      "nis2": {
+        "label": "Préparation NIS2 : analyse des écarts et preuves de conformité",
+        "mark": "NIS2"
+      }
+    }
+  },
+  "legal": {
+    "updated": "Dernière mise à jour",
+    "bindingNote": "Ceci est une traduction de courtoisie. Seule la version allemande de cette page fait foi juridiquement.",
+    "imprint": {
+      "title": "Mentions légales",
+      "sections": [
+        {
+          "heading": "Informations conformément au § 5 DDG",
+          "body": ["Qubital GmbH", "Erlanger Straße 12", "91074 Herzogenaurach", "Allemagne"]
+        },
+        {
+          "heading": "Représentée par",
+          "body": ["Gérant : Arun Kumar"]
+        },
+        {
+          "heading": "Inscription au registre",
+          "body": [
+            "Tribunal d’enregistrement : Amtsgericht Fürth",
+            "Numéro d’immatriculation : HRB 20875"
+          ]
+        },
+        {
+          "heading": "Contact",
+          "body": [
+            "E-mail : hello@qubital.eu",
+            "Horaires : du lundi au vendredi, de 8 h à 18 h (CET)"
+          ]
+        },
+        {
+          "heading": "Responsable du contenu conformément au § 18 (2) MStV",
+          "body": ["Arun Kumar", "Erlanger Straße 12, 91074 Herzogenaurach, Allemagne"]
+        },
+        {
+          "heading": "Règlement des litiges de consommation",
+          "body": [
+            "Nous ne sommes ni disposés ni tenus à participer à une procédure de règlement des litiges devant un organisme de médiation de la consommation."
+          ]
+        },
+        {
+          "heading": "Responsabilité quant aux contenus et aux liens",
+          "body": [
+            "En tant que prestataire de services, nous sommes responsables de nos propres contenus sur ces pages conformément aux lois générales. Nous ne sommes toutefois pas tenus de surveiller les informations de tiers transmises ou stockées. Notre site contient des liens vers des sites externes de tiers, sur le contenu desquels nous n’avons aucune influence. Le fournisseur ou l’exploitant respectif des pages liées est toujours responsable de leur contenu."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "sections": [
+        {
+          "heading": "1. Introduction et responsable du traitement",
+          "body": [
+            "Nous vous remercions de l’intérêt que vous portez à notre site. La protection de vos données personnelles nous tient à cœur. La présente politique de confidentialité explique quelles données personnelles nous traitons lorsque vous utilisez ce site, à quelles fins et sur quelle base juridique, ainsi que les droits dont vous disposez.",
+            "Le responsable du traitement au sens du Règlement général sur la protection des données (RGPD) est :",
+            "Qubital GmbH",
+            "Erlanger Straße 12, 91074 Herzogenaurach, Allemagne",
+            "Représentée par son gérant, Arun Kumar",
+            "E-mail : hello@qubital.eu",
+            "Pour toute question relative à la protection des données, vous pouvez nous joindre à tout moment à l’adresse e-mail ci-dessus."
+          ]
+        },
+        {
+          "heading": "2. Données collectées lors de la visite de notre site",
+          "body": [
+            "## 2.1 Fichiers journaux du serveur",
+            "Lorsque vous consultez notre site à titre purement informatif, sans nous contacter, votre navigateur transmet automatiquement des données au serveur qui délivre le site. Ces données sont enregistrées dans des fichiers journaux : l’adresse IP de l’appareil à l’origine de la requête, la date et l’heure de l’accès, la page ou le fichier demandé, le site depuis lequel vous avez été redirigé, le navigateur et le système d’exploitation utilisés, ainsi que le volume de données transférées.",
+            "Nous utilisons ces données pour délivrer le site, en assurer la stabilité et la sécurité, et détecter et prévenir les abus. La base juridique est l’art. 6, paragraphe 1, point f) du RGPD ; notre intérêt légitime réside dans ces finalités. Les données ne sont pas croisées avec d’autres sources et ne servent pas à vous identifier. Les fichiers journaux sont supprimés automatiquement après une courte durée, sauf s’ils sont nécessaires à l’examen d’un incident de sécurité précis.",
+            "## 2.2 Chiffrement",
+            "Pour des raisons de sécurité et afin de protéger les contenus confidentiels, tels que les demandes que vous nous adressez, ce site utilise un chiffrement SSL/TLS. Vous reconnaissez une connexion chiffrée à la mention \"https://\" dans la barre d’adresse de votre navigateur et au symbole du cadenas. Lorsque le chiffrement est actif, les données que vous nous transmettez ne peuvent pas être lues par des tiers."
+          ]
+        },
+        {
+          "heading": "3. Hébergement et diffusion des contenus",
+          "body": [
+            "Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel exploite un réseau mondial de diffusion de contenus, ce qui permet de délivrer le site depuis un serveur proche de vous. Ce faisant, Vercel traite pour notre compte les données décrites à la section 2.1.",
+            "Vercel agit en tant que sous-traitant dans le cadre d’un contrat de traitement des données conformément à l’art. 28 du RGPD. La base juridique de l’utilisation de Vercel est l’art. 6, paragraphe 1, point f) du RGPD ; notre intérêt légitime est la mise à disposition sécurisée, rapide et fiable de notre site. Les transferts vers les États-Unis reposent sur les clauses contractuelles types de la Commission européenne ou sur une décision d’adéquation telle que le EU-U.S. Data Privacy Framework."
+          ]
+        },
+        {
+          "heading": "4. Cookies et stockage local",
+          "body": [
+            "Les cookies sont de petits fichiers texte que votre navigateur enregistre sur votre appareil. Ce site n’utilise aucun cookie de suivi ou de marketing.",
+            "Nous déposons un seul cookie techniquement nécessaire, NEXT_LOCALE. Il contient uniquement votre langue (par exemple \"de\" ou \"en\") et sert exclusivement à afficher le site dans la langue que vous avez choisie. Par ailleurs, le thème de couleur choisi (clair ou sombre) est enregistré dans le stockage local de votre navigateur. Aucun des deux ne sert à vous suivre ni n’est transmis à des tiers.",
+            "La base juridique est le § 25 (2) n° 2 TDDDG, ce stockage étant strictement nécessaire pour fournir le site que vous avez demandé, ainsi que l’art. 6, paragraphe 1, point f) du RGPD. Vous pouvez à tout moment supprimer ou bloquer les cookies et le stockage local dans les paramètres de votre navigateur ; le site utilisera alors sa langue et son thème par défaut.",
+            "Comme nous n’utilisons aucun cookie ni technologie similaire nécessitant un consentement, nous n’affichons pas de bannière de cookies."
+          ]
+        },
+        {
+          "heading": "5. Prise de contact",
+          "body": [
+            "## 5.1 Formulaire de contact",
+            "Si vous nous envoyez un message via le formulaire de contact, nous traitons les données que vous saisissez : votre nom, votre adresse e-mail, votre organisation (facultatif), le sujet choisi et votre message. Nous utilisons ces données uniquement pour traiter votre demande et d’éventuelles questions complémentaires. Vous recevez également un accusé de réception automatique par e-mail.",
+            "La base juridique est l’art. 6, paragraphe 1, point b) du RGPD lorsque votre demande porte sur un contrat ou sur des mesures précontractuelles, et à défaut l’art. 6, paragraphe 1, point f) du RGPD ; notre intérêt légitime réside dans la réponse aux demandes qui nous sont adressées. Les e-mails issus du formulaire de contact sont envoyés via notre boîte aux lettres Microsoft 365, fournie par Microsoft Ireland Operations Limited, qui agit en tant que sous-traitant au sens de l’art. 28 du RGPD. Lorsque Microsoft transfère des données vers les États-Unis, ce transfert repose sur les clauses contractuelles types de la Commission européenne ou sur le EU-U.S. Data Privacy Framework.",
+            "## 5.2 E-mail",
+            "Si vous nous contactez par e-mail, nous traitons votre adresse e-mail et les informations contenues dans votre message afin d’y répondre. La base juridique est la même que pour le formulaire de contact (section 5.1).",
+            "Nous supprimons les données de votre demande une fois celle-ci traitée et dès qu’elles ne sont plus nécessaires, sauf obligations légales de conservation, par exemple en droit commercial ou fiscal."
+          ]
+        },
+        {
+          "heading": "6. Mesure d’audience",
+          "body": [
+            "Afin de comprendre comment notre site est utilisé et de l’améliorer, nous utilisons Azure Application Insights, un service de Microsoft Ireland Operations Limited. Les données sont stockées dans un centre de données Microsoft situé en Allemagne (région Germany West Central), et Microsoft agit en tant que sous-traitant au sens de l’art. 28 du RGPD.",
+            "Application Insights est configuré sur ce site de manière à ne stocker aucun cookie, aucune donnée en stockage local ni aucun autre identifiant sur votre appareil. Il enregistre les pages consultées et des informations techniques de base sur la visite, telles que le navigateur, le type d’appareil et la localisation approximative (pays et ville) déduite de votre adresse IP. L’adresse IP elle-même n’est pas stockée. Les navigateurs qui envoient un signal Do Not Track ne sont pas enregistrés. Les statistiques obtenues sont pseudonymisées, conservées 90 jours et ne servent pas à vous identifier.",
+            "La base juridique est l’art. 6, paragraphe 1, point f) du RGPD ; notre intérêt légitime réside dans l’évaluation anonyme de l’utilisation de notre site. Vous pouvez vous opposer à ce traitement à tout moment (voir section 8.2), par exemple en activant Do Not Track dans votre navigateur."
+          ]
+        },
+        {
+          "heading": "7. Fonctionnalités du site",
+          "body": [
+            "## 7.1 Polices de caractères",
+            "Toutes les polices de ce site sont servies depuis notre propre hébergement. Aucune connexion à des fournisseurs de polices externes, tels que Google Fonts, n’est établie lors de votre visite.",
+            "## 7.2 Images et animations",
+            "Toutes les images et animations de ce site sont servies depuis notre propre hébergement. Nous n’intégrons aucun contenu de plateformes tierces, telles que des services vidéo ou des réseaux sociaux."
+          ]
+        },
+        {
+          "heading": "8. Vos droits",
+          "body": [
+            "## 8.1 Droits au titre du RGPD",
+            "Vous disposez d’un droit d’accès à vos données personnelles (art. 15 du RGPD), de rectification (art. 16 du RGPD), d’effacement (art. 17 du RGPD), de limitation du traitement (art. 18 du RGPD), de notification (art. 19 du RGPD) et de portabilité des données (art. 20 du RGPD). Lorsque le traitement repose sur votre consentement, vous pouvez le retirer à tout moment avec effet pour l’avenir (art. 7, paragraphe 3 du RGPD). Pour exercer ces droits, il vous suffit d’écrire à hello@qubital.eu.",
+            "Vous avez également le droit d’introduire une réclamation auprès d’une autorité de contrôle de la protection des données (art. 77 du RGPD). L’autorité compétente pour nous est l’Office bavarois de contrôle de la protection des données (BayLDA), Promenade 18, 91522 Ansbach, Allemagne.",
+            "## 8.2 Droit d’opposition",
+            "Lorsque nous traitons vos données personnelles sur la base de nos intérêts légitimes (art. 6, paragraphe 1, point f) du RGPD), vous avez le droit de vous opposer à tout moment à ce traitement pour des raisons tenant à votre situation particulière (art. 21 du RGPD). Nous cesserons alors de traiter ces données, à moins de démontrer des motifs légitimes et impérieux qui prévalent sur vos intérêts, droits et libertés, ou que le traitement serve à la constatation, à l’exercice ou à la défense de droits en justice."
+          ]
+        },
+        {
+          "heading": "9. Durée de conservation",
+          "body": [
+            "Nous ne conservons les données personnelles que le temps nécessaire à la finalité pour laquelle elles ont été collectées, ou aussi longtemps que l’exigent les délais légaux de conservation. Les sections 2 à 6 décrivent les durées de conservation propres à chaque traitement. Lorsque la finalité disparaît et qu’aucune obligation de conservation ne s’applique, les données sont supprimées."
+          ]
+        },
+        {
+          "heading": "10. Modifications de la présente politique de confidentialité",
+          "body": [
+            "Nous mettons à jour la présente politique de confidentialité lorsque notre site, nos services ou les exigences légales évoluent. La version en vigueur est toujours disponible sur cette page."
+          ]
+        }
+      ],
+      "date": "29 octobre 2026"
+    }
+  },
+  "notFound": {
+    "title": "Cette page est en <em>superposition.</em>",
+    "text": "Elle existe et n’existe pas à la fois, mais surtout, elle n’existe pas. Remettons-vous sur la bonne voie.",
+    "button": "Retour à l’accueil"
+  },
+  "clips": {
+    "accessRequest": "Animation : une demande d’accès est vérifiée au regard des règles, approuvée par le manager et journalisée",
+    "justInTime": "Animation : un accès administrateur est accordé pour deux heures, enregistré, puis retiré automatiquement",
+    "passkey": "Animation : un client se connecte avec une passkey et son empreinte digitale au lieu d’un mot de passe",
+    "agentScope": "Animation : un agent IA est empêché de créer un paiement en dehors de ses autorisations",
+    "workforce": "Animation : un nouveau collaborateur obtient l’authentification unique et toutes ses applications dès le premier jour, et perd tous ses accès le dernier jour"
+  },
+  "platforms": {
+    "hero": {
+      "title": "Les produits IAM <em>avec lesquels nous travaillons.</em>",
+      "description": "Nous planifions, déployons et exploitons les principales plateformes d’identité, et vous aidons à choisir la bonne lorsque la décision n’est pas encore prise."
+    },
+    "groups": [
+      {
+        "key": "iga",
+        "service": "iga",
+        "title": "Gouvernance des identités (IGA)",
+        "text": "Qui doit disposer de quels accès : demandes, approbations, revues, arrivées et départs.",
+        "items": [
+          {
+            "name": "One Identity Manager",
+            "vendor": "One Identity",
+            "text": "Cycle de vie des identités, rôles et gouvernance des accès."
+          },
+          {
+            "name": "SailPoint IdentityIQ",
+            "vendor": "SailPoint",
+            "text": "Gouvernance des identités : cycle de vie, demandes d’accès et certifications."
+          },
+          {
+            "name": "SailPoint Identity Security Cloud",
+            "vendor": "SailPoint",
+            "text": "Gouvernance des identités en SaaS : cycle de vie, demandes d’accès, certifications et analyse des rôles assistée par IA."
+          },
+          {
+            "name": "Omada",
+            "vendor": "Omada",
+            "text": "Gouvernance et administration des identités, sur site ou en service cloud."
+          },
+          {
+            "name": "Saviynt",
+            "vendor": "Saviynt",
+            "text": "Gouvernance des identités cloud native."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IPS",
+            "vendor": "SAP",
+            "text": "Provisionnement des utilisateurs et des rôles dans les systèmes SAP."
+          }
+        ]
+      },
+      {
+        "key": "access",
+        "service": "ciam",
+        "title": "Gestion des accès et authentification unique",
+        "text": "La connexion elle-même, pour les collaborateurs et les clients : authentification unique, MFA, fédération.",
+        "items": [
+          {
+            "name": "Okta",
+            "vendor": "Okta",
+            "text": "Authentification unique, MFA et cycle de vie pour l’identité des collaborateurs et des clients."
+          },
+          {
+            "name": "OneLogin",
+            "vendor": "One Identity",
+            "text": "Authentification unique et MFA dans le cloud."
+          },
+          {
+            "name": "Ping Identity (anciennement ForgeRock)",
+            "vendor": "Ping Identity",
+            "text": "Gestion des accès pour l’identité des clients et des collaborateurs à grande échelle."
+          },
+          {
+            "name": "SAP Cloud Identity Services: IAS",
+            "vendor": "SAP",
+            "text": "Connexion et authentification unique pour les applications SAP."
+          }
+        ]
+      },
+      {
+        "key": "directory",
+        "service": "wiam",
+        "title": "Annuaires et identité Microsoft",
+        "text": "Là où résident les comptes, et la couche d’identité de la plupart des environnements Microsoft.",
+        "items": [
+          {
+            "name": "Microsoft Entra ID",
+            "vendor": "Microsoft",
+            "text": "Identité cloud pour Microsoft 365 et au-delà : connexion, accès conditionnel, MFA."
+          },
+          {
+            "name": "Active Directory",
+            "vendor": "Microsoft",
+            "text": "L’annuaire sur site derrière la plupart des connexions en entreprise."
+          }
+        ]
+      },
+      {
+        "key": "pam",
+        "service": "pam",
+        "title": "Accès à privilèges (PAM)",
+        "text": "Comptes d’administration et de service : placés en coffre-fort, limités dans le temps et enregistrés.",
+        "items": [
+          {
+            "name": "CyberArk",
+            "vendor": "CyberArk",
+            "text": "Accès à privilèges : coffre-fort d’identifiants, isolation et enregistrement des sessions."
+          },
+          {
+            "name": "BeyondTrust",
+            "vendor": "BeyondTrust",
+            "text": "Gestion des mots de passe à privilèges, des privilèges sur les postes de travail et accès à distance sécurisé."
+          }
+        ]
+      }
+    ],
+    "service": "Service associé",
+    "note": {
+      "title": "Vous utilisez autre chose ?",
+      "text": "La plupart des projets d’identité relient plusieurs produits. Dites-nous ce que vous utilisez aujourd’hui et nous vous dirons honnêtement comment nous pouvons vous aider.",
+      "button": "Parlons-en"
+    }
+  },
+  "clients": {
+    "title": "Les organisations avec lesquelles <em>nous avons travaillé.</em>",
+    "description": "De l’automobile et l’aéronautique à la banque, la pharma, le commerce de détail et les télécoms."
+  },
+  "blog": {
+    "hero": {
+      "title": "Regards sur la <em>sécurité des identités.</em>",
+      "description": "Des articles pratiques tirés de nos projets : gouvernance des identités, accès à privilèges, SAP, et les identités qui ne sont pas des personnes."
+    },
+    "readMore": "Lire l’article",
+    "minRead": "{minutes} min de lecture",
+    "back": "Tous les articles",
+    "breadcrumb": "Fil d’Ariane",
+    "more": "Autres articles"
+  }
+}
