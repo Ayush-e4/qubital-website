@@ -17,7 +17,10 @@ export async function initPage(params: Promise<{ locale: string }>) {
   return locale;
 }
 
-export function alternates(locale: Locale, href: Pathname) {
+/** Static (non-parameterised) internal pathnames. */
+export type StaticPathname = Exclude<Pathname, `${string}[${string}`>;
+
+export function alternates(locale: Locale, href: StaticPathname) {
   return {
     canonical: getPathname({ locale, href }),
     languages: {
@@ -34,6 +37,7 @@ type PageKey =
   | 'approach'
   | 'industries'
   | 'careers'
+  | 'blog'
   | 'contact'
   | 'imprint'
   | 'privacy';
@@ -41,7 +45,7 @@ type PageKey =
 export async function pageMetadata(
   params: Promise<{ locale: string }>,
   page: PageKey,
-  href: Pathname
+  href: StaticPathname
 ): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
