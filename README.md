@@ -80,6 +80,21 @@ The sitemap expands every pathname across both locales automatically, and
 `npm test` asserts that every URL returns 200 with the right canonical, hreflang,
 title and `<html lang>`. Add the new route to `ROUTES` in `tests/smoke.test.mjs`.
 
+## Blog
+
+Posts live in `src/content/blog/` as typed data, one file per post with both languages
+(`posts/<id>.ts`), so there is no Markdown pipeline. Each post has its own slug per
+language, listed in `meta.ts`. To add one:
+
+1. Write `src/content/blog/posts/<id>.ts` with `en` and `de` content (title, a 140–160
+   character description, excerpt, category, keywords, body blocks).
+2. Add its id, dates and both slugs to `postMeta` in `meta.ts` (newest first).
+3. Register it in `src/content/blog/index.ts` and add its two URLs to `ROUTES` in
+   `tests/smoke.test.mjs`.
+
+The blog index, sitemap, hreflang pair, `BlogPosting`/`BreadcrumbList` structured data
+and the language switcher (which swaps the slug) all pick it up from there.
+
 ## Photos
 
 Stock photos live in `src/assets/photos/` and are imported statically, so
@@ -225,7 +240,7 @@ Exchange Online allows 30 messages a minute per mailbox; each inquiry sends two.
 ## Testing
 
 - **`npm test`** is the suite that gates CI. Plain HTTP against a production
-  server: the 18-entry sitemap, self-referencing canonicals, hreflang clusters,
+  server: the 28-entry sitemap (blog posts included), self-referencing canonicals, hreflang clusters,
   titles, `<html lang>`, the `/` redirect rules, cache and security headers, and
   the redirects from the old site's URLs. It also drives the contact endpoint
   (validation, honeypot, per-IP rate limiting) with `GRAPH_CLIENT_SECRET`
