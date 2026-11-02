@@ -6,7 +6,8 @@ import { routing } from './i18n/routing';
  * Locale routing (next-intl), see src/i18n/routing.ts:
  *
  * 1. Every page lives under a locale prefix with localized slugs:
- *    /de/leistungen, /en/services. German is the default.
+ *    /de/leistungen, /en/services. English is the default for every
+ *    other language, so visitors from across Europe get a page they can read.
  * 2. `/` and other unprefixed paths redirect to the visitor's locale, picked from
  *    the NEXT_LOCALE cookie, then Accept-Language, then the default.
  * 3. Old URLs from the previous site (/about, /fr/…) never reach this proxy:
