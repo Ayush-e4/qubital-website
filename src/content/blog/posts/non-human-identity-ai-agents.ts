@@ -1,7 +1,6 @@
-import type { Locale } from '@/i18n/routing';
 import type { PostContent } from '../types';
 
-export const nonHumanIdentityAiAgents: Record<Locale, PostContent> = {
+export const nonHumanIdentityAiAgents: Record<'en' | 'de', PostContent> = {
   en: {
     title: 'Non-human identities and AI agents: closing the governance gap',
     description:

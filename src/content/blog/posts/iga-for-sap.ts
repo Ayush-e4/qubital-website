@@ -1,7 +1,6 @@
-import type { Locale } from '@/i18n/routing';
 import type { PostContent } from '../types';
 
-export const igaForSap: Record<Locale, PostContent> = {
+export const igaForSap: Record<'en' | 'de', PostContent> = {
   en: {
     title: 'Identity governance for SAP landscapes: what to get right',
     description:

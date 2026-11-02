@@ -1,7 +1,6 @@
-import type { Locale } from '@/i18n/routing';
 import type { PostContent } from '../types';
 
-export const iamQueryPerformance: Record<Locale, PostContent> = {
+export const iamQueryPerformance: Record<'en' | 'de', PostContent> = {
   en: {
     title: 'From 70 seconds to under one: fixing a slow IAM database query',
     description:
