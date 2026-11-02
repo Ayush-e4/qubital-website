@@ -66,7 +66,7 @@ const ROUTES = {
   privacy: { de: '/de/datenschutz', en: '/en/privacy' },
 };
 const LOCALES = ['de', 'en'];
-const DEFAULT_LOCALE = 'de';
+const DEFAULT_LOCALE = 'en';
 
 /** @type {{route: string, locale: string, path: string, html: string}[]} */
 const entries = [];
@@ -234,10 +234,19 @@ test('root redirects an English browser to /en', async () => {
   assert.equal(locationPath(res), '/en');
 });
 
-test('root falls back to German for an unsupported language', async () => {
-  const res = await rootRedirect({ 'accept-language': 'fr-FR,fr;q=0.9' });
-  assert.equal(res.status, 307);
-  assert.equal(locationPath(res), '/de');
+test('root falls back to English for other European languages', async () => {
+  for (const lang of ['fr-FR,fr;q=0.9', 'it-IT,it;q=0.9', 'pl-PL,pl;q=0.9']) {
+    const res = await rootRedirect({ 'accept-language': lang });
+    assert.equal(res.status, 307);
+    assert.equal(locationPath(res), '/en', lang);
+  }
+});
+
+test('root still sends an Austrian or Swiss German browser to /de', async () => {
+  for (const lang of ['de-AT,de;q=0.9', 'de-CH,de;q=0.9']) {
+    const res = await rootRedirect({ 'accept-language': lang });
+    assert.equal(locationPath(res), '/de', lang);
+  }
 });
 
 test('the NEXT_LOCALE cookie wins over Accept-Language', async () => {
