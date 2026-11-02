@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Qubital: Identity & Access Management consulting from Germany",
-    "description": "Qubital is an IAM consultancy from Germany: identity governance (IGA), PAM, CIAM, workforce identity and governance for non-human identities and AI agents.",
+    "title": "Qubital: Identity & Access Management Consulting in Europe",
+    "description": "IAM consultancy from Germany for clients across Europe: identity governance (IGA), PAM, CIAM, workforce identity, and non-human and AI agent identities.",
     "pages": {
       "services": {
         "title": "IAM Consulting Services: IGA, PAM, CIAM & NHI",
-        "description": "IAM consulting: identity governance (IGA), privileged access (PAM), customer and workforce identity, plus non-human and AI agent identity governance."
+        "description": "IAM consulting across Europe: identity governance (IGA), privileged access (PAM), customer and workforce identity, and non-human and AI agent identities."
       },
       "platforms": {
         "title": "IAM Platforms: SailPoint, One Identity, Entra ID",
@@ -13,7 +13,7 @@
       },
       "about": {
         "title": "About Us: IAM Consultancy from Bavaria",
-        "description": "Why we are called Qubital, what drives our identity & access management consultants and the values behind every IAM project."
+        "description": "Why we are called Qubital, what drives our identity & access management consultants and the values behind every IAM project across Europe."
       },
       "approach": {
         "title": "Our IAM Project Approach: Assess to Operate",
@@ -21,10 +21,10 @@
       },
       "industries": {
         "title": "Identity & Access Management by Industry",
-        "description": "IAM for automotive, aviation, banking, pharma, retail, telecom, tourism, insurance and manufacturing: access governance that fits your sector."
+        "description": "IAM for automotive, aviation, banking, pharma, retail, telecom, tourism, insurance and manufacturing across Europe: access governance that fits your sector."
       },
       "careers": {
-        "title": "IAM Consultant Careers in Germany",
+        "title": "IAM Consultant Careers in Germany & Europe",
         "description": "Build the future of identity security with us. Explore IAM consulting careers at Qubital in Germany."
       },
       "contact": {

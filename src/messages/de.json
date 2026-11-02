@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Qubital: Identity & Access Management Beratung aus Deutschland",
-    "description": "Qubital ist eine IAM-Beratung aus Deutschland: Identity Governance (IGA), PAM, CIAM, Workforce Identity und Governance für Non-Human Identities und KI-Agenten.",
+    "title": "Qubital: Identity & Access Management Beratung in DACH & Europa",
+    "description": "IAM-Beratung aus Deutschland für DACH und Europa: Identity Governance (IGA), PAM, CIAM, Workforce Identity sowie Non-Human Identities und KI-Agenten.",
     "pages": {
       "services": {
         "title": "IAM-Beratung: IGA, PAM, CIAM & NHI",
-        "description": "IAM-Beratung: Identity Governance (IGA), Privileged Access (PAM), Customer und Workforce Identity sowie Governance für Non-Human Identities und KI-Agenten."
+        "description": "IAM-Beratung in DACH und Europa: Identity Governance (IGA), Privileged Access (PAM), Customer und Workforce Identity sowie Non-Human Identities und KI-Agenten."
       },
       "platforms": {
         "title": "IAM-Plattformen: SailPoint, One Identity, Entra ID",
@@ -21,10 +21,10 @@
       },
       "industries": {
         "title": "Identity & Access Management nach Branchen",
-        "description": "IAM für Automotive, Luftfahrt, Banken, Pharma, Handel, Telekommunikation, Tourismus, Versicherungen und Industrie: Zugriffssteuerung je Branche."
+        "description": "IAM für Automotive, Luftfahrt, Banken, Pharma, Handel, Telekom, Tourismus, Versicherungen und Industrie in DACH und Europa: Zugriffssteuerung je Branche."
       },
       "careers": {
-        "title": "Karriere als IAM-Berater in Deutschland",
+        "title": "Karriere als IAM-Berater in DACH & Europa",
         "description": "Gestalte mit uns die Zukunft der Identity Security. Entdecke Karrieremöglichkeiten in der IAM-Beratung bei Qubital."
       },
       "contact": {
