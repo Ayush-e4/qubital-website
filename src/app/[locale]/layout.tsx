@@ -10,7 +10,7 @@ import { Header } from '@/components/layout/Header';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { site } from '@/config/site';
 import { routing } from '@/i18n/routing';
-import { alternates, ogImage } from '@/lib/page';
+import { alternates, ogImage, ogLocale } from '@/lib/page';
 import { themeScript } from '@/lib/theme';
 import '../globals.css';
 
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
       siteName: site.name,
       title: t('title'),
       description: t('description'),
-      locale: locale === 'de' ? 'de_DE' : 'en_US',
+      ...ogLocale(locale),
       images: [ogImage],
     },
     twitter: {
@@ -83,7 +83,10 @@ function organizationJsonLd(description: string) {
         },
         sameAs: [site.linkedin],
         image: `${site.url}${ogImage.url}`,
-        areaServed: ['Germany', 'Europe'],
+        areaServed: [
+          { '@type': 'Place', name: 'Europe' },
+          ...site.areaServed.map((name) => ({ '@type': 'Country', name })),
+        ],
         knowsAbout: [
           'Identity and Access Management (IAM)',
           'Identity Governance and Administration (IGA)',
@@ -93,6 +96,9 @@ function organizationJsonLd(description: string) {
           'Non-Human Identity (NHI) governance',
           'AI agent identity governance',
           'SAP identity integration',
+          'GDPR-compliant identity management',
+          'NIS2 identity and access requirements',
+          'DORA access governance for financial entities',
         ],
         contactPoint: {
           '@type': 'ContactPoint',
