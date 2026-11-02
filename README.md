@@ -246,7 +246,7 @@ Exchange Online allows 30 messages a minute per mailbox; each inquiry sends two.
 ## Testing
 
 - **`npm test`** is the suite that gates CI. Plain HTTP against a production
-  server: the 130-entry sitemap (10 languages, blog posts included), self-referencing canonicals, hreflang clusters,
+  server: the 140-entry sitemap (10 languages, blog posts included), self-referencing canonicals, hreflang clusters,
   titles, `<html lang>`, the `/` redirect rules, cache and security headers, and
   the redirects from the old site's URLs. It also drives the contact endpoint
   (validation, honeypot, per-IP rate limiting) with `GRAPH_CLIENT_SECRET`
