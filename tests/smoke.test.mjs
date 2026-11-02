@@ -41,31 +41,176 @@ const SITE = 'https://qubital.eu';
  * there should be a deliberate change here too.
  */
 const ROUTES = {
-  home: { de: '/de', en: '/en' },
-  services: { de: '/de/leistungen', en: '/en/services' },
-  platforms: { de: '/de/plattformen', en: '/en/platforms' },
-  about: { de: '/de/ueber-uns', en: '/en/about' },
-  approach: { de: '/de/vorgehen', en: '/en/approach' },
-  industries: { de: '/de/branchen', en: '/en/industries' },
-  careers: { de: '/de/karriere', en: '/en/careers' },
-  blog: { de: '/de/blog', en: '/en/blog' },
+  home: {
+    de: '/de',
+    en: '/en',
+    fr: '/fr',
+    it: '/it',
+    es: '/es',
+    nl: '/nl',
+    pl: '/pl',
+    pt: '/pt',
+    sv: '/sv',
+    da: '/da',
+  },
+  services: {
+    de: '/de/leistungen',
+    en: '/en/services',
+    fr: '/fr/services',
+    it: '/it/servizi',
+    es: '/es/servicios',
+    nl: '/nl/diensten',
+    pl: '/pl/uslugi',
+    pt: '/pt/servicos',
+    sv: '/sv/tjanster',
+    da: '/da/ydelser',
+  },
+  platforms: {
+    de: '/de/plattformen',
+    en: '/en/platforms',
+    fr: '/fr/plateformes',
+    it: '/it/piattaforme',
+    es: '/es/plataformas',
+    nl: '/nl/platformen',
+    pl: '/pl/platformy',
+    pt: '/pt/plataformas',
+    sv: '/sv/plattformar',
+    da: '/da/platforme',
+  },
+  about: {
+    de: '/de/ueber-uns',
+    en: '/en/about',
+    fr: '/fr/a-propos',
+    it: '/it/chi-siamo',
+    es: '/es/sobre-nosotros',
+    nl: '/nl/over-ons',
+    pl: '/pl/o-nas',
+    pt: '/pt/sobre-nos',
+    sv: '/sv/om-oss',
+    da: '/da/om-os',
+  },
+  approach: {
+    de: '/de/vorgehen',
+    en: '/en/approach',
+    fr: '/fr/approche',
+    it: '/it/approccio',
+    es: '/es/enfoque',
+    nl: '/nl/aanpak',
+    pl: '/pl/podejscie',
+    pt: '/pt/abordagem',
+    sv: '/sv/arbetssatt',
+    da: '/da/tilgang',
+  },
+  industries: {
+    de: '/de/branchen',
+    en: '/en/industries',
+    fr: '/fr/secteurs',
+    it: '/it/settori',
+    es: '/es/sectores',
+    nl: '/nl/sectoren',
+    pl: '/pl/branze',
+    pt: '/pt/setores',
+    sv: '/sv/branscher',
+    da: '/da/brancher',
+  },
+  careers: {
+    de: '/de/karriere',
+    en: '/en/careers',
+    fr: '/fr/carrieres',
+    it: '/it/carriere',
+    es: '/es/empleo',
+    nl: '/nl/vacatures',
+    pl: '/pl/kariera',
+    pt: '/pt/carreiras',
+    sv: '/sv/karriar',
+    da: '/da/karriere',
+  },
+  contact: {
+    de: '/de/kontakt',
+    en: '/en/contact',
+    fr: '/fr/contact',
+    it: '/it/contatti',
+    es: '/es/contacto',
+    nl: '/nl/contact',
+    pl: '/pl/kontakt',
+    pt: '/pt/contacto',
+    sv: '/sv/kontakt',
+    da: '/da/kontakt',
+  },
+  imprint: {
+    de: '/de/impressum',
+    en: '/en/imprint',
+    fr: '/fr/mentions-legales',
+    it: '/it/note-legali',
+    es: '/es/aviso-legal',
+    nl: '/nl/colofon',
+    pl: '/pl/nota-prawna',
+    pt: '/pt/aviso-legal',
+    sv: '/sv/juridisk-information',
+    da: '/da/juridisk-information',
+  },
+  privacy: {
+    de: '/de/datenschutz',
+    en: '/en/privacy',
+    fr: '/fr/confidentialite',
+    it: '/it/privacy',
+    es: '/es/privacidad',
+    nl: '/nl/privacy',
+    pl: '/pl/prywatnosc',
+    pt: '/pt/privacidade',
+    sv: '/sv/integritet',
+    da: '/da/privatliv',
+  },
+  blog: {
+    de: '/de/blog',
+    en: '/en/blog',
+    fr: '/fr/blog',
+    it: '/it/blog',
+    es: '/es/blog',
+    nl: '/nl/blog',
+    pl: '/pl/blog',
+    pt: '/pt/blog',
+    sv: '/sv/blog',
+    da: '/da/blog',
+  },
   'blog/iam-query-performance': {
     de: '/de/blog/iam-performance-abfrage-70-sekunden-unter-eine',
     en: '/en/blog/iam-query-performance-70-seconds-to-under-one',
+    fr: '/fr/blog/requete-iam-lente-de-70-secondes-a-moins-d-une',
+    it: '/it/blog/query-iam-lenta-da-70-secondi-a-meno-di-uno',
+    es: '/es/blog/de-70-segundos-a-menos-de-uno-consulta-iam-lenta',
+    nl: '/nl/blog/iam-databasequery-van-70-seconden-naar-onder-een-seconde',
+    pl: '/pl/blog/z-70-sekund-do-ponizej-jednej-wolne-zapytanie-iam',
+    pt: '/pt/blog/de-70-segundos-a-menos-de-um-consulta-iam-lenta',
+    sv: '/sv/blog/fran-70-sekunder-till-under-en-langsam-iam-databasfraga',
+    da: '/da/blog/fra-70-sekunder-til-under-et-langsom-iam-foresporgsel',
   },
   'blog/non-human-identity-ai-agents': {
     de: '/de/blog/non-human-identities-und-ki-agenten-steuern',
     en: '/en/blog/governing-non-human-identities-and-ai-agents',
+    fr: '/fr/blog/identites-non-humaines-et-agents-ia',
+    it: '/it/blog/identita-non-umane-agenti-ai-governance',
+    es: '/es/blog/identidades-no-humanas-y-agentes-de-ia',
+    nl: '/nl/blog/niet-menselijke-identiteiten-en-ai-agents',
+    pl: '/pl/blog/tozsamosci-nieosobowe-i-agenci-ai',
+    pt: '/pt/blog/identidades-nao-humanas-e-agentes-de-ia',
+    sv: '/sv/blog/icke-manskliga-identiteter-och-ai-agenter',
+    da: '/da/blog/ikke-menneskelige-identiteter-og-ai-agenter',
   },
   'blog/iga-for-sap': {
     de: '/de/blog/identity-governance-fuer-sap-landschaften',
     en: '/en/blog/identity-governance-for-sap-landscapes',
+    fr: '/fr/blog/gouvernance-des-identites-pour-sap',
+    it: '/it/blog/identity-governance-sap',
+    es: '/es/blog/gobierno-de-identidades-para-entornos-sap',
+    nl: '/nl/blog/identity-governance-voor-sap-landschappen',
+    pl: '/pl/blog/zarzadzanie-tozsamoscia-w-srodowiskach-sap',
+    pt: '/pt/blog/governacao-de-identidades-para-ambientes-sap',
+    sv: '/sv/blog/identitetsstyrning-for-sap-miljoer',
+    da: '/da/blog/identitetsstyring-for-sap-landskaber',
   },
-  contact: { de: '/de/kontakt', en: '/en/contact' },
-  imprint: { de: '/de/impressum', en: '/en/imprint' },
-  privacy: { de: '/de/datenschutz', en: '/en/privacy' },
 };
-const LOCALES = ['de', 'en'];
+const LOCALES = ['de', 'en', 'fr', 'it', 'es', 'nl', 'pl', 'pt', 'sv', 'da'];
 const DEFAULT_LOCALE = 'en';
 
 /** @type {{route: string, locale: string, path: string, html: string}[]} */
@@ -234,10 +379,29 @@ test('root redirects an English browser to /en', async () => {
   assert.equal(locationPath(res), '/en');
 });
 
-test('root falls back to English for other European languages', async () => {
-  for (const lang of ['fr-FR,fr;q=0.9', 'it-IT,it;q=0.9', 'pl-PL,pl;q=0.9']) {
+test('root sends each European browser language to its own locale', async () => {
+  const cases = {
+    'fr-FR,fr;q=0.9': '/fr',
+    'fr-BE,fr;q=0.9': '/fr',
+    'it-IT,it;q=0.9': '/it',
+    'es-ES,es;q=0.9': '/es',
+    'nl-NL,nl;q=0.9': '/nl',
+    'nl-BE,nl;q=0.9': '/nl',
+    'pl-PL,pl;q=0.9': '/pl',
+    'pt-PT,pt;q=0.9': '/pt',
+    'sv-SE,sv;q=0.9': '/sv',
+    'da-DK,da;q=0.9': '/da',
+  };
+  for (const [lang, want] of Object.entries(cases)) {
     const res = await rootRedirect({ 'accept-language': lang });
     assert.equal(res.status, 307);
+    assert.equal(locationPath(res), want, lang);
+  }
+});
+
+test('root falls back to English for languages the site does not offer', async () => {
+  for (const lang of ['cs-CZ,cs;q=0.9', 'fi-FI,fi;q=0.9', 'ja-JP,ja;q=0.9']) {
+    const res = await rootRedirect({ 'accept-language': lang });
     assert.equal(locationPath(res), '/en', lang);
   }
 });
@@ -293,12 +457,12 @@ test('old URLs redirect permanently to their new pages', async () => {
     '/de/careers': '/de/karriere',
     '/de/contact': '/de/kontakt',
     '/de/privacy-and-gdpr': '/de/datenschutz',
-    '/fr': '/en',
-    '/fr/services': '/en/services',
-    '/es/about': '/en/about',
-    '/it/contact': '/en/contact',
-    '/nl/impressum': '/en/imprint',
-    '/nl/some-old-page': '/en',
+    '/fr/about': '/fr/a-propos',
+    '/es/about': '/es/sobre-nosotros',
+    '/it/contact': '/it/contatti',
+    '/it/careers': '/it/carriere',
+    '/nl/impressum': '/nl/colofon',
+    '/nl/privacy-and-gdpr': '/nl/privacy',
   };
   const bad = [];
   for (const [from, to] of Object.entries(cases)) {
