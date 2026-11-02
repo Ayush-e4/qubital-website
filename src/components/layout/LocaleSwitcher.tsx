@@ -2,9 +2,11 @@
 
 import { motion } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import { useTransition } from 'react';
+import { translateSlug } from '@/content/blog/meta';
 import { usePathname, useRouter } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
+import { routing, type Locale } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
 
 export function LocaleSwitcher({ className }: { className?: string }) {
@@ -12,7 +14,19 @@ export function LocaleSwitcher({ className }: { className?: string }) {
   const t = useTranslations('nav');
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams<{ slug?: string }>();
   const [isPending, startTransition] = useTransition();
+
+  // A blog post has its own slug in each language, so swap it for its counterpart.
+  const switchTo = (l: Locale) => {
+    if (pathname === '/blog/[slug]') {
+      const slug = params.slug && translateSlug(params.slug, l);
+      if (slug) router.replace({ pathname, params: { slug } }, { locale: l });
+      else router.replace('/blog', { locale: l });
+    } else {
+      router.replace(pathname, { locale: l });
+    }
+  };
 
   return (
     <div
@@ -29,7 +43,7 @@ export function LocaleSwitcher({ className }: { className?: string }) {
           key={l}
           type="button"
           aria-pressed={l === locale}
-          onClick={() => startTransition(() => router.replace(pathname, { locale: l }))}
+          onClick={() => startTransition(() => switchTo(l))}
           className={cn(
             'relative z-10 rounded-full px-2.5 py-1 uppercase transition-colors',
             l === locale ? 'text-bg' : 'text-muted hover:text-fg'

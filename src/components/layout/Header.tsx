@@ -75,7 +75,7 @@ export function Header() {
             <nav className="hidden lg:block" onPointerLeave={() => setHovered(null)}>
               <DockList className="flex items-center gap-1">
                 {mainNav.map((item) => {
-                  const active = pathname === item.href;
+                  const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
                   return (
                     <DockItem key={item.key}>
                       <Link
