@@ -21,6 +21,14 @@ export const postMeta: PostMeta[] = [
     slugs: {
       en: 'iam-query-performance-70-seconds-to-under-one',
       de: 'iam-performance-abfrage-70-sekunden-unter-eine',
+      fr: 'requete-iam-lente-de-70-secondes-a-moins-d-une',
+      it: 'query-iam-lenta-da-70-secondi-a-meno-di-uno',
+      es: 'de-70-segundos-a-menos-de-uno-consulta-iam-lenta',
+      nl: 'iam-databasequery-van-70-seconden-naar-onder-een-seconde',
+      pl: 'z-70-sekund-do-ponizej-jednej-wolne-zapytanie-iam',
+      pt: 'de-70-segundos-a-menos-de-um-consulta-iam-lenta',
+      sv: 'fran-70-sekunder-till-under-en-langsam-iam-databasfraga',
+      da: 'fra-70-sekunder-til-under-et-langsom-iam-foresporgsel',
     },
   },
   {
@@ -30,6 +38,14 @@ export const postMeta: PostMeta[] = [
     slugs: {
       en: 'governing-non-human-identities-and-ai-agents',
       de: 'non-human-identities-und-ki-agenten-steuern',
+      fr: 'identites-non-humaines-et-agents-ia',
+      it: 'identita-non-umane-agenti-ai-governance',
+      es: 'identidades-no-humanas-y-agentes-de-ia',
+      nl: 'niet-menselijke-identiteiten-en-ai-agents',
+      pl: 'tozsamosci-nieosobowe-i-agenci-ai',
+      pt: 'identidades-nao-humanas-e-agentes-de-ia',
+      sv: 'icke-manskliga-identiteter-och-ai-agenter',
+      da: 'ikke-menneskelige-identiteter-og-ai-agenter',
     },
   },
   {
@@ -39,6 +55,14 @@ export const postMeta: PostMeta[] = [
     slugs: {
       en: 'identity-governance-for-sap-landscapes',
       de: 'identity-governance-fuer-sap-landschaften',
+      fr: 'gouvernance-des-identites-pour-sap',
+      it: 'identity-governance-sap',
+      es: 'gobierno-de-identidades-para-entornos-sap',
+      nl: 'identity-governance-voor-sap-landschappen',
+      pl: 'zarzadzanie-tozsamoscia-w-srodowiskach-sap',
+      pt: 'governacao-de-identidades-para-ambientes-sap',
+      sv: 'identitetsstyrning-for-sap-miljoer',
+      da: 'identitetsstyring-for-sap-landskaber',
     },
   },
 ];
