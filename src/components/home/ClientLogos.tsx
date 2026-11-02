@@ -4,6 +4,7 @@ import { rich } from '@/lib/rich';
 import { Container } from '../ui/Container';
 import { Stagger, StaggerItem } from '../ui/Reveal';
 import { SectionHeading } from '../ui/SectionHeading';
+import { SpotlightCard } from '../ui/SpotlightCard';
 
 // Organisations Qubital has worked with (per the client). The logos are the
 // companies' own, in public/logos/clients. Heights are tuned per logo so a
@@ -38,15 +39,17 @@ export function ClientLogos() {
         >
           {CLIENTS.map((client) => (
             <StaggerItem key={client.file}>
-              <div className="logo-plate flex h-28 items-center justify-center rounded-2xl px-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`/logos/clients/${client.file}.svg`}
-                  alt={client.name}
-                  className={cn('w-auto max-w-full object-contain', client.size)}
-                  loading="lazy"
-                />
-              </div>
+              <SpotlightCard variant="light">
+                <div className="flex h-28 items-center justify-center px-6">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/logos/clients/${client.file}.svg`}
+                    alt={client.name}
+                    className={cn('w-auto max-w-full object-contain', client.size)}
+                    loading="lazy"
+                  />
+                </div>
+              </SpotlightCard>
             </StaggerItem>
           ))}
         </Stagger>
