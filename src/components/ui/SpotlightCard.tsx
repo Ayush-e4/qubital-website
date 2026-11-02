@@ -4,7 +4,8 @@ import { useRef, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 
 // Card with a soft glow and border highlight that follows the cursor.
-// `light` keeps a pale plate under third-party logos, which are designed for white.
+// Gradient border in the brand colours; `light` keeps a white plate under
+// third-party logos, which are designed for white.
 export function SpotlightCard({
   children,
   className,
@@ -27,16 +28,23 @@ export function SpotlightCard({
         el.style.setProperty('--y', `${e.clientY - r.top}px`);
       }}
       className={cn(
-        'group/card relative overflow-hidden border border-line [--x:50%] [--y:0%]',
-        'transition-[translate,box-shadow,border-color] duration-500 ease-out-expo hover:-translate-y-1 hover:border-line-strong hover:shadow-[0_18px_50px_-20px_rgb(102_80_242/0.35)] motion-reduce:hover:translate-y-0',
-        variant === 'light' ? 'card-gradient-light rounded-2xl' : 'card-gradient rounded-3xl',
+        'group/card relative overflow-hidden [--x:50%] [--y:0%]',
+        'transition-[translate,box-shadow] duration-500 ease-out-expo hover:-translate-y-1 hover:shadow-[0_18px_50px_-20px_rgb(102_80_242/0.35)] motion-reduce:hover:translate-y-0',
+        variant === 'light' ? 'rounded-2xl bg-white' : 'rounded-3xl bg-surface/70',
         className
       )}
     >
-      {/* stronger gradient wash on hover */}
+      {/* brand gradient border (violet to cyan, as in the accent text) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet/15 via-transparent to-cyan/15 opacity-0 transition-opacity duration-500 group-hover/card:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-60 transition-opacity duration-500 group-hover/card:opacity-100"
+        style={{
+          padding: 1,
+          background: 'linear-gradient(100deg, var(--violet) 10%, var(--cyan) 90%)',
+          WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
+        }}
       />
       {/* glow */}
       <div
