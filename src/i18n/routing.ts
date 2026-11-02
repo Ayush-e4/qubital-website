@@ -2,7 +2,9 @@ import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
   locales: ['de', 'en'],
-  defaultLocale: 'de',
+  // English is the fallback for visitors (and search engines) whose language is
+  // neither German nor English, so the rest of Europe lands on a page they can read.
+  defaultLocale: 'en',
   pathnames: {
     '/': '/',
     '/services': { de: '/leistungen', en: '/services' },
