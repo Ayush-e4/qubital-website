@@ -1,0 +1,337 @@
+{
+  "iam-query-performance": {
+    "title": "Fra 70 sekunder til under ét: en langsom IAM-forespørgsel løst",
+    "description": "Et kundecase: Sådan fik indeksoptimering en kritisk forespørgsel i identitetsstyringen ned fra over 70 sekunder til under ét sekund – og metoden bag.",
+    "excerpt": "En enkelt langsom forespørgsel holdt en hel identitetsplatform tilbage. Sådan fandt vi den, løste den med indeksoptimering og sikrede, at den forbliver løst.",
+    "category": "Kundecase",
+    "keywords": [
+      "IAM-performance",
+      "databasetuning til identitetsstyring",
+      "indeksoptimering i SQL Server",
+      "IGA-platformens performance",
+      "One Identity Manager performance"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Platforme til identitetsstyring står og falder med deres database. Hver provisioneringskørsel, hver adgangsanmodning og hver certificeringskampagne ender som SQL. Når en af disse forespørgsler bliver langsom, ser brugerne sjældent en fejlmeddelelse. De ser en anmodningsformular, der er et minut om at indlæse, en natlig synkronisering, der løber ind i arbejdsdagen, eller en godkendelseskø, der aldrig helt bliver indhentet."
+      },
+      {
+        "type": "p",
+        "text": "I en nylig opgave tog én forespørgsel i en kundes platform til identitetsstyring jævnligt mere end 70 sekunder. Efter vores arbejde svarer den på under ét sekund. Denne artikel gennemgår, hvordan vi kom dertil. Kunden forbliver anonym; det er metoden, der tæller."
+      },
+      {
+        "type": "h2",
+        "text": "Symptomet: Alt føltes langsomt"
+      },
+      {
+        "type": "p",
+        "text": "De første meldinger var vage: Webportalen var “sløv”, nogle jobs “tog længere tid end normalt”. Det er typisk. Performanceproblemer i IAM viser sig sjældent som én defekt komponent. De viser sig som generel friktion, og teams reagerer ofte ved at tilføje hardware eller øge timeouts. Begge dele behandler symptomet og skjuler årsagen."
+      },
+      {
+        "type": "p",
+        "text": "Derfor startede vi med målinger, ikke meninger. Før vi ændrede noget, ville vi vide, hvilke statements der brugte mest tid og flest ressourcer, hvor ofte de kørte, og om deres omkostning havde ændret sig over tid."
+      },
+      {
+        "type": "h2",
+        "text": "Trin 1: Find de forespørgsler, der virkelig koster tid"
+      },
+      {
+        "type": "p",
+        "text": "I SQL Server giver Query Store og de dynamiske management views dette billede uden at installere noget. Vi rangerede statements efter samlet forløbet tid og efter logiske læsninger, ikke kun efter gennemsnitlig varighed. En forespørgsel, der tager to sekunder, men kører ti tusind gange om dagen, betyder mere end en rapport, der tager fem minutter én gang om måneden."
+      },
+      {
+        "type": "p",
+        "text": "Ét statement skilte sig ud. Det var en del af den logik, der vurderer, hvilke rettigheder en person skal have, kørte mange gange om dagen og tog i gennemsnit mere end 70 sekunder. Det var også roden til meget af den generelle langsomhed: Andre processer ventede på de låse, det holdt."
+      },
+      {
+        "type": "h2",
+        "text": "Trin 2: Læs eksekveringsplanen"
+      },
+      {
+        "type": "p",
+        "text": "Den faktiske eksekveringsplan fortalte hurtigt historien. I stedet for at søge direkte ind i et lille sæt rækker scannede motoren en stor tabel med tildelinger mellem identiteter og rettigheder og filtrerede derefter resultatet. Det estimerede og det faktiske antal rækker lå langt fra hinanden – et tegn på, at optimizeren arbejdede ud fra et dårligt billede af dataene."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Intet indeks matchede den kombination af kolonner, som forespørgslen filtrerede og joinede på.",
+          "Et eksisterende indeks dækkede kun en del af prædikatet, så motoren stadig skulle slå hver række op.",
+          "Statistikkerne på den største tabel var forældede efter flere års vækst, hvilket forvrængede optimizerens estimater."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Trin 3: Optimer indeksene – med omtanke"
+      },
+      {
+        "type": "p",
+        "text": "Løsningen var indeksoptimering, ikke en kodeændring. Vi designede et dækkende indeks til forespørgslens filter- og join-kolonner med de øvrige udvalgte kolonner inkluderet, så motoren kunne besvare den med en seek og uden key lookups. Vi opdaterede også statistikkerne på de berørte tabeller."
+      },
+      {
+        "type": "p",
+        "text": "Indekser er ikke gratis. Hvert indeks gør inserts og updates langsommere og fylder, og en IGA-platform skriver meget under provisionering. Før vi tilføjede noget, kontrollerede vi derfor tre ting:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Om leverandørens skema allerede tilbød en understøttet måde at tilføje indekset på, så det overlever produktopgraderinger.",
+          "Skrivebelastningen på tabellen, for at bekræfte, at den ekstra vedligeholdelsesomkostning var acceptabel.",
+          "Eksisterende indekser, der overlappede med det nye og kunne konsolideres eller fjernes."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Resultat: Forespørgslen faldt fra over 70 sekunder til under ét sekund. Låseventetiderne på de relaterede tabeller forsvandt stort set, og portalen og de planlagte jobs blev hurtigere med."
+      },
+      {
+        "type": "h2",
+        "text": "Trin 4: Sørg for, at den forbliver hurtig"
+      },
+      {
+        "type": "p",
+        "text": "En engangsløsning forfalder. Data vokser, nye connectorer kommer til, og før eller siden ændrer nogen en proces. For at fastholde gevinsterne indførte vi nogle få enkle vaner:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Et regelmæssigt sundhedstjek, der viser de mest tidskrævende statements, så regressioner dukker op i løbet af dage, ikke måneder.",
+          "Planlagt vedligeholdelse af statistikker og indekser, afstemt med provisioneringskalenderen.",
+          "En kort runbook, der forklarer, hvorfor indekset findes, så ingen fjerner det under en senere oprydning."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Det vigtigste at tage med"
+      },
+      {
+        "type": "p",
+        "text": "De fleste performanceproblemer i IAM er ikke mystiske. De skyldes et lille antal dyre statements, og databasen registrerer allerede, hvilke det er. Mål først, læs planen, ændr én ting, og verificer. I dette tilfælde forvandlede den rækkefølge en ventetid på 70 sekunder til et svar på under et sekund – uden ny hardware eller platformskift."
+      },
+      {
+        "type": "p",
+        "text": "Er din identitetsplatform blevet langsommere, efterhånden som den er vokset, kigger vi gerne på den. Et fokuseret sundhedstjek viser som regel i løbet af få dage, hvor tiden går."
+      }
+    ]
+  },
+  "iga-for-sap": {
+    "title": "Identitetsstyring for SAP-landskaber: det skal sidde rigtigt",
+    "description": "SAP-roller, funktionsadskillelse, nødadgang og afslutningen på SAP Identity Management: hvad et IGA-program for SAP-landskabet skal have helt styr på fra start.",
+    "excerpt": "Det er i SAP, pengene flytter sig, så det er her, fejl i adgangen gør mest ondt. Et praktisk blik på roller, funktionsadskillelse, nødadgang og farvel til SAP IdM.",
+    "category": "SAP",
+    "keywords": [
+      "SAP identitetsstyring",
+      "SAP IGA",
+      "afløser for SAP IdM",
+      "SAP Cloud Identity Services",
+      "funktionsadskillelse SAP",
+      "S/4HANA adgangsstyring"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "I de fleste virksomheder er det i SAP, at ordrer, fakturaer, betalinger og løn ligger. Det gør SAP til det system, hvor fejl i adgangen er dyrest, og hvor revisorerne kigger først. Alligevel styres SAP-adgang ofte adskilt fra resten af identitetsstyringen – med egne værktøjer, eget team og egne regneark."
+      },
+      {
+        "type": "p",
+        "text": "Når SAP bringes ind i et centralt program for identity governance and administration (IGA), betaler det sig i form af hurtigere onboarding, renere revisioner og færre toksiske kombinationer af adgange. Der er også en ny deadline: SAP Identity Management (SAP IdM) når slutningen af mainstream-vedligeholdelsen i 2027, så mange organisationer vælger deres næste platform nu."
+      },
+      {
+        "type": "h2",
+        "text": "1. Start med rollemodellen, ikke connectoren"
+      },
+      {
+        "type": "p",
+        "text": "Det er den nemme del at forbinde en IGA-platform til SAP. Den svære del er, hvad du forbinder. Mange SAP-systemer bærer på mange års enkelt- og sammensatte roller, der er vokset frem projekt for projekt. Det hjælper ikke at provisionere det kaos hurtigere."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Ryd op i ubrugte og dublerede roller, før du automatiserer dem.",
+          "Design forretningsroller, der samler SAP-roller med adgang i andre systemer, så en ny indkøber får alt, hvad vedkommende har brug for, i én anmodning.",
+          "Beskriv hver rolle, der kan anmodes om, i forretningssprog – ikke med tekniske rollenavne."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "2. Behandl funktionsadskillelse som en designregel"
+      },
+      {
+        "type": "p",
+        "text": "Funktionsadskillelse (Segregation of Duties, SoD) forhindrer, at én person for eksempel både kan oprette en leverandør og betale den. I SAP er disse konflikter defineret helt ned på transaktioner og autorisationsobjekter, og mange virksomheder kører allerede SAP GRC Access Control eller et lignende værktøj til risikoanalyse."
+      },
+      {
+        "type": "p",
+        "text": "Målet er at kontrollere SoD, før adgangen tildeles, ikke at finde overtrædelser ved næste revision. En god opsætning kører risikoanalysen under anmodningen, viser godkenderen konflikten i et klart sprog og kræver en dokumenteret kompenserende kontrol, når en konflikt accepteres. Om analysen kører i GRC eller i IGA-platformen, betyder mindre end at sikre, at begge bruger det samme regelsæt."
+      },
+      {
+        "type": "h2",
+        "text": "3. Styr nødadgangen"
+      },
+      {
+        "type": "p",
+        "text": "Ethvert SAP-landskab har brug for en måde at løse produktionsproblemer hurtigt på, ofte kaldet firefighter- eller nødadgang. Uden kontrol bliver den en permanent bagdør. Nødadgang bør anmodes om med en begrundelse, tildeles i en begrænset periode, logges fuldt ud og gennemgås bagefter af en anden end brugeren."
+      },
+      {
+        "type": "h2",
+        "text": "4. Planlæg til hybrid: S/4HANA, BTP og skyen"
+      },
+      {
+        "type": "p",
+        "text": "Moderne SAP-landskaber blander on-premises ABAP-systemer, S/4HANA, SAP Business Technology Platform og SaaS-applikationer som SuccessFactors eller Ariba. SAP Cloud Identity Services forbinder disse verdener: Identity Authentication (IAS) håndterer login og single sign-on, og Identity Provisioning (IPS) flytter brugere og grupper mellem systemerne."
+      },
+      {
+        "type": "p",
+        "text": "En central IGA-platform bør ligge over dette lag. Den afgør, hvem der skal have hvilken adgang og hvorfor, og IPS eller direkte connectorer udfører beslutningen. Holder du den opdeling klar, undgår du, at to systemer konkurrerer om at være den autoritative kilde."
+      },
+      {
+        "type": "h2",
+        "text": "5. Brug udfasningen af SAP IdM som en nulstilling"
+      },
+      {
+        "type": "p",
+        "text": "SAP har meddelt, at mainstream-vedligeholdelsen af SAP IdM ophører i 2027, og henviser kunderne til Microsoft Entra ID som afløser i mange identitetsscenarier. Til governance-tunge krav som SoD-bevidste anmodninger, certificeringer og komplekse rollemodeller kombinerer mange organisationer Entra ID med en dedikeret IGA-platform."
+      },
+      {
+        "type": "p",
+        "text": "Uanset hvad du vælger, så undlad at migrere én til én. Brug skiftet til at udfase specialudviklede scripts, forenkle rollemodellen og bringe SAP ind i de samme anmodnings- og gennemgangsprocesser som alt andet."
+      },
+      {
+        "type": "callout",
+        "text": "Tjekliste: en ren rollemodel, SoD kontrolleret ved anmodningen, kontrolleret nødadgang, en klar opdeling mellem IGA og SAP Cloud Identity Services og en exitplan for SAP IdM i god tid før 2027."
+      },
+      {
+        "type": "h2",
+        "text": "Sådan hjælper vi"
+      },
+      {
+        "type": "p",
+        "text": "Vi har i årevis forbundet SAP med platforme til identitetsstyring – fra redesign af roller til SoD-bevidst provisionering og SAP Cloud Identity Services. Planlægger du din afløser for SAP IdM, eller vil du have SAP-adgangen under samme styring som resten af dit landskab, hjælper vi gerne med at lægge ruten."
+      }
+    ]
+  },
+  "non-human-identity-ai-agents": {
+    "title": "Ikke-menneskelige identiteter og AI-agenter: luk hullet",
+    "description": "Servicekonti, API-nøgler, workloads og nu AI-agenter er langt flere end medarbejderne. En praktisk guide til at styre ikke-menneskelige identiteter i tide.",
+    "excerpt": "De fleste organisationer styrer deres medarbejdere omhyggeligt og deres maskiner knap nok. AI-agenter gør det hul akut. Her er en praktisk måde at lukke det på.",
+    "category": "Ikke-menneskelig identitet",
+    "keywords": [
+      "styring af ikke-menneskelige identiteter",
+      "NHI-sikkerhed",
+      "identitet for AI-agenter",
+      "styring af servicekonti",
+      "maskinidentitet",
+      "sikkerhed for agentisk AI"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Spørg et IAM-team, hvor mange medarbejdere der har adgang til økonomisystemet, og de kan som regel svare inden for få minutter. Spørg, hvor mange servicekonti, API-nøgler og automatiseringstokens der kan nå det samme system, og så bliver der som regel stille i lokalet. Ikke-menneskelige identiteter (NHI’er) er nu langt flere end de menneskelige i de fleste organisationer, men de er som regel dem, der styres mindst."
+      },
+      {
+        "type": "p",
+        "text": "AI-agenter hæver indsatsen. En agent, der bestiller rejser, afstemmer fakturaer eller opretter tickets, har brug for legitimationsoplysninger for at handle, og den handler med maskinhastighed. Hvis disse legitimationsoplysninger er brede, langlivede og ikke ejes af nogen, bliver agenten en meget effektiv måde at misbruge adgang på."
+      },
+      {
+        "type": "h2",
+        "text": "Hvad tæller som en ikke-menneskelig identitet"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Servicekonti i Active Directory, databaser og applikationer.",
+          "API-nøgler, client secrets og certifikater til integration mellem systemer.",
+          "Workload-identiteter i skyen: managed identities, service principals, IAM-roller.",
+          "Bots og RPA-brugere samt de tekniske brugere i integrationsplatforme.",
+          "AI-agenter, der kombinerer alt ovenstående og tilføjer autonomi."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Hvorfor de sædvanlige IGA-kontroller overser dem"
+      },
+      {
+        "type": "p",
+        "text": "Klassisk identitetsstyring er bygget op om joiner-mover-leaver-livscyklussen for mennesker og fødes af HR. Ikke-menneskelige identiteter har ingen HR-post, ingen leder og ingen fratrædelsesdato. De oprettes af udviklere eller administratorer for at løse et akut problem og bliver derefter glemt. Resultatet er velkendt: konti, som ingen kan forklare, secrets, der ikke er blevet roteret i årevis, og rettigheder langt ud over, hvad integrationen kræver."
+      },
+      {
+        "type": "h2",
+        "text": "Fem trin til at bringe NHI’er under styring"
+      },
+      {
+        "type": "h3",
+        "text": "1. Opbyg en oversigt"
+      },
+      {
+        "type": "p",
+        "text": "Du kan ikke styre det, du ikke kan se. Saml ikke-menneskelige konti fra kataloger, cloud-tenants, databaser, secret stores og CI/CD-pipelines ét sted. Markér hver enkelt med type, de systemer, den kan nå, og hvornår den sidst blev brugt."
+      },
+      {
+        "type": "h3",
+        "text": "2. Giv hver identitet en menneskelig ejer"
+      },
+      {
+        "type": "p",
+        "text": "Hver servicekonto og agent har brug for en ansvarlig person og helst en stedfortræder. Ejerskab er det, der forvandler en anonym konto til noget, der kan gennemgås, fornyes eller slås fra. Når en ejer stopper, flyttes ejerskabet gennem den samme fratrædelsesproces som vedkommendes egen adgang."
+      },
+      {
+        "type": "h3",
+        "text": "3. Giv NHI’er en livscyklus"
+      },
+      {
+        "type": "p",
+        "text": "Opret ikke-menneskelige identiteter via en anmodning med et angivet formål og en udløbsdato, og gennemgå dem i de samme certificeringskampagner som menneskelig adgang. Konti, der ikke har været brugt i en defineret periode, deaktiveres først og fjernes derefter."
+      },
+      {
+        "type": "h3",
+        "text": "4. Erstat stående secrets med kortlivede legitimationsoplysninger"
+      },
+      {
+        "type": "p",
+        "text": "Hvor platformen tillader det, bør du foretrække managed identities, workload identity federation eller certifikater med kort gyldighed frem for statiske adgangskoder og nøgler. Hvor statiske secrets bliver tilbage, så opbevar dem i en vault, roter dem automatisk, og indlejr dem aldrig i kode."
+      },
+      {
+        "type": "h3",
+        "text": "5. Anvend mindst mulige rettigheder, og hold øje med adfærden"
+      },
+      {
+        "type": "p",
+        "text": "Afgræns hver identitet til det minimum, den har brug for, og alarmér ved usædvanlig brug: en servicekonto, der logger ind interaktivt, et token, der bruges fra en uventet placering, eller en agent, der kalder et API, den aldrig har rørt før."
+      },
+      {
+        "type": "h2",
+        "text": "AI-agenter: hvad er anderledes"
+      },
+      {
+        "type": "p",
+        "text": "Agenter tilføjer to komplikationer. For det første handler de ofte på vegne af en person, så du skal vide både, hvem agenten er, og hvis bemyndigelse den bruger. Delegeret adgang, for eksempel via OAuth on-behalf-of-flows, holder brugerens egne rettigheder som øvre grænse i stedet for at give agenten en kraftfuld teknisk konto. For det andet beslutter agenter selv, hvad de gør som det næste. Det gør grænser afgørende:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "En særskilt identitet pr. agent – aldrig en delt teknisk bruger.",
+          "Snævre, opgavespecifikke scopes og korte levetider for tokens.",
+          "Menneskelig godkendelse af handlinger med stor betydning, såsom betalinger eller ændringer af adgang.",
+          "Et komplet revisionsspor over, hvad agenten gjorde, med hvilken identitet og på hvis vegne.",
+          "En testet måde at tilbagekalde en agents adgang øjeblikkeligt på."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Tommelfingerregel: En AI-agent bør aldrig kunne gøre noget, som den person, den handler for, ikke må, og hver handling bør kunne spores til begge."
+      },
+      {
+        "type": "h2",
+        "text": "Hvor du skal starte"
+      },
+      {
+        "type": "p",
+        "text": "Start med de systemer, der betyder mest, såsom økonomi, HR og produktion, og lav en oversigt over de ikke-menneskelige identiteter, der kan nå dem. Tildel ejere, fjern det, som ingen gør krav på, og flyt resten ind i din eksisterende gennemgangscyklus. Alene det fjerner som regel overraskende meget risiko, og det lægger fundamentet for at styre AI-agenter, efterhånden som de kommer til."
+      },
+      {
+        "type": "p",
+        "text": "Vi hjælper organisationer med at udvide deres identitetsstyring til servicekonti, workloads og AI-agenter – på den IGA-platform, de allerede kører. Hvis det står på din roadmap, så lad os tale sammen."
+      }
+    ]
+  }
+}

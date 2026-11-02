@@ -1,0 +1,337 @@
+{
+  "iam-query-performance": {
+    "title": "Van 70 seconden naar minder dan één: een trage IAM-databasequery oplossen",
+    "description": "Een casestudy: hoe indexoptimalisatie een kritieke identity-governancequery terugbracht van ruim 70 seconden naar onder één seconde, en de methode erachter.",
+    "excerpt": "Eén trage query hield een volledig identityplatform op. Zo hebben we hem gevonden, met indexoptimalisatie opgelost en ervoor gezorgd dat hij snel blijft.",
+    "category": "Casestudy",
+    "keywords": [
+      "IAM-performance",
+      "databasetuning identity governance",
+      "indexoptimalisatie SQL Server",
+      "performance IGA-platform",
+      "performance One Identity Manager"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Identity-governanceplatforms staan of vallen met hun database. Elke provisioningrun, elke toegangsaanvraag, elke certificeringscampagne eindigt als SQL. Wordt een van die query's trager, dan zien gebruikers zelden een foutmelding. Ze zien een aanvraagformulier dat een minuut nodig heeft om te laden, een nachtelijke synchronisatie die doorloopt tot in de werkdag, of een goedkeuringswachtrij die nooit helemaal bijkomt."
+      },
+      {
+        "type": "p",
+        "text": "Bij een recente opdracht duurde één query in het identity-governanceplatform van een klant regelmatig meer dan 70 seconden. Na onze werkzaamheden levert hij binnen een seconde resultaat. In dit artikel laten we zien hoe we dat hebben bereikt. De klant blijft anoniem; het gaat om de methode."
+      },
+      {
+        "type": "h2",
+        "text": "Het symptoom: alles voelde traag"
+      },
+      {
+        "type": "p",
+        "text": "De eerste meldingen waren vaag: het webportaal was “stroperig”, sommige jobs “duurden langer dan normaal”. Dat is typisch. Performanceproblemen in IAM dienen zich zelden aan als één kapot onderdeel. Ze uiten zich als algemene frictie, en teams reageren vaak door hardware toe te voegen of time-outs te verhogen. Beide bestrijden het symptoom en verhullen de oorzaak."
+      },
+      {
+        "type": "p",
+        "text": "Daarom begonnen we met meten, niet met meningen. Voordat we iets veranderden, wilden we weten welke statements de meeste tijd en resources verbruikten, hoe vaak ze draaiden en of hun kosten in de loop van de tijd waren veranderd."
+      },
+      {
+        "type": "h2",
+        "text": "Stap 1: vind de query's die echt tijd kosten"
+      },
+      {
+        "type": "p",
+        "text": "Op SQL Server geven de Query Store en de dynamic management views u dit beeld zonder dat u iets hoeft te installeren. We rangschikten statements op totale verstreken tijd en op logical reads, niet alleen op gemiddelde duur. Een query die twee seconden duurt maar tienduizend keer per dag draait, weegt zwaarder dan een rapport dat eens per maand vijf minuten nodig heeft."
+      },
+      {
+        "type": "p",
+        "text": "Eén statement sprong eruit. Het maakte deel uit van de logica die bepaalt welke rechten een persoon hoort te hebben, draaide vele keren per dag en duurde gemiddeld meer dan 70 seconden. Het was ook de bron van een groot deel van de algemene traagheid: andere processen wachtten op de locks die het vasthield."
+      },
+      {
+        "type": "h2",
+        "text": "Stap 2: lees het execution plan"
+      },
+      {
+        "type": "p",
+        "text": "Het actual execution plan vertelde het verhaal snel. In plaats van gericht een kleine set rijen op te zoeken (seek), scande de engine een grote tabel met toewijzingen van identiteiten aan rechten en filterde daarna het resultaat. Het geschatte en het werkelijke aantal rijen lagen ver uit elkaar, een teken dat de optimizer werkte met een slecht beeld van de data."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Geen enkele index paste bij de combinatie van kolommen waarop de query filterde en joinde.",
+          "Een bestaande index dekte slechts een deel van het predicaat, zodat de engine toch elke rij moest opzoeken.",
+          "De statistieken van de grootste tabel waren na jaren van groei verouderd, waardoor de schattingen van de optimizer scheef lagen."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Stap 3: optimaliseer de indexen, zorgvuldig"
+      },
+      {
+        "type": "p",
+        "text": "De oplossing was indexoptimalisatie, geen codewijziging. We ontwierpen een covering index op de filter- en joinkolommen van de query, met de overige geselecteerde kolommen als included columns, zodat de engine de query met een seek en zonder key lookups kon beantwoorden. Daarnaast hebben we de statistieken van de betrokken tabellen ververst."
+      },
+      {
+        "type": "p",
+        "text": "Indexen zijn niet gratis. Elke index vertraagt inserts en updates en kost ruimte, en een IGA-platform schrijft veel tijdens provisioning. Voordat we iets toevoegden, controleerden we daarom drie dingen:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Of het schema van de leverancier al een ondersteunde manier bood om de index toe te voegen, zodat hij productupgrades overleeft.",
+          "De schrijfbelasting op de tabel, om te bevestigen dat de extra onderhoudskosten acceptabel waren.",
+          "Bestaande indexen die overlapten met de nieuwe en konden worden samengevoegd of verwijderd."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Resultaat: de query ging van ruim 70 seconden naar minder dan één seconde. Lock waits op de gerelateerde tabellen verdwenen grotendeels, en het portaal en de geplande jobs werden daarmee ook sneller."
+      },
+      {
+        "type": "h2",
+        "text": "Stap 4: zorg dat het snel blijft"
+      },
+      {
+        "type": "p",
+        "text": "Een eenmalige oplossing veroudert. Data groeit, er komen nieuwe connectoren bij en vroeg of laat past iemand een proces aan. Om de winst vast te houden, hebben we een paar eenvoudige gewoonten ingevoerd:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Een regelmatige health check die de zwaarste statements op totale tijd toont, zodat regressies binnen dagen zichtbaar worden in plaats van maanden.",
+          "Gepland onderhoud van statistieken en indexen, afgestemd op de provisioningkalender.",
+          "Een kort runbook dat uitlegt waarom de index bestaat, zodat niemand hem bij een latere opschoning verwijdert."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Wat u hieruit kunt meenemen"
+      },
+      {
+        "type": "p",
+        "text": "De meeste IAM-performanceproblemen zijn niet mysterieus. Ze komen voort uit een klein aantal dure statements, en de database registreert al welke dat zijn. Eerst meten, het plan lezen, één ding veranderen en verifiëren. In dit geval maakte die volgorde van 70 seconden wachten een respons van minder dan een seconde, zonder nieuwe hardware of platformwissel."
+      },
+      {
+        "type": "p",
+        "text": "Is uw identityplatform trager geworden naarmate het groeide? Dan kijken we er graag naar. Een gerichte health check laat meestal binnen enkele dagen zien waar de tijd naartoe gaat."
+      }
+    ]
+  },
+  "iga-for-sap": {
+    "title": "Identity governance voor SAP-landschappen: wat u goed moet regelen",
+    "description": "SAP-rollen, functiescheiding, noodtoegang en het einde van SAP Identity Management: waar een IGA-programma voor SAP aan moet voldoen om echt te werken.",
+    "excerpt": "In SAP gaat het geld rond, dus daar doen toegangsfouten het meeste pijn. Een praktische blik op rollen, functiescheiding, noodtoegang en de overstap van SAP IdM.",
+    "category": "SAP",
+    "keywords": [
+      "SAP identity governance",
+      "SAP IGA",
+      "vervanging SAP IdM",
+      "SAP Cloud Identity Services",
+      "functiescheiding SAP",
+      "toegangsbeheer S/4HANA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "In de meeste bedrijven staan orders, facturen, betalingen en salarisadministratie in SAP. Daardoor is het het systeem waar toegangsfouten het duurst zijn en waar auditors als eerste kijken. Toch wordt SAP-toegang vaak los van de rest van identity governance beheerd, met eigen tools, een eigen team en eigen spreadsheets."
+      },
+      {
+        "type": "p",
+        "text": "SAP opnemen in een centraal programma voor identity governance and administration (IGA) betaalt zich terug in snellere onboarding, schonere audits en minder toxische combinaties van rechten. Er is bovendien een nieuwe deadline: SAP Identity Management (SAP IdM) bereikt in 2027 het einde van het mainstream-onderhoud, dus veel organisaties kiezen nu hun volgende platform."
+      },
+      {
+        "type": "h2",
+        "text": "1. Begin bij het rollenmodel, niet bij de connector"
+      },
+      {
+        "type": "p",
+        "text": "Een IGA-platform aan SAP koppelen is het makkelijke deel. Het moeilijke deel is wát u koppelt. Veel SAP-systemen bevatten jaren aan enkelvoudige en samengestelde rollen die project na project zijn gegroeid. Die chaos sneller provisionen helpt niemand."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Ruim ongebruikte en dubbele rollen op voordat u ze automatiseert.",
+          "Ontwerp bedrijfsrollen die SAP-rollen bundelen met toegang in andere systemen, zodat een nieuwe inkoper alles wat nodig is in één aanvraag krijgt.",
+          "Beschrijf elke aanvraagbare rol in bedrijfstaal, niet met technische rolnamen."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "2. Behandel functiescheiding als ontwerpregel"
+      },
+      {
+        "type": "p",
+        "text": "Functiescheiding (segregation of duties, SoD) voorkomt dat één persoon bijvoorbeeld een leverancier aanmaakt én die betaalt. In SAP zijn deze conflicten gedefinieerd tot op het niveau van transacties en autorisatieobjecten, en veel bedrijven gebruiken al SAP GRC Access Control of een vergelijkbare tool voor risicoanalyse."
+      },
+      {
+        "type": "p",
+        "text": "Het doel is SoD te controleren voordat toegang wordt verleend, niet om overtredingen te vinden bij de volgende audit. Een degelijke inrichting voert de risicoanalyse uit tijdens de aanvraag, toont de goedkeurder het conflict in begrijpelijke taal en vereist een gedocumenteerde mitigerende maatregel wanneer een conflict wordt geaccepteerd. Of de analyse in GRC of in het IGA-platform draait, is minder belangrijk dan dat beide dezelfde regelset gebruiken."
+      },
+      {
+        "type": "h2",
+        "text": "3. Houd noodtoegang onder controle"
+      },
+      {
+        "type": "p",
+        "text": "Elk SAP-landschap heeft een manier nodig om productieproblemen snel op te lossen, vaak firefighter- of noodtoegang genoemd. Zonder controle wordt die een permanente achterdeur. Noodtoegang moet met opgave van reden worden aangevraagd, voor beperkte tijd worden verleend, volledig worden gelogd en achteraf worden beoordeeld door iemand anders dan de gebruiker."
+      },
+      {
+        "type": "h2",
+        "text": "4. Plan voor hybride: S/4HANA, BTP en de cloud"
+      },
+      {
+        "type": "p",
+        "text": "Moderne SAP-landschappen combineren on-premises ABAP-systemen, S/4HANA, SAP Business Technology Platform en SaaS-applicaties zoals SuccessFactors of Ariba. SAP Cloud Identity Services verbinden deze werelden: Identity Authentication (IAS) verzorgt het inloggen en single sign-on, en Identity Provisioning (IPS) zet gebruikers en groepen over tussen systemen."
+      },
+      {
+        "type": "p",
+        "text": "Een centraal IGA-platform hoort boven deze laag te staan. Het beslist wie welke toegang hoort te hebben en waarom, en IPS of directe connectoren voeren die beslissing uit. Houdt u die taakverdeling helder, dan voorkomt u dat twee systemen met elkaar concurreren om de bron van waarheid te zijn."
+      },
+      {
+        "type": "h2",
+        "text": "5. Gebruik het einde van SAP IdM als nieuwe start"
+      },
+      {
+        "type": "p",
+        "text": "SAP heeft het einde van het mainstream-onderhoud voor SAP IdM in 2027 aangekondigd en verwijst klanten voor veel identityscenario's naar Microsoft Entra ID als opvolger. Voor governance-intensieve eisen, zoals SoD-bewuste aanvragen, certificeringen en complexe rollenmodellen, combineren veel organisaties Entra ID met een specifiek IGA-platform."
+      },
+      {
+        "type": "p",
+        "text": "Wat u ook kiest: migreer niet één-op-één. Gebruik de overstap om maatwerkscripts uit te faseren, het rollenmodel te vereenvoudigen en SAP onder te brengen in dezelfde aanvraag- en reviewprocessen als al het andere."
+      },
+      {
+        "type": "callout",
+        "text": "Checklist: een opgeschoond rollenmodel, SoD-controle bij de aanvraag, gecontroleerde noodtoegang, een heldere taakverdeling tussen IGA en SAP Cloud Identity Services, en een exitplan voor SAP IdM ruim vóór 2027."
+      },
+      {
+        "type": "h2",
+        "text": "Hoe wij helpen"
+      },
+      {
+        "type": "p",
+        "text": "Wij koppelen SAP al jaren aan identity-governanceplatforms, van het herontwerpen van rollen tot SoD-bewuste provisioning en SAP Cloud Identity Services. Plant u de opvolger van SAP IdM, of wilt u SAP-toegang onder dezelfde governance brengen als de rest van uw landschap? Dan helpen wij u graag de route uit te stippelen."
+      }
+    ]
+  },
+  "non-human-identity-ai-agents": {
+    "title": "Niet-menselijke identiteiten en AI-agents: het governance-gat dichten",
+    "description": "Serviceaccounts, API-sleutels, workloads en nu AI-agents zijn veel talrijker dan medewerkers. Een praktische gids om niet-menselijke identiteiten te beheersen.",
+    "excerpt": "De meeste organisaties beheren hun medewerkers zorgvuldig en hun machines nauwelijks. AI-agents maken dat gat urgent. Zo dicht u het op een praktische manier.",
+    "category": "Niet-menselijke identiteiten",
+    "keywords": [
+      "governance van niet-menselijke identiteiten",
+      "NHI-beveiliging",
+      "identiteit van AI-agents",
+      "beheer van serviceaccounts",
+      "machine-identiteit",
+      "beveiliging van agentic AI"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Vraag een IAM-team hoeveel medewerkers toegang hebben tot het financiële systeem en het antwoord komt meestal binnen enkele minuten. Vraag hoeveel serviceaccounts, API-sleutels en automatiseringstokens datzelfde systeem kunnen bereiken en het wordt doorgaans stil. Niet-menselijke identiteiten (NHI's) zijn in de meeste organisaties inmiddels veel talrijker dan menselijke, maar worden meestal het minst beheerd."
+      },
+      {
+        "type": "p",
+        "text": "AI-agents maken de inzet hoger. Een agent die reizen boekt, facturen afstemt of tickets aanmaakt, heeft credentials nodig om te handelen, en handelt op machinesnelheid. Zijn die credentials ruim, langlevend en van niemand, dan wordt de agent een zeer efficiënte manier om toegang te misbruiken."
+      },
+      {
+        "type": "h2",
+        "text": "Wat telt als niet-menselijke identiteit"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Serviceaccounts in Active Directory, databases en applicaties.",
+          "API-sleutels, client secrets en certificaten voor systeem-tot-systeemintegratie.",
+          "Workload-identiteiten in de cloud: managed identities, service principals, IAM-rollen.",
+          "Bots en RPA-gebruikers, en de technische gebruikers van integratieplatforms.",
+          "AI-agents, die al het bovenstaande combineren en daar autonomie aan toevoegen."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Waarom de gebruikelijke IGA-controles ze missen"
+      },
+      {
+        "type": "p",
+        "text": "Klassieke identity governance is gebouwd rond de joiner-mover-leaver-levenscyclus van mensen, gevoed door HR. Niet-menselijke identiteiten hebben geen HR-record, geen manager en geen vertrekdatum. Ze worden door ontwikkelaars of beheerders aangemaakt om een acuut probleem op te lossen en daarna vergeten. Het resultaat is bekend: accounts die niemand kan verklaren, secrets die al jaren niet zijn geroteerd en rechten die ver uitgaan boven wat de integratie nodig heeft."
+      },
+      {
+        "type": "h2",
+        "text": "Vijf stappen om NHI's onder governance te brengen"
+      },
+      {
+        "type": "h3",
+        "text": "1. Bouw een inventaris op"
+      },
+      {
+        "type": "p",
+        "text": "Wat u niet ziet, kunt u niet beheren. Breng niet-menselijke accounts uit directories, cloudtenants, databases, secret stores en CI/CD-pipelines samen op één plek. Leg per account het type vast, de systemen die het kan bereiken en wanneer het voor het laatst is gebruikt."
+      },
+      {
+        "type": "h3",
+        "text": "2. Wijs elke identiteit een menselijke eigenaar toe"
+      },
+      {
+        "type": "p",
+        "text": "Elk serviceaccount en elke agent heeft een verantwoordelijke persoon nodig, en bij voorkeur een plaatsvervanger. Eigenaarschap maakt van een anoniem account iets dat kan worden beoordeeld, verlengd of uitgeschakeld. Vertrekt een eigenaar, dan gaat het eigenaarschap mee in hetzelfde leaver-proces als diens eigen toegang."
+      },
+      {
+        "type": "h3",
+        "text": "3. Geef NHI's een levenscyclus"
+      },
+      {
+        "type": "p",
+        "text": "Maak niet-menselijke identiteiten aan via een aanvraag met een vermeld doel en een vervaldatum, en beoordeel ze in dezelfde certificeringscampagnes als menselijke toegang. Accounts die gedurende een vastgestelde periode ongebruikt zijn, worden eerst uitgeschakeld en daarna verwijderd."
+      },
+      {
+        "type": "h3",
+        "text": "4. Vervang permanente secrets door kortlevende credentials"
+      },
+      {
+        "type": "p",
+        "text": "Kies overal waar het platform het toelaat voor managed identities, workload identity federation of certificaten met een korte geldigheid in plaats van statische wachtwoorden en sleutels. Waar statische secrets blijven bestaan, bewaar ze dan in een kluis, roteer ze automatisch en neem ze nooit op in code."
+      },
+      {
+        "type": "h3",
+        "text": "5. Pas least privilege toe en bewaak het gedrag"
+      },
+      {
+        "type": "p",
+        "text": "Beperk elke identiteit tot het minimum dat ze nodig heeft en alarmeer bij ongebruikelijk gebruik: een serviceaccount dat interactief inlogt, een token dat vanaf een onverwachte locatie wordt gebruikt, of een agent die een API aanroept die hij nooit eerder heeft gebruikt."
+      },
+      {
+        "type": "h2",
+        "text": "AI-agents: wat is er anders"
+      },
+      {
+        "type": "p",
+        "text": "Agents brengen twee complicaties met zich mee. Ten eerste handelen ze vaak namens een persoon, dus u moet weten wie de agent is én wiens bevoegdheid hij gebruikt. Gedelegeerde toegang, bijvoorbeeld via OAuth on-behalf-of-flows, houdt de eigen rechten van de gebruiker als bovengrens aan, in plaats van de agent een krachtig technisch account te geven. Ten tweede beslissen agents zelf wat ze vervolgens doen. Dat maakt grenzen essentieel:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Een eigen identiteit per agent, nooit een gedeelde technische gebruiker.",
+          "Smalle, taakspecifieke scopes en korte levensduur van tokens.",
+          "Menselijke goedkeuring voor acties met grote impact, zoals betalingen of wijzigingen in toegang.",
+          "Een volledige audittrail van wat de agent heeft gedaan, met welke identiteit en namens wie.",
+          "Een geteste manier om de toegang van een agent direct in te trekken."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Vuistregel: een AI-agent mag nooit iets kunnen doen wat de persoon namens wie hij handelt niet mag, en elke actie moet naar beide herleidbaar zijn."
+      },
+      {
+        "type": "h2",
+        "text": "Waar u begint"
+      },
+      {
+        "type": "p",
+        "text": "Begin bij de systemen die er het meest toe doen, zoals finance, HR en productie, en inventariseer de niet-menselijke identiteiten die ze kunnen bereiken. Wijs eigenaren toe, verwijder wat niemand claimt en neem de rest op in uw bestaande reviewcyclus. Dat alleen al neemt doorgaans verrassend veel risico weg, en het legt de basis om AI-agents te beheren zodra ze hun intrede doen."
+      },
+      {
+        "type": "p",
+        "text": "Wij helpen organisaties hun identity governance uit te breiden naar serviceaccounts, workloads en AI-agents, op het IGA-platform dat ze al gebruiken. Staat dat op uw roadmap? Laten we kennismaken."
+      }
+    ]
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "iam-query-performance": {
+    "title": "De 70 segundos a menos de um: corrigir uma consulta IAM lenta",
+    "description": "Caso de estudo: como a correção de índices reduziu uma consulta crítica de governação de identidades de mais de 70 segundos para menos de um, e o método usado.",
+    "excerpt": "Uma única consulta lenta estava a travar toda uma plataforma de identidade. Eis como a encontrámos, a corrigimos através dos índices e garantimos que se mantém corrigida.",
+    "category": "Caso de estudo",
+    "keywords": [
+      "desempenho IAM",
+      "otimização de base de dados de governação de identidades",
+      "otimização de índices SQL Server",
+      "desempenho de plataformas IGA",
+      "desempenho One Identity Manager"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "As plataformas de governação de identidades vivem e morrem pela sua base de dados. Cada execução de aprovisionamento, cada pedido de acesso, cada campanha de certificação acaba por se traduzir em SQL. Quando uma dessas consultas fica lenta, os utilizadores raramente veem uma mensagem de erro. Veem um formulário de pedido que demora um minuto a carregar, uma sincronização noturna que se prolonga pelo dia de trabalho ou uma fila de aprovações que nunca chega a pôr-se em dia."
+      },
+      {
+        "type": "p",
+        "text": "Num projeto recente, uma consulta na plataforma de governação de identidades de um cliente demorava regularmente mais de 70 segundos. Depois do nosso trabalho, responde em menos de um segundo. Este artigo descreve como lá chegámos. O cliente permanece anónimo; o que importa é o método."
+      },
+      {
+        "type": "h2",
+        "text": "O sintoma: tudo parecia lento"
+      },
+      {
+        "type": "p",
+        "text": "As primeiras queixas eram vagas: o portal web estava “pesado”, alguns processos estavam a “demorar mais do que o habitual”. É típico. Os problemas de desempenho em IAM raramente se manifestam como um único componente avariado. Surgem como uma lentidão generalizada, e as equipas reagem muitas vezes acrescentando hardware ou aumentando os tempos limite. Ambas as medidas tratam o sintoma e escondem a causa."
+      },
+      {
+        "type": "p",
+        "text": "Por isso, começámos por medir, e não por opinar. Antes de alterar fosse o que fosse, queríamos saber que instruções consumiam mais tempo e recursos, com que frequência eram executadas e se o seu custo se tinha alterado ao longo do tempo."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 1: encontrar as consultas que realmente custam tempo"
+      },
+      {
+        "type": "p",
+        "text": "No SQL Server, o Query Store e as vistas de gestão dinâmica dão-lhe este panorama sem instalar nada. Ordenámos as instruções pelo tempo total decorrido e pelas leituras lógicas, e não apenas pela duração média. Uma consulta que demora dois segundos mas é executada dez mil vezes por dia pesa mais do que um relatório que demora cinco minutos uma vez por mês."
+      },
+      {
+        "type": "p",
+        "text": "Uma instrução destacava-se. Fazia parte da lógica que avalia que direitos de acesso uma pessoa deve ter, era executada muitas vezes por dia e demorava, em média, mais de 70 segundos. Era também a origem de grande parte da lentidão geral: outros processos ficavam à espera dos bloqueios que ela mantinha."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 2: ler o plano de execução"
+      },
+      {
+        "type": "p",
+        "text": "O plano de execução real contou a história rapidamente. Em vez de fazer uma pesquisa (seek) num pequeno conjunto de linhas, o motor percorria por completo uma grande tabela de atribuições entre identidades e direitos de acesso e só depois filtrava o resultado. O número de linhas estimado e o real eram muito diferentes, sinal de que o otimizador trabalhava com uma imagem pouco fiel dos dados."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Nenhum índice correspondia à combinação de colunas pelas quais a consulta filtrava e fazia as junções.",
+          "Um índice existente cobria apenas parte do predicado, pelo que o motor continuava a ter de consultar cada linha.",
+          "As estatísticas da maior tabela estavam desatualizadas após anos de crescimento, o que distorcia as estimativas do otimizador."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Passo 3: corrigir os índices, com cuidado"
+      },
+      {
+        "type": "p",
+        "text": "A solução foi corrigir os índices, não alterar código. Concebemos um índice de cobertura para as colunas de filtro e de junção da consulta, com as restantes colunas selecionadas incluídas, para que o motor lhe pudesse responder com uma pesquisa (seek) e sem key lookups. Atualizámos também as estatísticas das tabelas afetadas."
+      },
+      {
+        "type": "p",
+        "text": "Os índices não são gratuitos. Cada índice torna as inserções e atualizações mais lentas e ocupa espaço, e uma plataforma IGA escreve muito durante o aprovisionamento. Por isso, antes de acrescentar o que quer que fosse, verificámos três aspetos:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Se o esquema do fabricante já oferecia uma forma suportada de adicionar o índice, para que este sobreviva às atualizações do produto.",
+          "A carga de escrita na tabela, para confirmar que o custo adicional de manutenção era aceitável.",
+          "Os índices existentes que se sobrepunham ao novo e podiam ser consolidados ou removidos."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Resultado: a consulta passou de mais de 70 segundos para menos de um segundo. As esperas por bloqueios nas tabelas relacionadas praticamente desapareceram, e o portal e os processos agendados ficaram também mais rápidos."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 4: garantir que se mantém rápida"
+      },
+      {
+        "type": "p",
+        "text": "Uma correção pontual degrada-se com o tempo. Os dados crescem, são adicionados novos conectores e, mais cedo ou mais tarde, alguém altera um processo. Para manter os ganhos, implementámos alguns hábitos simples:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Uma verificação de saúde regular que lista as instruções com maior tempo total, para que as regressões surjam em dias e não em meses.",
+          "Manutenção agendada de estatísticas e índices, alinhada com o calendário de aprovisionamento.",
+          "Um runbook curto que explica porque é que o índice existe, para que ninguém o remova numa limpeza posterior."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "O que reter"
+      },
+      {
+        "type": "p",
+        "text": "A maioria dos problemas de desempenho em IAM não tem nada de misterioso. Resultam de um pequeno número de instruções dispendiosas, e a base de dados já regista quais são. Meça primeiro, leia o plano, altere uma coisa de cada vez e verifique. Neste caso, essa sequência transformou uma espera de 70 segundos numa resposta abaixo de um segundo, sem hardware novo nem mudança de plataforma."
+      },
+      {
+        "type": "p",
+        "text": "Se a sua plataforma de identidade ficou mais lenta à medida que cresceu, teremos todo o gosto em analisá-la. Uma verificação de saúde focada mostra normalmente, em poucos dias, para onde vai o tempo."
+      }
+    ]
+  },
+  "iga-for-sap": {
+    "title": "Governação de identidades para SAP: o que tem de estar certo",
+    "description": "Funções SAP, segregação de funções, acesso de emergência e o fim do SAP Identity Management: o que um programa IGA para SAP tem mesmo de acertar.",
+    "excerpt": "É no SAP que o dinheiro circula, por isso é aí que os erros de acesso mais custam. Uma visão prática sobre funções, segregação de funções, acesso de emergência e a saída do SAP IdM.",
+    "category": "SAP",
+    "keywords": [
+      "governação de identidades SAP",
+      "IGA para SAP",
+      "substituição do SAP IdM",
+      "SAP Cloud Identity Services",
+      "segregação de funções SAP",
+      "gestão de acessos S/4HANA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Na maioria das empresas, é no SAP que residem as encomendas, as faturas, os pagamentos e os salários. Isso faz dele o sistema em que os erros de acesso saem mais caros e onde os auditores olham primeiro. No entanto, os acessos SAP são muitas vezes geridos à parte do resto da governação de identidades, com ferramentas próprias, equipa própria e folhas de cálculo próprias."
+      },
+      {
+        "type": "p",
+        "text": "Integrar o SAP num programa central de governação e administração de identidades (IGA) compensa: integração mais rápida de novos colaboradores, auditorias mais limpas e menos combinações tóxicas de acessos. Há também um novo prazo: o SAP Identity Management (SAP IdM) chega ao fim da manutenção standard em 2027, pelo que muitas organizações estão agora a escolher a sua próxima plataforma."
+      },
+      {
+        "type": "h2",
+        "text": "1. Comece pelo modelo de funções, não pelo conector"
+      },
+      {
+        "type": "p",
+        "text": "Ligar uma plataforma IGA ao SAP é a parte fácil. A parte difícil é aquilo que se liga. Muitos sistemas SAP acumulam anos de funções simples e compostas que foram crescendo projeto a projeto. Aprovisionar esse caos mais depressa não ajuda."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Limpe as funções não utilizadas e duplicadas antes de as automatizar.",
+          "Conceba funções de negócio que agrupem funções SAP com acessos noutros sistemas, para que um novo comprador obtenha tudo o que precisa num único pedido.",
+          "Descreva cada função que pode ser pedida em linguagem de negócio, e não com nomes técnicos de funções."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "2. Trate a segregação de funções como uma regra de conceção"
+      },
+      {
+        "type": "p",
+        "text": "A segregação de funções (SoD) impede que uma mesma pessoa possa, por exemplo, criar um fornecedor e pagar-lhe. No SAP, estes conflitos são definidos até ao nível das transações e dos objetos de autorização, e muitas empresas já utilizam o SAP GRC Access Control ou uma ferramenta semelhante para a análise de riscos."
+      },
+      {
+        "type": "p",
+        "text": "O objetivo é verificar a SoD antes de o acesso ser concedido, e não descobrir violações na auditoria seguinte. Uma configuração sólida executa a análise de riscos durante o pedido, mostra o conflito ao aprovador em linguagem clara e exige um controlo de mitigação documentado quando um conflito é aceite. Se a análise corre no GRC ou na plataforma IGA importa menos do que garantir que ambos utilizam o mesmo conjunto de regras."
+      },
+      {
+        "type": "h2",
+        "text": "3. Controle o acesso de emergência"
+      },
+      {
+        "type": "p",
+        "text": "Todos os ambientes SAP precisam de uma forma de resolver rapidamente problemas em produção, muitas vezes designada por acesso firefighter ou de emergência. Sem controlo, torna-se uma porta das traseiras permanente. O acesso de emergência deve ser pedido com uma justificação, concedido por tempo limitado, totalmente registado e revisto posteriormente por alguém que não o próprio utilizador."
+      },
+      {
+        "type": "h2",
+        "text": "4. Planeie para um cenário híbrido: S/4HANA, BTP e cloud"
+      },
+      {
+        "type": "p",
+        "text": "Os ambientes SAP modernos combinam sistemas ABAP on-premises, S/4HANA, SAP Business Technology Platform e aplicações SaaS como SuccessFactors ou Ariba. Os SAP Cloud Identity Services ligam estes mundos: o Identity Authentication (IAS) trata do início de sessão e do início de sessão único, e o Identity Provisioning (IPS) transfere utilizadores e grupos entre sistemas."
+      },
+      {
+        "type": "p",
+        "text": "Uma plataforma IGA central deve situar-se acima desta camada. É ela que decide quem deve ter que acessos e porquê, e o IPS ou os conectores diretos executam essa decisão. Mantenha esta divisão clara e evitará que dois sistemas disputem o papel de fonte de verdade."
+      },
+      {
+        "type": "h2",
+        "text": "5. Aproveite o fim de vida do SAP IdM para recomeçar"
+      },
+      {
+        "type": "p",
+        "text": "A SAP anunciou o fim da manutenção standard do SAP IdM em 2027 e indica o Microsoft Entra ID como sucessor para muitos cenários de identidade. Para requisitos com forte componente de governação, como pedidos com verificação de SoD, certificações e modelos de funções complexos, muitas organizações combinam o Entra ID com uma plataforma IGA dedicada."
+      },
+      {
+        "type": "p",
+        "text": "Seja qual for a sua escolha, não migre tudo um para um. Aproveite a mudança para abandonar scripts personalizados, simplificar o modelo de funções e integrar o SAP nos mesmos processos de pedido e revisão que tudo o resto."
+      },
+      {
+        "type": "callout",
+        "text": "Lista de verificação: modelo de funções limpo, SoD verificada no momento do pedido, acesso de emergência controlado, divisão clara entre IGA e SAP Cloud Identity Services e um plano de saída do SAP IdM bem antes de 2027."
+      },
+      {
+        "type": "h2",
+        "text": "Como ajudamos"
+      },
+      {
+        "type": "p",
+        "text": "Há anos que ligamos o SAP a plataformas de governação de identidades, da reformulação de funções ao aprovisionamento com verificação de SoD e aos SAP Cloud Identity Services. Se está a planear o sucessor do SAP IdM ou quer colocar os acessos SAP sob a mesma governação que o resto do seu ambiente, teremos todo o gosto em ajudar a planear o caminho."
+      }
+    ]
+  },
+  "non-human-identity-ai-agents": {
+    "title": "Identidades não humanas e agentes de IA: a lacuna de governação",
+    "description": "Contas de serviço, chaves de API, workloads e agora agentes de IA superam largamente os colaboradores. Um guia prático para governar identidades não humanas.",
+    "excerpt": "A maioria das organizações governa os seus colaboradores com cuidado e as suas máquinas quase nada. Os agentes de IA tornam esta lacuna urgente. Eis uma forma prática de a colmatar.",
+    "category": "Identidade não humana",
+    "keywords": [
+      "governação de identidades não humanas",
+      "segurança NHI",
+      "identidade de agentes de IA",
+      "gestão de contas de serviço",
+      "identidade de máquinas",
+      "segurança de IA agêntica"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Pergunte a uma equipa de IAM quantos colaboradores têm acesso ao sistema financeiro e, normalmente, a resposta chega em minutos. Pergunte quantas contas de serviço, chaves de API e tokens de automação conseguem chegar ao mesmo sistema e a sala tende a ficar em silêncio. As identidades não humanas (NHI) superam hoje largamente as humanas na maioria das organizações, e, no entanto, são normalmente as menos governadas."
+      },
+      {
+        "type": "p",
+        "text": "Os agentes de IA aumentam o que está em jogo. Um agente que reserva viagens, concilia faturas ou abre tickets precisa de credenciais para agir, e age à velocidade de uma máquina. Se essas credenciais forem amplas, de longa duração e não tiverem responsável, o agente torna-se uma forma muito eficiente de abusar dos acessos."
+      },
+      {
+        "type": "h2",
+        "text": "O que conta como identidade não humana"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Contas de serviço no Active Directory, em bases de dados e em aplicações.",
+          "Chaves de API, segredos de cliente e certificados utilizados na integração entre sistemas.",
+          "Identidades de workloads na cloud: managed identities, service principals, funções IAM.",
+          "Bots e utilizadores de RPA, bem como os utilizadores técnicos das plataformas de integração.",
+          "Agentes de IA, que combinam tudo o que foi referido e acrescentam autonomia."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Porque é que os controlos IGA habituais não as abrangem"
+      },
+      {
+        "type": "p",
+        "text": "A governação de identidades clássica assenta no ciclo de vida de entradas, mudanças e saídas das pessoas, alimentado pelos recursos humanos. As identidades não humanas não têm registo nos recursos humanos, não têm chefia nem data de saída. São criadas por programadores ou administradores para resolver um problema imediato e depois esquecidas. O resultado é conhecido: contas que ninguém sabe explicar, segredos que não são rodados há anos e privilégios muito para além do que a integração precisa."
+      },
+      {
+        "type": "h2",
+        "text": "Cinco passos para colocar as NHI sob governação"
+      },
+      {
+        "type": "h3",
+        "text": "1. Construir um inventário"
+      },
+      {
+        "type": "p",
+        "text": "Não é possível governar o que não se vê. Reúna num único local as contas não humanas provenientes de diretórios, tenants na cloud, bases de dados, cofres de segredos e pipelines de CI/CD. Registe para cada uma o tipo, os sistemas a que consegue aceder e a data da última utilização."
+      },
+      {
+        "type": "h3",
+        "text": "2. Atribuir um responsável humano a cada identidade"
+      },
+      {
+        "type": "p",
+        "text": "Cada conta de serviço e cada agente precisa de uma pessoa responsável e, idealmente, de um substituto. É a atribuição de um responsável que transforma uma conta anónima em algo que pode ser revisto, renovado ou desativado. Quando um responsável sai, essa responsabilidade é transferida através do mesmo processo de saída aplicado aos seus próprios acessos."
+      },
+      {
+        "type": "h3",
+        "text": "3. Dar às NHI um ciclo de vida"
+      },
+      {
+        "type": "p",
+        "text": "Crie identidades não humanas através de um pedido com uma finalidade declarada e uma data de expiração, e reveja-as nas mesmas campanhas de certificação que os acessos humanos. As contas que não sejam utilizadas durante um período definido são primeiro desativadas e depois removidas."
+      },
+      {
+        "type": "h3",
+        "text": "4. Substituir segredos permanentes por credenciais de curta duração"
+      },
+      {
+        "type": "p",
+        "text": "Sempre que a plataforma o permita, prefira managed identities, federação de identidades de workloads ou certificados de validade curta em vez de palavras-passe e chaves estáticas. Onde os segredos estáticos se mantiverem, guarde-os num cofre, rode-os automaticamente e nunca os incorpore no código."
+      },
+      {
+        "type": "h3",
+        "text": "5. Aplicar o privilégio mínimo e vigiar o comportamento"
+      },
+      {
+        "type": "p",
+        "text": "Limite cada identidade ao mínimo de que precisa e gere alertas para utilizações invulgares: uma conta de serviço a iniciar sessão de forma interativa, um token usado a partir de uma localização inesperada ou um agente a chamar uma API em que nunca tocou."
+      },
+      {
+        "type": "h2",
+        "text": "Agentes de IA: o que muda"
+      },
+      {
+        "type": "p",
+        "text": "Os agentes trazem duas complicações. Primeiro, atuam muitas vezes em nome de uma pessoa, pelo que é preciso saber tanto quem é o agente como a autoridade de quem está a usar. O acesso delegado, por exemplo através de fluxos OAuth on-behalf-of, mantém as permissões do próprio utilizador como limite máximo, em vez de dar ao agente uma conta técnica poderosa. Segundo, os agentes decidem o que fazer a seguir. Isso torna os limites essenciais:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Uma identidade distinta por agente, nunca um utilizador técnico partilhado.",
+          "Âmbitos restritos e específicos para cada tarefa e tokens de curta duração.",
+          "Aprovação humana para ações de grande impacto, como pagamentos ou alterações de acessos.",
+          "Um registo de auditoria completo do que o agente fez, com que identidade e em nome de quem.",
+          "Uma forma testada de revogar imediatamente os acessos de um agente."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Regra prática: um agente de IA nunca deve poder fazer algo que a pessoa em nome de quem atua não está autorizada a fazer, e cada ação deve ser rastreável até ambos."
+      },
+      {
+        "type": "h2",
+        "text": "Por onde começar"
+      },
+      {
+        "type": "p",
+        "text": "Comece pelos sistemas mais importantes, como finanças, recursos humanos e produção, e faça o inventário das identidades não humanas que lhes conseguem aceder. Atribua responsáveis, remova o que ninguém reclamar e integre o resto no seu ciclo de revisão existente. Só isso elimina normalmente uma quantidade surpreendente de risco e lança as bases para governar os agentes de IA à medida que forem surgindo."
+      },
+      {
+        "type": "p",
+        "text": "Ajudamos as organizações a alargar a sua governação de identidades a contas de serviço, workloads e agentes de IA, na plataforma IGA que já utilizam. Se isso faz parte do seu roteiro, fale connosco."
+      }
+    ]
+  }
+}

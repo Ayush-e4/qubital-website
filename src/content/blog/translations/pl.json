@@ -1,0 +1,337 @@
+{
+  "iam-query-performance": {
+    "title": "Z 70 sekund do poniżej jednej: naprawa wolnego zapytania w bazie IAM",
+    "description": "Studium przypadku: jak optymalizacja indeksów skróciła krytyczne zapytanie platformy zarządzania tożsamością z ponad 70 sekund do poniżej sekundy.",
+    "excerpt": "Jedno wolne zapytanie spowalniało całą platformę tożsamości. Pokazujemy, jak je znaleźliśmy, naprawiliśmy dzięki optymalizacji indeksów i zadbaliśmy, by problem nie wrócił.",
+    "category": "Studium przypadku",
+    "keywords": [
+      "wydajność IAM",
+      "optymalizacja bazy danych zarządzania tożsamością",
+      "optymalizacja indeksów SQL Server",
+      "wydajność platformy IGA",
+      "wydajność One Identity Manager"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Platformy zarządzania tożsamością stoją i upadają wraz ze swoją bazą danych. Każde uruchomienie provisioningu, każdy wniosek o dostęp, każda kampania certyfikacyjna kończy się jako SQL. Gdy jedno z tych zapytań zwalnia, użytkownicy rzadko widzą komunikat o błędzie. Widzą za to formularz wniosku, który ładuje się minutę, nocną synchronizację, która wchodzi w godziny pracy, albo kolejkę zatwierdzeń, która nigdy nie nadąża."
+      },
+      {
+        "type": "p",
+        "text": "W jednym z niedawnych projektów pewne zapytanie na platformie zarządzania tożsamością klienta regularnie trwało ponad 70 sekund. Po naszej interwencji zwraca wynik w czasie poniżej jednej sekundy. W tym artykule pokazujemy, jak do tego doszliśmy. Klient pozostaje anonimowy – liczy się metoda."
+      },
+      {
+        "type": "h2",
+        "text": "Objaw: wszystko działało wolno"
+      },
+      {
+        "type": "p",
+        "text": "Pierwsze zgłoszenia były mgliste: portal internetowy był „ociężały”, niektóre zadania „trwały dłużej niż zwykle”. To typowe. Problemy z wydajnością w IAM rzadko objawiają się jako jeden uszkodzony komponent. Pojawiają się jako ogólne tarcie, a zespoły często reagują, dokładając sprzęt lub wydłużając limity czasu. Oba podejścia leczą objaw i ukrywają przyczynę."
+      },
+      {
+        "type": "p",
+        "text": "Dlatego zaczęliśmy od pomiarów, a nie od opinii. Zanim cokolwiek zmieniliśmy, chcieliśmy wiedzieć, które instrukcje zużywają najwięcej czasu i zasobów, jak często są wykonywane i czy ich koszt zmieniał się w czasie."
+      },
+      {
+        "type": "h2",
+        "text": "Krok 1: znaleźć zapytania, które naprawdę kosztują czas"
+      },
+      {
+        "type": "p",
+        "text": "W SQL Server Query Store i dynamiczne widoki zarządcze (DMV) dają ten obraz bez instalowania czegokolwiek. Uszeregowaliśmy instrukcje według łącznego czasu wykonania i liczby odczytów logicznych, a nie tylko według średniego czasu trwania. Zapytanie, które trwa dwie sekundy, ale wykonywane jest dziesięć tysięcy razy dziennie, ma większe znaczenie niż raport, który raz w miesiącu trwa pięć minut."
+      },
+      {
+        "type": "p",
+        "text": "Jedna instrukcja wyraźnie się wyróżniała. Była częścią logiki, która ustala, jakie uprawnienia powinna mieć dana osoba, była wykonywana wielokrotnie w ciągu dnia i trwała średnio ponad 70 sekund. Była też źródłem dużej części ogólnego spowolnienia: inne procesy czekały na zwolnienie blokad, które utrzymywała."
+      },
+      {
+        "type": "h2",
+        "text": "Krok 2: przeanalizować plan wykonania"
+      },
+      {
+        "type": "p",
+        "text": "Rzeczywisty plan wykonania szybko wyjaśnił sytuację. Zamiast wyszukać niewielki zbiór wierszy (seek), silnik skanował dużą tabelę przypisań tożsamości do uprawnień, a dopiero potem filtrował wynik. Szacowana i rzeczywista liczba wierszy znacznie się różniły – znak, że optymalizator opierał się na niedokładnym obrazie danych."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Żaden indeks nie odpowiadał kombinacji kolumn, według których zapytanie filtrowało i łączyło dane.",
+          "Istniejący indeks obejmował tylko część predykatu, więc silnik i tak musiał odczytywać każdy wiersz.",
+          "Statystyki największej tabeli były nieaktualne po latach wzrostu, co zniekształcało szacunki optymalizatora."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Krok 3: ostrożnie naprawić indeksy"
+      },
+      {
+        "type": "p",
+        "text": "Rozwiązaniem była optymalizacja indeksów, a nie zmiana kodu. Zaprojektowaliśmy indeks pokrywający dla kolumn filtrowania i złączeń zapytania, z pozostałymi wybieranymi kolumnami dołączonymi (INCLUDE), tak aby silnik mógł obsłużyć zapytanie operacją seek bez key lookupów. Odświeżyliśmy też statystyki dla tabel, których to dotyczyło."
+      },
+      {
+        "type": "p",
+        "text": "Indeksy nie są darmowe. Każdy indeks spowalnia operacje wstawiania i aktualizacji oraz zajmuje miejsce, a platforma IGA podczas provisioningu zapisuje bardzo dużo danych. Dlatego przed dodaniem czegokolwiek sprawdziliśmy trzy rzeczy:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Czy schemat dostawcy oferuje już wspierany sposób dodania indeksu, tak aby przetrwał aktualizacje produktu.",
+          "Obciążenie tabeli operacjami zapisu, aby potwierdzić, że dodatkowy koszt utrzymania jest akceptowalny.",
+          "Istniejące indeksy, które pokrywały się z nowym i można je było skonsolidować lub usunąć."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Wynik: czas wykonania zapytania spadł z ponad 70 sekund do poniżej jednej sekundy. Oczekiwanie na blokady w powiązanych tabelach w dużej mierze zniknęło, a wraz z tym przyspieszyły portal i zaplanowane zadania."
+      },
+      {
+        "type": "h2",
+        "text": "Krok 4: zadbać, by tak zostało"
+      },
+      {
+        "type": "p",
+        "text": "Jednorazowa poprawka z czasem traci skuteczność. Danych przybywa, dochodzą nowe konektory, a ktoś w końcu zmienia proces. Aby utrzymać efekty, wprowadziliśmy kilka prostych nawyków:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Regularny przegląd stanu (health check) z listą instrukcji o najdłuższym łącznym czasie wykonania, aby regresje wychodziły na jaw w ciągu dni, a nie miesięcy.",
+          "Zaplanowane utrzymanie statystyk i indeksów, zsynchronizowane z harmonogramem provisioningu.",
+          "Krótki runbook wyjaśniający, dlaczego indeks istnieje, aby nikt nie usunął go podczas późniejszych porządków."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Najważniejsze wnioski"
+      },
+      {
+        "type": "p",
+        "text": "Większość problemów z wydajnością IAM nie jest tajemnicza. Wynikają z niewielkiej liczby kosztownych instrukcji, a baza danych już rejestruje, które to są. Najpierw mierzyć, potem przeanalizować plan, zmienić jedną rzecz i zweryfikować efekt. W tym przypadku ta sekwencja zamieniła 70-sekundowe oczekiwanie w odpowiedź poniżej sekundy – bez nowego sprzętu i bez zmiany platformy."
+      },
+      {
+        "type": "p",
+        "text": "Jeśli Państwa platforma tożsamości zwolniła wraz ze swoim rozwojem, chętnie się jej przyjrzymy. Ukierunkowany przegląd stanu zwykle w ciągu kilku dni pokazuje, gdzie ucieka czas."
+      }
+    ]
+  },
+  "iga-for-sap": {
+    "title": "Zarządzanie tożsamością w środowiskach SAP: o co trzeba zadbać",
+    "description": "Role SAP, rozdział obowiązków, dostęp awaryjny i koniec SAP Identity Management: o co musi zadbać program IGA dla SAP, aby przyniósł oczekiwane efekty.",
+    "excerpt": "W SAP przepływają pieniądze, dlatego błędy w dostępach bolą tu najbardziej. Praktyczne spojrzenie na role, rozdział obowiązków, dostęp awaryjny i odejście od SAP IdM.",
+    "category": "SAP",
+    "keywords": [
+      "zarządzanie tożsamością SAP",
+      "SAP IGA",
+      "następca SAP IdM",
+      "SAP Cloud Identity Services",
+      "rozdział obowiązków SAP",
+      "zarządzanie dostępem S/4HANA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "W większości firm to w SAP znajdują się zamówienia, faktury, płatności i płace. Dlatego właśnie tam błędy w dostępach są najkosztowniejsze i tam audytorzy zaglądają w pierwszej kolejności. Mimo to dostęp do SAP jest często zarządzany oddzielnie od reszty zarządzania tożsamością – z własnymi narzędziami, własnym zespołem i własnymi arkuszami kalkulacyjnymi."
+      },
+      {
+        "type": "p",
+        "text": "Włączenie SAP do centralnego programu zarządzania tożsamością i administracji (IGA) się opłaca: szybszy onboarding, sprawniejsze audyty i mniej toksycznych kombinacji uprawnień. Pojawia się też nowy termin: podstawowe wsparcie (mainstream maintenance) dla SAP Identity Management (SAP IdM) kończy się w 2027 roku, więc wiele organizacji właśnie teraz wybiera kolejną platformę."
+      },
+      {
+        "type": "h2",
+        "text": "1. Zacząć od modelu ról, a nie od konektora"
+      },
+      {
+        "type": "p",
+        "text": "Podłączenie platformy IGA do SAP to łatwiejsza część. Trudniejsze jest to, co się podłącza. Wiele systemów SAP zawiera nagromadzone przez lata role pojedyncze i złożone, które rozrastały się projekt po projekcie. Szybsze provisionowanie tego chaosu niczego nie poprawi."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Uporządkować nieużywane i zdublowane role, zanim zostaną zautomatyzowane.",
+          "Zaprojektować role biznesowe, które łączą role SAP z dostępami w innych systemach, tak aby nowy pracownik działu zakupów otrzymał wszystko, czego potrzebuje, w jednym wniosku.",
+          "Opisać każdą rolę dostępną do zamówienia językiem biznesowym, a nie technicznymi nazwami ról."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "2. Traktować rozdział obowiązków jako regułę projektową"
+      },
+      {
+        "type": "p",
+        "text": "Rozdział obowiązków (SoD) zapobiega sytuacji, w której jedna osoba może na przykład założyć dostawcę i zlecić mu płatność. W SAP takie konflikty definiuje się aż do poziomu transakcji i obiektów autoryzacji, a wiele firm korzysta już z SAP GRC Access Control lub podobnego narzędzia do analizy ryzyka."
+      },
+      {
+        "type": "p",
+        "text": "Celem jest sprawdzanie SoD przed przyznaniem dostępu, a nie wykrywanie naruszeń podczas kolejnego audytu. Dobrze zaprojektowane rozwiązanie przeprowadza analizę ryzyka już na etapie wniosku, pokazuje osobie zatwierdzającej konflikt w zrozumiałym języku i wymaga udokumentowanej kontroli kompensującej, gdy konflikt zostaje zaakceptowany. To, czy analiza odbywa się w GRC, czy na platformie IGA, ma mniejsze znaczenie niż to, by oba systemy korzystały z tego samego zestawu reguł."
+      },
+      {
+        "type": "h2",
+        "text": "3. Kontrolować dostęp awaryjny"
+      },
+      {
+        "type": "p",
+        "text": "Każde środowisko SAP potrzebuje sposobu na szybkie usuwanie problemów na produkcji – często nazywanego dostępem typu firefighter lub dostępem awaryjnym. Bez kontroli staje się on stałą tylną furtką. O dostęp awaryjny należy występować z podaniem powodu, powinien być przyznawany na ograniczony czas, w pełni rejestrowany, a następnie weryfikowany przez osobę inną niż użytkownik."
+      },
+      {
+        "type": "h2",
+        "text": "4. Zaplanować środowisko hybrydowe: S/4HANA, BTP i chmura"
+      },
+      {
+        "type": "p",
+        "text": "Nowoczesne środowiska SAP łączą lokalne systemy ABAP, S/4HANA, SAP Business Technology Platform oraz aplikacje SaaS, takie jak SuccessFactors czy Ariba. SAP Cloud Identity Services spajają te światy: Identity Authentication (IAS) obsługuje logowanie i jednokrotne logowanie, a Identity Provisioning (IPS) przenosi użytkowników i grupy między systemami."
+      },
+      {
+        "type": "p",
+        "text": "Centralna platforma IGA powinna znajdować się ponad tą warstwą. To ona decyduje, kto powinien mieć jaki dostęp i dlaczego, a IPS lub bezpośrednie konektory wykonują tę decyzję. Utrzymanie jasnego podziału pozwala uniknąć sytuacji, w której dwa systemy rywalizują o rolę źródła prawdy."
+      },
+      {
+        "type": "h2",
+        "text": "5. Wykorzystać koniec SAP IdM jako nowy początek"
+      },
+      {
+        "type": "p",
+        "text": "SAP ogłosił zakończenie podstawowego wsparcia dla SAP IdM w 2027 roku i wskazuje klientom Microsoft Entra ID jako następcę w wielu scenariuszach tożsamości. W przypadku wymagań silnie zorientowanych na nadzór, takich jak wnioski uwzględniające SoD, certyfikacje i złożone modele ról, wiele organizacji łączy Entra ID z dedykowaną platformą IGA."
+      },
+      {
+        "type": "p",
+        "text": "Niezależnie od wyboru nie należy migrować jeden do jednego. Warto wykorzystać tę zmianę, aby wycofać niestandardowe skrypty, uprościć model ról i objąć SAP tymi samymi procesami wniosków i przeglądów co wszystkie pozostałe systemy."
+      },
+      {
+        "type": "callout",
+        "text": "Lista kontrolna: uporządkowany model ról, SoD sprawdzany na etapie wniosku, kontrolowany dostęp awaryjny, jasny podział między IGA a SAP Cloud Identity Services oraz plan wyjścia z SAP IdM przygotowany na długo przed 2027 rokiem."
+      },
+      {
+        "type": "h2",
+        "text": "Jak pomagamy"
+      },
+      {
+        "type": "p",
+        "text": "Od lat łączymy SAP z platformami zarządzania tożsamością – od przeprojektowania ról, przez provisioning uwzględniający SoD, po SAP Cloud Identity Services. Jeśli planują Państwo następcę SAP IdM lub chcą objąć dostęp do SAP tym samym nadzorem co resztę środowiska, chętnie pomożemy zaplanować drogę."
+      }
+    ]
+  },
+  "non-human-identity-ai-agents": {
+    "title": "Tożsamości nieosobowe i agenci AI: jak zamknąć lukę w zarządzaniu",
+    "description": "Konta usługowe, klucze API, workloady, a teraz agenci AI znacznie przewyższają liczbą pracowników. Praktyczny przewodnik po zarządzaniu tożsamościami NHI.",
+    "excerpt": "Większość organizacji starannie zarządza tożsamościami pracowników, a tożsamościami maszyn prawie wcale. Agenci AI sprawiają, że ta luka staje się pilna. Oto praktyczny sposób, by ją zamknąć.",
+    "category": "Tożsamości nieosobowe",
+    "keywords": [
+      "zarządzanie tożsamościami nieosobowymi",
+      "bezpieczeństwo NHI",
+      "tożsamość agentów AI",
+      "zarządzanie kontami usługowymi",
+      "tożsamość maszyn",
+      "bezpieczeństwo agentowej AI"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Jeśli zapytać zespół IAM, ilu pracowników ma dostęp do systemu finansowego, zwykle odpowie w ciągu kilku minut. Jeśli zapytać, ile kont usługowych, kluczy API i tokenów automatyzacji ma dostęp do tego samego systemu, w sali zazwyczaj zapada cisza. Tożsamości nieosobowe (NHI) w większości organizacji znacznie przewyższają już liczbą tożsamości ludzi, a mimo to zwykle są zarządzane najsłabiej."
+      },
+      {
+        "type": "p",
+        "text": "Agenci AI podnoszą stawkę. Agent, który rezerwuje podróże, uzgadnia faktury lub otwiera zgłoszenia, potrzebuje danych uwierzytelniających, aby działać – i działa z prędkością maszyny. Jeśli te dane są szerokie, długotrwałe i nie mają właściciela, agent staje się bardzo skutecznym narzędziem nadużycia dostępu."
+      },
+      {
+        "type": "h2",
+        "text": "Co jest tożsamością nieosobową"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Konta usługowe w Active Directory, bazach danych i aplikacjach.",
+          "Klucze API, sekrety klientów i certyfikaty używane do integracji między systemami.",
+          "Tożsamości workloadów w chmurze: tożsamości zarządzane, jednostki usługi (service principals), role IAM.",
+          "Boty i użytkownicy RPA oraz techniczni użytkownicy platform integracyjnych.",
+          "Agenci AI, którzy łączą wszystkie powyższe cechy i dodają autonomię."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Dlaczego typowe mechanizmy IGA ich nie obejmują"
+      },
+      {
+        "type": "p",
+        "text": "Klasyczne zarządzanie tożsamością opiera się na cyklu życia joiner-mover-leaver ludzi, zasilanym danymi z HR. Tożsamości nieosobowe nie mają rekordu w HR, przełożonego ani daty odejścia. Tworzą je programiści lub administratorzy, by rozwiązać doraźny problem, a potem się o nich zapomina. Efekt jest dobrze znany: konta, których nikt nie potrafi wyjaśnić, sekrety, których nie zmieniano od lat, i uprawnienia daleko wykraczające poza potrzeby integracji."
+      },
+      {
+        "type": "h2",
+        "text": "Pięć kroków, by objąć NHI zarządzaniem"
+      },
+      {
+        "type": "h3",
+        "text": "1. Stworzyć inwentarz"
+      },
+      {
+        "type": "p",
+        "text": "Nie da się zarządzać tym, czego nie widać. Należy zebrać konta nieosobowe z usług katalogowych, dzierżaw chmurowych, baz danych, magazynów sekretów i potoków CI/CD w jednym miejscu. Każde z nich warto oznaczyć typem, systemami, do których ma dostęp, oraz datą ostatniego użycia."
+      },
+      {
+        "type": "h3",
+        "text": "2. Przypisać każdej tożsamości ludzkiego właściciela"
+      },
+      {
+        "type": "p",
+        "text": "Każde konto usługowe i każdy agent potrzebuje osoby odpowiedzialnej, a najlepiej także zastępcy. To właśnie przypisanie właściciela zamienia anonimowe konto w coś, co można przeglądać, odnawiać lub wyłączyć. Gdy właściciel odchodzi z firmy, odpowiedzialność przechodzi przez ten sam proces odejścia co jego własne dostępy."
+      },
+      {
+        "type": "h3",
+        "text": "3. Nadać NHI cykl życia"
+      },
+      {
+        "type": "p",
+        "text": "Tożsamości nieosobowe należy tworzyć na podstawie wniosku z podanym celem i datą wygaśnięcia, a następnie przeglądać je w tych samych kampaniach certyfikacyjnych co dostępy ludzi. Konta nieużywane przez określony czas są najpierw wyłączane, a potem usuwane."
+      },
+      {
+        "type": "h3",
+        "text": "4. Zastąpić stałe sekrety krótkotrwałymi danymi uwierzytelniającymi"
+      },
+      {
+        "type": "p",
+        "text": "Wszędzie tam, gdzie platforma na to pozwala, należy preferować tożsamości zarządzane, federację tożsamości workloadów lub certyfikaty o krótkim okresie ważności zamiast statycznych haseł i kluczy. Tam, gdzie statyczne sekrety pozostają, trzeba przechowywać je w sejfie, automatycznie je rotować i nigdy nie osadzać ich w kodzie."
+      },
+      {
+        "type": "h3",
+        "text": "5. Stosować zasadę najmniejszych uprawnień i obserwować zachowanie"
+      },
+      {
+        "type": "p",
+        "text": "Każdej tożsamości należy nadać minimalny zakres, jakiego potrzebuje, i alarmować o nietypowym użyciu: konto usługowe logujące się interaktywnie, token użyty z nieoczekiwanej lokalizacji czy agent wywołujący API, z którego nigdy wcześniej nie korzystał."
+      },
+      {
+        "type": "h2",
+        "text": "Agenci AI: co jest inaczej"
+      },
+      {
+        "type": "p",
+        "text": "Agenci wprowadzają dwie komplikacje. Po pierwsze, często działają w imieniu osoby, więc trzeba wiedzieć zarówno, kim jest agent, jak i czyimi uprawnieniami się posługuje. Dostęp delegowany, na przykład za pomocą przepływów OAuth on-behalf-of, utrzymuje własne uprawnienia użytkownika jako górny limit, zamiast dawać agentowi potężne konto techniczne. Po drugie, agenci sami decydują, co zrobić dalej. Dlatego granice są niezbędne:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Odrębna tożsamość dla każdego agenta – nigdy wspólny użytkownik techniczny.",
+          "Wąskie, dopasowane do zadania zakresy uprawnień i krótki czas życia tokenów.",
+          "Zatwierdzanie przez człowieka działań o dużym wpływie, takich jak płatności czy zmiany dostępów.",
+          "Kompletny ślad audytowy tego, co agent zrobił, przy użyciu jakiej tożsamości i w czyim imieniu.",
+          "Przetestowany sposób natychmiastowego odebrania agentowi dostępu."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Praktyczna zasada: agent AI nigdy nie powinien móc zrobić niczego, czego nie wolno osobie, w której imieniu działa, a każde działanie powinno być możliwe do przypisania obu."
+      },
+      {
+        "type": "h2",
+        "text": "Od czego zacząć"
+      },
+      {
+        "type": "p",
+        "text": "Warto zacząć od systemów o największym znaczeniu, takich jak finanse, HR i produkcja, i zinwentaryzować tożsamości nieosobowe, które mają do nich dostęp. Przypisać właścicieli, usunąć to, do czego nikt się nie przyznaje, a resztę włączyć do istniejącego cyklu przeglądów. Już samo to zwykle eliminuje zaskakująco dużo ryzyka i tworzy fundament pod zarządzanie agentami AI, w miarę jak będą się pojawiać."
+      },
+      {
+        "type": "p",
+        "text": "Pomagamy organizacjom rozszerzyć zarządzanie tożsamością na konta usługowe, workloady i agentów AI – na platformie IGA, z której już korzystają. Jeśli mają to Państwo w planach, porozmawiajmy."
+      }
+    ]
+  }
+}
