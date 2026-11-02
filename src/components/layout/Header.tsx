@@ -208,7 +208,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
             {t('language')}
           </span>
-          <LocaleSwitcher />
+          <LocaleSwitcher placement="top" />
         </motion.div>
       </Container>
     </motion.div>
