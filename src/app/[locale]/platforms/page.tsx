@@ -27,14 +27,18 @@ const LOGOS: Record<string, { logo: string; label?: string | true }> = {
   'SAP Cloud Identity Services: IAS': { logo: 'sap', label: 'Identity Authentication (IAS)' },
   Okta: { logo: 'okta' },
   OneLogin: { logo: 'onelogin' },
-  // ForgeRock was merged into Ping Identity; the card says so in both languages
-  'Ping Identity (formerly ForgeRock)': { logo: 'ping-identity', label: true },
-  'Ping Identity (ehemals ForgeRock)': { logo: 'ping-identity', label: true },
+  // ForgeRock was merged into Ping Identity; each language words "formerly
+  // ForgeRock" its own way, so every name starting with this one matches (logoFor)
+  'Ping Identity': { logo: 'ping-identity', label: true },
   'Microsoft Entra ID': { logo: 'microsoft', label: 'Entra ID' },
   'Active Directory': { logo: 'microsoft', label: 'Active Directory' },
   CyberArk: { logo: 'cyberark' },
   BeyondTrust: { logo: 'beyondtrust' },
 };
+
+function logoFor(name: string) {
+  return LOGOS[name] ?? (name.startsWith('Ping Identity') ? LOGOS['Ping Identity'] : undefined);
+}
 
 type Group = {
   key: string;
@@ -84,32 +88,36 @@ export default async function PlatformsPage({ params }: PageProps<'/[locale]/pla
                   </Link>
                 </div>
                 <Stagger className="grid gap-4 sm:grid-cols-2 lg:col-span-8" stagger={0.05}>
-                  {group.items.map((item) => (
-                    <StaggerItem key={item.name}>
-                      <SpotlightCard className="h-full">
-                        <div className="flex h-full flex-col p-7">
-                          <div className="logo-plate flex h-16 items-center rounded-2xl px-5">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                              src={`/logos/platforms/${LOGOS[item.name].logo}.svg`}
-                              alt={item.name}
-                              className={cn(
-                                'w-auto max-w-[170px] object-contain',
-                                LOGOS[item.name].logo === 'sap' ? 'h-10' : 'h-7'
-                              )}
-                              loading="lazy"
-                            />
+                  {group.items.map((item) => {
+                    const logo = logoFor(item.name);
+                    if (!logo) throw new Error(`No logo for platform "${item.name}"`);
+                    return (
+                      <StaggerItem key={item.name}>
+                        <SpotlightCard className="h-full">
+                          <div className="flex h-full flex-col p-7">
+                            <div className="logo-plate flex h-16 items-center rounded-2xl px-5">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={`/logos/platforms/${logo.logo}.svg`}
+                                alt={item.name}
+                                className={cn(
+                                  'w-auto max-w-[170px] object-contain',
+                                  logo.logo === 'sap' ? 'h-10' : 'h-7'
+                                )}
+                                loading="lazy"
+                              />
+                            </div>
+                            {logo.label && (
+                              <h3 className="mt-5 text-xl font-medium tracking-tight">
+                                {logo.label === true ? item.name : logo.label}
+                              </h3>
+                            )}
+                            <p className="mt-4 leading-relaxed text-muted">{item.text}</p>
                           </div>
-                          {LOGOS[item.name].label && (
-                            <h3 className="mt-5 text-xl font-medium tracking-tight">
-                              {LOGOS[item.name].label === true ? item.name : LOGOS[item.name].label}
-                            </h3>
-                          )}
-                          <p className="mt-4 leading-relaxed text-muted">{item.text}</p>
-                        </div>
-                      </SpotlightCard>
-                    </StaggerItem>
-                  ))}
+                        </SpotlightCard>
+                      </StaggerItem>
+                    );
+                  })}
                 </Stagger>
               </article>
             </Reveal>
