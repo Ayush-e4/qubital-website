@@ -99,6 +99,20 @@
   body {
     @apply bg-bg text-fg font-sans antialiased;
     text-rendering: optimizeLegibility;
+    /* Content cannot be selected or copied (see CopyGuard); only the email
+       address and form fields can. */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  a[href^='mailto:'],
+  input,
+  textarea,
+  select,
+  [contenteditable='true'] {
+    -webkit-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
   }
   ::selection {
     background: color-mix(in oklab, var(--color-violet) 45%, transparent);
