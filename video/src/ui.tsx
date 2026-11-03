@@ -42,7 +42,7 @@ export const palettes = {
 };
 export type Theme = keyof typeof palettes;
 export type Palette = (typeof palettes)[Theme];
-export type Locale = 'en' | 'de';
+export type Locale = 'en' | 'de' | 'fr' | 'it' | 'es' | 'nl' | 'pl' | 'pt' | 'sv' | 'da';
 export type ClipProps = { theme: Theme; locale: Locale };
 
 const PaletteContext = createContext<Palette>(palettes.dark);
