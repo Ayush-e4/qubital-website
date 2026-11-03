@@ -131,7 +131,7 @@ export const localeInfo: Record<Locale, { name: string; og: string }> = {
   fr: { name: 'Français', og: 'fr_FR' },
   it: { name: 'Italiano', og: 'it_IT' },
   es: { name: 'Español', og: 'es_ES' },
-  nl: { name: 'Nederlands', og: 'nl_NL' },
+  nl: { name: 'Dutch', og: 'nl_NL' },
   pl: { name: 'Polski', og: 'pl_PL' },
   pt: { name: 'Português', og: 'pt_PT' },
   sv: { name: 'Svenska', og: 'sv_SE' },
