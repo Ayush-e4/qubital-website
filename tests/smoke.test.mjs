@@ -441,6 +441,26 @@ test('security headers are sent', async () => {
 
 // --- redirects from the previous site (next.config.ts) ----------------------
 
+// Every product clip (src/components/ui/Clip.tsx) must exist for every locale
+// and theme, or the clip box stays empty in that language.
+const CLIPS = ['access-request', 'just-in-time', 'passkey', 'workforce', 'agent-scope'];
+
+test('every product clip exists for every locale and theme', async () => {
+  const missing = [];
+  for (const clip of CLIPS) {
+    for (const locale of LOCALES) {
+      for (const theme of ['dark', 'light']) {
+        for (const ext of ['mp4', 'jpg']) {
+          const path = `/videos/${clip}-${locale}-${theme}.${ext}`;
+          const res = await fetch(BASE + path, { method: 'HEAD' });
+          if (res.status !== 200) missing.push(`${path}: ${res.status}`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(missing, []);
+});
+
 test('old URLs redirect permanently to their new pages', async () => {
   const cases = {
     '/about': '/en/about',
