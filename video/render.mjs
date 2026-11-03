@@ -1,4 +1,4 @@
-// Renders every clip in both locales and both themes, plus a poster frame.
+// Renders every clip in every locale and both themes, plus a poster frame.
 //
 //   node render.mjs                     all videos + posters into ../public/videos
 //   node render.mjs stills id:frame...  quick review stills (dark, en) into ./out
@@ -11,7 +11,8 @@ import path from 'node:path';
 const OUT = path.resolve(
   process.env.OUT ?? (process.argv[2] === 'stills' ? 'out' : '../public/videos')
 );
-const LOCALES = ['en', 'de'];
+// LOCALES=fr,it node render.mjs renders only those languages
+const LOCALES = process.env.LOCALES?.split(',') ?? ['en', 'de', 'fr', 'it', 'es', 'nl', 'pl', 'pt', 'sv', 'da'];
 const THEMES = ['dark', 'light'];
 // Frame used as the poster: the moment each clip makes its point.
 const POSTER = { 'access-request': 300, 'just-in-time': 320, passkey: 250, workforce: 330, 'agent-scope': 300 };
