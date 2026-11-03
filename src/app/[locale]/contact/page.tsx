@@ -43,7 +43,7 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
                       <Icon className="size-5" strokeWidth={1.6} />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-mono text-xs uppercase tracking-[0.2em] text-faint">
+                      <span className="block font-mono text-xs uppercase tracking-[0.2em] text-faint select-none">
                         {label}
                       </span>
                       <span className="mt-1 block truncate text-lg font-medium">{value}</span>
