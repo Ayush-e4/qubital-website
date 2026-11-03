@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Analytics } from '@/components/Analytics';
+import { CopyGuard } from '@/components/CopyGuard';
 import { InlineScript } from '@/components/InlineScript';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
@@ -143,6 +144,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       </head>
       <body className="grain min-h-svh overflow-x-clip">
         <Analytics />
+        <CopyGuard />
         <NextIntlClientProvider>
           <SmoothScroll>
             <Header />
