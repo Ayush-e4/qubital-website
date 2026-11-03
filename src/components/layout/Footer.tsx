@@ -93,7 +93,7 @@ export function Footer() {
       <div className="border-t border-line">
         <Container className="flex flex-col gap-4 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {site.name}. {t('footer.rights')}
+            © {year} {site.legalName}. {t('footer.rights')}
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/imprint" className="hover:text-fg transition-colors">
