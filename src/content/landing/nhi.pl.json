@@ -1,0 +1,238 @@
+{
+  "locale": "pl",
+  "path": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "fr": "/fr/services/identites-non-humaines-agents-ia",
+    "it": "/it/servizi/identita-non-umane-agenti-ai",
+    "es": "/es/servicios/identidades-no-humanas-agentes-ia",
+    "nl": "/nl/diensten/niet-menselijke-identiteiten-ai-agents",
+    "pl": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai",
+    "pt": "/pt/servicos/identidades-nao-humanas-agentes-ia",
+    "sv": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter",
+    "da": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Tożsamości nieosobowe i agenci AI pod kontrolą · Qubital",
+    "description": "Konta usługowe, klucze API, workloady i agenci AI zarządzani jak każda inna tożsamość: inwentaryzacja, właściciele, cykl życia i minimalne uprawnienia.",
+    "ogImageAlt": "Tożsamości nieosobowe i agenci AI z Qubital"
+  },
+  "service": {
+    "serviceType": "Doradztwo w zakresie zarządzania tożsamością i dostępem: zarządzanie tożsamościami nieosobowymi i agentami AI",
+    "ogImage": "/og/nhi-pl.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/pl"
+    },
+    {
+      "name": "Usługi",
+      "href": "/pl/uslugi"
+    },
+    {
+      "name": "Tożsamości nieosobowe i agenci AI",
+      "href": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Tożsamości nieosobowe · Agenci AI",
+    "h1": "Tożsamości nieosobowe pod kontrolą: konta usługowe, klucze API i agenci AI.",
+    "lead": "Każdy pracownik przechodzi proces przyjęcia i odejścia z firmy. Liczne konta techniczne, sekrety i agenci działający w Państwa systemach zwykle nie mają żadnego z nich. Włączamy te tożsamości nieosobowe do zarządzania tożsamością: z inwentaryzacją, odpowiedzialnym właścicielem, cyklem życia i ściśle ograniczonym dostępem.",
+    "cta": {
+      "label": "Umów bezpłatną rozmowę wstępną",
+      "href": "/pl/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Co dostarczamy",
+      "href": "#deliverables"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "tożsamości maszyn na jednego pracownika (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "odpowiedzialny właściciel każdej tożsamości technicznej"
+      },
+      {
+        "value": "0",
+        "label": "stałych sekretów tam, gdzie możliwe są krótkotrwałe dane uwierzytelniające"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Dlaczego standardowe procesy IGA pomijają te konta",
+      "paragraphs": [
+        "Zarządzanie tożsamością projektuje się z myślą o ludziach. Konto powstaje wraz z umową o pracę, przełożony potwierdza dostęp, a po odejściu pracownika konto zostaje wyłączone. Konto usługowe nie ma umowy, klucz API nie ma przełożonego, a certyfikat wygasa, choć nikt nie został o to zapytany.",
+        "Audytorzy dobrze znają skutki: konta usługowe z uprawnieniami administratora domeny, których przeznaczenia nikt już nie pamięta, sekrety w kodzie źródłowym ważne od lat i konta z zakończonych projektów, które nadal działają.",
+        "NIS2 i DORA nie rozróżniają ludzi i maszyn w zakresie kontroli dostępu. Konta techniczne podlegają tym samym wymaganiom dotyczącym inwentaryzacji, przyznawania dostępu i dowodów."
+      ]
+    },
+    {
+      "id": "types",
+      "type": "table",
+      "heading": "Typowe tożsamości nieosobowe i ich zabezpieczenia",
+      "columns": ["Tożsamość", "Typowe ryzyko", "Zabezpieczenie"],
+      "rows": [
+        [
+          "Konta usługowe w Active Directory i Entra ID",
+          "Nadmierne uprawnienia, hasła bez terminu ważności, brak odpowiedzialnego właściciela",
+          "Przypisanie właściciela, recertyfikacja, rotacja haseł przez PAM lub gMSA"
+        ],
+        [
+          "Klucze API i sekrety",
+          "Zapisane w kodzie, plikach konfiguracyjnych lub zgłoszeniach, ważne latami",
+          "Centralny sejf, rotacja, daty wygaśnięcia, skanowanie sekretów"
+        ],
+        [
+          "Certyfikaty",
+          "Niezauważone wygaśnięcie powodujące awarie, brak przeglądu",
+          "Inwentaryzacja, automatyczne odnawianie, właściciel każdego certyfikatu"
+        ],
+        [
+          "Tożsamości workloadów w chmurze",
+          "Statyczne dane uwierzytelniające zamiast tożsamości zarządzanych",
+          "Tożsamości zarządzane, federacja tożsamości workloadów, zasada najmniejszych uprawnień"
+        ],
+        [
+          "Boty RPA",
+          "Działają z uprawnieniami konkretnej osoby lub na współdzielonym koncie",
+          "Osobna tożsamość dla każdego bota, wąskie role, rejestrowanie działań"
+        ],
+        [
+          "Agenci AI",
+          "Działają w imieniu użytkowników, często z większymi uprawnieniami niż potrzeba, trudno prześledzić ich działania",
+          "Dedykowana tożsamość agenta, ograniczona delegacja, akceptacja krytycznych działań, kompletne logi"
+        ]
+      ],
+      "after": "Większość tych zabezpieczeń można wdrożyć na posiadanej platformie IGA, PAM lub chmurowej. Dodatkowe narzędzie rekomendujemy tylko wtedy, gdy zamyka konkretną lukę."
+    },
+    {
+      "id": "deliverables",
+      "type": "features",
+      "heading": "Co dostarczamy",
+      "items": [
+        {
+          "title": "Inwentaryzacja",
+          "text": "Wyszukujemy konta usługowe, sekrety, certyfikaty, tożsamości workloadów i agentów AI w Active Directory, Entra ID, na platformach chmurowych i w aplikacjach SaaS."
+        },
+        {
+          "title": "Odpowiedzialność",
+          "text": "Każda tożsamość techniczna otrzymuje odpowiedzialnego właściciela, który zna jej przeznaczenie i potwierdza jej dostęp."
+        },
+        {
+          "title": "Cykl życia",
+          "text": "Tworzenie, recertyfikacja i wycofanie przebiegają według zdefiniowanych procesów na Państwa platformie IGA."
+        },
+        {
+          "title": "Krótkotrwałe dane uwierzytelniające",
+          "text": "Tam, gdzie to możliwe, zastępujemy stałe sekrety tożsamościami zarządzanymi, federacją tożsamości workloadów i sejfami z rotacją."
+        },
+        {
+          "title": "Najmniejsze uprawnienia i monitorowanie",
+          "text": "Ograniczamy dostęp do niezbędnego minimum, rejestrujemy jego użycie i ujawniamy odstępstwa."
+        },
+        {
+          "title": "Zarządzanie agentami AI",
+          "text": "Dla każdego agenta definiujemy tożsamość, delegację, zakres dostępu i rejestrowanie działań, np. z użyciem Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Więcej: tożsamości nieosobowe i agenci AI: jak zamknąć lukę w zarządzaniu",
+        "href": "/pl/blog/tozsamosci-nieosobowe-i-agenci-ai"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "type": "text",
+      "heading": "Agenci AI: co się zmienia",
+      "paragraphs": [
+        "Agent AI czyta e-maile, umawia spotkania, zmienia rekordy lub wywołuje inne systemy, często w imieniu użytkownika. Przy każdym działaniu pojawiają się dwa pytania: czyje uprawnienia obowiązują w tej chwili i kto je zatwierdził?",
+        "Traktujemy agentów jako samodzielne tożsamości, każdą z odpowiedzialnym właścicielem. Otrzymują tylko taki dostęp, jakiego wymaga ich zadanie, delegowane uprawnienia są ograniczone w czasie i zakresie, krytyczne działania wymagają akceptacji człowieka, a każde działanie można przypisać zarówno agentowi, jak i użytkownikowi, który je zainicjował."
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Jak pracujemy",
+      "intro": "Cztery kroki. Po każdym z nich decydują Państwo, czy i jak kontynuować.",
+      "items": [
+        {
+          "title": "Inwentaryzacja i analiza ryzyka",
+          "duration": "1–2 tygodnie",
+          "text": "Ewidencjonujemy tożsamości techniczne w Państwa najważniejszych systemach i oceniamy je według dostępu, wieku, użycia i odpowiedzialności."
+        },
+        {
+          "title": "Model docelowy i reguły",
+          "duration": "1–3 tygodnie",
+          "text": "Określamy, jak tożsamości techniczne są tworzone, kto jest ich właścicielem, jak często podlegają przeglądowi i kiedy wygasają, a także która platforma za co odpowiada."
+        },
+        {
+          "title": "Wdrożenie",
+          "duration": "Iteracyjnie",
+          "text": "Porządkujemy konta, przypisujemy właścicieli, wprowadzamy rotację i krótkotrwałe dane uwierzytelniające oraz łączymy procesy z Państwa platformą IGA lub PAM."
+        },
+        {
+          "title": "Eksploatacja",
+          "duration": "Na bieżąco",
+          "text": "Recertyfikacje, raporty i alerty stają się częścią codziennej pracy. Na życzenie prowadzimy je za Państwa."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Z jednego z ostatnich projektów",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NHI project – industry, number of technical accounts found, share without an owner, result after clean-up. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Pytania o tożsamości nieosobowe",
+      "items": [
+        {
+          "q": "Czym jest tożsamość nieosobowa?",
+          "a": "To każda tożsamość, która nie należy do człowieka: konta usługowe, użytkownicy techniczni, klucze API, certyfikaty, tożsamości workloadów, boty i agenci AI."
+        },
+        {
+          "q": "Czy potrzebujemy dedykowanego narzędzia NHI?",
+          "a": "Niekoniecznie. Wiele wymagań można spełnić na posiadanej platformie IGA, PAM lub chmurowej. Oceniamy to niezależnie od dostawców i rekomendujemy dodatkowe narzędzie tylko wtedy, gdy zamyka konkretną lukę."
+        },
+        {
+          "q": "Jak znajdujecie konta usługowe, których nikt nie udokumentował?",
+          "a": "Analizujemy katalogi, logi logowań, konfiguracje chmury i sejfy, a wyniki weryfikujemy z właścicielami systemów. Konta, do których nikt się nie przyznaje, wyłączamy w kontrolowany sposób i monitorujemy, zanim zostaną usunięte."
+        },
+        {
+          "q": "Jaki to ma związek z NIS2 i DORA?",
+          "a": "Obie regulacje wymagają możliwej do wykazania kontroli nad dostępem, niezależnie od tego, czy uzyskuje go człowiek, czy maszyna. Konta techniczne bez odpowiedzialnego właściciela to częste ustalenie audytowe."
+        },
+        {
+          "q": "Ile kosztuje rozmowa wstępna?",
+          "a": "Nic. W 30 minut omawiamy, w jakim punkcie Państwo są i czy oraz jak możemy pomóc. Każde zapytanie otrzymuje odpowiedź w ciągu jednego dnia roboczego."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Czy wiedzą Państwo, ile kont usługowych działa w Państwa firmie?",
+      "text": "W 30 minut ustalimy, gdzie znajdują się Państwa tożsamości techniczne i od czego zacząć, aby osiągnąć największy efekt. Bezpłatnie i bez prezentacji sprzedażowej.",
+      "cta": {
+        "label": "Umów rozmowę wstępną",
+        "href": "/pl/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=To%C5%BCsamo%C5%9Bci%20nieosobowe"
+      }
+    }
+  ]
+}

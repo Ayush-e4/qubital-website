@@ -1,0 +1,255 @@
+{
+  "locale": "da",
+  "path": "/da/nis2-identitets-og-adgangsstyring",
+  "alternates": {
+    "de": "/de/nis2-iam",
+    "en": "/en/nis2-identity-access-management",
+    "fr": "/fr/nis2-gestion-des-identites-et-des-acces",
+    "it": "/it/nis2-gestione-identita-e-accessi",
+    "es": "/es/nis2-gestion-de-identidades-y-accesos",
+    "nl": "/nl/nis2-identity-access-management",
+    "pl": "/pl/nis2-zarzadzanie-tozsamoscia-i-dostepem",
+    "pt": "/pt/nis2-gestao-de-identidades-e-acessos",
+    "sv": "/sv/nis2-identitets-och-behorighetshantering",
+    "da": "/da/nis2-identitets-og-adgangsstyring",
+    "x-default": "/en/nis2-identity-access-management"
+  },
+  "meta": {
+    "title": "NIS2-adgangsstyring og IAM-compliance · Qubital",
+    "description": "NIS2 og identitets- og adgangsstyring: adgangskontrol, MFA, privilegerede konti, leverandøradgang og dokumentation, der holder til en revision.",
+    "ogImageAlt": "NIS2 og identitets- og adgangsstyring med Qubital"
+  },
+  "service": {
+    "serviceType": "Rådgivning i identitets- og adgangsstyring: NIS2-compliance for adgangskontrol",
+    "ogImage": "/og/nis2-iam-da.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/da"
+    },
+    {
+      "name": "Ydelser",
+      "href": "/da/ydelser"
+    },
+    {
+      "name": "NIS2 og IAM",
+      "href": "/da/nis2-identitets-og-adgangsstyring"
+    }
+  ],
+  "hero": {
+    "eyebrow": "NIS2 · Identitets- og adgangsstyring",
+    "h1": "NIS2-adgangsstyring, der holder til en revision.",
+    "lead": "NIS2 sætter adgangsstyring, sikkert login og leverandøradgang på revisionens dagsorden, og du skal kunne vise, at dine kontroller virker. Vi finder hullerne i din NIS2-adgangskontrol og lukker dem på den platform, du allerede bruger.",
+    "cta": {
+      "label": "Book en gratis indledende samtale",
+      "href": "/da/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Se NIS2 IAM-tjeklisten",
+      "href": "#checklist"
+    },
+    "facts": [
+      {
+        "value": "8",
+        "label": "kontrolpunkter i vores NIS2 IAM-tjekliste"
+      },
+      {
+        "value": "4",
+        "label": "trin fra gap-analyse til dokumentation, der kører i den daglige drift"
+      },
+      {
+        "value": "2",
+        "label": "uger for en typisk gap-analyse"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "requirements",
+      "type": "text",
+      "heading": "Hvad NIS2 betyder for identiteter og adgang",
+      "paragraphs": [
+        "NIS2 trækker identiteter ind i sikkerhedsrevisionen: hvem har adgang til hvad, hvordan tildeles og fjernes adgang, hvordan beskyttes login, og hvad kan dine leverandører nå. Hvilke regler der gælder for dig, afhænger af din sektor, din størrelse og det land, du opererer i.",
+        "Ved en revision tæller det, du kan dokumentere: en godkendt politik, en komplet oversigt, recertificeringer med resultater og logs, du rent faktisk kan finde, når noget sker. At MFA er slået til, besvarer ikke ét af de spørgsmål i sig selv."
+      ]
+    },
+    {
+      "id": "mapping",
+      "type": "table",
+      "heading": "Hvor identitets- og adgangsstyring passer ind i et NIS2-program",
+      "columns": ["Område", "Det vil revisorerne se", "IAM-byggesten"],
+      "rows": [
+        [
+          "Adgangsstyring og aktivstyring",
+          "En godkendt adgangspolitik, en oversigt over identiteter, dokumenteret tildeling og fjernelse af adgang, regelmæssig recertificering",
+          "Identitetsstyring og -administration (IGA)"
+        ],
+        [
+          "Personalesikkerhed",
+          "Adgang fjernes straks og fuldstændigt, når medarbejdere stopper eller skifter rolle",
+          "Automatiseret joiner-mover-leaver-proces"
+        ],
+        [
+          "Multifaktorautentificering",
+          "MFA-dækning pr. brugergruppe, phishing-resistente metoder til administratorer og fjernadgang",
+          "Medarbejderidentitet, betinget adgang"
+        ],
+        [
+          "Sikkerhed i forsyningskæden",
+          "Leverandøradgang er tidsbegrænset, begrundet, godkendt og logget",
+          "Styring af privilegeret adgang (PAM), IGA for eksterne brugere"
+        ],
+        [
+          "Håndtering af hændelser",
+          "Logs over autentificering og ændringer, så du kan rekonstruere og indberette en hændelse",
+          "Logning, sessionsoptagelse i PAM"
+        ]
+      ],
+      "after": "Kravene gælder for alle konti, også servicekonti, API-nøgler og AI-agenter. I mange gap-analyser er netop de konti det største hul."
+    },
+    {
+      "id": "checklist",
+      "type": "checklist",
+      "heading": "NIS2 IAM-tjeklisten",
+      "intro": "Vi tjekker disse otte punkter i hver NIS2-gap-analyse. Hvor mange kan du dokumentere i dag?",
+      "items": [
+        {
+          "title": "1. Adgangspolitik",
+          "text": "Skriftlig, versioneret og godkendt af ledelsen."
+        },
+        {
+          "title": "2. Komplet oversigt over identiteter",
+          "text": "Medarbejdere, eksterne konsulenter, administratorer, servicekonti og AI-agenter, hver med en ansvarlig ejer."
+        },
+        {
+          "title": "3. Joiner-mover-leaver",
+          "text": "Adgang tildeles og fjernes automatisk, når medarbejdere starter, skifter rolle eller stopper."
+        },
+        {
+          "title": "4. Recertificering med dokumentation",
+          "text": "Ledere og systemejere bekræfter adgangen regelmæssigt, og resultatet dokumenteres."
+        },
+        {
+          "title": "5. MFA for alle, phishing-resistent for administratorer",
+          "text": "FIDO2 eller passkeys til privilegerede konti og fjernadgang."
+        },
+        {
+          "title": "6. Privilegerede konti under kontrol",
+          "text": "Adgangskoder i en vault, just-in-time-adgang og sessionsoptagelse for administratorer."
+        },
+        {
+          "title": "7. Tidsbegrænset leverandøradgang",
+          "text": "Hver ekstern adgang har en slutdato, en begrundelse og en godkendelse."
+        },
+        {
+          "title": "8. Logs, du kan finde",
+          "text": "Login og ændringer i adgange gemmes centralt og opbevares længe nok."
+        }
+      ],
+      "link": {
+        "label": "Styring af servicekonti og AI-agenter under NIS2",
+        "href": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter"
+      }
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Sådan arbejder vi",
+      "intro": "Fire trin. Efter hvert trin beslutter du, om og hvordan vi fortsætter.",
+      "items": [
+        {
+          "title": "Gap-analyse",
+          "duration": "Ca. 2 uger",
+          "text": "Vi vurderer dine identiteter, processer og platforme op mod NIS2-kravene og tjeklisten ovenfor. Du får en liste over huller, hver vurderet efter risiko og indsats."
+        },
+        {
+          "title": "Handlingsplan",
+          "duration": "Ca. 1 uge",
+          "text": "Vi prioriterer tiltagene efter risiko og betydning for revisionen og forbereder dokumenterne, så din ledelse kan godkende dem."
+        },
+        {
+          "title": "Implementering",
+          "duration": "Iterativt",
+          "text": "Vi implementerer tiltagene på den platform, du allerede bruger, fx Microsoft Entra ID, One Identity, SailPoint eller CyberArk. Du ser fremskridt i en demo hver anden uge."
+        },
+        {
+          "title": "Dokumentation og drift",
+          "duration": "Løbende",
+          "text": "Vi sætter rapporter og recertificeringer op, så dokumentationen opstår som en del af den daglige drift. Hvis du ønsker det, driver vi platformen for dig."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Det får du hos os",
+      "items": [
+        {
+          "title": "Klart sprog til ledelsen",
+          "text": "Vi omsætter artikler og bestemmelser til konkrete beslutninger med risiko, indsats og rækkefølge."
+        },
+        {
+          "title": "Leverandøruafhængige",
+          "text": "Vi tager udgangspunkt i de licenser, du allerede har. Vi anbefaler kun en ny platform, når den eksisterende ikke kan opfylde kravene."
+        },
+        {
+          "title": "Én kontaktperson",
+          "text": "Én dedikeret person følger dig fra gap-analysen til revisionen, på tysk eller engelsk."
+        },
+        {
+          "title": "Én implementering, flere standarder",
+          "text": "Vi mapper hvert tiltag til ISO 27001 (Annex A 5.15 til 5.18 og 8.2) og, hvor det er relevant, til DORA."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Fra et nyligt projekt",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NIS2 project – industry, size, main gaps, measures implemented, audit outcome. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Spørgsmål om NIS2 og IAM",
+      "items": [
+        {
+          "q": "Er vores organisation omfattet af NIS2?",
+          "a": "Det afhænger af din sektor, din størrelse og din rolle i forsyningskæden. De nationale myndigheder, fx BSI i Tyskland, tilbyder værktøjer til selvvurdering. Er du i tvivl, kan vi afklare det sammen i den indledende samtale."
+        },
+        {
+          "q": "Er multifaktorautentificering nok til NIS2?",
+          "a": "Nej. Revisorerne ser også på adgangsstyring, en styret livscyklus for konti, leverandøradgang og logning."
+        },
+        {
+          "q": "Gælder NIS2 for servicekonti og AI-agenter?",
+          "a": "Ja. Kravene til adgangsstyring gælder for alle konti, både menneskelige og maskinelle. Tekniske konti uden en ansvarlig ejer er et hyppigt fund ved revisioner."
+        },
+        {
+          "q": "Hjælper en ISO 27001-certificering?",
+          "a": "Ja, den dækker mange af kravene. Tjek, at dit scope omfatter alle berørte systemer og leverandører, og at dine adgangskontroller virker i praksis."
+        },
+        {
+          "q": "Hvad koster den indledende samtale?",
+          "a": "Ingenting. På 30 minutter taler vi om, hvor du står i dag, og om og hvordan vi kan hjælpe. Alle henvendelser får svar inden for én arbejdsdag."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Hvor står din adgangsstyring i dag?",
+      "text": "På 30 minutter finder vi ud af, hvilke NIS2-krav der gælder for dig, og hvor du får mest ud af at starte. Gratis og uden salgstale.",
+      "cta": {
+        "label": "Book din indledende samtale",
+        "href": "/da/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=NIS2%20og%20IAM"
+      }
+    }
+  ]
+}

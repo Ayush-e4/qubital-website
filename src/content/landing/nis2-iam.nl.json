@@ -1,0 +1,255 @@
+{
+  "locale": "nl",
+  "path": "/nl/nis2-identity-access-management",
+  "alternates": {
+    "de": "/de/nis2-iam",
+    "en": "/en/nis2-identity-access-management",
+    "fr": "/fr/nis2-gestion-des-identites-et-des-acces",
+    "it": "/it/nis2-gestione-identita-e-accessi",
+    "es": "/es/nis2-gestion-de-identidades-y-accesos",
+    "nl": "/nl/nis2-identity-access-management",
+    "pl": "/pl/nis2-zarzadzanie-tozsamoscia-i-dostepem",
+    "pt": "/pt/nis2-gestao-de-identidades-e-acessos",
+    "sv": "/sv/nis2-identitets-och-behorighetshantering",
+    "da": "/da/nis2-identitets-og-adgangsstyring",
+    "x-default": "/en/nis2-identity-access-management"
+  },
+  "meta": {
+    "title": "NIS2 toegangsbeheer en IAM-compliance · Qubital",
+    "description": "NIS2 toegangsbeheer en identity & access management: toegangscontrole, MFA, geprivilegieerde accounts, toegang voor leveranciers en auditbestendig bewijs.",
+    "ogImageAlt": "NIS2 en identity & access management met Qubital"
+  },
+  "service": {
+    "serviceType": "Advies over identity & access management: NIS2-compliance voor toegangsbeheer",
+    "ogImage": "/og/nis2-iam-nl.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/nl"
+    },
+    {
+      "name": "Diensten",
+      "href": "/nl/diensten"
+    },
+    {
+      "name": "NIS2 en IAM",
+      "href": "/nl/nis2-identity-access-management"
+    }
+  ],
+  "hero": {
+    "eyebrow": "NIS2 · Identity & access management",
+    "h1": "NIS2 toegangsbeheer dat een audit doorstaat.",
+    "lead": "Met NIS2 staan toegangsbeheer, inlogbeveiliging en toegang van leveranciers op de auditagenda, en u moet aantonen dat uw maatregelen werken. Wij sporen de hiaten op en dichten ze op het platform dat u al gebruikt.",
+    "cta": {
+      "label": "Plan een gratis kennismakingsgesprek",
+      "href": "/nl/contact"
+    },
+    "secondaryCta": {
+      "label": "Bekijk de NIS2 IAM-checklist",
+      "href": "#checklist"
+    },
+    "facts": [
+      {
+        "value": "8",
+        "label": "controlepunten in onze NIS2 IAM-checklist"
+      },
+      {
+        "value": "4",
+        "label": "stappen van gap-analyse tot bewijs dat in de dagelijkse operatie ontstaat"
+      },
+      {
+        "value": "2",
+        "label": "weken voor een gemiddelde gap-analyse"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "requirements",
+      "type": "text",
+      "heading": "Wat NIS2 betekent voor identiteiten en toegang",
+      "paragraphs": [
+        "NIS2 haalt identiteiten de security-audit in: wie heeft waar toegang toe, hoe wordt toegang verleend en ingetrokken, hoe zijn logins beveiligd en waar kunnen uw dienstverleners bij. Welke regels voor u gelden, hangt af van uw sector, uw omvang en het land waarin u actief bent.",
+        "Bij een audit telt wat u kunt laten zien: een goedgekeurd beleid, een volledige inventaris, hercertificeringen met resultaten en logs die u ook echt terugvindt wanneer er iets gebeurt. Dat MFA aanstaat, beantwoordt op zichzelf geen van deze vragen."
+      ]
+    },
+    {
+      "id": "mapping",
+      "type": "table",
+      "heading": "Waar identity & access management past in een NIS2-programma",
+      "columns": ["Domein", "Wat auditors willen zien", "IAM-bouwsteen"],
+      "rows": [
+        [
+          "Toegangsbeheer en beheer van bedrijfsmiddelen",
+          "Een goedgekeurd beleid voor toegangsbeheer, een inventaris van identiteiten, gedocumenteerd verlenen en intrekken van toegang, regelmatige hercertificering",
+          "Identity governance & administration (IGA)"
+        ],
+        [
+          "Personeelsbeveiliging",
+          "Toegang wordt direct en volledig ingetrokken wanneer iemand vertrekt of van functie wisselt",
+          "Geautomatiseerd joiner-mover-leaver-proces"
+        ],
+        [
+          "Multifactorauthenticatie",
+          "MFA-dekking per gebruikersgroep, phishingbestendige methoden voor beheerders en toegang op afstand",
+          "Workforce identity, conditional access"
+        ],
+        [
+          "Beveiliging van de toeleveringsketen",
+          "Toegang van leveranciers is in tijd beperkt, onderbouwd, goedgekeurd en gelogd",
+          "Privileged access management (PAM), IGA voor externe gebruikers"
+        ],
+        [
+          "Incidentafhandeling",
+          "Authenticatie- en wijzigingslogs waarmee u een incident kunt reconstrueren en melden",
+          "Logging, sessieopname via PAM"
+        ]
+      ],
+      "after": "Deze verplichtingen gelden voor elk account, dus ook voor serviceaccounts, API-sleutels en AI-agents. In veel gap-analyses zijn juist die accounts het grootste hiaat."
+    },
+    {
+      "id": "checklist",
+      "type": "checklist",
+      "heading": "De NIS2 IAM-checklist",
+      "intro": "Deze acht punten controleren wij bij elke NIS2-gap-analyse. Hoeveel daarvan kunt u vandaag aantonen?",
+      "items": [
+        {
+          "title": "1. Beleid voor toegangsbeheer",
+          "text": "Op schrift, met versiebeheer en goedgekeurd door het management."
+        },
+        {
+          "title": "2. Volledige inventaris van identiteiten",
+          "text": "Medewerkers, externe krachten, beheerders, serviceaccounts en AI-agents, elk met een verantwoordelijke eigenaar."
+        },
+        {
+          "title": "3. Joiner-mover-leaver",
+          "text": "Toegang wordt automatisch verleend en ingetrokken bij indiensttreding, functiewissel en vertrek."
+        },
+        {
+          "title": "4. Hercertificering met bewijs",
+          "text": "Managers en systeemeigenaren bevestigen toegang regelmatig, en het resultaat wordt vastgelegd."
+        },
+        {
+          "title": "5. MFA voor iedereen, phishingbestendig voor beheerders",
+          "text": "FIDO2 of passkeys voor geprivilegieerde accounts en toegang op afstand."
+        },
+        {
+          "title": "6. Geprivilegieerde accounts onder controle",
+          "text": "Wachtwoorden in een kluis, just-in-time-toegang en sessieopname voor beheerders."
+        },
+        {
+          "title": "7. Tijdgebonden toegang voor leveranciers",
+          "text": "Elke externe toegang heeft een einddatum, een reden en een goedkeuring."
+        },
+        {
+          "title": "8. Logs die u terugvindt",
+          "text": "Logins en toegangswijzigingen worden centraal opgeslagen en lang genoeg bewaard."
+        }
+      ],
+      "link": {
+        "label": "Serviceaccounts en AI-agents beheren onder NIS2",
+        "href": "/nl/diensten/niet-menselijke-identiteiten-ai-agents"
+      }
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Zo werken wij",
+      "intro": "Vier stappen. Na elke stap beslist u of en hoe we verdergaan.",
+      "items": [
+        {
+          "title": "Gap-analyse",
+          "duration": "Circa 2 weken",
+          "text": "Wij toetsen uw identiteiten, processen en platforms aan de NIS2-eisen en aan de checklist hierboven. U krijgt een overzicht van de hiaten, elk beoordeeld op risico en inspanning."
+        },
+        {
+          "title": "Actieplan",
+          "duration": "Circa 1 week",
+          "text": "Wij prioriteren de maatregelen op risico en auditrelevantie en bereiden de documenten zo voor dat uw directie ze kan goedkeuren."
+        },
+        {
+          "title": "Implementatie",
+          "duration": "Iteratief",
+          "text": "Wij voeren de maatregelen door op het platform dat u al gebruikt, bijvoorbeeld Microsoft Entra ID, One Identity, SailPoint of CyberArk. Elke twee weken ziet u de voortgang in een demo."
+        },
+        {
+          "title": "Bewijs en beheer",
+          "duration": "Doorlopend",
+          "text": "Wij richten rapportages en hercertificeringen zo in dat het bewijs vanzelf ontstaat in de dagelijkse operatie. Als u dat wilt, beheren wij het platform voor u."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Wat u van ons krijgt",
+      "items": [
+        {
+          "title": "Heldere taal voor het management",
+          "text": "Wij vertalen artikelen en bepalingen naar concrete beslissingen, met risico, inspanning en volgorde."
+        },
+        {
+          "title": "Leveranciersonafhankelijk",
+          "text": "Wij beginnen bij de licenties die u al hebt. Een nieuw platform adviseren we alleen als het bestaande niet aan de eisen kan voldoen."
+        },
+        {
+          "title": "Eén aanspreekpunt",
+          "text": "Eén vaste contactpersoon blijft bij u van de gap-analyse tot de audit, in het Duits of Engels."
+        },
+        {
+          "title": "Eén implementatie, meerdere normen",
+          "text": "Wij koppelen elke maatregel aan ISO 27001 (Annex A 5.15 tot en met 5.18 en 8.2) en waar relevant aan DORA."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Uit een recent project",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NIS2 project – industry, size, main gaps, measures implemented, audit outcome. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Vragen over NIS2 en IAM",
+      "items": [
+        {
+          "q": "Valt onze organisatie onder NIS2?",
+          "a": "Dat hangt af van uw sector, uw omvang en uw rol in de toeleveringsketen. Nationale autoriteiten, zoals het BSI in Duitsland, bieden tools voor een zelfbeoordeling. Twijfelt u, dan zoeken we het samen uit in het kennismakingsgesprek."
+        },
+        {
+          "q": "Is multifactorauthenticatie voldoende voor NIS2?",
+          "a": "Nee. Auditors kijken ook naar toegangsbeheer, een beheerde levenscyclus van accounts, toegang van leveranciers en logging."
+        },
+        {
+          "q": "Geldt NIS2 ook voor serviceaccounts en AI-agents?",
+          "a": "Ja. De eisen aan toegangsbeheer gelden voor elk account, van mens of machine. Technische accounts zonder verantwoordelijke eigenaar zijn een veelvoorkomende auditbevinding."
+        },
+        {
+          "q": "Helpt een ISO 27001-certificering?",
+          "a": "Ja, die dekt veel van de eisen af. Controleer wel of uw scope alle betrokken systemen en dienstverleners omvat, en of uw toegangsmaatregelen in de praktijk werken."
+        },
+        {
+          "q": "Wat kost het kennismakingsgesprek?",
+          "a": "Niets. In 30 minuten bespreken we waar u nu staat en of en hoe wij kunnen helpen. Elke aanvraag krijgt binnen één werkdag een antwoord."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Hoe staat uw toegangsbeheer er vandaag voor?",
+      "text": "In 30 minuten brengen we in kaart welke NIS2-eisen voor u gelden en waar u het best kunt beginnen voor het grootste effect. Gratis en zonder verkooppraatje.",
+      "cta": {
+        "label": "Plan uw kennismakingsgesprek",
+        "href": "/nl/contact"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=NIS2%20en%20IAM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "locale": "nl",
+  "path": "/nl/diensten/niet-menselijke-identiteiten-ai-agents",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "fr": "/fr/services/identites-non-humaines-agents-ia",
+    "it": "/it/servizi/identita-non-umane-agenti-ai",
+    "es": "/es/servicios/identidades-no-humanas-agentes-ia",
+    "nl": "/nl/diensten/niet-menselijke-identiteiten-ai-agents",
+    "pl": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai",
+    "pt": "/pt/servicos/identidades-nao-humanas-agentes-ia",
+    "sv": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter",
+    "da": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Niet-menselijke identiteiten en AI-agents · Qubital",
+    "description": "Beheer serviceaccounts, API-sleutels, workloads en AI-agents als elke andere identiteit: inventaris, vaste eigenaar, levenscyclus en least privilege.",
+    "ogImageAlt": "Niet-menselijke identiteiten en AI-agents met Qubital"
+  },
+  "service": {
+    "serviceType": "Advies over identity & access management: governance van niet-menselijke identiteiten en AI-agents",
+    "ogImage": "/og/nhi-nl.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/nl"
+    },
+    {
+      "name": "Diensten",
+      "href": "/nl/diensten"
+    },
+    {
+      "name": "Niet-menselijke identiteiten & AI-agents",
+      "href": "/nl/diensten/niet-menselijke-identiteiten-ai-agents"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Niet-menselijke identiteiten · AI-agents",
+    "h1": "Niet-menselijke identiteiten onder controle: serviceaccounts, API-sleutels en AI-agents.",
+    "lead": "Voor elke medewerker is er een proces bij indiensttreding en bij vertrek. De vele niet-menselijke identiteiten in uw systemen, zoals technische accounts, secrets en agents, hebben meestal geen van beide. Wij brengen ze onder uw identity governance, met een inventaris, een verantwoordelijke eigenaar, een levenscyclus en strak afgebakende toegang.",
+    "cta": {
+      "label": "Plan een gratis kennismakingsgesprek",
+      "href": "/nl/contact"
+    },
+    "secondaryCta": {
+      "label": "Wat wij leveren",
+      "href": "#deliverables"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "machine-identiteiten per medewerker (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "verantwoordelijke eigenaar voor elke technische identiteit"
+      },
+      {
+        "value": "0",
+        "label": "permanente secrets waar kortlevende credentials mogelijk zijn"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Waarom standaard IGA-processen deze accounts missen",
+      "paragraphs": [
+        "Identity governance is gebouwd voor mensen. Een account begint met een arbeidscontract, een manager bevestigt de toegang en bij vertrek wordt het account uitgeschakeld. Een serviceaccount heeft geen contract, een API-sleutel heeft geen manager en een certificaat verloopt zonder dat iemand iets wordt gevraagd.",
+        "Auditors kennen het resultaat: serviceaccounts met domain-adminrechten waarvan niemand meer weet waarvoor ze dienen, secrets in broncode die al jaren geldig zijn en accounts van afgeronde projecten die nog steeds werken.",
+        "NIS2 en DORA maken bij toegangsbeheer geen onderscheid tussen mensen en machines. Voor technische accounts gelden dezelfde eisen aan inventaris, toegangsverlening en bewijs."
+      ]
+    },
+    {
+      "id": "types",
+      "type": "table",
+      "heading": "Veelvoorkomende niet-menselijke identiteiten en hun maatregelen",
+      "columns": ["Identiteit", "Typisch risico", "Maatregel"],
+      "rows": [
+        [
+          "Serviceaccounts in Active Directory en Entra ID",
+          "Te ruime rechten, wachtwoorden die nooit verlopen, geen verantwoordelijke eigenaar",
+          "Eigenaar toewijzen, hercertificering, wachtwoordrotatie via PAM of gMSA"
+        ],
+        [
+          "API-sleutels en secrets",
+          "Opgeslagen in code, configuratiebestanden of tickets, jarenlang geldig",
+          "Centrale kluis, rotatie, vervaldata, secret scanning"
+        ],
+        [
+          "Certificaten",
+          "Onopgemerkt verlopen met storingen als gevolg, geen overzicht",
+          "Inventaris, geautomatiseerde verlenging, een eigenaar per certificaat"
+        ],
+        [
+          "Cloud workload identities",
+          "Statische credentials in plaats van managed identities",
+          "Managed identities, workload identity federation, least privilege"
+        ],
+        [
+          "RPA-bots",
+          "Draaien met de rechten van een persoon of via een gedeeld account",
+          "Een eigen identiteit per bot, beperkte rollen, logging"
+        ],
+        [
+          "AI-agents",
+          "Handelen namens gebruikers, vaak met meer rechten dan nodig, moeilijk te herleiden",
+          "Een eigen agentidentiteit, beperkte delegatie, goedkeuring voor kritieke acties, volledige logs"
+        ]
+      ],
+      "after": "De meeste van deze maatregelen kunt u realiseren met uw bestaande IGA-, PAM- of cloudplatform. Een extra tool adviseren we alleen als die een concreet hiaat dicht."
+    },
+    {
+      "id": "deliverables",
+      "type": "features",
+      "heading": "Wat wij leveren",
+      "items": [
+        {
+          "title": "Inventaris",
+          "text": "Wij sporen serviceaccounts, secrets, certificaten, workload identities en AI-agents op in Active Directory, Entra ID, cloudplatforms en SaaS-applicaties."
+        },
+        {
+          "title": "Eigenaarschap",
+          "text": "Elke technische identiteit krijgt een verantwoordelijke eigenaar die het doel ervan kent en de toegang bevestigt."
+        },
+        {
+          "title": "Levenscyclus",
+          "text": "Aanmaken, hercertificeren en uitfaseren verlopen via vastgelegde processen in uw IGA-platform."
+        },
+        {
+          "title": "Kortlevende credentials",
+          "text": "Waar mogelijk vervangen we permanente secrets door managed identities, workload identity federation en kluizen met rotatie."
+        },
+        {
+          "title": "Least privilege en monitoring",
+          "text": "Wij beperken toegang tot wat nodig is, loggen het gebruik en maken afwijkingen zichtbaar."
+        },
+        {
+          "title": "Governance voor AI-agents",
+          "text": "Voor elke agent leggen we identiteit, delegatie, toegangsbereik en logging vast, bijvoorbeeld met Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Lees meer: Niet-menselijke identiteiten en AI-agents: het governance-gat dichten",
+        "href": "/nl/blog/niet-menselijke-identiteiten-en-ai-agents"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "type": "text",
+      "heading": "AI-agents: wat er anders is",
+      "paragraphs": [
+        "Een AI-agent leest e-mail, plant afspraken, wijzigt records of roept andere systemen aan, vaak namens een gebruiker. Bij elke actie roept dat twee vragen op: wiens rechten gelden op dit moment, en wie heeft ze goedgekeurd?",
+        "Wij behandelen agents als volwaardige identiteiten, elk met een verantwoordelijke eigenaar. Ze krijgen alleen de toegang die hun taak vereist, gedelegeerde rechten zijn beperkt in tijd en reikwijdte, kritieke acties vragen menselijke goedkeuring en elke actie is te herleiden tot zowel de agent als de gebruiker die hem aanstuurde."
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Zo werken wij",
+      "intro": "Vier stappen. Na elke stap beslist u of en hoe we verdergaan.",
+      "items": [
+        {
+          "title": "Inventarisatie en risicoanalyse",
+          "duration": "1–2 weken",
+          "text": "Wij brengen de technische identiteiten in uw belangrijkste systemen in kaart en beoordelen ze op toegang, leeftijd, gebruik en eigenaarschap."
+        },
+        {
+          "title": "Doelmodel en spelregels",
+          "duration": "1–3 weken",
+          "text": "Wij leggen vast hoe technische identiteiten worden aangemaakt, wie de eigenaar is, hoe vaak ze worden beoordeeld en wanneer ze vervallen, en welk platform wat afhandelt."
+        },
+        {
+          "title": "Implementatie",
+          "duration": "Iteratief",
+          "text": "Wij schonen op, wijzen eigenaren toe, voeren rotatie en kortlevende credentials in en koppelen de processen aan uw IGA- of PAM-platform."
+        },
+        {
+          "title": "Beheer",
+          "duration": "Doorlopend",
+          "text": "Hercertificeringen, rapportages en alerts worden onderdeel van de dagelijkse operatie. Als u dat wilt, voeren wij ze voor u uit."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Uit een recent project",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NHI project – industry, number of technical accounts found, share without an owner, result after clean-up. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Vragen over niet-menselijke identiteiten",
+      "items": [
+        {
+          "q": "Wat is een niet-menselijke identiteit?",
+          "a": "Elke identiteit die niet bij een persoon hoort: serviceaccounts, technische gebruikers, API-sleutels, certificaten, workload identities, bots en AI-agents."
+        },
+        {
+          "q": "Hebben we een speciale NHI-tool nodig?",
+          "a": "Niet per se. Veel eisen kunt u afdekken met uw bestaande IGA-, PAM- of cloudplatform. Wij beoordelen dat leveranciersonafhankelijk en adviseren alleen een extra tool als die een concreet hiaat dicht."
+        },
+        {
+          "q": "Hoe vindt u serviceaccounts die nergens zijn gedocumenteerd?",
+          "a": "Wij analyseren directories, inloglogs, cloudconfiguraties en kluizen en toetsen de resultaten bij de systeemeigenaren. Accounts die niemand claimt, worden gecontroleerd uitgeschakeld en gemonitord voordat ze worden verwijderd."
+        },
+        {
+          "q": "Hoe verhoudt dit zich tot NIS2 en DORA?",
+          "a": "Beide vereisen aantoonbare controle over toegang, of die nu door een persoon of door een machine plaatsvindt. Technische accounts zonder verantwoordelijke eigenaar zijn een veelvoorkomende auditbevinding."
+        },
+        {
+          "q": "Wat kost het kennismakingsgesprek?",
+          "a": "Niets. In 30 minuten bespreken we waar u nu staat en of en hoe wij kunnen helpen. Elke aanvraag krijgt binnen één werkdag een antwoord."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Weet u hoeveel serviceaccounts u hebt?",
+      "text": "In 30 minuten brengen we in kaart waar uw technische identiteiten zich bevinden en waar u het best kunt beginnen voor het grootste effect. Gratis en zonder verkooppraatje.",
+      "cta": {
+        "label": "Plan uw kennismakingsgesprek",
+        "href": "/nl/contact"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Niet-menselijke%20identiteiten"
+      }
+    }
+  ]
+}

@@ -4,6 +4,14 @@
   "alternates": {
     "de": "/de/sap-idm-abloesung",
     "en": "/en/sap-idm-replacement",
+    "fr": "/fr/remplacement-sap-idm",
+    "it": "/it/sostituzione-sap-idm",
+    "es": "/es/sustitucion-sap-idm",
+    "nl": "/nl/sap-idm-vervangen",
+    "pl": "/pl/zastapienie-sap-idm",
+    "pt": "/pt/substituicao-sap-idm",
+    "sv": "/sv/ersatta-sap-idm",
+    "da": "/da/udskiftning-af-sap-idm",
     "x-default": "/en/sap-idm-replacement"
   },
   "meta": {

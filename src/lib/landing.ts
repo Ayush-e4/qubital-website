@@ -10,7 +10,7 @@ import { getPathname } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
 import { ogImage as siteOgImage, ogLocale } from '@/lib/page';
 
-/** Canonical plus hreflang for German, English and x-default (English) only. */
+/** Canonical plus hreflang for every language and x-default (English). */
 export function landingAlternates(locale: Locale, href: LandingPathname) {
   return {
     canonical: getPathname({ locale, href }),
@@ -33,7 +33,6 @@ export async function landingMetadata(
   const title = page.meta.title.replace(/\s·\s[^·]+$/, '');
   const { description } = page.meta;
   const image = { ...siteOgImage, url: page.service.ogImage, alt: page.meta.ogImageAlt };
-  const { alternateLocale: _all, ...og } = ogLocale(locale as Locale);
   return {
     title,
     description,
@@ -42,10 +41,7 @@ export async function landingMetadata(
       title: `${title} · ${site.name}`,
       description,
       url: getPathname({ locale: locale as Locale, href }),
-      ...og,
-      alternateLocale: landingLocales
-        .filter((l) => l !== locale)
-        .map((l) => (l === 'de' ? 'de_DE' : 'en_GB')),
+      ...ogLocale(locale as Locale),
       images: [image],
     },
     twitter: {

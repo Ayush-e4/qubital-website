@@ -41,8 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Landing pages exist in German and English only, so only those two are listed
-  // and linked; x-default points at English like everywhere else.
+  // Landing pages also name x-default (English), as their hreflang tags do.
   const landingEntries = landingPathnames.flatMap((href) =>
     landingLocales.map((locale) => ({
       url: site.url + getPathname({ locale, href }),

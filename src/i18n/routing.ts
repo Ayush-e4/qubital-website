@@ -1,21 +1,5 @@
 import { defineRouting } from 'next-intl/routing';
 
-// Topic landing pages exist in German and English only (see src/content/landing).
-// next-intl needs a slug for every locale, so the others reuse the English one;
-// the page answers 404 there and the language picker redirects away from it.
-const deEnOnly = (de: string, en: string) => ({
-  de,
-  en,
-  fr: en,
-  it: en,
-  es: en,
-  nl: en,
-  pl: en,
-  pt: en,
-  sv: en,
-  da: en,
-});
-
 // Every language has its own prefix and localized slugs. A visitor's browser
 // language picks the locale (fr-BE gets French, nl-BE Dutch, de-AT German …);
 // any other language falls back to English, so everyone lands on a page they can read.
@@ -96,12 +80,42 @@ export const routing = defineRouting({
       sv: '/karriar',
       da: '/karriere',
     },
-    '/sap-idm-replacement': deEnOnly('/sap-idm-abloesung', '/sap-idm-replacement'),
-    '/nis2-iam': deEnOnly('/nis2-iam', '/nis2-identity-access-management'),
-    '/services/non-human-identity-ai-agents': deEnOnly(
-      '/leistungen/non-human-identities-ki-agenten',
-      '/services/non-human-identity-ai-agents'
-    ),
+    '/sap-idm-replacement': {
+      de: '/sap-idm-abloesung',
+      en: '/sap-idm-replacement',
+      fr: '/remplacement-sap-idm',
+      it: '/sostituzione-sap-idm',
+      es: '/sustitucion-sap-idm',
+      nl: '/sap-idm-vervangen',
+      pl: '/zastapienie-sap-idm',
+      pt: '/substituicao-sap-idm',
+      sv: '/ersatta-sap-idm',
+      da: '/udskiftning-af-sap-idm',
+    },
+    '/nis2-iam': {
+      de: '/nis2-iam',
+      en: '/nis2-identity-access-management',
+      fr: '/nis2-gestion-des-identites-et-des-acces',
+      it: '/nis2-gestione-identita-e-accessi',
+      es: '/nis2-gestion-de-identidades-y-accesos',
+      nl: '/nis2-identity-access-management',
+      pl: '/nis2-zarzadzanie-tozsamoscia-i-dostepem',
+      pt: '/nis2-gestao-de-identidades-e-acessos',
+      sv: '/nis2-identitets-och-behorighetshantering',
+      da: '/nis2-identitets-og-adgangsstyring',
+    },
+    '/services/non-human-identity-ai-agents': {
+      de: '/leistungen/non-human-identities-ki-agenten',
+      en: '/services/non-human-identity-ai-agents',
+      fr: '/services/identites-non-humaines-agents-ia',
+      it: '/servizi/identita-non-umane-agenti-ai',
+      es: '/servicios/identidades-no-humanas-agentes-ia',
+      nl: '/diensten/niet-menselijke-identiteiten-ai-agents',
+      pl: '/uslugi/tozsamosci-nieosobowe-agenci-ai',
+      pt: '/servicos/identidades-nao-humanas-agentes-ia',
+      sv: '/tjanster/icke-manskliga-identiteter-ai-agenter',
+      da: '/ydelser/ikke-menneskelige-identiteter-ai-agenter',
+    },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
     '/contact': {

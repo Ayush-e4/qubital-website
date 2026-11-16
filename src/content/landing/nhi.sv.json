@@ -1,0 +1,238 @@
+{
+  "locale": "sv",
+  "path": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "fr": "/fr/services/identites-non-humaines-agents-ia",
+    "it": "/it/servizi/identita-non-umane-agenti-ai",
+    "es": "/es/servicios/identidades-no-humanas-agentes-ia",
+    "nl": "/nl/diensten/niet-menselijke-identiteiten-ai-agents",
+    "pl": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai",
+    "pt": "/pt/servicos/identidades-nao-humanas-agentes-ia",
+    "sv": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter",
+    "da": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Styrning av icke-mänskliga identiteter · Qubital",
+    "description": "Styr tjänstekonton, API-nycklar, arbetslaster och AI-agenter som vilken annan identitet som helst: inventering, ansvarig ägare, livscykel och minsta behörighet.",
+    "ogImageAlt": "Icke-mänskliga identiteter och AI-agenter med Qubital"
+  },
+  "service": {
+    "serviceType": "Konsulttjänster inom identitets- och åtkomsthantering: styrning av icke-mänskliga identiteter och AI-agenter",
+    "ogImage": "/og/nhi-sv.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/sv"
+    },
+    {
+      "name": "Tjänster",
+      "href": "/sv/tjanster"
+    },
+    {
+      "name": "Icke-mänskliga identiteter och AI-agenter",
+      "href": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Icke-mänskliga identiteter · AI-agenter",
+    "h1": "Icke-mänskliga identiteter under kontroll: tjänstekonton, API-nycklar och AI-agenter.",
+    "lead": "För varje medarbetare finns en process för när anställningen börjar och när den upphör. De många tekniska konton, hemligheter och agenter som arbetar i era system saknar oftast en sådan process. Vi för in dessa icke-mänskliga identiteter i er identitetsstyrning, med inventering, en ansvarig ägare, en livscykel och snävt avgränsad åtkomst.",
+    "cta": {
+      "label": "Boka ett kostnadsfritt inledande samtal",
+      "href": "/sv/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Det här levererar vi",
+      "href": "#deliverables"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "maskinidentiteter per medarbetare (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "ansvarig ägare för varje teknisk identitet"
+      },
+      {
+        "value": "0",
+        "label": "permanenta hemligheter där kortlivade inloggningsuppgifter är möjliga"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Därför missar vanliga IGA-processer de här kontona",
+      "paragraphs": [
+        "Identitetsstyrning är byggd för människor. Ett konto börjar med ett anställningsavtal, en chef bekräftar åtkomsten och kontot inaktiveras när personen slutar. Ett tjänstekonto har inget avtal, en API-nyckel har ingen chef, och ett certifikat löper ut utan att någon tillfrågas.",
+        "Revisorerna känner igen resultatet: tjänstekonton med domänadministratörsrättigheter som ingen längre minns syftet med, hemligheter i källkod som har varit giltiga i åratal och konton från avslutade projekt som fortfarande fungerar.",
+        "NIS2 och DORA gör ingen skillnad på människor och maskiner när det gäller åtkomstkontroll. Tekniska konton omfattas av samma krav på inventering, tilldelning av åtkomst och underlag."
+      ]
+    },
+    {
+      "id": "types",
+      "type": "table",
+      "heading": "Vanliga icke-mänskliga identiteter och deras kontroller",
+      "columns": ["Identitet", "Typisk risk", "Kontroll"],
+      "rows": [
+        [
+          "Tjänstekonton i Active Directory och Entra ID",
+          "För långtgående rättigheter, lösenord som aldrig löper ut, ingen ansvarig ägare",
+          "Utsedd ägare, attestering, lösenordsrotation via PAM eller gMSA"
+        ],
+        [
+          "API-nycklar och hemligheter",
+          "Lagrade i kod, konfigurationsfiler eller ärenden, giltiga i åratal",
+          "Centralt valv, rotation, utgångsdatum, skanning efter hemligheter"
+        ],
+        [
+          "Certifikat",
+          "Oupptäckt utgång som orsakar avbrott, ingen överblick",
+          "Inventering, automatisk förnyelse, en ägare per certifikat"
+        ],
+        [
+          "Identiteter för molnarbetslaster",
+          "Statiska inloggningsuppgifter i stället för hanterade identiteter",
+          "Hanterade identiteter, workload identity federation, minsta möjliga behörighet"
+        ],
+        [
+          "RPA-botar",
+          "Körs med en persons rättigheter eller ett delat konto",
+          "En egen identitet per bot, snäva roller, loggning"
+        ],
+        [
+          "AI-agenter",
+          "Agerar för användares räkning, ofta med fler rättigheter än nödvändigt, svåra att spåra",
+          "En dedikerad agentidentitet, begränsad delegering, godkännande för kritiska åtgärder, fullständiga loggar"
+        ]
+      ],
+      "after": "De flesta av dessa kontroller går att genomföra med er befintliga IGA-, PAM- eller molnplattform. Ett ytterligare verktyg rekommenderar vi bara när det täpper till en specifik lucka."
+    },
+    {
+      "id": "deliverables",
+      "type": "features",
+      "heading": "Det här levererar vi",
+      "items": [
+        {
+          "title": "Inventering",
+          "text": "Vi hittar tjänstekonton, hemligheter, certifikat, arbetslastidentiteter och AI-agenter i Active Directory, Entra ID, molnplattformar och SaaS-applikationer."
+        },
+        {
+          "title": "Ägarskap",
+          "text": "Varje teknisk identitet får en ansvarig ägare som känner till dess syfte och bekräftar dess åtkomst."
+        },
+        {
+          "title": "Livscykel",
+          "text": "Skapande, attestering och avveckling sker genom definierade processer i er IGA-plattform."
+        },
+        {
+          "title": "Kortlivade inloggningsuppgifter",
+          "text": "Där det går ersätter vi permanenta hemligheter med hanterade identiteter, workload identity federation och valv med rotation."
+        },
+        {
+          "title": "Minsta möjliga behörighet och övervakning",
+          "text": "Vi skär ner åtkomsten till det som behövs, loggar hur den används och synliggör avvikelser."
+        },
+        {
+          "title": "Styrning av AI-agenter",
+          "text": "För varje agent definierar vi identitet, delegering, åtkomstens omfattning och loggning, till exempel med Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Läs mer: Icke-mänskliga identiteter och AI-agenter: så täpper ni till luckan",
+        "href": "/sv/blog/icke-manskliga-identiteter-och-ai-agenter"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "type": "text",
+      "heading": "AI-agenter: det här skiljer sig",
+      "paragraphs": [
+        "En AI-agent läser e-post, bokar möten, ändrar poster eller anropar andra system, ofta för en användares räkning. För varje handling väcker det två frågor: vems rättigheter gäller just nu, och vem har godkänt dem?",
+        "Vi behandlar agenter som egna identiteter, var och en med en ansvarig ägare. De får bara den åtkomst som deras uppgift kräver, delegerade rättigheter är begränsade i tid och omfattning, kritiska åtgärder kräver mänskligt godkännande och varje handling kan spåras både till agenten och till användaren som utlöste den."
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Så arbetar vi",
+      "intro": "Fyra steg. Efter varje steg bestämmer ni om och hur vi går vidare.",
+      "items": [
+        {
+          "title": "Inventering och riskanalys",
+          "duration": "1–2 veckor",
+          "text": "Vi kartlägger de tekniska identiteterna i era viktigaste system och bedömer dem utifrån åtkomst, ålder, användning och ägarskap."
+        },
+        {
+          "title": "Målmodell och regler",
+          "duration": "1–3 veckor",
+          "text": "Vi definierar hur tekniska identiteter skapas, vem som äger dem, hur ofta de granskas och när de avvecklas, samt vilken plattform som hanterar vad."
+        },
+        {
+          "title": "Implementering",
+          "duration": "Iterativt",
+          "text": "Vi städar upp, utser ägare, inför rotation och kortlivade inloggningsuppgifter och kopplar processerna till er IGA- eller PAM-plattform."
+        },
+        {
+          "title": "Drift",
+          "duration": "Löpande",
+          "text": "Attesteringar, rapporter och larm blir en del av den dagliga driften. Om ni vill sköter vi dem åt er."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Från ett aktuellt projekt",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NHI project – industry, number of technical accounts found, share without an owner, result after clean-up. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Frågor om icke-mänskliga identiteter",
+      "items": [
+        {
+          "q": "Vad är en icke-mänsklig identitet?",
+          "a": "Varje identitet som inte tillhör en person: tjänstekonton, tekniska användare, API-nycklar, certifikat, arbetslastidentiteter, botar och AI-agenter."
+        },
+        {
+          "q": "Behöver vi ett dedikerat NHI-verktyg?",
+          "a": "Inte nödvändigtvis. Många krav kan täckas med er befintliga IGA-, PAM- eller molnplattform. Vi bedömer det leverantörsoberoende och rekommenderar ett ytterligare verktyg bara när det täpper till en specifik lucka."
+        },
+        {
+          "q": "Hur hittar ni tjänstekonton som ingen har dokumenterat?",
+          "a": "Vi analyserar kataloger, inloggningsloggar, molnkonfigurationer och valv och stämmer sedan av resultaten med systemägarna. Konton som ingen gör anspråk på inaktiveras kontrollerat och övervakas innan de raderas."
+        },
+        {
+          "q": "Hur hänger det här ihop med NIS2 och DORA?",
+          "a": "Båda kräver bevisbar kontroll över åtkomst, oavsett om det är en person eller en maskin som får åtkomst. Tekniska konton utan ansvarig ägare är en vanlig iakttagelse vid revisioner."
+        },
+        {
+          "q": "Vad kostar det inledande samtalet?",
+          "a": "Ingenting. På 30 minuter går vi igenom var ni står i dag och om och hur vi kan hjälpa till. Varje förfrågan får svar inom en arbetsdag."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Vet ni hur många tjänstekonton ni har?",
+      "text": "På 30 minuter reder vi ut var era tekniska identiteter finns och var ni bör börja för störst effekt. Kostnadsfritt och utan säljsnack.",
+      "cta": {
+        "label": "Boka ert inledande samtal",
+        "href": "/sv/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Icke-m%C3%A4nskliga%20identiteter"
+      }
+    }
+  ]
+}

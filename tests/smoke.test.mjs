@@ -211,15 +211,45 @@ const ROUTES = {
   },
 };
 /**
- * Topic landing pages: German and English only (src/content/landing). Every
- * other locale must answer 404, and their hreflang names de, en and x-default.
+ * Topic landing pages (src/content/landing), one localized slug per language.
+ * Their hreflang names every locale plus x-default (English).
  */
 const LANDING_ROUTES = {
-  'sap-idm': { de: '/de/sap-idm-abloesung', en: '/en/sap-idm-replacement' },
-  'nis2-iam': { de: '/de/nis2-iam', en: '/en/nis2-identity-access-management' },
+  'sap-idm': {
+    de: '/de/sap-idm-abloesung',
+    en: '/en/sap-idm-replacement',
+    fr: '/fr/remplacement-sap-idm',
+    it: '/it/sostituzione-sap-idm',
+    es: '/es/sustitucion-sap-idm',
+    nl: '/nl/sap-idm-vervangen',
+    pl: '/pl/zastapienie-sap-idm',
+    pt: '/pt/substituicao-sap-idm',
+    sv: '/sv/ersatta-sap-idm',
+    da: '/da/udskiftning-af-sap-idm',
+  },
+  'nis2-iam': {
+    de: '/de/nis2-iam',
+    en: '/en/nis2-identity-access-management',
+    fr: '/fr/nis2-gestion-des-identites-et-des-acces',
+    it: '/it/nis2-gestione-identita-e-accessi',
+    es: '/es/nis2-gestion-de-identidades-y-accesos',
+    nl: '/nl/nis2-identity-access-management',
+    pl: '/pl/nis2-zarzadzanie-tozsamoscia-i-dostepem',
+    pt: '/pt/nis2-gestao-de-identidades-e-acessos',
+    sv: '/sv/nis2-identitets-och-behorighetshantering',
+    da: '/da/nis2-identitets-og-adgangsstyring',
+  },
   nhi: {
     de: '/de/leistungen/non-human-identities-ki-agenten',
     en: '/en/services/non-human-identity-ai-agents',
+    fr: '/fr/services/identites-non-humaines-agents-ia',
+    it: '/it/servizi/identita-non-umane-agenti-ai',
+    es: '/es/servicios/identidades-no-humanas-agentes-ia',
+    nl: '/nl/diensten/niet-menselijke-identiteiten-ai-agents',
+    pl: '/pl/uslugi/tozsamosci-nieosobowe-agenci-ai',
+    pt: '/pt/servicos/identidades-nao-humanas-agentes-ia',
+    sv: '/sv/tjanster/icke-manskliga-identiteter-ai-agenter',
+    da: '/da/ydelser/ikke-menneskelige-identiteter-ai-agenter',
   },
 };
 const LOCALES = ['de', 'en', 'fr', 'it', 'es', 'nl', 'pl', 'pt', 'sv', 'da'];
@@ -305,7 +335,7 @@ const attr = (html, re) => html.match(re)?.[1];
 const routeCount = Object.keys(ROUTES).length;
 
 test('sitemap lists every route for every locale', () => {
-  const landingCount = Object.keys(LANDING_ROUTES).length * 2;
+  const landingCount = Object.keys(LANDING_ROUTES).length * LOCALES.length;
   assert.equal(sitemapLocs.length, routeCount * LOCALES.length + landingCount);
   for (const paths of Object.values(LANDING_ROUTES)) {
     for (const path of Object.values(paths)) {
@@ -380,11 +410,11 @@ test('html lang matches the locale being served', () => {
   assert.deepEqual(bad, []);
 });
 
-// --- topic landing pages (German and English only) ---------------------------
+// --- topic landing pages -----------------------------------------------------
 
-test('landing pages: canonical, de/en/x-default hreflang, one brand, structured data', async () => {
+test('landing pages: canonical, hreflang for every locale and x-default, one brand, structured data', async () => {
   const bad = [];
-  for (const [route, paths] of Object.entries(LANDING_ROUTES)) {
+  for (const paths of Object.values(LANDING_ROUTES)) {
     for (const [locale, path] of Object.entries(paths)) {
       const res = await fetch(BASE + path, { redirect: 'manual' });
       if (res.status !== 200) {
@@ -394,15 +424,12 @@ test('landing pages: canonical, de/en/x-default hreflang, one brand, structured 
       const html = await res.text();
       const canonical = attr(html, /<link rel="canonical" href="([^"]*)"/);
       if (canonical !== SITE + path) bad.push(`${path}: canonical ${canonical}`);
-      for (const l of ['de', 'en']) {
+      for (const l of LOCALES) {
         const href = attr(html, new RegExp(`hreflang="${l}" href="([^"]*)"`, 'i'));
         if (href !== SITE + paths[l]) bad.push(`${path} [${l}]: got ${href}`);
       }
       const xDefault = attr(html, /hreflang="x-default" href="([^"]*)"/i);
       if (xDefault !== SITE + paths.en) bad.push(`${path} [x-default]: got ${xDefault}`);
-      for (const l of LOCALES.filter((x) => x !== 'de' && x !== 'en')) {
-        if (new RegExp(`hreflang="${l}"`, 'i').test(html)) bad.push(`${path}: lists ${l}`);
-      }
       const lang = attr(html, /<html[^>]*\slang="([^"]*)"/);
       if (lang !== locale) bad.push(`${path}: lang=${lang}`);
       const title = attr(html, /<title>(.*?)<\/title>/s);
@@ -411,27 +438,16 @@ test('landing pages: canonical, de/en/x-default hreflang, one brand, structured 
       if (!html.includes('"@type":"FAQPage"')) bad.push(`${path}: no FAQPage JSON-LD`);
       if (/\[NEED/.test(html)) bad.push(`${path}: placeholder text rendered`);
       const og = attr(html, /<meta property="og:image" content="([^"]*)"/);
-      if (!og || !og.startsWith(`${SITE}/og/`)) bad.push(`${path}: og:image ${og}`);
-      else {
+      if (!og || !og.startsWith(`${SITE}/og/`) || !og.endsWith(`-${locale}.png`)) {
+        bad.push(`${path}: og:image ${og}`);
+      }
+      if (og) {
         const img = await fetch(BASE + og.slice(SITE.length));
         const type = img.headers.get('content-type');
         if (img.status !== 200 || !type?.startsWith('image/png')) {
           bad.push(`${og} -> ${img.status} ${type}`);
         }
       }
-    }
-    void route;
-  }
-  assert.deepEqual(bad, []);
-});
-
-test('landing pages answer 404 in every other locale', async () => {
-  const bad = [];
-  for (const paths of Object.values(LANDING_ROUTES)) {
-    for (const l of LOCALES.filter((x) => x !== 'de' && x !== 'en')) {
-      const path = paths.en.replace(/^\/en/, `/${l}`);
-      const res = await fetch(BASE + path, { redirect: 'manual' });
-      if (res.status !== 404) bad.push(`${path} -> ${res.status}`);
     }
   }
   assert.deepEqual(bad, []);

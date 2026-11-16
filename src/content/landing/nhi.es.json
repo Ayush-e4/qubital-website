@@ -1,0 +1,238 @@
+{
+  "locale": "es",
+  "path": "/es/servicios/identidades-no-humanas-agentes-ia",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "fr": "/fr/services/identites-non-humaines-agents-ia",
+    "it": "/it/servizi/identita-non-umane-agenti-ai",
+    "es": "/es/servicios/identidades-no-humanas-agentes-ia",
+    "nl": "/nl/diensten/niet-menselijke-identiteiten-ai-agents",
+    "pl": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai",
+    "pt": "/pt/servicos/identidades-nao-humanas-agentes-ia",
+    "sv": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter",
+    "da": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Gobierno de identidades no humanas y agentes de IA · Qubital",
+    "description": "Gobierne cuentas de servicio, claves de API, cargas de trabajo y agentes de IA como identidades: inventario, responsable, ciclo de vida y mínimo privilegio.",
+    "ogImageAlt": "Identidades no humanas y agentes de IA con Qubital"
+  },
+  "service": {
+    "serviceType": "Consultoría de gestión de identidades y accesos: gobierno de identidades no humanas y agentes de IA",
+    "ogImage": "/og/nhi-es.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/es"
+    },
+    {
+      "name": "Servicios",
+      "href": "/es/servicios"
+    },
+    {
+      "name": "Identidades no humanas y agentes de IA",
+      "href": "/es/servicios/identidades-no-humanas-agentes-ia"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Identidades no humanas · Agentes de IA",
+    "h1": "Identidades no humanas bajo control: cuentas de servicio, claves de API y agentes de IA.",
+    "lead": "Cada empleado tiene un proceso de alta y otro de baja. Las numerosas cuentas técnicas, secretos y agentes que trabajan en sus sistemas no suelen tener ninguno de los dos. Incorporamos estas identidades no humanas a su gobierno de identidades, con un inventario, un responsable asignado, un ciclo de vida y accesos de alcance restringido.",
+    "cta": {
+      "label": "Reserve una primera conversación gratuita",
+      "href": "/es/contacto"
+    },
+    "secondaryCta": {
+      "label": "Qué entregamos",
+      "href": "#deliverables"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "identidades de máquina por empleado (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "responsable asignado para cada identidad técnica"
+      },
+      {
+        "value": "0",
+        "label": "secretos permanentes donde sean posibles credenciales de corta duración"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Por qué los procesos IGA estándar pasan por alto estas cuentas",
+      "paragraphs": [
+        "El gobierno de identidades está pensado para personas. Una cuenta nace con un contrato laboral, un responsable confirma los accesos y se desactiva cuando la persona se va. Una cuenta de servicio no tiene contrato, una clave de API no tiene responsable y un certificado caduca sin que nadie lo haya decidido.",
+        "Los auditores conocen el resultado: cuentas de servicio con derechos de administrador de dominio cuyo propósito nadie recuerda, secretos en el código fuente que llevan años siendo válidos y cuentas de proyectos terminados que siguen funcionando.",
+        "NIS2 y DORA no distinguen entre personas y máquinas en lo que respecta al control de acceso. Las cuentas técnicas tienen los mismos requisitos de inventario, concesión de accesos y evidencias."
+      ]
+    },
+    {
+      "id": "types",
+      "type": "table",
+      "heading": "Identidades no humanas habituales y sus controles",
+      "columns": ["Identidad", "Riesgo típico", "Control"],
+      "rows": [
+        [
+          "Cuentas de servicio en Active Directory y Entra ID",
+          "Derechos excesivos, contraseñas que nunca caducan, sin responsable asignado",
+          "Asignación de responsable, recertificación, rotación de contraseñas mediante PAM o gMSA"
+        ],
+        [
+          "Claves de API y secretos",
+          "Guardados en código, archivos de configuración o tickets, válidos durante años",
+          "Bóveda centralizada, rotación, fechas de caducidad, escaneo de secretos"
+        ],
+        [
+          "Certificados",
+          "Caducidades inadvertidas que provocan caídas, sin visión de conjunto",
+          "Inventario, renovación automatizada, un responsable por certificado"
+        ],
+        [
+          "Identidades de cargas de trabajo en la nube",
+          "Credenciales estáticas en lugar de identidades administradas",
+          "Identidades administradas, federación de identidades de cargas de trabajo, mínimo privilegio"
+        ],
+        [
+          "Bots de RPA",
+          "Funcionan con los derechos de una persona o con una cuenta compartida",
+          "Una identidad propia por bot, roles acotados, registro de actividad"
+        ],
+        [
+          "Agentes de IA",
+          "Actúan en nombre de usuarios, a menudo con más derechos de los necesarios, y son difíciles de rastrear",
+          "Una identidad de agente dedicada, delegación limitada, aprobación para acciones críticas, registros completos"
+        ]
+      ],
+      "after": "La mayoría de estos controles pueden implantarse con su plataforma IGA, PAM o cloud actual. Solo recomendamos una herramienta adicional cuando cierra una brecha concreta."
+    },
+    {
+      "id": "deliverables",
+      "type": "features",
+      "heading": "Qué entregamos",
+      "items": [
+        {
+          "title": "Inventario",
+          "text": "Localizamos cuentas de servicio, secretos, certificados, identidades de cargas de trabajo y agentes de IA en Active Directory, Entra ID, plataformas cloud y aplicaciones SaaS."
+        },
+        {
+          "title": "Titularidad",
+          "text": "Cada identidad técnica recibe un responsable que conoce su propósito y confirma sus accesos."
+        },
+        {
+          "title": "Ciclo de vida",
+          "text": "La creación, la recertificación y la retirada siguen procesos definidos en su plataforma IGA."
+        },
+        {
+          "title": "Credenciales de corta duración",
+          "text": "Siempre que es posible, sustituimos los secretos permanentes por identidades administradas, federación de identidades de cargas de trabajo y bóvedas con rotación."
+        },
+        {
+          "title": "Mínimo privilegio y supervisión",
+          "text": "Reducimos los accesos a lo necesario, registramos su uso y hacemos visibles las desviaciones."
+        },
+        {
+          "title": "Gobierno de agentes de IA",
+          "text": "Para cada agente definimos la identidad, la delegación, el alcance de los accesos y el registro, por ejemplo con Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Más información: identidades no humanas y agentes de IA, cómo cerrar la brecha de gobierno",
+        "href": "/es/blog/identidades-no-humanas-y-agentes-de-ia"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "type": "text",
+      "heading": "Agentes de IA: qué cambia",
+      "paragraphs": [
+        "Un agente de IA lee correos, programa reuniones, modifica registros o llama a otros sistemas, a menudo en nombre de un usuario. En cada acción surgen dos preguntas: ¿qué derechos se aplican en ese momento y quién los aprobó?",
+        "Tratamos a los agentes como identidades propias, cada una con un responsable asignado. Solo reciben los accesos que su tarea requiere, los derechos delegados están limitados en tiempo y alcance, las acciones críticas necesitan aprobación humana y cada acción puede atribuirse tanto al agente como al usuario que la desencadenó."
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Cómo trabajamos",
+      "intro": "Cuatro pasos. Tras cada uno, usted decide si continuar y cómo.",
+      "items": [
+        {
+          "title": "Inventario y análisis de riesgos",
+          "duration": "1–2 semanas",
+          "text": "Registramos las identidades técnicas de sus sistemas más importantes y las valoramos según sus accesos, antigüedad, uso y titularidad."
+        },
+        {
+          "title": "Modelo objetivo y reglas",
+          "duration": "1–3 semanas",
+          "text": "Definimos cómo se crean las identidades técnicas, quién es su responsable, con qué frecuencia se revisan y cuándo se retiran, y qué plataforma se encarga de cada cosa."
+        },
+        {
+          "title": "Implantación",
+          "duration": "Iterativo",
+          "text": "Depuramos, asignamos responsables, introducimos la rotación y las credenciales de corta duración, y conectamos los procesos con su plataforma IGA o PAM."
+        },
+        {
+          "title": "Operación",
+          "duration": "Continuo",
+          "text": "Las recertificaciones, los informes y las alertas pasan a formar parte de la operación diaria. Si lo desea, nos encargamos de ellos por usted."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "De un proyecto reciente",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NHI project – industry, number of technical accounts found, share without an owner, result after clean-up. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Preguntas sobre identidades no humanas",
+      "items": [
+        {
+          "q": "¿Qué es una identidad no humana?",
+          "a": "Cualquier identidad que no pertenece a una persona: cuentas de servicio, usuarios técnicos, claves de API, certificados, identidades de cargas de trabajo, bots y agentes de IA."
+        },
+        {
+          "q": "¿Necesitamos una herramienta NHI específica?",
+          "a": "No necesariamente. Muchos requisitos pueden cubrirse con su plataforma IGA, PAM o cloud actual. Lo evaluamos con independencia de los fabricantes y solo recomendamos una herramienta adicional cuando cierra una brecha concreta."
+        },
+        {
+          "q": "¿Cómo encuentran las cuentas de servicio que nadie ha documentado?",
+          "a": "Analizamos directorios, registros de inicio de sesión, configuraciones cloud y bóvedas, y después contrastamos los resultados con los propietarios de los sistemas. Las cuentas que nadie reclama se desactivan de forma controlada y se vigilan antes de eliminarlas."
+        },
+        {
+          "q": "¿Qué relación tiene esto con NIS2 y DORA?",
+          "a": "Ambas exigen un control demostrable de los accesos, tanto si accede una persona como una máquina. Las cuentas técnicas sin un responsable asignado son un hallazgo de auditoría habitual."
+        },
+        {
+          "q": "¿Cuánto cuesta la primera conversación?",
+          "a": "Nada. En 30 minutos vemos en qué punto está y si podemos ayudarle, y cómo. Cada consulta recibe respuesta en el plazo de un día laborable."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "¿Sabe cuántas cuentas de servicio tiene?",
+      "text": "En 30 minutos aclaramos dónde están sus identidades técnicas y por dónde empezar para lograr el mayor efecto. Gratis y sin discurso comercial.",
+      "cta": {
+        "label": "Reserve su primera conversación",
+        "href": "/es/contacto"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Identidades%20no%20humanas"
+      }
+    }
+  ]
+}

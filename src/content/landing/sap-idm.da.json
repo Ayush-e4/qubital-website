@@ -1,0 +1,238 @@
+{
+  "locale": "da",
+  "path": "/da/udskiftning-af-sap-idm",
+  "alternates": {
+    "de": "/de/sap-idm-abloesung",
+    "en": "/en/sap-idm-replacement",
+    "fr": "/fr/remplacement-sap-idm",
+    "it": "/it/sostituzione-sap-idm",
+    "es": "/es/sustitucion-sap-idm",
+    "nl": "/nl/sap-idm-vervangen",
+    "pl": "/pl/zastapienie-sap-idm",
+    "pt": "/pt/substituicao-sap-idm",
+    "sv": "/sv/ersatta-sap-idm",
+    "da": "/da/udskiftning-af-sap-idm",
+    "x-default": "/en/sap-idm-replacement"
+  },
+  "meta": {
+    "title": "Udskiftning af SAP IdM: planlæg migreringen · Qubital",
+    "description": "Vedligeholdelsen af SAP Identity Management slutter i 2027. Vi planlægger udskiftningen og migrerer til Entra ID, SAP Cloud Identity Services eller IGA.",
+    "ogImageAlt": "Udskiftning af SAP IdM med Qubital"
+  },
+  "service": {
+    "serviceType": "Rådgivning i identitets- og adgangsstyring: udskiftning af SAP Identity Management",
+    "ogImage": "/og/sap-idm-da.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/da"
+    },
+    {
+      "name": "Ydelser",
+      "href": "/da/ydelser"
+    },
+    {
+      "name": "Udskiftning af SAP IdM",
+      "href": "/da/erstatning-af-sap-idm"
+    }
+  ],
+  "hero": {
+    "eyebrow": "SAP Identity Management · vedligeholdelsen slutter i 2027",
+    "h1": "Udskiftning af SAP IdM, før vedligeholdelsen slutter.",
+    "lead": "Standardvedligeholdelsen af SAP Identity Management 8.0 slutter den 31. december 2027, og SAP udvikler ikke noget efterfølgende produkt. Vi hjælper dig med udskiftningen af SAP IdM: Vi finder den rette løsning og migrerer dine identiteter, mens forretningen kører videre.",
+    "cta": {
+      "label": "Book en gratis indledende samtale",
+      "href": "/da/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Sådan arbejder vi",
+      "href": "#approach"
+    },
+    "facts": [
+      {
+        "value": "31.12.2027",
+        "label": "Standardvedligeholdelsen af SAP IdM 8.0 slutter"
+      },
+      {
+        "value": "2030",
+        "label": "Den betalte udvidede vedligeholdelse slutter"
+      },
+      {
+        "value": "0",
+        "label": "direkte efterfølgere fra SAP"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "situation",
+      "type": "text",
+      "heading": "Hvad slut på vedligeholdelsen betyder for dig",
+      "paragraphs": [
+        "I mange organisationer opretter SAP IdM brugerkonti, tildeler roller i SAP- og ikke-SAP-systemer og fjerner dem igen, når medarbejdere stopper. Uden SAP IdM mister du den proces, der viser revisorerne, hvem der har adgang til hvad.",
+        "Fra 2028 kommer rettelser kun gennem betalt udvidet vedligeholdelse, og kun indtil udgangen af 2030. I den periode bliver SAP IdM ikke videreudviklet, mens hver ny applikation, hver flytning til S/4HANA og hver cloudintegration kræver mere specialudvikling.",
+        "SAP henviser til Microsoft Entra ID for identitetsstyring og til SAP Cloud Identity Services for brugeradministration i SAP-systemer. Om det rækker til dit systemlandskab, afhænger af dine målsystemer, dine revisionskrav og din rollemodel.",
+        "Brancheanalyser anslår 18 til 36 måneder til en fuld udskiftning i større miljøer. Starter du tæt på deadline, migrerer du under tidspres, og det er netop dér, gamle roller bliver kopieret i stedet for ryddet op."
+      ]
+    },
+    {
+      "id": "options",
+      "type": "table",
+      "heading": "Tre veje efter SAP IdM",
+      "columns": ["Vej", "Passer godt, hvis …", "Det skal du tjekke"],
+      "rows": [
+        [
+          "Microsoft Entra ID Governance med SAP Cloud Identity Services",
+          "Du allerede bruger Microsoft 365 og Entra ID, og dine krav til identitetsstyring er moderate.",
+          "Dækning af funktionsadskillelse (SoD), ikke-SAP-målsystemer uden standardconnector og godkendelser i flere trin."
+        ],
+        [
+          "En dedikeret IGA-platform: One Identity Manager, SailPoint, Omada eller Saviynt",
+          "Du forbinder mange målsystemer, er underlagt skrappe revisionskrav som DORA eller NIS2 eller vil føre en moden rollemodel videre.",
+          "Ekstra licens- og driftsomkostninger, til gengæld for fuld styringsdybde ud over SAP."
+        ],
+        [
+          "Hybrid",
+          "SAP-autorisationer styres via SAP Cloud Identity Services, og styringen på tværs af systemer ligger i en IGA-platform.",
+          "En klar beslutning om, hvilket system der er førende for hvilken beslutning."
+        ]
+      ],
+      "after": "Vi er leverandøruafhængige og arbejder med alle de platforme, der er nævnt her. Hvis den Entra ID-licens, du allerede har, dækker dine krav, er det den, vi anbefaler."
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Sådan arbejder vi",
+      "intro": "Fire trin. Efter hvert trin beslutter du, om og hvordan vi fortsætter.",
+      "items": [
+        {
+          "title": "Kortlæg",
+          "duration": "1–2 uger",
+          "text": "Vi analyserer din SAP IdM-installation: identitetslager, jobs og workflows, rolle- og autorisationsmodel, forbundne systemer og egne udvidelser. Du får en komplet liste over, hvad der skal migreres, erstattes eller lukkes ned."
+        },
+        {
+          "title": "Design og beslut",
+          "duration": "1–3 uger",
+          "text": "Vi vurderer mulighederne op mod dine krav, de licenser, du allerede har, og dit budget. Resultatet er en migreringsplan med målarkitektur, rækkefølge, tidsplan og omkostninger, kort nok til, at din styregruppe kan træffe en beslutning."
+        },
+        {
+          "title": "Migrér i etaper",
+          "duration": "Iterativt",
+          "text": "Vi flytter målsystemer og processer i korte sprints. SAP IdM og den nye platform kører parallelt, indtil hver joiner, mover og leaver beviseligt fungerer i det nye system. Du ser fremskridt i en demo hver anden uge."
+        },
+        {
+          "title": "Luk ned og drift",
+          "duration": "Løbende",
+          "text": "Vi lukker SAP IdM ned på en kontrolleret måde, sikrer revisionsdokumentationen og overdrager dokumentation og viden til dit team. Hvis du ønsker det, driver og videreudvikler vi den nye platform."
+        }
+      ]
+    },
+    {
+      "id": "success-factors",
+      "type": "checklist",
+      "heading": "Det skal en migrering have styr på",
+      "items": [
+        {
+          "title": "Rollemodel før connectors",
+          "text": "Migreringen er den bedste anledning til at rydde op i rollerne. Bygger du connectors først, tager du mange års ophobede rettigheder med over i det nye system."
+        },
+        {
+          "title": "Funktionsadskillelse i systemet",
+          "text": "SoD-regler hører hjemme i målplatformen som et regelsæt, så konflikter viser sig allerede ved anmodningen om adgang, længe før revisionen."
+        },
+        {
+          "title": "Planlæg nødadgang",
+          "text": "Firefighter- og nødkonti mangler i mange migreringsplaner. Revisorerne spørger specifikt efter dem."
+        },
+        {
+          "title": "Dæk hele hybridlandskabet",
+          "text": "Målbilledet skal omfatte S/4HANA, SAP BTP, cloudapplikationer og de on-premises-systemer, der bliver tilbage."
+        },
+        {
+          "title": "Bevar dokumentationen",
+          "text": "Recertificeringer og godkendelseshistorik fra SAP IdM skal kunne hentes frem i hele den lovpligtige opbevaringsperiode."
+        }
+      ],
+      "link": {
+        "label": "Læs mere: Identitetsstyring i SAP-landskaber",
+        "href": "/da/blog/identitetsstyring-for-sap-landskaber"
+      }
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Det får du hos os",
+      "items": [
+        {
+          "title": "Erfarne konsulenter, korte veje",
+          "text": "Du taler med de folk, der leverer dit projekt. Det giver ærlige vurderinger og beslutninger uden omveje."
+        },
+        {
+          "title": "Én kontaktperson",
+          "text": "Én dedikeret person følger dig fra kortlægning til go-live og videre frem, på tysk eller engelsk."
+        },
+        {
+          "title": "Compliance fra dag ét",
+          "text": "GDPR, NIS2, DORA og ISO 27001 former målbilledet fra den første workshop."
+        },
+        {
+          "title": "Platformkendskab",
+          "text": "SAP Cloud Identity Services, Microsoft Entra ID, Active Directory, One Identity Manager, SailPoint, Omada og Saviynt."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Fra et nyligt projekt",
+      "content": null,
+      "placeholder": "[NEED: one anonymised project – industry, number of identities, source platform, target platform, duration, measurable result, optional quote. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Spørgsmål om udskiftning af SAP IdM",
+      "items": [
+        {
+          "q": "Hvornår slutter vedligeholdelsen af SAP Identity Management?",
+          "a": "Standardvedligeholdelsen af SAP Identity Management 8.0 slutter den 31. december 2027. Derefter tilbyder SAP betalt udvidet vedligeholdelse indtil udgangen af 2030."
+        },
+        {
+          "q": "Findes der en direkte efterfølger fra SAP?",
+          "a": "Nej. SAP henviser til Microsoft Entra ID for identitetsstyring og til SAP Cloud Identity Services for brugeradministration i SAP-systemer. For mange organisationer er en dedikeret IGA-platform eller en kombination det bedre valg."
+        },
+        {
+          "q": "Er Microsoft Entra ID nok som erstatning?",
+          "a": "Ofte, hvis dine krav til identitetsstyring er moderate. Ved kompleks funktionsadskillelse, mange ikke-SAP-målsystemer eller skrappe revisionskrav når Entra ID sine grænser. Det afklarer vi under kortlægningen."
+        },
+        {
+          "q": "Hvor lang tid tager en migrering?",
+          "a": "Det afhænger af antallet af målsystemer, dine egne udvidelser og tilstanden af din rollemodel. Efter kortlægningen får du en tidsplan, du kan planlægge efter."
+        },
+        {
+          "q": "Kan vi blive ved med at bruge SAP IdM indtil 2030?",
+          "a": "Ja, med udvidet vedligeholdelse. Så betaler du for et system, der ikke længere udvikles, og hver ny applikation skal stadig forbindes til SAP IdM. De fleste organisationer får mere ud af at bruge tiden på en planlagt migrering."
+        },
+        {
+          "q": "Hvad koster den indledende samtale?",
+          "a": "Ingenting. På 30 minutter taler vi om, hvor du står i dag, og om og hvordan vi kan hjælpe. Alle henvendelser får svar inden for én arbejdsdag."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Din udskiftning af SAP IdM begynder med en samtale.",
+      "text": "På 30 minutter ved du, hvilken vej der er realistisk for dit landskab, og hvad det næste skridt vil være. Gratis og uden salgstale.",
+      "cta": {
+        "label": "Book din indledende samtale",
+        "href": "/da/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Udskiftning%20af%20SAP%20IdM"
+      }
+    }
+  ]
+}

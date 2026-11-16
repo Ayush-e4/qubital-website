@@ -1,0 +1,238 @@
+{
+  "locale": "it",
+  "path": "/it/sostituzione-sap-idm",
+  "alternates": {
+    "de": "/de/sap-idm-abloesung",
+    "en": "/en/sap-idm-replacement",
+    "fr": "/fr/remplacement-sap-idm",
+    "it": "/it/sostituzione-sap-idm",
+    "es": "/es/sustitucion-sap-idm",
+    "nl": "/nl/sap-idm-vervangen",
+    "pl": "/pl/zastapienie-sap-idm",
+    "pt": "/pt/substituicao-sap-idm",
+    "sv": "/sv/ersatta-sap-idm",
+    "da": "/da/udskiftning-af-sap-idm",
+    "x-default": "/en/sap-idm-replacement"
+  },
+  "meta": {
+    "title": "Sostituzione SAP IdM: migrazione pianificata · Qubital",
+    "description": "La manutenzione di SAP Identity Management termina nel 2027. Pianifichiamo la sostituzione e la migrazione a Entra ID, SAP Cloud Identity Services o IGA.",
+    "ogImageAlt": "Sostituzione di SAP IdM con Qubital"
+  },
+  "service": {
+    "serviceType": "Consulenza in Identity and Access Management: sostituzione di SAP Identity Management",
+    "ogImage": "/og/sap-idm-it.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/it"
+    },
+    {
+      "name": "Servizi",
+      "href": "/it/servizi"
+    },
+    {
+      "name": "Sostituzione SAP IdM",
+      "href": "/it/sostituzione-sap-idm"
+    }
+  ],
+  "hero": {
+    "eyebrow": "SAP Identity Management · fine manutenzione 2027",
+    "h1": "Sostituzione di SAP IdM: prima che finisca la manutenzione.",
+    "lead": "La manutenzione standard di SAP Identity Management 8.0 termina il 31 dicembre 2027 e SAP non sta sviluppando un prodotto successore. La aiutiamo a scegliere la giusta sostituzione di SAP IdM e a migrare le Sue identità mentre l’operatività aziendale prosegue senza interruzioni.",
+    "cta": {
+      "label": "Prenoti un colloquio conoscitivo gratuito",
+      "href": "/it/contatti"
+    },
+    "secondaryCta": {
+      "label": "Il nostro approccio",
+      "href": "#approach"
+    },
+    "facts": [
+      {
+        "value": "31/12/2027",
+        "label": "Fine della manutenzione standard di SAP IdM 8.0"
+      },
+      {
+        "value": "2030",
+        "label": "Fine della manutenzione estesa a pagamento"
+      },
+      {
+        "value": "0",
+        "label": "prodotti successori diretti da parte di SAP"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "situation",
+      "type": "text",
+      "heading": "Che cosa significa per Lei la fine della manutenzione",
+      "paragraphs": [
+        "In molte organizzazioni SAP IdM crea le utenze, assegna i ruoli nei sistemi SAP e non SAP e li revoca quando le persone lasciano l’azienda. Senza SAP IdM viene meno il processo che dimostra agli auditor chi ha accesso a che cosa.",
+        "Dal 2028 le correzioni sono disponibili solo tramite la manutenzione estesa a pagamento, e solo fino alla fine del 2030. In questo periodo SAP IdM non riceve nuovi sviluppi, mentre ogni nuova applicazione, ogni passaggio a S/4HANA e ogni integrazione cloud richiede ulteriore lavoro personalizzato.",
+        "SAP indica Microsoft Entra ID per l’identity governance e SAP Cloud Identity Services per la gestione degli utenti nei sistemi SAP. Se questo basti per il Suo panorama applicativo dipende dai sistemi target, dai requisiti di audit e dal modello dei ruoli.",
+        "Le analisi di settore stimano da 18 a 36 mesi per una sostituzione completa negli ambienti più grandi. Chi parte a ridosso della scadenza migra sotto pressione, ed è proprio allora che i ruoli storici vengono copiati invece che ripuliti."
+      ]
+    },
+    {
+      "id": "options",
+      "type": "table",
+      "heading": "Tre strade dopo SAP IdM",
+      "columns": ["Strada", "Adatta se …", "Che cosa verificare"],
+      "rows": [
+        [
+          "Microsoft Entra ID Governance con SAP Cloud Identity Services",
+          "Utilizza già Microsoft 365 ed Entra ID e i Suoi requisiti di governance sono moderati.",
+          "Copertura della segregation of duties (SoD), sistemi target non SAP senza connettore standard e approvazioni a più livelli."
+        ],
+        [
+          "Una piattaforma IGA dedicata: One Identity Manager, SailPoint, Omada o Saviynt",
+          "Collega molti sistemi target, deve rispettare requisiti di audit stringenti come DORA o NIS2, oppure vuole portare avanti un modello dei ruoli maturo.",
+          "Costi aggiuntivi di licenza e di esercizio, a fronte di una governance completa anche oltre SAP."
+        ],
+        [
+          "Ibrida",
+          "Le autorizzazioni SAP passano da SAP Cloud Identity Services, la governance trasversale ai sistemi da una piattaforma IGA.",
+          "Una decisione chiara su quale sistema sia master per quale decisione."
+        ]
+      ],
+      "after": "Siamo indipendenti dai vendor e lavoriamo con tutte le piattaforme elencate. Se la licenza Entra ID che già possiede copre i Suoi requisiti, è quella che Le consiglieremo."
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Il nostro approccio",
+      "intro": "Quattro fasi. Al termine di ciascuna decide Lei se e come proseguire.",
+      "items": [
+        {
+          "title": "Analisi",
+          "duration": "1–2 settimane",
+          "text": "Analizziamo la Sua installazione di SAP IdM: identity store, job e workflow, modello dei ruoli e delle autorizzazioni, sistemi collegati ed estensioni personalizzate. Riceve un elenco completo di ciò che va migrato, sostituito o dismesso."
+        },
+        {
+          "title": "Progettazione e decisione",
+          "duration": "1–3 settimane",
+          "text": "Valutiamo le opzioni rispetto ai Suoi requisiti, alle licenze che già possiede e al budget. Il risultato è un piano di migrazione con architettura target, sequenza, tempistiche e costi, abbastanza sintetico da permettere al comitato di indirizzo di decidere."
+        },
+        {
+          "title": "Migrazione per fasi",
+          "duration": "Iterativa",
+          "text": "Trasferiamo sistemi target e processi in sprint brevi. SAP IdM e la nuova piattaforma funzionano in parallelo finché ogni processo joiner, mover e leaver non funziona in modo verificabile nel nuovo sistema. Vede i progressi in una demo ogni due settimane."
+        },
+        {
+          "title": "Dismissione ed esercizio",
+          "duration": "Continuativa",
+          "text": "Dismettiamo SAP IdM in modo controllato, mettiamo al sicuro le evidenze di audit e trasferiamo documentazione e know-how al Suo team. Se lo desidera, gestiamo e facciamo evolvere la nuova piattaforma."
+        }
+      ]
+    },
+    {
+      "id": "success-factors",
+      "type": "checklist",
+      "heading": "Che cosa deve riuscire in una migrazione",
+      "items": [
+        {
+          "title": "Prima il modello dei ruoli, poi i connettori",
+          "text": "La migrazione è l’occasione migliore per ripulire i ruoli. Chi costruisce prima i connettori porta nel nuovo sistema anni di accessi accumulati."
+        },
+        {
+          "title": "Segregation of duties nel sistema",
+          "text": "Le regole SoD vanno definite nella piattaforma target come set di regole, così i conflitti emergono già al momento della richiesta di accesso, molto prima dell’audit."
+        },
+        {
+          "title": "Pianificare gli accessi di emergenza",
+          "text": "Gli account firefighter e di emergenza mancano in molti piani di migrazione. Gli auditor chiedono proprio di questi."
+        },
+        {
+          "title": "Coprire il panorama ibrido",
+          "text": "Lo scenario target deve includere S/4HANA, SAP BTP, le applicazioni cloud e i sistemi on-premises che restano."
+        },
+        {
+          "title": "Conservare le evidenze",
+          "text": "Ricertificazioni e storico delle approvazioni di SAP IdM devono restare consultabili per tutti i periodi di conservazione previsti dalla legge."
+        }
+      ],
+      "link": {
+        "label": "Approfondisca: identity governance per i panorami SAP",
+        "href": "/it/blog/identity-governance-sap"
+      }
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Che cosa ottiene da noi",
+      "items": [
+        {
+          "title": "Consulenti senior, percorsi brevi",
+          "text": "Parla con le persone che realizzano il Suo progetto. Questo significa valutazioni oneste e decisioni senza giri inutili."
+        },
+        {
+          "title": "Un unico referente",
+          "text": "Una persona dedicata La accompagna dall’analisi al go-live e oltre, in tedesco o in inglese."
+        },
+        {
+          "title": "Compliance fin dal primo giorno",
+          "text": "GDPR, NIS2, DORA e ISO 27001 definiscono lo scenario target fin dal primo workshop."
+        },
+        {
+          "title": "Conoscenza delle piattaforme",
+          "text": "SAP Cloud Identity Services, Microsoft Entra ID, Active Directory, One Identity Manager, SailPoint, Omada e Saviynt."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Da un progetto recente",
+      "content": null,
+      "placeholder": "[NEED: one anonymised project – industry, number of identities, source platform, target platform, duration, measurable result, optional quote. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Domande sulla sostituzione di SAP IdM",
+      "items": [
+        {
+          "q": "Quando termina la manutenzione di SAP Identity Management?",
+          "a": "La manutenzione standard di SAP Identity Management 8.0 termina il 31 dicembre 2027. Successivamente SAP offre una manutenzione estesa a pagamento fino alla fine del 2030."
+        },
+        {
+          "q": "Esiste un successore diretto di SAP?",
+          "a": "No. SAP indica Microsoft Entra ID per l’identity governance e SAP Cloud Identity Services per la gestione degli utenti nei sistemi SAP. Per molte organizzazioni la scelta migliore è una piattaforma IGA dedicata o una combinazione delle due."
+        },
+        {
+          "q": "Microsoft Entra ID è sufficiente come sostituto?",
+          "a": "Spesso sì, se i requisiti di governance sono moderati. Con una segregation of duties complessa, molti sistemi target non SAP o requisiti di audit stringenti, Entra ID mostra i suoi limiti. Lo chiariamo durante l’analisi."
+        },
+        {
+          "q": "Quanto dura una migrazione?",
+          "a": "Dipende dal numero di sistemi target, dalle estensioni personalizzate e dallo stato del modello dei ruoli. Dopo l’analisi Le forniamo una tempistica su cui può pianificare."
+        },
+        {
+          "q": "Possiamo continuare a usare SAP IdM fino al 2030?",
+          "a": "Con la manutenzione estesa, sì. In quel caso paga per un sistema che non viene più sviluppato, e ogni nuova applicazione va comunque collegata a SAP IdM. La maggior parte delle organizzazioni trae più vantaggio dall’usare questo tempo per una migrazione pianificata."
+        },
+        {
+          "q": "Quanto costa il colloquio conoscitivo?",
+          "a": "Nulla. In 30 minuti esaminiamo la Sua situazione attuale e valutiamo se e come possiamo aiutarLa. Ogni richiesta riceve una risposta entro un giorno lavorativo."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "La Sua sostituzione di SAP IdM inizia con un colloquio.",
+      "text": "In 30 minuti saprà quale strada è realistica per il Suo panorama applicativo e quale sarebbe il passo successivo. Gratuito e senza discorsi commerciali.",
+      "cta": {
+        "label": "Prenoti il Suo colloquio conoscitivo",
+        "href": "/it/contatti"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Sostituzione%20SAP%20IdM"
+      }
+    }
+  ]
+}

@@ -4,11 +4,19 @@
   "alternates": {
     "de": "/de/nis2-iam",
     "en": "/en/nis2-identity-access-management",
+    "fr": "/fr/nis2-gestion-des-identites-et-des-acces",
+    "it": "/it/nis2-gestione-identita-e-accessi",
+    "es": "/es/nis2-gestion-de-identidades-y-accesos",
+    "nl": "/nl/nis2-identity-access-management",
+    "pl": "/pl/nis2-zarzadzanie-tozsamoscia-i-dostepem",
+    "pt": "/pt/nis2-gestao-de-identidades-e-acessos",
+    "sv": "/sv/nis2-identitets-och-behorighetshantering",
+    "da": "/da/nis2-identitets-og-adgangsstyring",
     "x-default": "/en/nis2-identity-access-management"
   },
   "meta": {
     "title": "NIS2 Access Control & IAM Compliance · Qubital",
-    "description": "What NIS2 requires from identity and access management: access control, MFA, privileged accounts, supplier access and evidence that holds up in an audit.",
+    "description": "NIS2 and identity and access management: access control, MFA, privileged accounts, supplier access and evidence that holds up in an audit.",
     "ogImageAlt": "NIS2 and identity and access management with Qubital"
   },
   "service": {
@@ -32,7 +40,7 @@
   "hero": {
     "eyebrow": "NIS2 · Identity & access management",
     "h1": "NIS2 access control that holds up in an audit.",
-    "lead": "NIS2 requires access control policies, multi-factor authentication and controlled supplier access, and you have to prove they work. We show you where the gaps are and close them on the platform you already run.",
+    "lead": "NIS2 puts access control, sign-in security and supplier access on the audit agenda, and you have to show your controls work. We find the gaps and close them on the platform you already run.",
     "cta": {
       "label": "Book a free introductory call",
       "href": "/en/contact"
@@ -43,16 +51,16 @@
     },
     "facts": [
       {
-        "value": "3",
-        "label": "NIS2 obligations that concern identities directly: access control, MFA, supply chain"
-      },
-      {
-        "value": "€10m",
-        "label": "or 2% of worldwide turnover: maximum fine for essential entities"
-      },
-      {
         "value": "8",
         "label": "checkpoints in our NIS2 IAM checklist"
+      },
+      {
+        "value": "4",
+        "label": "steps from gap analysis to evidence that runs in daily operations"
+      },
+      {
+        "value": "2",
+        "label": "weeks for a typical gap analysis"
       }
     ]
   },
@@ -60,18 +68,17 @@
     {
       "id": "requirements",
       "type": "text",
-      "heading": "What NIS2 requires for identities and access",
+      "heading": "What NIS2 means for identities and access",
       "paragraphs": [
-        "The NIS2 Directive requires essential and important entities to take risk management measures. Three of them concern identities directly: access control policies and asset management, multi-factor authentication, and supply chain security, which includes the access your service providers have.",
-        "Each EU member state transposes the directive into national law. In Germany this is the NIS2 Implementation and Cybersecurity Strengthening Act (NIS2UmsuCG), which amends the BSI Act. Management must approve the measures, oversee their implementation and take part in regular training, and it is liable for failures.",
+        "NIS2 brings identities into security audits: who has access to what, how access is granted and removed, how sign-ins are protected and what your service providers can reach. Which rules apply to you depends on your sector, your size and the country you operate in.",
         "In an audit, what counts is what you can show: an approved policy, a complete inventory, recertifications with results, and logs you can actually find when something happens. Having MFA switched on answers none of these questions by itself."
       ]
     },
     {
       "id": "mapping",
       "type": "table",
-      "heading": "Where identity and access management sits in NIS2",
-      "columns": ["NIS2 requirement", "What auditors want to see", "IAM building block"],
+      "heading": "Where identity and access management fits in a NIS2 programme",
+      "columns": ["Area", "What auditors want to see", "IAM building block"],
       "rows": [
         [
           "Access control and asset management",
@@ -214,15 +221,11 @@
         },
         {
           "q": "Is multi-factor authentication enough for NIS2?",
-          "a": "No. MFA is one of several requirements. Access control, a managed account lifecycle, supplier access and logging are just as much part of it."
+          "a": "No. Auditors also look at access control, a managed account lifecycle, supplier access and logging."
         },
         {
           "q": "Does NIS2 apply to service accounts and AI agents?",
           "a": "Yes. The access control requirements apply to every account, human or machine. Technical accounts without an accountable owner are a common audit finding."
-        },
-        {
-          "q": "We fall under DORA. Does NIS2 still apply?",
-          "a": "For financial entities, the DORA rules on ICT risk management generally take precedence. The requirements for access control and evidence are very similar, so one implementation can serve both."
         },
         {
           "q": "Does ISO 27001 certification help?",

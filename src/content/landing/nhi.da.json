@@ -1,0 +1,238 @@
+{
+  "locale": "da",
+  "path": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "fr": "/fr/services/identites-non-humaines-agents-ia",
+    "it": "/it/servizi/identita-non-umane-agenti-ai",
+    "es": "/es/servicios/identidades-no-humanas-agentes-ia",
+    "nl": "/nl/diensten/niet-menselijke-identiteiten-ai-agents",
+    "pl": "/pl/uslugi/tozsamosci-nieosobowe-agenci-ai",
+    "pt": "/pt/servicos/identidades-nao-humanas-agentes-ia",
+    "sv": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter",
+    "da": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Ikke-menneskelige identiteter og AI-agenter · Qubital",
+    "description": "Styr servicekonti, API-nøgler, workloads og AI-agenter som enhver anden identitet: oversigt, ansvarlige ejere, livscyklus og mindst mulige rettigheder.",
+    "ogImageAlt": "Ikke-menneskelige identiteter og AI-agenter med Qubital"
+  },
+  "service": {
+    "serviceType": "Rådgivning i identitets- og adgangsstyring: styring af ikke-menneskelige identiteter og AI-agenter",
+    "ogImage": "/og/nhi-da.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/da"
+    },
+    {
+      "name": "Ydelser",
+      "href": "/da/ydelser"
+    },
+    {
+      "name": "Ikke-menneskelige identiteter og AI-agenter",
+      "href": "/da/ydelser/ikke-menneskelige-identiteter-ai-agenter"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Ikke-menneskelige identiteter · AI-agenter",
+    "h1": "Ikke-menneskelige identiteter under kontrol: servicekonti, API-nøgler og AI-agenter.",
+    "lead": "Hver medarbejder har en proces for ansættelse og fratrædelse. De mange ikke-menneskelige identiteter i dine systemer, fra tekniske konti og secrets til agenter, har som regel ingen af delene. Vi bringer dem ind under din identitetsstyring med en oversigt, en ansvarlig ejer, en livscyklus og snævert afgrænset adgang.",
+    "cta": {
+      "label": "Book en gratis indledende samtale",
+      "href": "/da/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Det leverer vi",
+      "href": "#deliverables"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "maskinidentiteter pr. medarbejder (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "ansvarlig ejer for hver teknisk identitet"
+      },
+      {
+        "value": "0",
+        "label": "permanente secrets, hvor kortlivede legitimationsoplysninger er mulige"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Hvorfor almindelige IGA-processer overser disse konti",
+      "paragraphs": [
+        "Identitetsstyring er bygget til mennesker. En konto starter med en ansættelseskontrakt, en leder bekræfter adgangen, og kontoen deaktiveres, når personen stopper. En servicekonto har ingen kontrakt, en API-nøgle har ingen leder, og et certifikat udløber, uden at nogen bliver spurgt.",
+        "Revisorerne kender resultatet: servicekonti med domæneadministratorrettigheder, som ingen længere husker formålet med, secrets i kildekoden, der har været gyldige i årevis, og konti fra afsluttede projekter, der stadig virker.",
+        "NIS2 og DORA skelner ikke mellem mennesker og maskiner, når det gælder adgangsstyring. Tekniske konti er underlagt de samme krav til oversigt, tildeling af adgang og dokumentation."
+      ]
+    },
+    {
+      "id": "types",
+      "type": "table",
+      "heading": "Typiske ikke-menneskelige identiteter og deres kontroller",
+      "columns": ["Identitet", "Typisk risiko", "Kontrol"],
+      "rows": [
+        [
+          "Servicekonti i Active Directory og Entra ID",
+          "For mange rettigheder, adgangskoder, der aldrig udløber, ingen ansvarlig ejer",
+          "Tildeling af ejer, recertificering, rotation af adgangskoder via PAM eller gMSA"
+        ],
+        [
+          "API-nøgler og secrets",
+          "Gemt i kode, konfigurationsfiler eller tickets, gyldige i årevis",
+          "Central vault, rotation, udløbsdatoer, secret scanning"
+        ],
+        [
+          "Certifikater",
+          "Ubemærket udløb, der giver nedbrud, intet overblik",
+          "Oversigt, automatisk fornyelse, en ejer pr. certifikat"
+        ],
+        [
+          "Workload-identiteter i cloud",
+          "Statiske legitimationsoplysninger i stedet for managed identities",
+          "Managed identities, workload identity federation, mindst mulige rettigheder"
+        ],
+        [
+          "RPA-bots",
+          "Kører med en persons rettigheder eller en delt konto",
+          "En separat identitet pr. bot, snævre roller, logning"
+        ],
+        [
+          "AI-agenter",
+          "Handler på vegne af brugere, ofte med flere rettigheder end nødvendigt, svære at spore",
+          "En dedikeret agentidentitet, begrænset delegering, godkendelse af kritiske handlinger, komplette logs"
+        ]
+      ],
+      "after": "De fleste af disse kontroller kan implementeres med din eksisterende IGA-, PAM- eller cloudplatform. Vi anbefaler kun et ekstra værktøj, når det lukker et konkret hul."
+    },
+    {
+      "id": "deliverables",
+      "type": "features",
+      "heading": "Det leverer vi",
+      "items": [
+        {
+          "title": "Oversigt",
+          "text": "Vi finder servicekonti, secrets, certifikater, workload-identiteter og AI-agenter i Active Directory, Entra ID, cloudplatforme og SaaS-applikationer."
+        },
+        {
+          "title": "Ejerskab",
+          "text": "Hver teknisk identitet får en ansvarlig ejer, der kender dens formål og bekræfter dens adgang."
+        },
+        {
+          "title": "Livscyklus",
+          "text": "Oprettelse, recertificering og udfasning kører gennem definerede processer i din IGA-platform."
+        },
+        {
+          "title": "Kortlivede legitimationsoplysninger",
+          "text": "Hvor det er muligt, erstatter vi permanente secrets med managed identities, workload identity federation og vaults med rotation."
+        },
+        {
+          "title": "Mindst mulige rettigheder og overvågning",
+          "text": "Vi skærer adgangen ned til det nødvendige, logger brugen og synliggør afvigelser."
+        },
+        {
+          "title": "Styring af AI-agenter",
+          "text": "For hver agent definerer vi identitet, delegering, adgangens omfang og logning, fx med Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Læs mere: Ikke-menneskelige identiteter og AI-agenter: luk hullet",
+        "href": "/da/blog/ikke-menneskelige-identiteter-og-ai-agenter"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "type": "text",
+      "heading": "AI-agenter: det er anderledes",
+      "paragraphs": [
+        "En AI-agent læser e-mails, booker møder, ændrer poster eller kalder andre systemer, ofte på vegne af en bruger. Ved hver handling rejser det to spørgsmål: Hvis rettigheder gælder lige nu, og hvem har godkendt dem?",
+        "Vi behandler agenter som selvstændige identiteter, hver med en ansvarlig ejer. De får kun den adgang, deres opgave kræver, delegerede rettigheder er begrænset i tid og omfang, kritiske handlinger kræver menneskelig godkendelse, og hver handling kan spores til både agenten og den bruger, der satte den i gang."
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Sådan arbejder vi",
+      "intro": "Fire trin. Efter hvert trin beslutter du, om og hvordan vi fortsætter.",
+      "items": [
+        {
+          "title": "Oversigt og risikoanalyse",
+          "duration": "1–2 uger",
+          "text": "Vi registrerer de tekniske identiteter i dine vigtigste systemer og vurderer dem efter adgang, alder, brug og ejerskab."
+        },
+        {
+          "title": "Målmodel og regler",
+          "duration": "1–3 uger",
+          "text": "Vi fastlægger, hvordan tekniske identiteter oprettes, hvem der ejer dem, hvor ofte de gennemgås, og hvornår de ophører, samt hvilken platform der håndterer hvad."
+        },
+        {
+          "title": "Implementering",
+          "duration": "Iterativt",
+          "text": "Vi rydder op, tildeler ejere, indfører rotation og kortlivede legitimationsoplysninger og kobler processerne til din IGA- eller PAM-platform."
+        },
+        {
+          "title": "Drift",
+          "duration": "Løbende",
+          "text": "Recertificeringer, rapporter og alarmer bliver en del af den daglige drift. Hvis du ønsker det, driver vi dem for dig."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Fra et nyligt projekt",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NHI project – industry, number of technical accounts found, share without an owner, result after clean-up. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Spørgsmål om ikke-menneskelige identiteter",
+      "items": [
+        {
+          "q": "Hvad er en ikke-menneskelig identitet?",
+          "a": "Enhver identitet, der ikke tilhører en person: servicekonti, tekniske brugere, API-nøgler, certifikater, workload-identiteter, bots og AI-agenter."
+        },
+        {
+          "q": "Har vi brug for et dedikeret NHI-værktøj?",
+          "a": "Ikke nødvendigvis. Mange krav kan dækkes med din eksisterende IGA-, PAM- eller cloudplatform. Vi vurderer det leverandøruafhængigt og anbefaler kun et ekstra værktøj, når det lukker et konkret hul."
+        },
+        {
+          "q": "Hvordan finder I servicekonti, som ingen har dokumenteret?",
+          "a": "Vi analyserer kataloger, loginlogs, cloudkonfigurationer og vaults og tjekker derefter resultaterne med systemejerne. Konti, som ingen vedkender sig, deaktiveres kontrolleret og overvåges, før de slettes."
+        },
+        {
+          "q": "Hvordan hænger det sammen med NIS2 og DORA?",
+          "a": "Begge kræver dokumenterbar kontrol med adgang, uanset om det er en person eller en maskine, der tilgår systemerne. Tekniske konti uden en ansvarlig ejer er et hyppigt fund ved revisioner."
+        },
+        {
+          "q": "Hvad koster den indledende samtale?",
+          "a": "Ingenting. På 30 minutter taler vi om, hvor du står i dag, og om og hvordan vi kan hjælpe. Alle henvendelser får svar inden for én arbejdsdag."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Ved du, hvor mange servicekonti du har?",
+      "text": "På 30 minutter finder vi ud af, hvor dine tekniske identiteter befinder sig, og hvor du får mest ud af at starte. Gratis og uden salgstale.",
+      "cta": {
+        "label": "Book din indledende samtale",
+        "href": "/da/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Ikke-menneskelige%20identiteter"
+      }
+    }
+  ]
+}

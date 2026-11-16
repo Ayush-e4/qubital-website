@@ -51,11 +51,19 @@ async function fontFaces() {
 }
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-// Keep hyphenated words (API-Schlüssel, KI-Agenten) on one line.
-const nobreak = (s) => s.replace(/(\w)-(\w)/g, '$1\u2011$2');
+// Keep hyphenated words (API-Schlüssel, KI-Agenten) and "SAP IdM" on one line.
+const nobreak = (s) => s.replace(/(\w)-(\w)/g, '$1\u2011$2').replace(/SAP IdM/g, 'SAP\u00a0IdM');
 const footer = {
   de: 'Identity & Access Management · Beratung für DACH',
   en: 'Identity & access management consulting · Europe',
+  fr: 'Conseil en gestion des identités et des accès · Europe',
+  it: 'Consulenza in gestione delle identità e degli accessi · Europa',
+  es: 'Consultoría en gestión de identidades y accesos · Europa',
+  nl: 'Advies in identity & access management · Europa',
+  pl: 'Doradztwo w zakresie zarządzania tożsamością i dostępem · Europa',
+  pt: 'Consultoria em gestão de identidades e acessos · Europa',
+  sv: 'Rådgivning inom identitets- och åtkomsthantering · Europa',
+  da: 'Rådgivning i identitets- og adgangsstyring · Europa',
 };
 
 function html(page, faces) {
@@ -99,7 +107,14 @@ for (const file of (await readdir(contentDir)).filter((f) => f.endsWith('.json')
     ['500 76px Geist', '24px "Geist Mono"'].every((f) => document.fonts.check(f, 'Aö'))
   );
   if (!fonts) throw new Error(`${file}: Geist did not load`);
-  const overflow = await tab.evaluate(() => document.body.scrollHeight > 630);
+  // Longer headlines (some languages) step down from 76px until they fit.
+  const overflow = await tab.evaluate(() => {
+    const h1 = document.querySelector('h1');
+    for (let size = 76; size >= 52 && document.body.scrollHeight > 630; size -= 4) {
+      h1.style.fontSize = `${size}px`;
+    }
+    return document.body.scrollHeight > 630;
+  });
   if (overflow) throw new Error(`${file}: text does not fit in 630px`);
   await tab.screenshot({ path: out, type: 'png' });
   console.log('wrote', path.relative(root, out));

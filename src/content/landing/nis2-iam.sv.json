@@ -1,0 +1,255 @@
+{
+  "locale": "sv",
+  "path": "/sv/nis2-identitets-och-behorighetshantering",
+  "alternates": {
+    "de": "/de/nis2-iam",
+    "en": "/en/nis2-identity-access-management",
+    "fr": "/fr/nis2-gestion-des-identites-et-des-acces",
+    "it": "/it/nis2-gestione-identita-e-accessi",
+    "es": "/es/nis2-gestion-de-identidades-y-accesos",
+    "nl": "/nl/nis2-identity-access-management",
+    "pl": "/pl/nis2-zarzadzanie-tozsamoscia-i-dostepem",
+    "pt": "/pt/nis2-gestao-de-identidades-e-acessos",
+    "sv": "/sv/nis2-identitets-och-behorighetshantering",
+    "da": "/da/nis2-identitets-og-adgangsstyring",
+    "x-default": "/en/nis2-identity-access-management"
+  },
+  "meta": {
+    "title": "NIS2 åtkomstkontroll och IAM-efterlevnad · Qubital",
+    "description": "NIS2 och identitets- och åtkomsthantering: åtkomstkontroll, MFA, privilegierade konton, leverantörsåtkomst och underlag som håller vid en revision.",
+    "ogImageAlt": "NIS2 och identitets- och åtkomsthantering med Qubital"
+  },
+  "service": {
+    "serviceType": "Konsulttjänster inom identitets- och åtkomsthantering: åtkomstkontroll enligt NIS2",
+    "ogImage": "/og/nis2-iam-sv.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/sv"
+    },
+    {
+      "name": "Tjänster",
+      "href": "/sv/tjanster"
+    },
+    {
+      "name": "NIS2 och IAM",
+      "href": "/sv/nis2-identitets-och-behorighetshantering"
+    }
+  ],
+  "hero": {
+    "eyebrow": "NIS2 · Identitets- och åtkomsthantering",
+    "h1": "NIS2-åtkomstkontroll som håller vid revisionen.",
+    "lead": "Med NIS2 hamnar åtkomstkontroll, inloggningssäkerhet och leverantörsåtkomst på revisionens agenda, och ni måste kunna visa att era kontroller fungerar. Vi hittar luckorna i er NIS2-åtkomstkontroll och täpper till dem på den plattform ni redan använder.",
+    "cta": {
+      "label": "Boka ett kostnadsfritt inledande samtal",
+      "href": "/sv/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Se checklistan för NIS2 och IAM",
+      "href": "#checklist"
+    },
+    "facts": [
+      {
+        "value": "8",
+        "label": "kontrollpunkter i vår checklista för NIS2 och IAM"
+      },
+      {
+        "value": "4",
+        "label": "steg från gapanalys till underlag som tas fram i den dagliga driften"
+      },
+      {
+        "value": "2",
+        "label": "veckor för en typisk gapanalys"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "requirements",
+      "type": "text",
+      "heading": "Vad NIS2 betyder för identiteter och åtkomst",
+      "paragraphs": [
+        "NIS2 gör identiteter till en del av säkerhetsrevisionen: vem som har åtkomst till vad, hur åtkomst beviljas och tas bort, hur inloggningar skyddas och vad era tjänsteleverantörer kommer åt. Vilka regler som gäller för er beror på er sektor, er storlek och i vilket land ni verkar.",
+        "Vid en revision är det det ni kan visa som räknas: en fastställd policy, en fullständig inventering, attesteringar med resultat och loggar som ni faktiskt hittar när något händer. Att MFA är påslaget besvarar i sig ingen av de frågorna."
+      ]
+    },
+    {
+      "id": "mapping",
+      "type": "table",
+      "heading": "Var identitets- och åtkomsthantering passar in i ett NIS2-program",
+      "columns": ["Område", "Det här vill revisorerna se", "IAM-byggsten"],
+      "rows": [
+        [
+          "Åtkomstkontroll och hantering av tillgångar",
+          "En fastställd policy för åtkomstkontroll, en inventering av identiteter, dokumenterad tilldelning och borttagning av åtkomst, regelbunden attestering",
+          "Identity governance and administration (IGA)"
+        ],
+        [
+          "Personalsäkerhet",
+          "Åtkomst tas bort omedelbart och fullständigt när medarbetare slutar eller byter roll",
+          "Automatiserad joiner-mover-leaver-process"
+        ],
+        [
+          "Multifaktorautentisering",
+          "MFA-täckning per användargrupp, nätfiskeresistenta metoder för administratörer och fjärråtkomst",
+          "Medarbetaridentiteter, villkorsstyrd åtkomst"
+        ],
+        [
+          "Säkerhet i leveranskedjan",
+          "Leverantörsåtkomst är tidsbegränsad, motiverad, godkänd och loggad",
+          "Privileged access management (PAM), IGA för externa användare"
+        ],
+        [
+          "Incidenthantering",
+          "Autentiserings- och ändringsloggar som gör det möjligt att rekonstruera och rapportera en incident",
+          "Loggning, sessionsinspelning i PAM"
+        ]
+      ],
+      "after": "Kraven gäller alla konton, även tjänstekonton, API-nycklar och AI-agenter. I många gapanalyser är det just de kontona som utgör den största luckan."
+    },
+    {
+      "id": "checklist",
+      "type": "checklist",
+      "heading": "Checklistan för NIS2 och IAM",
+      "intro": "De här åtta punkterna kontrollerar vi i varje gapanalys för NIS2. Hur många kan ni bevisa i dag?",
+      "items": [
+        {
+          "title": "1. Policy för åtkomstkontroll",
+          "text": "Skriftlig, versionshanterad och fastställd av ledningen."
+        },
+        {
+          "title": "2. Fullständig inventering av identiteter",
+          "text": "Medarbetare, konsulter, administratörer, tjänstekonton och AI-agenter, var och en med en ansvarig ägare."
+        },
+        {
+          "title": "3. Joiner-mover-leaver",
+          "text": "Åtkomst beviljas och tas bort automatiskt när medarbetare börjar, byter roll eller slutar."
+        },
+        {
+          "title": "4. Attestering med underlag",
+          "text": "Chefer och systemägare bekräftar åtkomsten regelbundet, och resultatet dokumenteras."
+        },
+        {
+          "title": "5. MFA för alla, nätfiskeresistent för administratörer",
+          "text": "FIDO2 eller passkeys för privilegierade konton och fjärråtkomst."
+        },
+        {
+          "title": "6. Privilegierade konton under kontroll",
+          "text": "Lösenord i valv, just-in-time-åtkomst och sessionsinspelning för administratörer."
+        },
+        {
+          "title": "7. Tidsbegränsad leverantörsåtkomst",
+          "text": "Varje extern åtkomst har ett slutdatum, ett syfte och ett godkännande."
+        },
+        {
+          "title": "8. Loggar som går att hitta",
+          "text": "Inloggningar och ändringar av åtkomst lagras centralt och sparas tillräckligt länge."
+        }
+      ],
+      "link": {
+        "label": "Styrning av tjänstekonton och AI-agenter enligt NIS2",
+        "href": "/sv/tjanster/icke-manskliga-identiteter-ai-agenter"
+      }
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Så arbetar vi",
+      "intro": "Fyra steg. Efter varje steg bestämmer ni om och hur vi går vidare.",
+      "items": [
+        {
+          "title": "Gapanalys",
+          "duration": "Cirka 2 veckor",
+          "text": "Vi bedömer era identiteter, processer och plattformar mot kraven i NIS2 och checklistan ovan. Ni får en lista över luckor, var och en bedömd efter risk och insats."
+        },
+        {
+          "title": "Åtgärdsplan",
+          "duration": "Cirka 1 vecka",
+          "text": "Vi prioriterar åtgärderna efter risk och betydelse för revisionen och förbereder underlagen så att er ledning kan fastställa dem."
+        },
+        {
+          "title": "Implementering",
+          "duration": "Iterativt",
+          "text": "Vi genomför åtgärderna på den plattform ni redan använder, till exempel Microsoft Entra ID, One Identity, SailPoint eller CyberArk. Ni ser framstegen i en demo varannan vecka."
+        },
+        {
+          "title": "Underlag och drift",
+          "duration": "Löpande",
+          "text": "Vi sätter upp rapporter och attesteringar så att underlaget tas fram som en del av den dagliga driften. Om ni vill driftar vi plattformen åt er."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Det här får ni av oss",
+      "items": [
+        {
+          "title": "Klarspråk för ledningen",
+          "text": "Vi omsätter artiklar och paragrafer till konkreta beslut med risk, insats och ordningsföljd."
+        },
+        {
+          "title": "Leverantörsoberoende",
+          "text": "Vi utgår från det ni redan har licens för. En ny plattform rekommenderar vi bara när den befintliga inte kan uppfylla kraven."
+        },
+        {
+          "title": "En kontaktperson",
+          "text": "En dedikerad person följer er från gapanalysen till revisionen, på tyska eller engelska."
+        },
+        {
+          "title": "En implementering, flera standarder",
+          "text": "Vi kopplar varje åtgärd till ISO 27001 (Annex A 5.15 till 5.18 och 8.2) och, där det är relevant, till DORA."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Från ett aktuellt projekt",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NIS2 project – industry, size, main gaps, measures implemented, audit outcome. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Frågor om NIS2 och IAM",
+      "items": [
+        {
+          "q": "Omfattas vår organisation av NIS2?",
+          "a": "Det beror på er sektor, er storlek och er roll i leveranskedjan. Nationella myndigheter, som BSI i Tyskland, erbjuder verktyg för självbedömning. Om ni är osäkra kan vi reda ut det tillsammans i det inledande samtalet."
+        },
+        {
+          "q": "Räcker multifaktorautentisering för NIS2?",
+          "a": "Nej. Revisorerna tittar också på åtkomstkontroll, en styrd livscykel för konton, leverantörsåtkomst och loggning."
+        },
+        {
+          "q": "Gäller NIS2 för tjänstekonton och AI-agenter?",
+          "a": "Ja. Kraven på åtkomstkontroll gäller alla konton, mänskliga som maskinella. Tekniska konton utan ansvarig ägare är en vanlig iakttagelse vid revisioner."
+        },
+        {
+          "q": "Hjälper en ISO 27001-certifiering?",
+          "a": "Ja, den täcker många av kraven. Kontrollera att ert certifieringsomfång omfattar alla berörda system och tjänsteleverantörer, och att era åtkomstkontroller fungerar i praktiken."
+        },
+        {
+          "q": "Vad kostar det inledande samtalet?",
+          "a": "Ingenting. På 30 minuter går vi igenom var ni står i dag och om och hur vi kan hjälpa till. Varje förfrågan får svar inom en arbetsdag."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Hur ser er åtkomstkontroll ut i dag?",
+      "text": "På 30 minuter reder vi ut vilka krav i NIS2 som gäller för er och var ni bör börja för störst effekt. Kostnadsfritt och utan säljsnack.",
+      "cta": {
+        "label": "Boka ert inledande samtal",
+        "href": "/sv/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=NIS2%20och%20IAM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "locale": "it",
+  "path": "/it/nis2-gestione-identita-e-accessi",
+  "alternates": {
+    "de": "/de/nis2-iam",
+    "en": "/en/nis2-identity-access-management",
+    "fr": "/fr/nis2-gestion-des-identites-et-des-acces",
+    "it": "/it/nis2-gestione-identita-e-accessi",
+    "es": "/es/nis2-gestion-de-identidades-y-accesos",
+    "nl": "/nl/nis2-identity-access-management",
+    "pl": "/pl/nis2-zarzadzanie-tozsamoscia-i-dostepem",
+    "pt": "/pt/nis2-gestao-de-identidades-e-acessos",
+    "sv": "/sv/nis2-identitets-och-behorighetshantering",
+    "da": "/da/nis2-identitets-og-adgangsstyring",
+    "x-default": "/en/nis2-identity-access-management"
+  },
+  "meta": {
+    "title": "NIS2 controllo accessi e compliance IAM · Qubital",
+    "description": "NIS2 e Identity & Access Management: controllo degli accessi, MFA, account privilegiati, accessi dei fornitori ed evidenze che reggono a un audit.",
+    "ogImageAlt": "NIS2 e Identity & Access Management con Qubital"
+  },
+  "service": {
+    "serviceType": "Consulenza in Identity and Access Management: conformità NIS2 per il controllo degli accessi",
+    "ogImage": "/og/nis2-iam-it.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/it"
+    },
+    {
+      "name": "Servizi",
+      "href": "/it/servizi"
+    },
+    {
+      "name": "NIS2 e IAM",
+      "href": "/it/nis2-gestione-identita-e-accessi"
+    }
+  ],
+  "hero": {
+    "eyebrow": "NIS2 · Identity & Access Management",
+    "h1": "Controllo accessi NIS2 che regge all’audit.",
+    "lead": "Con la NIS2 il controllo degli accessi, la sicurezza dei login e gli accessi dei fornitori entrano nell’agenda degli audit, e Lei deve dimostrare che i controlli funzionano. Individuiamo le lacune e le colmiamo sulla piattaforma che già utilizza.",
+    "cta": {
+      "label": "Prenoti un colloquio conoscitivo gratuito",
+      "href": "/it/contatti"
+    },
+    "secondaryCta": {
+      "label": "Veda la checklist NIS2 IAM",
+      "href": "#checklist"
+    },
+    "facts": [
+      {
+        "value": "8",
+        "label": "punti di controllo nella nostra checklist NIS2 IAM"
+      },
+      {
+        "value": "4",
+        "label": "fasi dalla gap analysis alle evidenze prodotte nell’operatività quotidiana"
+      },
+      {
+        "value": "2",
+        "label": "settimane per una gap analysis tipica"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "requirements",
+      "type": "text",
+      "heading": "Che cosa significa la NIS2 per identità e accessi",
+      "paragraphs": [
+        "La NIS2 porta le identità al centro degli audit di sicurezza: chi ha accesso a che cosa, come gli accessi vengono concessi e revocati, come sono protetti i login e che cosa possono raggiungere i Suoi fornitori di servizi. Quali regole si applichino a Lei dipende dal settore, dalle dimensioni e dal Paese in cui opera.",
+        "In un audit conta ciò che può dimostrare: una policy approvata, un inventario completo, ricertificazioni con i relativi esiti e log che si trovano davvero quando succede qualcosa. Avere la MFA attiva, da sola, non risponde a nessuna di queste domande."
+      ]
+    },
+    {
+      "id": "mapping",
+      "type": "table",
+      "heading": "Dove si colloca l’Identity & Access Management in un programma NIS2",
+      "columns": ["Ambito", "Che cosa vogliono vedere gli auditor", "Componente IAM"],
+      "rows": [
+        [
+          "Controllo degli accessi e gestione degli asset",
+          "Una policy di controllo degli accessi approvata, un inventario delle identità, concessione e revoca degli accessi documentate, ricertificazione periodica",
+          "Identity Governance & Administration (IGA)"
+        ],
+        [
+          "Sicurezza delle risorse umane",
+          "Gli accessi vengono revocati subito e completamente quando una persona lascia l’azienda o cambia ruolo",
+          "Processo joiner-mover-leaver automatizzato"
+        ],
+        [
+          "Autenticazione a più fattori",
+          "Copertura MFA per gruppo di utenti, metodi resistenti al phishing per amministratori e accessi remoti",
+          "Workforce identity, accesso condizionale"
+        ],
+        [
+          "Sicurezza della supply chain",
+          "Gli accessi dei fornitori sono limitati nel tempo, motivati, approvati e registrati",
+          "Privileged Access Management (PAM), IGA per gli utenti esterni"
+        ],
+        [
+          "Gestione degli incidenti",
+          "Log di autenticazione e di modifica che permettono di ricostruire e notificare un incidente",
+          "Logging, registrazione delle sessioni PAM"
+        ]
+      ],
+      "after": "Questi obblighi valgono per ogni account, compresi service account, API key e agenti AI. In molte gap analysis sono proprio questi account la lacuna più grande."
+    },
+    {
+      "id": "checklist",
+      "type": "checklist",
+      "heading": "La checklist NIS2 IAM",
+      "intro": "Verifichiamo questi otto punti in ogni gap analysis NIS2. Quanti ne può dimostrare oggi?",
+      "items": [
+        {
+          "title": "1. Policy di controllo degli accessi",
+          "text": "Scritta, versionata e approvata dalla direzione."
+        },
+        {
+          "title": "2. Inventario completo delle identità",
+          "text": "Dipendenti, collaboratori esterni, amministratori, service account e agenti AI, ciascuno con un responsabile."
+        },
+        {
+          "title": "3. Joiner-mover-leaver",
+          "text": "Gli accessi vengono concessi e revocati automaticamente quando le persone entrano, cambiano ruolo o lasciano l’azienda."
+        },
+        {
+          "title": "4. Ricertificazione con evidenze",
+          "text": "Responsabili e system owner confermano gli accessi a intervalli regolari e l’esito viene documentato."
+        },
+        {
+          "title": "5. MFA per tutti, resistente al phishing per gli amministratori",
+          "text": "FIDO2 o passkey per gli account privilegiati e gli accessi remoti."
+        },
+        {
+          "title": "6. Account privilegiati sotto controllo",
+          "text": "Password custodite in un vault, accesso just-in-time e registrazione delle sessioni per gli amministratori."
+        },
+        {
+          "title": "7. Accessi dei fornitori limitati nel tempo",
+          "text": "Ogni accesso esterno ha una data di scadenza, una motivazione e un’approvazione."
+        },
+        {
+          "title": "8. Log reperibili",
+          "text": "Login e modifiche agli accessi sono archiviati centralmente e conservati abbastanza a lungo."
+        }
+      ],
+      "link": {
+        "label": "Governare service account e agenti AI secondo la NIS2",
+        "href": "/it/servizi/identita-non-umane-agenti-ai"
+      }
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "Il nostro approccio",
+      "intro": "Quattro fasi. Al termine di ciascuna decide Lei se e come proseguire.",
+      "items": [
+        {
+          "title": "Gap analysis",
+          "duration": "Circa 2 settimane",
+          "text": "Valutiamo identità, processi e piattaforme rispetto ai requisiti NIS2 e alla checklist qui sopra. Riceve un elenco delle lacune, ciascuna valutata per rischio e impegno."
+        },
+        {
+          "title": "Piano d’azione",
+          "duration": "Circa 1 settimana",
+          "text": "Diamo priorità alle misure in base al rischio e alla rilevanza per l’audit e prepariamo i documenti in modo che la direzione possa approvarli."
+        },
+        {
+          "title": "Implementazione",
+          "duration": "Iterativa",
+          "text": "Implementiamo le misure sulla piattaforma che già utilizza, ad esempio Microsoft Entra ID, One Identity, SailPoint o CyberArk. Vede i progressi in una demo ogni due settimane."
+        },
+        {
+          "title": "Evidenze ed esercizio",
+          "duration": "Continuativa",
+          "text": "Impostiamo report e ricertificazioni in modo che le evidenze nascano dall’operatività quotidiana. Se lo desidera, gestiamo noi la piattaforma."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Che cosa ottiene da noi",
+      "items": [
+        {
+          "title": "Un linguaggio chiaro per la direzione",
+          "text": "Traduciamo articoli e clausole in decisioni concrete, con rischio, impegno e sequenza."
+        },
+        {
+          "title": "Indipendenti dai vendor",
+          "text": "Partiamo dalle licenze che già possiede. Consigliamo una nuova piattaforma solo quando quella esistente non può soddisfare i requisiti."
+        },
+        {
+          "title": "Un unico referente",
+          "text": "Una persona dedicata La accompagna dalla gap analysis all’audit, in tedesco o in inglese."
+        },
+        {
+          "title": "Un’implementazione, più standard",
+          "text": "Mappiamo ogni misura su ISO 27001 (Annex A da 5.15 a 5.18 e 8.2) e, dove rilevante, su DORA."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "Da un progetto recente",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NIS2 project – industry, size, main gaps, measures implemented, audit outcome. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Domande su NIS2 e IAM",
+      "items": [
+        {
+          "q": "La nostra organizzazione rientra nella NIS2?",
+          "a": "Dipende dal settore, dalle dimensioni e dal ruolo nella supply chain. Le autorità nazionali, come il BSI in Germania, mettono a disposizione strumenti di autovalutazione. Se ha dubbi, possiamo chiarirlo insieme nel colloquio conoscitivo."
+        },
+        {
+          "q": "L’autenticazione a più fattori basta per la NIS2?",
+          "a": "No. Gli auditor guardano anche al controllo degli accessi, a un ciclo di vita degli account gestito, agli accessi dei fornitori e al logging."
+        },
+        {
+          "q": "La NIS2 si applica anche a service account e agenti AI?",
+          "a": "Sì. I requisiti di controllo degli accessi valgono per ogni account, umano o macchina. Gli account tecnici senza un responsabile sono un rilievo frequente negli audit."
+        },
+        {
+          "q": "Una certificazione ISO 27001 aiuta?",
+          "a": "Sì, copre molti dei requisiti. Verifichi che il perimetro includa tutti i sistemi e i fornitori di servizi interessati e che i controlli sugli accessi funzionino nella pratica."
+        },
+        {
+          "q": "Quanto costa il colloquio conoscitivo?",
+          "a": "Nulla. In 30 minuti esaminiamo la Sua situazione attuale e valutiamo se e come possiamo aiutarLa. Ogni richiesta riceve una risposta entro un giorno lavorativo."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "A che punto è oggi il Suo controllo degli accessi?",
+      "text": "In 30 minuti chiariamo quali requisiti NIS2 si applicano a Lei e da dove partire per ottenere il massimo effetto. Gratuito e senza discorsi commerciali.",
+      "cta": {
+        "label": "Prenoti il Suo colloquio conoscitivo",
+        "href": "/it/contatti"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=NIS2%20e%20IAM"
+      }
+    }
+  ]
+}
