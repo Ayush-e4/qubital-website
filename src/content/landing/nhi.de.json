@@ -1,0 +1,230 @@
+{
+  "locale": "de",
+  "path": "/de/leistungen/non-human-identities-ki-agenten",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Non-Human Identity Governance & KI-Agenten · Qubital",
+    "description": "Service-Accounts, API-Schlüssel, Workloads und KI-Agenten steuern wie jede andere Identität: Inventar, Verantwortliche, Lebenszyklus und Least Privilege.",
+    "ogImageAlt": "Non-Human Identities und KI-Agenten mit Qubital"
+  },
+  "service": {
+    "serviceType": "Identity and access management consulting: non-human identity and AI agent governance",
+    "ogImage": "/og/nhi-de.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/de"
+    },
+    {
+      "name": "Leistungen",
+      "href": "/de/leistungen"
+    },
+    {
+      "name": "Non-Human Identities & KI-Agenten",
+      "href": "/de/leistungen/non-human-identities-ki-agenten"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Non-Human Identities · KI-Agenten",
+    "h1": "Service-Accounts, API-Schlüssel und KI-Agenten unter Kontrolle.",
+    "lead": "Für jede Mitarbeiterin und jeden Mitarbeiter gibt es einen Eintritts- und einen Austrittsprozess. Für die vielen technischen Konten, Secrets und Agenten, die in Ihren Systemen arbeiten, meist nicht. Wir bringen sie in Ihre Identity Governance: mit Inventar, verantwortlicher Person, Lebenszyklus und eng begrenzten Rechten.",
+    "cta": {
+      "label": "Kostenloses Erstgespräch vereinbaren",
+      "href": "/de/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Was wir liefern",
+      "href": "#leistungen"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "Maschinenidentitäten je Mitarbeitendem (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "verantwortliche Person für jede technische Identität"
+      },
+      {
+        "value": "0",
+        "label": "dauerhafte Secrets, wo kurzlebige Zugangsdaten möglich sind"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Warum klassische IGA-Prozesse diese Konten übersehen",
+      "paragraphs": [
+        "Identity Governance ist für Menschen gebaut. Ein Konto entsteht mit dem Arbeitsvertrag, eine Führungskraft bestätigt die Rechte, und mit dem Austritt wird es gesperrt. Ein Service-Account hat keinen Arbeitsvertrag, ein API-Schlüssel keine Führungskraft, und ein Zertifikat läuft ab, ohne dass jemand gefragt wird.",
+        "Die Folge kennen viele Prüfer: Service-Accounts mit Domänen-Admin-Rechten, deren Zweck niemand mehr kennt. Secrets im Quellcode, die seit Jahren gültig sind. Konten aus abgeschlossenen Projekten, die noch funktionieren.",
+        "NIS2 und DORA unterscheiden bei der Zugriffskontrolle nicht zwischen Mensch und Maschine. Für technische Konten gelten dieselben Anforderungen an Inventar, Rechtevergabe und Nachweise."
+      ]
+    },
+    {
+      "id": "typen",
+      "type": "table",
+      "heading": "Typische Non-Human Identities und ihre Kontrollen",
+      "columns": ["Identität", "Typisches Risiko", "Kontrolle"],
+      "rows": [
+        [
+          "Service-Accounts in Active Directory und Entra ID",
+          "Zu weitreichende Rechte, nie ablaufende Passwörter, keine verantwortliche Person",
+          "Owner-Zuordnung, Rezertifizierung, Passwortrotation über PAM oder gMSA"
+        ],
+        [
+          "API-Schlüssel und Secrets",
+          "In Code, Konfigurationsdateien oder Tickets abgelegt, jahrelang gültig",
+          "Zentraler Tresor, Rotation, Ablaufdatum, Secret-Scanning"
+        ],
+        [
+          "Zertifikate",
+          "Unbemerkter Ablauf mit Ausfall, fehlender Überblick",
+          "Inventar, automatische Erneuerung, Verantwortliche je Zertifikat"
+        ],
+        [
+          "Workload-Identitäten in der Cloud",
+          "Statische Zugangsdaten statt verwalteter Identitäten",
+          "Managed Identities, Workload Identity Federation, Least Privilege"
+        ],
+        [
+          "RPA-Bots",
+          "Arbeiten mit den Rechten eines Menschen oder eines geteilten Kontos",
+          "Eigene Identität je Bot, eng begrenzte Rollen, Protokollierung"
+        ],
+        [
+          "KI-Agenten",
+          "Handeln im Namen von Nutzern, oft mit mehr Rechten als nötig, schwer nachvollziehbar",
+          "Eigene Agenten-Identität, begrenzte Delegation, Freigaben für kritische Aktionen, vollständige Protokolle"
+        ]
+      ],
+      "after": "Die meisten dieser Kontrollen lassen sich mit Ihrer bestehenden IGA-, PAM- oder Cloud-Plattform umsetzen. Ein zusätzliches Werkzeug empfehlen wir nur, wenn es eine konkrete Lücke schließt."
+    },
+    {
+      "id": "leistungen",
+      "type": "features",
+      "heading": "Was wir liefern",
+      "items": [
+        {
+          "title": "Inventar",
+          "text": "Wir finden Service-Accounts, Secrets, Zertifikate, Workload-Identitäten und KI-Agenten in Active Directory, Entra ID, Cloud-Plattformen und SaaS-Anwendungen."
+        },
+        {
+          "title": "Verantwortung",
+          "text": "Jede technische Identität bekommt eine verantwortliche Person, die ihren Zweck kennt und ihre Rechte bestätigt."
+        },
+        {
+          "title": "Lebenszyklus",
+          "text": "Anlage, Rezertifizierung und Stilllegung laufen über definierte Prozesse in Ihrer IGA-Plattform."
+        },
+        {
+          "title": "Kurzlebige Zugangsdaten",
+          "text": "Wo möglich ersetzen wir dauerhafte Secrets durch verwaltete Identitäten, Workload Identity Federation und Tresorlösungen mit Rotation."
+        },
+        {
+          "title": "Least Privilege und Monitoring",
+          "text": "Wir begrenzen Rechte auf das Nötige, protokollieren die Nutzung und machen Abweichungen sichtbar."
+        },
+        {
+          "title": "Governance für KI-Agenten",
+          "text": "Für jeden Agenten legen wir Identität, Delegation, Berechtigungsumfang und Protokollierung fest, zum Beispiel mit Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Mehr dazu: Non-Human Identities und KI-Agenten: die Governance-Lücke schließen",
+        "href": "/de/blog/non-human-identities-und-ki-agenten-steuern"
+      }
+    },
+    {
+      "id": "ki-agenten",
+      "type": "text",
+      "heading": "KI-Agenten: was anders ist",
+      "paragraphs": [
+        "Ein KI-Agent liest E-Mails, bucht Termine, ändert Datensätze oder ruft andere Systeme auf, oft im Namen eines Nutzers. Damit stellt sich bei jeder Aktion die Frage, wessen Rechte gerade gelten und wer sie freigegeben hat.",
+        "Wir behandeln Agenten deshalb als eigene Identitäten mit verantwortlicher Person. Sie erhalten nur die Rechte, die ihre Aufgabe braucht, delegierte Rechte sind zeitlich und inhaltlich begrenzt, kritische Aktionen brauchen eine menschliche Freigabe, und jede Aktion ist dem Agenten und dem auslösenden Nutzer zuzuordnen."
+      ]
+    },
+    {
+      "id": "vorgehen",
+      "type": "steps",
+      "heading": "So gehen wir vor",
+      "intro": "Vier Schritte, und nach jedem entscheiden Sie, ob und wie es weitergeht.",
+      "items": [
+        {
+          "title": "Inventar und Risikoanalyse",
+          "duration": "1–2 Wochen",
+          "text": "Wir erfassen die technischen Identitäten in Ihren wichtigsten Systemen und bewerten sie nach Rechten, Alter, Nutzung und Verantwortlichkeit."
+        },
+        {
+          "title": "Zielbild und Regeln",
+          "duration": "1–3 Wochen",
+          "text": "Wir legen fest, wie technische Identitäten entstehen, wem sie gehören, wie oft sie geprüft werden und wann sie enden, und welche Plattform was übernimmt."
+        },
+        {
+          "title": "Umsetzung",
+          "duration": "Iterativ",
+          "text": "Wir räumen auf, ordnen Verantwortliche zu, führen Rotation und kurzlebige Zugangsdaten ein und binden die Prozesse an Ihre IGA- oder PAM-Plattform an."
+        },
+        {
+          "title": "Betrieb",
+          "duration": "Laufend",
+          "text": "Rezertifizierungen, Berichte und Alarme laufen im Alltag mit. Auf Wunsch übernehmen wir den Betrieb."
+        }
+      ]
+    },
+    {
+      "id": "beispiel",
+      "type": "proof",
+      "heading": "Aus der Praxis",
+      "content": null,
+      "placeholder": "[NEED: ein anonymisiertes NHI-Projekt – Branche, Anzahl gefundener technischer Konten, Anteil ohne Verantwortliche, Ergebnis nach der Bereinigung. Abschnitt ausblenden, solange content null ist.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Häufige Fragen zu Non-Human Identities",
+      "items": [
+        {
+          "q": "Was ist eine Non-Human Identity?",
+          "a": "Jede Identität, die keinem Menschen gehört: Service-Accounts, technische Benutzer, API-Schlüssel, Zertifikate, Workload-Identitäten, Bots und KI-Agenten."
+        },
+        {
+          "q": "Brauchen wir ein eigenes NHI-Werkzeug?",
+          "a": "Nicht unbedingt. Viele Anforderungen lassen sich mit Ihrer bestehenden IGA-, PAM- oder Cloud-Plattform abdecken. Wir prüfen das herstellerneutral und empfehlen ein zusätzliches Werkzeug nur, wenn es eine konkrete Lücke schließt."
+        },
+        {
+          "q": "Wie finden Sie Service-Accounts, die niemand dokumentiert hat?",
+          "a": "Wir werten Verzeichnisse, Anmeldeprotokolle, Cloud-Konfigurationen und Tresore aus und gleichen die Ergebnisse mit den Systemverantwortlichen ab. Nicht zuordenbare Konten werden kontrolliert deaktiviert und beobachtet, bevor sie gelöscht werden."
+        },
+        {
+          "q": "Wie hängt das mit NIS2 und DORA zusammen?",
+          "a": "Beide verlangen nachweisbare Kontrolle über Zugriffe, unabhängig davon, ob ein Mensch oder eine Maschine zugreift. Technische Konten ohne verantwortliche Person sind ein häufiger Prüfungsbefund."
+        },
+        {
+          "q": "Was kostet das Erstgespräch?",
+          "a": "Nichts. In 30 Minuten besprechen wir Ihre Ausgangslage und ob und wie wir helfen können. Auf jede Anfrage antworten wir innerhalb eines Werktags."
+        }
+      ]
+    },
+    {
+      "id": "kontakt",
+      "type": "cta",
+      "heading": "Wissen Sie, wie viele Service-Accounts Sie haben?",
+      "text": "In 30 Minuten klären wir, wo Ihre technischen Identitäten liegen und wo Sie mit dem größten Effekt anfangen. Kostenlos und ohne Verkaufsgespräch.",
+      "cta": {
+        "label": "Erstgespräch vereinbaren",
+        "href": "/de/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Non-Human%20Identities"
+      }
+    }
+  ]
+}

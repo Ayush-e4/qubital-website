@@ -1,0 +1,230 @@
+{
+  "locale": "en",
+  "path": "/en/services/non-human-identity-ai-agents",
+  "alternates": {
+    "de": "/de/leistungen/non-human-identities-ki-agenten",
+    "en": "/en/services/non-human-identity-ai-agents",
+    "x-default": "/en/services/non-human-identity-ai-agents"
+  },
+  "meta": {
+    "title": "Non-Human Identity & AI Agent Governance · Qubital",
+    "description": "Govern service accounts, API keys, workloads and AI agents like any other identity: inventory, accountable owners, lifecycle and least privilege.",
+    "ogImageAlt": "Non-human identities and AI agents with Qubital"
+  },
+  "service": {
+    "serviceType": "Identity and access management consulting: non-human identity and AI agent governance",
+    "ogImage": "/og/nhi-en.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/en"
+    },
+    {
+      "name": "Services",
+      "href": "/en/services"
+    },
+    {
+      "name": "Non-human identities & AI agents",
+      "href": "/en/services/non-human-identity-ai-agents"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Non-human identities · AI agents",
+    "h1": "Service accounts, API keys and AI agents under control.",
+    "lead": "Every employee has a joiner and a leaver process. The many technical accounts, secrets and agents working in your systems usually have neither. We bring them into your identity governance, with an inventory, an accountable owner, a lifecycle and tightly scoped access.",
+    "cta": {
+      "label": "Book a free introductory call",
+      "href": "/en/contact"
+    },
+    "secondaryCta": {
+      "label": "What we deliver",
+      "href": "#deliverables"
+    },
+    "facts": [
+      {
+        "value": "82 : 1",
+        "label": "machine identities per employee (CyberArk Identity Security Landscape 2025)"
+      },
+      {
+        "value": "1",
+        "label": "accountable owner for every technical identity"
+      },
+      {
+        "value": "0",
+        "label": "standing secrets where short-lived credentials are possible"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "problem",
+      "type": "text",
+      "heading": "Why standard IGA processes miss these accounts",
+      "paragraphs": [
+        "Identity governance is built for people. An account starts with an employment contract, a manager confirms the access, and it is disabled when the person leaves. A service account has no contract, an API key has no manager, and a certificate expires without anyone being asked.",
+        "Auditors know the result: service accounts with domain admin rights whose purpose nobody remembers, secrets in source code that have been valid for years, and accounts from finished projects that still work.",
+        "NIS2 and DORA make no distinction between people and machines when it comes to access control. Technical accounts face the same requirements for inventory, access granting and evidence."
+      ]
+    },
+    {
+      "id": "types",
+      "type": "table",
+      "heading": "Common non-human identities and their controls",
+      "columns": ["Identity", "Typical risk", "Control"],
+      "rows": [
+        [
+          "Service accounts in Active Directory and Entra ID",
+          "Excessive rights, passwords that never expire, no accountable owner",
+          "Owner assignment, recertification, password rotation through PAM or gMSA"
+        ],
+        [
+          "API keys and secrets",
+          "Stored in code, config files or tickets, valid for years",
+          "Central vault, rotation, expiry dates, secret scanning"
+        ],
+        [
+          "Certificates",
+          "Unnoticed expiry causing outages, no overview",
+          "Inventory, automated renewal, an owner per certificate"
+        ],
+        [
+          "Cloud workload identities",
+          "Static credentials instead of managed identities",
+          "Managed identities, workload identity federation, least privilege"
+        ],
+        [
+          "RPA bots",
+          "Run with a person's rights or a shared account",
+          "A separate identity per bot, narrow roles, logging"
+        ],
+        [
+          "AI agents",
+          "Act on behalf of users, often with more rights than needed, hard to trace",
+          "A dedicated agent identity, limited delegation, approval for critical actions, complete logs"
+        ]
+      ],
+      "after": "Most of these controls can be implemented with your existing IGA, PAM or cloud platform. We recommend an additional tool only when it closes a specific gap."
+    },
+    {
+      "id": "deliverables",
+      "type": "features",
+      "heading": "What we deliver",
+      "items": [
+        {
+          "title": "Inventory",
+          "text": "We find service accounts, secrets, certificates, workload identities and AI agents across Active Directory, Entra ID, cloud platforms and SaaS applications."
+        },
+        {
+          "title": "Ownership",
+          "text": "Every technical identity gets an accountable owner who knows its purpose and confirms its access."
+        },
+        {
+          "title": "Lifecycle",
+          "text": "Creation, recertification and retirement run through defined processes in your IGA platform."
+        },
+        {
+          "title": "Short-lived credentials",
+          "text": "Where possible, we replace standing secrets with managed identities, workload identity federation and vaults with rotation."
+        },
+        {
+          "title": "Least privilege and monitoring",
+          "text": "We cut access down to what is needed, log its use and make deviations visible."
+        },
+        {
+          "title": "Governance for AI agents",
+          "text": "For every agent we define identity, delegation, scope of access and logging, for example with Microsoft Entra Agent ID."
+        }
+      ],
+      "link": {
+        "label": "Read more: Non-human identities and AI agents: closing the governance gap",
+        "href": "/en/blog/governing-non-human-identities-and-ai-agents"
+      }
+    },
+    {
+      "id": "ai-agents",
+      "type": "text",
+      "heading": "AI agents: what is different",
+      "paragraphs": [
+        "An AI agent reads email, books meetings, changes records or calls other systems, often on behalf of a user. For every action, that raises two questions: whose rights apply right now, and who approved them?",
+        "We treat agents as identities in their own right, each with an accountable owner. They get only the access their task needs, delegated rights are limited in time and scope, critical actions need human approval, and every action can be traced to both the agent and the user who triggered it."
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "steps",
+      "heading": "How we work",
+      "intro": "Four steps. After each one, you decide whether and how to continue.",
+      "items": [
+        {
+          "title": "Inventory and risk analysis",
+          "duration": "1–2 weeks",
+          "text": "We record the technical identities in your most important systems and rate them by access, age, usage and ownership."
+        },
+        {
+          "title": "Target model and rules",
+          "duration": "1–3 weeks",
+          "text": "We define how technical identities are created, who owns them, how often they are reviewed and when they end, and which platform handles what."
+        },
+        {
+          "title": "Implementation",
+          "duration": "Iterative",
+          "text": "We clean up, assign owners, introduce rotation and short-lived credentials, and connect the processes to your IGA or PAM platform."
+        },
+        {
+          "title": "Operations",
+          "duration": "Ongoing",
+          "text": "Recertifications, reports and alerts become part of daily operations. If you want, we run them for you."
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "proof",
+      "heading": "From a recent project",
+      "content": null,
+      "placeholder": "[NEED: one anonymised NHI project – industry, number of technical accounts found, share without an owner, result after clean-up. Hide this section while content is null.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Questions about non-human identities",
+      "items": [
+        {
+          "q": "What is a non-human identity?",
+          "a": "Any identity that does not belong to a person: service accounts, technical users, API keys, certificates, workload identities, bots and AI agents."
+        },
+        {
+          "q": "Do we need a dedicated NHI tool?",
+          "a": "Not necessarily. Many requirements can be covered with your existing IGA, PAM or cloud platform. We assess this vendor-neutrally and recommend an additional tool only when it closes a specific gap."
+        },
+        {
+          "q": "How do you find service accounts nobody has documented?",
+          "a": "We analyse directories, sign-in logs, cloud configurations and vaults, then check the results with system owners. Accounts nobody claims are disabled in a controlled way and monitored before they are deleted."
+        },
+        {
+          "q": "How does this relate to NIS2 and DORA?",
+          "a": "Both require provable control over access, whether a person or a machine is accessing. Technical accounts without an accountable owner are a common audit finding."
+        },
+        {
+          "q": "What does the introductory call cost?",
+          "a": "Nothing. In 30 minutes we discuss where you are today and whether and how we can help. Every inquiry gets an answer within one business day."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Do you know how many service accounts you have?",
+      "text": "In 30 minutes we work out where your technical identities live and where to start for the biggest effect. Free, and no sales pitch.",
+      "cta": {
+        "label": "Book your introductory call",
+        "href": "/en/contact"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=Non-human%20identities"
+      }
+    }
+  ]
+}

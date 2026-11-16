@@ -1,0 +1,252 @@
+{
+  "locale": "de",
+  "path": "/de/nis2-iam",
+  "alternates": {
+    "de": "/de/nis2-iam",
+    "en": "/en/nis2-identity-access-management",
+    "x-default": "/en/nis2-identity-access-management"
+  },
+  "meta": {
+    "title": "NIS2 und IAM: Zugriffskontrolle nachweisbar umsetzen",
+    "description": "Was NIS2 für Identity & Access Management verlangt: Zugriffskontrolle, MFA, privilegierte Konten, Dienstleisterzugriffe und Nachweise für das Audit.",
+    "ogImageAlt": "NIS2 und Identity & Access Management mit Qubital"
+  },
+  "service": {
+    "serviceType": "Identity and access management consulting: NIS2 access control compliance",
+    "ogImage": "/og/nis2-iam-de.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/de"
+    },
+    {
+      "name": "Leistungen",
+      "href": "/de/leistungen"
+    },
+    {
+      "name": "NIS2 und IAM",
+      "href": "/de/nis2-iam"
+    }
+  ],
+  "hero": {
+    "eyebrow": "NIS2 · Identity & Access Management",
+    "h1": "NIS2-Zugriffskontrolle, die im Audit besteht.",
+    "lead": "NIS2 verlangt Konzepte für die Zugriffskontrolle, Multi-Faktor-Authentifizierung und gesteuerte Zugriffe von Dienstleistern, und Sie müssen belegen, dass sie wirken. Wir zeigen, wo Ihre Lücken liegen, und schließen sie auf Ihrer bestehenden Plattform.",
+    "cta": {
+      "label": "Kostenloses Erstgespräch vereinbaren",
+      "href": "/de/kontakt"
+    },
+    "secondaryCta": {
+      "label": "Zur NIS2-IAM-Checkliste",
+      "href": "#checkliste"
+    },
+    "facts": [
+      {
+        "value": "3",
+        "label": "NIS2-Pflichten, die Identitäten direkt betreffen: Zugriffskontrolle, MFA, Lieferkette"
+      },
+      {
+        "value": "10 Mio. €",
+        "label": "oder 2 % des weltweiten Umsatzes: Bußgeldrahmen für besonders wichtige Einrichtungen"
+      },
+      {
+        "value": "8",
+        "label": "Prüfpunkte in unserer NIS2-IAM-Checkliste"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "anforderungen",
+      "type": "text",
+      "heading": "Was NIS2 für Identitäten und Zugriffe verlangt",
+      "paragraphs": [
+        "Die NIS2-Richtlinie verpflichtet wichtige und besonders wichtige Einrichtungen zu Risikomanagementmaßnahmen. Drei davon betreffen Identitäten direkt: Konzepte für die Zugriffskontrolle und das Management von Anlagen, Multi-Faktor-Authentifizierung und die Sicherheit der Lieferkette, zu der auch die Zugriffe Ihrer Dienstleister gehören.",
+        "In Deutschland setzt das NIS2-Umsetzungs- und Cybersicherheitsstärkungsgesetz (NIS2UmsuCG) die Richtlinie über das neue BSI-Gesetz um. Die Geschäftsleitung muss die Maßnahmen billigen, ihre Umsetzung überwachen und regelmäßig an Schulungen teilnehmen. Sie haftet für Versäumnisse.",
+        "Im Audit zählt, was Sie belegen können: eine freigegebene Richtlinie, ein vollständiges Inventar, Rezertifizierungen mit Ergebnis und Protokolle, die Sie im Ernstfall auch finden. Eine eingeführte MFA allein beantwortet keine dieser Fragen."
+      ]
+    },
+    {
+      "id": "zuordnung",
+      "type": "table",
+      "heading": "Wo Identity & Access Management in NIS2 steckt",
+      "columns": ["NIS2-Anforderung", "Was Prüfer sehen wollen", "IAM-Baustein"],
+      "rows": [
+        [
+          "Zugriffskontrolle und Management von Anlagen",
+          "Freigegebene Zugriffskontrollrichtlinie, Identitätsinventar, dokumentierte Vergabe und Entzug von Rechten, regelmäßige Rezertifizierung",
+          "Identity Governance & Administration (IGA)"
+        ],
+        [
+          "Sicherheit des Personals",
+          "Beim Austritt oder Wechsel werden Zugriffe sofort und vollständig entzogen",
+          "Automatisierter Joiner-Mover-Leaver-Prozess"
+        ],
+        [
+          "Multi-Faktor-Authentifizierung",
+          "MFA-Abdeckung je Benutzergruppe, phishingresistente Verfahren für Administratoren und Fernzugriffe",
+          "Workforce Identity, Conditional Access"
+        ],
+        [
+          "Sicherheit der Lieferkette",
+          "Dienstleisterzugriffe sind befristet, begründet, freigegeben und protokolliert",
+          "Privileged Access Management (PAM), IGA für Externe"
+        ],
+        [
+          "Bewältigung von Sicherheitsvorfällen",
+          "Authentifizierungs- und Änderungsprotokolle, mit denen Sie einen Vorfall nachvollziehen und melden können",
+          "Protokollierung, PAM-Sitzungsaufzeichnung"
+        ]
+      ],
+      "after": "Die Pflichten gelten für alle Konten, auch für Service-Accounts, API-Schlüssel und KI-Agenten. In vielen Gap-Analysen sind genau diese Konten die größte Lücke."
+    },
+    {
+      "id": "checkliste",
+      "type": "checklist",
+      "heading": "Die NIS2-IAM-Checkliste",
+      "intro": "Diese acht Punkte prüfen wir in jeder NIS2-Gap-Analyse. Wie viele davon können Sie heute belegen?",
+      "items": [
+        {
+          "title": "1. Zugriffskontrollrichtlinie",
+          "text": "Schriftlich, versioniert und von der Geschäftsleitung freigegeben."
+        },
+        {
+          "title": "2. Vollständiges Identitätsinventar",
+          "text": "Mitarbeitende, Externe, Administratoren, Service-Accounts und KI-Agenten, jeweils mit verantwortlicher Person."
+        },
+        {
+          "title": "3. Joiner-Mover-Leaver",
+          "text": "Rechte entstehen und enden automatisch mit dem Eintritt, dem Wechsel und dem Austritt."
+        },
+        {
+          "title": "4. Rezertifizierung mit Nachweis",
+          "text": "Führungskräfte und Systemverantwortliche bestätigen Zugriffe regelmäßig, und das Ergebnis ist dokumentiert."
+        },
+        {
+          "title": "5. MFA für alle, phishingresistent für Admins",
+          "text": "FIDO2 oder Passkeys für privilegierte Konten und Fernzugriffe."
+        },
+        {
+          "title": "6. Privilegierte Konten unter Kontrolle",
+          "text": "Passwörter im Tresor, Just-in-Time-Zugriff und Sitzungsaufzeichnung für Administratoren."
+        },
+        {
+          "title": "7. Dienstleisterzugriffe befristet",
+          "text": "Jeder externe Zugriff hat ein Enddatum, eine Begründung und eine Freigabe."
+        },
+        {
+          "title": "8. Protokolle, die Sie finden",
+          "text": "Anmeldungen und Rechteänderungen werden zentral gespeichert und lange genug aufbewahrt."
+        }
+      ],
+      "link": {
+        "label": "Service-Accounts und KI-Agenten unter NIS2 steuern",
+        "href": "/de/leistungen/non-human-identities-ki-agenten"
+      }
+    },
+    {
+      "id": "vorgehen",
+      "type": "steps",
+      "heading": "So gehen wir vor",
+      "intro": "Vier Schritte, und nach jedem entscheiden Sie, ob und wie es weitergeht.",
+      "items": [
+        {
+          "title": "Gap-Analyse",
+          "duration": "ca. 2 Wochen",
+          "text": "Wir prüfen Ihre Identitäten, Prozesse und Plattformen gegen die NIS2-Anforderungen und die Checkliste oben. Sie erhalten eine Liste der Lücken, jeweils mit Risiko und Aufwand."
+        },
+        {
+          "title": "Maßnahmenplan",
+          "duration": "ca. 1 Woche",
+          "text": "Wir priorisieren die Maßnahmen nach Risiko und Prüfrelevanz und bereiten die Unterlagen so auf, dass die Geschäftsleitung sie billigen kann."
+        },
+        {
+          "title": "Umsetzung",
+          "duration": "Iterativ",
+          "text": "Wir setzen die Maßnahmen auf Ihrer bestehenden Plattform um, zum Beispiel Microsoft Entra ID, One Identity, SailPoint oder CyberArk. Alle zwei Wochen sehen Sie den Fortschritt in einer Demo."
+        },
+        {
+          "title": "Nachweise und Betrieb",
+          "duration": "Laufend",
+          "text": "Wir richten Berichte und Rezertifizierungen so ein, dass die Nachweise im laufenden Betrieb entstehen. Auf Wunsch übernehmen wir den Betrieb."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Was Sie von uns bekommen",
+      "items": [
+        {
+          "title": "Klare Sprache für die Geschäftsleitung",
+          "text": "Wir übersetzen Artikel und Paragrafen in konkrete Entscheidungen mit Risiko, Aufwand und Reihenfolge."
+        },
+        {
+          "title": "Herstellerneutral",
+          "text": "Wir nutzen zuerst, was Sie bereits lizenziert haben. Eine neue Plattform empfehlen wir nur, wenn die vorhandene die Anforderungen nicht abdeckt."
+        },
+        {
+          "title": "Ein Ansprechpartner",
+          "text": "Eine feste Person begleitet Sie von der Gap-Analyse bis zum Audit, auf Deutsch oder Englisch."
+        },
+        {
+          "title": "Eine Umsetzung für mehrere Normen",
+          "text": "Wir ordnen jede Maßnahme auch ISO 27001 (Anhang A 5.15 bis 5.18 und 8.2) und, wo relevant, DORA zu."
+        }
+      ]
+    },
+    {
+      "id": "beispiel",
+      "type": "proof",
+      "heading": "Aus der Praxis",
+      "content": null,
+      "placeholder": "[NEED: ein anonymisiertes NIS2-Projekt – Branche, Größe, wichtigste Lücken, umgesetzte Maßnahmen, Ergebnis im Audit. Abschnitt ausblenden, solange content null ist.]"
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Häufige Fragen zu NIS2 und IAM",
+      "items": [
+        {
+          "q": "Ist unser Unternehmen von NIS2 betroffen?",
+          "a": "Das hängt von Ihrem Sektor, Ihrer Größe und Ihrer Rolle in der Lieferkette ab. Das BSI bietet dafür eine Betroffenheitsprüfung an. Wenn Sie unsicher sind, klären wir die Frage gern im Erstgespräch."
+        },
+        {
+          "q": "Reicht Multi-Faktor-Authentifizierung für NIS2?",
+          "a": "Nein. MFA ist eine von mehreren Anforderungen. Zugriffskontrolle, ein gesteuerter Lebenszyklus für Konten, Dienstleisterzugriffe und Protokollierung gehören genauso dazu."
+        },
+        {
+          "q": "Gilt NIS2 auch für Service-Accounts und KI-Agenten?",
+          "a": "Ja. Die Anforderungen an die Zugriffskontrolle gelten für alle Konten, ob Mensch oder Maschine. Technische Konten ohne verantwortliche Person sind in Prüfungen ein häufiger Befund."
+        },
+        {
+          "q": "Wir fallen unter DORA. Gilt NIS2 trotzdem?",
+          "a": "Für Finanzunternehmen gehen die DORA-Vorgaben zum IKT-Risikomanagement in der Regel vor. Die Anforderungen an Zugriffskontrolle und Nachweise sind sehr ähnlich, deshalb lässt sich eine Umsetzung für beide nutzen."
+        },
+        {
+          "q": "Hilft eine ISO-27001-Zertifizierung?",
+          "a": "Ja, sie deckt viele Anforderungen ab. Prüfen Sie aber, ob Ihr Geltungsbereich alle betroffenen Systeme und Dienstleister einschließt und ob die Kontrollen zur Zugriffskontrolle in der Praxis wirken."
+        },
+        {
+          "q": "Was kostet das Erstgespräch?",
+          "a": "Nichts. In 30 Minuten besprechen wir Ihre Ausgangslage und ob und wie wir helfen können. Auf jede Anfrage antworten wir innerhalb eines Werktags."
+        }
+      ]
+    },
+    {
+      "id": "kontakt",
+      "type": "cta",
+      "heading": "Wo steht Ihre Zugriffskontrolle heute?",
+      "text": "In 30 Minuten klären wir, welche NIS2-Anforderungen für Sie gelten und wo Sie mit dem größten Effekt anfangen. Kostenlos und ohne Verkaufsgespräch.",
+      "cta": {
+        "label": "Erstgespräch vereinbaren",
+        "href": "/de/kontakt"
+      },
+      "secondary": {
+        "label": "hello@qubital.eu",
+        "href": "mailto:hello@qubital.eu?subject=NIS2%20und%20IAM"
+      }
+    }
+  ]
+}

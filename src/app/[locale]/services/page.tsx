@@ -9,6 +9,8 @@ import { Container } from '@/components/ui/Container';
 import { Reveal, Stagger, StaggerItem } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
+import { isLandingLocale, type LandingPathname } from '@/content/landing';
+import { getPathname } from '@/i18n/navigation';
 import { initPage, pageMetadata } from '@/lib/page';
 import { rich } from '@/lib/rich';
 
@@ -24,6 +26,17 @@ const serviceClips: Record<ServiceKey, ClipName> = {
   ai: 'agent-scope',
 };
 
+// Deeper landing pages per area (German and English only).
+const areaLandings: Partial<Record<ServiceKey, { href: LandingPathname; de: string; en: string }>> =
+  {
+    iga: { href: '/sap-idm-replacement', de: 'SAP IdM ablösen', en: 'Replacing SAP IdM' },
+    ai: {
+      href: '/services/non-human-identity-ai-agents',
+      de: 'Mehr zu Non-Human Identities und KI-Agenten',
+      en: 'More on non-human identities and AI agents',
+    },
+  };
+
 const clipLabels = {
   'access-request': 'accessRequest',
   'just-in-time': 'justInTime',
@@ -37,7 +50,7 @@ export function generateMetadata({ params }: PageProps<'/[locale]/services'>) {
 }
 
 export default async function ServicesPage({ params }: PageProps<'/[locale]/services'>) {
-  await initPage(params);
+  const locale = await initPage(params);
   const t = await getTranslations('services');
   const tClips = await getTranslations('clips');
   const models = t.raw('page.models.items') as { title: string; text: string }[];
@@ -102,6 +115,16 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
                         </li>
                       ))}
                     </ul>
+                    {areaLandings[key] && isLandingLocale(locale) && (
+                      <p className="mt-8">
+                        <a
+                          href={getPathname({ locale, href: areaLandings[key].href })}
+                          className="text-cyan underline-offset-4 transition-colors hover:underline"
+                        >
+                          {areaLandings[key][locale]} →
+                        </a>
+                      </p>
+                    )}
                   </div>
                   <Clip
                     name={serviceClips[key]}

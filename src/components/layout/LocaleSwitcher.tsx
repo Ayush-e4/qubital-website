@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { useEffect, useId, useRef, useState, useTransition } from 'react';
 import { translateSlug } from '@/content/blog/meta';
+import { isLandingLocale, isLandingPathname } from '@/content/landing';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { localeInfo, routing, type Locale } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
@@ -51,6 +52,8 @@ export function LocaleSwitcher({
   }, [open]);
 
   // A blog post has its own slug in each language, so swap it for its counterpart.
+  // Landing pages exist in German and English only; any other language gets its
+  // services page instead of a 404.
   const switchTo = (l: Locale) => {
     setOpen(false);
     if (l === locale) return;
@@ -59,6 +62,8 @@ export function LocaleSwitcher({
         const slug = params.slug && translateSlug(params.slug, l);
         if (slug) router.replace({ pathname, params: { slug } }, { locale: l });
         else router.replace('/blog', { locale: l });
+      } else if (isLandingPathname(pathname) && !isLandingLocale(l)) {
+        router.replace('/services', { locale: l });
       } else {
         router.replace(pathname, { locale: l });
       }

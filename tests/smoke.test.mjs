@@ -210,6 +210,18 @@ const ROUTES = {
     da: '/da/blog/identitetsstyring-for-sap-landskaber',
   },
 };
+/**
+ * Topic landing pages: German and English only (src/content/landing). Every
+ * other locale must answer 404, and their hreflang names de, en and x-default.
+ */
+const LANDING_ROUTES = {
+  'sap-idm': { de: '/de/sap-idm-abloesung', en: '/en/sap-idm-replacement' },
+  'nis2-iam': { de: '/de/nis2-iam', en: '/en/nis2-identity-access-management' },
+  nhi: {
+    de: '/de/leistungen/non-human-identities-ki-agenten',
+    en: '/en/services/non-human-identity-ai-agents',
+  },
+};
 const LOCALES = ['de', 'en', 'fr', 'it', 'es', 'nl', 'pl', 'pt', 'sv', 'da'];
 const DEFAULT_LOCALE = 'en';
 
@@ -293,7 +305,13 @@ const attr = (html, re) => html.match(re)?.[1];
 const routeCount = Object.keys(ROUTES).length;
 
 test('sitemap lists every route for every locale', () => {
-  assert.equal(sitemapLocs.length, routeCount * LOCALES.length);
+  const landingCount = Object.keys(LANDING_ROUTES).length * 2;
+  assert.equal(sitemapLocs.length, routeCount * LOCALES.length + landingCount);
+  for (const paths of Object.values(LANDING_ROUTES)) {
+    for (const path of Object.values(paths)) {
+      assert.ok(sitemapLocs.includes(SITE + path), `sitemap missing ${SITE + path}`);
+    }
+  }
   for (const paths of Object.values(ROUTES)) {
     for (const locale of LOCALES) {
       const expected = SITE + paths[locale];
@@ -358,6 +376,54 @@ test('html lang matches the locale being served', () => {
   for (const { locale, path, html } of entries) {
     const lang = attr(html, /<html[^>]*\slang="([^"]*)"/);
     if (lang !== locale) bad.push(`${path}: lang=${lang}, want ${locale}`);
+  }
+  assert.deepEqual(bad, []);
+});
+
+// --- topic landing pages (German and English only) ---------------------------
+
+test('landing pages: canonical, de/en/x-default hreflang, one brand, structured data', async () => {
+  const bad = [];
+  for (const [route, paths] of Object.entries(LANDING_ROUTES)) {
+    for (const [locale, path] of Object.entries(paths)) {
+      const res = await fetch(BASE + path, { redirect: 'manual' });
+      if (res.status !== 200) {
+        bad.push(`${path} -> ${res.status}`);
+        continue;
+      }
+      const html = await res.text();
+      const canonical = attr(html, /<link rel="canonical" href="([^"]*)"/);
+      if (canonical !== SITE + path) bad.push(`${path}: canonical ${canonical}`);
+      for (const l of ['de', 'en']) {
+        const href = attr(html, new RegExp(`hreflang="${l}" href="([^"]*)"`, 'i'));
+        if (href !== SITE + paths[l]) bad.push(`${path} [${l}]: got ${href}`);
+      }
+      const xDefault = attr(html, /hreflang="x-default" href="([^"]*)"/i);
+      if (xDefault !== SITE + paths.en) bad.push(`${path} [x-default]: got ${xDefault}`);
+      for (const l of LOCALES.filter((x) => x !== 'de' && x !== 'en')) {
+        if (new RegExp(`hreflang="${l}"`, 'i').test(html)) bad.push(`${path}: lists ${l}`);
+      }
+      const lang = attr(html, /<html[^>]*\slang="([^"]*)"/);
+      if (lang !== locale) bad.push(`${path}: lang=${lang}`);
+      const title = attr(html, /<title>(.*?)<\/title>/s);
+      if (!title || title.split('Qubital').length - 1 !== 1) bad.push(`${path}: title ${title}`);
+      if (!html.includes('"@type":"Service"')) bad.push(`${path}: no Service JSON-LD`);
+      if (!html.includes('"@type":"FAQPage"')) bad.push(`${path}: no FAQPage JSON-LD`);
+      if (/\[NEED/.test(html)) bad.push(`${path}: placeholder text rendered`);
+    }
+    void route;
+  }
+  assert.deepEqual(bad, []);
+});
+
+test('landing pages answer 404 in every other locale', async () => {
+  const bad = [];
+  for (const paths of Object.values(LANDING_ROUTES)) {
+    for (const l of LOCALES.filter((x) => x !== 'de' && x !== 'en')) {
+      const path = paths.en.replace(/^\/en/, `/${l}`);
+      const res = await fetch(BASE + path, { redirect: 'manual' });
+      if (res.status !== 404) bad.push(`${path} -> ${res.status}`);
+    }
   }
   assert.deepEqual(bad, []);
 });

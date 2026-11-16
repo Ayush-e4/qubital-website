@@ -1,5 +1,21 @@
 import { defineRouting } from 'next-intl/routing';
 
+// Topic landing pages exist in German and English only (see src/content/landing).
+// next-intl needs a slug for every locale, so the others reuse the English one;
+// the page answers 404 there and the language picker redirects away from it.
+const deEnOnly = (de: string, en: string) => ({
+  de,
+  en,
+  fr: en,
+  it: en,
+  es: en,
+  nl: en,
+  pl: en,
+  pt: en,
+  sv: en,
+  da: en,
+});
+
 // Every language has its own prefix and localized slugs. A visitor's browser
 // language picks the locale (fr-BE gets French, nl-BE Dutch, de-AT German …);
 // any other language falls back to English, so everyone lands on a page they can read.
@@ -80,6 +96,12 @@ export const routing = defineRouting({
       sv: '/karriar',
       da: '/karriere',
     },
+    '/sap-idm-replacement': deEnOnly('/sap-idm-abloesung', '/sap-idm-replacement'),
+    '/nis2-iam': deEnOnly('/nis2-iam', '/nis2-identity-access-management'),
+    '/services/non-human-identity-ai-agents': deEnOnly(
+      '/leistungen/non-human-identities-ki-agenten',
+      '/services/non-human-identity-ai-agents'
+    ),
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
     '/contact': {
