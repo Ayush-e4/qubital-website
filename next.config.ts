@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { postMeta } from './src/content/blog/meta';
 import { routing, type Locale, type Pathname } from './src/i18n/routing';
 
 const withNextIntl = createNextIntlPlugin();
@@ -94,6 +95,20 @@ function legacyRedirects() {
     add(old, localized('en', href as Exclude<Pathname, '/blog/[slug]'>));
     for (const locale of OLD_LOCALES) {
       add(`/${locale}${old}`, localized(locale, href as Exclude<Pathname, '/blog/[slug]'>));
+    }
+  }
+  // Blog posts have one slug per language, and search engines have picked up
+  // slugs under the wrong language (/de/blog/<Swedish slug>) or without a
+  // prefix (/blog/<slug>). Each goes to the same post: under a language prefix
+  // in that language, without one in the language the slug belongs to.
+  for (const post of postMeta) {
+    for (const [slugLocale, slug] of Object.entries(post.slugs) as [Locale, string][]) {
+      add(`/blog/${slug}`, `/${slugLocale}/blog/${slug}`);
+      for (const locale of routing.locales) {
+        if (post.slugs[locale] !== slug) {
+          add(`/${locale}/blog/${slug}`, `/${locale}/blog/${post.slugs[locale]}`);
+        }
+      }
     }
   }
   return rules;

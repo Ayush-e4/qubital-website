@@ -585,6 +585,34 @@ test('old URLs redirect permanently to their new pages', async () => {
   assert.deepEqual(bad, []);
 });
 
+test('blog slugs in the wrong language or without a prefix redirect to the post', async () => {
+  // URLs Google Search Console reported as 404.
+  const cases = {
+    '/de/blog/fran-70-sekunder-till-under-en-langsam-iam-databasfraga':
+      '/de/blog/iam-performance-abfrage-70-sekunden-unter-eine',
+    '/da/blog/identitetsstyrning-for-sap-miljoer': '/da/blog/identitetsstyring-for-sap-landskaber',
+    '/de/blog/governing-non-human-identities-and-ai-agents':
+      '/de/blog/non-human-identities-und-ki-agenten-steuern',
+    '/nl/blog/identidades-nao-humanas-e-agentes-de-ia':
+      '/nl/blog/niet-menselijke-identiteiten-en-ai-agents',
+    '/blog/zarzadzanie-tozsamoscia-w-srodowiskach-sap':
+      '/pl/blog/zarzadzanie-tozsamoscia-w-srodowiskach-sap',
+    '/blog/iam-performance-abfrage-70-sekunden-unter-eine':
+      '/de/blog/iam-performance-abfrage-70-sekunden-unter-eine',
+  };
+  const bad = [];
+  for (const [from, to] of Object.entries(cases)) {
+    const res = await fetch(BASE + from, { redirect: 'manual' });
+    if (res.status !== 308 || locationPath(res) !== to) {
+      bad.push(`${from}: ${res.status} -> ${res.headers.get('location')}, want 308 -> ${to}`);
+      continue;
+    }
+    const page = await fetch(BASE + to, { redirect: 'manual' });
+    if (page.status !== 200) bad.push(`${to}: ${page.status}`);
+  }
+  assert.deepEqual(bad, []);
+});
+
 test('/de/impressum keeps working unchanged', async () => {
   const res = await fetch(`${BASE}/de/impressum`, { redirect: 'manual' });
   assert.equal(res.status, 200);
