@@ -8,7 +8,7 @@ import {
 } from '@/content/landing';
 import { getPathname } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
-import { ogImage, ogLocale } from '@/lib/page';
+import { ogImage as siteOgImage, ogLocale } from '@/lib/page';
 
 /** Canonical plus hreflang for German, English and x-default (English) only. */
 export function landingAlternates(locale: Locale, href: LandingPathname) {
@@ -32,6 +32,7 @@ export async function landingMetadata(
   // the standalone preview, so strip it here to name the brand exactly once.
   const title = page.meta.title.replace(/\s·\s[^·]+$/, '');
   const { description } = page.meta;
+  const image = { ...siteOgImage, url: page.service.ogImage, alt: page.meta.ogImageAlt };
   const { alternateLocale: _all, ...og } = ogLocale(locale as Locale);
   return {
     title,
@@ -45,13 +46,13 @@ export async function landingMetadata(
       alternateLocale: landingLocales
         .filter((l) => l !== locale)
         .map((l) => (l === 'de' ? 'de_DE' : 'en_GB')),
-      images: [ogImage],
+      images: [image],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} · ${site.name}`,
       description,
-      images: [ogImage.url],
+      images: [image.url],
     },
   };
 }
@@ -68,6 +69,7 @@ export function landingJsonLd(page: LandingContent) {
         '@id': `${url}#service`,
         name: page.breadcrumb.at(-1)?.name,
         serviceType: page.service.serviceType,
+        image: site.url + page.service.ogImage,
         description: page.meta.description,
         url,
         inLanguage: page.locale,

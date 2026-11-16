@@ -410,6 +410,15 @@ test('landing pages: canonical, de/en/x-default hreflang, one brand, structured 
       if (!html.includes('"@type":"Service"')) bad.push(`${path}: no Service JSON-LD`);
       if (!html.includes('"@type":"FAQPage"')) bad.push(`${path}: no FAQPage JSON-LD`);
       if (/\[NEED/.test(html)) bad.push(`${path}: placeholder text rendered`);
+      const og = attr(html, /<meta property="og:image" content="([^"]*)"/);
+      if (!og || !og.startsWith(`${SITE}/og/`)) bad.push(`${path}: og:image ${og}`);
+      else {
+        const img = await fetch(BASE + og.slice(SITE.length));
+        const type = img.headers.get('content-type');
+        if (img.status !== 200 || !type?.startsWith('image/png')) {
+          bad.push(`${og} -> ${img.status} ${type}`);
+        }
+      }
     }
     void route;
   }
