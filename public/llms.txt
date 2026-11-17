@@ -13,6 +13,9 @@
 - [DPPSpace](https://qubital.eu/en/product): software to prepare EU Digital Product Passports (ESPR, battery passport from 18 February 2027); also at https://dppspace.com
 
 ## Articles
+- [Joiner, mover, leaver: getting the identity lifecycle right](https://qubital.eu/en/blog/joiner-mover-leaver-identity-lifecycle)
+- [Access reviews that mean something](https://qubital.eu/en/blog/access-reviews-that-mean-something)
+- [Privileged access management: from vaulted passwords to just-in-time access](https://qubital.eu/en/blog/privileged-access-management-just-in-time)
 - [The EU Digital Product Passport explained](https://qubital.eu/en/blog/eu-digital-product-passport-explained)
 - [Battery passport 2027](https://qubital.eu/en/blog/battery-passport-2027-what-manufacturers-need)
 - [Getting your data ready for the Digital Product Passport](https://qubital.eu/en/blog/preparing-data-for-the-digital-product-passport)
