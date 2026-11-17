@@ -15,11 +15,21 @@ export const site = {
     addressRegion: 'Bavaria',
     addressCountry: 'DE',
   },
-  // Author of the blog posts (named in the imprint), for bylines and structured data.
-  author: {
-    name: 'Arun Kumar',
-    jobTitle: 'IAM/IGA Architect',
-    linkedin: 'https://www.linkedin.com/in/arun1812/',
+  // Blog authors, for bylines and structured data. The bio text is in
+  // messages (blog.authors.<id>.bio) so it is translated.
+  authors: {
+    arun: {
+      name: 'Arun Kumar',
+      initials: 'AK',
+      jobTitle: 'IAM/IGA Enthusiast',
+      linkedin: 'https://www.linkedin.com/in/arun1812/',
+    },
+    manoj: {
+      name: 'Manoj Sahani',
+      initials: 'MS',
+      jobTitle: 'Technical Architect, Cloud & AI Solutions',
+      linkedin: 'https://www.linkedin.com/in/sahanimanoj/',
+    },
   },
   // Markets served, for structured data: the DACH region first, then the rest of
   // the EU/EEA, Switzerland and the UK (where the client logos already are).
