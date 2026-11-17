@@ -43,7 +43,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     keywords: post.keywords,
-    authors: [{ name: site.legalName, url: site.url }],
+    authors: [{ name: site.authors[post.author].name, url: site.authors[post.author].linkedin }],
     alternates: {
       canonical: url,
       languages: {
@@ -84,6 +84,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
     .filter((p) => p.id !== post.id)
     .slice(0, 2);
 
+  const author = site.authors[post.author];
   const url = site.url + postPath(locale, post);
   const blogUrl = site.url + getPathname({ locale, href: '/blog' });
   const jsonLd = {
@@ -104,7 +105,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
         dateModified: post.updated,
         wordCount: post.wordCount,
         image: site.url + ogImage.url,
-        author: { '@id': `${site.url}/#author` },
+        author: { '@id': `${site.url}/#author-${post.author}` },
         publisher: { '@id': `${site.url}/#organization` },
         isPartOf: { '@id': `${blogUrl}#blog` },
       },
@@ -163,7 +164,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
                   {post.excerpt}
                 </p>
                 <p className="mt-8 text-sm text-faint">
-                  <span>{site.author.name}</span>
+                  <span>{author.name}</span>
                   {' · '}
                   <time dateTime={post.published}>{formatDate(post.published, locale)}</time>
                   {' · '}
@@ -197,7 +198,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
                 aria-hidden
                 className="grid size-14 shrink-0 place-items-center rounded-full bg-gradient-to-br from-violet to-cyan font-medium text-bg"
               >
-                AK
+                {author.initials}
               </div>
               <div>
                 <h2 id="author-heading" className="text-sm text-faint">
@@ -205,15 +206,17 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
                 </h2>
                 <p className="mt-1 text-lg font-medium">
                   <a
-                    href={site.author.linkedin}
+                    href={author.linkedin}
                     target="_blank"
                     rel="noopener noreferrer author"
                     className="hover:text-gradient"
                   >
-                    {site.author.name}
+                    {author.name}
                   </a>
                 </p>
-                <p className="mt-2 leading-relaxed text-muted text-pretty">{t('authorBio')}</p>
+                <p className="mt-2 leading-relaxed text-muted text-pretty">
+                  {t(`authors.${post.author}.bio`)}
+                </p>
               </div>
             </aside>
           </div>
