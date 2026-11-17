@@ -636,5 +636,243 @@
         "text": "DPPSpace volgt deze stappen: een productrecord, een herbruikbare materiaalbibliotheek, koppeling van leveranciers en bewijsstukken, en een gereedheidsoverzicht dat laat zien wat er vóór publicatie nog ontbreekt. Wilt u de stappen doorlopen met uw eigen product? Plan een demo of neem contact met ons op voor een data-readinesscheck."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Joiner, mover, leaver: de identiteitslevenscyclus goed inrichten",
+    "description": "Joiner-, mover- en leaverprocessen automatiseren: HR als bron van waarheid, basisrechten, functiewissels zonder restrechten en leavers op tijd geblokkeerd.",
+    "excerpt": "De meeste toegangsproblemen beginnen bij een levenscyclusgebeurtenis die niemand netjes heeft afgehandeld. Zo ontwerpt u joiner-, mover- en leaverprocessen die toegang snel verlenen en volledig weer intrekken.",
+    "summary": "Een goed joiner-mover-leaverproces haalt identiteitsgegevens uit HR, kent basisrechten automatisch toe vanaf de eerste werkdag, trekt oude toegang in bij een functiewissel en blokkeert alle accounts op de laatste dag. De moverstap veroorzaakt de meeste restrechten, dus behandel die als een leaver plus een joiner.",
+    "category": "Identity governance",
+    "keywords": [
+      "joiner mover leaver",
+      "JML-proces",
+      "identity lifecycle management",
+      "geautomatiseerde gebruikersprovisioning",
+      "toegangsrechten intrekken",
+      "basisrechten"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Vraag een auditor waar toegangsproblemen vandaan komen en het antwoord is meestal hetzelfde: mensen die vertrokken zijn maar nog accounts hebben, en mensen die van functie zijn gewisseld en alles hebben behouden wat ze eerder hadden. Beide zijn fouten in de levenscyclus. Ze ontstaan wanneer joiners, movers en leavers worden afgehandeld met tickets, e-mails en goede bedoelingen in plaats van met een vastgelegd proces."
+      },
+      {
+        "type": "h2",
+        "text": "Begin met één bron van waarheid"
+      },
+      {
+        "type": "p",
+        "text": "Elk levenscyclusproces heeft een trigger nodig die het kan vertrouwen. Voor medewerkers is dat het HR-systeem: datum in dienst, afdeling, functie, leidinggevende en einddatum. Voor externen is het vaak een apart systeem of een leveranciersbeheerproces, en dat vraagt dezelfde discipline, inclusief een einddatum die altijd is ingevuld."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Spreek af welk systeem leidend is voor elk type identiteit.",
+          "Maak de einddatum verplicht voor elke externe identiteit.",
+          "Los datakwaliteit op bij de bron, niet met uitzonderingen in het identityplatform."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Joiners: klaar op dag één"
+      },
+      {
+        "type": "p",
+        "text": "Een nieuwe medewerker moet op de eerste ochtend aan de slag kunnen. Dat betekent dat basisrechten (de accounts en groepen die iedereen in een rol krijgt) automatisch vóór de startdatum worden aangemaakt. Alles daarbovenop loopt via een aanvraag met een goedkeurder, zodat de basis klein en voorspelbaar blijft."
+      },
+      {
+        "type": "h2",
+        "text": "Movers: de stap die de meeste bedrijven fout doen"
+      },
+      {
+        "type": "p",
+        "text": "Wanneer iemand van sales naar finance overstapt, wordt nieuwe toegang snel aangevraagd, omdat de persoon die nodig heeft om te werken. De oude toegang wordt zelden verwijderd, omdat niemand die mist. Na een paar overstappen verzamelen mensen rechten die geen enkele rol op zichzelf zou rechtvaardigen, inclusief toxische combinaties."
+      },
+      {
+        "type": "callout",
+        "text": "Behandel een functiewissel als een leaver en een joiner tegelijk: verwijder de toegang die bij de oude rol hoort, ken de toegang van de nieuwe rol toe en geef de leidinggevende een korte periode om aan te vragen wat de persoon uit de oude functie nog nodig heeft."
+      },
+      {
+        "type": "h2",
+        "text": "Leavers: volledig en op tijd"
+      },
+      {
+        "type": "p",
+        "text": "Op de laatste dag moet elk account zijn uitgeschakeld, niet alleen het directory-account. Dat omvat cloudapplicaties met eigen logins, geprivilegieerde accounts, VPN en toegang op afstand, en toegang die is verleend aan externe partijen die de persoon beheerde. Het eigenaarschap van serviceaccounts en gedeelde mailboxen van de vertrekkende medewerker moet vóór het vertrek naar iemand anders overgaan."
+      },
+      {
+        "type": "h2",
+        "text": "Meet het proces, niet alleen de tool"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Tijd van indiensttreding tot werkende toegang voor nieuwe joiners.",
+          "Aandeel movers van wie de oude toegang binnen een vaste termijn is verwijderd.",
+          "Accounts die na de einddatum nog actief zijn, per systeem.",
+          "Aantal handmatige levenscyclustickets per maand."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Deze cijfers laten zien of de automatisering in de praktijk werkt, en het zijn precies de cijfers waar auditors om vragen. Wilt u zien waar uw levenscyclus vandaag lekt? Dan beginnen we met een kort assessment van uw HR-data, uw identityplatform en de systemen die daarbuiten vallen."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Access reviews die ertoe doen: een einde aan hercertificering als afvinkoefening",
+    "description": "Waarom access reviews verworden tot blind aftekenen en hoe u dat oplost: kleinere scope, begrijpelijke omschrijvingen, risicofocus, eigenaren en echte intrekking.",
+    "excerpt": "Duizenden vinkjes, goedgekeurd in één middag. Waarom de meeste access reviews niets verwijderen, en vijf veranderingen die van hercertificering weer een echte beheersmaatregel maken.",
+    "summary": "Access reviews mislukken wanneer reviewers duizenden regels krijgen die ze niet begrijpen en daarom alles goedkeuren. Ze werken wel als u de scope beperkt tot wat ertoe doet, toegang in bedrijfstaal beschrijft, focust op risicovolle en ongebruikte toegang, naast managers ook systeemeigenaren betrekt en ervoor zorgt dat intrekkingen echt worden uitgevoerd.",
+    "category": "Identity governance",
+    "keywords": [
+      "access review",
+      "hercertificering toegangsrechten",
+      "toegangscertificering",
+      "periodieke autorisatiecontrole",
+      "risicogebaseerde access review",
+      "IGA-audit"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Elk kwartaal krijgen managers een lijst met de toegangsrechten van hun team, met het verzoek die te bevestigen. Velen openen een lijst met honderden cryptische rechtennamen, weten van de meeste niet wat ze betekenen en keuren alles goed om weer aan het werk te kunnen. De campagne sluit af op 100 procent, de auditor krijgt een rapport en er is vrijwel geen toegang verwijderd."
+      },
+      {
+        "type": "p",
+        "text": "Dat is blind aftekenen, en auditors herkennen het steeds vaker. Een review die nooit iets intrekt, is het bewijs dat de beheersmaatregel niet werkt. Hier zijn vijf veranderingen die van hercertificering weer een echte beheersmaatregel maken."
+      },
+      {
+        "type": "h2",
+        "text": "1. Review minder, maar de juiste dingen"
+      },
+      {
+        "type": "p",
+        "text": "Niet elk recht verdient dezelfde aandacht. Basisrechten die iedereen in een rol automatisch krijgt, hoeven niet elk kwartaal door een manager te worden bevestigd. Richt reviews op toegang die is aangevraagd, die geprivilegieerd is of die gevoelige data raakt, en review de rest minder vaak."
+      },
+      {
+        "type": "h2",
+        "text": "2. Beschrijf toegang in bedrijfstaal"
+      },
+      {
+        "type": "p",
+        "text": "Een reviewer kan “SAP_FI_AP_ALL_0100” niet beoordelen. “Kan leveranciersfacturen aanmaken en betalen in bedrijfsnummer 0100” wel. Elk reviewbaar recht heeft een duidelijke omschrijving nodig en een eigenaar die die bijhoudt. Dat is eenmalig saai werk, en het betaalt zich daarna in elke campagne terug."
+      },
+      {
+        "type": "h2",
+        "text": "3. Maak risico en niet-gebruik zichtbaar"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Markeer toegang die 90 dagen of langer niet is gebruikt.",
+          "Markeer conflicten in functiescheiding en geprivilegieerde rechten.",
+          "Toon wat er sinds de vorige review is veranderd, in plaats van elke keer de volledige lijst.",
+          "Selecteer intrekking vooraf voor duidelijk ongebruikte toegang en laat de reviewer die zo nodig behouden."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Vraag het aan wie het weet"
+      },
+      {
+        "type": "p",
+        "text": "Managers weten wat hun mensen doen, maar niet wat elke systeemautorisatie betekent. Systeem- en data-eigenaren kennen de autorisaties, maar niet elke gebruiker. Goede programma's combineren beide: managers bevestigen dat iemand een rol nog nodig heeft, en eigenaren controleren periodiek wie de kritieke autorisaties in hun systeem heeft."
+      },
+      {
+        "type": "h2",
+        "text": "5. Maak de cirkel rond"
+      },
+      {
+        "type": "p",
+        "text": "Een ingetrokken recht telt pas als de toegang echt weg is. Koppel de review waar mogelijk aan geautomatiseerde deprovisioning, volg handmatige verwijderingen tot ze zijn afgerond en rapporteer het intrekkingspercentage naast het afrondingspercentage."
+      },
+      {
+        "type": "callout",
+        "text": "Een gezonde campagne trekt iets in. Ligt uw intrekkingspercentage dicht bij nul, dan is de oorzaak zelden dat iedereen precies de juiste toegang heeft."
+      },
+      {
+        "type": "p",
+        "text": "De meeste identity governance-platforms ondersteunen dit allemaal; het is een kwestie van configuratie, datakwaliteit en een goed campagneontwerp. Wij helpen teams hun reviews opnieuw in te richten, zodat ze audits doorstaan en toegang daadwerkelijk verminderen."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Privileged access management: van wachtwoordkluis naar just-in-time-toegang",
+    "description": "Hoe privileged access management evolueert: beheeraccounts ontdekken, credentials in een kluis, sessies opnemen en dan just-in-time-toegang zonder vaste rechten.",
+    "excerpt": "Beheerdersrechten zijn waar aanvallers als eerste naar zoeken. Een praktisch pad van wachtwoordkluis naar just-in-time-toegang, zonder dat de operatie onderweg stilvalt.",
+    "summary": "Privileged access management beschermt de accounts die alles kunnen wijzigen of lezen. Begin met het vinden van elk geprivilegieerd account, berg de credentials op in een kluis en roteer ze, en neem sessies op kritieke systemen op. Verminder daarna stap voor stap permanente rechten met just-in-time-toegang die wordt aangevraagd, goedgekeurd, in tijd beperkt en gelogd.",
+    "category": "Geprivilegieerde toegang",
+    "keywords": [
+      "privileged access management",
+      "PAM",
+      "just-in-time-toegang",
+      "zero standing privileges",
+      "beveiliging beheeraccounts",
+      "sessie-opname"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Domeinbeheerders, database-eigenaren, eigenaren van cloudabonnementen, root-accounts op servers: geprivilegieerde accounts kunnen vrijwel alles lezen, wijzigen of verwijderen. Daarom zoeken aanvallers er als eerste naar, en daarom kan één gecompromitteerd beheerderswachtwoord een klein incident veranderen in een bedrijfsbrede storing."
+      },
+      {
+        "type": "p",
+        "text": "Privileged access management (PAM) wordt vaak ingevoerd als wachtwoordkluis en blijft daar steken. Een kluis is een goed begin. Het doel is echter minder geprivilegieerde rechten, die alleen bestaan wanneer iemand ze nodig heeft."
+      },
+      {
+        "type": "h2",
+        "text": "Stap 1: vind elk geprivilegieerd account"
+      },
+      {
+        "type": "p",
+        "text": "Wat u niet kent, kunt u niet beschermen. Een discovery levert meestal veel meer geprivilegieerde accounts op dan verwacht: lokale beheerdersaccounts, oude serviceaccounts met domain-adminrechten, gedeelde noodaccounts, cloudrollen die rechtstreeks aan personen zijn toegewezen en accounts van voormalige beheerders die nooit zijn verwijderd."
+      },
+      {
+        "type": "h2",
+        "text": "Stap 2: kluis, rotatie en opname"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Verplaats credentials van gedeelde accounts en serviceaccounts naar een kluis, zodat niemand het wachtwoord hoeft te kennen.",
+          "Roteer wachtwoorden automatisch, vooral na elk gebruik van een gedeeld account.",
+          "Neem sessies op kritieke systemen op, zodat u kunt zien wat er is gedaan en door wie.",
+          "Vereis sterke, phishingbestendige multifactorauthenticatie voor elke geprivilegieerde login."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Stap 3: schaf permanente rechten af"
+      },
+      {
+        "type": "p",
+        "text": "Permanente rechten (standing privileges) zijn beheerrechten die altijd actief zijn, ook wanneer de beheerder in een vergadering zit of op vakantie is. Elk daarvan is een kans voor een aanvaller. Just-in-time-toegang (JIT) vervangt ze: een beheerder vraagt verhoogde rechten aan voor een taak, de aanvraag wordt goedgekeurd of automatisch aan regels getoetst, de rechten worden voor beperkte tijd verleend en elke actie wordt gelogd."
+      },
+      {
+        "type": "callout",
+        "text": "Begin met just-in-time-toegang waar het het minst pijn doet en het meest oplevert: cloudbeheerrollen en toegang tot productiedatabases. Ga door naar domeinbeheer zodra teams het proces vertrouwen."
+      },
+      {
+        "type": "h2",
+        "text": "Stap 4: koppel PAM aan identity governance"
+      },
+      {
+        "type": "p",
+        "text": "Geprivilegieerde toegang hoort dezelfde levenscyclus te volgen als alle andere toegang. Wanneer een beheerder van team wisselt of vertrekt, moeten ook de geprivilegieerde rechten verdwijnen. Door het PAM-platform aan identity governance te koppelen, worden geprivilegieerde rollen via hetzelfde proces aangevraagd, goedgekeurd, gehercertificeerd en ingetrokken, en zien auditors één consistent beeld."
+      },
+      {
+        "type": "h2",
+        "text": "Wat auditors en toezichthouders verwachten"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA en ISO 27001 vragen allemaal hoe geprivilegieerde toegang wordt verleend, beheerst en gemonitord. Een kluis met geroteerde credentials, opgenomen sessies op kritieke systemen, MFA voor beheerders en een regelmatige review van wie geprivilegieerde rollen heeft, dekken het grootste deel van wat zij zoeken."
+      },
+      {
+        "type": "p",
+        "text": "Wij helpen organisaties deze route te plannen op het PAM-platform dat zij gebruiken, van discovery tot just-in-time-toegang, zodat de operatie doorloopt terwijl het risico daalt."
+      }
+    ]
   }
 }

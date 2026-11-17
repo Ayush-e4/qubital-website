@@ -636,5 +636,243 @@
         "text": "DPPSpace følger disse trin: en produktpost, et genbrugeligt materialebibliotek, kobling til leverandører og dokumentation og en statusvisning, der viser, hvad der stadig mangler, før du offentliggør. Vil du gennemgå trinene med dit eget produkt, så book en demo, eller kontakt os for et tjek af dataparathed."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Joiner, mover, leaver: sådan får du identitetens livscyklus på plads",
+    "description": "Sådan automatiserer du joiner-, mover- og leaver-processer: HR som autoritativ kilde, basisadgang, rolleskift uden rester og fratrådte lukket ude til tiden.",
+    "excerpt": "De fleste adgangsproblemer starter med en livscyklushændelse, som ingen håndterede ordentligt. Sådan designer du joiner-, mover- og leaver-processer, der giver adgang hurtigt og fjerner den helt.",
+    "summary": "En god joiner-mover-leaver-proces henter identitetsdata fra HR, tildeler basisadgang automatisk fra første dag, fjerner gammel adgang, når medarbejdere skifter rolle, og deaktiverer alle konti på sidste arbejdsdag. Det meste af den efterladte adgang opstår ved rolleskift, så behandl et skift som en fratrædelse og en ansættelse på samme tid.",
+    "category": "Identitetsstyring",
+    "keywords": [
+      "joiner mover leaver",
+      "JML-proces",
+      "livscyklusstyring af identiteter",
+      "automatisk brugerprovisionering",
+      "fjernelse af adgang",
+      "basisadgang"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Spørg en revisor, hvor adgangsproblemer kommer fra, og svaret er som regel det samme: medarbejdere, der er stoppet, men stadig har konti, og medarbejdere, der har skiftet job og beholdt alt, hvad de havde før. Begge dele er fejl i livscyklussen. De opstår, når ansættelser, rolleskift og fratrædelser håndteres via tickets, e-mails og gode intentioner i stedet for en defineret proces."
+      },
+      {
+        "type": "h2",
+        "text": "Start med én autoritativ kilde"
+      },
+      {
+        "type": "p",
+        "text": "Enhver livscyklusproces har brug for en udløser, den kan stole på. For medarbejdere er det HR-systemet: ansættelsesdato, afdeling, stilling, leder og slutdato. For eksterne konsulenter er det ofte et separat system eller en proces for leverandørstyring, og den kræver samme disciplin – herunder en slutdato, der altid er udfyldt."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Aftal, hvilket system der er autoritativt for hver identitetstype.",
+          "Gør slutdatoen obligatorisk for alle eksterne identiteter.",
+          "Ret datakvaliteten ved kilden – ikke med undtagelser i identitetsplatformen."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Joiners: klar fra første dag"
+      },
+      {
+        "type": "p",
+        "text": "En ny medarbejder skal kunne arbejde allerede den første morgen. Det betyder, at basisadgangen (birthright access) – de konti og grupper, som alle i en given rolle får – oprettes automatisk før startdatoen. Alt ud over det går gennem en anmodning med en godkender, så basisniveauet forbliver lille og forudsigeligt."
+      },
+      {
+        "type": "h2",
+        "text": "Movers: det trin, de fleste virksomheder får galt"
+      },
+      {
+        "type": "p",
+        "text": "Når en medarbejder flytter fra salg til økonomi, bliver der hurtigt anmodet om ny adgang, fordi vedkommende har brug for den for at kunne arbejde. Den gamle adgang bliver sjældent fjernet, fordi ingen savner den. Efter nogle få skift har medarbejdere samlet rettigheder, som ingen enkelt rolle nogensinde ville kunne begrunde – herunder toksiske kombinationer."
+      },
+      {
+        "type": "callout",
+        "text": "Behandl et rolleskift som en fratrædelse og en ansættelse på samme tid: Fjern adgangen, der hører til den gamle rolle, tildel den nye rolles adgang, og giv lederen et kort tidsvindue til at anmode om det, medarbejderen stadig har brug for fra det gamle job."
+      },
+      {
+        "type": "h2",
+        "text": "Leavers: komplet og til tiden"
+      },
+      {
+        "type": "p",
+        "text": "På sidste arbejdsdag skal alle konti være deaktiveret – ikke kun katalogkontoen. Det omfatter cloudapplikationer med egne logins, privilegerede konti, VPN og fjernadgang samt adgang givet til eksterne parter, som medarbejderen havde ansvaret for. Ejerskabet af servicekonti og delte postkasser, som den fratrædende ejede, skal flyttes til en anden, før vedkommende stopper."
+      },
+      {
+        "type": "h2",
+        "text": "Mål processen, ikke kun værktøjet"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Tid fra ansættelse til fungerende adgang for nye medarbejdere.",
+          "Andel af rolleskift, hvor den gamle adgang blev fjernet inden for en fastsat periode.",
+          "Konti, der stadig er aktive efter slutdatoen, pr. system.",
+          "Antal manuelle livscyklustickets pr. måned."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Tallene viser, om automatiseringen virker i praksis – og det er præcis dem, revisorerne spørger efter. Vil du se, hvor din livscyklus lækker i dag, starter vi med en kort vurdering af dine HR-data, din identitetsplatform og de systemer, der ligger uden for den."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Adgangsgennemgange med mening: slut med stempelgodkendelse",
+    "description": "Hvorfor adgangsgennemgange bliver ren formalitet, og hvordan du løser det: mindre omfang, forståelige beskrivelser, risikofokus, ejergennemgange og reel fjernelse.",
+    "excerpt": "Tusindvis af afkrydsningsfelter godkendt på en eftermiddag. Hvorfor de fleste adgangsgennemgange ikke fjerner noget, og fem ændringer, der gør gencertificering til en rigtig kontrol igen.",
+    "summary": "Adgangsgennemgange slår fejl, når godkenderne får tusindvis af poster, de ikke forstår, og derfor godkender alt. Få dem til at virke ved at begrænse omfanget til det vigtige, beskrive adgang i forretningssprog, fokusere på højrisiko- og ubrugt adgang, inddrage systemejere såvel som ledere og sikre, at tilbagekaldelser faktisk bliver gennemført.",
+    "category": "Identitetsstyring",
+    "keywords": [
+      "adgangsgennemgang",
+      "gencertificering af adgang",
+      "adgangscertificering",
+      "risikobaseret adgangsgennemgang",
+      "gennemgang af brugerrettigheder",
+      "IGA-revision"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Hvert kvartal modtager lederne en liste over deres teams adgang og bliver bedt om at bekræfte den. Mange åbner en liste med hundredvis af kryptiske rettighedsnavne, kan ikke se, hvad de fleste betyder, og godkender alt for at komme tilbage til arbejdet. Kampagnen lukker på 100 procent, revisoren får en rapport, og næsten ingen adgang er blevet fjernet."
+      },
+      {
+        "type": "p",
+        "text": "Det er stempelgodkendelse (rubber-stamping), og revisorer genkender det i stigende grad. En gennemgang, der aldrig tilbagekalder noget, er bevis på, at kontrollen ikke virker. Her er fem ændringer, der gør gencertificering til en rigtig kontrol igen."
+      },
+      {
+        "type": "h2",
+        "text": "1. Gennemgå mindre, men de rigtige ting"
+      },
+      {
+        "type": "p",
+        "text": "Ikke alle rettigheder fortjener samme opmærksomhed. Basisadgang, som alle i en rolle får automatisk, behøver ikke at blive bekræftet af en leder hvert kvartal. Fokusér gennemgangene på adgang, der er anmodet om, som er privilegeret, eller som berører følsomme data, og gennemgå resten sjældnere."
+      },
+      {
+        "type": "h2",
+        "text": "2. Beskriv adgang i forretningssprog"
+      },
+      {
+        "type": "p",
+        "text": "En godkender kan ikke vurdere »SAP_FI_AP_ALL_0100«. Men vedkommende kan vurdere »Kan oprette og betale leverandørfakturaer i firmakode 0100«. Hver rettighed, der skal gennemgås, har brug for en letforståelig beskrivelse og en ejer, der vedligeholder den. Det er et omstændeligt arbejde én gang, og det betaler sig i hver eneste kampagne bagefter."
+      },
+      {
+        "type": "h2",
+        "text": "3. Fremhæv risiko og manglende brug"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Markér adgang, der ikke har været brugt i 90 dage eller mere.",
+          "Markér konflikter i funktionsadskillelsen og privilegerede rettigheder.",
+          "Vis, hvad der har ændret sig siden sidste gennemgang, i stedet for hele listen hver gang.",
+          "Forvælg tilbagekaldelse af tydeligt ubrugt adgang, og lad godkenderen beholde den, hvis der er brug for det."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Spørg dem, der ved det"
+      },
+      {
+        "type": "p",
+        "text": "Ledere ved, hvad deres medarbejdere laver, men ikke, hvad hver systemrettighed betyder. System- og dataejere kender rettighederne, men ikke alle brugere. Gode programmer kombinerer begge dele: Lederne bekræfter, at en medarbejder stadig har brug for en rolle, og ejerne gennemgår med jævne mellemrum, hvem der har de kritiske rettigheder i deres system."
+      },
+      {
+        "type": "h2",
+        "text": "5. Luk sløjfen"
+      },
+      {
+        "type": "p",
+        "text": "En tilbagekaldt post tæller først, når adgangen reelt er væk. Forbind gennemgangen med automatisk fjernelse af adgang, hvor det er muligt, følg manuelle fjernelser til dørs, og rapportér tilbagekaldelsesraten sammen med gennemførelsesraten."
+      },
+      {
+        "type": "callout",
+        "text": "En sund kampagne tilbagekalder noget. Hvis din tilbagekaldelsesrate ligger tæt på nul, er problemet sjældent, at alle har præcis den rigtige adgang."
+      },
+      {
+        "type": "p",
+        "text": "De fleste platforme til identitetsstyring understøtter alt dette – det er et spørgsmål om konfiguration, datakvalitet og et godt kampagnedesign. Vi hjælper teams med at redesigne deres gennemgange, så de består revisioner og reelt reducerer adgangen."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Styring af privilegeret adgang: fra password-vault til just-in-time-adgang",
+    "description": "Sådan har styring af privilegeret adgang udviklet sig: find admin-konti, læg legitimationsoplysninger i en vault, optag sessioner, og gå videre til just-in-time.",
+    "excerpt": "Administratorrettigheder er det første, angribere leder efter. En praktisk vej fra password-vault til just-in-time-adgang – uden at stoppe driften undervejs.",
+    "summary": "Styring af privilegeret adgang beskytter de konti, der kan ændre eller læse alt. Start med at finde alle privilegerede konti, læg deres legitimationsoplysninger i en vault og rotér dem, og optag sessioner på kritiske systemer. Reducer derefter de stående rettigheder trin for trin med just-in-time-adgang, der anmodes om, godkendes, tidsbegrænses og logges.",
+    "category": "Privilegeret adgang",
+    "keywords": [
+      "privileged access management",
+      "PAM",
+      "just-in-time-adgang",
+      "zero standing privileges",
+      "sikkerhed for privilegerede konti",
+      "sessionsoptagelse"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Domæneadministratorer, databaseejere, ejere af cloudabonnementer, root-konti på servere: Privilegerede konti kan læse, ændre eller slette næsten alt. Derfor leder angribere efter dem først, og derfor kan én kompromitteret administratoradgangskode forvandle en lille hændelse til et nedbrud i hele virksomheden."
+      },
+      {
+        "type": "p",
+        "text": "Privileged access management (PAM) bliver ofte indført som en password-vault – og stopper der. En vault er en god start. Målet er dog færre privilegerede rettigheder, som kun findes, når nogen har brug for dem."
+      },
+      {
+        "type": "h2",
+        "text": "Trin 1: find alle privilegerede konti"
+      },
+      {
+        "type": "p",
+        "text": "Du kan ikke beskytte det, du ikke kender. En kortlægning finder som regel langt flere privilegerede konti end forventet: lokale administratorkonti, gamle servicekonti med domæneadministratorrettigheder, delte nødlogins, cloudroller tildelt direkte til personer og konti tilhørende tidligere administratorer, som aldrig blev fjernet."
+      },
+      {
+        "type": "h2",
+        "text": "Trin 2: vault, rotation og optagelse"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Flyt legitimationsoplysninger for delte konti og servicekonti ind i en vault, så ingen behøver at kende adgangskoden.",
+          "Rotér adgangskoder automatisk, især efter hver brug af en delt konto.",
+          "Optag sessioner på kritiske systemer, så du kan se, hvad der blev gjort, og af hvem.",
+          "Kræv stærk, phishing-resistent multifaktorgodkendelse ved hvert privilegeret login."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Trin 3: fjern stående privilegier"
+      },
+      {
+        "type": "p",
+        "text": "Stående privilegier er administratorrettigheder, der altid er aktive – også når administratoren sidder i møde eller er på ferie. Hver enkelt er en mulighed for en angriber. Just-in-time-adgang (JIT) erstatter dem: En administrator anmoder om forhøjede rettigheder til en opgave, anmodningen godkendes eller kontrolleres automatisk op mod regler, rettighederne tildeles i en begrænset periode, og hver handling logges."
+      },
+      {
+        "type": "callout",
+        "text": "Start med just-in-time-adgang der, hvor det gør mindst ondt og hjælper mest: cloudadministratorroller og adgang til produktionsdatabaser. Gå videre til domæneadministration, når teamene har tillid til processen."
+      },
+      {
+        "type": "h2",
+        "text": "Trin 4: forbind PAM med identitetsstyringen"
+      },
+      {
+        "type": "p",
+        "text": "Privilegeret adgang bør følge samme livscyklus som al anden adgang. Når en administrator skifter team eller stopper, skal de privilegerede rettigheder også væk. Når PAM-platformen kobles til identitetsstyringen, bliver privilegerede roller anmodet om, godkendt, gencertificeret og fjernet gennem den samme proces, og revisorerne ser ét samlet billede."
+      },
+      {
+        "type": "h2",
+        "text": "Hvad revisorer og myndigheder forventer"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA og ISO 27001 spørger alle, hvordan privilegeret adgang tildeles, kontrolleres og overvåges. En vault med roterede legitimationsoplysninger, optagede sessioner på kritiske systemer, MFA for administratorer og regelmæssig gennemgang af, hvem der har privilegerede roller, dækker det meste af det, de kigger efter."
+      },
+      {
+        "type": "p",
+        "text": "Vi hjælper organisationer med at planlægge denne rejse på den PAM-platform, de kører – fra kortlægning til just-in-time-adgang – så driften kører videre, mens risikoen falder."
+      }
+    ]
   }
 }

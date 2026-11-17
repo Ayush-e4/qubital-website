@@ -636,5 +636,243 @@
         "text": "O DPPSpace segue estes passos: um registo de produto, uma biblioteca de materiais reutilizável, a ligação a fornecedores e evidências e uma vista de prontidão que mostra o que ainda falta antes de publicar. Se quiser percorrer estes passos com o seu próprio produto, marque uma demonstração ou contacte-nos para uma avaliação da prontidão dos dados."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Joiner, mover, leaver: como acertar no ciclo de vida das identidades",
+    "description": "Como automatizar os processos joiner, mover e leaver: RH como fonte de verdade, acessos base, mudanças de função sem resíduos e saídas bloqueadas a tempo.",
+    "excerpt": "A maioria dos problemas de acesso começa num evento do ciclo de vida que ninguém tratou corretamente. Como conceber processos joiner, mover e leaver que concedem acessos depressa e os retiram por completo.",
+    "summary": "Um bom processo joiner-mover-leaver recebe os dados de identidade dos RH, concede automaticamente os acessos base no primeiro dia, retira os acessos antigos quando alguém muda de função e desativa todas as contas no último dia. É na mudança de função que surge a maioria dos acessos esquecidos, por isso trate-a como uma saída e uma entrada em simultâneo.",
+    "category": "Governação de identidades",
+    "keywords": [
+      "joiner mover leaver",
+      "processo JML",
+      "gestão do ciclo de vida de identidades",
+      "automatização do aprovisionamento de utilizadores",
+      "remoção de acessos",
+      "acessos base por função"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Pergunte a um auditor de onde vêm os problemas de acesso e a resposta é quase sempre a mesma: pessoas que saíram mas ainda têm contas, e pessoas que mudaram de funções e mantiveram tudo o que tinham antes. Ambos são falhas do ciclo de vida. Acontecem quando as entradas, mudanças e saídas são tratadas com tickets, e-mails e boas intenções em vez de um processo definido."
+      },
+      {
+        "type": "h2",
+        "text": "Comece com uma única fonte de verdade"
+      },
+      {
+        "type": "p",
+        "text": "Todo o processo de ciclo de vida precisa de um gatilho em que possa confiar. Para os colaboradores, esse gatilho é o sistema de RH: data de admissão, departamento, cargo, chefia e data de saída. Para prestadores de serviços externos, é muitas vezes um sistema separado ou um processo de gestão de fornecedores, que exige a mesma disciplina, incluindo uma data de fim sempre preenchida."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Defina qual é o sistema autoritativo para cada tipo de identidade.",
+          "Torne obrigatória a data de fim para todas as identidades externas.",
+          "Corrija a qualidade dos dados na origem, e não com exceções na plataforma de identidades."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Joiners: prontos no primeiro dia"
+      },
+      {
+        "type": "p",
+        "text": "Um novo colaborador deve conseguir trabalhar logo na primeira manhã. Isso significa que os acessos base (birthright access), ou seja, as contas e os grupos que todos numa determinada função recebem, são criados automaticamente antes da data de início. Tudo o que vá além disso passa por um pedido com aprovador, para que a base se mantenha pequena e previsível."
+      },
+      {
+        "type": "h2",
+        "text": "Movers: o passo em que a maioria das empresas falha"
+      },
+      {
+        "type": "p",
+        "text": "Quando alguém passa das vendas para as finanças, os novos acessos são pedidos rapidamente, porque a pessoa precisa deles para trabalhar. Os acessos antigos raramente são removidos, porque ninguém dá pela falta deles. Após algumas mudanças, as pessoas acumulam permissões que nenhuma função isolada justificaria, incluindo combinações tóxicas."
+      },
+      {
+        "type": "callout",
+        "text": "Trate uma mudança de função como uma saída e uma entrada ao mesmo tempo: remova os acessos ligados à função antiga, conceda os da nova e dê à chefia um curto prazo para pedir o que a pessoa ainda precise da função anterior."
+      },
+      {
+        "type": "h2",
+        "text": "Leavers: saídas completas e a tempo"
+      },
+      {
+        "type": "p",
+        "text": "No último dia, todas as contas devem ser desativadas, e não apenas a conta do diretório. Isso inclui aplicações cloud com credenciais próprias, contas privilegiadas, VPN e acesso remoto, bem como os acessos concedidos a terceiros que a pessoa geria. A responsabilidade pelas contas de serviço e caixas de correio partilhadas de quem sai tem de passar para outra pessoa antes da saída."
+      },
+      {
+        "type": "h2",
+        "text": "Meça o processo, não apenas a ferramenta"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Tempo entre a admissão e o acesso operacional para novos colaboradores.",
+          "Percentagem de mudanças de função em que os acessos antigos foram removidos dentro de um prazo definido.",
+          "Contas ainda ativas após a data de fim, por sistema.",
+          "Número de tickets manuais de ciclo de vida por mês."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Estes números mostram se a automatização funciona na prática, e são exatamente o que os auditores pedem. Se quiser perceber onde o seu ciclo de vida tem falhas hoje, começamos com uma breve avaliação dos seus dados de RH, da sua plataforma de identidades e dos sistemas que ficam fora dela."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Revisões de acessos com significado: o fim da recertificação de carimbo",
+    "description": "Como evitar que as revisões de acessos se tornem uma formalidade: âmbito menor, descrições de negócio, foco no risco, revisão pelos responsáveis e remoção real.",
+    "excerpt": "Milhares de caixas assinaladas, aprovadas numa tarde. Porque é que a maioria das revisões de acessos não remove nada, e cinco mudanças que voltam a fazer da recertificação um controlo real.",
+    "summary": "As revisões de acessos falham quando os revisores recebem milhares de itens que não compreendem e, por isso, aprovam tudo. Para funcionarem, reduza o âmbito ao essencial, descreva os acessos em linguagem de negócio, foque-se nos acessos de alto risco e não utilizados, envolva os responsáveis dos sistemas além das chefias e garanta que as remoções são efetivamente executadas.",
+    "category": "Governação de identidades",
+    "keywords": [
+      "revisão de acessos",
+      "recertificação de acessos",
+      "certificação de acessos",
+      "revisão de acessos baseada no risco",
+      "revisão periódica de acessos",
+      "auditoria IGA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Todos os trimestres, as chefias recebem uma lista dos acessos da sua equipa e é-lhes pedido que a confirmem. Muitas abrem uma lista com centenas de nomes de permissões crípticos, não sabem o que a maioria significa e aprovam tudo para voltar ao trabalho. A campanha fecha a 100 por cento, o auditor recebe um relatório e quase nenhum acesso foi removido."
+      },
+      {
+        "type": "p",
+        "text": "Isto é aprovar de carimbo (rubber-stamping), e os auditores reconhecem-no cada vez mais. Uma revisão que nunca revoga nada é prova de que o controlo não funciona. Eis cinco mudanças que voltam a fazer da recertificação um controlo real."
+      },
+      {
+        "type": "h2",
+        "text": "1. Reveja menos, mas as coisas certas"
+      },
+      {
+        "type": "p",
+        "text": "Nem todas as permissões merecem a mesma atenção. Os acessos base que todos numa função recebem automaticamente não precisam de ser confirmados pela chefia todos os trimestres. Concentre as revisões nos acessos que foram pedidos, que são privilegiados ou que tocam em dados sensíveis, e reveja os restantes com menor frequência."
+      },
+      {
+        "type": "h2",
+        "text": "2. Descreva os acessos em linguagem de negócio"
+      },
+      {
+        "type": "p",
+        "text": "Um revisor não consegue avaliar “SAP_FI_AP_ALL_0100”. Consegue avaliar “Pode criar e pagar faturas de fornecedores na empresa 0100”. Cada permissão sujeita a revisão precisa de uma descrição simples e de um responsável que a mantenha. É um trabalho moroso, feito uma vez, que compensa em todas as campanhas seguintes."
+      },
+      {
+        "type": "h2",
+        "text": "3. Destaque o risco e a não utilização"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Assinale os acessos que não são utilizados há 90 dias ou mais.",
+          "Assinale conflitos de segregação de funções e direitos privilegiados.",
+          "Mostre o que mudou desde a última revisão, em vez da lista completa de cada vez.",
+          "Pré-selecione a revogação de acessos claramente não utilizados e deixe o revisor mantê-los, se necessário."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Pergunte a quem sabe"
+      },
+      {
+        "type": "p",
+        "text": "As chefias sabem o que as suas pessoas fazem, mas não o que significa cada permissão de sistema. Os responsáveis pelos sistemas e pelos dados conhecem as permissões, mas não todos os utilizadores. Os bons programas combinam ambos: as chefias confirmam que a pessoa ainda precisa de uma função, e os responsáveis reveem periodicamente quem detém as permissões críticas no seu sistema."
+      },
+      {
+        "type": "h2",
+        "text": "5. Feche o ciclo"
+      },
+      {
+        "type": "p",
+        "text": "Um item revogado só conta quando o acesso desapareceu de facto. Ligue a revisão à remoção automática de acessos sempre que possível, acompanhe as remoções manuais até à sua conclusão e reporte a taxa de revogação a par da taxa de conclusão."
+      },
+      {
+        "type": "callout",
+        "text": "Uma campanha saudável revoga alguma coisa. Se a sua taxa de revogação está próxima de zero, raramente o problema é que todos tenham exatamente os acessos certos."
+      },
+      {
+        "type": "p",
+        "text": "A maioria das plataformas de governação de identidades suporta tudo isto; é uma questão de configuração, qualidade dos dados e boa conceção das campanhas. Ajudamos as equipas a redesenhar as suas revisões para que passem nas auditorias e reduzam efetivamente os acessos."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Gestão de acessos privilegiados: do cofre de palavras-passe ao acesso just-in-time",
+    "description": "Como evoluiu a gestão de acessos privilegiados: descobrir contas de administração, guardar credenciais num cofre, gravar sessões e passar ao acesso just-in-time.",
+    "excerpt": "Os direitos de administrador são o primeiro alvo dos atacantes. Um caminho prático do cofre de palavras-passe ao acesso just-in-time, sem parar as operações pelo caminho.",
+    "summary": "A gestão de acessos privilegiados protege as contas que podem alterar ou ler tudo. Comece por encontrar todas as contas privilegiadas, guarde as suas credenciais num cofre e faça a sua rotação, e grave as sessões nos sistemas críticos. Depois, reduza gradualmente os direitos permanentes com acesso just-in-time, pedido, aprovado, limitado no tempo e registado.",
+    "category": "Acesso privilegiado",
+    "keywords": [
+      "gestão de acessos privilegiados",
+      "PAM",
+      "acesso just-in-time",
+      "zero standing privileges",
+      "segurança de contas privilegiadas",
+      "gravação de sessões"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Administradores de domínio, proprietários de bases de dados, proprietários de subscrições cloud, contas root em servidores: as contas privilegiadas podem ler, alterar ou eliminar quase tudo. É por isso que os atacantes as procuram primeiro, e é por isso que uma única palavra-passe de administrador comprometida pode transformar um pequeno incidente numa paragem de toda a empresa."
+      },
+      {
+        "type": "p",
+        "text": "A gestão de acessos privilegiados (PAM) é muitas vezes introduzida como um cofre de palavras-passe e fica por aí. Um cofre é um bom começo. O objetivo, no entanto, é ter menos direitos privilegiados, que só existam quando alguém precisa deles."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 1: encontre todas as contas privilegiadas"
+      },
+      {
+        "type": "p",
+        "text": "Não é possível proteger o que não se conhece. A descoberta encontra normalmente muito mais contas privilegiadas do que o esperado: contas de administrador locais, contas de serviço antigas com direitos de administrador de domínio, credenciais de emergência partilhadas, funções cloud atribuídas diretamente a pessoas e contas de antigos administradores que nunca foram removidas."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 2: guarde em cofre, faça a rotação e grave"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Mova as credenciais de contas partilhadas e de serviço para um cofre, para que ninguém precise de saber a palavra-passe.",
+          "Faça a rotação automática das palavras-passe, sobretudo após cada utilização de uma conta partilhada.",
+          "Grave as sessões nos sistemas críticos, para saber o que foi feito e por quem.",
+          "Exija autenticação multifator forte e resistente a phishing em todos os inícios de sessão privilegiados."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Passo 3: elimine os privilégios permanentes"
+      },
+      {
+        "type": "p",
+        "text": "Os privilégios permanentes são direitos de administrador que estão sempre ativos, mesmo quando o administrador está numa reunião ou de férias. Cada um deles é uma oportunidade para um atacante. O acesso just-in-time (JIT) substitui-os: um administrador pede direitos elevados para uma tarefa, o pedido é aprovado ou verificado automaticamente com base em regras, os direitos são concedidos por tempo limitado e cada ação fica registada."
+      },
+      {
+        "type": "callout",
+        "text": "Comece o acesso just-in-time onde dói menos e ajuda mais: funções de administração cloud e acesso a bases de dados de produção. Avance para a administração do domínio quando as equipas confiarem no processo."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 4: ligue o PAM à governação de identidades"
+      },
+      {
+        "type": "p",
+        "text": "O acesso privilegiado deve seguir o mesmo ciclo de vida que qualquer outro acesso. Quando um administrador muda de equipa ou sai da empresa, os seus direitos privilegiados também têm de desaparecer. Ligar a plataforma PAM à governação de identidades significa que as funções privilegiadas são pedidas, aprovadas, recertificadas e removidas através do mesmo processo, e que os auditores veem uma imagem única e coerente."
+      },
+      {
+        "type": "h2",
+        "text": "O que esperam auditores e reguladores"
+      },
+      {
+        "type": "p",
+        "text": "A NIS2, o DORA e a ISO 27001 perguntam todos como é que o acesso privilegiado é concedido, controlado e monitorizado. Um cofre com credenciais rodadas, sessões gravadas nos sistemas críticos, MFA para administradores e revisão regular de quem detém funções privilegiadas cobrem a maior parte do que procuram."
+      },
+      {
+        "type": "p",
+        "text": "Ajudamos as organizações a planear este percurso na plataforma PAM que utilizam, da descoberta ao acesso just-in-time, para que as operações continuem a funcionar enquanto o risco diminui."
+      }
+    ]
   }
 }

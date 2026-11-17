@@ -636,5 +636,243 @@
         "text": "DPPSpace odzwierciedla te kroki: rekord produktu, biblioteka materiałów wielokrotnego użytku, powiązanie dostawców i dowodów oraz widok gotowości, który przed publikacją pokazuje, czego jeszcze brakuje. Jeśli chcą Państwo przejść te kroki z własnym produktem, zapraszamy na prezentację lub do kontaktu w sprawie oceny gotowości danych."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Joiner, mover, leaver: jak prawidłowo zarządzać cyklem życia tożsamości",
+    "description": "Jak zautomatyzować procesy joiner, mover i leaver: HR jako źródło prawdy, dostęp bazowy, zmiany ról bez pozostałości i terminowe blokowanie kont osób odchodzących.",
+    "excerpt": "Większość problemów z dostępami zaczyna się od zdarzenia w cyklu życia, którego nikt porządnie nie obsłużył. Jak zaprojektować procesy joiner, mover i leaver, które szybko nadają dostęp i w pełni go odbierają.",
+    "summary": "Dobry proces joiner-mover-leaver pobiera dane tożsamości z HR, automatycznie nadaje dostęp bazowy pierwszego dnia, odbiera stare uprawnienia przy zmianie roli i blokuje wszystkie konta ostatniego dnia pracy. Najwięcej pozostawionych dostępów powstaje na etapie mover, dlatego należy traktować go jednocześnie jak odejście i przyjęcie.",
+    "category": "Zarządzanie tożsamością",
+    "keywords": [
+      "proces joiner mover leaver",
+      "proces JML",
+      "zarządzanie cyklem życia tożsamości",
+      "automatyzacja provisioningu użytkowników",
+      "odbieranie uprawnień",
+      "dostęp bazowy"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Jeśli zapytać audytora, skąd biorą się problemy z dostępami, odpowiedź zwykle jest taka sama: osoby, które odeszły, a nadal mają konta, oraz osoby, które zmieniły stanowisko i zachowały wszystko, co miały wcześniej. Jedno i drugie to błędy w cyklu życia. Pojawiają się, gdy przyjęcia, zmiany stanowisk i odejścia obsługuje się za pomocą zgłoszeń, e-maili i dobrych chęci zamiast zdefiniowanego procesu."
+      },
+      {
+        "type": "h2",
+        "text": "Zacząć od jednego źródła prawdy"
+      },
+      {
+        "type": "p",
+        "text": "Każdy proces cyklu życia potrzebuje wyzwalacza, któremu można ufać. W przypadku pracowników jest to system HR: data zatrudnienia, dział, stanowisko, przełożony i data zakończenia. W przypadku wykonawców zewnętrznych jest to często osobny system lub proces zarządzania dostawcami, który wymaga tej samej dyscypliny – w tym daty zakończenia, która jest zawsze uzupełniona."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Ustalić, który system jest nadrzędny dla każdego typu tożsamości.",
+          "Wprowadzić obowiązkową datę zakończenia dla każdej tożsamości zewnętrznej.",
+          "Poprawiać jakość danych u źródła, a nie za pomocą wyjątków na platformie tożsamości."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Joiner: gotowość od pierwszego dnia"
+      },
+      {
+        "type": "p",
+        "text": "Nowy pracownik powinien móc pracować już pierwszego ranka. Oznacza to, że dostęp bazowy (birthright access) – konta i grupy, które otrzymuje każdy na danym stanowisku – jest tworzony automatycznie przed datą rozpoczęcia pracy. Wszystko ponad to przechodzi przez wniosek z osobą zatwierdzającą, dzięki czemu zakres bazowy pozostaje niewielki i przewidywalny."
+      },
+      {
+        "type": "h2",
+        "text": "Mover: etap, który większość firm realizuje źle"
+      },
+      {
+        "type": "p",
+        "text": "Gdy ktoś przechodzi ze sprzedaży do finansów, o nowy dostęp wnioskuje się szybko, bo jest potrzebny do pracy. Stary dostęp rzadko zostaje odebrany, bo nikomu go nie brakuje. Po kilku zmianach pracownicy gromadzą uprawnienia, których nie uzasadniałaby żadna pojedyncza rola – w tym toksyczne kombinacje."
+      },
+      {
+        "type": "callout",
+        "text": "Zmianę stanowiska należy traktować jednocześnie jak odejście i przyjęcie: odebrać dostęp związany ze starą rolą, nadać dostęp nowej roli i dać przełożonemu krótki czas na złożenie wniosku o to, czego pracownik nadal potrzebuje z poprzedniego stanowiska."
+      },
+      {
+        "type": "h2",
+        "text": "Leaver: kompletnie i na czas"
+      },
+      {
+        "type": "p",
+        "text": "Ostatniego dnia pracy wszystkie konta powinny zostać zablokowane, a nie tylko konto w usłudze katalogowej. Dotyczy to aplikacji chmurowych z własnym logowaniem, kont uprzywilejowanych, VPN i dostępu zdalnego oraz dostępów przyznanych podmiotom zewnętrznym, którymi zarządzała dana osoba. Własność kont usługowych i współdzielonych skrzynek pocztowych osoby odchodzącej musi zostać przekazana komuś innemu przed jej odejściem."
+      },
+      {
+        "type": "h2",
+        "text": "Mierzyć proces, a nie tylko narzędzie"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Czas od zatrudnienia do uzyskania dostępu umożliwiającego pracę w przypadku nowych pracowników.",
+          "Odsetek zmian stanowisk, w których stary dostęp odebrano w ustalonym terminie.",
+          "Konta nadal aktywne po dacie zakończenia, w podziale na systemy.",
+          "Liczba ręcznych zgłoszeń dotyczących cyklu życia miesięcznie."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Te wskaźniki pokazują, czy automatyzacja działa w praktyce – i właśnie o nie pytają audytorzy. Jeśli chcą Państwo sprawdzić, gdzie dziś są luki w Państwa cyklu życia tożsamości, zaczynamy od krótkiej oceny danych HR, platformy tożsamości i systemów, które pozostają poza nią."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Przeglądy dostępów, które mają sens: koniec z bezrefleksyjną recertyfikacją",
+    "description": "Dlaczego przeglądy dostępów stają się formalnością i jak to zmienić: mniejszy zakres, opisy biznesowe, ocena ryzyka, przeglądy właścicieli i realne odbieranie.",
+    "excerpt": "Tysiące pól wyboru zatwierdzonych w jedno popołudnie. Dlaczego większość przeglądów dostępów niczego nie usuwa i pięć zmian, które znów czynią z recertyfikacji prawdziwą kontrolę.",
+    "summary": "Przeglądy dostępów zawodzą, gdy recenzenci dostają tysiące pozycji, których nie rozumieją, więc zatwierdzają wszystko. Zaczynają działać, gdy zakres zawęża się do tego, co istotne, dostęp opisuje się językiem biznesowym, uwagę skupia się na dostępach wysokiego ryzyka i nieużywanych, w przegląd angażuje się właścicieli systemów i przełożonych, a odebrane uprawnienia są faktycznie usuwane.",
+    "category": "Zarządzanie tożsamością",
+    "keywords": [
+      "przegląd dostępów",
+      "recertyfikacja uprawnień",
+      "certyfikacja dostępu",
+      "przegląd uprawnień użytkowników",
+      "przegląd dostępów oparty na ryzyku",
+      "audyt IGA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Co kwartał przełożeni otrzymują listę dostępów swojego zespołu z prośbą o jej potwierdzenie. Wielu z nich otwiera listę z setkami niezrozumiałych nazw uprawnień, nie potrafi powiedzieć, co oznacza większość z nich, i zatwierdza wszystko, żeby wrócić do pracy. Kampania kończy się wynikiem 100 procent, audytor dostaje raport, a niemal żaden dostęp nie zostaje odebrany."
+      },
+      {
+        "type": "p",
+        "text": "To bezrefleksyjne zatwierdzanie (rubber-stamping), a audytorzy coraz częściej je rozpoznają. Przegląd, który nigdy niczego nie odbiera, jest dowodem, że kontrola nie działa. Oto pięć zmian, dzięki którym recertyfikacja znów staje się prawdziwą kontrolą."
+      },
+      {
+        "type": "h2",
+        "text": "1. Przeglądać mniej, ale właściwe rzeczy"
+      },
+      {
+        "type": "p",
+        "text": "Nie każde uprawnienie zasługuje na tę samą uwagę. Dostęp bazowy, który każdy na danym stanowisku otrzymuje automatycznie, nie wymaga potwierdzania przez przełożonego co kwartał. Przeglądy należy skupić na dostępach, o które wnioskowano, które są uprzywilejowane lub dotyczą danych wrażliwych, a pozostałe przeglądać rzadziej."
+      },
+      {
+        "type": "h2",
+        "text": "2. Opisywać dostęp językiem biznesowym"
+      },
+      {
+        "type": "p",
+        "text": "Recenzent nie oceni „SAP_FI_AP_ALL_0100”. Oceni natomiast „Może tworzyć i opłacać faktury dostawców w jednostce gospodarczej 0100”. Każde uprawnienie podlegające przeglądowi potrzebuje prostego opisu i właściciela, który go utrzymuje. To żmudna praca, ale wykonuje się ją raz, a procentuje w każdej kolejnej kampanii."
+      },
+      {
+        "type": "h2",
+        "text": "3. Wskazywać ryzyko i brak użycia"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Oznaczać dostępy, które nie były używane przez 90 dni lub dłużej.",
+          "Oznaczać konflikty rozdziału obowiązków i uprawnienia uprzywilejowane.",
+          "Pokazywać, co zmieniło się od ostatniego przeglądu, zamiast za każdym razem pełnej listy.",
+          "Domyślnie zaznaczać odebranie wyraźnie nieużywanych dostępów i pozwolić recenzentowi je zachować, jeśli to konieczne."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Pytać osoby, które wiedzą"
+      },
+      {
+        "type": "p",
+        "text": "Przełożeni wiedzą, czym zajmują się ich pracownicy, ale nie wiedzą, co oznacza każde uprawnienie systemowe. Właściciele systemów i danych znają uprawnienia, ale nie każdego użytkownika. Dobre programy łączą jedno i drugie: przełożeni potwierdzają, że dana osoba nadal potrzebuje roli, a właściciele okresowo sprawdzają, kto posiada krytyczne uprawnienia w ich systemie."
+      },
+      {
+        "type": "h2",
+        "text": "5. Domknąć proces"
+      },
+      {
+        "type": "p",
+        "text": "Odebrana pozycja liczy się dopiero wtedy, gdy dostęp naprawdę zniknął. Wszędzie, gdzie to możliwe, należy połączyć przegląd z automatycznym odbieraniem uprawnień, śledzić ręczne usunięcia aż do ich zakończenia i raportować wskaźnik odebranych dostępów obok wskaźnika ukończenia."
+      },
+      {
+        "type": "callout",
+        "text": "Zdrowa kampania coś odbiera. Jeśli Państwa wskaźnik odebranych dostępów jest bliski zeru, problemem rzadko jest to, że wszyscy mają dokładnie właściwe dostępy."
+      },
+      {
+        "type": "p",
+        "text": "Większość platform do zarządzania tożsamością obsługuje to wszystko – to kwestia konfiguracji, jakości danych i dobrego projektu kampanii. Pomagamy zespołom przeprojektować przeglądy tak, aby przechodziły audyty i faktycznie ograniczały dostęp."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Zarządzanie dostępem uprzywilejowanym: od sejfu haseł do dostępu just-in-time",
+    "description": "Ewolucja zarządzania dostępem uprzywilejowanym: wykrywanie kont administratorów, sejf haseł, nagrywanie sesji, potem dostęp just-in-time i brak stałych uprawnień.",
+    "excerpt": "Uprawnienia administratora to pierwsze, czego szukają atakujący. Praktyczna droga od sejfu haseł do dostępu just-in-time – bez zatrzymywania bieżącej działalności.",
+    "summary": "Zarządzanie dostępem uprzywilejowanym chroni konta, które mogą wszystko odczytać lub zmienić. Należy zacząć od odnalezienia wszystkich kont uprzywilejowanych, przeniesienia ich danych uwierzytelniających do sejfu wraz z rotacją oraz nagrywania sesji w systemach krytycznych. Następnie krok po kroku ograniczać stałe uprawnienia dzięki dostępowi just-in-time, który jest wnioskowany, zatwierdzany, ograniczony w czasie i rejestrowany.",
+    "category": "Dostęp uprzywilejowany",
+    "keywords": [
+      "zarządzanie dostępem uprzywilejowanym",
+      "PAM",
+      "dostęp just-in-time",
+      "zero standing privileges",
+      "bezpieczeństwo kont uprzywilejowanych",
+      "nagrywanie sesji"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Administratorzy domeny, właściciele baz danych, właściciele subskrypcji chmurowych, konta root na serwerach: konta uprzywilejowane mogą odczytać, zmienić lub usunąć niemal wszystko. Dlatego atakujący szukają ich w pierwszej kolejności i dlatego jedno przejęte hasło administratora może zamienić niewielki incydent w awarię całej firmy."
+      },
+      {
+        "type": "p",
+        "text": "Zarządzanie dostępem uprzywilejowanym (PAM) często wdraża się jako sejf haseł i na tym się kończy. Sejf to dobry początek. Celem jest jednak mniej uprawnień uprzywilejowanych, które istnieją tylko wtedy, gdy ktoś ich potrzebuje."
+      },
+      {
+        "type": "h2",
+        "text": "Krok 1: odnaleźć wszystkie konta uprzywilejowane"
+      },
+      {
+        "type": "p",
+        "text": "Nie da się chronić czegoś, o czym się nie wie. Inwentaryzacja zwykle ujawnia znacznie więcej kont uprzywilejowanych, niż się spodziewano: lokalne konta administratorów, stare konta usługowe z uprawnieniami administratora domeny, współdzielone loginy awaryjne, role chmurowe przypisane bezpośrednio do osób oraz konta byłych administratorów, których nigdy nie usunięto."
+      },
+      {
+        "type": "h2",
+        "text": "Krok 2: sejf, rotacja i nagrywanie"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Przenieść dane uwierzytelniające kont współdzielonych i usługowych do sejfu, tak aby nikt nie musiał znać hasła.",
+          "Automatycznie rotować hasła, zwłaszcza po każdym użyciu konta współdzielonego.",
+          "Nagrywać sesje w systemach krytycznych, aby było wiadomo, co zrobiono i kto to zrobił.",
+          "Wymagać silnego, odpornego na phishing uwierzytelniania wieloskładnikowego przy każdym logowaniu uprzywilejowanym."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Krok 3: usunąć stałe uprawnienia"
+      },
+      {
+        "type": "p",
+        "text": "Stałe uprawnienia to prawa administratora, które są zawsze aktywne – nawet gdy administrator jest na spotkaniu lub na urlopie. Każde z nich to okazja dla atakującego. Zastępuje je dostęp just-in-time (JIT): administrator wnioskuje o podwyższone uprawnienia do konkretnego zadania, wniosek jest zatwierdzany lub automatycznie sprawdzany według reguł, uprawnienia są przyznawane na ograniczony czas, a każde działanie jest rejestrowane."
+      },
+      {
+        "type": "callout",
+        "text": "Dostęp just-in-time warto zacząć tam, gdzie najmniej boli i najwięcej pomaga: od ról administratorów chmury i dostępu do produkcyjnych baz danych. Do administracji domeną można przejść, gdy zespoły zaufają procesowi."
+      },
+      {
+        "type": "h2",
+        "text": "Krok 4: połączyć PAM z zarządzaniem tożsamością"
+      },
+      {
+        "type": "p",
+        "text": "Dostęp uprzywilejowany powinien podlegać temu samemu cyklowi życia co każdy inny dostęp. Gdy administrator zmienia zespół lub odchodzi z firmy, jego uprawnienia uprzywilejowane również muszą zniknąć. Połączenie platformy PAM z zarządzaniem tożsamością sprawia, że o role uprzywilejowane wnioskuje się, zatwierdza je, recertyfikuje i odbiera w ramach tego samego procesu, a audytorzy widzą jeden spójny obraz."
+      },
+      {
+        "type": "h2",
+        "text": "Czego oczekują audytorzy i regulatorzy"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA i ISO 27001 pytają, w jaki sposób dostęp uprzywilejowany jest przyznawany, kontrolowany i monitorowany. Sejf z rotowanymi danymi uwierzytelniającymi, nagrywane sesje w systemach krytycznych, MFA dla administratorów i regularny przegląd tego, kto posiada role uprzywilejowane, obejmują większość tego, czego szukają."
+      },
+      {
+        "type": "p",
+        "text": "Pomagamy organizacjom zaplanować tę drogę na platformie PAM, z której korzystają – od inwentaryzacji po dostęp just-in-time – tak aby działalność toczyła się bez zakłóceń, a ryzyko malało."
+      }
+    ]
   }
 }

@@ -636,5 +636,243 @@
         "text": "DPPSpace suit ces étapes : une fiche produit, une bibliothèque de matériaux réutilisable, le lien avec les fournisseurs et les justificatifs, et une vue de préparation qui montre ce qui manque encore avant publication. Pour parcourir ces étapes avec votre propre produit, demandez une démo ou contactez-nous pour un diagnostic de préparation des données."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Arrivées, mobilités, départs : maîtriser le cycle de vie des identités",
+    "description": "Automatiser les arrivées, mobilités et départs : les RH comme source de vérité, droits de base, changements de poste sans reliquats et départs bloqués à temps.",
+    "excerpt": "La plupart des problèmes d’accès naissent d’un événement du cycle de vie que personne n’a traité proprement. Comment concevoir des processus d’arrivée, de mobilité et de départ qui accordent les accès vite et les retirent complètement.",
+    "summary": "Un bon processus joiner-mover-leaver reprend les données d’identité des RH, attribue automatiquement les droits de base dès le premier jour, retire les anciens accès lors d’un changement de poste et désactive tous les comptes le dernier jour. C’est la mobilité qui laisse le plus d’accès résiduels : traitez-la comme un départ suivi d’une arrivée.",
+    "category": "Gouvernance des identités",
+    "keywords": [
+      "joiner mover leaver",
+      "processus JML",
+      "gestion du cycle de vie des identités",
+      "automatisation du provisionnement",
+      "déprovisionnement des accès",
+      "droits d’accès de base"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Demandez à un auditeur d’où viennent les problèmes d’accès, et la réponse est généralement la même : des personnes parties qui ont encore des comptes, et des personnes qui ont changé de poste en conservant tout ce qu’elles avaient avant. Dans les deux cas, c’est le cycle de vie qui est en défaut. Ces failles apparaissent lorsque les arrivées, mobilités et départs sont gérés par des tickets, des e-mails et de la bonne volonté plutôt que par un processus défini."
+      },
+      {
+        "type": "h2",
+        "text": "Partir d’une source de vérité unique"
+      },
+      {
+        "type": "p",
+        "text": "Tout processus de cycle de vie a besoin d’un déclencheur fiable. Pour les salariés, c’est le SIRH : date d’embauche, service, poste, manager et date de fin. Pour les prestataires externes, c’est souvent un système distinct ou un processus de gestion des fournisseurs, qui exige la même rigueur, y compris une date de fin toujours renseignée."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Définissez quel système fait autorité pour chaque type d’identité.",
+          "Rendez la date de fin obligatoire pour toute identité externe.",
+          "Corrigez la qualité des données à la source, et non par des exceptions dans la plateforme d’identité."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Arrivées : opérationnel dès le premier jour"
+      },
+      {
+        "type": "p",
+        "text": "Un nouveau collaborateur doit pouvoir travailler dès son premier matin. Cela signifie que les droits de base (les comptes et groupes que reçoit toute personne occupant un rôle) sont créés automatiquement avant la date d’arrivée. Tout le reste passe par une demande soumise à approbation, afin que le socle reste réduit et prévisible."
+      },
+      {
+        "type": "h2",
+        "text": "Mobilités : l’étape que la plupart des entreprises ratent"
+      },
+      {
+        "type": "p",
+        "text": "Lorsqu’une personne passe des ventes à la finance, les nouveaux accès sont demandés rapidement, car elle en a besoin pour travailler. Les anciens sont rarement retirés, car personne ne s’en préoccupe. Après quelques mobilités, les collaborateurs accumulent des droits qu’aucun rôle ne justifierait à lui seul, y compris des combinaisons toxiques."
+      },
+      {
+        "type": "callout",
+        "text": "Traitez une mobilité comme un départ et une arrivée simultanés : retirez les accès liés à l’ancien rôle, attribuez ceux du nouveau et laissez au manager un court délai pour demander ce dont la personne a encore besoin de son ancien poste."
+      },
+      {
+        "type": "h2",
+        "text": "Départs : complets et dans les délais"
+      },
+      {
+        "type": "p",
+        "text": "Le dernier jour, tous les comptes doivent être désactivés, pas seulement le compte de l’annuaire. Cela inclut les applications cloud dotées de leurs propres identifiants, les comptes à privilèges, le VPN et l’accès à distance, ainsi que les accès accordés aux tiers externes que la personne gérait. La responsabilité des comptes de service et des boîtes aux lettres partagées dont elle était propriétaire doit être transférée à quelqu’un d’autre avant son départ."
+      },
+      {
+        "type": "h2",
+        "text": "Mesurer le processus, pas seulement l’outil"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Délai entre l’embauche et des accès opérationnels pour les nouveaux arrivants.",
+          "Part des mobilités dont les anciens accès ont été retirés dans un délai défini.",
+          "Comptes encore actifs après la date de fin, par système.",
+          "Nombre de tickets manuels liés au cycle de vie par mois."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Ces indicateurs montrent si l’automatisation fonctionne en pratique, et ce sont exactement ceux que demandent les auditeurs. Si vous voulez savoir où votre cycle de vie présente aujourd’hui des fuites, nous commençons par une courte évaluation de vos données RH, de votre plateforme d’identité et des systèmes qui se trouvent en dehors."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Des revues d’accès qui ont du sens : en finir avec la recertification de façade",
+    "description": "Pourquoi les revues d’accès deviennent une simple formalité et comment y remédier : périmètre réduit, descriptions métier, approche par le risque et vrais retraits.",
+    "excerpt": "Des milliers de cases cochées en un après-midi. Pourquoi la plupart des revues d’accès ne retirent rien, et cinq changements qui refont de la recertification un véritable contrôle.",
+    "summary": "Les revues d’accès échouent lorsque les réviseurs reçoivent des milliers de lignes qu’ils ne comprennent pas et approuvent donc tout. Pour qu’elles fonctionnent, réduisez le périmètre à l’essentiel, décrivez les accès en langage métier, ciblez les accès à risque et inutilisés, impliquez les propriétaires de systèmes en plus des managers et assurez-vous que les retraits sont réellement exécutés.",
+    "category": "Gouvernance des identités",
+    "keywords": [
+      "revue des accès",
+      "recertification des accès",
+      "certification des accès",
+      "campagne de revue des habilitations",
+      "revue des accès par les risques",
+      "audit IGA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Chaque trimestre, les managers reçoivent la liste des accès de leur équipe et doivent la confirmer. Beaucoup ouvrent une liste de centaines de noms de droits obscurs, ne savent pas ce que la plupart signifient et approuvent tout pour retourner à leur travail. La campagne se clôt à 100 %, l’auditeur reçoit un rapport, et presque aucun accès n’a été retiré."
+      },
+      {
+        "type": "p",
+        "text": "C’est une validation de façade, et les auditeurs la repèrent de plus en plus. Une revue qui ne retire jamais rien prouve que le contrôle ne fonctionne pas. Voici cinq changements qui refont de la recertification un véritable contrôle."
+      },
+      {
+        "type": "h2",
+        "text": "1. Revoir moins, mais les bons accès"
+      },
+      {
+        "type": "p",
+        "text": "Tous les droits ne méritent pas la même attention. Les droits de base qu’obtient automatiquement toute personne occupant un rôle n’ont pas besoin d’être confirmés chaque trimestre par un manager. Concentrez les revues sur les accès qui ont été demandés, qui sont à privilèges ou qui touchent des données sensibles, et revoyez le reste moins souvent."
+      },
+      {
+        "type": "h2",
+        "text": "2. Décrire les accès en langage métier"
+      },
+      {
+        "type": "p",
+        "text": "Un réviseur ne peut pas juger « SAP_FI_AP_ALL_0100 ». Il peut juger « Peut créer et payer des factures fournisseurs dans le code société 0100 ». Chaque droit soumis à revue a besoin d’une description claire et d’un propriétaire qui la tient à jour. C’est un travail fastidieux à faire une fois, et il est rentabilisé à chaque campagne suivante."
+      },
+      {
+        "type": "h2",
+        "text": "3. Mettre en évidence le risque et la non-utilisation"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Signalez les accès inutilisés depuis 90 jours ou plus.",
+          "Signalez les conflits de séparation des tâches et les droits à privilèges.",
+          "Montrez ce qui a changé depuis la dernière revue, au lieu de la liste complète à chaque fois.",
+          "Présélectionnez le retrait des accès manifestement inutilisés et laissez le réviseur les conserver si nécessaire."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Interroger ceux qui savent"
+      },
+      {
+        "type": "p",
+        "text": "Les managers savent ce que font leurs collaborateurs, mais pas ce que signifie chaque autorisation système. Les propriétaires de systèmes et de données connaissent les autorisations, mais pas chaque utilisateur. Les bons programmes combinent les deux : les managers confirment qu’une personne a toujours besoin d’un rôle, et les propriétaires revoient périodiquement qui détient les autorisations critiques dans leur système."
+      },
+      {
+        "type": "h2",
+        "text": "5. Boucler la boucle"
+      },
+      {
+        "type": "p",
+        "text": "Un retrait ne compte que lorsque l’accès a réellement disparu. Reliez la revue au déprovisionnement automatisé partout où c’est possible, suivez les suppressions manuelles jusqu’à leur achèvement et publiez le taux de retrait à côté du taux de complétion."
+      },
+      {
+        "type": "callout",
+        "text": "Une campagne saine retire quelque chose. Si votre taux de retrait est proche de zéro, c’est rarement parce que tout le monde dispose exactement des bons accès."
+      },
+      {
+        "type": "p",
+        "text": "La plupart des plateformes de gouvernance des identités prennent tout cela en charge ; c’est une question de configuration, de qualité des données et de bonne conception des campagnes. Nous aidons les équipes à repenser leurs revues pour qu’elles passent les audits et réduisent réellement les accès."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Gestion des accès à privilèges : du coffre-fort de mots de passe à l’accès just-in-time",
+    "description": "Comment évolue la gestion des accès à privilèges : comptes admin, coffre-fort, enregistrement des sessions, puis accès just-in-time sans privilèges permanents.",
+    "excerpt": "Les droits d’administrateur sont la première cible des attaquants. Une démarche pragmatique, du coffre-fort de mots de passe à l’accès just-in-time, sans interrompre l’activité en cours de route.",
+    "summary": "La gestion des accès à privilèges (PAM) protège les comptes capables de tout lire ou de tout modifier. Commencez par identifier chaque compte à privilèges, placez leurs identifiants dans un coffre-fort avec rotation et enregistrez les sessions sur les systèmes critiques. Réduisez ensuite progressivement les droits permanents grâce à un accès just-in-time demandé, approuvé, limité dans le temps et journalisé.",
+    "category": "Accès à privilèges",
+    "keywords": [
+      "gestion des accès à privilèges",
+      "PAM",
+      "accès just-in-time",
+      "zéro privilège permanent",
+      "sécurité des comptes à privilèges",
+      "enregistrement des sessions"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Administrateurs de domaine, propriétaires de bases de données, propriétaires d’abonnements cloud, comptes root sur les serveurs : les comptes à privilèges peuvent lire, modifier ou supprimer presque tout. C’est pourquoi les attaquants les cherchent en premier, et pourquoi un seul mot de passe administrateur compromis peut transformer un incident mineur en panne à l’échelle de l’entreprise."
+      },
+      {
+        "type": "p",
+        "text": "La gestion des accès à privilèges (PAM) est souvent introduite sous la forme d’un coffre-fort de mots de passe, et s’arrête là. Un coffre-fort est un bon début. L’objectif, cependant, est d’avoir moins de droits à privilèges, qui n’existent que lorsque quelqu’un en a besoin."
+      },
+      {
+        "type": "h2",
+        "text": "Étape 1 : identifier chaque compte à privilèges"
+      },
+      {
+        "type": "p",
+        "text": "On ne peut pas protéger ce que l’on ne connaît pas. La phase de découverte révèle généralement bien plus de comptes à privilèges que prévu : comptes administrateur locaux, anciens comptes de service dotés de droits d’administrateur de domaine, identifiants d’urgence partagés, rôles cloud attribués directement à des personnes et comptes d’anciens administrateurs jamais supprimés."
+      },
+      {
+        "type": "h2",
+        "text": "Étape 2 : coffre-fort, rotation et enregistrement"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Placez les identifiants des comptes partagés et des comptes de service dans un coffre-fort, afin que personne n’ait besoin de connaître le mot de passe.",
+          "Faites tourner automatiquement les mots de passe, en particulier après chaque utilisation d’un compte partagé.",
+          "Enregistrez les sessions sur les systèmes critiques, afin de savoir ce qui a été fait et par qui.",
+          "Exigez une authentification multifacteur forte et résistante au phishing pour chaque connexion à privilèges."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Étape 3 : supprimer les privilèges permanents"
+      },
+      {
+        "type": "p",
+        "text": "Les privilèges permanents sont des droits d’administration toujours actifs, même lorsque l’administrateur est en réunion ou en congé. Chacun d’eux est une opportunité pour un attaquant. L’accès just-in-time (JIT) les remplace : un administrateur demande des droits élevés pour une tâche, la demande est approuvée ou vérifiée automatiquement selon des règles, les droits sont accordés pour une durée limitée, et chaque action est journalisée."
+      },
+      {
+        "type": "callout",
+        "text": "Introduisez l’accès just-in-time là où il dérange le moins et apporte le plus : rôles d’administrateur cloud et accès aux bases de données de production. Passez à l’administration du domaine une fois que les équipes font confiance au processus."
+      },
+      {
+        "type": "h2",
+        "text": "Étape 4 : relier le PAM à la gouvernance des identités"
+      },
+      {
+        "type": "p",
+        "text": "Les accès à privilèges doivent suivre le même cycle de vie que tous les autres accès. Lorsqu’un administrateur change d’équipe ou quitte l’entreprise, ses droits à privilèges doivent disparaître aussi. Relier la plateforme PAM à la gouvernance des identités signifie que les rôles à privilèges sont demandés, approuvés, recertifiés et retirés via le même processus, et que les auditeurs disposent d’une vision unique et cohérente."
+      },
+      {
+        "type": "h2",
+        "text": "Ce qu’attendent les auditeurs et les régulateurs"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA et ISO 27001 demandent toutes comment les accès à privilèges sont accordés, contrôlés et surveillés. Un coffre-fort avec rotation des identifiants, l’enregistrement des sessions sur les systèmes critiques, la MFA pour les administrateurs et une revue régulière des détenteurs de rôles à privilèges couvrent l’essentiel de ce qu’ils examinent."
+      },
+      {
+        "type": "p",
+        "text": "Nous aidons les organisations à planifier ce parcours sur la plateforme PAM qu’elles utilisent, de la découverte à l’accès just-in-time, afin que l’activité se poursuive pendant que le risque diminue."
+      }
+    ]
   }
 }

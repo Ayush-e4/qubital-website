@@ -636,5 +636,243 @@
         "text": "DPPSpace segue questi passi: una scheda prodotto, una libreria di materiali riutilizzabile, il collegamento con fornitori ed evidenze e una vista sullo stato di preparazione che mostra cosa manca ancora prima della pubblicazione. Se desidera affrontare questi passi con un Suo prodotto, prenoti una demo o ci contatti per una verifica della preparazione dei dati."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Joiner, mover, leaver: gestire correttamente il ciclo di vita delle identità",
+    "description": "Come automatizzare i processi joiner, mover e leaver: HR come fonte autorevole, accessi di base, cambi di ruolo senza residui e leaver bloccati in tempo.",
+    "excerpt": "La maggior parte dei problemi di accesso nasce da un evento del ciclo di vita che nessuno ha gestito in modo pulito. Come progettare processi joiner, mover e leaver che concedono gli accessi rapidamente e li revocano completamente.",
+    "summary": "Un buon processo joiner-mover-leaver acquisisce i dati di identità dall’HR, assegna automaticamente gli accessi di base dal primo giorno, rimuove i vecchi accessi quando le persone cambiano ruolo e disattiva ogni account l’ultimo giorno. È la fase mover a generare la maggior parte degli accessi residui: la tratti come un leaver più un joiner.",
+    "category": "Identity governance",
+    "keywords": [
+      "joiner mover leaver",
+      "processo JML",
+      "gestione del ciclo di vita delle identità",
+      "provisioning automatico utenti",
+      "deprovisioning degli accessi",
+      "accessi di base"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Chieda a un auditor da dove nascono i problemi di accesso e la risposta è quasi sempre la stessa: persone che se ne sono andate ma hanno ancora degli account, e persone che hanno cambiato ruolo e hanno conservato tutto ciò che avevano prima. In entrambi i casi si tratta di falle nel ciclo di vita. Si verificano quando joiner, mover e leaver vengono gestiti con ticket, e-mail e buone intenzioni anziché con un processo definito."
+      },
+      {
+        "type": "h2",
+        "text": "Partire da un’unica fonte autorevole"
+      },
+      {
+        "type": "p",
+        "text": "Ogni processo del ciclo di vita ha bisogno di un trigger affidabile. Per i dipendenti è il sistema HR: data di assunzione, reparto, posizione, responsabile e data di cessazione. Per i collaboratori esterni è spesso un sistema separato o un processo di gestione dei fornitori, che richiede la stessa disciplina, compresa una data di fine sempre compilata."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Stabilire quale sistema è autorevole per ciascun tipo di identità.",
+          "Rendere obbligatoria la data di fine per ogni identità esterna.",
+          "Correggere la qualità dei dati alla fonte, non con eccezioni nella piattaforma di gestione delle identità."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Joiner: operativi dal primo giorno"
+      },
+      {
+        "type": "p",
+        "text": "Un nuovo dipendente dovrebbe poter lavorare dalla prima mattina. Ciò significa che gli accessi di base, cioè gli account e i gruppi che riceve chiunque ricopra un determinato ruolo, vengono creati automaticamente prima della data di inizio. Tutto il resto passa da una richiesta con approvazione, così la base resta ridotta e prevedibile."
+      },
+      {
+        "type": "h2",
+        "text": "Mover: la fase che la maggior parte delle aziende sbaglia"
+      },
+      {
+        "type": "p",
+        "text": "Quando qualcuno passa dalle vendite alla finanza, i nuovi accessi vengono richiesti in fretta perché la persona ne ha bisogno per lavorare. I vecchi accessi vengono rimossi di rado, perché nessuno ne sente la mancanza. Dopo qualche cambio di ruolo, le persone accumulano autorizzazioni che nessun singolo ruolo giustificherebbe, comprese combinazioni tossiche."
+      },
+      {
+        "type": "callout",
+        "text": "Tratti un cambio di ruolo come un leaver e un joiner allo stesso tempo: rimuova gli accessi legati al vecchio ruolo, conceda quelli del nuovo e dia al responsabile una breve finestra per richiedere ciò che serve ancora alla persona dal lavoro precedente."
+      },
+      {
+        "type": "h2",
+        "text": "Leaver: in modo completo e puntuale"
+      },
+      {
+        "type": "p",
+        "text": "L’ultimo giorno ogni account dovrebbe essere disattivato, non solo quello di directory. Ciò include le applicazioni cloud con credenziali proprie, gli account privilegiati, la VPN e l’accesso remoto, oltre agli accessi concessi a soggetti esterni gestiti dalla persona. La titolarità dei service account e delle caselle di posta condivise di cui era responsabile deve passare a qualcun altro prima della sua uscita."
+      },
+      {
+        "type": "h2",
+        "text": "Misurare il processo, non solo lo strumento"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Tempo dall’assunzione all’accesso operativo per i nuovi joiner.",
+          "Quota di mover i cui vecchi accessi sono stati rimossi entro un periodo stabilito.",
+          "Account ancora attivi dopo la data di fine, per sistema.",
+          "Numero di ticket manuali legati al ciclo di vita al mese."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Questi numeri mostrano se l’automazione funziona nella pratica, e sono esattamente ciò che chiedono gli auditor. Se vuole capire dove il Suo ciclo di vita oggi presenta falle, partiamo da un breve assessment dei Suoi dati HR, della Sua piattaforma di identità e dei sistemi che ne restano fuori."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Access review che servono davvero: basta ricertificazioni approvate a occhi chiusi",
+    "description": "Perché le access review diventano un timbro automatico e come rimediare: perimetro ridotto, descrizioni chiare, focus sul rischio, owner coinvolti e revoche reali.",
+    "excerpt": "Migliaia di caselle approvate in un pomeriggio. Perché la maggior parte delle access review non rimuove nulla, e cinque cambiamenti che fanno tornare la ricertificazione un controllo reale.",
+    "summary": "Le access review falliscono quando i revisori ricevono migliaia di voci che non capiscono e quindi approvano tutto. Per farle funzionare, riduca il perimetro a ciò che conta, descriva gli accessi in linguaggio di business, si concentri sugli accessi ad alto rischio e inutilizzati, coinvolga i system owner oltre ai responsabili e verifichi che le revoche vengano davvero eseguite.",
+    "category": "Identity governance",
+    "keywords": [
+      "access review",
+      "ricertificazione degli accessi",
+      "certificazione degli accessi",
+      "revisione periodica delle utenze",
+      "access review basata sul rischio",
+      "audit IGA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Ogni trimestre i responsabili ricevono l’elenco degli accessi del proprio team e devono confermarlo. Molti aprono una lista con centinaia di nomi di autorizzazioni incomprensibili, non sanno che cosa significhi la maggior parte di essi e approvano tutto per tornare al lavoro. La campagna si chiude al 100%, l’auditor riceve un report e quasi nessun accesso è stato rimosso."
+      },
+      {
+        "type": "p",
+        "text": "Si chiama rubber-stamping, e gli auditor lo riconoscono sempre più spesso. Una review che non revoca mai nulla dimostra che il controllo non funziona. Ecco cinque cambiamenti che fanno tornare la ricertificazione un controllo reale."
+      },
+      {
+        "type": "h2",
+        "text": "1. Rivedere meno, ma le cose giuste"
+      },
+      {
+        "type": "p",
+        "text": "Non tutte le autorizzazioni meritano la stessa attenzione. Gli accessi di base che chiunque ricopra un ruolo riceve automaticamente non richiedono la conferma di un responsabile ogni trimestre. Concentri le review sugli accessi che sono stati richiesti, che sono privilegiati o che toccano dati sensibili, e riveda il resto con minore frequenza."
+      },
+      {
+        "type": "h2",
+        "text": "2. Descrivere gli accessi in linguaggio di business"
+      },
+      {
+        "type": "p",
+        "text": "Un revisore non può valutare “SAP_FI_AP_ALL_0100”. Può invece valutare “Può creare e pagare fatture fornitore nella società 0100”. Ogni autorizzazione soggetta a review ha bisogno di una descrizione chiara e di un owner che la mantenga aggiornata. È un lavoro noioso da fare una volta, che ripaga in ogni campagna successiva."
+      },
+      {
+        "type": "h2",
+        "text": "3. Evidenziare rischio e mancato utilizzo"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Segnalare gli accessi non utilizzati da 90 giorni o più.",
+          "Segnalare i conflitti di segregation of duties e i diritti privilegiati.",
+          "Mostrare che cosa è cambiato dall’ultima review, invece dell’elenco completo ogni volta.",
+          "Preselezionare la revoca per gli accessi chiaramente inutilizzati e lasciare al revisore la possibilità di mantenerli se necessario."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Chiedere a chi sa"
+      },
+      {
+        "type": "p",
+        "text": "I responsabili sanno che cosa fanno i propri collaboratori, ma non che cosa significhi ogni autorizzazione di sistema. I system owner e i data owner conoscono le autorizzazioni, ma non ogni utente. I programmi efficaci combinano entrambi: i responsabili confermano che una persona ha ancora bisogno di un ruolo, e gli owner verificano periodicamente chi detiene le autorizzazioni critiche nel proprio sistema."
+      },
+      {
+        "type": "h2",
+        "text": "5. Chiudere il cerchio"
+      },
+      {
+        "type": "p",
+        "text": "Una revoca conta solo quando l’accesso è davvero sparito. Colleghi la review al deprovisioning automatico ovunque sia possibile, segua le rimozioni manuali fino al completamento e riporti il tasso di revoca accanto al tasso di completamento."
+      },
+      {
+        "type": "callout",
+        "text": "Una campagna sana revoca qualcosa. Se il Suo tasso di revoca è vicino allo zero, raramente il motivo è che tutti hanno esattamente gli accessi giusti."
+      },
+      {
+        "type": "p",
+        "text": "La maggior parte delle piattaforme di identity governance supporta tutto questo; è una questione di configurazione, qualità dei dati e buona progettazione delle campagne. Aiutiamo i team a ripensare le proprie review in modo che superino gli audit e riducano davvero gli accessi."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Privileged access management: dal password vault all’accesso just-in-time",
+    "description": "Come evolve il privileged access management: individuare gli account admin, vault, registrazione delle sessioni, poi just-in-time e zero privilegi permanenti.",
+    "excerpt": "I diritti di amministratore sono la prima cosa che cercano gli attaccanti. Un percorso pratico dal password vault all’accesso just-in-time, senza fermare l’operatività lungo il cammino.",
+    "summary": "Il privileged access management protegge gli account che possono modificare o leggere tutto. Inizi individuando ogni account privilegiato, metta in un vault e ruoti le relative credenziali e registri le sessioni sui sistemi critici. Poi riduca gradualmente i diritti permanenti con un accesso just-in-time richiesto, approvato, limitato nel tempo e tracciato.",
+    "category": "Accessi privilegiati",
+    "keywords": [
+      "privileged access management",
+      "PAM",
+      "accesso just-in-time",
+      "zero standing privileges",
+      "sicurezza account privilegiati",
+      "registrazione delle sessioni"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Amministratori di dominio, proprietari di database, owner delle sottoscrizioni cloud, account root sui server: gli account privilegiati possono leggere, modificare o cancellare quasi tutto. Per questo gli attaccanti li cercano per primi, e per questo una sola password di amministratore compromessa può trasformare un piccolo incidente in un blocco dell’intera azienda."
+      },
+      {
+        "type": "p",
+        "text": "Il privileged access management (PAM) viene spesso introdotto come password vault e si ferma lì. Un vault è un buon inizio. L’obiettivo, però, è avere meno diritti privilegiati, che esistano solo quando qualcuno ne ha bisogno."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 1: individuare ogni account privilegiato"
+      },
+      {
+        "type": "p",
+        "text": "Non si può proteggere ciò che non si conosce. La discovery trova di solito molti più account privilegiati del previsto: account di amministratore locale, vecchi service account con diritti di domain admin, credenziali di emergenza condivise, ruoli cloud assegnati direttamente alle persone e account di ex amministratori mai rimossi."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 2: vault, rotazione e registrazione"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Spostare le credenziali degli account condivisi e dei service account in un vault, così nessuno ha bisogno di conoscere la password.",
+          "Ruotare automaticamente le password, soprattutto dopo ogni utilizzo di un account condiviso.",
+          "Registrare le sessioni sui sistemi critici, per vedere che cosa è stato fatto e da chi.",
+          "Richiedere un’autenticazione a più fattori forte e resistente al phishing per ogni accesso privilegiato."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Passo 3: eliminare i privilegi permanenti"
+      },
+      {
+        "type": "p",
+        "text": "I privilegi permanenti (standing privileges) sono diritti di amministratore sempre attivi, anche quando l’amministratore è in riunione o in ferie. Ognuno di essi è un’opportunità per un attaccante. L’accesso just-in-time (JIT) li sostituisce: un amministratore richiede diritti elevati per un’attività, la richiesta viene approvata o verificata automaticamente in base a regole, i diritti vengono concessi per un tempo limitato e ogni azione viene registrata."
+      },
+      {
+        "type": "callout",
+        "text": "Introduca l’accesso just-in-time dove crea meno disagi e porta più benefici: ruoli di amministratore cloud e accesso ai database di produzione. Passi all’amministrazione del dominio quando i team si fidano del processo."
+      },
+      {
+        "type": "h2",
+        "text": "Passo 4: collegare il PAM all’identity governance"
+      },
+      {
+        "type": "p",
+        "text": "L’accesso privilegiato dovrebbe seguire lo stesso ciclo di vita di qualsiasi altro accesso. Quando un amministratore cambia team o lascia l’azienda, anche i suoi diritti privilegiati devono sparire. Collegare la piattaforma PAM all’identity governance significa che i ruoli privilegiati vengono richiesti, approvati, ricertificati e rimossi con lo stesso processo, e che gli auditor vedono un quadro unico e coerente."
+      },
+      {
+        "type": "h2",
+        "text": "Che cosa si aspettano auditor e autorità di vigilanza"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA e ISO 27001 chiedono tutte come l’accesso privilegiato viene concesso, controllato e monitorato. Un vault con credenziali ruotate, sessioni registrate sui sistemi critici, MFA per gli amministratori e una revisione regolare di chi detiene ruoli privilegiati coprono la maggior parte di ciò che verificano."
+      },
+      {
+        "type": "p",
+        "text": "Aiutiamo le organizzazioni a pianificare questo percorso sulla piattaforma PAM che utilizzano, dalla discovery all’accesso just-in-time, così l’operatività prosegue mentre il rischio diminuisce."
+      }
+    ]
   }
 }

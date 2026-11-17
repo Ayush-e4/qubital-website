@@ -636,5 +636,243 @@
         "text": "DPPSpace följer de här stegen: en produktpost, ett återanvändbart materialbibliotek, koppling till leverantörer och underlag och en statusvy som visar vad som fortfarande saknas innan ni publicerar. Vill ni gå igenom stegen med er egen produkt? Boka en demo eller kontakta oss för en kontroll av databeredskapen."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Joiner, mover, leaver: så får ni identiteternas livscykel rätt",
+    "description": "Så automatiserar ni joiner-, mover- och leaverprocesser: HR som auktoritativ källa, grundbehörigheter, rollbyten utan kvarlevor och avslutade konton i rätt tid.",
+    "excerpt": "De flesta behörighetsproblem börjar med en livscykelhändelse som ingen hanterade ordentligt. Så utformar ni joiner-, mover- och leaverprocesser som ger åtkomst snabbt och tar bort den helt.",
+    "summary": "En väl fungerande joiner-mover-leaver-process hämtar identitetsdata från HR, tilldelar grundbehörigheter automatiskt från första dagen, tar bort gammal åtkomst när någon byter roll och stänger av alla konton på sista arbetsdagen. Det mesta av den kvarlämnade åtkomsten uppstår vid rollbyten, så behandla ett byte som ett avslut och en nyanställning samtidigt.",
+    "category": "Identitetsstyrning",
+    "keywords": [
+      "joiner mover leaver",
+      "JML-process",
+      "livscykelhantering av identiteter",
+      "automatiserad användarprovisionering",
+      "borttagning av behörigheter",
+      "grundbehörigheter"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Fråga en revisor var behörighetsproblem kommer ifrån så blir svaret oftast detsamma: personer som har slutat men fortfarande har konton, och personer som har bytt tjänst och behållit allt de hade innan. Båda är brister i livscykeln. De uppstår när nyanställningar, rollbyten och avslut hanteras med ärenden, mejl och goda avsikter i stället för en definierad process."
+      },
+      {
+        "type": "h2",
+        "text": "Börja med en enda auktoritativ källa"
+      },
+      {
+        "type": "p",
+        "text": "Varje livscykelprocess behöver en utlösare den kan lita på. För anställda är det HR-systemet: anställningsdatum, avdelning, befattning, chef och slutdatum. För konsulter är det ofta ett separat system eller en process för leverantörshantering, och den kräver samma disciplin, inklusive ett slutdatum som alltid är ifyllt."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Kom överens om vilket system som är auktoritativt för varje identitetstyp.",
+          "Gör slutdatum obligatoriskt för varje extern identitet.",
+          "Åtgärda datakvaliteten vid källan, inte med undantag i identitetsplattformen."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Joiners: redo från första dagen"
+      },
+      {
+        "type": "p",
+        "text": "En nyanställd ska kunna börja arbeta redan första morgonen. Det innebär att grundbehörigheterna (birthright access), alltså de konton och grupper som alla i en viss roll får, skapas automatiskt före startdatumet. Allt utöver det går via en beställning med en godkännare, så att grundnivån förblir liten och förutsägbar."
+      },
+      {
+        "type": "h2",
+        "text": "Movers: steget som de flesta företag gör fel"
+      },
+      {
+        "type": "p",
+        "text": "När någon flyttar från sälj till ekonomi beställs ny åtkomst snabbt, eftersom personen behöver den för att kunna arbeta. Den gamla åtkomsten tas sällan bort, eftersom ingen saknar den. Efter några byten har personer samlat på sig behörigheter som ingen enskild roll skulle motivera, inklusive riskfyllda kombinationer."
+      },
+      {
+        "type": "callout",
+        "text": "Behandla ett rollbyte som ett avslut och en nyanställning samtidigt: ta bort åtkomsten som hör till den gamla rollen, tilldela den nya rollens åtkomst och ge chefen ett kort tidsfönster att beställa det som personen fortfarande behöver från det gamla jobbet."
+      },
+      {
+        "type": "h2",
+        "text": "Leavers: fullständigt och i tid"
+      },
+      {
+        "type": "p",
+        "text": "På sista arbetsdagen ska alla konton vara avstängda, inte bara katalogkontot. Det omfattar molnapplikationer med egna inloggningar, privilegierade konton, VPN och fjärråtkomst samt åtkomst som beviljats externa parter som personen ansvarade för. Ägarskapet för tjänstekonton och delade brevlådor som den som slutar äger måste flyttas till någon annan innan hen går."
+      },
+      {
+        "type": "h2",
+        "text": "Mät processen, inte bara verktyget"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Tid från anställning till fungerande åtkomst för nyanställda.",
+          "Andel rollbyten där den gamla åtkomsten togs bort inom en fastställd period.",
+          "Konton som fortfarande är aktiva efter slutdatum, per system.",
+          "Antal manuella livscykelärenden per månad."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Siffrorna visar om automatiseringen fungerar i praktiken, och de är precis vad revisorerna frågar efter. Vill ni se var er livscykel läcker i dag börjar vi med en kort genomgång av era HR-data, er identitetsplattform och de system som ligger utanför den."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Behörighetsgranskningar som betyder något: slut på stämpelattestering",
+    "description": "Varför behörighetsgranskningar blir ren formalitet och hur ni löser det: mindre omfång, begripliga beskrivningar, riskfokus, ägargranskning och verklig borttagning.",
+    "excerpt": "Tusentals kryssrutor, godkända på en eftermiddag. Varför de flesta behörighetsgranskningar inte tar bort någonting, och fem förändringar som gör attesteringen till en verklig kontroll igen.",
+    "summary": "Behörighetsgranskningar misslyckas när granskarna får tusentals poster de inte förstår och därför godkänner allt. Få dem att fungera genom att begränsa omfånget till det som spelar roll, beskriva åtkomst på verksamhetens språk, fokusera på högriskåtkomst och oanvänd åtkomst, involvera systemägare såväl som chefer och se till att återkallelser faktiskt genomförs.",
+    "category": "Identitetsstyrning",
+    "keywords": [
+      "behörighetsgranskning",
+      "attestering av behörigheter",
+      "återkommande behörighetsgranskning",
+      "riskbaserad behörighetsgranskning",
+      "granskning av användarbehörigheter",
+      "IGA-revision"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Varje kvartal får chefer en lista över teamets åtkomst och ombeds bekräfta den. Många öppnar en lista med hundratals kryptiska behörighetsnamn, kan inte avgöra vad de flesta betyder och godkänner allt för att kunna återgå till arbetet. Kampanjen avslutas på 100 procent, revisorn får en rapport och nästan ingen åtkomst har tagits bort."
+      },
+      {
+        "type": "p",
+        "text": "Det är stämpelattestering (rubber-stamping), och revisorer känner allt oftare igen den. En granskning som aldrig återkallar något är ett bevis på att kontrollen inte fungerar. Här är fem förändringar som gör attesteringen till en verklig kontroll igen."
+      },
+      {
+        "type": "h2",
+        "text": "1. Granska mindre, men rätt saker"
+      },
+      {
+        "type": "p",
+        "text": "Alla behörigheter förtjänar inte samma uppmärksamhet. Grundbehörigheter som alla i en roll får automatiskt behöver inte bekräftas av en chef varje kvartal. Fokusera granskningarna på åtkomst som har beställts, som är privilegierad eller som rör känsliga data, och granska resten mer sällan."
+      },
+      {
+        "type": "h2",
+        "text": "2. Beskriv åtkomst på verksamhetens språk"
+      },
+      {
+        "type": "p",
+        "text": "En granskare kan inte bedöma ”SAP_FI_AP_ALL_0100”. Däremot kan hen bedöma ”Kan skapa och betala leverantörsfakturor i bolagskod 0100”. Varje granskningsbar behörighet behöver en begriplig beskrivning och en ägare som underhåller den. Det är ett mödosamt arbete en gång, och det lönar sig i varje kampanj därefter."
+      },
+      {
+        "type": "h2",
+        "text": "3. Lyft fram risk och oanvänd åtkomst"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Flagga åtkomst som inte har använts på 90 dagar eller mer.",
+          "Flagga konflikter i funktionsseparationen och privilegierade rättigheter.",
+          "Visa vad som har ändrats sedan förra granskningen i stället för hela listan varje gång.",
+          "Förvälj återkallelse för uppenbart oanvänd åtkomst och låt granskaren behålla den vid behov."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Fråga dem som vet"
+      },
+      {
+        "type": "p",
+        "text": "Chefer vet vad deras medarbetare gör, men inte vad varje systembehörighet innebär. System- och dataägare känner behörigheterna, men inte varje användare. Bra program kombinerar båda: chefer bekräftar att en person fortfarande behöver en roll, och ägare granskar regelbundet vem som har de kritiska behörigheterna i deras system."
+      },
+      {
+        "type": "h2",
+        "text": "5. Slut cirkeln"
+      },
+      {
+        "type": "p",
+        "text": "En återkallad post räknas först när åtkomsten verkligen är borta. Koppla granskningen till automatisk borttagning av behörigheter där det är möjligt, följ upp manuella borttagningar tills de är slutförda och rapportera andelen återkallelser tillsammans med slutförandegraden."
+      },
+      {
+        "type": "callout",
+        "text": "En sund kampanj återkallar något. Om er andel återkallelser ligger nära noll är problemet sällan att alla har exakt rätt åtkomst."
+      },
+      {
+        "type": "p",
+        "text": "De flesta plattformar för identitetsstyrning stöder allt detta; det handlar om konfiguration, datakvalitet och en genomtänkt kampanjdesign. Vi hjälper team att göra om sina granskningar så att de klarar revisioner och faktiskt minskar åtkomsten."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Hantering av privilegierad åtkomst: från lösenordsvalv till just-in-time-åtkomst",
+    "description": "Så har hanteringen av privilegierad åtkomst utvecklats: hitta adminkonton, inför lösenordsvalv, spela in sessioner och gå vidare till just-in-time-åtkomst.",
+    "excerpt": "Administratörsrättigheter är det angripare letar efter först. En praktisk väg från lösenordsvalv till just-in-time-åtkomst, utan att stoppa verksamheten på vägen.",
+    "summary": "Hantering av privilegierad åtkomst skyddar de konton som kan ändra eller läsa allt. Börja med att hitta alla privilegierade konton, lägg deras inloggningsuppgifter i ett valv och rotera dem, och spela in sessioner i kritiska system. Minska sedan de stående rättigheterna steg för steg med just-in-time-åtkomst som begärs, godkänns, tidsbegränsas och loggas.",
+    "category": "Privilegierad åtkomst",
+    "keywords": [
+      "hantering av privilegierad åtkomst",
+      "PAM",
+      "just-in-time-åtkomst",
+      "zero standing privileges",
+      "säkerhet för privilegierade konton",
+      "sessionsinspelning"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Domänadministratörer, databasägare, ägare av molnprenumerationer, root-konton på servrar: privilegierade konton kan läsa, ändra eller radera nästan vad som helst. Därför letar angripare efter dem först, och därför kan ett enda komprometterat adminlösenord förvandla en liten incident till ett avbrott i hela företaget."
+      },
+      {
+        "type": "p",
+        "text": "Hantering av privilegierad åtkomst (PAM) införs ofta som ett lösenordsvalv och stannar sedan där. Ett valv är en bra början. Målet är dock färre privilegierade rättigheter, som bara finns när någon behöver dem."
+      },
+      {
+        "type": "h2",
+        "text": "Steg 1: hitta alla privilegierade konton"
+      },
+      {
+        "type": "p",
+        "text": "Det går inte att skydda det man inte känner till. En inventering hittar oftast betydligt fler privilegierade konton än väntat: lokala administratörskonton, gamla tjänstekonton med domänadministratörsrättigheter, delade nödinloggningar, molnroller som tilldelats direkt till personer och konton för tidigare administratörer som aldrig togs bort."
+      },
+      {
+        "type": "h2",
+        "text": "Steg 2: valv, rotation och inspelning"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Flytta inloggningsuppgifter för delade konton och tjänstekonton till ett valv, så att ingen behöver känna till lösenordet.",
+          "Rotera lösenord automatiskt, särskilt efter varje användning av ett delat konto.",
+          "Spela in sessioner i kritiska system, så att ni kan se vad som gjordes och av vem.",
+          "Kräv stark, nätfiskeresistent flerfaktorsautentisering för varje privilegierad inloggning."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Steg 3: ta bort stående privilegier"
+      },
+      {
+        "type": "p",
+        "text": "Stående privilegier är administratörsrättigheter som alltid är aktiva, även när administratören sitter i möte eller är på semester. Var och en är en möjlighet för en angripare. Just-in-time-åtkomst (JIT) ersätter dem: en administratör begär förhöjda rättigheter för en uppgift, begäran godkänns eller kontrolleras automatiskt mot regler, rättigheterna beviljas under en begränsad tid och varje åtgärd loggas."
+      },
+      {
+        "type": "callout",
+        "text": "Börja med just-in-time-åtkomst där det gör minst ont och hjälper mest: administratörsroller i molnet och åtkomst till produktionsdatabaser. Gå vidare till domänadministration när teamen litar på processen."
+      },
+      {
+        "type": "h2",
+        "text": "Steg 4: koppla PAM till identitetsstyrningen"
+      },
+      {
+        "type": "p",
+        "text": "Privilegierad åtkomst ska följa samma livscykel som all annan åtkomst. När en administratör byter team eller slutar måste även de privilegierade rättigheterna försvinna. Att koppla PAM-plattformen till identitetsstyrningen innebär att privilegierade roller beställs, godkänns, attesteras och tas bort genom samma process, och att revisorerna ser en enhetlig bild."
+      },
+      {
+        "type": "h2",
+        "text": "Vad revisorer och tillsynsmyndigheter förväntar sig"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA och ISO 27001 frågar alla hur privilegierad åtkomst beviljas, kontrolleras och övervakas. Ett valv med roterade inloggningsuppgifter, inspelade sessioner i kritiska system, MFA för administratörer och regelbunden granskning av vem som har privilegierade roller täcker det mesta av vad de letar efter."
+      },
+      {
+        "type": "p",
+        "text": "Vi hjälper organisationer att planera den här resan på den PAM-plattform de använder, från inventering till just-in-time-åtkomst, så att verksamheten fortsätter att fungera medan risken minskar."
+      }
+    ]
   }
 }

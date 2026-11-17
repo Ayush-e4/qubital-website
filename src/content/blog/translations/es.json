@@ -636,5 +636,243 @@
         "text": "DPPSpace sigue estos pasos: una ficha de producto, una biblioteca de materiales reutilizable, la vinculación con proveedores y evidencias, y una vista de preparación que muestra lo que aún falta antes de publicar. Si quiere recorrer estos pasos con su propio producto, solicite una demo o contáctenos para un diagnóstico de preparación de datos."
       }
     ]
+  },
+  "joiner-mover-leaver": {
+    "title": "Altas, cambios y bajas: cómo gestionar bien el ciclo de vida de las identidades",
+    "description": "Cómo automatizar altas, cambios y bajas (joiner, mover, leaver): RR. HH. como fuente de verdad, accesos básicos, cambios de puesto sin restos y bajas a tiempo.",
+    "excerpt": "La mayoría de los problemas de acceso empiezan con un evento del ciclo de vida que nadie gestionó correctamente. Cómo diseñar procesos de altas, cambios y bajas que concedan accesos rápido y los retiren por completo.",
+    "summary": "Un buen proceso de altas, cambios y bajas (joiner-mover-leaver) toma los datos de identidad de RR. HH., concede automáticamente los accesos básicos desde el primer día, retira los accesos antiguos cuando alguien cambia de puesto y deshabilita todas las cuentas el último día. Los cambios generan la mayoría de los accesos residuales: trátelos como una baja más un alta.",
+    "category": "Gobierno de identidades",
+    "keywords": [
+      "joiner mover leaver",
+      "altas, cambios y bajas de usuarios",
+      "gestión del ciclo de vida de identidades",
+      "aprovisionamiento automático de usuarios",
+      "desaprovisionamiento de accesos",
+      "accesos por defecto"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Pregunte a un auditor de dónde vienen los problemas de acceso y la respuesta suele ser la misma: personas que se fueron pero aún tienen cuentas, y personas que cambiaron de puesto y conservaron todo lo que tenían antes. Ambos son fallos del ciclo de vida. Ocurren cuando las altas, los cambios y las bajas se gestionan con tickets, correos electrónicos y buenas intenciones en lugar de con un proceso definido."
+      },
+      {
+        "type": "h2",
+        "text": "Empiece por una única fuente de verdad"
+      },
+      {
+        "type": "p",
+        "text": "Todo proceso del ciclo de vida necesita un disparador fiable. Para los empleados, es el sistema de RR. HH.: fecha de incorporación, departamento, puesto, responsable y fecha de baja. Para los colaboradores externos, suele ser un sistema aparte o un proceso de gestión de proveedores, y requiere la misma disciplina, incluida una fecha de fin siempre informada."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Acuerde qué sistema es la fuente autorizada para cada tipo de identidad.",
+          "Haga obligatoria la fecha de fin para toda identidad externa.",
+          "Corrija la calidad de los datos en origen, no con excepciones en la plataforma de identidades."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Altas: operativos desde el primer día"
+      },
+      {
+        "type": "p",
+        "text": "Un nuevo empleado debería poder trabajar desde su primera mañana. Eso significa que los accesos básicos, es decir, las cuentas y grupos que recibe todo el que ocupa un rol, se crean automáticamente antes de la fecha de incorporación. Todo lo demás pasa por una solicitud con aprobador, para que la base siga siendo reducida y predecible."
+      },
+      {
+        "type": "h2",
+        "text": "Cambios: el paso en el que fallan la mayoría de las empresas"
+      },
+      {
+        "type": "p",
+        "text": "Cuando alguien pasa de ventas a finanzas, los nuevos accesos se solicitan rápido porque la persona los necesita para trabajar. Los antiguos rara vez se retiran, porque nadie los echa en falta. Tras unos cuantos cambios, las personas acumulan permisos que ningún rol justificaría por sí solo, incluidas combinaciones tóxicas."
+      },
+      {
+        "type": "callout",
+        "text": "Trate un cambio como una baja y un alta a la vez: retire los accesos vinculados al rol anterior, conceda los del nuevo y dé al responsable un breve plazo para solicitar lo que la persona aún necesite de su puesto anterior."
+      },
+      {
+        "type": "h2",
+        "text": "Bajas: completas y a tiempo"
+      },
+      {
+        "type": "p",
+        "text": "El último día deben deshabilitarse todas las cuentas, no solo la del directorio. Eso incluye las aplicaciones en la nube con inicio de sesión propio, las cuentas privilegiadas, la VPN y el acceso remoto, y los accesos concedidos a terceros externos que gestionaba la persona. La titularidad de las cuentas de servicio y los buzones compartidos de los que era propietaria debe pasar a otra persona antes de su salida."
+      },
+      {
+        "type": "h2",
+        "text": "Mida el proceso, no solo la herramienta"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Tiempo desde la contratación hasta disponer de accesos operativos en las altas.",
+          "Porcentaje de cambios cuyos accesos antiguos se retiraron en un plazo definido.",
+          "Cuentas aún activas tras la fecha de baja, por sistema.",
+          "Número de tickets manuales del ciclo de vida al mes."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Estas cifras muestran si la automatización funciona en la práctica, y son exactamente lo que piden los auditores. Si quiere ver dónde tiene fugas hoy su ciclo de vida, empezamos con una breve evaluación de sus datos de RR. HH., su plataforma de identidades y los sistemas que quedan fuera de ella."
+      }
+    ]
+  },
+  "access-reviews": {
+    "title": "Revisiones de acceso con sentido: el fin de las recertificaciones por inercia",
+    "description": "Por qué las revisiones de acceso se vuelven un mero trámite y cómo evitarlo: menor alcance, descripciones claras, foco en el riesgo, propietarios y revocación real.",
+    "excerpt": "Miles de casillas aprobadas en una tarde. Por qué la mayoría de las revisiones de acceso no retiran nada y cinco cambios que convierten de nuevo la recertificación en un control real.",
+    "summary": "Las revisiones de acceso fracasan cuando los revisores reciben miles de elementos que no entienden y acaban aprobándolo todo. Para que funcionen, reduzca el alcance a lo importante, describa los accesos en lenguaje de negocio, céntrese en los accesos de alto riesgo y sin uso, implique a los propietarios de sistemas además de a los responsables y asegúrese de que las revocaciones se ejecutan realmente.",
+    "category": "Gobierno de identidades",
+    "keywords": [
+      "revisión de accesos",
+      "recertificación de accesos",
+      "certificación de accesos",
+      "campaña de revisión de permisos",
+      "revisión de accesos basada en riesgo",
+      "auditoría IGA"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Cada trimestre, los responsables reciben una lista con los accesos de su equipo y se les pide que la confirmen. Muchos abren una lista con cientos de nombres de permisos crípticos, no saben qué significa la mayoría y lo aprueban todo para volver a su trabajo. La campaña se cierra al 100 %, el auditor recibe un informe y prácticamente no se ha retirado ningún acceso."
+      },
+      {
+        "type": "p",
+        "text": "Eso es aprobar por inercia, y los auditores lo detectan cada vez más. Una revisión que nunca revoca nada demuestra que el control no funciona. Estos son cinco cambios que convierten de nuevo la recertificación en un control real."
+      },
+      {
+        "type": "h2",
+        "text": "1. Revise menos, pero lo correcto"
+      },
+      {
+        "type": "p",
+        "text": "No todos los permisos merecen la misma atención. Los accesos básicos que recibe automáticamente todo el que ocupa un rol no necesitan que un responsable los confirme cada trimestre. Centre las revisiones en los accesos que se solicitaron, que son privilegiados o que afectan a datos sensibles, y revise el resto con menos frecuencia."
+      },
+      {
+        "type": "h2",
+        "text": "2. Describa los accesos en lenguaje de negocio"
+      },
+      {
+        "type": "p",
+        "text": "Un revisor no puede valorar «SAP_FI_AP_ALL_0100». Sí puede valorar «Puede crear y pagar facturas de proveedores en la sociedad 0100». Cada permiso revisable necesita una descripción clara y un propietario que la mantenga. Es un trabajo tedioso que se hace una vez y que compensa en cada campaña posterior."
+      },
+      {
+        "type": "h2",
+        "text": "3. Destaque el riesgo y la falta de uso"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Marque los accesos que no se han utilizado en 90 días o más.",
+          "Marque los conflictos de segregación de funciones y los derechos privilegiados.",
+          "Muestre qué ha cambiado desde la última revisión, en lugar de la lista completa cada vez.",
+          "Preseleccione la revocación de los accesos claramente sin uso y deje que el revisor los mantenga si es necesario."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. Pregunte a quien sabe"
+      },
+      {
+        "type": "p",
+        "text": "Los responsables saben qué hace su gente, pero no qué significa cada permiso de sistema. Los propietarios de sistemas y de datos conocen los permisos, pero no a cada usuario. Los buenos programas combinan ambos: los responsables confirman que una persona sigue necesitando un rol, y los propietarios revisan periódicamente quién tiene los permisos críticos de su sistema."
+      },
+      {
+        "type": "h2",
+        "text": "5. Cierre el ciclo"
+      },
+      {
+        "type": "p",
+        "text": "Un elemento revocado solo cuenta cuando el acceso ha desaparecido de verdad. Conecte la revisión al desaprovisionamiento automatizado siempre que sea posible, haga seguimiento de las retiradas manuales hasta completarlas e informe de la tasa de revocación junto a la tasa de finalización."
+      },
+      {
+        "type": "callout",
+        "text": "Una campaña sana revoca algo. Si su tasa de revocación se acerca a cero, el problema rara vez es que todo el mundo tenga exactamente los accesos adecuados."
+      },
+      {
+        "type": "p",
+        "text": "La mayoría de las plataformas de gobierno de identidades admiten todo esto; es cuestión de configuración, calidad de datos y un buen diseño de campañas. Ayudamos a los equipos a rediseñar sus revisiones para que superen las auditorías y reduzcan realmente los accesos."
+      }
+    ]
+  },
+  "privileged-access-jit": {
+    "title": "Gestión de accesos privilegiados: de la bóveda de contraseñas al acceso just-in-time",
+    "description": "Así evoluciona la gestión de accesos privilegiados: descubrir cuentas admin, bóveda, grabación de sesiones y acceso just-in-time sin privilegios permanentes.",
+    "excerpt": "Los derechos de administrador son lo primero que buscan los atacantes. Un camino práctico desde una bóveda de contraseñas hasta el acceso just-in-time, sin detener la operación por el camino.",
+    "summary": "La gestión de accesos privilegiados (PAM) protege las cuentas que pueden modificar o leer cualquier cosa. Empiece por localizar todas las cuentas privilegiadas, guarde y rote sus credenciales en una bóveda y grabe las sesiones en los sistemas críticos. Después, reduzca paso a paso los privilegios permanentes con un acceso just-in-time solicitado, aprobado, limitado en el tiempo y registrado.",
+    "category": "Acceso privilegiado",
+    "keywords": [
+      "gestión de accesos privilegiados",
+      "PAM",
+      "acceso just-in-time",
+      "privilegios permanentes cero",
+      "seguridad de cuentas privilegiadas",
+      "grabación de sesiones"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Administradores de dominio, propietarios de bases de datos, propietarios de suscripciones en la nube, cuentas root en servidores: las cuentas privilegiadas pueden leer, modificar o eliminar casi cualquier cosa. Por eso los atacantes las buscan primero, y por eso una sola contraseña de administrador comprometida puede convertir un pequeño incidente en una caída de toda la empresa."
+      },
+      {
+        "type": "p",
+        "text": "La gestión de accesos privilegiados (PAM) suele introducirse como una bóveda de contraseñas y quedarse ahí. Una bóveda es un buen comienzo. Sin embargo, el objetivo es tener menos derechos privilegiados, que solo existan cuando alguien los necesita."
+      },
+      {
+        "type": "h2",
+        "text": "Paso 1: localice todas las cuentas privilegiadas"
+      },
+      {
+        "type": "p",
+        "text": "No se puede proteger lo que no se conoce. El descubrimiento suele encontrar muchas más cuentas privilegiadas de lo esperado: cuentas de administrador local, cuentas de servicio antiguas con derechos de administrador de dominio, credenciales de emergencia compartidas, roles en la nube asignados directamente a personas y cuentas de antiguos administradores que nunca se eliminaron."
+      },
+      {
+        "type": "h2",
+        "text": "Paso 2: bóveda, rotación y grabación"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Traslade las credenciales de cuentas compartidas y de servicio a una bóveda, para que nadie necesite conocer la contraseña.",
+          "Rote las contraseñas automáticamente, sobre todo después de cada uso de una cuenta compartida.",
+          "Grabe las sesiones en los sistemas críticos para saber qué se hizo y quién lo hizo.",
+          "Exija una autenticación multifactor robusta y resistente al phishing en cada inicio de sesión privilegiado."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Paso 3: elimine los privilegios permanentes"
+      },
+      {
+        "type": "p",
+        "text": "Los privilegios permanentes son derechos de administrador que están siempre activos, incluso cuando el administrador está en una reunión o de vacaciones. Cada uno de ellos es una oportunidad para un atacante. El acceso just-in-time (JIT) los sustituye: un administrador solicita derechos elevados para una tarea, la solicitud se aprueba o se comprueba automáticamente según unas reglas, los derechos se conceden por un tiempo limitado y cada acción queda registrada."
+      },
+      {
+        "type": "callout",
+        "text": "Empiece con el acceso just-in-time donde menos molesta y más ayuda: roles de administrador en la nube y acceso a bases de datos de producción. Pase a la administración del dominio cuando los equipos confíen en el proceso."
+      },
+      {
+        "type": "h2",
+        "text": "Paso 4: conecte PAM con el gobierno de identidades"
+      },
+      {
+        "type": "p",
+        "text": "El acceso privilegiado debe seguir el mismo ciclo de vida que cualquier otro acceso. Cuando un administrador cambia de equipo o se va, sus derechos privilegiados también deben desaparecer. Vincular la plataforma PAM al gobierno de identidades significa que los roles privilegiados se solicitan, aprueban, recertifican y retiran mediante el mismo proceso, y que los auditores ven una imagen única y coherente."
+      },
+      {
+        "type": "h2",
+        "text": "Qué esperan auditores y reguladores"
+      },
+      {
+        "type": "p",
+        "text": "NIS2, DORA e ISO 27001 preguntan cómo se concede, controla y supervisa el acceso privilegiado. Una bóveda con credenciales rotadas, sesiones grabadas en los sistemas críticos, MFA para los administradores y una revisión periódica de quién tiene roles privilegiados cubren la mayor parte de lo que buscan."
+      },
+      {
+        "type": "p",
+        "text": "Ayudamos a las organizaciones a planificar este recorrido en la plataforma PAM que utilizan, desde el descubrimiento hasta el acceso just-in-time, para que la operación continúe mientras el riesgo disminuye."
+      }
+    ]
   }
 }
