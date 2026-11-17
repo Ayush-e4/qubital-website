@@ -15,6 +15,8 @@ export type PostContent = {
   description: string;
   /** Short teaser on the blog index */
   excerpt: string;
+  /** Answer-first summary (40–60 words) shown above the article and used as its abstract */
+  summary: string;
   category: string;
   keywords: string[];
   body: Block[];
