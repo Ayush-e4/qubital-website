@@ -836,6 +836,13 @@
     "more": "Meer artikelen",
     "summary": "In het kort",
     "authorTitle": "Over de auteur",
-    "authorBio": "Arun Kumar leidt Qubital. Hij is IAM/IGA-architect met meer dan 18 jaar ervaring in identity governance, geprivilegieerde toegang, One Identity Manager en SAP-integratie."
+    "authors": {
+      "arun": {
+        "bio": "Arun Kumar leidt Qubital. Hij is een IAM/IGA-enthousiast met meer dan 18 jaar ervaring in identity governance, access management en geprivilegieerde toegang."
+      },
+      "manoj": {
+        "bio": "Manoj Sahani is technisch architect voor cloud- en AI-oplossingen en auteur van het Catena-X Integration Handbook. Hij bouwt dataspaces en bedrijfsintegraties voor de digitale transformatie van de auto-industrie."
+      }
+    }
   }
 }
