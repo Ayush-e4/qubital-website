@@ -96,6 +96,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
         url,
         headline: post.title,
         description: post.description,
+        abstract: post.summary,
         articleSection: post.category,
         keywords: post.keywords.join(', '),
         inLanguage: locale,
@@ -103,7 +104,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
         dateModified: post.updated,
         wordCount: post.wordCount,
         image: site.url + ogImage.url,
-        author: { '@id': `${site.url}/#organization` },
+        author: { '@id': `${site.url}/#author` },
         publisher: { '@id': `${site.url}/#organization` },
         isPartOf: { '@id': `${blogUrl}#blog` },
       },
@@ -162,7 +163,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
                   {post.excerpt}
                 </p>
                 <p className="mt-8 text-sm text-faint">
-                  <span>{site.name}</span>
+                  <span>{site.author.name}</span>
                   {' · '}
                   <time dateTime={post.published}>{formatDate(post.published, locale)}</time>
                   {' · '}
@@ -175,7 +176,46 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
 
         <Container className="pb-16 sm:pb-24">
           <div className="max-w-3xl">
+            <aside
+              aria-labelledby="summary-heading"
+              className="mb-12 rounded-2xl border border-line bg-surface p-6 sm:p-8"
+            >
+              <h2
+                id="summary-heading"
+                className="font-mono text-xs uppercase tracking-[0.2em] text-gradient"
+              >
+                {t('summary')}
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-fg text-pretty">{post.summary}</p>
+            </aside>
             <ArticleBody blocks={post.body} />
+            <aside
+              aria-labelledby="author-heading"
+              className="mt-16 flex gap-5 border-t border-line pt-10"
+            >
+              <div
+                aria-hidden
+                className="grid size-14 shrink-0 place-items-center rounded-full bg-gradient-to-br from-violet to-cyan font-medium text-bg"
+              >
+                AK
+              </div>
+              <div>
+                <h2 id="author-heading" className="text-sm text-faint">
+                  {t('authorTitle')}
+                </h2>
+                <p className="mt-1 text-lg font-medium">
+                  <a
+                    href={site.author.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer author"
+                    className="hover:text-gradient"
+                  >
+                    {site.author.name}
+                  </a>
+                </p>
+                <p className="mt-2 leading-relaxed text-muted text-pretty">{t('authorBio')}</p>
+              </div>
+            </aside>
           </div>
         </Container>
       </article>
