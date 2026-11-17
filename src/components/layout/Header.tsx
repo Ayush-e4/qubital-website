@@ -83,7 +83,7 @@ export function Header() {
                         onPointerEnter={() => setHovered(item.key)}
                         aria-current={active ? 'page' : undefined}
                         className={cn(
-                          'relative block rounded-full px-4 py-2 text-sm transition-colors',
+                          'relative block whitespace-nowrap rounded-full px-2 py-2 text-[13px] transition-colors xl:px-3.5 xl:text-sm',
                           active ? 'text-fg' : 'text-muted hover:text-fg'
                         )}
                       >
