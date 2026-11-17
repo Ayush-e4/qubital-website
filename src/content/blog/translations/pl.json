@@ -3,6 +3,7 @@
     "title": "Z 70 sekund do poniżej jednej: naprawa wolnego zapytania w bazie IAM",
     "description": "Studium przypadku: jak optymalizacja indeksów skróciła krytyczne zapytanie platformy zarządzania tożsamością z ponad 70 sekund do poniżej sekundy.",
     "excerpt": "Jedno wolne zapytanie spowalniało całą platformę tożsamości. Pokazujemy, jak je znaleźliśmy, naprawiliśmy dzięki optymalizacji indeksów i zadbaliśmy, by problem nie wrócił.",
+    "summary": "Jedno zapytanie na platformie zarządzania tożsamością u klienta trwało ponad 70 sekund; po ukierunkowanej optymalizacji indeksów wykonuje się w czasie poniżej jednej sekundy. Metoda: znaleźć zapytania, które naprawdę pochłaniają czas, przeanalizować ich plany wykonania, ostrożnie zmienić indeksy i monitorować wydajność, aby poprawa okazała się trwała.",
     "category": "Studium przypadku",
     "keywords": [
       "wydajność IAM",
@@ -118,6 +119,7 @@
     "title": "Zarządzanie tożsamością w środowiskach SAP: o co trzeba zadbać",
     "description": "Role SAP, rozdział obowiązków, dostęp awaryjny i koniec SAP Identity Management: o co musi zadbać program IGA dla SAP, aby przyniósł oczekiwane efekty.",
     "excerpt": "W SAP przepływają pieniądze, dlatego błędy w dostępach bolą tu najbardziej. Praktyczne spojrzenie na role, rozdział obowiązków, dostęp awaryjny i odejście od SAP IdM.",
+    "summary": "Zarządzanie tożsamością w SAP sprowadza się do czterech elementów: uporządkowanego modelu ról przed automatyzacją, kontroli rozdziału obowiązków już na etapie wniosku o dostęp, kontrolowanego i rejestrowanego dostępu awaryjnego oraz planu dla środowisk hybrydowych. Ponieważ podstawowe wsparcie dla SAP IdM kończy się w 2027 roku, teraz jest czas na wybór następcy.",
     "category": "SAP",
     "keywords": [
       "zarządzanie tożsamością SAP",
@@ -214,6 +216,7 @@
     "title": "Tożsamości nieosobowe i agenci AI: jak zamknąć lukę w zarządzaniu",
     "description": "Konta usługowe, klucze API, workloady, a teraz agenci AI znacznie przewyższają liczbą pracowników. Praktyczny przewodnik po zarządzaniu tożsamościami NHI.",
     "excerpt": "Większość organizacji starannie zarządza tożsamościami pracowników, a tożsamościami maszyn prawie wcale. Agenci AI sprawiają, że ta luka staje się pilna. Oto praktyczny sposób, by ją zamknąć.",
+    "summary": "Tożsamości nieosobowe, takie jak konta usługowe, klucze API, boty i agenci AI, często przewyższają liczbą ludzi, a mimo to rzadko mają właściciela lub podlegają przeglądom. Należy zarządzać nimi jak pracownikami: zinwentaryzować wszystkie, przypisać odpowiedzialnego właściciela, ograniczyć ich dostęp i nadać mu termin ważności, rotować sekrety oraz regularnie je recertyfikować.",
     "category": "Tożsamości nieosobowe",
     "keywords": [
       "zarządzanie tożsamościami nieosobowymi",
@@ -338,6 +341,7 @@
     "title": "Cyfrowy paszport produktu UE: czym jest i od kiedy obowiązuje",
     "description": "Cyfrowy paszport produktu UE: czym jest, kogo i od kiedy dotyczy, jakie dane zawiera i jak się przygotować w ramach ESPR i rozporządzenia w sprawie baterii.",
     "excerpt": "Najpierw baterie, potem stal, tekstylia, opony i meble. Przystępny przewodnik po cyfrowym paszporcie produktu UE: co zawiera, kogo dotyczy i od kiedy.",
+    "summary": "Cyfrowy paszport produktu UE to czytelny maszynowo zbiór danych o tożsamości, składzie, pochodzeniu i zrównoważeniu produktu, dostępny przez kod QR. Staje się obowiązkowy 18 lutego 2027 r. dla baterii do pojazdów elektrycznych, baterii LMT i baterii przemysłowych, a dla kolejnych grup produktów – na mocy aktów delegowanych ESPR od końca 2026 r.",
     "category": "Cyfrowy paszport produktu",
     "keywords": [
       "cyfrowy paszport produktu",
@@ -443,6 +447,7 @@
     "title": "Paszport baterii 2027: czego producenci potrzebują do 18 lutego",
     "description": "Od 18 lutego 2027 r. baterie do pojazdów elektrycznych, LMT i baterie przemysłowe powyżej 2 kWh wymagają paszportu. Kogo dotyczy, co zawiera i jak się przygotować.",
     "excerpt": "Pierwszy obowiązkowy cyfrowy paszport produktu w UE startuje w lutym 2027 r. Które baterie go potrzebują, jakie dane zawiera, kto może je widzieć – i lista kontrolna na pozostałe miesiące.",
+    "summary": "Od 18 lutego 2027 r. każda bateria do pojazdów elektrycznych, bateria LMT i bateria przemysłowa powyżej 2 kWh wprowadzana na rynek UE musi mieć cyfrowy paszport baterii zgodnie z rozporządzeniem (UE) 2023/1542. Obejmuje on dane o tożsamości, składzie, obiegu zamkniętym i parametrach, z poziomami dostępu dla ogółu społeczeństwa, podmiotów z uzasadnionym interesem i organów.",
     "category": "Cyfrowy paszport produktu",
     "keywords": [
       "paszport baterii",
@@ -538,6 +543,7 @@
     "title": "Jak przygotować dane do cyfrowego paszportu produktu",
     "description": "Cyfrowy paszport produktu to najpierw projekt danych. Jak zebrać dane o produktach, materiałach i dostawcach, zamknąć luki i ustalić, kto może co zmieniać i widzieć.",
     "excerpt": "Większość projektów paszportowych utyka na danych, a nie na oprogramowaniu. Sześć praktycznych kroków, by przygotować dane o produktach, materiałach i dostawcach – i utrzymać je aktualne po pierwszym paszporcie.",
+    "summary": "Większość projektów cyfrowego paszportu produktu utyka na danych, a nie na oprogramowaniu. Warto zacząć od jednego reprezentatywnego produktu, zbudować uporządkowany rekord produktu, opisać materiały raz i wykorzystywać je ponownie, wcześnie poprosić dostawców o dowody, ustalić, kto może zmieniać i widzieć jakie dane, oraz połączyć paszport z danymi podstawowymi, aby pozostał dokładny.",
     "category": "Cyfrowy paszport produktu",
     "keywords": [
       "dane do cyfrowego paszportu produktu",

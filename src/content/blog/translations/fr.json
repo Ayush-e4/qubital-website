@@ -1,8 +1,9 @@
 {
   "iam-query-performance": {
-    "title": "De 70 secondes à moins d’une : corriger une requête IAM lente",
-    "description": "Étude de cas : comment la refonte des index a ramené une requête critique de gouvernance des identités de plus de 70 secondes à moins d’une seconde, et la méthode suivie.",
+    "title": "De 70 secondes à moins d’une : corriger une requête IAM lente",
+    "description": "Étude de cas : comment la refonte des index a ramené une requête critique de gouvernance des identités de plus de 70 secondes à moins d’une seconde, et la méthode suivie.",
     "excerpt": "Une seule requête lente paralysait toute une plateforme d’identité. Voici comment nous l’avons identifiée, corrigée par une refonte des index, et comment nous nous sommes assurés qu’elle le reste.",
+    "summary": "Une requête de la plateforme de gouvernance des identités d’un client prenait plus de 70 secondes ; après une optimisation ciblée des index, elle répond en moins d’une seconde. La méthode : identifier les requêtes qui coûtent vraiment du temps, lire leurs plans d’exécution, modifier les index avec prudence et surveiller dans la durée pour que la correction tienne.",
     "category": "Étude de cas",
     "keywords": [
       "performance IAM",
@@ -18,15 +19,15 @@
       },
       {
         "type": "p",
-        "text": "Lors d’une mission récente, une requête de la plateforme de gouvernance des identités d’un client prenait régulièrement plus de 70 secondes. Après notre intervention, elle répond en moins d’une seconde. Cet article retrace la démarche. Le client reste anonyme ; c’est la méthode qui compte."
+        "text": "Lors d’une mission récente, une requête de la plateforme de gouvernance des identités d’un client prenait régulièrement plus de 70 secondes. Après notre intervention, elle répond en moins d’une seconde. Cet article retrace la démarche. Le client reste anonyme ; c’est la méthode qui compte."
       },
       {
         "type": "h2",
-        "text": "Le symptôme : tout semblait lent"
+        "text": "Le symptôme : tout semblait lent"
       },
       {
         "type": "p",
-        "text": "Les premiers signalements étaient vagues : le portail web était « poussif », certains traitements « prenaient plus de temps que d’habitude ». C’est typique. En IAM, les problèmes de performance se manifestent rarement par un composant clairement défaillant. Ils apparaissent sous forme de friction générale, et les équipes réagissent souvent en ajoutant du matériel ou en augmentant les délais d’expiration. Les deux traitent le symptôme et masquent la cause."
+        "text": "Les premiers signalements étaient vagues : le portail web était « poussif », certains traitements « prenaient plus de temps que d’habitude ». C’est typique. En IAM, les problèmes de performance se manifestent rarement par un composant clairement défaillant. Ils apparaissent sous forme de friction générale, et les équipes réagissent souvent en ajoutant du matériel ou en augmentant les délais d’expiration. Les deux traitent le symptôme et masquent la cause."
       },
       {
         "type": "p",
@@ -34,7 +35,7 @@
       },
       {
         "type": "h2",
-        "text": "Étape 1 : trouver les requêtes qui coûtent vraiment du temps"
+        "text": "Étape 1 : trouver les requêtes qui coûtent vraiment du temps"
       },
       {
         "type": "p",
@@ -42,11 +43,11 @@
       },
       {
         "type": "p",
-        "text": "Une instruction se détachait nettement. Elle faisait partie de la logique qui détermine les droits qu’une personne doit détenir, s’exécutait de nombreuses fois par jour et durait en moyenne plus de 70 secondes. Elle était aussi à l’origine d’une grande partie de la lenteur générale : d’autres processus attendaient la libération des verrous qu’elle détenait."
+        "text": "Une instruction se détachait nettement. Elle faisait partie de la logique qui détermine les droits qu’une personne doit détenir, s’exécutait de nombreuses fois par jour et durait en moyenne plus de 70 secondes. Elle était aussi à l’origine d’une grande partie de la lenteur générale : d’autres processus attendaient la libération des verrous qu’elle détenait."
       },
       {
         "type": "h2",
-        "text": "Étape 2 : lire le plan d’exécution"
+        "text": "Étape 2 : lire le plan d’exécution"
       },
       {
         "type": "p",
@@ -62,7 +63,7 @@
       },
       {
         "type": "h2",
-        "text": "Étape 3 : corriger les index, avec prudence"
+        "text": "Étape 3 : corriger les index, avec prudence"
       },
       {
         "type": "p",
@@ -70,7 +71,7 @@
       },
       {
         "type": "p",
-        "text": "Les index ne sont pas gratuits. Chaque index ralentit les insertions et les mises à jour et occupe de l’espace, et une plateforme IGA écrit beaucoup lors du provisionnement. Avant d’ajouter quoi que ce soit, nous avons donc vérifié trois points :"
+        "text": "Les index ne sont pas gratuits. Chaque index ralentit les insertions et les mises à jour et occupe de l’espace, et une plateforme IGA écrit beaucoup lors du provisionnement. Avant d’ajouter quoi que ce soit, nous avons donc vérifié trois points :"
       },
       {
         "type": "ol",
@@ -82,15 +83,15 @@
       },
       {
         "type": "callout",
-        "text": "Résultat : la requête est passée de plus de 70 secondes à moins d’une seconde. Les attentes de verrous sur les tables concernées ont en grande partie disparu, et le portail comme les traitements planifiés se sont accélérés dans la foulée."
+        "text": "Résultat : la requête est passée de plus de 70 secondes à moins d’une seconde. Les attentes de verrous sur les tables concernées ont en grande partie disparu, et le portail comme les traitements planifiés se sont accélérés dans la foulée."
       },
       {
         "type": "h2",
-        "text": "Étape 4 : s’assurer que cela reste rapide"
+        "text": "Étape 4 : s’assurer que cela reste rapide"
       },
       {
         "type": "p",
-        "text": "Une correction ponctuelle s’érode. Les données augmentent, de nouveaux connecteurs sont ajoutés, et quelqu’un finit par modifier un processus. Pour pérenniser les gains, nous avons mis en place quelques habitudes simples :"
+        "text": "Une correction ponctuelle s’érode. Les données augmentent, de nouveaux connecteurs sont ajoutés, et quelqu’un finit par modifier un processus. Pour pérenniser les gains, nous avons mis en place quelques habitudes simples :"
       },
       {
         "type": "ul",
@@ -115,9 +116,10 @@
     ]
   },
   "iga-for-sap": {
-    "title": "Gouvernance des identités pour SAP : les points clés à réussir",
-    "description": "Rôles SAP, séparation des tâches, accès d’urgence et fin de SAP Identity Management : ce qu’un programme IGA pour SAP doit absolument réussir.",
+    "title": "Gouvernance des identités pour SAP : les points clés à réussir",
+    "description": "Rôles SAP, séparation des tâches, accès d’urgence et fin de SAP Identity Management : ce qu’un programme IGA pour SAP doit absolument réussir.",
     "excerpt": "C’est dans SAP que circule l’argent, c’est donc là que les erreurs d’accès font le plus mal. Un regard pratique sur les rôles, la séparation des tâches, les accès d’urgence et la sortie de SAP IdM.",
+    "summary": "La gouvernance des identités pour SAP repose sur quatre éléments : un modèle de rôles propre avant toute automatisation, des contrôles de séparation des tâches dès la demande d’accès, des accès d’urgence contrôlés et journalisés, et un plan pour les environnements hybrides. La maintenance standard de SAP IdM prenant fin en 2027, c’est le moment de choisir son successeur.",
     "category": "SAP",
     "keywords": [
       "gouvernance des identités SAP",
@@ -134,7 +136,7 @@
       },
       {
         "type": "p",
-        "text": "Intégrer SAP à un programme central de gouvernance et d’administration des identités (IGA) se traduit par une intégration plus rapide des nouveaux arrivants, des audits plus propres et moins de combinaisons d’accès toxiques. Il y a aussi une nouvelle échéance : la maintenance standard de SAP Identity Management (SAP IdM) prend fin en 2027, et de nombreuses organisations choisissent dès maintenant leur prochaine plateforme."
+        "text": "Intégrer SAP à un programme central de gouvernance et d’administration des identités (IGA) se traduit par une intégration plus rapide des nouveaux arrivants, des audits plus propres et moins de combinaisons d’accès toxiques. Il y a aussi une nouvelle échéance : la maintenance standard de SAP Identity Management (SAP IdM) prend fin en 2027, et de nombreuses organisations choisissent dès maintenant leur prochaine plateforme."
       },
       {
         "type": "h2",
@@ -170,15 +172,15 @@
       },
       {
         "type": "p",
-        "text": "Tout environnement SAP a besoin d’un moyen de corriger rapidement les problèmes de production, souvent appelé accès « firefighter » ou accès d’urgence. Sans contrôle, il devient une porte dérobée permanente. Un accès d’urgence doit être demandé pour un motif précis, accordé pour une durée limitée, entièrement journalisé, puis revu par une personne autre que l’utilisateur."
+        "text": "Tout environnement SAP a besoin d’un moyen de corriger rapidement les problèmes de production, souvent appelé accès « firefighter » ou accès d’urgence. Sans contrôle, il devient une porte dérobée permanente. Un accès d’urgence doit être demandé pour un motif précis, accordé pour une durée limitée, entièrement journalisé, puis revu par une personne autre que l’utilisateur."
       },
       {
         "type": "h2",
-        "text": "4. Anticiper l’hybride : S/4HANA, BTP et le cloud"
+        "text": "4. Anticiper l’hybride : S/4HANA, BTP et le cloud"
       },
       {
         "type": "p",
-        "text": "Les environnements SAP modernes combinent des systèmes ABAP sur site, S/4HANA, SAP Business Technology Platform et des applications SaaS comme SuccessFactors ou Ariba. SAP Cloud Identity Services relient ces mondes : Identity Authentication (IAS) gère la connexion et l’authentification unique, et Identity Provisioning (IPS) transfère utilisateurs et groupes entre les systèmes."
+        "text": "Les environnements SAP modernes combinent des systèmes ABAP sur site, S/4HANA, SAP Business Technology Platform et des applications SaaS comme SuccessFactors ou Ariba. SAP Cloud Identity Services relient ces mondes : Identity Authentication (IAS) gère la connexion et l’authentification unique, et Identity Provisioning (IPS) transfère utilisateurs et groupes entre les systèmes."
       },
       {
         "type": "p",
@@ -198,7 +200,7 @@
       },
       {
         "type": "callout",
-        "text": "Check-list : un modèle de rôles assaini, une SoD contrôlée dès la demande, des accès d’urgence maîtrisés, une répartition claire entre IGA et SAP Cloud Identity Services, et un plan de sortie de SAP IdM bien avant 2027."
+        "text": "Check-list : un modèle de rôles assaini, une SoD contrôlée dès la demande, des accès d’urgence maîtrisés, une répartition claire entre IGA et SAP Cloud Identity Services, et un plan de sortie de SAP IdM bien avant 2027."
       },
       {
         "type": "h2",
@@ -211,9 +213,10 @@
     ]
   },
   "non-human-identity-ai-agents": {
-    "title": "Identités non humaines et agents IA : combler le déficit de gouvernance",
+    "title": "Identités non humaines et agents IA : combler le déficit de gouvernance",
     "description": "Comptes de service, clés API, workloads et désormais agents IA sont bien plus nombreux que les employés. Un guide pratique pour gouverner les identités non humaines.",
     "excerpt": "La plupart des organisations gouvernent soigneusement leurs collaborateurs et à peine leurs machines. Les agents IA rendent ce déficit urgent. Voici une méthode pratique pour le combler.",
+    "summary": "Les identités non humaines, comme les comptes de service, les clés API, les bots et les agents IA, sont souvent plus nombreuses que les humains, mais ont rarement un responsable ou une revue. Gouvernez-les comme des collaborateurs : recensez-les toutes, désignez un responsable, limitez leurs accès dans leur portée et dans le temps, faites tourner les secrets et recertifiez-les régulièrement.",
     "category": "Identités non humaines",
     "keywords": [
       "gouvernance des identités non humaines",
@@ -226,7 +229,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Demandez à une équipe IAM combien d’employés ont accès au système financier : elle peut généralement répondre en quelques minutes. Demandez combien de comptes de service, de clés API et de jetons d’automatisation peuvent atteindre ce même système, et le silence s’installe souvent. Les identités non humaines (NHI) sont désormais bien plus nombreuses que les identités humaines dans la plupart des organisations, et pourtant ce sont généralement les moins gouvernées."
+        "text": "Demandez à une équipe IAM combien d’employés ont accès au système financier : elle peut généralement répondre en quelques minutes. Demandez combien de comptes de service, de clés API et de jetons d’automatisation peuvent atteindre ce même système, et le silence s’installe souvent. Les identités non humaines (NHI) sont désormais bien plus nombreuses que les identités humaines dans la plupart des organisations, et pourtant ce sont généralement les moins gouvernées."
       },
       {
         "type": "p",
@@ -234,14 +237,14 @@
       },
       {
         "type": "h2",
-        "text": "Qu’est-ce qu’une identité non humaine ?"
+        "text": "Qu’est-ce qu’une identité non humaine ?"
       },
       {
         "type": "ul",
         "items": [
           "Les comptes de service dans Active Directory, les bases de données et les applications.",
           "Les clés API, secrets clients et certificats utilisés pour l’intégration de système à système.",
-          "Les identités de charges de travail dans le cloud : identités managées, principaux de service, rôles IAM.",
+          "Les identités de charges de travail dans le cloud : identités managées, principaux de service, rôles IAM.",
           "Les bots et utilisateurs RPA, ainsi que les utilisateurs techniques des plateformes d’intégration.",
           "Les agents IA, qui combinent tout ce qui précède et y ajoutent l’autonomie."
         ]
@@ -252,7 +255,7 @@
       },
       {
         "type": "p",
-        "text": "La gouvernance des identités classique est construite autour du cycle de vie arrivée-mobilité-départ des personnes, alimenté par les RH. Les identités non humaines n’ont ni dossier RH, ni manager, ni date de départ. Elles sont créées par des développeurs ou des administrateurs pour résoudre un problème immédiat, puis oubliées. Le résultat est connu : des comptes que personne ne sait expliquer, des secrets qui n’ont pas été renouvelés depuis des années et des privilèges bien au-delà de ce dont l’intégration a besoin."
+        "text": "La gouvernance des identités classique est construite autour du cycle de vie arrivée-mobilité-départ des personnes, alimenté par les RH. Les identités non humaines n’ont ni dossier RH, ni manager, ni date de départ. Elles sont créées par des développeurs ou des administrateurs pour résoudre un problème immédiat, puis oubliées. Le résultat est connu : des comptes que personne ne sait expliquer, des secrets qui n’ont pas été renouvelés depuis des années et des privilèges bien au-delà de ce dont l’intégration a besoin."
       },
       {
         "type": "h2",
@@ -296,15 +299,15 @@
       },
       {
         "type": "p",
-        "text": "Limitez chaque identité au strict minimum dont elle a besoin et déclenchez des alertes en cas d’usage inhabituel : un compte de service qui se connecte de manière interactive, un jeton utilisé depuis un emplacement inattendu, ou un agent qui appelle une API qu’il n’a jamais sollicitée auparavant."
+        "text": "Limitez chaque identité au strict minimum dont elle a besoin et déclenchez des alertes en cas d’usage inhabituel : un compte de service qui se connecte de manière interactive, un jeton utilisé depuis un emplacement inattendu, ou un agent qui appelle une API qu’il n’a jamais sollicitée auparavant."
       },
       {
         "type": "h2",
-        "text": "Agents IA : ce qui change"
+        "text": "Agents IA : ce qui change"
       },
       {
         "type": "p",
-        "text": "Les agents ajoutent deux complications. D’abord, ils agissent souvent au nom d’une personne : il faut donc savoir à la fois qui est l’agent et de quelle autorité il se prévaut. L’accès délégué, par exemple via les flux OAuth on-behalf-of, fixe les propres autorisations de l’utilisateur comme limite supérieure au lieu de confier à l’agent un compte technique puissant. Ensuite, les agents décident eux-mêmes de la suite. Les limites deviennent donc essentielles :"
+        "text": "Les agents ajoutent deux complications. D’abord, ils agissent souvent au nom d’une personne : il faut donc savoir à la fois qui est l’agent et de quelle autorité il se prévaut. L’accès délégué, par exemple via les flux OAuth on-behalf-of, fixe les propres autorisations de l’utilisateur comme limite supérieure au lieu de confier à l’agent un compte technique puissant. Ensuite, les agents décident eux-mêmes de la suite. Les limites deviennent donc essentielles :"
       },
       {
         "type": "ul",
@@ -318,7 +321,7 @@
       },
       {
         "type": "callout",
-        "text": "Règle empirique : un agent IA ne doit jamais pouvoir faire quelque chose que la personne pour laquelle il agit n’est pas autorisée à faire, et chaque action doit être traçable jusqu’à l’un comme à l’autre."
+        "text": "Règle empirique : un agent IA ne doit jamais pouvoir faire quelque chose que la personne pour laquelle il agit n’est pas autorisée à faire, et chaque action doit être traçable jusqu’à l’un comme à l’autre."
       },
       {
         "type": "h2",
@@ -335,9 +338,10 @@
     ]
   },
   "digital-product-passport-guide": {
-    "title": "Le passeport numérique des produits de l’UE expliqué : définition et calendrier",
+    "title": "Le passeport numérique des produits de l’UE expliqué : définition et calendrier",
     "description": "Ce qu’est le passeport numérique des produits de l’UE, quels produits sont concernés et quand, quelles données il contient et comment s’y préparer sous l’ESPR.",
-    "excerpt": "D’abord les batteries, puis l’acier, les textiles, les pneumatiques et les meubles. Un guide clair sur le passeport numérique des produits de l’UE : contenu, obligations et calendrier.",
+    "excerpt": "D’abord les batteries, puis l’acier, les textiles, les pneumatiques et les meubles. Un guide clair sur le passeport numérique des produits de l’UE : contenu, obligations et calendrier.",
+    "summary": "Le passeport numérique des produits de l’UE est un dossier lisible par machine qui rassemble les données d’identité, de composition, d’origine et de durabilité d’un produit, accessible via un QR code. Il devient obligatoire le 18 février 2027 pour les batteries de véhicules électriques, LMT et industrielles, puis pour d’autres groupes de produits via des actes délégués de l’ESPR à partir de fin 2026.",
     "category": "Passeport numérique des produits",
     "keywords": [
       "passeport numérique des produits",
@@ -350,7 +354,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Scanner un QR code sur un produit et découvrir de quoi il est fait, d’où il vient, comment le réparer et comment le recycler : c’est l’idée du passeport numérique des produits (DPP) de l’UE. Pour les fabricants, des données produit dispersées entre services et fournisseurs deviennent ainsi une obligation légale, groupe de produits après groupe de produits."
+        "text": "Scanner un QR code sur un produit et découvrir de quoi il est fait, d’où il vient, comment le réparer et comment le recycler : c’est l’idée du passeport numérique des produits (DPP) de l’UE. Pour les fabricants, des données produit dispersées entre services et fournisseurs deviennent ainsi une obligation légale, groupe de produits après groupe de produits."
       },
       {
         "type": "p",
@@ -358,7 +362,7 @@
       },
       {
         "type": "h2",
-        "text": "Qu’est-ce qu’un passeport numérique des produits ?"
+        "text": "Qu’est-ce qu’un passeport numérique des produits ?"
       },
       {
         "type": "p",
@@ -367,11 +371,11 @@
       {
         "type": "ul",
         "items": [
-          "Identité : fabricant, modèle, catégorie de produit et identifiant unique.",
-          "Composition : matériaux, composants, substances préoccupantes et teneur en matières recyclées.",
-          "Origine et chaîne d’approvisionnement : provenance des matériaux et des composants.",
-          "Durabilité : empreinte carbone, durabilité et réparabilité, lorsque les règles applicables au produit l’exigent.",
-          "Fin de vie : instructions de démontage, de réemploi et de recyclage."
+          "Identité : fabricant, modèle, catégorie de produit et identifiant unique.",
+          "Composition : matériaux, composants, substances préoccupantes et teneur en matières recyclées.",
+          "Origine et chaîne d’approvisionnement : provenance des matériaux et des composants.",
+          "Durabilité : empreinte carbone, durabilité et réparabilité, lorsque les règles applicables au produit l’exigent.",
+          "Fin de vie : instructions de démontage, de réemploi et de recyclage."
         ]
       },
       {
@@ -380,11 +384,11 @@
       },
       {
         "type": "h2",
-        "text": "La base juridique : l’ESPR et le règlement relatif aux batteries"
+        "text": "La base juridique : l’ESPR et le règlement relatif aux batteries"
       },
       {
         "type": "p",
-        "text": "Deux règlements européens portent le passeport. Le règlement sur l’écoconception des produits durables (ESPR, règlement (UE) 2024/1781) est entré en vigueur le 18 juillet 2024. Il fixe le cadre général ; des actes délégués définissent ensuite, pour chaque groupe de produits, les exigences et le contenu du passeport. Le règlement relatif aux batteries (règlement (UE) 2023/1542) prévoit déjà son propre passeport, avec une date de démarrage fixe."
+        "text": "Deux règlements européens portent le passeport. Le règlement sur l’écoconception des produits durables (ESPR, règlement (UE) 2024/1781) est entré en vigueur le 18 juillet 2024. Il fixe le cadre général ; des actes délégués définissent ensuite, pour chaque groupe de produits, les exigences et le contenu du passeport. Le règlement relatif aux batteries (règlement (UE) 2023/1542) prévoit déjà son propre passeport, avec une date de démarrage fixe."
       },
       {
         "type": "p",
@@ -392,14 +396,14 @@
       },
       {
         "type": "h2",
-        "text": "Quand s’applique-t-il ?"
+        "text": "Quand s’applique-t-il ?"
       },
       {
         "type": "ul",
         "items": [
-          "Batteries : à partir du 18 février 2027, toute batterie de véhicule électrique, toute batterie de moyen de transport léger (LMT) et toute batterie industrielle de plus de 2 kWh mise sur le marché de l’UE doit disposer d’un passeport.",
-          "Fer et acier : le premier acte délégué au titre de l’ESPR est attendu à partir de fin 2026.",
-          "Textiles et habillement, aluminium et pneumatiques : des actes délégués sont attendus en 2027.",
+          "Batteries : à partir du 18 février 2027, toute batterie de véhicule électrique, toute batterie de moyen de transport léger (LMT) et toute batterie industrielle de plus de 2 kWh mise sur le marché de l’UE doit disposer d’un passeport.",
+          "Fer et acier : le premier acte délégué au titre de l’ESPR est attendu à partir de fin 2026.",
+          "Textiles et habillement, aluminium et pneumatiques : des actes délégués sont attendus en 2027.",
           "Meubles en 2028 et matelas en 2029, selon le plan de travail 2025–2030 de la Commission."
         ]
       },
@@ -435,14 +439,15 @@
       },
       {
         "type": "p",
-        "text": "C’est exactement pour ce parcours que nous avons conçu DPPSpace : un seul espace de travail pour les données produits, matériaux, fournisseurs et justificatifs, une vue de préparation qui montre ce qui manque encore, et la soumission au registre des passeports éligibles. Pour le découvrir avec un produit de votre secteur, demandez une démo."
+        "text": "C’est exactement pour ce parcours que nous avons conçu DPPSpace : un seul espace de travail pour les données produits, matériaux, fournisseurs et justificatifs, une vue de préparation qui montre ce qui manque encore, et la soumission au registre des passeports éligibles. Pour le découvrir avec un produit de votre secteur, demandez une démo."
       }
     ]
   },
   "battery-passport-2027": {
-    "title": "Passeport batterie 2027 : ce que les fabricants doivent préparer d’ici le 18 février",
+    "title": "Passeport batterie 2027 : ce que les fabricants doivent préparer d’ici le 18 février",
     "description": "Dès le 18 février 2027, les batteries de VE, de LMT et industrielles de plus de 2 kWh exigent un passeport batterie. Qui est concerné, contenu et préparation.",
     "excerpt": "Le premier passeport numérique des produits obligatoire de l’UE démarre en février 2027. Quelles batteries sont concernées, quelles données y figurent, qui peut les voir, et une check-list pour les mois restants.",
+    "summary": "À partir du 18 février 2027, chaque batterie de véhicule électrique, batterie LMT et batterie industrielle de plus de 2 kWh mise sur le marché de l’UE doit disposer d’un passeport batterie numérique au titre du règlement (UE) 2023/1542. Il couvre les données d’identité, de composition, de circularité et de performance, avec des niveaux d’accès pour le public, l’intérêt légitime et les autorités.",
     "category": "Passeport numérique des produits",
     "keywords": [
       "passeport batterie",
@@ -459,7 +464,7 @@
       },
       {
         "type": "h2",
-        "text": "Quelles batteries ont besoin d’un passeport ?"
+        "text": "Quelles batteries ont besoin d’un passeport ?"
       },
       {
         "type": "ul",
@@ -475,21 +480,21 @@
       },
       {
         "type": "h2",
-        "text": "Que contient le passeport ?"
+        "text": "Que contient le passeport ?"
       },
       {
         "type": "p",
-        "text": "L’annexe XIII du règlement en fixe le contenu. En pratique, il se répartit en six groupes :"
+        "text": "L’annexe XIII du règlement en fixe le contenu. En pratique, il se répartit en six groupes :"
       },
       {
         "type": "ol",
         "items": [
-          "Informations générales : fabricant, identifiant, catégorie de batterie, lieu et date de fabrication, poids.",
-          "Conformité et étiquetage : déclarations de conformité et, lorsque les règles s’appliquent déjà, informations sur l’empreinte carbone.",
-          "Matériaux et composition : chimie, matières premières critiques et substances dangereuses.",
-          "Circularité : teneur en matières recyclées, informations sur le retrait, le démontage et la sécurité.",
-          "Performance et durabilité : capacité, durée de vie attendue et, pour certaines batteries, valeurs qui évoluent avec l’usage.",
-          "Devoir de vigilance dans la chaîne d’approvisionnement : informations issues des obligations de vigilance, dès qu’elles s’appliquent."
+          "Informations générales : fabricant, identifiant, catégorie de batterie, lieu et date de fabrication, poids.",
+          "Conformité et étiquetage : déclarations de conformité et, lorsque les règles s’appliquent déjà, informations sur l’empreinte carbone.",
+          "Matériaux et composition : chimie, matières premières critiques et substances dangereuses.",
+          "Circularité : teneur en matières recyclées, informations sur le retrait, le démontage et la sécurité.",
+          "Performance et durabilité : capacité, durée de vie attendue et, pour certaines batteries, valeurs qui évoluent avec l’usage.",
+          "Devoir de vigilance dans la chaîne d’approvisionnement : informations issues des obligations de vigilance, dès qu’elles s’appliquent."
         ]
       },
       {
@@ -498,7 +503,7 @@
       },
       {
         "type": "h2",
-        "text": "Qui peut voir quoi ?"
+        "text": "Qui peut voir quoi ?"
       },
       {
         "type": "p",
@@ -519,7 +524,7 @@
           "Désignez un responsable du passeport et de chaque groupe de données.",
           "Collectez les données de composition, de chimie et de teneur en matières recyclées auprès de vos fournisseurs de cellules et de matériaux. C’est généralement ce qui prend le plus de temps.",
           "Décidez comment attribuer les identifiants uniques et imprimer le QR code sur la batterie.",
-          "Définissez les niveaux d’accès : public, intérêt légitime et autorités.",
+          "Définissez les niveaux d’accès : public, intérêt légitime et autorités.",
           "Choisissez une plateforme qui publie un passeport lisible par machine et le garde disponible pendant toute la vie de la batterie.",
           "Menez un pilote sur un type de batterie bien avant février, pour avoir le temps de combler les lacunes."
         ]
@@ -530,7 +535,7 @@
       },
       {
         "type": "p",
-        "text": "DPPSpace réunit identité de la batterie, matériaux, fournisseurs et justificatifs dans un seul espace de travail, montre les lacunes par type de batterie et publie le passeport derrière un QR code. Nos consultants vous accompagnent sur ce que le logiciel seul ne résout pas : obtenir les données des fournisseurs et mettre en place des niveaux d’accès solides. Demandez une démo pour le voir avec une batterie de votre portefeuille."
+        "text": "DPPSpace réunit identité de la batterie, matériaux, fournisseurs et justificatifs dans un seul espace de travail, montre les lacunes par type de batterie et publie le passeport derrière un QR code. Nos consultants vous accompagnent sur ce que le logiciel seul ne résout pas : obtenir les données des fournisseurs et mettre en place des niveaux d’accès solides. Demandez une démo pour le voir avec une batterie de votre portefeuille."
       }
     ]
   },
@@ -538,6 +543,7 @@
     "title": "Préparer vos données pour le passeport numérique des produits",
     "description": "Le passeport numérique des produits est d’abord un projet de données. Collecter les données produits et fournisseurs, combler les lacunes, définir qui modifie quoi.",
     "excerpt": "La plupart des projets de passeport butent sur les données, pas sur le logiciel. Six étapes concrètes pour préparer les données produits, matériaux et fournisseurs, et les garder exactes après le premier passeport.",
+    "summary": "La plupart des projets de passeport numérique des produits butent sur les données, pas sur le logiciel. Commencez par un produit représentatif, constituez une fiche produit propre, modélisez les matériaux une fois pour les réutiliser, demandez tôt les justificatifs des fournisseurs, définissez qui peut modifier et consulter quelles données, et reliez le passeport à vos données de référence pour qu’il reste exact.",
     "category": "Passeport numérique des produits",
     "keywords": [
       "données passeport numérique des produits",
@@ -550,7 +556,7 @@
     "body": [
       {
         "type": "p",
-        "text": "Demandez à une équipe projet ce qui ralentit son premier passeport numérique des produits : la réponse n’est presque jamais le QR code ou l’outil de publication. Ce sont les données : où elles se trouvent, à qui elles appartiennent, si les fournisseurs les livrent et si quelqu’un remarque quand elles ne sont plus à jour."
+        "text": "Demandez à une équipe projet ce qui ralentit son premier passeport numérique des produits : la réponse n’est presque jamais le QR code ou l’outil de publication. Ce sont les données : où elles se trouvent, à qui elles appartiennent, si les fournisseurs les livrent et si quelqu’un remarque quand elles ne sont plus à jour."
       },
       {
         "type": "p",
@@ -562,7 +568,7 @@
       },
       {
         "type": "p",
-        "text": "Choisissez un produit représentatif : une nomenclature typique, quelques fournisseurs clés, un ou deux composants avec des allégations de durabilité. Construire un passeport complet vous en apprend davantage sur vos lacunes que n’importe quel inventaire de tous vos produits sur tableur."
+        "text": "Choisissez un produit représentatif : une nomenclature typique, quelques fournisseurs clés, un ou deux composants avec des allégations de durabilité. Construire un passeport complet vous en apprend davantage sur vos lacunes que n’importe quel inventaire de tous vos produits sur tableur."
       },
       {
         "type": "h2",
@@ -570,7 +576,7 @@
       },
       {
         "type": "p",
-        "text": "Chaque passeport s’appuie sur une identité produit : fabricant, modèle, catégorie, variante et identifiant unique. Beaucoup d’entreprises découvrent à ce stade que le même produit porte des numéros différents dans l’ERP, le PLM et la boutique en ligne. Retenez un identifiant unique et rattachez-y les autres."
+        "text": "Chaque passeport s’appuie sur une identité produit : fabricant, modèle, catégorie, variante et identifiant unique. Beaucoup d’entreprises découvrent à ce stade que le même produit porte des numéros différents dans l’ERP, le PLM et la boutique en ligne. Retenez un identifiant unique et rattachez-y les autres."
       },
       {
         "type": "h2",
@@ -586,7 +592,7 @@
       },
       {
         "type": "p",
-        "text": "Les déclarations fournisseurs sont ce qui prend le plus de temps. Indiquez tôt à vos fournisseurs quelles informations vous attendez, dans quel format et pour quand. Demandez des preuves, pas seulement des valeurs : un rapport d’essai ou un certificat qui étaye une teneur en matières recyclées vaut plus qu’un chiffre dans un e-mail."
+        "text": "Les déclarations fournisseurs sont ce qui prend le plus de temps. Indiquez tôt à vos fournisseurs quelles informations vous attendez, dans quel format et pour quand. Demandez des preuves, pas seulement des valeurs : un rapport d’essai ou un certificat qui étaye une teneur en matières recyclées vaut plus qu’un chiffre dans un e-mail."
       },
       {
         "type": "callout",
@@ -598,7 +604,7 @@
       },
       {
         "type": "p",
-        "text": "Un passeport combine des données de l’ingénierie, des achats, de la qualité et des fournisseurs, et en montre une partie au public, aux réparateurs et recycleurs, et aux autorités. Traitez-le comme toute autre conception des accès :"
+        "text": "Un passeport combine des données de l’ingénierie, des achats, de la qualité et des fournisseurs, et en montre une partie au public, aux réparateurs et recycleurs, et aux autorités. Traitez-le comme toute autre conception des accès :"
       },
       {
         "type": "ul",
@@ -619,7 +625,7 @@
       },
       {
         "type": "p",
-        "text": "Les produits changent, les fournisseurs changent et les réglementations ajoutent des champs. Un passeport n’est pas un document qu’on exporte une fois ; il doit rester exact pendant toute la vie du produit. Connectez le passeport aux systèmes qui détiennent vos données de référence, vérifiez régulièrement l’état de préparation et traitez chaque nouvel acte délégué comme une demande de changement."
+        "text": "Les produits changent, les fournisseurs changent et les réglementations ajoutent des champs. Un passeport n’est pas un document qu’on exporte une fois ; il doit rester exact pendant toute la vie du produit. Connectez le passeport aux systèmes qui détiennent vos données de référence, vérifiez régulièrement l’état de préparation et traitez chaque nouvel acte délégué comme une demande de changement."
       },
       {
         "type": "h2",
@@ -627,7 +633,7 @@
       },
       {
         "type": "p",
-        "text": "DPPSpace suit ces étapes : une fiche produit, une bibliothèque de matériaux réutilisable, le lien avec les fournisseurs et les justificatifs, et une vue de préparation qui montre ce qui manque encore avant publication. Pour parcourir ces étapes avec votre propre produit, demandez une démo ou contactez-nous pour un diagnostic de préparation des données."
+        "text": "DPPSpace suit ces étapes : une fiche produit, une bibliothèque de matériaux réutilisable, le lien avec les fournisseurs et les justificatifs, et une vue de préparation qui montre ce qui manque encore avant publication. Pour parcourir ces étapes avec votre propre produit, demandez une démo ou contactez-nous pour un diagnostic de préparation des données."
       }
     ]
   }

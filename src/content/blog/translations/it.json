@@ -3,6 +3,7 @@
     "title": "Da 70 secondi a meno di uno: risolvere una query IAM lenta",
     "description": "Caso di studio: come la revisione degli indici ha ridotto una query critica di identity governance da oltre 70 secondi a meno di uno, e il metodo seguito.",
     "excerpt": "Una sola query lenta stava rallentando un’intera piattaforma di identity. Ecco come l’abbiamo individuata, risolta intervenendo sugli indici e fatto in modo che resti veloce.",
+    "summary": "Una query nella piattaforma di identity governance di un cliente impiegava oltre 70 secondi; dopo un’ottimizzazione mirata degli indici risponde in meno di un secondo. Il metodo: individuare le query che costano davvero tempo, leggerne i piani di esecuzione, modificare gli indici con cautela e monitorare nel tempo perché la soluzione regga.",
     "category": "Caso di studio",
     "keywords": [
       "performance IAM",
@@ -118,6 +119,7 @@
     "title": "Identity governance per ambienti SAP: cosa fare bene",
     "description": "Ruoli SAP, segregation of duties, accesso di emergenza e la fine di SAP Identity Management: cosa deve fare bene un programma IGA per gli ambienti SAP.",
     "excerpt": "In SAP si muove il denaro, ed è quindi lì che gli errori di accesso fanno più male. Uno sguardo pratico a ruoli, segregation of duties, accesso di emergenza e all’abbandono di SAP IdM.",
+    "summary": "L’identity governance per SAP si riduce a quattro elementi: un modello dei ruoli pulito prima di automatizzare, controlli di segregation of duties già nella richiesta di accesso, accessi di emergenza controllati e registrati, e un piano per gli ambienti ibridi. Con la fine della manutenzione ordinaria di SAP IdM nel 2027, è il momento di sceglierne il successore.",
     "category": "SAP",
     "keywords": [
       "identity governance SAP",
@@ -214,6 +216,7 @@
     "title": "Identità non umane e agenti AI: colmare il gap di governance",
     "description": "Service account, API key, workload e ora agenti AI superano di gran lunga i dipendenti. Guida pratica per governare le identità non umane prima che sfuggano.",
     "excerpt": "La maggior parte delle organizzazioni governa con cura i propri dipendenti e quasi per nulla le proprie macchine. Gli agenti AI rendono urgente colmare questo divario. Ecco un modo pratico per farlo.",
+    "summary": "Le identità non umane, come service account, API key, bot e agenti AI, sono spesso più numerose delle persone, ma raramente hanno un responsabile o una revisione. Le governi come i dipendenti: le censisca tutte, assegni un responsabile, limiti i loro accessi e ne fissi la scadenza, ruoti i segreti e le ricertifichi regolarmente.",
     "category": "Identità non umane",
     "keywords": [
       "governance identità non umane",
@@ -338,6 +341,7 @@
     "title": "Il passaporto digitale del prodotto dell’UE spiegato: cos’è e quando si applica",
     "description": "Cos’è il passaporto digitale del prodotto dell’UE, quali prodotti lo richiedono e quando, quali dati contiene e come prepararsi a ESPR e regolamento batterie.",
     "excerpt": "Prima le batterie, poi acciaio, tessili, pneumatici e mobili. Una guida chiara al passaporto digitale del prodotto dell’UE: cosa contiene, chi ne ha bisogno e quando.",
+    "summary": "Il passaporto digitale del prodotto dell’UE è un record leggibile da macchina con i dati di identità, composizione, origine e sostenibilità di un prodotto, accessibile tramite QR code. Diventa obbligatorio il 18 febbraio 2027 per le batterie per veicoli elettrici, LMT e industriali, e per altri gruppi di prodotti tramite atti delegati ESPR a partire da fine 2026.",
     "category": "Passaporto digitale del prodotto",
     "keywords": [
       "passaporto digitale del prodotto",
@@ -443,6 +447,7 @@
     "title": "Passaporto della batteria 2027: cosa serve ai produttori entro il 18 febbraio",
     "description": "Dal 18 febbraio 2027 le batterie di veicoli elettrici, LMT e industriali oltre 2 kWh richiedono un passaporto digitale. Chi è coinvolto, contenuti e preparazione.",
     "excerpt": "Il primo passaporto digitale del prodotto obbligatorio nell’UE parte a febbraio 2027. Quali batterie ne hanno bisogno, quali dati contiene, chi può vederli e una checklist per i mesi che restano.",
+    "summary": "Dal 18 febbraio 2027 ogni batteria per veicoli elettrici, batteria LMT e batteria industriale oltre 2 kWh immessa sul mercato UE deve avere un passaporto digitale della batteria ai sensi del regolamento (UE) 2023/1542. Comprende dati su identità, composizione, circolarità e prestazioni, con livelli di accesso per il pubblico, per chi ha un interesse legittimo e per le autorità.",
     "category": "Passaporto digitale del prodotto",
     "keywords": [
       "passaporto della batteria",
@@ -538,6 +543,7 @@
     "title": "Preparare i dati per il passaporto digitale del prodotto",
     "description": "Il passaporto digitale del prodotto è anzitutto un progetto di dati. Come raccogliere dati di prodotto e fornitori, colmare le lacune e decidere chi modifica cosa.",
     "excerpt": "La maggior parte dei progetti si blocca sui dati, non sul software. Sei passi concreti per preparare dati di prodotto, materiali e fornitori e mantenerli accurati anche dopo il primo passaporto.",
+    "summary": "La maggior parte dei progetti di passaporto digitale del prodotto si blocca sui dati, non sul software. Inizi da un prodotto rappresentativo, costruisca un record di prodotto pulito, modelli i materiali una volta sola e li riutilizzi, chieda presto le evidenze ai fornitori, definisca chi può modificare e vedere quali dati e colleghi il passaporto ai Suoi master data perché resti accurato.",
     "category": "Passaporto digitale del prodotto",
     "keywords": [
       "dati passaporto digitale del prodotto",

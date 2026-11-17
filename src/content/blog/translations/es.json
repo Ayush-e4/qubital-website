@@ -3,6 +3,7 @@
     "title": "De 70 segundos a menos de uno: cómo corregir una consulta IAM lenta",
     "description": "Caso práctico: cómo la corrección de índices redujo una consulta crítica de gobierno de identidades de más de 70 segundos a menos de uno, y el método aplicado.",
     "excerpt": "Una sola consulta lenta estaba frenando toda una plataforma de identidades. Así la encontramos, la corregimos con una revisión de índices y nos aseguramos de que siga corregida.",
+    "summary": "Una consulta en la plataforma de gobierno de identidades de un cliente tardaba más de 70 segundos; tras una optimización específica de índices, responde en menos de un segundo. El método: localizar las consultas que realmente consumen tiempo, leer sus planes de ejecución, modificar los índices con cuidado y monitorizar para que la mejora se mantenga.",
     "category": "Caso práctico",
     "keywords": [
       "rendimiento IAM",
@@ -118,6 +119,7 @@
     "title": "Gobierno de identidades para entornos SAP: lo que hay que hacer bien",
     "description": "Roles SAP, segregación de funciones, acceso de emergencia y el fin de SAP Identity Management: lo que un programa IGA para SAP debe resolver correctamente.",
     "excerpt": "En SAP es donde se mueve el dinero, así que es donde los errores de acceso más duelen. Un enfoque práctico sobre roles, segregación de funciones, acceso de emergencia y la salida de SAP IdM.",
+    "summary": "El gobierno de identidades para SAP se reduce a cuatro aspectos: un modelo de roles limpio antes de automatizar, controles de segregación de funciones en la propia solicitud de acceso, accesos de emergencia controlados y registrados, y un plan para entornos híbridos. Con el fin del mantenimiento estándar de SAP IdM en 2027, ahora es el momento de elegir su sucesor.",
     "category": "SAP",
     "keywords": [
       "gobierno de identidades SAP",
@@ -214,6 +216,7 @@
     "title": "Identidades no humanas y agentes de IA: cómo cerrar la brecha de gobierno",
     "description": "Cuentas de servicio, claves de API, cargas de trabajo y ahora agentes de IA superan con creces a la plantilla. Guía práctica para gobernar las NHI a tiempo.",
     "excerpt": "La mayoría de las organizaciones gobiernan con cuidado a sus empleados y apenas a sus máquinas. Los agentes de IA hacen que esa brecha sea urgente. Así puede cerrarse de forma práctica.",
+    "summary": "Las identidades no humanas, como cuentas de servicio, claves de API, bots y agentes de IA, suelen superar en número a las personas, pero rara vez tienen un responsable o una revisión. Gobiérnelas como a los empleados: inventaríelas todas, asigne un responsable, limite y acote en el tiempo sus accesos, rote los secretos y recertifíquelas con regularidad.",
     "category": "Identidad no humana",
     "keywords": [
       "gobierno de identidades no humanas",
@@ -338,6 +341,7 @@
     "title": "El pasaporte digital de producto de la UE explicado: qué es y cuándo se aplica",
     "description": "Qué es el pasaporte digital de producto de la UE, qué productos lo necesitan y cuándo, qué datos contiene y cómo prepararse para el ESPR y el Reglamento de baterías.",
     "excerpt": "Primero las baterías, después el acero, los textiles, los neumáticos y los muebles. Una guía clara sobre el pasaporte digital de producto de la UE: qué contiene, quién lo necesita y cuándo.",
+    "summary": "El pasaporte digital de producto de la UE es un registro legible por máquina con los datos de identidad, composición, origen y sostenibilidad de un producto, accesible mediante un código QR. Será obligatorio el 18 de febrero de 2027 para las baterías de vehículos eléctricos, LMT e industriales, y para otros grupos de productos mediante actos delegados del ESPR a partir de finales de 2026.",
     "category": "Pasaporte digital de producto",
     "keywords": [
       "pasaporte digital de producto",
@@ -443,6 +447,7 @@
     "title": "Pasaporte de baterías 2027: lo que necesitan los fabricantes antes del 18 de febrero",
     "description": "Desde el 18 de febrero de 2027, las baterías de VE, LMT e industriales de más de 2 kWh necesitan pasaporte digital. A quién afecta, qué contiene y cómo prepararse.",
     "excerpt": "El primer pasaporte digital de producto obligatorio de la UE arranca en febrero de 2027. Qué baterías lo necesitan, qué datos incluye, quién puede verlos y una lista de comprobación para los meses que quedan.",
+    "summary": "A partir del 18 de febrero de 2027, toda batería de vehículo eléctrico, batería LMT y batería industrial de más de 2 kWh introducida en el mercado de la UE necesita un pasaporte digital de baterías conforme al Reglamento (UE) 2023/1542. Incluye datos de identidad, composición, circularidad y rendimiento, con niveles de acceso para el público, quienes tengan un interés legítimo y las autoridades.",
     "category": "Pasaporte digital de producto",
     "keywords": [
       "pasaporte de baterías",
@@ -538,6 +543,7 @@
     "title": "Cómo preparar sus datos para el pasaporte digital de producto",
     "description": "El pasaporte digital de producto es ante todo un proyecto de datos. Cómo reunir datos de producto y proveedores, cerrar lagunas y decidir quién cambia y ve qué.",
     "excerpt": "La mayoría de los proyectos de pasaporte se atascan en los datos, no en el software. Seis pasos prácticos para preparar los datos de producto, materiales y proveedores, y mantenerlos exactos después del primer pasaporte.",
+    "summary": "La mayoría de los proyectos de pasaporte digital de producto se atascan en los datos, no en el software. Empiece por un producto representativo, construya un registro de producto limpio, modele los materiales una vez y reutilícelos, solicite pronto las evidencias a los proveedores, defina quién puede modificar y ver qué datos, y conecte el pasaporte a sus datos maestros para que siga siendo exacto.",
     "category": "Pasaporte digital de producto",
     "keywords": [
       "datos pasaporte digital de producto",

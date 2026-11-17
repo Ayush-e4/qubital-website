@@ -3,6 +3,7 @@
     "title": "Fra 70 sekunder til under ét: en langsom IAM-forespørgsel løst",
     "description": "Et kundecase: Sådan fik indeksoptimering en kritisk forespørgsel i identitetsstyringen ned fra over 70 sekunder til under ét sekund – og metoden bag.",
     "excerpt": "En enkelt langsom forespørgsel holdt en hel identitetsplatform tilbage. Sådan fandt vi den, løste den med indeksoptimering og sikrede, at den forbliver løst.",
+    "summary": "Én forespørgsel i en kundes platform til identitetsstyring tog over 70 sekunder; efter målrettet indeksoptimering svarer den på under ét sekund. Metoden: find de forespørgsler, der reelt koster tid, læs deres eksekveringsplaner, justér indekser med omtanke, og overvåg løbende, så løsningen holder.",
     "category": "Kundecase",
     "keywords": [
       "IAM-performance",
@@ -118,6 +119,7 @@
     "title": "Identitetsstyring for SAP-landskaber: det skal sidde rigtigt",
     "description": "SAP-roller, funktionsadskillelse, nødadgang og afslutningen på SAP Identity Management: hvad et IGA-program for SAP-landskabet skal have helt styr på fra start.",
     "excerpt": "Det er i SAP, pengene flytter sig, så det er her, fejl i adgangen gør mest ondt. Et praktisk blik på roller, funktionsadskillelse, nødadgang og farvel til SAP IdM.",
+    "summary": "Identitetsstyring for SAP handler om fire ting: en ren rollemodel, før du automatiserer, kontrol af funktionsadskillelse allerede ved adgangsanmodningen, kontrolleret og logget nødadgang og en plan for hybride landskaber. Da mainstream-vedligeholdelsen af SAP IdM ophører i 2027, er det nu, du skal vælge afløseren.",
     "category": "SAP",
     "keywords": [
       "SAP identitetsstyring",
@@ -214,6 +216,7 @@
     "title": "Ikke-menneskelige identiteter og AI-agenter: luk hullet",
     "description": "Servicekonti, API-nøgler, workloads og nu AI-agenter er langt flere end medarbejderne. En praktisk guide til at styre ikke-menneskelige identiteter i tide.",
     "excerpt": "De fleste organisationer styrer deres medarbejdere omhyggeligt og deres maskiner knap nok. AI-agenter gør det hul akut. Her er en praktisk måde at lukke det på.",
+    "summary": "Ikke-menneskelige identiteter som servicekonti, API-nøgler, bots og AI-agenter er ofte flere end menneskene, men har sjældent en ejer eller bliver gennemgået. Styr dem som medarbejdere: registrér dem alle, udpeg en ansvarlig ejer, begræns og tidsbegræns deres adgang, rotér hemmeligheder, og gencertificér dem jævnligt.",
     "category": "Ikke-menneskelig identitet",
     "keywords": [
       "styring af ikke-menneskelige identiteter",
@@ -338,6 +341,7 @@
     "title": "EU's digitale produktpas forklaret: hvad det er, og hvornår det gælder",
     "description": "Hvad EU's digitale produktpas er, hvilke produkter der skal have et og hvornår, hvilke data det rummer, og hvordan du forbereder dig på ESPR og batteriforordningen.",
     "excerpt": "Først batterier, så stål, tekstiler, dæk og møbler. En letforståelig guide til EU's digitale produktpas: hvad det indeholder, hvem der skal have et, og hvornår.",
+    "summary": "EU's digitale produktpas er en maskinlæsbar post med data om et produkts identitet, sammensætning, oprindelse og bæredygtighed, som tilgås via en QR-kode. Det bliver obligatorisk den 18. februar 2027 for batterier til elkøretøjer, LMT-batterier og industribatterier og for flere produktgrupper via delegerede retsakter under ESPR fra slutningen af 2026.",
     "category": "Digitalt produktpas",
     "keywords": [
       "digitalt produktpas",
@@ -443,6 +447,7 @@
     "title": "Batteripasset 2027: hvad producenter skal have klar til 18. februar",
     "description": "Fra 18. februar 2027 skal elbil-, LMT- og industribatterier over 2 kWh have et digitalt batteripas. Hvem der er omfattet, hvad det indeholder, og hvordan du når det.",
     "excerpt": "EU's første obligatoriske digitale produktpas starter i februar 2027. Hvilke batterier der skal have et, hvilke data der indgår, hvem der må se dem, og en tjekliste til de resterende måneder.",
+    "summary": "Fra den 18. februar 2027 skal hvert batteri til elkøretøjer, LMT-batteri og industribatteri over 2 kWh, der bringes i omsætning på EU-markedet, have et digitalt batteripas i henhold til forordning (EU) 2023/1542. Det dækker data om identitet, sammensætning, cirkularitet og ydeevne med adgangsniveauer for offentligheden, parter med legitim interesse og myndigheder.",
     "category": "Digitalt produktpas",
     "keywords": [
       "batteripas",
@@ -538,6 +543,7 @@
     "title": "Gør dine data klar til det digitale produktpas",
     "description": "Det digitale produktpas er først et dataprojekt. Sådan indsamler du produkt-, materiale- og leverandørdata, lukker huller og afgør, hvem der må ændre og se hvad.",
     "excerpt": "De fleste pasprojekter går i stå på data, ikke på software. Seks praktiske trin til at gøre produkt-, materiale- og leverandørdata klar og holde dem korrekte efter det første pas.",
+    "summary": "De fleste projekter med digitale produktpas går i stå på data, ikke på software. Start med ét repræsentativt produkt, opbyg en ren produktpost, modellér materialer én gang og genbrug dem, bed leverandørerne om dokumentation tidligt, fastlæg, hvem der må ændre og se hvilke data, og forbind passet med dine stamdata, så det forbliver korrekt.",
     "category": "Digitalt produktpas",
     "keywords": [
       "data til digitalt produktpas",

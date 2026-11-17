@@ -3,6 +3,7 @@
     "title": "Van 70 seconden naar minder dan één: een trage IAM-databasequery oplossen",
     "description": "Een casestudy: hoe indexoptimalisatie een kritieke identity-governancequery terugbracht van ruim 70 seconden naar onder één seconde, en de methode erachter.",
     "excerpt": "Eén trage query hield een volledig identityplatform op. Zo hebben we hem gevonden, met indexoptimalisatie opgelost en ervoor gezorgd dat hij snel blijft.",
+    "summary": "Eén query in het identity-governanceplatform van een klant duurde meer dan 70 seconden; na gerichte indexoptimalisatie antwoordt hij in minder dan één seconde. De aanpak: vind de query's die echt tijd kosten, lees hun uitvoeringsplannen, pas indexen zorgvuldig aan en blijf monitoren, zodat de oplossing standhoudt.",
     "category": "Casestudy",
     "keywords": [
       "IAM-performance",
@@ -118,6 +119,7 @@
     "title": "Identity governance voor SAP-landschappen: wat u goed moet regelen",
     "description": "SAP-rollen, functiescheiding, noodtoegang en het einde van SAP Identity Management: waar een IGA-programma voor SAP aan moet voldoen om echt te werken.",
     "excerpt": "In SAP gaat het geld rond, dus daar doen toegangsfouten het meeste pijn. Een praktische blik op rollen, functiescheiding, noodtoegang en de overstap van SAP IdM.",
+    "summary": "Identity governance voor SAP draait om vier dingen: een schoon rollenmodel voordat u automatiseert, controles op functiescheiding al bij de toegangsaanvraag, gecontroleerde en gelogde noodtoegang, en een plan voor hybride landschappen. Nu het mainstream-onderhoud van SAP IdM in 2027 eindigt, is het tijd om een opvolger te kiezen.",
     "category": "SAP",
     "keywords": [
       "SAP identity governance",
@@ -214,6 +216,7 @@
     "title": "Niet-menselijke identiteiten en AI-agents: het governance-gat dichten",
     "description": "Serviceaccounts, API-sleutels, workloads en nu AI-agents zijn veel talrijker dan medewerkers. Een praktische gids om niet-menselijke identiteiten te beheersen.",
     "excerpt": "De meeste organisaties beheren hun medewerkers zorgvuldig en hun machines nauwelijks. AI-agents maken dat gat urgent. Zo dicht u het op een praktische manier.",
+    "summary": "Niet-menselijke identiteiten zoals serviceaccounts, API-sleutels, bots en AI-agents zijn vaak talrijker dan mensen, maar hebben zelden een eigenaar of een review. Beheer ze zoals medewerkers: inventariseer ze allemaal, wijs een verantwoordelijke eigenaar toe, beperk hun toegang en geef die een einddatum, roteer secrets en hercertificeer ze regelmatig.",
     "category": "Niet-menselijke identiteiten",
     "keywords": [
       "governance van niet-menselijke identiteiten",
@@ -338,6 +341,7 @@
     "title": "Het digitaal productpaspoort van de EU uitgelegd: wat het is en wanneer het geldt",
     "description": "Wat het digitaal productpaspoort van de EU is, welke producten er wanneer een nodig hebben, welke data erin staan en hoe fabrikanten zich voorbereiden onder de ESPR.",
     "excerpt": "Eerst batterijen, daarna staal, textiel, banden en meubelen. Een heldere gids over het digitaal productpaspoort van de EU: wat erin staat, wie het nodig heeft en wanneer.",
+    "summary": "Het digitaal productpaspoort van de EU is een machineleesbaar dossier met gegevens over de identiteit, samenstelling, herkomst en duurzaamheid van een product, bereikbaar via een QR-code. Het wordt op 18 februari 2027 verplicht voor batterijen voor elektrische voertuigen, LMT- en industriële batterijen, en vanaf eind 2026 via gedelegeerde handelingen onder de ESPR voor verdere productgroepen.",
     "category": "Digitaal productpaspoort",
     "keywords": [
       "digitaal productpaspoort",
@@ -443,6 +447,7 @@
     "title": "Batterijpaspoort 2027: wat fabrikanten vóór 18 februari nodig hebben",
     "description": "Vanaf 18 februari 2027 hebben EV-, LMT- en industriële batterijen boven 2 kWh een paspoort nodig. Voor wie het geldt, wat erin staat en hoe u zich voorbereidt.",
     "excerpt": "Het eerste verplichte digitaal productpaspoort in de EU start in februari 2027. Welke batterijen er een nodig hebben, welke data erin komen, wie ze mag zien en een checklist voor de resterende maanden.",
+    "summary": "Vanaf 18 februari 2027 heeft elke batterij voor elektrische voertuigen, LMT-batterij en industriële batterij boven 2 kWh die op de EU-markt wordt gebracht een digitaal batterijpaspoort nodig volgens Verordening (EU) 2023/1542. Het omvat identiteits-, samenstellings-, circulariteits- en prestatiedata, met toegangsniveaus voor het publiek, partijen met een rechtmatig belang en autoriteiten.",
     "category": "Digitaal productpaspoort",
     "keywords": [
       "batterijpaspoort",
@@ -538,6 +543,7 @@
     "title": "Uw data klaarmaken voor het digitaal productpaspoort",
     "description": "Het digitaal productpaspoort is in de eerste plaats een dataproject. Zo verzamelt u product- en leveranciersdata, dicht u hiaten en bepaalt u wie wat mag wijzigen.",
     "excerpt": "De meeste paspoortprojecten lopen vast op data, niet op software. Zes praktische stappen om product-, materiaal- en leveranciersdata gereed te maken en ook na het eerste paspoort juist te houden.",
+    "summary": "De meeste projecten rond het digitaal productpaspoort lopen vast op data, niet op software. Begin met één representatief product, bouw een schoon productrecord op, modelleer materialen één keer en hergebruik ze, vraag leveranciersbewijs vroeg op, leg vast wie welke data mag wijzigen en inzien, en koppel het paspoort aan uw stamgegevens zodat het juist blijft.",
     "category": "Digitaal productpaspoort",
     "keywords": [
       "data digitaal productpaspoort",
