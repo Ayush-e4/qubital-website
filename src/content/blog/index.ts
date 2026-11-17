@@ -1,11 +1,14 @@
 import type { Locale } from '@/i18n/routing';
 import { postMeta, type PostMeta } from './meta';
+import { accessReviews } from './posts/access-reviews';
 import { batteryPassport2027 } from './posts/battery-passport-2027';
 import { digitalProductPassportGuide } from './posts/digital-product-passport-guide';
 import { dppDataReadiness } from './posts/dpp-data-readiness';
 import { iamQueryPerformance } from './posts/iam-query-performance';
 import { igaForSap } from './posts/iga-for-sap';
+import { joinerMoverLeaver } from './posts/joiner-mover-leaver';
 import { nonHumanIdentityAiAgents } from './posts/non-human-identity-ai-agents';
+import { privilegedAccessJit } from './posts/privileged-access-jit';
 import da from './translations/da.json';
 import es from './translations/es.json';
 import fr from './translations/fr.json';
@@ -21,6 +24,9 @@ import type { Block, PostContent } from './types';
 // id, dates and slugs (one per language) to meta.ts, and register it here. The
 // sitemap, blog index, hreflang and language switcher pick it up from there.
 const source: Record<string, Record<'en' | 'de', PostContent>> = {
+  'privileged-access-jit': privilegedAccessJit,
+  'access-reviews': accessReviews,
+  'joiner-mover-leaver': joinerMoverLeaver,
   'dpp-data-readiness': dppDataReadiness,
   'battery-passport-2027': batteryPassport2027,
   'digital-product-passport-guide': digitalProductPassportGuide,

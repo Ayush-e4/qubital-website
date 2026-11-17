@@ -10,12 +10,69 @@ export type PostMeta = {
   /** ISO date of the last substantive update */
   updated: string;
   slugs: Record<Locale, string>;
+  /** Key of the author in site.authors */
+  author: 'arun' | 'manoj';
 };
 
 // Newest first.
 export const postMeta: PostMeta[] = [
   {
+    id: 'privileged-access-jit',
+    author: 'arun',
+    published: '2026-11-17',
+    updated: '2026-11-17',
+    slugs: {
+      en: 'privileged-access-management-just-in-time',
+      de: 'privileged-access-management-just-in-time',
+      fr: 'gestion-des-acces-a-privileges-juste-a-temps',
+      it: 'gestione-accessi-privilegiati-just-in-time',
+      es: 'gestion-de-accesos-privilegiados-just-in-time',
+      nl: 'privileged-access-management-just-in-time',
+      pl: 'zarzadzanie-dostepem-uprzywilejowanym-just-in-time',
+      pt: 'gestao-de-acessos-privilegiados-just-in-time',
+      sv: 'privilegierad-atkomst-just-in-time',
+      da: 'privilegeret-adgang-just-in-time',
+    },
+  },
+  {
+    id: 'access-reviews',
+    author: 'arun',
+    published: '2026-11-17',
+    updated: '2026-11-17',
+    slugs: {
+      en: 'access-reviews-that-mean-something',
+      de: 'rezertifizierung-die-wirkt',
+      fr: 'revues-des-acces-efficaces',
+      it: 'revisioni-degli-accessi-efficaci',
+      es: 'revisiones-de-accesos-eficaces',
+      nl: 'toegangsreviews-die-werken',
+      pl: 'przeglady-uprawnien-ktore-dzialaja',
+      pt: 'revisoes-de-acessos-eficazes',
+      sv: 'behorighetsgranskningar-som-fungerar',
+      da: 'adgangsgennemgange-der-virker',
+    },
+  },
+  {
+    id: 'joiner-mover-leaver',
+    author: 'arun',
+    published: '2026-11-17',
+    updated: '2026-11-17',
+    slugs: {
+      en: 'joiner-mover-leaver-identity-lifecycle',
+      de: 'joiner-mover-leaver-identitaetslebenszyklus',
+      fr: 'joiner-mover-leaver-cycle-de-vie-des-identites',
+      it: 'joiner-mover-leaver-ciclo-di-vita-delle-identita',
+      es: 'joiner-mover-leaver-ciclo-de-vida-de-identidades',
+      nl: 'joiner-mover-leaver-identiteitslevenscyclus',
+      pl: 'joiner-mover-leaver-cykl-zycia-tozsamosci',
+      pt: 'joiner-mover-leaver-ciclo-de-vida-das-identidades',
+      sv: 'joiner-mover-leaver-identitetens-livscykel',
+      da: 'joiner-mover-leaver-identitetens-livscyklus',
+    },
+  },
+  {
     id: 'dpp-data-readiness',
+    author: 'manoj',
     published: '2026-11-17',
     updated: '2026-11-17',
     slugs: {
@@ -33,6 +90,7 @@ export const postMeta: PostMeta[] = [
   },
   {
     id: 'battery-passport-2027',
+    author: 'manoj',
     published: '2026-11-17',
     updated: '2026-11-17',
     slugs: {
@@ -50,6 +108,7 @@ export const postMeta: PostMeta[] = [
   },
   {
     id: 'digital-product-passport-guide',
+    author: 'manoj',
     published: '2026-11-17',
     updated: '2026-11-17',
     slugs: {
@@ -67,6 +126,7 @@ export const postMeta: PostMeta[] = [
   },
   {
     id: 'iam-query-performance',
+    author: 'arun',
     published: '2026-11-02',
     updated: '2026-11-02',
     slugs: {
@@ -84,6 +144,7 @@ export const postMeta: PostMeta[] = [
   },
   {
     id: 'non-human-identity-ai-agents',
+    author: 'arun',
     published: '2026-10-26',
     updated: '2026-10-26',
     slugs: {
@@ -101,6 +162,7 @@ export const postMeta: PostMeta[] = [
   },
   {
     id: 'iga-for-sap',
+    author: 'arun',
     published: '2026-10-19',
     updated: '2026-10-19',
     slugs: {
