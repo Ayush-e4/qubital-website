@@ -1,0 +1,27 @@
+# Qubital
+
+> Qubital GmbH is an identity and access management (IAM) consultancy based in Herzogenaurach, Germany, serving the DACH region and Europe. It implements and runs identity governance (IGA), privileged access management (PAM), customer IAM (CIAM), workforce identity and governance for non-human identities and AI agents, and builds DPPSpace, a Digital Product Passport platform. Contact: hello@qubital.eu. Languages: German and English.
+
+## Services
+- [Services overview](https://qubital.eu/en/services): IGA, PAM, CIAM, workforce identity, non-human identity and AI agent governance
+- [SAP IdM replacement](https://qubital.eu/en/sap-idm-replacement): moving off SAP Identity Management before the end of mainstream maintenance in 2027
+- [NIS2 and IAM](https://qubital.eu/en/nis2-identity-access-management): access control, MFA, privileged and supplier access, audit evidence
+- [Non-human identities and AI agents](https://qubital.eu/en/services/non-human-identity-ai-agents): governing service accounts, API keys, bots and AI agents
+- [Platforms](https://qubital.eu/en/platforms): vendor-neutral work on the IAM platforms clients already run
+
+## Product
+- [DPPSpace](https://qubital.eu/en/product): software to prepare EU Digital Product Passports (ESPR, battery passport from 18 February 2027); also at https://dppspace.com
+
+## Articles
+- [The EU Digital Product Passport explained](https://qubital.eu/en/blog/eu-digital-product-passport-explained)
+- [Battery passport 2027](https://qubital.eu/en/blog/battery-passport-2027-what-manufacturers-need)
+- [Getting your data ready for the Digital Product Passport](https://qubital.eu/en/blog/preparing-data-for-the-digital-product-passport)
+- [Governing non-human identities and AI agents](https://qubital.eu/en/blog/governing-non-human-identities-and-ai-agents)
+- [Identity governance for SAP landscapes](https://qubital.eu/en/blog/identity-governance-for-sap-landscapes)
+- [From 70 seconds to under one: a slow IAM query](https://qubital.eu/en/blog/iam-query-performance-70-seconds-to-under-one)
+
+## Company
+- [About](https://qubital.eu/en/about)
+- [Approach](https://qubital.eu/en/approach)
+- [Contact](https://qubital.eu/en/contact)
+- German version of every page: https://qubital.eu/de
