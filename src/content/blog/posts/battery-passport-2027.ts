@@ -7,6 +7,8 @@ export const batteryPassport2027: Record<'en' | 'de', PostContent> = {
       'From 18 February 2027, EV, LMT and industrial batteries above 2 kWh need a digital battery passport. Who is affected, what it contains and how to get ready in time.',
     excerpt:
       'The first mandatory Digital Product Passport in the EU starts in February 2027. Which batteries need one, which data goes in, who may see it, and a checklist for the months left.',
+    summary:
+      'From 18 February 2027, every EV battery, LMT battery and industrial battery above 2 kWh placed on the EU market needs a digital battery passport under Regulation (EU) 2023/1542. It covers identity, composition, circularity and performance data, with access levels for the public, legitimate interest and authorities.',
     category: 'Digital Product Passport',
     keywords: [
       'battery passport',
@@ -89,6 +91,8 @@ export const batteryPassport2027: Record<'en' | 'de', PostContent> = {
       'Ab dem 18. Februar 2027 brauchen Traktions-, LV- und Industriebatterien über 2 kWh einen digitalen Batteriepass. Wer betroffen ist, was er enthält und wie Sie rechtzeitig fertig werden.',
     excerpt:
       'Der erste verpflichtende digitale Produktpass der EU startet im Februar 2027. Welche Batterien ihn brauchen, welche Daten hineingehören, wer was sehen darf – und eine Checkliste für die verbleibenden Monate.',
+    summary:
+      'Ab dem 18. Februar 2027 braucht jede Traktions-, LV- und Industriebatterie über 2 kWh, die in der EU in Verkehr gebracht wird, einen digitalen Batteriepass nach Verordnung (EU) 2023/1542. Er umfasst Identität, Zusammensetzung, Kreislauf- und Leistungsdaten, mit Zugriffsstufen für Öffentlichkeit, berechtigtes Interesse und Behörden.',
     category: 'Digitaler Produktpass',
     keywords: [
       'Batteriepass',

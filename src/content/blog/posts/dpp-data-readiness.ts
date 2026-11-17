@@ -7,6 +7,8 @@ export const dppDataReadiness: Record<'en' | 'de', PostContent> = {
       'The Digital Product Passport is a data project first. How to collect product, material and supplier data, close the gaps and decide who may change and see what.',
     excerpt:
       'Most passport projects stall on data, not software. Six practical steps to get product, material and supplier data ready, and to keep it accurate after the first passport.',
+    summary:
+      'Most Digital Product Passport projects stall on data, not software. Start with one representative product, build a clean product record, model materials once and reuse them, request supplier evidence early, define who may change and see which data, and connect the passport to your master data so it stays accurate.',
     category: 'Digital Product Passport',
     keywords: [
       'Digital Product Passport data',
@@ -85,6 +87,8 @@ export const dppDataReadiness: Record<'en' | 'de', PostContent> = {
       'Der digitale Produktpass ist zuerst ein Datenprojekt. So sammeln Sie Produkt-, Material- und Lieferantendaten, schließen Lücken und regeln, wer was ändern und sehen darf.',
     excerpt:
       'Die meisten Produktpass-Projekte stocken an den Daten, nicht an der Software. Sechs praktische Schritte, um Produkt-, Material- und Lieferantendaten fit zu machen – und aktuell zu halten.',
+    summary:
+      'Die meisten Produktpass-Projekte scheitern an den Daten, nicht an der Software. Beginnen Sie mit einem repräsentativen Produkt, bauen Sie einen sauberen Produktdatensatz auf, erfassen Sie Materialien einmal und verwenden Sie sie wieder, fordern Sie Lieferantennachweise früh an, regeln Sie Zugriffe und verbinden Sie den Pass mit Ihren Stammdaten.',
     category: 'Digitaler Produktpass',
     keywords: [
       'Daten digitaler Produktpass',

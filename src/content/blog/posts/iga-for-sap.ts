@@ -7,6 +7,8 @@ export const igaForSap: Record<'en' | 'de', PostContent> = {
       'SAP roles, segregation of duties, emergency access and the end of SAP Identity Management: what an IGA programme for SAP needs to get right.',
     excerpt:
       'SAP is where the money moves, so it is where access mistakes hurt most. A practical look at roles, segregation of duties, emergency access and the move away from SAP IdM.',
+    summary:
+      'Identity governance for SAP comes down to four things: a clean role model before you automate, segregation-of-duties checks during the access request, controlled and logged emergency access, and a plan for hybrid landscapes. With SAP IdM ending mainstream maintenance in 2027, now is the time to choose its successor.',
     category: 'SAP',
     keywords: [
       'SAP identity governance',
@@ -87,6 +89,8 @@ export const igaForSap: Record<'en' | 'de', PostContent> = {
       'SAP-Rollen, Funktionstrennung, Notfallzugriffe und das Ende von SAP Identity Management: worauf es bei einem IGA-Programm für SAP ankommt.',
     excerpt:
       'In SAP fließt das Geld, deshalb schmerzen Berechtigungsfehler dort am meisten. Ein praktischer Blick auf Rollen, Funktionstrennung, Notfallzugriffe und den Abschied von SAP IdM.',
+    summary:
+      'Identity Governance für SAP hängt an vier Dingen: einem sauberen Rollenmodell vor der Automatisierung, SoD-Prüfungen schon beim Antrag, kontrollierten und protokollierten Notfallzugriffen und einem Plan für hybride Landschaften. Da die Mainstream-Wartung von SAP IdM 2027 endet, ist jetzt der Zeitpunkt, den Nachfolger zu wählen.',
     category: 'SAP',
     keywords: [
       'SAP Identity Governance',

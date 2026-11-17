@@ -7,6 +7,8 @@ export const iamQueryPerformance: Record<'en' | 'de', PostContent> = {
       'A case study: how index remediation cut a critical identity governance query from over 70 seconds to under one second, and the method behind it.',
     excerpt:
       'A single slow query was holding up an entire identity platform. Here is how we found it, fixed it with index remediation, and made sure it stays fixed.',
+    summary:
+      "One query in a customer's identity governance platform took more than 70 seconds; after targeted index optimisation it returns in under one second. The method: find the queries that really cost time, read their execution plans, change indexes carefully, and monitor so the fix lasts.",
     category: 'Case study',
     keywords: [
       'IAM performance',
@@ -106,6 +108,8 @@ export const iamQueryPerformance: Record<'en' | 'de', PostContent> = {
       'Fallstudie: Wie gezielte Index-Optimierung eine kritische Abfrage einer Identity-Governance-Plattform von über 70 Sekunden auf unter eine Sekunde brachte.',
     excerpt:
       'Eine einzige langsame Abfrage bremste eine ganze Identity-Plattform aus. So haben wir sie gefunden, per Index-Optimierung behoben und dafür gesorgt, dass es so bleibt.',
+    summary:
+      'Eine Abfrage in der Identity-Governance-Plattform eines Kunden brauchte über 70 Sekunden; nach gezielter Index-Optimierung antwortet sie in unter einer Sekunde. Die Methode: die wirklich teuren Abfragen finden, ihre Ausführungspläne lesen, Indizes vorsichtig anpassen und überwachen, damit die Lösung hält.',
     category: 'Fallstudie',
     keywords: [
       'IAM Performance',

@@ -7,6 +7,8 @@ export const digitalProductPassportGuide: Record<'en' | 'de', PostContent> = {
       'What the EU Digital Product Passport is, which products need one and when, what data it holds, and how manufacturers can prepare under the ESPR and the Battery Regulation.',
     excerpt:
       'Batteries first, then steel, textiles, tyres and furniture. A plain-language guide to the EU Digital Product Passport: what it contains, who needs one and when.',
+    summary:
+      "The EU Digital Product Passport is a machine-readable record of a product's identity, composition, origin and sustainability data, reached through a QR code. It becomes mandatory for EV, LMT and industrial batteries on 18 February 2027, and for further product groups through ESPR delegated acts from late 2026 onwards.",
     category: 'Digital Product Passport',
     keywords: [
       'Digital Product Passport',
@@ -99,6 +101,8 @@ export const digitalProductPassportGuide: Record<'en' | 'de', PostContent> = {
       'Was der digitale Produktpass der EU ist, welche Produkte ihn wann brauchen, welche Daten er enthält und wie sich Hersteller unter ESPR und Batterieverordnung vorbereiten.',
     excerpt:
       'Erst Batterien, dann Stahl, Textilien, Reifen und Möbel. Ein verständlicher Leitfaden zum digitalen Produktpass der EU: Inhalt, Pflichten und Zeitplan.',
+    summary:
+      'Der digitale Produktpass der EU ist ein maschinenlesbarer Datensatz zu Identität, Zusammensetzung, Herkunft und Nachhaltigkeit eines Produkts, abrufbar über einen QR-Code. Pflicht wird er am 18. Februar 2027 für Traktions-, LV- und Industriebatterien und für weitere Produktgruppen über delegierte Rechtsakte der ESPR ab Ende 2026.',
     category: 'Digitaler Produktpass',
     keywords: [
       'Digitaler Produktpass',

@@ -7,6 +7,8 @@ export const nonHumanIdentityAiAgents: Record<'en' | 'de', PostContent> = {
       'Service accounts, API keys, workloads and now AI agents far outnumber employees. A practical guide to governing non-human identities before they govern you.',
     excerpt:
       'Most organisations govern their employees carefully and their machines barely at all. AI agents make that gap urgent. Here is a practical way to close it.',
+    summary:
+      'Non-human identities such as service accounts, API keys, bots and AI agents often outnumber people, yet rarely have an owner or a review. Govern them like employees: inventory every one, assign an accountable owner, limit and time-box their access, rotate secrets, and recertify them regularly.',
     category: 'Non-human identity',
     keywords: [
       'non-human identity governance',
@@ -103,6 +105,8 @@ export const nonHumanIdentityAiAgents: Record<'en' | 'de', PostContent> = {
       'Service-Accounts, API-Schlüssel, Workloads und KI-Agenten sind längst zahlreicher als Mitarbeitende. Ein Leitfaden, wie Sie nicht-menschliche Identitäten steuern.',
     excerpt:
       'Die meisten Unternehmen steuern die Zugriffe ihrer Mitarbeitenden sorgfältig, die ihrer Maschinen kaum. KI-Agenten machen diese Lücke dringend. So schließen Sie sie.',
+    summary:
+      'Non-Human Identities wie Servicekonten, API-Schlüssel, Bots und KI-Agenten sind oft zahlreicher als Menschen, haben aber selten einen Verantwortlichen oder eine Überprüfung. Steuern Sie sie wie Mitarbeitende: vollständig erfassen, einen Verantwortlichen zuweisen, Zugriffe begrenzen und befristen, Geheimnisse rotieren und regelmäßig rezertifizieren.',
     category: 'Non-Human Identity',
     keywords: [
       'Non-Human Identity Governance',
