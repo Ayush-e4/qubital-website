@@ -104,22 +104,14 @@ function organizationJsonLd(description: string) {
           availableLanguage: ['German', 'English'],
         },
       },
-      {
+      ...Object.entries(site.authors).map(([id, a]) => ({
         '@type': 'Person',
-        '@id': `${site.url}/#author`,
-        name: site.author.name,
-        jobTitle: site.author.jobTitle,
+        '@id': `${site.url}/#author-${id}`,
+        name: a.name,
+        jobTitle: a.jobTitle,
         worksFor: { '@id': `${site.url}/#organization` },
-        sameAs: [site.author.linkedin],
-        knowsAbout: [
-          'Identity and Access Management (IAM)',
-          'Identity Governance and Administration (IGA)',
-          'One Identity Manager',
-          'SAP identity integration',
-          'Privileged Access Management (PAM)',
-          'Digital Product Passport',
-        ],
-      },
+        sameAs: [a.linkedin],
+      })),
       {
         '@type': 'WebSite',
         '@id': `${site.url}/#website`,
