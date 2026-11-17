@@ -77,11 +77,7 @@ function organizationJsonLd(description: string) {
         logo: `${site.url}/icon-512.png`,
         description,
         email: site.email,
-        address: {
-          '@type': 'PostalAddress',
-          addressRegion: 'Bavaria',
-          addressCountry: 'DE',
-        },
+        address: { '@type': 'PostalAddress', ...site.address },
         sameAs: [site.linkedin],
         image: `${site.url}${ogImage.url}`,
         areaServed: [
@@ -107,6 +103,22 @@ function organizationJsonLd(description: string) {
           contactType: 'customer support',
           availableLanguage: ['German', 'English'],
         },
+      },
+      {
+        '@type': 'Person',
+        '@id': `${site.url}/#author`,
+        name: site.author.name,
+        jobTitle: site.author.jobTitle,
+        worksFor: { '@id': `${site.url}/#organization` },
+        sameAs: [site.author.linkedin],
+        knowsAbout: [
+          'Identity and Access Management (IAM)',
+          'Identity Governance and Administration (IGA)',
+          'One Identity Manager',
+          'SAP identity integration',
+          'Privileged Access Management (PAM)',
+          'Digital Product Passport',
+        ],
       },
       {
         '@type': 'WebSite',
