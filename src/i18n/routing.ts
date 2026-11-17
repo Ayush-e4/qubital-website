@@ -20,6 +20,18 @@ export const routing = defineRouting({
       sv: '/tjanster',
       da: '/ydelser',
     },
+    '/product': {
+      de: '/produkt',
+      en: '/product',
+      fr: '/produit',
+      it: '/prodotto',
+      es: '/producto',
+      nl: '/product',
+      pl: '/produkt',
+      pt: '/produto',
+      sv: '/produkt',
+      da: '/produkt',
+    },
     '/platforms': {
       de: '/plattformen',
       en: '/platforms',
