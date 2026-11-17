@@ -7,6 +7,20 @@ export const site = {
   email: 'hello@qubital.eu',
   linkedin: 'https://www.linkedin.com/company/qubital-gmbh/',
   location: 'Bavaria, Germany',
+  // Postal address as published in the imprint.
+  address: {
+    streetAddress: 'Erlanger Straße 12',
+    postalCode: '91074',
+    addressLocality: 'Herzogenaurach',
+    addressRegion: 'Bavaria',
+    addressCountry: 'DE',
+  },
+  // Author of the blog posts (named in the imprint), for bylines and structured data.
+  author: {
+    name: 'Arun Kumar',
+    jobTitle: 'IAM/IGA Architect',
+    linkedin: 'https://www.linkedin.com/in/arun1812/',
+  },
   // Markets served, for structured data: the DACH region first, then the rest of
   // the EU/EEA, Switzerland and the UK (where the client logos already are).
   areaServed: [
