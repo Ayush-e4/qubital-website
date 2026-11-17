@@ -209,12 +209,60 @@ const ROUTES = {
     sv: '/sv/blog/identitetsstyrning-for-sap-miljoer',
     da: '/da/blog/identitetsstyring-for-sap-landskaber',
   },
+  'blog/digital-product-passport-guide': {
+    de: '/de/blog/digitaler-produktpass-eu-erklaert',
+    en: '/en/blog/eu-digital-product-passport-explained',
+    fr: '/fr/blog/guide-passeport-numerique-des-produits-ue',
+    it: '/it/blog/passaporto-digitale-dei-prodotti-ue-guida',
+    es: '/es/blog/pasaporte-digital-de-producto-ue-explicado',
+    nl: '/nl/blog/digitaal-productpaspoort-eu-uitgelegd',
+    pl: '/pl/blog/cyfrowy-paszport-produktu-ue-wyjasnienie',
+    pt: '/pt/blog/passaporte-digital-do-produto-ue-explicado',
+    sv: '/sv/blog/eus-digitala-produktpass-forklarat',
+    da: '/da/blog/eus-digitale-produktpas-forklaret',
+  },
+  'blog/battery-passport-2027': {
+    de: '/de/blog/batteriepass-2027-was-hersteller-brauchen',
+    en: '/en/blog/battery-passport-2027-what-manufacturers-need',
+    fr: '/fr/blog/passeport-batterie-2027-ce-que-les-fabricants-doivent-preparer',
+    it: '/it/blog/passaporto-batteria-2027-cosa-serve-ai-produttori',
+    es: '/es/blog/pasaporte-de-bateria-2027-que-necesitan-los-fabricantes',
+    nl: '/nl/blog/batterijpaspoort-2027-wat-fabrikanten-nodig-hebben',
+    pl: '/pl/blog/paszport-baterii-2027-czego-potrzebuja-producenci',
+    pt: '/pt/blog/passaporte-de-bateria-2027-o-que-os-fabricantes-precisam',
+    sv: '/sv/blog/batteripass-2027-vad-tillverkare-behover',
+    da: '/da/blog/batteripas-2027-hvad-producenter-skal-have-klar',
+  },
+  'blog/dpp-data-readiness': {
+    de: '/de/blog/daten-fuer-den-digitalen-produktpass-vorbereiten',
+    en: '/en/blog/preparing-data-for-the-digital-product-passport',
+    fr: '/fr/blog/preparer-les-donnees-pour-le-passeport-numerique-des-produits',
+    it: '/it/blog/preparare-i-dati-per-il-passaporto-digitale-dei-prodotti',
+    es: '/es/blog/preparar-los-datos-para-el-pasaporte-digital-de-producto',
+    nl: '/nl/blog/data-voorbereiden-op-het-digitaal-productpaspoort',
+    pl: '/pl/blog/przygotowanie-danych-do-cyfrowego-paszportu-produktu',
+    pt: '/pt/blog/preparar-os-dados-para-o-passaporte-digital-do-produto',
+    sv: '/sv/blog/forbered-data-for-det-digitala-produktpasset',
+    da: '/da/blog/klargoer-data-til-det-digitale-produktpas',
+  },
 };
 /**
  * Topic landing pages (src/content/landing), one localized slug per language.
  * Their hreflang names every locale plus x-default (English).
  */
 const LANDING_ROUTES = {
+  dppspace: {
+    de: '/de/produkt',
+    en: '/en/product',
+    fr: '/fr/produit',
+    it: '/it/prodotto',
+    es: '/es/producto',
+    nl: '/nl/product',
+    pl: '/pl/produkt',
+    pt: '/pt/produto',
+    sv: '/sv/produkt',
+    da: '/da/produkt',
+  },
   'sap-idm': {
     de: '/de/sap-idm-abloesung',
     en: '/en/sap-idm-replacement',
