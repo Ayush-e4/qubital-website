@@ -15,8 +15,8 @@
     "x-default": "/en/product"
   },
   "meta": {
-    "title": "DPPSpace : logiciel de passeport numérique des produits · Qubital",
-    "description": "DPPSpace de Qubital : préparez vos passeports numériques des produits UE dans un seul espace, des données fournisseurs aux contrôles et à l’envoi au registre.",
+    "title": "DPPSpace : logiciel de passeport numérique des produits · Qubital",
+    "description": "DPPSpace de Qubital : préparez vos passeports numériques des produits UE dans un seul espace, des données fournisseurs aux contrôles et à l’envoi au registre.",
     "ogImageAlt": "DPPSpace, la plateforme de passeport numérique des produits de Qubital"
   },
   "service": {
@@ -155,7 +155,7 @@
       "items": [
         {
           "title": "Industrie manufacturière",
-          "text": "De nombreuses variantes, de nombreux fournisseurs : réutilisez matériaux et justificatifs d’une famille de produits à l’autre."
+          "text": "De nombreuses variantes, de nombreux fournisseurs : réutilisez matériaux et justificatifs d’une famille de produits à l’autre."
         },
         {
           "title": "Automobile et mobilité",
@@ -187,7 +187,7 @@
         },
         {
           "title": "Des accès que vous pouvez justifier",
-          "text": "Qui peut consulter, modifier et approuver quelles données du passeport ? Notre expérience en gestion des identités et des accès simplifie cette question."
+          "text": "Qui peut consulter, modifier et approuver quelles données du passeport ? Notre expérience en gestion des identités et des accès simplifie cette question."
         },
         {
           "title": "Accompagnement pour la connexion au registre",
@@ -201,23 +201,23 @@
       "heading": "Questions sur DPPSpace",
       "items": [
         {
-          "q": "Qu’est-ce qu’un passeport numérique des produits ?",
+          "q": "Qu’est-ce qu’un passeport numérique des produits ?",
           "a": "Un enregistrement numérique de l’identité, de la composition, de l’origine et des informations de durabilité d’un produit, accessible via un support de données tel qu’un QR code. L’UE impose des passeports pour les batteries à partir de février 2027 et, progressivement, pour d’autres groupes de produits dans le cadre de l’ESPR."
         },
         {
-          "q": "Un passeport enregistré vaut-il certificat de conformité ?",
+          "q": "Un passeport enregistré vaut-il certificat de conformité ?",
           "a": "Non. L’enregistrement dans le registre de l’UE n’est pas une certification de conformité, et DPPSpace n’est ni une institution de l’UE ni un organisme de certification. DPPSpace vous aide à préparer, publier et enregistrer les données. La responsabilité du contenu reste celle de l’opérateur économique."
         },
         {
-          "q": "Faut-il disposer de toutes nos données avant de commencer ?",
+          "q": "Faut-il disposer de toutes nos données avant de commencer ?",
           "a": "Non. Commencez par un produit, voyez ce qui manque et comblez les lacunes pas à pas. La vue de préparation indique précisément les informations encore manquantes."
         },
         {
-          "q": "Qui peut voir les données d’un passeport ?",
+          "q": "Qui peut voir les données d’un passeport ?",
           "a": "Chaque règlement définit quelles informations sont publiques et lesquelles sont réservées aux autorités ou à d’autres parties ayant un intérêt légitime. DPPSpace conserve vos données de travail dans votre espace et ne publie que ce que le passeport doit montrer."
         },
         {
-          "q": "Comment démarrer ?",
+          "q": "Comment démarrer ?",
           "a": "Demandez une démo. Nous vous présentons DPPSpace avec un produit de votre secteur et examinons ensemble quels passeports vous concernent, et à quelle échéance."
         }
       ]
