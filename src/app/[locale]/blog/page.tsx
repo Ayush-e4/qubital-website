@@ -39,7 +39,7 @@ export default async function BlogPage({ params }: PageProps<'/[locale]/blog'>) 
         getPathname({ locale, href: { pathname: '/blog/[slug]', params: { slug: p.slug } } }),
       datePublished: p.published,
       dateModified: p.updated,
-      author: { '@id': `${site.url}/#author` },
+      author: { '@id': `${site.url}/#author-${p.author}` },
     })),
   };
 
