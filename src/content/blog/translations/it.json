@@ -333,5 +333,302 @@
         "text": "Aiutiamo le organizzazioni a estendere la propria identity governance a service account, workload e agenti AI, sulla piattaforma IGA che già utilizzano. Se è nella Sua roadmap, parliamone."
       }
     ]
+  },
+  "digital-product-passport-guide": {
+    "title": "Il passaporto digitale del prodotto dell’UE spiegato: cos’è e quando si applica",
+    "description": "Cos’è il passaporto digitale del prodotto dell’UE, quali prodotti lo richiedono e quando, quali dati contiene e come prepararsi a ESPR e regolamento batterie.",
+    "excerpt": "Prima le batterie, poi acciaio, tessili, pneumatici e mobili. Una guida chiara al passaporto digitale del prodotto dell’UE: cosa contiene, chi ne ha bisogno e quando.",
+    "category": "Passaporto digitale del prodotto",
+    "keywords": [
+      "passaporto digitale del prodotto",
+      "DPP UE",
+      "ESPR",
+      "regolamento progettazione ecocompatibile",
+      "registro DPP",
+      "passaporto batterie"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Inquadrare un QR code su un prodotto e scoprire di cosa è fatto, da dove viene, come ripararlo e come riciclarlo: è l’idea alla base del passaporto digitale del prodotto (DPP) dell’UE. Per i produttori, dati di prodotto sparsi tra reparti e fornitori diventano così un obbligo di legge, un gruppo di prodotti alla volta."
+      },
+      {
+        "type": "p",
+        "text": "Questa guida spiega cos’è un passaporto, quali norme lo impongono, quando si applicano i primi obblighi e come prepararsi senza aspettare l’ultimo atto delegato."
+      },
+      {
+        "type": "h2",
+        "text": "Che cos’è un passaporto digitale del prodotto?"
+      },
+      {
+        "type": "p",
+        "text": "Un DPP è un registro strutturato e leggibile da macchina relativo a un modello, a un lotto o a un singolo articolo. Vi si accede tramite un supporto dati sul prodotto, sull’imballaggio o nella documentazione, di solito un QR code. Dietro il supporto si trovano un identificativo univoco del prodotto e i dati veri e propri del passaporto."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Identità: fabbricante, modello, categoria di prodotto e identificativo univoco.",
+          "Composizione: materiali, componenti, sostanze preoccupanti e contenuto riciclato.",
+          "Origine e catena di fornitura: provenienza di materiali e componenti.",
+          "Sostenibilità: impronta di carbonio, durabilità e riparabilità, dove le norme di prodotto lo richiedono.",
+          "Fine vita: istruzioni per smontaggio, riutilizzo e riciclo."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Non tutti vedono tutto. Le norme di prodotto stabiliscono quali informazioni sono pubbliche, quali sono riservate a riparatori o riciclatori e a quali possono accedere solo le autorità."
+      },
+      {
+        "type": "h2",
+        "text": "La base giuridica: ESPR e regolamento sulle batterie"
+      },
+      {
+        "type": "p",
+        "text": "Due regolamenti UE guidano il passaporto. Il regolamento sulla progettazione ecocompatibile dei prodotti sostenibili (ESPR, regolamento (UE) 2024/1781) è entrato in vigore il 18 luglio 2024. Definisce il quadro generale; gli atti delegati stabiliscono poi requisiti e contenuti del passaporto per ciascun gruppo di prodotti. Il regolamento sulle batterie (regolamento (UE) 2023/1542) prevede già un proprio passaporto, con una data di avvio fissa."
+      },
+      {
+        "type": "p",
+        "text": "I dati del passaporto restano decentralizzati, presso il fabbricante o un fornitore di servizi da esso incaricato. L’ESPR imponeva alla Commissione di istituire un registro centrale entro il 19 luglio 2026. Il registro contiene gli identificativi univoci e i riferimenti principali, così che dogane e autorità di vigilanza del mercato possano controllare rapidamente i prodotti."
+      },
+      {
+        "type": "h2",
+        "text": "Quando si applica?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Batterie: dal 18 febbraio 2027 ogni batteria per veicoli elettrici, ogni batteria per mezzi di trasporto leggeri (LMT) e ogni batteria industriale oltre 2 kWh immessa sul mercato UE deve avere un passaporto.",
+          "Ferro e acciaio: il primo atto delegato ESPR è previsto a partire da fine 2026.",
+          "Tessili e abbigliamento, alluminio e pneumatici: gli atti delegati sono previsti nel 2027.",
+          "Mobili nel 2028 e materassi nel 2029, secondo il piano di lavoro 2025–2030 della Commissione."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Per i gruppi di prodotti ESPR, l’obbligo si applica di norma circa 18 mesi dopo l’adozione dell’atto delegato. Le date indicate sono indicative, ma per la maggior parte delle aziende il lavoro sui dati necessario per un passaporto richiede più di 18 mesi."
+      },
+      {
+        "type": "h2",
+        "text": "Cosa rende difficile il passaporto nella pratica"
+      },
+      {
+        "type": "p",
+        "text": "Raramente il problema è la tecnologia. Sono i dati. Le specifiche stanno nel PLM, le distinte base nell’ERP, le dichiarazioni sui materiali presso i fornitori e i rapporti di prova in varie cartelle. Nessuno ha il quadro completo e i dati dei fornitori arrivano spesso ogni volta in un formato diverso."
+      },
+      {
+        "type": "p",
+        "text": "C’è poi una questione di accessi. Un passaporto combina informazioni pubbliche con dati che solo alcuni soggetti possono vedere, e molte persone in azienda e nella catena di fornitura vi contribuiscono. Decidere chi può inserire, modificare, approvare e leggere quali campi è un compito di identity and access management, ed è più facile progettarlo all’inizio che correggerlo dopo."
+      },
+      {
+        "type": "h2",
+        "text": "Come prepararsi da subito"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Verifichi quali dei Suoi prodotti rientrano nel regolamento sulle batterie o in un prossimo atto delegato ESPR.",
+          "Scelga un prodotto rappresentativo e raccolga in un unico posto identità, composizione, fornitori ed evidenze.",
+          "Individui le lacune, soprattutto dichiarazioni dei fornitori e dati sul contenuto riciclato, e inizi a richiederli subito.",
+          "Stabilisca chi è responsabile di ogni parte dei dati e chi approva un passaporto prima della pubblicazione.",
+          "Scelga uno strumento in grado di pubblicare un passaporto leggibile da macchina e di collegarsi al registro UE."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Abbiamo creato DPPSpace proprio per questo percorso: un unico spazio di lavoro per dati di prodotto, materiali, fornitori ed evidenze, una vista sullo stato di preparazione che mostra cosa manca ancora e l’invio al registro dei passaporti idonei. Se desidera vederlo con un prodotto del Suo settore, prenoti una demo."
+      }
+    ]
+  },
+  "battery-passport-2027": {
+    "title": "Passaporto della batteria 2027: cosa serve ai produttori entro il 18 febbraio",
+    "description": "Dal 18 febbraio 2027 le batterie di veicoli elettrici, LMT e industriali oltre 2 kWh richiedono un passaporto digitale. Chi è coinvolto, contenuti e preparazione.",
+    "excerpt": "Il primo passaporto digitale del prodotto obbligatorio nell’UE parte a febbraio 2027. Quali batterie ne hanno bisogno, quali dati contiene, chi può vederli e una checklist per i mesi che restano.",
+    "category": "Passaporto digitale del prodotto",
+    "keywords": [
+      "passaporto della batteria",
+      "passaporto batterie UE 2027",
+      "regolamento batterie 2023/1542",
+      "passaporto batterie veicoli elettrici",
+      "passaporto batterie industriali",
+      "passaporto digitale del prodotto"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Il passaporto della batteria è il primo passaporto digitale del prodotto reso obbligatorio dall’UE. Dal 18 febbraio 2027 il regolamento sulle batterie (regolamento (UE) 2023/1542) richiede un registro elettronico per ogni batteria delle categorie interessate immessa sul mercato UE o messa in servizio. Per molti produttori e importatori i mesi rimasti sono pochi."
+      },
+      {
+        "type": "h2",
+        "text": "Quali batterie hanno bisogno di un passaporto?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Batterie per veicoli elettrici (EV).",
+          "Batterie per mezzi di trasporto leggeri (LMT), come e-bike e monopattini elettrici.",
+          "Batterie industriali con capacità superiore a 2 kWh, ad esempio per l’accumulo stazionario."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Il passaporto è legato alla singola batteria, non solo al modello. Ne è responsabile l’operatore economico che immette la batteria sul mercato. Quando una batteria viene riadattata o rifabbricata, subentra il nuovo operatore e la batteria riceve un nuovo passaporto collegato a quello originale."
+      },
+      {
+        "type": "h2",
+        "text": "Cosa contiene il passaporto?"
+      },
+      {
+        "type": "p",
+        "text": "L’allegato XIII del regolamento ne elenca i contenuti. In pratica si suddividono in sei gruppi:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Informazioni generali: fabbricante, identificativo, categoria di batteria, luogo e data di fabbricazione, peso.",
+          "Conformità ed etichette: dichiarazioni di conformità e, dove le norme si applicano già, informazioni sull’impronta di carbonio.",
+          "Materiali e composizione: chimica, materie prime critiche e sostanze pericolose.",
+          "Circolarità: contenuto riciclato, informazioni su rimozione, smontaggio e sicurezza.",
+          "Prestazioni e durabilità: capacità, durata prevista e, per alcune batterie, valori che cambiano con l’uso.",
+          "Dovuta diligenza nella catena di fornitura: informazioni derivanti dagli obblighi di dovuta diligenza, una volta applicabili."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Non tutti i campi sono richiesti dal primo giorno. Le informazioni legate a obblighi che si applicano più avanti, come alcuni dati sull’impronta di carbonio e sulla dovuta diligenza, possono essere aggiunte quando tali obblighi entrano in vigore. Il passaporto in sé, e tutto ciò che è già applicabile, è dovuto dal 18 febbraio 2027."
+      },
+      {
+        "type": "h2",
+        "text": "Chi può vedere cosa?"
+      },
+      {
+        "type": "p",
+        "text": "Il passaporto della batteria prevede livelli di accesso. Alcune informazioni sono pubbliche e disponibili tramite il QR code. Le informazioni più dettagliate sono riservate a chi ha un interesse legittimo, come riparatori, rifabbricatori e riciclatori, e alcuni dati solo agli organismi notificati, alle autorità di vigilanza del mercato e alla Commissione."
+      },
+      {
+        "type": "p",
+        "text": "Il passaporto diventa così un tema di gestione degli accessi oltre che di dati. Occorre sapere quali ruoli esistono, come i soggetti esterni dimostrano la propria identità e come viene registrato ogni accesso. Pianificarlo per tempo evita un passaporto troppo aperto o inutilizzabile per chi ne ha bisogno."
+      },
+      {
+        "type": "h2",
+        "text": "Una checklist per i mesi che restano"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Elenchi tutti i tipi di batteria che immette sul mercato UE e verifichi quali rientrano nell’obbligo del passaporto.",
+          "Nomini un responsabile del passaporto e di ciascun gruppo di dati.",
+          "Raccolga dai fornitori di celle e materiali i dati su composizione, chimica e contenuto riciclato. Di solito è la parte che richiede più tempo.",
+          "Decida come assegnare gli identificativi univoci e stampare il QR code sulla batteria.",
+          "Definisca i livelli di accesso: pubblico, interesse legittimo e autorità.",
+          "Scelga una piattaforma che pubblichi un passaporto leggibile da macchina e lo mantenga disponibile per tutta la vita della batteria.",
+          "Avvii un progetto pilota con un tipo di batteria con largo anticipo rispetto a febbraio, così da avere tempo per colmare le lacune."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Come aiuta DPPSpace"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace riunisce identità della batteria, materiali, fornitori ed evidenze in un unico spazio di lavoro, mostra le lacune per tipo di batteria e pubblica il passaporto tramite QR code. I nostri consulenti La aiutano dove il solo software non basta: ottenere i dati dai fornitori e impostare livelli di accesso solidi. Prenoti una demo per vederlo con una batteria del Suo portafoglio."
+      }
+    ]
+  },
+  "dpp-data-readiness": {
+    "title": "Preparare i dati per il passaporto digitale del prodotto",
+    "description": "Il passaporto digitale del prodotto è anzitutto un progetto di dati. Come raccogliere dati di prodotto e fornitori, colmare le lacune e decidere chi modifica cosa.",
+    "excerpt": "La maggior parte dei progetti si blocca sui dati, non sul software. Sei passi concreti per preparare dati di prodotto, materiali e fornitori e mantenerli accurati anche dopo il primo passaporto.",
+    "category": "Passaporto digitale del prodotto",
+    "keywords": [
+      "dati passaporto digitale del prodotto",
+      "preparazione DPP",
+      "dati fornitori DPP",
+      "distinta base passaporto",
+      "gestione dati di prodotto",
+      "preparazione ESPR"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Chieda a un team di progetto cosa rallenta il suo primo passaporto digitale del prodotto: la risposta non è quasi mai il QR code o lo strumento di pubblicazione. Sono i dati: dove si trovano, chi ne è responsabile, se i fornitori li forniscono e se qualcuno si accorge quando non sono più aggiornati."
+      },
+      {
+        "type": "p",
+        "text": "Ecco sei passi validi per tutti i gruppi di prodotti, sia che Lei si stia preparando al passaporto della batteria del 2027 sia a uno dei gruppi di prodotti ESPR che seguiranno."
+      },
+      {
+        "type": "h2",
+        "text": "1. Partire da un prodotto, non dall’intero catalogo"
+      },
+      {
+        "type": "p",
+        "text": "Scelga un prodotto rappresentativo: una distinta base tipica, alcuni fornitori chiave, uno o due componenti con dichiarazioni di sostenibilità. Costruire un passaporto completo Le insegna sulle Sue lacune più di qualsiasi rilevazione su foglio di calcolo di tutti i prodotti."
+      },
+      {
+        "type": "h2",
+        "text": "2. Costruire una scheda prodotto pulita"
+      },
+      {
+        "type": "p",
+        "text": "Ogni passaporto si basa su un’identità di prodotto: fabbricante, modello, categoria, variante e identificativo univoco. Molte aziende scoprono a questo punto che lo stesso prodotto ha codici diversi nell’ERP, nel PLM e nel negozio online. Scelga un identificativo e mappi gli altri su di esso."
+      },
+      {
+        "type": "h2",
+        "text": "3. Mappare la composizione una volta e riutilizzarla"
+      },
+      {
+        "type": "p",
+        "text": "Distinte base e dati sui materiali sono il cuore della maggior parte dei passaporti. Modelli i materiali come schede riutilizzabili con origine e contenuto riciclato, poi li colleghi a componenti e prodotti. Quando un fornitore cambia un materiale, lo aggiorna in un solo punto invece che in ogni passaporto."
+      },
+      {
+        "type": "h2",
+        "text": "4. Ottenere presto i dati dei fornitori"
+      },
+      {
+        "type": "p",
+        "text": "Le dichiarazioni dei fornitori sono ciò che richiede più tempo. Comunichi presto ai fornitori quali informazioni Le servono, in quale formato e entro quando. Chieda evidenze, non solo valori: un rapporto di prova o un certificato a supporto di un contenuto riciclato vale più di un numero in un’e-mail."
+      },
+      {
+        "type": "callout",
+        "text": "Mantenga ogni evidenza collegata al prodotto o al materiale a cui si riferisce. Quando un’autorità o un cliente chiede da dove viene un valore, la risposta deve essere a un clic di distanza."
+      },
+      {
+        "type": "h2",
+        "text": "5. Decidere chi può modificare e vedere cosa"
+      },
+      {
+        "type": "p",
+        "text": "Un passaporto combina dati di ingegneria, acquisti, qualità e fornitori, e ne mostra una parte al pubblico, a riparatori e riciclatori e alle autorità. Lo tratti come qualsiasi altro progetto di gestione degli accessi:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Assegni a ogni gruppo di dati un responsabile che approva le modifiche.",
+          "Consenta ai fornitori di contribuire solo ai propri componenti, con account personali e non credenziali condivise.",
+          "Richieda un’approvazione prima della pubblicazione di un passaporto e registri chi ha modificato cosa.",
+          "Separi ciò che è pubblico da ciò che possono vedere solo i soggetti con un interesse legittimo o le autorità."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "È qui che la nostra esperienza in identity and access management fa la differenza. Privilegio minimo, responsabilità chiare e audit trail valgono per i dati del passaporto esattamente come per SAP o Active Directory."
+      },
+      {
+        "type": "h2",
+        "text": "6. Pianificare il cambiamento, non un’esportazione una tantum"
+      },
+      {
+        "type": "p",
+        "text": "I prodotti cambiano, i fornitori cambiano e le normative aggiungono campi. Un passaporto non è un documento da esportare una volta sola: deve restare accurato per tutta la vita del prodotto. Colleghi il passaporto ai sistemi che contengono i Suoi dati anagrafici, verifichi regolarmente lo stato di preparazione e tratti i nuovi atti delegati come richieste di modifica."
+      },
+      {
+        "type": "h2",
+        "text": "Il ruolo di DPPSpace"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace segue questi passi: una scheda prodotto, una libreria di materiali riutilizzabile, il collegamento con fornitori ed evidenze e una vista sullo stato di preparazione che mostra cosa manca ancora prima della pubblicazione. Se desidera affrontare questi passi con un Suo prodotto, prenoti una demo o ci contatti per una verifica della preparazione dei dati."
+      }
+    ]
   }
 }

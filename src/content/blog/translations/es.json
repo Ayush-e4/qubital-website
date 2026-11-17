@@ -333,5 +333,302 @@
         "text": "Ayudamos a las organizaciones a extender su gobierno de identidades a cuentas de servicio, cargas de trabajo y agentes de IA, en la plataforma IGA que ya utilizan. Si está en su hoja de ruta, hablemos."
       }
     ]
+  },
+  "digital-product-passport-guide": {
+    "title": "El pasaporte digital de producto de la UE explicado: qué es y cuándo se aplica",
+    "description": "Qué es el pasaporte digital de producto de la UE, qué productos lo necesitan y cuándo, qué datos contiene y cómo prepararse para el ESPR y el Reglamento de baterías.",
+    "excerpt": "Primero las baterías, después el acero, los textiles, los neumáticos y los muebles. Una guía clara sobre el pasaporte digital de producto de la UE: qué contiene, quién lo necesita y cuándo.",
+    "category": "Pasaporte digital de producto",
+    "keywords": [
+      "pasaporte digital de producto",
+      "DPP UE",
+      "ESPR",
+      "Reglamento de diseño ecológico",
+      "registro DPP",
+      "pasaporte de baterías"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Escanear un código QR en un producto y ver de qué está hecho, de dónde viene, cómo repararlo y cómo reciclarlo. Esa es la idea del pasaporte digital de producto (DPP) de la UE. Para los fabricantes, los datos de producto dispersos entre departamentos y proveedores se convierten así en una obligación legal, grupo de productos a grupo de productos."
+      },
+      {
+        "type": "p",
+        "text": "Esta guía explica qué es un pasaporte, qué normas lo exigen, cuándo se aplican las primeras obligaciones y cómo prepararse sin esperar al último acto delegado."
+      },
+      {
+        "type": "h2",
+        "text": "¿Qué es un pasaporte digital de producto?"
+      },
+      {
+        "type": "p",
+        "text": "Un DPP es un registro estructurado y legible por máquina sobre un modelo, un lote o una unidad concreta de producto. Se accede a él mediante un soporte de datos en el producto, su embalaje o su documentación, normalmente un código QR. Detrás del soporte hay un identificador único del producto y los propios datos del pasaporte."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Identidad: fabricante, modelo, categoría de producto e identificador único.",
+          "Composición: materiales, componentes, sustancias preocupantes y contenido reciclado.",
+          "Origen y cadena de suministro: de dónde proceden los materiales y componentes.",
+          "Sostenibilidad: huella de carbono, durabilidad y reparabilidad, cuando lo exijan las normas del producto.",
+          "Fin de vida: instrucciones de desmontaje, reutilización y reciclaje."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "No todo el mundo lo ve todo. Las normas de cada producto definen qué información es pública, cuál está reservada a reparadores o recicladores y a cuál solo pueden acceder las autoridades."
+      },
+      {
+        "type": "h2",
+        "text": "La base jurídica: el ESPR y el Reglamento de baterías"
+      },
+      {
+        "type": "p",
+        "text": "Dos reglamentos de la UE impulsan el pasaporte. El Reglamento de diseño ecológico para productos sostenibles (ESPR, Reglamento (UE) 2024/1781) entró en vigor el 18 de julio de 2024. Establece el marco general, y después los actos delegados definen los requisitos y el contenido del pasaporte para cada grupo de productos. El Reglamento de baterías (Reglamento (UE) 2023/1542) ya incluye su propio pasaporte, con una fecha de inicio fija."
+      },
+      {
+        "type": "p",
+        "text": "Los datos del pasaporte se mantienen descentralizados, en manos del fabricante o de un proveedor de servicios designado por él. El ESPR obligaba a la Comisión a crear un registro central a más tardar el 19 de julio de 2026. Este registro contiene los identificadores únicos y las referencias clave, para que las aduanas y las autoridades de vigilancia del mercado puedan comprobar los productos con rapidez."
+      },
+      {
+        "type": "h2",
+        "text": "¿Cuándo se aplica?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Baterías: a partir del 18 de febrero de 2027, toda batería de vehículo eléctrico, toda batería de medio de transporte ligero (LMT) y toda batería industrial de más de 2 kWh introducida en el mercado de la UE necesitará un pasaporte.",
+          "Hierro y acero: el primer acto delegado del ESPR está previsto a partir de finales de 2026.",
+          "Textiles y prendas de vestir, aluminio y neumáticos: los actos delegados están previstos para 2027.",
+          "Muebles en 2028 y colchones en 2029, según el plan de trabajo 2025–2030 de la Comisión."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Para los grupos de productos del ESPR, la obligación suele aplicarse unos 18 meses después de la adopción del acto delegado. Las fechas anteriores son orientativas, pero en la mayoría de las empresas el trabajo de datos que exige un pasaporte lleva más de 18 meses."
+      },
+      {
+        "type": "h2",
+        "text": "Qué hace difícil el pasaporte en la práctica"
+      },
+      {
+        "type": "p",
+        "text": "La tecnología rara vez es el problema. Lo son los datos. Las especificaciones están en el PLM, las listas de materiales en el ERP, las declaraciones de materiales en manos de los proveedores y los informes de ensayo en carpetas. Nadie tiene la imagen completa, y los datos de los proveedores suelen llegar cada vez en un formato distinto."
+      },
+      {
+        "type": "p",
+        "text": "Además, hay una cuestión de accesos. Un pasaporte combina información pública con datos que solo algunas partes pueden ver, y en él participan muchas personas de la empresa y de la cadena de suministro. Decidir quién puede introducir, modificar, aprobar y consultar cada campo es una tarea de gestión de identidades y accesos, y resulta más fácil diseñarla al principio que corregirla después."
+      },
+      {
+        "type": "h2",
+        "text": "Cómo prepararse desde ahora"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Averigüe cuáles de sus productos entran en el ámbito del Reglamento de baterías o de un próximo acto delegado del ESPR.",
+          "Elija un producto representativo y reúna en un solo lugar su identidad, composición, proveedores y evidencias.",
+          "Identifique las lagunas, sobre todo las declaraciones de proveedores y los datos de contenido reciclado, y empiece a solicitarlos ya.",
+          "Decida quién es responsable de cada parte de los datos y quién aprueba un pasaporte antes de su publicación.",
+          "Elija una herramienta capaz de publicar un pasaporte legible por máquina y de conectarse al registro de la UE."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Creamos DPPSpace precisamente para este camino: un solo espacio de trabajo para datos de producto, materiales, proveedores y evidencias, una vista de preparación que muestra lo que aún falta y el envío al registro de los pasaportes aptos. Si quiere verlo con un producto de su sector, solicite una demo."
+      }
+    ]
+  },
+  "battery-passport-2027": {
+    "title": "Pasaporte de baterías 2027: lo que necesitan los fabricantes antes del 18 de febrero",
+    "description": "Desde el 18 de febrero de 2027, las baterías de VE, LMT e industriales de más de 2 kWh necesitan pasaporte digital. A quién afecta, qué contiene y cómo prepararse.",
+    "excerpt": "El primer pasaporte digital de producto obligatorio de la UE arranca en febrero de 2027. Qué baterías lo necesitan, qué datos incluye, quién puede verlos y una lista de comprobación para los meses que quedan.",
+    "category": "Pasaporte digital de producto",
+    "keywords": [
+      "pasaporte de baterías",
+      "pasaporte de baterías UE 2027",
+      "Reglamento de baterías 2023/1542",
+      "pasaporte batería vehículo eléctrico",
+      "pasaporte batería industrial",
+      "pasaporte digital de producto"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "El pasaporte de baterías es el primer pasaporte digital de producto que la UE hace obligatorio. A partir del 18 de febrero de 2027, el Reglamento de baterías (Reglamento (UE) 2023/1542) exige un registro electrónico para cada batería de las categorías afectadas que se introduzca en el mercado de la UE o se ponga en servicio. Para muchos fabricantes e importadores, los meses que quedan son pocos."
+      },
+      {
+        "type": "h2",
+        "text": "¿Qué baterías necesitan un pasaporte?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Baterías de vehículos eléctricos (VE).",
+          "Baterías de medios de transporte ligeros (LMT), como bicicletas y patinetes eléctricos.",
+          "Baterías industriales con una capacidad superior a 2 kWh, por ejemplo de almacenamiento estacionario."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "El pasaporte está vinculado a cada batería individual, no solo al modelo. El responsable es el operador económico que introduce la batería en el mercado. Cuando una batería se reconvierte o se remanufactura, el nuevo operador asume esa responsabilidad y la batería recibe un nuevo pasaporte vinculado al original."
+      },
+      {
+        "type": "h2",
+        "text": "¿Qué contiene el pasaporte?"
+      },
+      {
+        "type": "p",
+        "text": "El anexo XIII del reglamento enumera el contenido. En la práctica se divide en seis grupos:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Información general: fabricante, identificador, categoría de batería, lugar y fecha de fabricación, peso.",
+          "Conformidad y etiquetado: declaraciones de conformidad y, cuando las normas ya se apliquen, información sobre la huella de carbono.",
+          "Materiales y composición: química, materias primas críticas y sustancias peligrosas.",
+          "Circularidad: contenido reciclado e información sobre extracción, desmontaje y seguridad.",
+          "Rendimiento y durabilidad: capacidad, vida útil prevista y, en algunas baterías, valores que cambian con el uso.",
+          "Diligencia debida en la cadena de suministro: información derivada de las obligaciones de diligencia debida, una vez que se apliquen."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "No todos los campos son obligatorios desde el primer día. La información ligada a obligaciones que se aplican más tarde, como algunos datos de huella de carbono y de diligencia debida, puede añadirse cuando esas obligaciones entren en vigor. El pasaporte en sí, y todo lo que ya es aplicable, es obligatorio el 18 de febrero de 2027."
+      },
+      {
+        "type": "h2",
+        "text": "¿Quién puede ver qué?"
+      },
+      {
+        "type": "p",
+        "text": "El pasaporte de baterías tiene niveles de acceso. Parte de la información es pública y está disponible a través del código QR. La información más detallada está reservada a personas con un interés legítimo, como reparadores, remanufacturadores y recicladores, y algunos datos solo a los organismos notificados, las autoridades de vigilancia del mercado y la Comisión."
+      },
+      {
+        "type": "p",
+        "text": "Esto convierte el pasaporte en un reto de gestión de accesos además de un reto de datos. Hay que saber qué roles existen, cómo acreditan su identidad las partes externas y cómo se registra cada acceso. Planificarlo pronto evita un pasaporte demasiado abierto o inservible para quienes lo necesitan."
+      },
+      {
+        "type": "h2",
+        "text": "Lista de comprobación para los meses que quedan"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Enumere todos los tipos de batería que introduce en el mercado de la UE y compruebe cuáles están sujetos al pasaporte.",
+          "Nombre un responsable del pasaporte y de cada grupo de datos.",
+          "Recopile los datos de composición, química y contenido reciclado de sus proveedores de celdas y materiales. Suele ser lo que más tiempo lleva.",
+          "Decida cómo asignar los identificadores únicos e imprimir el código QR en la batería.",
+          "Defina los niveles de acceso: público, interés legítimo y autoridades.",
+          "Elija una plataforma que publique un pasaporte legible por máquina y lo mantenga disponible durante toda la vida de la batería.",
+          "Realice un piloto con un tipo de batería con suficiente antelación a febrero, para tener tiempo de corregir las lagunas."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Cómo ayuda DPPSpace"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace reúne la identidad de la batería, los materiales, los proveedores y las evidencias en un solo espacio de trabajo, muestra las lagunas por tipo de batería y publica el pasaporte mediante un código QR. Nuestros consultores le ayudan con lo que el software por sí solo no resuelve: conseguir los datos de los proveedores y configurar niveles de acceso sólidos. Solicite una demo para verlo con una batería de su cartera."
+      }
+    ]
+  },
+  "dpp-data-readiness": {
+    "title": "Cómo preparar sus datos para el pasaporte digital de producto",
+    "description": "El pasaporte digital de producto es ante todo un proyecto de datos. Cómo reunir datos de producto y proveedores, cerrar lagunas y decidir quién cambia y ve qué.",
+    "excerpt": "La mayoría de los proyectos de pasaporte se atascan en los datos, no en el software. Seis pasos prácticos para preparar los datos de producto, materiales y proveedores, y mantenerlos exactos después del primer pasaporte.",
+    "category": "Pasaporte digital de producto",
+    "keywords": [
+      "datos pasaporte digital de producto",
+      "preparación DPP",
+      "datos de proveedores DPP",
+      "lista de materiales pasaporte",
+      "gestión de datos de producto",
+      "preparación ESPR"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Pregunte a un equipo de proyecto qué frena su primer pasaporte digital de producto y la respuesta casi nunca será el código QR ni la herramienta de publicación. Son los datos: dónde están, quién es su responsable, si los proveedores los entregan y si alguien se da cuenta cuando quedan desactualizados."
+      },
+      {
+        "type": "p",
+        "text": "Estos son seis pasos que funcionan para cualquier grupo de productos, tanto si se prepara para el pasaporte de baterías de 2027 como para uno de los grupos de productos del ESPR que vendrán después."
+      },
+      {
+        "type": "h2",
+        "text": "1. Empiece con un producto, no con todo el catálogo"
+      },
+      {
+        "type": "p",
+        "text": "Elija un producto representativo: una lista de materiales típica, algunos proveedores clave, uno o dos componentes con declaraciones de sostenibilidad. Construir un pasaporte completo le enseña más sobre sus lagunas que cualquier inventario en hoja de cálculo de todos los productos."
+      },
+      {
+        "type": "h2",
+        "text": "2. Cree una ficha de producto limpia"
+      },
+      {
+        "type": "p",
+        "text": "Todo pasaporte parte de una identidad de producto: fabricante, modelo, categoría, variante e identificador único. Muchas empresas descubren aquí que el mismo producto tiene números distintos en el ERP, el PLM y la tienda online. Quédese con un identificador y vincule los demás a él."
+      },
+      {
+        "type": "h2",
+        "text": "3. Mapee la composición una vez y reutilícela"
+      },
+      {
+        "type": "p",
+        "text": "Las listas de materiales y los datos de materiales son el núcleo de la mayoría de los pasaportes. Modele los materiales como fichas reutilizables con datos de origen y contenido reciclado y, después, vincúlelos a componentes y productos. Cuando un proveedor cambia un material, lo actualiza en un solo lugar en vez de en cada pasaporte."
+      },
+      {
+        "type": "h2",
+        "text": "4. Consiga pronto los datos de los proveedores"
+      },
+      {
+        "type": "p",
+        "text": "Las declaraciones de proveedores son lo que más tiempo lleva. Indique pronto a sus proveedores qué información necesita, en qué formato y para cuándo. Pida evidencias, no solo valores: un informe de ensayo o un certificado que respalde un contenido reciclado vale más que una cifra en un correo electrónico."
+      },
+      {
+        "type": "callout",
+        "text": "Mantenga cada evidencia vinculada al producto o material que respalda. Cuando una autoridad o un cliente pregunte de dónde sale un valor, la respuesta debe estar a un clic."
+      },
+      {
+        "type": "h2",
+        "text": "5. Decida quién puede cambiar y ver qué"
+      },
+      {
+        "type": "p",
+        "text": "Un pasaporte combina datos de ingeniería, compras, calidad y proveedores, y muestra parte de ellos al público, a reparadores y recicladores, y a las autoridades. Trátelo como cualquier otro diseño de accesos:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Asigne a cada grupo de datos un responsable que apruebe los cambios.",
+          "Permita que los proveedores contribuyan solo a sus propios componentes, con cuentas propias y no con credenciales compartidas.",
+          "Exija una aprobación antes de publicar un pasaporte y registre quién ha cambiado qué.",
+          "Separe lo que es público de lo que solo pueden ver las partes con un interés legítimo o las autoridades."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Aquí es donde ayuda nuestra experiencia en gestión de identidades y accesos. El mínimo privilegio, la responsabilidad clara y las pistas de auditoría se aplican a los datos del pasaporte igual que a SAP o a Active Directory."
+      },
+      {
+        "type": "h2",
+        "text": "6. Planifique para el cambio, no para una exportación puntual"
+      },
+      {
+        "type": "p",
+        "text": "Los productos cambian, los proveedores cambian y la normativa añade campos. Un pasaporte no es un documento que se exporta una vez: debe mantenerse exacto durante toda la vida del producto. Conecte el pasaporte a los sistemas que contienen sus datos maestros, revise el grado de preparación con regularidad y trate los nuevos actos delegados como solicitudes de cambio."
+      },
+      {
+        "type": "h2",
+        "text": "El papel de DPPSpace"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace sigue estos pasos: una ficha de producto, una biblioteca de materiales reutilizable, la vinculación con proveedores y evidencias, y una vista de preparación que muestra lo que aún falta antes de publicar. Si quiere recorrer estos pasos con su propio producto, solicite una demo o contáctenos para un diagnóstico de preparación de datos."
+      }
+    ]
   }
 }

@@ -333,5 +333,302 @@
         "text": "Vi hjälper organisationer att utvidga sin identitetsstyrning till tjänstekonton, arbetslaster och AI-agenter, på den IGA-plattform de redan använder. Om det finns på er färdplan, hör av er."
       }
     ]
+  },
+  "digital-product-passport-guide": {
+    "title": "EU:s digitala produktpass förklarat: vad det är och när det gäller",
+    "description": "Vad EU:s digitala produktpass är, vilka produkter som behöver det och när, vilka data det rymmer och hur ni förbereder er enligt ESPR och batteriförordningen.",
+    "excerpt": "Först batterier, sedan stål, textilier, däck och möbler. En lättförståelig guide till EU:s digitala produktpass: vad det innehåller, vem som behöver det och när.",
+    "category": "Digitalt produktpass",
+    "keywords": [
+      "digitalt produktpass",
+      "EU:s digitala produktpass",
+      "ESPR",
+      "ekodesignförordningen",
+      "DPP-register",
+      "batteripass"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Skanna en QR-kod på en produkt och se vad den är gjord av, var den kommer ifrån, hur den repareras och hur den återvinns. Det är tanken bakom EU:s digitala produktpass (DPP). För tillverkare innebär det att produktdata som är utspridda över avdelningar och leverantörer blir ett lagkrav, produktgrupp för produktgrupp."
+      },
+      {
+        "type": "p",
+        "text": "Den här guiden förklarar vad ett pass är, vilka regler som kräver det, när de första skyldigheterna börjar gälla och hur ni förbereder er utan att vänta på den sista delegerade akten."
+      },
+      {
+        "type": "h2",
+        "text": "Vad är ett digitalt produktpass?"
+      },
+      {
+        "type": "p",
+        "text": "Ett DPP är en strukturerad, maskinläsbar post om en produktmodell, ett parti eller en enskild artikel. Det nås via en databärare på produkten, förpackningen eller i dokumentationen, oftast en QR-kod. Bakom databäraren finns en unik produktidentifierare och själva passdata."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Identitet: tillverkare, modell, produktkategori och unik identifierare.",
+          "Sammansättning: material, komponenter, särskilt farliga ämnen och återvunnet innehåll.",
+          "Ursprung och leverantörskedja: var material och komponenter kommer ifrån.",
+          "Hållbarhet: koldioxidavtryck, livslängd och reparerbarhet, där produktreglerna kräver det.",
+          "Uttjänt produkt: anvisningar för demontering, återanvändning och återvinning."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Alla ser inte allt. Produktreglerna anger vilken information som är offentlig, vilken som är förbehållen reparatörer eller återvinnare och vilken bara myndigheter får ta del av."
+      },
+      {
+        "type": "h2",
+        "text": "Den rättsliga grunden: ESPR och batteriförordningen"
+      },
+      {
+        "type": "p",
+        "text": "Två EU-förordningar driver passet. Ekodesignförordningen för hållbara produkter (ESPR, förordning (EU) 2024/1781) trädde i kraft den 18 juli 2024. Den sätter den allmänna ramen, och delegerade akter fastställer sedan kraven och passets innehåll för varje produktgrupp. Batteriförordningen (förordning (EU) 2023/1542) innehåller redan ett eget pass med ett fast startdatum."
+      },
+      {
+        "type": "p",
+        "text": "Själva passdata förblir decentraliserade, hos tillverkaren eller en tjänsteleverantör som den utser. Enligt ESPR skulle kommissionen inrätta ett centralt register senast den 19 juli 2026. Det innehåller de unika identifierarna och viktiga hänvisningar, så att tull- och marknadskontrollmyndigheter snabbt kan kontrollera produkter."
+      },
+      {
+        "type": "h2",
+        "text": "När gäller det?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Batterier: från den 18 februari 2027 behöver varje elbilsbatteri, batteri för lätta transportmedel (LMT) och industribatteri över 2 kWh som släpps ut på EU-marknaden ett pass.",
+          "Järn och stål: den första delegerade akten enligt ESPR väntas från slutet av 2026.",
+          "Textilier och kläder, aluminium och däck: delegerade akter väntas 2027.",
+          "Möbler 2028 och madrasser 2029, enligt kommissionens arbetsplan för 2025–2030."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "För produktgrupper under ESPR börjar skyldigheten normalt gälla cirka 18 månader efter att den delegerade akten har antagits. Datumen ovan är preliminära, men för de flesta företag tar dataarbetet bakom ett pass längre tid än 18 månader."
+      },
+      {
+        "type": "h2",
+        "text": "Det som gör passet svårt i praktiken"
+      },
+      {
+        "type": "p",
+        "text": "Tekniken är sällan problemet. Det är data. Specifikationer finns i PLM, stycklistor i ERP, materialdeklarationer hos leverantörer och testrapporter i mappar. Ingen har hela bilden, och leverantörsdata kommer ofta i ett nytt format varje gång."
+      },
+      {
+        "type": "p",
+        "text": "Det finns också en behörighetsfråga. Ett pass blandar offentlig information med data som bara vissa parter får se, och många personer i företaget och i leverantörskedjan bidrar till det. Att bestämma vem som får mata in, ändra, godkänna och läsa vilka fält är en uppgift för identitets- och behörighetshantering, och det är lättare att utforma från början än att rätta till i efterhand."
+      },
+      {
+        "type": "h2",
+        "text": "Så förbereder ni er nu"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Ta reda på vilka av era produkter som omfattas av batteriförordningen eller en kommande delegerad akt enligt ESPR.",
+          "Välj en representativ produkt och samla dess identitet, sammansättning, leverantörer och underlag på ett ställe.",
+          "Identifiera luckorna, särskilt leverantörsdeklarationer och data om återvunnet innehåll, och börja begära in dem redan nu.",
+          "Bestäm vem som äger varje del av datan och vem som godkänner ett pass före publicering.",
+          "Välj ett verktyg som kan publicera ett maskinläsbart pass och ansluta till EU-registret."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Vi byggde DPPSpace för just den här vägen: en arbetsyta för produkt-, material-, leverantörs- och underlagsdata, en statusvy som visar vad som fortfarande saknas och inskickning av godkända pass till registret. Vill ni se det med en produkt från er bransch? Boka en demo."
+      }
+    ]
+  },
+  "battery-passport-2027": {
+    "title": "Batteripasset 2027: vad tillverkare behöver till den 18 februari",
+    "description": "Från 18 februari 2027 behöver elbils-, LMT- och industribatterier över 2 kWh ett digitalt batteripass. Vem som berörs, vad det innehåller och hur ni förbereder er.",
+    "excerpt": "EU:s första obligatoriska digitala produktpass startar i februari 2027. Vilka batterier som behöver ett, vilka data som ingår, vem som får se dem och en checklista för de månader som återstår.",
+    "category": "Digitalt produktpass",
+    "keywords": [
+      "batteripass",
+      "EU batteripass 2027",
+      "batteriförordningen 2023/1542",
+      "batteripass elbil",
+      "batteripass industribatterier",
+      "digitalt produktpass"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Batteripasset är det första digitala produktpass som EU gör obligatoriskt. Från den 18 februari 2027 kräver batteriförordningen (förordning (EU) 2023/1542) en elektronisk post för varje batteri i de berörda kategorierna som släpps ut på EU-marknaden eller tas i bruk. För många tillverkare och importörer är de återstående månaderna få."
+      },
+      {
+        "type": "h2",
+        "text": "Vilka batterier behöver ett pass?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Batterier för elfordon.",
+          "Batterier för lätta transportmedel (LMT), till exempel elcyklar och elsparkcyklar.",
+          "Industribatterier med en kapacitet över 2 kWh, till exempel stationär energilagring."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Passet är kopplat till det enskilda batteriet, inte bara till modellen. Den ekonomiska aktör som släpper ut batteriet på marknaden ansvarar för det. När ett batteri får ett nytt användningsområde eller renoveras tar den nya aktören över, och batteriet får ett nytt pass som är kopplat till det ursprungliga."
+      },
+      {
+        "type": "h2",
+        "text": "Vad ingår i passet?"
+      },
+      {
+        "type": "p",
+        "text": "Bilaga XIII till förordningen anger innehållet. I praktiken delas det in i sex grupper:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Allmän information: tillverkare, identifierare, batterikategori, tillverkningsplats och tillverkningsdatum, vikt.",
+          "Efterlevnad och märkning: försäkringar om överensstämmelse och, där reglerna redan gäller, information om koldioxidavtryck.",
+          "Material och sammansättning: kemi, kritiska råmaterial och farliga ämnen.",
+          "Cirkularitet: återvunnet innehåll, information om borttagning, demontering och säkerhet.",
+          "Prestanda och hållbarhet: kapacitet, förväntad livslängd och, för vissa batterier, värden som förändras under användningen.",
+          "Tillbörlig aktsamhet i leverantörskedjan: information från kraven på tillbörlig aktsamhet, när de börjar gälla."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Alla fält krävs inte från dag ett. Information som hör till skyldigheter som börjar gälla senare, till exempel vissa data om koldioxidavtryck och tillbörlig aktsamhet, kan läggas till när de skyldigheterna träder i kraft. Själva passet, och allt som redan gäller, ska finnas på plats den 18 februari 2027."
+      },
+      {
+        "type": "h2",
+        "text": "Vem får se vad?"
+      },
+      {
+        "type": "p",
+        "text": "Batteripasset har åtkomstnivåer. Viss information är offentlig och tillgänglig via QR-koden. Mer detaljerad information är förbehållen personer med ett berättigat intresse, till exempel reparatörer, renoverare och återvinnare, och vissa data bara anmälda organ, marknadskontrollmyndigheter och kommissionen."
+      },
+      {
+        "type": "p",
+        "text": "Det gör passet till en fråga om behörighetshantering lika mycket som om data. Ni behöver veta vilka roller som finns, hur externa parter styrker sin identitet och hur varje åtkomst loggas. Planerar ni detta tidigt undviker ni ett pass som antingen är för öppet eller oanvändbart för dem som behöver det."
+      },
+      {
+        "type": "h2",
+        "text": "En checklista för de återstående månaderna"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Lista alla batterityper ni släpper ut på EU-marknaden och kontrollera vilka som omfattas av passet.",
+          "Utse en ansvarig för passet och för varje datagrupp.",
+          "Samla in data om sammansättning, kemi och återvunnet innehåll från era cell- och materialleverantörer. Det tar oftast längst tid.",
+          "Bestäm hur ni tilldelar unika identifierare och trycker QR-koden på batteriet.",
+          "Definiera åtkomstnivåerna: offentlig, berättigat intresse och myndigheter.",
+          "Välj en plattform som publicerar ett maskinläsbart pass och håller det tillgängligt under batteriets hela livslängd.",
+          "Genomför ett pilotprojekt med en batterityp i god tid före februari, så att det finns tid att täppa till luckor."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Så hjälper DPPSpace"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace samlar batteriets identitet, material, leverantörer och underlag i en arbetsyta, visar luckorna per batterityp och publicerar passet bakom en QR-kod. Våra konsulter hjälper till med det som programvara ensam inte löser: att få in leverantörsdata och att sätta upp åtkomstnivåer som håller. Boka en demo för att se det med ett batteri ur er portfölj."
+      }
+    ]
+  },
+  "dpp-data-readiness": {
+    "title": "Så gör ni era data redo för det digitala produktpasset",
+    "description": "Det digitala produktpasset är först ett dataprojekt. Så samlar ni produkt-, material- och leverantörsdata, täpper till luckor och avgör vem som får ändra och se vad.",
+    "excerpt": "De flesta passprojekt fastnar på data, inte på programvara. Sex praktiska steg för att göra produkt-, material- och leverantörsdata redo, och hålla dem korrekta efter det första passet.",
+    "category": "Digitalt produktpass",
+    "keywords": [
+      "data för digitalt produktpass",
+      "DPP-beredskap",
+      "leverantörsdata DPP",
+      "stycklista produktpass",
+      "produktdatahantering",
+      "förberedelse ESPR"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Fråga ett projektteam vad som bromsar deras första digitala produktpass, och svaret är nästan aldrig QR-koden eller publiceringsverktyget. Det är data: var den finns, vem som äger den, om leverantörerna levererar den och om någon märker när den blir inaktuell."
+      },
+      {
+        "type": "p",
+        "text": "Här är sex steg som fungerar oavsett produktgrupp, vare sig ni förbereder er för batteripasset 2027 eller för någon av de ESPR-produktgrupper som följer."
+      },
+      {
+        "type": "h2",
+        "text": "1. Börja med en produkt, inte hela katalogen"
+      },
+      {
+        "type": "p",
+        "text": "Välj en representativ produkt: en typisk stycklista, några viktiga leverantörer, en eller två komponenter med hållbarhetspåståenden. Att bygga ett komplett pass lär er mer om era luckor än någon kalkylbladsenkät över alla produkter."
+      },
+      {
+        "type": "h2",
+        "text": "2. Bygg en ren produktpost"
+      },
+      {
+        "type": "p",
+        "text": "Varje pass utgår från en produktidentitet: tillverkare, modell, kategori, variant och en unik identifierare. Många företag upptäcker här att samma produkt har olika nummer i ERP, PLM och webbutiken. Bestäm er för en identifierare och koppla de andra till den."
+      },
+      {
+        "type": "h2",
+        "text": "3. Kartlägg sammansättningen en gång och återanvänd den"
+      },
+      {
+        "type": "p",
+        "text": "Stycklistor och materialdata är kärnan i de flesta pass. Modellera material som återanvändbara poster med uppgifter om ursprung och återvunnet innehåll, och koppla dem sedan till komponenter och produkter. När en leverantör byter material uppdaterar ni det på ett ställe i stället för i varje pass."
+      },
+      {
+        "type": "h2",
+        "text": "4. Få in leverantörsdata tidigt"
+      },
+      {
+        "type": "p",
+        "text": "Leverantörsdeklarationer tar längst tid. Berätta tidigt för leverantörerna vilken information ni behöver, i vilket format och till när. Be om underlag, inte bara värden: en testrapport eller ett certifikat som styrker ett påstående om återvunnet innehåll är värt mer än en siffra i ett mejl."
+      },
+      {
+        "type": "callout",
+        "text": "Håll varje underlag kopplat till den produkt eller det material det styrker. När en myndighet eller en kund frågar var ett värde kommer ifrån ska svaret finnas ett klick bort."
+      },
+      {
+        "type": "h2",
+        "text": "5. Bestäm vem som får ändra och se vad"
+      },
+      {
+        "type": "p",
+        "text": "Ett pass kombinerar data från konstruktion, inköp, kvalitet och leverantörer och visar delar av dem för allmänheten, för reparatörer och återvinnare och för myndigheter. Behandla det som vilken annan behörighetsdesign som helst:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Ge varje datagrupp en ägare som godkänner ändringar.",
+          "Låt leverantörer bidra bara till sina egna komponenter, med egna konton och inte delade inloggningar.",
+          "Kräv godkännande innan ett pass publiceras och logga vem som ändrade vad.",
+          "Skilj det som är offentligt från det som bara parter med ett berättigat intresse eller myndigheter får se."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Här kommer vår bakgrund inom identitets- och behörighetshantering till nytta. Minsta behörighet, tydligt ägarskap och spårbarhet gäller för passdata precis som för SAP eller Active Directory."
+      },
+      {
+        "type": "h2",
+        "text": "6. Planera för förändring, inte för en engångsexport"
+      },
+      {
+        "type": "p",
+        "text": "Produkter ändras, leverantörer byts ut och regelverk lägger till fält. Ett pass är inte ett dokument som ni exporterar en gång; det måste vara korrekt under produktens hela livslängd. Koppla passet till de system som innehåller era masterdata, granska statusen regelbundet och behandla nya delegerade akter som ändringsbegäranden."
+      },
+      {
+        "type": "h2",
+        "text": "Där passar DPPSpace in"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace följer de här stegen: en produktpost, ett återanvändbart materialbibliotek, koppling till leverantörer och underlag och en statusvy som visar vad som fortfarande saknas innan ni publicerar. Vill ni gå igenom stegen med er egen produkt? Boka en demo eller kontakta oss för en kontroll av databeredskapen."
+      }
+    ]
   }
 }

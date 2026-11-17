@@ -333,5 +333,302 @@
         "text": "Wij helpen organisaties hun identity governance uit te breiden naar serviceaccounts, workloads en AI-agents, op het IGA-platform dat ze al gebruiken. Staat dat op uw roadmap? Laten we kennismaken."
       }
     ]
+  },
+  "digital-product-passport-guide": {
+    "title": "Het digitaal productpaspoort van de EU uitgelegd: wat het is en wanneer het geldt",
+    "description": "Wat het digitaal productpaspoort van de EU is, welke producten er wanneer een nodig hebben, welke data erin staan en hoe fabrikanten zich voorbereiden onder de ESPR.",
+    "excerpt": "Eerst batterijen, daarna staal, textiel, banden en meubelen. Een heldere gids over het digitaal productpaspoort van de EU: wat erin staat, wie het nodig heeft en wanneer.",
+    "category": "Digitaal productpaspoort",
+    "keywords": [
+      "digitaal productpaspoort",
+      "EU DPP",
+      "ESPR",
+      "ecodesignverordening",
+      "DPP-register",
+      "batterijpaspoort"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Scan een QR-code op een product en zie waarvan het gemaakt is, waar het vandaan komt, hoe u het repareert en hoe u het recyclet. Dat is het idee achter het digitaal productpaspoort (DPP) van de EU. Voor fabrikanten worden productdata die verspreid zijn over afdelingen en leveranciers zo een wettelijke verplichting, productgroep voor productgroep."
+      },
+      {
+        "type": "p",
+        "text": "Deze gids legt uit wat een paspoort is, welke regels het voorschrijven, wanneer de eerste verplichtingen gelden en hoe u zich voorbereidt zonder op de laatste gedelegeerde handeling te wachten."
+      },
+      {
+        "type": "h2",
+        "text": "Wat is een digitaal productpaspoort?"
+      },
+      {
+        "type": "p",
+        "text": "Een DPP is een gestructureerd, machineleesbaar record over één productmodel, batch of afzonderlijk artikel. Het is bereikbaar via een gegevensdrager op het product, de verpakking of de documentatie, meestal een QR-code. Achter die drager zitten een unieke productidentificatie en de eigenlijke paspoortdata."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Identiteit: fabrikant, model, productcategorie en unieke identificatie.",
+          "Samenstelling: materialen, componenten, zorgwekkende stoffen en gerecycled gehalte.",
+          "Herkomst en toeleveringsketen: waar materialen en componenten vandaan komen.",
+          "Duurzaamheid: CO₂-voetafdruk, levensduur en repareerbaarheid, voor zover de productregels dat vereisen.",
+          "Einde levensduur: instructies voor demontage, hergebruik en recycling."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Niet iedereen ziet alles. De productregels bepalen welke informatie openbaar is, welke is voorbehouden aan reparateurs of recyclers en welke alleen autoriteiten mogen inzien."
+      },
+      {
+        "type": "h2",
+        "text": "De rechtsgrondslag: ESPR en de batterijverordening"
+      },
+      {
+        "type": "p",
+        "text": "Twee EU-verordeningen vormen de basis van het paspoort. De ecodesignverordening voor duurzame producten (ESPR, Verordening (EU) 2024/1781) is op 18 juli 2024 in werking getreden. Zij legt het algemene kader vast; gedelegeerde handelingen bepalen vervolgens per productgroep de eisen en de inhoud van het paspoort. De batterijverordening (Verordening (EU) 2023/1542) bevat al een eigen paspoort, met een vaste startdatum."
+      },
+      {
+        "type": "p",
+        "text": "De paspoortdata zelf blijven decentraal, bij de fabrikant of bij een dienstverlener die hij aanwijst. De ESPR verplichtte de Commissie om uiterlijk op 19 juli 2026 een centraal register op te zetten. Dat register bevat de unieke identificaties en belangrijke verwijzingen, zodat douane en markttoezichthouders producten snel kunnen controleren."
+      },
+      {
+        "type": "h2",
+        "text": "Wanneer geldt het?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Batterijen: vanaf 18 februari 2027 heeft elke batterij voor elektrische voertuigen, elke batterij voor lichte vervoermiddelen (LMT) en elke industriële batterij boven 2 kWh die op de EU-markt wordt gebracht een paspoort nodig.",
+          "IJzer en staal: de eerste gedelegeerde handeling onder de ESPR wordt vanaf eind 2026 verwacht.",
+          "Textiel en kleding, aluminium en banden: gedelegeerde handelingen worden in 2027 verwacht.",
+          "Meubelen in 2028 en matrassen in 2029, volgens het werkplan 2025–2030 van de Commissie."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Voor ESPR-productgroepen geldt de verplichting doorgaans ongeveer 18 maanden nadat de gedelegeerde handeling is vastgesteld. De data hierboven zijn indicatief, maar het datawerk achter een paspoort duurt bij de meeste bedrijven langer dan 18 maanden."
+      },
+      {
+        "type": "h2",
+        "text": "Wat het paspoort in de praktijk lastig maakt"
+      },
+      {
+        "type": "p",
+        "text": "De technologie is zelden het probleem. De data wel. Specificaties staan in het PLM, stuklijsten in het ERP, materiaalverklaringen bij leveranciers en testrapporten in mappen. Niemand heeft het volledige beeld, en leveranciersdata komen vaak elke keer in een ander formaat binnen."
+      },
+      {
+        "type": "p",
+        "text": "Daarnaast speelt een toegangsvraagstuk. Een paspoort combineert openbare informatie met data die alleen bepaalde partijen mogen zien, en veel mensen binnen het bedrijf en in de toeleveringsketen dragen eraan bij. Bepalen wie welke velden mag invoeren, wijzigen, goedkeuren en lezen is een taak voor identity and access management, en dat is aan het begin eenvoudiger te ontwerpen dan achteraf te herstellen."
+      },
+      {
+        "type": "h2",
+        "text": "Zo bereidt u zich nu voor"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Ga na welke van uw producten onder de batterijverordening of een komende gedelegeerde handeling onder de ESPR vallen.",
+          "Kies één representatief product en breng de identiteit, samenstelling, leveranciers en bewijsstukken ervan samen op één plek.",
+          "Breng de hiaten in kaart, vooral leveranciersverklaringen en data over gerecycled gehalte, en vraag die nu al op.",
+          "Bepaal wie eigenaar is van elk deel van de data en wie een paspoort goedkeurt vóór publicatie.",
+          "Kies een tool die een machineleesbaar paspoort kan publiceren en kan koppelen met het EU-register."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Precies voor dit traject hebben we DPPSpace gebouwd: één werkruimte voor product-, materiaal-, leveranciers- en bewijsdata, een gereedheidsoverzicht dat laat zien wat nog ontbreekt, en indiening van geschikte paspoorten bij het register. Wilt u het zien met een product uit uw branche? Plan dan een demo."
+      }
+    ]
+  },
+  "battery-passport-2027": {
+    "title": "Batterijpaspoort 2027: wat fabrikanten vóór 18 februari nodig hebben",
+    "description": "Vanaf 18 februari 2027 hebben EV-, LMT- en industriële batterijen boven 2 kWh een paspoort nodig. Voor wie het geldt, wat erin staat en hoe u zich voorbereidt.",
+    "excerpt": "Het eerste verplichte digitaal productpaspoort in de EU start in februari 2027. Welke batterijen er een nodig hebben, welke data erin komen, wie ze mag zien en een checklist voor de resterende maanden.",
+    "category": "Digitaal productpaspoort",
+    "keywords": [
+      "batterijpaspoort",
+      "EU-batterijpaspoort 2027",
+      "batterijverordening 2023/1542",
+      "batterijpaspoort elektrische voertuigen",
+      "batterijpaspoort industriële batterijen",
+      "digitaal productpaspoort"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Het batterijpaspoort is het eerste digitaal productpaspoort dat de EU verplicht stelt. Vanaf 18 februari 2027 eist de batterijverordening (Verordening (EU) 2023/1542) een elektronisch record voor elke batterij uit de betrokken categorieën die op de EU-markt wordt gebracht of in gebruik wordt genomen. Voor veel fabrikanten en importeurs zijn de resterende maanden kort."
+      },
+      {
+        "type": "h2",
+        "text": "Welke batterijen hebben een paspoort nodig?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Batterijen voor elektrische voertuigen (EV).",
+          "Batterijen voor lichte vervoermiddelen (LMT), zoals e-bikes en e-steps.",
+          "Industriële batterijen met een capaciteit boven 2 kWh, bijvoorbeeld stationaire opslag."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Het paspoort is gekoppeld aan de individuele batterij, niet alleen aan het model. De marktdeelnemer die de batterij in de handel brengt, is ervoor verantwoordelijk. Wanneer een batterij een nieuwe bestemming krijgt of wordt gereviseerd, neemt de nieuwe marktdeelnemer het over en krijgt de batterij een nieuw paspoort dat aan het oorspronkelijke is gekoppeld."
+      },
+      {
+        "type": "h2",
+        "text": "Wat staat er in het paspoort?"
+      },
+      {
+        "type": "p",
+        "text": "Bijlage XIII van de verordening somt de inhoud op. In de praktijk valt die uiteen in zes groepen:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Algemene informatie: fabrikant, identificatie, batterijcategorie, plaats en datum van productie, gewicht.",
+          "Conformiteit en labels: conformiteitsverklaringen en, waar de regels al gelden, informatie over de CO₂-voetafdruk.",
+          "Materialen en samenstelling: chemie, kritieke grondstoffen en gevaarlijke stoffen.",
+          "Circulariteit: gerecycled gehalte en informatie over verwijdering, demontage en veiligheid.",
+          "Prestaties en levensduur: capaciteit, verwachte levensduur en, voor sommige batterijen, waarden die tijdens gebruik veranderen.",
+          "Due diligence in de toeleveringsketen: informatie uit de due-diligenceverplichtingen, zodra die gelden."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Niet elk veld is vanaf dag één verplicht. Informatie die hoort bij verplichtingen die later ingaan, zoals sommige data over CO₂-voetafdruk en due diligence, kan volgen wanneer die verplichtingen van kracht worden. Het paspoort zelf, en alles wat al geldt, is verplicht op 18 februari 2027."
+      },
+      {
+        "type": "h2",
+        "text": "Wie mag wat zien?"
+      },
+      {
+        "type": "p",
+        "text": "Het batterijpaspoort kent toegangsniveaus. Sommige informatie is openbaar en beschikbaar via de QR-code. Gedetailleerdere informatie is voorbehouden aan personen met een rechtmatig belang, zoals reparateurs, revisiebedrijven en recyclers, en sommige data alleen aan aangemelde instanties, markttoezichtautoriteiten en de Commissie."
+      },
+      {
+        "type": "p",
+        "text": "Daarmee is het paspoort net zo goed een vraagstuk van toegangsbeheer als van data. U moet weten welke rollen er zijn, hoe externe partijen aantonen wie ze zijn en hoe elke toegang wordt gelogd. Wie dit vroeg plant, voorkomt een paspoort dat te open is of onbruikbaar voor wie het nodig heeft."
+      },
+      {
+        "type": "h2",
+        "text": "Een checklist voor de resterende maanden"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Maak een overzicht van alle batterijtypen die u op de EU-markt brengt en controleer welke onder het paspoort vallen.",
+          "Wijs een eigenaar aan voor het paspoort en voor elke datagroep.",
+          "Verzamel data over samenstelling, chemie en gerecycled gehalte bij uw cel- en materiaalleveranciers. Dit duurt meestal het langst.",
+          "Bepaal hoe u unieke identificaties toekent en de QR-code op de batterij aanbrengt.",
+          "Leg de toegangsniveaus vast: openbaar, rechtmatig belang en autoriteiten.",
+          "Kies een platform dat een machineleesbaar paspoort publiceert en het gedurende de hele levensduur van de batterij beschikbaar houdt.",
+          "Voer ruim vóór februari een pilot uit met één batterijtype, zodat er tijd is om hiaten te dichten."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Hoe DPPSpace helpt"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace brengt batterij-identiteit, materialen, leveranciers en bewijsstukken samen in één werkruimte, toont de hiaten per batterijtype en publiceert het paspoort achter een QR-code. Onze consultants helpen bij het deel dat software alleen niet oplost: de leveranciersdata binnenhalen en toegangsniveaus inrichten die standhouden. Plan een demo om het te zien met een batterij uit uw portfolio."
+      }
+    ]
+  },
+  "dpp-data-readiness": {
+    "title": "Uw data klaarmaken voor het digitaal productpaspoort",
+    "description": "Het digitaal productpaspoort is in de eerste plaats een dataproject. Zo verzamelt u product- en leveranciersdata, dicht u hiaten en bepaalt u wie wat mag wijzigen.",
+    "excerpt": "De meeste paspoortprojecten lopen vast op data, niet op software. Zes praktische stappen om product-, materiaal- en leveranciersdata gereed te maken en ook na het eerste paspoort juist te houden.",
+    "category": "Digitaal productpaspoort",
+    "keywords": [
+      "data digitaal productpaspoort",
+      "DPP-gereedheid",
+      "leveranciersdata DPP",
+      "stuklijst productpaspoort",
+      "productdatabeheer",
+      "voorbereiding ESPR"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Vraag een projectteam wat hun eerste digitaal productpaspoort vertraagt, en het antwoord is bijna nooit de QR-code of de publicatietool. Het zijn de data: waar ze staan, wie de eigenaar is, of leveranciers ze aanleveren en of iemand merkt wanneer ze verouderd zijn."
+      },
+      {
+        "type": "p",
+        "text": "Hier zijn zes stappen die voor alle productgroepen werken, of u zich nu voorbereidt op het batterijpaspoort in 2027 of op een van de ESPR-productgroepen die volgen."
+      },
+      {
+        "type": "h2",
+        "text": "1. Begin met één product, niet met de hele catalogus"
+      },
+      {
+        "type": "p",
+        "text": "Kies een representatief product: een typische stuklijst, een paar belangrijke leveranciers, een of twee componenten met duurzaamheidsclaims. Eén volledig paspoort opbouwen leert u meer over uw hiaten dan welke spreadsheetinventarisatie van alle producten dan ook."
+      },
+      {
+        "type": "h2",
+        "text": "2. Bouw een schoon productrecord op"
+      },
+      {
+        "type": "p",
+        "text": "Elk paspoort hangt aan een productidentiteit: fabrikant, model, categorie, variant en unieke identificatie. Veel bedrijven ontdekken hier dat hetzelfde product verschillende nummers heeft in het ERP, het PLM en de webshop. Kies één identificatie en koppel de andere daaraan."
+      },
+      {
+        "type": "h2",
+        "text": "3. Breng de samenstelling één keer in kaart en hergebruik die"
+      },
+      {
+        "type": "p",
+        "text": "Stuklijsten en materiaaldata vormen het hart van de meeste paspoorten. Modelleer materialen als herbruikbare records met gegevens over herkomst en gerecycled gehalte, en koppel ze vervolgens aan componenten en producten. Wijzigt een leverancier een materiaal, dan past u dat op één plek aan in plaats van in elk paspoort."
+      },
+      {
+        "type": "h2",
+        "text": "4. Haal leveranciersdata vroeg binnen"
+      },
+      {
+        "type": "p",
+        "text": "Leveranciersverklaringen kosten de meeste tijd. Laat leveranciers vroeg weten welke informatie u nodig hebt, in welk formaat en wanneer. Vraag om bewijs, niet alleen om waarden: een testrapport of certificaat dat een claim over gerecycled gehalte onderbouwt, is meer waard dan een getal in een e-mail."
+      },
+      {
+        "type": "callout",
+        "text": "Houd elk bewijsstuk gekoppeld aan het product of materiaal dat het onderbouwt. Vraagt een autoriteit of klant waar een waarde vandaan komt, dan moet het antwoord één klik verwijderd zijn."
+      },
+      {
+        "type": "h2",
+        "text": "5. Bepaal wie wat mag wijzigen en zien"
+      },
+      {
+        "type": "p",
+        "text": "Een paspoort combineert data van engineering, inkoop, kwaliteit en leveranciers, en toont delen daarvan aan het publiek, aan reparateurs en recyclers en aan autoriteiten. Behandel dit zoals elk ander toegangsontwerp:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Geef elke datagroep een eigenaar die wijzigingen goedkeurt.",
+          "Laat leveranciers alleen bijdragen aan hun eigen componenten, met eigen accounts en geen gedeelde logins.",
+          "Vereis goedkeuring voordat een paspoort wordt gepubliceerd en log wie wat heeft gewijzigd.",
+          "Scheid wat openbaar is van wat alleen partijen met een rechtmatig belang of autoriteiten mogen zien."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Hier komt onze achtergrond in identity and access management van pas. Least privilege, helder eigenaarschap en audittrails gelden voor paspoortdata net zo goed als voor SAP of Active Directory."
+      },
+      {
+        "type": "h2",
+        "text": "6. Plan voor verandering, niet voor een eenmalige export"
+      },
+      {
+        "type": "p",
+        "text": "Producten veranderen, leveranciers veranderen en regelgeving voegt velden toe. Een paspoort is geen document dat u één keer exporteert; het moet de hele levensduur van het product juist blijven. Koppel het paspoort aan de systemen met uw stamgegevens, beoordeel de gereedheid regelmatig en behandel nieuwe gedelegeerde handelingen als wijzigingsverzoeken."
+      },
+      {
+        "type": "h2",
+        "text": "Waar DPPSpace past"
+      },
+      {
+        "type": "p",
+        "text": "DPPSpace volgt deze stappen: een productrecord, een herbruikbare materiaalbibliotheek, koppeling van leveranciers en bewijsstukken, en een gereedheidsoverzicht dat laat zien wat er vóór publicatie nog ontbreekt. Wilt u de stappen doorlopen met uw eigen product? Plan een demo of neem contact met ons op voor een data-readinesscheck."
+      }
+    ]
   }
 }
