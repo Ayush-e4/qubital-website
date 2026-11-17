@@ -833,6 +833,9 @@
     "minRead": "{minutes} min. læsning",
     "back": "Alle artikler",
     "breadcrumb": "Brødkrummesti",
-    "more": "Flere artikler"
+    "more": "Flere artikler",
+    "summary": "Kort fortalt",
+    "authorTitle": "Om forfatteren",
+    "authorBio": "Arun Kumar leder Qubital. Han er IAM/IGA-arkitekt med mere end 18 års erfaring med identitetsstyring, privilegeret adgang, One Identity Manager og SAP-integration."
   }
 }

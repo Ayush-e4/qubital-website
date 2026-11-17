@@ -840,6 +840,9 @@
     "minRead": "{minutes} min de lectura",
     "back": "Todos los artículos",
     "breadcrumb": "Ruta de navegación",
-    "more": "Más artículos"
+    "more": "Más artículos",
+    "summary": "En resumen",
+    "authorTitle": "Sobre el autor",
+    "authorBio": "Arun Kumar dirige Qubital. Es arquitecto IAM/IGA con más de 18 años de experiencia en gobierno de identidades, accesos privilegiados, One Identity Manager e integración con SAP."
   }
 }
