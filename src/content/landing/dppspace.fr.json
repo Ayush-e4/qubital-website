@@ -1,0 +1,240 @@
+{
+  "locale": "fr",
+  "path": "/fr/produit",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace : logiciel de passeport numérique des produits · Qubital",
+    "description": "DPPSpace de Qubital : préparez vos passeports numériques des produits UE dans un seul espace, des données fournisseurs aux contrôles et à l’envoi au registre.",
+    "ogImageAlt": "DPPSpace, la plateforme de passeport numérique des produits de Qubital"
+  },
+  "service": {
+    "serviceType": "Logiciel de passeport numérique des produits (DPPSpace)",
+    "ogImage": "/og/dppspace-fr.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/fr"
+    },
+    {
+      "name": "Produit",
+      "href": "/fr/produit"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Produit · DPPSpace",
+    "h1": "Vos passeports numériques des produits, préparés dans un seul espace de travail.",
+    "lead": "DPPSpace est notre plateforme dédiée au passeport numérique des produits de l’UE. Réunissez identité produit, matériaux, fournisseurs et justificatifs, voyez ce qui manque encore et soumettez les passeports éligibles au registre de l’UE.",
+    "cta": {
+      "label": "Demander une démo",
+      "href": "https://dppspace.com/contact/"
+    },
+    "secondaryCta": {
+      "label": "Découvrir dppspace.com",
+      "href": "https://dppspace.com/"
+    },
+    "facts": [
+      {
+        "value": "4",
+        "label": "étapes entre une fiche produit et un passeport prêt à être publié"
+      },
+      {
+        "value": "1",
+        "label": "espace de travail pour les données produits, matériaux, fournisseurs et justificatifs"
+      },
+      {
+        "value": "févr. 2027",
+        "label": "le passeport batterie devient obligatoire pour les batteries de véhicules électriques, de LMT (moyens de transport légers) et les grandes batteries industrielles"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "Des informations produit dispersées en trop d’endroits",
+      "paragraphs": [
+        "Les spécifications sont dans le PLM, les nomenclatures dans l’ERP, les déclarations fournisseurs dans les e-mails et les rapports d’essai sur un lecteur partagé. Un passeport numérique des produits a besoin de tout cela, rattaché à un seul produit et tenu à jour.",
+        "Avec le règlement sur l’écoconception des produits durables (ESPR) et le règlement relatif aux batteries, de plus en plus de groupes de produits doivent disposer d’un passeport. Les équipes qui commencent à collecter les données la semaine précédant l’échéance se retrouvent avec des lacunes impossibles à combler à temps."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "De l’identité produit au workflow du passeport",
+      "intro": "Un seul espace de travail, des données reliées. Chaque passeport repose sur les mêmes quatre briques.",
+      "items": [
+        {
+          "title": "01 · Créer une fiche produit",
+          "text": "Identité, catégorie, modèle et pays de fabrication du produit, saisis une fois et réutilisés dans chaque passeport."
+        },
+        {
+          "title": "02 · Cartographier la composition",
+          "text": "Nomenclatures, fiches composants et bibliothèque de matériaux réutilisable, avec l’origine et la teneur en matières recyclées."
+        },
+        {
+          "title": "03 · Garder les justificatifs en contexte",
+          "text": "Informations fournisseurs, environnementales et autres pièces justificatives, rattachées au produit concerné."
+        },
+        {
+          "title": "04 · Vérifier l’état de préparation",
+          "text": "Repérez les lacunes en un coup d’œil, puis faites passer le passeport par la validation, la publication et son cycle de vie."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Avancer produit par produit",
+      "intro": "Inutile d’attendre un paysage de données parfait pour commencer. Partez d’un produit et élargissez ensuite.",
+      "items": [
+        {
+          "title": "Rassembler la fiche",
+          "duration": "Jour 1",
+          "text": "Créez le produit, importez ce dont vous disposez déjà et voyez immédiatement quelles informations manquent."
+        },
+        {
+          "title": "Relier les détails",
+          "duration": "Semaines 1 à 3",
+          "text": "Associez matériaux, composants et fournisseurs, et joignez les déclarations et rapports d’essai qui les étayent."
+        },
+        {
+          "title": "Vérifier et publier",
+          "duration": "Dès que c’est prêt",
+          "text": "Contrôlez l’état de préparation, comblez les lacunes et publiez un passeport lisible par machine, accessible via un QR code."
+        },
+        {
+          "title": "Soumettre et suivre",
+          "duration": "En continu",
+          "text": "Soumettez les passeports éligibles au registre de l’UE, suivez leur traitement et conservez les résultats comme preuves."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Quels passeports arrivent, et quand",
+      "columns": ["Groupe de produits", "Base juridique", "Calendrier prévu"],
+      "rows": [
+        [
+          "Batteries de VE, de LMT et batteries industrielles de plus de 2 kWh",
+          "Règlement relatif aux batteries (UE) 2023/1542",
+          "Obligatoire à partir du 18 février 2027"
+        ],
+        [
+          "Fer et acier",
+          "ESPR (UE) 2024/1781, acte délégué",
+          "Acte délégué attendu à partir de fin 2026"
+        ],
+        [
+          "Textiles et habillement, aluminium, pneumatiques",
+          "ESPR, actes délégués",
+          "Actes délégués attendus en 2027"
+        ],
+        ["Meubles", "ESPR, acte délégué", "Acte délégué attendu en 2028"],
+        ["Matelas", "ESPR, acte délégué", "Acte délégué attendu en 2029"]
+      ],
+      "after": "Les dates de l’ESPR suivent le plan de travail 2025–2030 de la Commission et sont indicatives. Les obligations s’appliquent généralement environ 18 mois après l’adoption d’un acte délégué."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Conçu pour la complexité des produits physiques",
+      "items": [
+        {
+          "title": "Industrie manufacturière",
+          "text": "De nombreuses variantes, de nombreux fournisseurs : réutilisez matériaux et justificatifs d’une famille de produits à l’autre."
+        },
+        {
+          "title": "Automobile et mobilité",
+          "text": "Des chaînes d’approvisionnement profondes et des composants qui traversent plusieurs rangs avant d’arriver dans le véhicule."
+        },
+        {
+          "title": "Batteries et électronique",
+          "text": "Les premiers passeports obligatoires, avec des données détaillées sur la composition, l’empreinte carbone et le devoir de vigilance."
+        },
+        {
+          "title": "Composants industriels",
+          "text": "Des produits à longue durée de vie dont le passeport doit rester exact au fil des réparations, du reconditionnement et du réemploi."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Logiciel et conseil, une seule équipe",
+      "intro": "DPPSpace est développé par Qubital. Nos consultants vous aident à fiabiliser vos données et votre modèle d’accès.",
+      "items": [
+        {
+          "title": "Diagnostic de préparation des données",
+          "text": "Nous identifions où se trouvent aujourd’hui vos données produits, matériaux et fournisseurs, et ce qui manque pour votre groupe de produits."
+        },
+        {
+          "title": "Intégration avec l’ERP et le PLM",
+          "text": "Nous connectons DPPSpace aux systèmes qui détiennent déjà vos données de référence, pour des passeports toujours à jour."
+        },
+        {
+          "title": "Des accès que vous pouvez justifier",
+          "text": "Qui peut consulter, modifier et approuver quelles données du passeport ? Notre expérience en gestion des identités et des accès simplifie cette question."
+        },
+        {
+          "title": "Accompagnement pour la connexion au registre",
+          "text": "Nous vous aidons à mettre en place la connexion autorisée et le passeport public, lisible par machine, qu’attend le registre de l’UE."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Questions sur DPPSpace",
+      "items": [
+        {
+          "q": "Qu’est-ce qu’un passeport numérique des produits ?",
+          "a": "Un enregistrement numérique de l’identité, de la composition, de l’origine et des informations de durabilité d’un produit, accessible via un support de données tel qu’un QR code. L’UE impose des passeports pour les batteries à partir de février 2027 et, progressivement, pour d’autres groupes de produits dans le cadre de l’ESPR."
+        },
+        {
+          "q": "Un passeport enregistré vaut-il certificat de conformité ?",
+          "a": "Non. L’enregistrement dans le registre de l’UE n’est pas une certification de conformité, et DPPSpace n’est ni une institution de l’UE ni un organisme de certification. DPPSpace vous aide à préparer, publier et enregistrer les données. La responsabilité du contenu reste celle de l’opérateur économique."
+        },
+        {
+          "q": "Faut-il disposer de toutes nos données avant de commencer ?",
+          "a": "Non. Commencez par un produit, voyez ce qui manque et comblez les lacunes pas à pas. La vue de préparation indique précisément les informations encore manquantes."
+        },
+        {
+          "q": "Qui peut voir les données d’un passeport ?",
+          "a": "Chaque règlement définit quelles informations sont publiques et lesquelles sont réservées aux autorités ou à d’autres parties ayant un intérêt légitime. DPPSpace conserve vos données de travail dans votre espace et ne publie que ce que le passeport doit montrer."
+        },
+        {
+          "q": "Comment démarrer ?",
+          "a": "Demandez une démo. Nous vous présentons DPPSpace avec un produit de votre secteur et examinons ensemble quels passeports vous concernent, et à quelle échéance."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Mettez vos données produit en lumière.",
+      "text": "Découvrez DPPSpace avec un produit de votre secteur et identifiez quels passeports vous concernent, et à quelle échéance.",
+      "cta": {
+        "label": "Demander une démo",
+        "href": "https://dppspace.com/contact/"
+      },
+      "secondary": {
+        "label": "Lire notre guide du passeport numérique des produits",
+        "href": "/fr/blog/guide-passeport-numerique-des-produits-ue"
+      }
+    }
+  ]
+}

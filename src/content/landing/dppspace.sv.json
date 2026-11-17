@@ -1,0 +1,240 @@
+{
+  "locale": "sv",
+  "path": "/sv/produkt",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace: programvara för digitala produktpass · Qubital",
+    "description": "DPPSpace från Qubital: ta fram EU:s digitala produktpass i en arbetsyta. Produkt-, material-, leverantörs- och underlagsdata, kontroll av status och EU-registret.",
+    "ogImageAlt": "DPPSpace, plattformen för digitala produktpass från Qubital"
+  },
+  "service": {
+    "serviceType": "Programvara för digitala produktpass (DPPSpace)",
+    "ogImage": "/og/dppspace-sv.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/sv"
+    },
+    {
+      "name": "Produkt",
+      "href": "/sv/produkt"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Produkt · DPPSpace",
+    "h1": "Digitala produktpass, framtagna i en och samma arbetsyta.",
+    "lead": "DPPSpace är vår plattform för EU:s digitala produktpass. Samla produktidentitet, material, leverantörer och underlag på ett ställe, se vad som fortfarande saknas och skicka in godkända pass till EU-registret.",
+    "cta": {
+      "label": "Boka en demo",
+      "href": "https://dppspace.com/contact/"
+    },
+    "secondaryCta": {
+      "label": "Besök dppspace.com",
+      "href": "https://dppspace.com/"
+    },
+    "facts": [
+      {
+        "value": "4",
+        "label": "steg från en produktpost till ett pass som är redo att publiceras"
+      },
+      {
+        "value": "1",
+        "label": "arbetsyta för produkt-, material-, leverantörs- och underlagsdata"
+      },
+      {
+        "value": "feb. 2027",
+        "label": "blir batteripasset obligatoriskt för elbilsbatterier, LMT-batterier och stora industribatterier"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "Produktinformationen finns på för många ställen",
+      "paragraphs": [
+        "Specifikationer ligger i PLM, stycklistor i ERP, leverantörsdeklarationer i mejlen och testrapporter på en delad enhet. Ett digitalt produktpass behöver allt detta, kopplat till en produkt och hållet aktuellt.",
+        "Enligt EU:s ekodesignförordning för hållbara produkter (ESPR) och batteriförordningen kommer allt fler produktgrupper att behöva ett pass. Team som börjar samla in data veckan före en tidsfrist får luckor som de inte hinner täppa till."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "Från produktidentitet till passflöde",
+      "intro": "En arbetsyta, sammankopplade data. Varje pass byggs av samma fyra byggstenar.",
+      "items": [
+        {
+          "title": "01 · Skapa en produktpost",
+          "text": "Produktidentitet, kategori, modell och tillverkningsland, registrerade en gång och återanvända i varje pass."
+        },
+        {
+          "title": "02 · Kartlägg sammansättningen",
+          "text": "Stycklistor, komponentposter och ett återanvändbart materialbibliotek med uppgifter om ursprung och återvunnet innehåll."
+        },
+        {
+          "title": "03 · Håll underlagen i sitt sammanhang",
+          "text": "Leverantörsinformation, miljödata och annat stödjande underlag, kopplat till den produkt det hör till."
+        },
+        {
+          "title": "04 · Granska hur redo passet är",
+          "text": "Se dataluckor med en blick och för sedan passet vidare genom validering, publicering och hela dess livscykel."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Gör framsteg en produkt i taget",
+      "intro": "Ni behöver inte ett perfekt datalandskap för att komma igång. Börja med en produkt och bygg vidare därifrån.",
+      "items": [
+        {
+          "title": "Samla posten",
+          "duration": "Dag 1",
+          "text": "Skapa produkten, importera det ni redan har och se direkt vilken information som saknas."
+        },
+        {
+          "title": "Koppla ihop detaljerna",
+          "duration": "Vecka 1–3",
+          "text": "Länka material, komponenter och leverantörer och bifoga de deklarationer och testrapporter som styrker dem."
+        },
+        {
+          "title": "Granska och publicera",
+          "duration": "När ni är redo",
+          "text": "Kontrollera statusen, täpp till luckorna och publicera ett maskinläsbart pass bakom en QR-kod."
+        },
+        {
+          "title": "Skicka in och följ upp",
+          "duration": "Löpande",
+          "text": "Skicka in godkända pass till EU-registret, följ deras handläggning och spara resultaten som underlag."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Vilka pass som kommer, och när",
+      "columns": ["Produktgrupp", "Rättslig grund", "Förväntad tidpunkt"],
+      "rows": [
+        [
+          "Elbilsbatterier, LMT-batterier och industribatterier över 2 kWh",
+          "Batteriförordningen (EU) 2023/1542",
+          "Obligatoriskt från den 18 februari 2027"
+        ],
+        [
+          "Järn och stål",
+          "ESPR (EU) 2024/1781, delegerad akt",
+          "Delegerad akt väntas från slutet av 2026"
+        ],
+        [
+          "Textilier och kläder, aluminium, däck",
+          "ESPR, delegerade akter",
+          "Delegerade akter väntas 2027"
+        ],
+        ["Möbler", "ESPR, delegerad akt", "Delegerad akt väntas 2028"],
+        ["Madrasser", "ESPR, delegerad akt", "Delegerad akt väntas 2029"]
+      ],
+      "after": "ESPR-datumen följer kommissionens arbetsplan för 2025–2030 och är preliminära. Skyldigheterna börjar normalt gälla cirka 18 månader efter att en delegerad akt har antagits."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Byggt för komplexiteten i fysiska produkter",
+      "items": [
+        {
+          "title": "Tillverkning",
+          "text": "Många varianter, många leverantörer: återanvänd material och underlag över hela produktfamiljer."
+        },
+        {
+          "title": "Fordon och mobilitet",
+          "text": "Djupa leverantörskedjor och komponenter som passerar flera led innan de når fordonet."
+        },
+        {
+          "title": "Batterier och elektronik",
+          "text": "De första obligatoriska passen, med detaljerade data om sammansättning, koldioxidavtryck och tillbörlig aktsamhet."
+        },
+        {
+          "title": "Industrikomponenter",
+          "text": "Långlivade produkter vars pass måste förbli korrekt genom reparation, renovering och återanvändning."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Programvara och rådgivning från samma team",
+      "intro": "DPPSpace utvecklas av Qubital. Våra konsulter hjälper er att få ordning på era data och er behörighetsmodell.",
+      "items": [
+        {
+          "title": "Kontroll av databeredskap",
+          "text": "Vi kartlägger var era produkt-, material- och leverantörsdata finns i dag och vad som saknas för er produktgrupp."
+        },
+        {
+          "title": "Integration med ERP och PLM",
+          "text": "Vi kopplar DPPSpace till de system som redan innehåller era masterdata, så att passen hålls aktuella."
+        },
+        {
+          "title": "Behörigheter ni kan förklara",
+          "text": "Vem får se, redigera och godkänna vilka passdata? Vår bakgrund inom identitets- och behörighetshantering gör den delen enkel."
+        },
+        {
+          "title": "Stöd vid anslutning till registret",
+          "text": "Vi hjälper er att sätta upp den auktoriserade anslutningen och det publika, maskinläsbara pass som EU-registret förväntar sig."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Frågor om DPPSpace",
+      "items": [
+        {
+          "q": "Vad är ett digitalt produktpass?",
+          "a": "En digital post med en produkts identitet, sammansättning, ursprung och hållbarhetsinformation, som nås via en databärare som en QR-kod. EU kräver pass för batterier från februari 2027 och, steg för steg, för fler produktgrupper enligt ESPR."
+        },
+        {
+          "q": "Är ett registrerat pass ett intyg om efterlevnad?",
+          "a": "Nej. Registrering i EU-registret är ingen certifiering av efterlevnad, och DPPSpace är varken en EU-institution eller ett certifieringsorgan. DPPSpace hjälper er att ta fram, publicera och registrera data. Ansvaret för innehållet ligger kvar hos den ekonomiska aktören."
+        },
+        {
+          "q": "Behöver vi alla data innan vi börjar?",
+          "a": "Nej. Börja med en produkt, se vad som saknas och fyll luckorna steg för steg. Statusvyn visar exakt vilken information som fortfarande är öppen."
+        },
+        {
+          "q": "Vem kan se data i ett pass?",
+          "a": "Varje förordning anger vilken information som är offentlig och vilken som är förbehållen myndigheter eller andra parter med ett berättigat intresse. DPPSpace behåller era arbetsdata i er arbetsyta och publicerar bara det som passet ska visa."
+        },
+        {
+          "q": "Hur kommer vi igång?",
+          "a": "Boka en demo. Vi visar DPPSpace med en produkt från er bransch och går igenom vilka pass som gäller för er och när."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Sätt fokus på era produktdata.",
+      "text": "Se DPPSpace med en produkt från er bransch och ta reda på vilka pass som gäller för er och när.",
+      "cta": {
+        "label": "Boka en demo",
+        "href": "https://dppspace.com/contact/"
+      },
+      "secondary": {
+        "label": "Läs vår guide om digitala produktpass",
+        "href": "/sv/blog/eus-digitala-produktpass-forklarat"
+      }
+    }
+  ]
+}

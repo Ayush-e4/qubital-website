@@ -1,0 +1,240 @@
+{
+  "locale": "nl",
+  "path": "/nl/product",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace: software voor het digitaal productpaspoort · Qubital",
+    "description": "DPPSpace van Qubital: bereid EU-digitale productpaspoorten voor in één werkruimte, van product- en leveranciersdata tot controles en indiening bij het register.",
+    "ogImageAlt": "DPPSpace, het platform voor het digitaal productpaspoort van Qubital"
+  },
+  "service": {
+    "serviceType": "Software voor het digitaal productpaspoort (DPPSpace)",
+    "ogImage": "/og/dppspace-nl.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/nl"
+    },
+    {
+      "name": "Product",
+      "href": "/nl/product"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Product · DPPSpace",
+    "h1": "Digitale productpaspoorten, voorbereid in één werkruimte.",
+    "lead": "DPPSpace is ons platform voor het digitaal productpaspoort van de EU. Breng productidentiteit, materialen, leveranciers en bewijsstukken samen, zie wat nog ontbreekt en dien geschikte paspoorten in bij het EU-register.",
+    "cta": {
+      "label": "Plan een demo",
+      "href": "https://dppspace.com/contact/"
+    },
+    "secondaryCta": {
+      "label": "Bezoek dppspace.com",
+      "href": "https://dppspace.com/"
+    },
+    "facts": [
+      {
+        "value": "4",
+        "label": "stappen van een productrecord naar een paspoort dat klaar is voor publicatie"
+      },
+      {
+        "value": "1",
+        "label": "werkruimte voor product-, materiaal-, leveranciers- en bewijsdata"
+      },
+      {
+        "value": "feb. 2027",
+        "label": "het batterijpaspoort wordt verplicht voor batterijen van elektrische voertuigen, lichte vervoermiddelen (LMT) en grote industriële batterijen"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "Productinformatie staat op te veel plekken",
+      "paragraphs": [
+        "Specificaties staan in het PLM, stuklijsten in het ERP, leveranciersverklaringen in e-mails en testrapporten op een gedeelde schijf. Een digitaal productpaspoort heeft dat allemaal nodig, gekoppeld aan één product en actueel gehouden.",
+        "Onder de ecodesignverordening voor duurzame producten (ESPR) en de batterijverordening hebben steeds meer productgroepen een paspoort nodig. Teams die pas in de week voor een deadline beginnen met het verzamelen van data, houden hiaten over die ze niet meer op tijd kunnen dichten."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "Van productidentiteit tot paspoortworkflow",
+      "intro": "Eén werkruimte, verbonden data. Elk paspoort wordt opgebouwd uit dezelfde vier bouwstenen.",
+      "items": [
+        {
+          "title": "01 · Productrecord opbouwen",
+          "text": "Productidentiteit, categorie, model en land van productie, één keer vastgelegd en in elk paspoort hergebruikt."
+        },
+        {
+          "title": "02 · Samenstelling in kaart brengen",
+          "text": "Stuklijsten, componentrecords en een herbruikbare materiaalbibliotheek met gegevens over herkomst en gerecycled gehalte."
+        },
+        {
+          "title": "03 · Bewijs in context houden",
+          "text": "Leveranciers-, milieu- en andere onderbouwende informatie, gekoppeld aan het product waar deze bij hoort."
+        },
+        {
+          "title": "04 · Gereedheid beoordelen",
+          "text": "Zie hiaten in één oogopslag en leid het paspoort vervolgens door validatie, publicatie en de rest van de levenscyclus."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Vooruitgang boeken, product voor product",
+      "intro": "U hebt geen perfect datalandschap nodig om te beginnen. Start met één product en breid van daaruit uit.",
+      "items": [
+        {
+          "title": "Het record samenbrengen",
+          "duration": "Dag 1",
+          "text": "Maak het product aan, importeer wat u al hebt en zie direct welke informatie ontbreekt."
+        },
+        {
+          "title": "De details koppelen",
+          "duration": "Week 1–3",
+          "text": "Koppel materialen, componenten en leveranciers, en voeg de verklaringen en testrapporten toe die ze onderbouwen."
+        },
+        {
+          "title": "Beoordelen en publiceren",
+          "duration": "Zodra het klaar is",
+          "text": "Controleer de gereedheid, dicht de hiaten en publiceer een machineleesbaar paspoort achter een QR-code."
+        },
+        {
+          "title": "Indienen en volgen",
+          "duration": "Doorlopend",
+          "text": "Dien geschikte paspoorten in bij het EU-register, volg de verwerking en bewaar de uitkomsten als bewijs."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Welke paspoorten komen eraan, en wanneer",
+      "columns": ["Productgroep", "Rechtsgrondslag", "Verwachte planning"],
+      "rows": [
+        [
+          "EV-, LMT- en industriële batterijen boven 2 kWh",
+          "Batterijverordening (EU) 2023/1542",
+          "Verplicht vanaf 18 februari 2027"
+        ],
+        [
+          "IJzer en staal",
+          "ESPR (EU) 2024/1781, gedelegeerde handeling",
+          "Gedelegeerde handeling verwacht vanaf eind 2026"
+        ],
+        [
+          "Textiel en kleding, aluminium, banden",
+          "ESPR, gedelegeerde handelingen",
+          "Gedelegeerde handelingen verwacht in 2027"
+        ],
+        ["Meubelen", "ESPR, gedelegeerde handeling", "Gedelegeerde handeling verwacht in 2028"],
+        ["Matrassen", "ESPR, gedelegeerde handeling", "Gedelegeerde handeling verwacht in 2029"]
+      ],
+      "after": "De ESPR-data volgen het werkplan 2025–2030 van de Commissie en zijn indicatief. Verplichtingen gelden doorgaans ongeveer 18 maanden nadat een gedelegeerde handeling is vastgesteld."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Gebouwd voor de complexiteit van fysieke producten",
+      "items": [
+        {
+          "title": "Maakindustrie",
+          "text": "Veel varianten, veel leveranciers: hergebruik materialen en bewijsstukken over productfamilies heen."
+        },
+        {
+          "title": "Automotive en mobiliteit",
+          "text": "Diepe toeleveringsketens en componenten die meerdere schakels passeren voordat ze in het voertuig belanden."
+        },
+        {
+          "title": "Batterijen en elektronica",
+          "text": "De eerste verplichte paspoorten, met gedetailleerde data over samenstelling, CO₂-voetafdruk en due diligence."
+        },
+        {
+          "title": "Industriële componenten",
+          "text": "Producten met een lange levensduur, waarvan het paspoort juist moet blijven bij reparatie, revisie en hergebruik."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Software en consultancy van één team",
+      "intro": "DPPSpace wordt ontwikkeld door Qubital. Onze consultants helpen u uw data en uw toegangsmodel goed in te richten.",
+      "items": [
+        {
+          "title": "Data-readinesscheck",
+          "text": "We brengen in kaart waar uw product-, materiaal- en leveranciersdata nu staan en wat er voor uw productgroep ontbreekt."
+        },
+        {
+          "title": "Integratie met ERP en PLM",
+          "text": "We koppelen DPPSpace aan de systemen die uw stamgegevens al bevatten, zodat paspoorten actueel blijven."
+        },
+        {
+          "title": "Toegang die u kunt uitleggen",
+          "text": "Wie mag welke paspoortdata zien, bewerken en goedkeuren? Dankzij onze achtergrond in identity and access management wordt dit eenvoudig."
+        },
+        {
+          "title": "Ondersteuning bij de registerkoppeling",
+          "text": "We helpen u de geautoriseerde verbinding in te richten en het openbare, machineleesbare paspoort dat het EU-register verwacht."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Vragen over DPPSpace",
+      "items": [
+        {
+          "q": "Wat is een digitaal productpaspoort?",
+          "a": "Een digitaal record van de identiteit, samenstelling, herkomst en duurzaamheidsinformatie van een product, bereikbaar via een gegevensdrager zoals een QR-code. De EU verplicht paspoorten voor batterijen vanaf februari 2027 en, stap voor stap, voor andere productgroepen onder de ESPR."
+        },
+        {
+          "q": "Is een geregistreerd paspoort een conformiteitscertificaat?",
+          "a": "Nee. Registratie in het EU-register is geen conformiteitscertificering, en DPPSpace is geen EU-instelling of certificeringsinstantie. DPPSpace helpt u de data voor te bereiden, te publiceren en te registreren. De verantwoordelijkheid voor de inhoud blijft bij de marktdeelnemer."
+        },
+        {
+          "q": "Hebben we al onze data nodig voordat we beginnen?",
+          "a": "Nee. Begin met één product, kijk wat er ontbreekt en dicht de hiaten stap voor stap. Het gereedheidsoverzicht toont precies welke informatie nog openstaat."
+        },
+        {
+          "q": "Wie kan de data in een paspoort zien?",
+          "a": "Elke verordening bepaalt welke informatie openbaar is en welke is voorbehouden aan autoriteiten of andere partijen met een rechtmatig belang. DPPSpace houdt uw werkdata in uw werkruimte en publiceert alleen wat het paspoort moet tonen."
+        },
+        {
+          "q": "Hoe gaan we van start?",
+          "a": "Plan een demo. We laten DPPSpace zien met een product uit uw branche en bespreken welke paspoorten voor u gelden en wanneer."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Breng uw productdata in beeld.",
+      "text": "Bekijk DPPSpace met een product uit uw branche en ontdek welke paspoorten voor u gelden en wanneer.",
+      "cta": {
+        "label": "Plan een demo",
+        "href": "https://dppspace.com/contact/"
+      },
+      "secondary": {
+        "label": "Lees onze gids over het digitaal productpaspoort",
+        "href": "/nl/blog/digitaal-productpaspoort-eu-uitgelegd"
+      }
+    }
+  ]
+}

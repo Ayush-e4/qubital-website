@@ -1,4 +1,14 @@
 import { routing, type Locale, type Pathname } from '@/i18n/routing';
+import dppDa from './dppspace.da.json';
+import dppDe from './dppspace.de.json';
+import dppEn from './dppspace.en.json';
+import dppEs from './dppspace.es.json';
+import dppFr from './dppspace.fr.json';
+import dppIt from './dppspace.it.json';
+import dppNl from './dppspace.nl.json';
+import dppPl from './dppspace.pl.json';
+import dppPt from './dppspace.pt.json';
+import dppSv from './dppspace.sv.json';
 import nhiDa from './nhi.da.json';
 import nhiDe from './nhi.de.json';
 import nhiEn from './nhi.en.json';
@@ -47,6 +57,18 @@ export const landingLocales = routing.locales;
 const page = (byLocale: Record<Locale, unknown>) => byLocale as Record<Locale, LandingContent>;
 
 export const landingPages = {
+  '/product': page({
+    de: dppDe,
+    en: dppEn,
+    fr: dppFr,
+    it: dppIt,
+    es: dppEs,
+    nl: dppNl,
+    pl: dppPl,
+    pt: dppPt,
+    sv: dppSv,
+    da: dppDa,
+  }),
   '/sap-idm-replacement': page({
     de: sapDe,
     en: sapEn,

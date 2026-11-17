@@ -1,0 +1,222 @@
+{
+  "locale": "en",
+  "path": "/en/product",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace: Digital Product Passport software · Qubital",
+    "description": "DPPSpace by Qubital: prepare EU Digital Product Passports in one workspace. Product, material, supplier and evidence data, readiness checks and registry submission.",
+    "ogImageAlt": "DPPSpace, the Digital Product Passport platform by Qubital"
+  },
+  "service": {
+    "serviceType": "Digital Product Passport software (DPPSpace)",
+    "ogImage": "/og/dppspace-en.png"
+  },
+  "breadcrumb": [
+    { "name": "Qubital", "href": "/en" },
+    { "name": "Product", "href": "/en/product" }
+  ],
+  "hero": {
+    "eyebrow": "Product · DPPSpace",
+    "h1": "Digital Product Passports, prepared in one workspace.",
+    "lead": "DPPSpace is our platform for the EU Digital Product Passport. Bring product identity, materials, suppliers and evidence together, see what is still missing, and submit eligible passports to the EU registry.",
+    "cta": { "label": "Book a demo", "href": "https://dppspace.com/contact/" },
+    "secondaryCta": { "label": "Visit dppspace.com", "href": "https://dppspace.com/" },
+    "facts": [
+      {
+        "value": "4",
+        "label": "steps from a product record to a passport that is ready to publish"
+      },
+      { "value": "1", "label": "workspace for product, material, supplier and evidence data" },
+      {
+        "value": "Feb 2027",
+        "label": "the battery passport becomes mandatory for EV, LMT and large industrial batteries"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "Product information lives in too many places",
+      "paragraphs": [
+        "Specifications sit in PLM, bills of materials in ERP, supplier declarations in email and test reports on a shared drive. A Digital Product Passport needs all of it, linked to one product and kept up to date.",
+        "Under the EU Ecodesign for Sustainable Products Regulation (ESPR) and the Battery Regulation, more and more product groups need a passport. Teams that start collecting data the week before a deadline end up with gaps they cannot close in time."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "From product identity to passport workflow",
+      "intro": "One workspace, connected data. Every passport is built from the same four building blocks.",
+      "items": [
+        {
+          "title": "01 · Build a product record",
+          "text": "Product identity, category, model and country of manufacture, captured once and reused in every passport."
+        },
+        {
+          "title": "02 · Map the composition",
+          "text": "Bills of materials, component records and a reusable material library with origin and recycled-content details."
+        },
+        {
+          "title": "03 · Keep evidence in context",
+          "text": "Supplier, environmental and other supporting information, attached to the product it belongs to."
+        },
+        {
+          "title": "04 · Review readiness",
+          "text": "See data gaps at a glance, then move the passport through validation, publication and its lifecycle."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Make progress one product at a time",
+      "intro": "You do not need a perfect data landscape to begin. Start with one product and extend from there.",
+      "items": [
+        {
+          "title": "Bring the record together",
+          "duration": "Day 1",
+          "text": "Create the product, import what you already have and see immediately which information is missing."
+        },
+        {
+          "title": "Connect the detail",
+          "duration": "Weeks 1–3",
+          "text": "Link materials, components and suppliers, and attach the declarations and test reports that support them."
+        },
+        {
+          "title": "Review and publish",
+          "duration": "When ready",
+          "text": "Check readiness, close the gaps and publish a machine-readable passport behind a QR code."
+        },
+        {
+          "title": "Submit and track",
+          "duration": "Ongoing",
+          "text": "Submit eligible passports to the EU registry, follow their processing and keep the outcomes as evidence."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Which passports are coming, and when",
+      "columns": ["Product group", "Legal basis", "Expected timing"],
+      "rows": [
+        [
+          "EV, LMT and industrial batteries above 2 kWh",
+          "Battery Regulation (EU) 2023/1542",
+          "Mandatory from 18 February 2027"
+        ],
+        [
+          "Iron and steel",
+          "ESPR (EU) 2024/1781, delegated act",
+          "Delegated act expected from late 2026"
+        ],
+        [
+          "Textiles and apparel, aluminium, tyres",
+          "ESPR, delegated acts",
+          "Delegated acts expected in 2027"
+        ],
+        ["Furniture", "ESPR, delegated act", "Delegated act expected in 2028"],
+        ["Mattresses", "ESPR, delegated act", "Delegated act expected in 2029"]
+      ],
+      "after": "ESPR dates follow the Commission's working plan 2025–2030 and are indicative. Obligations usually apply about 18 months after a delegated act is adopted."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Built around the complexity of physical products",
+      "items": [
+        {
+          "title": "Manufacturing",
+          "text": "Many variants, many suppliers: reuse materials and evidence across product families."
+        },
+        {
+          "title": "Automotive and mobility",
+          "text": "Deep supply chains and components that travel through several tiers before they reach the vehicle."
+        },
+        {
+          "title": "Batteries and electronics",
+          "text": "The first mandatory passports, with detailed composition, carbon footprint and due-diligence data."
+        },
+        {
+          "title": "Industrial components",
+          "text": "Long-lived products whose passport must stay accurate through repair, refurbishment and reuse."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Software and consulting from one team",
+      "intro": "DPPSpace is built by Qubital. Our consultants help you get your data and your access model right.",
+      "items": [
+        {
+          "title": "Data readiness check",
+          "text": "We map where your product, material and supplier data lives today and what is missing for your product group."
+        },
+        {
+          "title": "Integration with ERP and PLM",
+          "text": "We connect DPPSpace to the systems that already hold your master data, so passports stay current."
+        },
+        {
+          "title": "Access you can explain",
+          "text": "Who may see, edit and approve which passport data? Our identity and access management background makes this part simple."
+        },
+        {
+          "title": "Registry connection support",
+          "text": "We help you set up the authorised connection and the public, machine-readable passport the EU registry expects."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Questions about DPPSpace",
+      "items": [
+        {
+          "q": "What is a Digital Product Passport?",
+          "a": "A digital record of a product's identity, composition, origin and sustainability information, reachable through a data carrier such as a QR code. The EU requires passports for batteries from February 2027 and, step by step, for further product groups under the ESPR."
+        },
+        {
+          "q": "Is a registered passport a compliance certificate?",
+          "a": "No. Registration in the EU registry is not a compliance certification, and DPPSpace is not an EU institution or certification body. DPPSpace helps you prepare, publish and register the data. Responsibility for the content stays with the economic operator."
+        },
+        {
+          "q": "Do we need all our data before we start?",
+          "a": "No. Start with one product, see what is missing and fill the gaps step by step. The readiness view shows exactly which information is still open."
+        },
+        {
+          "q": "Who can see the data in a passport?",
+          "a": "Each regulation defines which information is public and which is reserved for authorities or other parties with a legitimate interest. DPPSpace keeps your working data in your workspace and publishes only what the passport should show."
+        },
+        {
+          "q": "How do we get started?",
+          "a": "Book a demo. We show DPPSpace with a product from your industry and discuss which passports apply to you and when."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Bring your product data into focus.",
+      "text": "See DPPSpace with a product from your industry, and find out which passports apply to you and when.",
+      "cta": { "label": "Book a demo", "href": "https://dppspace.com/contact/" },
+      "secondary": {
+        "label": "Read our Digital Product Passport guide",
+        "href": "/en/blog/eu-digital-product-passport-explained"
+      }
+    }
+  ]
+}

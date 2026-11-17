@@ -1,0 +1,240 @@
+{
+  "locale": "es",
+  "path": "/es/producto",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace: software de pasaporte digital de producto · Qubital",
+    "description": "DPPSpace de Qubital: prepare pasaportes digitales de producto de la UE en un solo espacio, desde los datos de producto y proveedores hasta el envío al registro.",
+    "ogImageAlt": "DPPSpace, la plataforma de pasaporte digital de producto de Qubital"
+  },
+  "service": {
+    "serviceType": "Software de pasaporte digital de producto (DPPSpace)",
+    "ogImage": "/og/dppspace-es.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/es"
+    },
+    {
+      "name": "Producto",
+      "href": "/es/producto"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Producto · DPPSpace",
+    "h1": "Pasaportes digitales de producto, preparados en un solo espacio de trabajo.",
+    "lead": "DPPSpace es nuestra plataforma para el pasaporte digital de producto de la UE. Reúna la identidad del producto, los materiales, los proveedores y las evidencias, vea qué falta todavía y envíe los pasaportes aptos al registro de la UE.",
+    "cta": {
+      "label": "Solicite una demo",
+      "href": "https://dppspace.com/contact/"
+    },
+    "secondaryCta": {
+      "label": "Visite dppspace.com",
+      "href": "https://dppspace.com/"
+    },
+    "facts": [
+      {
+        "value": "4",
+        "label": "pasos desde una ficha de producto hasta un pasaporte listo para publicar"
+      },
+      {
+        "value": "1",
+        "label": "espacio de trabajo para datos de producto, materiales, proveedores y evidencias"
+      },
+      {
+        "value": "feb. 2027",
+        "label": "el pasaporte de baterías pasa a ser obligatorio para baterías de vehículos eléctricos, de medios de transporte ligeros (LMT) y grandes baterías industriales"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "La información de producto está repartida en demasiados sitios",
+      "paragraphs": [
+        "Las especificaciones están en el PLM, las listas de materiales en el ERP, las declaraciones de proveedores en el correo electrónico y los informes de ensayo en una unidad compartida. Un pasaporte digital de producto necesita todo ello, vinculado a un único producto y siempre actualizado.",
+        "Con el Reglamento de diseño ecológico para productos sostenibles (ESPR) y el Reglamento de baterías, cada vez más grupos de productos necesitarán un pasaporte. Los equipos que empiezan a recopilar datos la semana antes del plazo acaban con lagunas que no pueden cerrar a tiempo."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "De la identidad del producto al flujo de trabajo del pasaporte",
+      "intro": "Un solo espacio de trabajo, datos conectados. Cada pasaporte se construye con los mismos cuatro elementos.",
+      "items": [
+        {
+          "title": "01 · Crear la ficha de producto",
+          "text": "Identidad, categoría, modelo y país de fabricación del producto, registrados una sola vez y reutilizados en cada pasaporte."
+        },
+        {
+          "title": "02 · Mapear la composición",
+          "text": "Listas de materiales, fichas de componentes y una biblioteca de materiales reutilizable con datos de origen y contenido reciclado."
+        },
+        {
+          "title": "03 · Mantener las evidencias en contexto",
+          "text": "Información de proveedores, ambiental y otra documentación de respaldo, vinculada al producto al que pertenece."
+        },
+        {
+          "title": "04 · Revisar el grado de preparación",
+          "text": "Detecte las lagunas de un vistazo y lleve el pasaporte por la validación, la publicación y su ciclo de vida."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Avance producto a producto",
+      "intro": "No necesita un panorama de datos perfecto para empezar. Comience con un producto y amplíe a partir de ahí.",
+      "items": [
+        {
+          "title": "Reunir la ficha",
+          "duration": "Día 1",
+          "text": "Cree el producto, importe lo que ya tiene y vea de inmediato qué información falta."
+        },
+        {
+          "title": "Conectar el detalle",
+          "duration": "Semanas 1–3",
+          "text": "Vincule materiales, componentes y proveedores, y adjunte las declaraciones e informes de ensayo que los respaldan."
+        },
+        {
+          "title": "Revisar y publicar",
+          "duration": "Cuando esté listo",
+          "text": "Compruebe el grado de preparación, cierre las lagunas y publique un pasaporte legible por máquina accesible mediante un código QR."
+        },
+        {
+          "title": "Enviar y hacer seguimiento",
+          "duration": "De forma continua",
+          "text": "Envíe los pasaportes aptos al registro de la UE, siga su tramitación y conserve los resultados como evidencia."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Qué pasaportes llegan y cuándo",
+      "columns": ["Grupo de productos", "Base jurídica", "Calendario previsto"],
+      "rows": [
+        [
+          "Baterías de vehículos eléctricos, LMT e industriales de más de 2 kWh",
+          "Reglamento de baterías (UE) 2023/1542",
+          "Obligatorio a partir del 18 de febrero de 2027"
+        ],
+        [
+          "Hierro y acero",
+          "ESPR (UE) 2024/1781, acto delegado",
+          "Acto delegado previsto a partir de finales de 2026"
+        ],
+        [
+          "Textiles y prendas de vestir, aluminio, neumáticos",
+          "ESPR, actos delegados",
+          "Actos delegados previstos en 2027"
+        ],
+        ["Muebles", "ESPR, acto delegado", "Acto delegado previsto en 2028"],
+        ["Colchones", "ESPR, acto delegado", "Acto delegado previsto en 2029"]
+      ],
+      "after": "Las fechas del ESPR siguen el plan de trabajo 2025–2030 de la Comisión y son orientativas. Las obligaciones suelen aplicarse unos 18 meses después de la adopción de un acto delegado."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Pensado para la complejidad de los productos físicos",
+      "items": [
+        {
+          "title": "Fabricación",
+          "text": "Muchas variantes, muchos proveedores: reutilice materiales y evidencias entre familias de productos."
+        },
+        {
+          "title": "Automoción y movilidad",
+          "text": "Cadenas de suministro profundas y componentes que pasan por varios niveles antes de llegar al vehículo."
+        },
+        {
+          "title": "Baterías y electrónica",
+          "text": "Los primeros pasaportes obligatorios, con datos detallados de composición, huella de carbono y diligencia debida."
+        },
+        {
+          "title": "Componentes industriales",
+          "text": "Productos de larga vida útil cuyo pasaporte debe seguir siendo exacto a lo largo de reparaciones, reacondicionamientos y reutilizaciones."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Software y consultoría de un mismo equipo",
+      "intro": "DPPSpace está desarrollado por Qubital. Nuestros consultores le ayudan a poner en orden sus datos y su modelo de acceso.",
+      "items": [
+        {
+          "title": "Diagnóstico de preparación de datos",
+          "text": "Analizamos dónde están hoy sus datos de producto, materiales y proveedores, y qué falta para su grupo de productos."
+        },
+        {
+          "title": "Integración con ERP y PLM",
+          "text": "Conectamos DPPSpace con los sistemas que ya contienen sus datos maestros, para que los pasaportes estén siempre al día."
+        },
+        {
+          "title": "Accesos que puede justificar",
+          "text": "¿Quién puede ver, editar y aprobar qué datos del pasaporte? Nuestra experiencia en gestión de identidades y accesos simplifica esta parte."
+        },
+        {
+          "title": "Apoyo para la conexión al registro",
+          "text": "Le ayudamos a configurar la conexión autorizada y el pasaporte público y legible por máquina que exige el registro de la UE."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Preguntas sobre DPPSpace",
+      "items": [
+        {
+          "q": "¿Qué es un pasaporte digital de producto?",
+          "a": "Un registro digital de la identidad, la composición, el origen y la información de sostenibilidad de un producto, accesible mediante un soporte de datos como un código QR. La UE exige pasaportes para las baterías a partir de febrero de 2027 y, de forma progresiva, para otros grupos de productos en el marco del ESPR."
+        },
+        {
+          "q": "¿Un pasaporte registrado es un certificado de conformidad?",
+          "a": "No. El registro en el registro de la UE no es una certificación de conformidad, y DPPSpace no es una institución de la UE ni un organismo de certificación. DPPSpace le ayuda a preparar, publicar y registrar los datos. La responsabilidad sobre el contenido sigue siendo del operador económico."
+        },
+        {
+          "q": "¿Necesitamos todos los datos antes de empezar?",
+          "a": "No. Empiece con un producto, vea qué falta y cierre las lagunas paso a paso. La vista de preparación muestra exactamente qué información sigue pendiente."
+        },
+        {
+          "q": "¿Quién puede ver los datos de un pasaporte?",
+          "a": "Cada reglamento define qué información es pública y cuál está reservada a las autoridades o a otras partes con un interés legítimo. DPPSpace mantiene sus datos de trabajo en su espacio y publica solo lo que el pasaporte debe mostrar."
+        },
+        {
+          "q": "¿Cómo empezamos?",
+          "a": "Solicite una demo. Le mostramos DPPSpace con un producto de su sector y analizamos qué pasaportes le afectan y cuándo."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Ponga el foco en sus datos de producto.",
+      "text": "Vea DPPSpace con un producto de su sector y descubra qué pasaportes le afectan y cuándo.",
+      "cta": {
+        "label": "Solicite una demo",
+        "href": "https://dppspace.com/contact/"
+      },
+      "secondary": {
+        "label": "Lea nuestra guía sobre el pasaporte digital de producto",
+        "href": "/es/blog/pasaporte-digital-de-producto-ue-explicado"
+      }
+    }
+  ]
+}

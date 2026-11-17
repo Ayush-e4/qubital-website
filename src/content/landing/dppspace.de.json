@@ -1,0 +1,222 @@
+{
+  "locale": "de",
+  "path": "/de/produkt",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace: Software für den digitalen Produktpass · Qubital",
+    "description": "DPPSpace von Qubital: digitale Produktpässe der EU in einem Arbeitsbereich vorbereiten. Produkt-, Material-, Lieferanten- und Nachweisdaten, Reifeprüfung, Register.",
+    "ogImageAlt": "DPPSpace, die Plattform für den digitalen Produktpass von Qubital"
+  },
+  "service": {
+    "serviceType": "Software für den digitalen Produktpass (DPPSpace)",
+    "ogImage": "/og/dppspace-de.png"
+  },
+  "breadcrumb": [
+    { "name": "Qubital", "href": "/de" },
+    { "name": "Produkt", "href": "/de/produkt" }
+  ],
+  "hero": {
+    "eyebrow": "Produkt · DPPSpace",
+    "h1": "Digitale Produktpässe, vorbereitet in einem Arbeitsbereich.",
+    "lead": "DPPSpace ist unsere Plattform für den digitalen Produktpass der EU. Führen Sie Produktidentität, Materialien, Lieferanten und Nachweise zusammen, sehen Sie, was noch fehlt, und übermitteln Sie berechtigte Pässe an das EU-Register.",
+    "cta": { "label": "Demo buchen", "href": "https://dppspace.com/contact/" },
+    "secondaryCta": { "label": "dppspace.com besuchen", "href": "https://dppspace.com/" },
+    "facts": [
+      { "value": "4", "label": "Schritte vom Produktdatensatz zum veröffentlichungsreifen Pass" },
+      {
+        "value": "1",
+        "label": "Arbeitsbereich für Produkt-, Material-, Lieferanten- und Nachweisdaten"
+      },
+      {
+        "value": "Feb. 2027",
+        "label": "wird der Batteriepass Pflicht für Traktions-, LV- und große Industriebatterien"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "Produktinformationen liegen an zu vielen Orten",
+      "paragraphs": [
+        "Spezifikationen liegen im PLM, Stücklisten im ERP, Lieferantenerklärungen im Postfach und Prüfberichte auf einem Laufwerk. Ein digitaler Produktpass braucht all das – verknüpft mit einem Produkt und stets aktuell.",
+        "Mit der Ökodesign-Verordnung (ESPR) und der Batterieverordnung brauchen immer mehr Produktgruppen einen Pass. Wer erst kurz vor einer Frist mit dem Sammeln beginnt, hat Lücken, die sich nicht mehr rechtzeitig schließen lassen."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "Von der Produktidentität zum Pass-Workflow",
+      "intro": "Ein Arbeitsbereich, verbundene Daten. Jeder Pass entsteht aus denselben vier Bausteinen.",
+      "items": [
+        {
+          "title": "01 · Produktdatensatz anlegen",
+          "text": "Produktidentität, Kategorie, Modell und Herstellungsland – einmal erfasst und in jedem Pass wiederverwendet."
+        },
+        {
+          "title": "02 · Zusammensetzung abbilden",
+          "text": "Stücklisten, Komponenten und eine wiederverwendbare Materialbibliothek mit Herkunft und Rezyklatanteil."
+        },
+        {
+          "title": "03 · Nachweise im Kontext halten",
+          "text": "Lieferanten-, Umwelt- und weitere Nachweise, angehängt an das Produkt, zu dem sie gehören."
+        },
+        {
+          "title": "04 · Reifegrad prüfen",
+          "text": "Datenlücken auf einen Blick sehen und den Pass durch Validierung, Veröffentlichung und Lebenszyklus führen."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Fortschritt, ein Produkt nach dem anderen",
+      "intro": "Sie brauchen keine perfekte Datenlandschaft, um zu starten. Beginnen Sie mit einem Produkt und bauen Sie von dort aus.",
+      "items": [
+        {
+          "title": "Datensatz zusammenführen",
+          "duration": "Tag 1",
+          "text": "Produkt anlegen, Vorhandenes importieren und sofort sehen, welche Angaben fehlen."
+        },
+        {
+          "title": "Details verknüpfen",
+          "duration": "Wochen 1–3",
+          "text": "Materialien, Komponenten und Lieferanten verbinden und die passenden Erklärungen und Prüfberichte anhängen."
+        },
+        {
+          "title": "Prüfen und veröffentlichen",
+          "duration": "Wenn bereit",
+          "text": "Reifegrad prüfen, Lücken schließen und einen maschinenlesbaren Pass hinter einem QR-Code veröffentlichen."
+        },
+        {
+          "title": "Übermitteln und verfolgen",
+          "duration": "Laufend",
+          "text": "Berechtigte Pässe an das EU-Register übermitteln, die Verarbeitung verfolgen und die Ergebnisse als Nachweis aufbewahren."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Welche Pässe kommen – und wann",
+      "columns": ["Produktgruppe", "Rechtsgrundlage", "Voraussichtlicher Zeitpunkt"],
+      "rows": [
+        [
+          "Traktions-, LV- und Industriebatterien über 2 kWh",
+          "Batterieverordnung (EU) 2023/1542",
+          "Pflicht ab 18. Februar 2027"
+        ],
+        [
+          "Eisen und Stahl",
+          "ESPR (EU) 2024/1781, delegierter Rechtsakt",
+          "Delegierter Rechtsakt ab Ende 2026 erwartet"
+        ],
+        [
+          "Textilien und Bekleidung, Aluminium, Reifen",
+          "ESPR, delegierte Rechtsakte",
+          "Delegierte Rechtsakte 2027 erwartet"
+        ],
+        ["Möbel", "ESPR, delegierter Rechtsakt", "Delegierter Rechtsakt 2028 erwartet"],
+        ["Matratzen", "ESPR, delegierter Rechtsakt", "Delegierter Rechtsakt 2029 erwartet"]
+      ],
+      "after": "Die ESPR-Termine folgen dem Arbeitsplan der Kommission 2025–2030 und sind Richtwerte. Die Pflichten gelten in der Regel etwa 18 Monate nach Annahme eines delegierten Rechtsakts."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Gebaut für die Komplexität physischer Produkte",
+      "items": [
+        {
+          "title": "Fertigung",
+          "text": "Viele Varianten, viele Lieferanten: Materialien und Nachweise über Produktfamilien hinweg wiederverwenden."
+        },
+        {
+          "title": "Automobil und Mobilität",
+          "text": "Tiefe Lieferketten und Komponenten, die mehrere Stufen durchlaufen, bevor sie ins Fahrzeug kommen."
+        },
+        {
+          "title": "Batterien und Elektronik",
+          "text": "Die ersten verpflichtenden Pässe, mit detaillierter Zusammensetzung, CO₂-Fußabdruck und Sorgfaltspflichten."
+        },
+        {
+          "title": "Industriekomponenten",
+          "text": "Langlebige Produkte, deren Pass über Reparatur, Aufarbeitung und Wiederverwendung hinweg stimmen muss."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Software und Beratung aus einem Team",
+      "intro": "DPPSpace wird von Qubital entwickelt. Unsere Berater helfen Ihnen, Daten und Berechtigungen richtig aufzusetzen.",
+      "items": [
+        {
+          "title": "Daten-Readiness-Check",
+          "text": "Wir erfassen, wo Ihre Produkt-, Material- und Lieferantendaten heute liegen und was für Ihre Produktgruppe fehlt."
+        },
+        {
+          "title": "Anbindung an ERP und PLM",
+          "text": "Wir verbinden DPPSpace mit den Systemen, die Ihre Stammdaten halten, damit die Pässe aktuell bleiben."
+        },
+        {
+          "title": "Berechtigungen, die Sie erklären können",
+          "text": "Wer darf welche Passdaten sehen, ändern und freigeben? Unsere Erfahrung im Identity und Access Management macht diesen Teil einfach."
+        },
+        {
+          "title": "Unterstützung bei der Registeranbindung",
+          "text": "Wir helfen bei der autorisierten Verbindung und beim öffentlichen, maschinenlesbaren Pass, den das EU-Register erwartet."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Fragen zu DPPSpace",
+      "items": [
+        {
+          "q": "Was ist ein digitaler Produktpass?",
+          "a": "Ein digitaler Datensatz zu Identität, Zusammensetzung, Herkunft und Nachhaltigkeit eines Produkts, erreichbar über einen Datenträger wie einen QR-Code. Die EU verlangt Pässe für Batterien ab Februar 2027 und schrittweise für weitere Produktgruppen nach der ESPR."
+        },
+        {
+          "q": "Ist ein registrierter Pass ein Konformitätszertifikat?",
+          "a": "Nein. Die Registrierung im EU-Register ist keine Konformitätszertifizierung, und DPPSpace ist weder eine EU-Einrichtung noch eine Zertifizierungsstelle. DPPSpace hilft Ihnen, die Daten vorzubereiten, zu veröffentlichen und zu registrieren. Die Verantwortung für den Inhalt bleibt beim Wirtschaftsakteur."
+        },
+        {
+          "q": "Brauchen wir alle Daten, bevor wir starten?",
+          "a": "Nein. Beginnen Sie mit einem Produkt, sehen Sie, was fehlt, und schließen Sie die Lücken Schritt für Schritt. Die Reifeansicht zeigt genau, welche Angaben noch offen sind."
+        },
+        {
+          "q": "Wer kann die Daten in einem Pass sehen?",
+          "a": "Jede Verordnung legt fest, welche Angaben öffentlich sind und welche Behörden oder anderen Berechtigten vorbehalten sind. DPPSpace hält Ihre Arbeitsdaten in Ihrem Arbeitsbereich und veröffentlicht nur, was der Pass zeigen soll."
+        },
+        {
+          "q": "Wie fangen wir an?",
+          "a": "Buchen Sie eine Demo. Wir zeigen DPPSpace mit einem Produkt aus Ihrer Branche und besprechen, welche Pässe für Sie wann gelten."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Bringen Sie Ihre Produktdaten in den Fokus.",
+      "text": "Sehen Sie DPPSpace mit einem Produkt aus Ihrer Branche und erfahren Sie, welche Pässe für Sie wann gelten.",
+      "cta": { "label": "Demo buchen", "href": "https://dppspace.com/contact/" },
+      "secondary": {
+        "label": "Unseren Leitfaden zum digitalen Produktpass lesen",
+        "href": "/de/blog/digitaler-produktpass-eu-erklaert"
+      }
+    }
+  ]
+}

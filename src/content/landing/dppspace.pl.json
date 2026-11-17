@@ -1,0 +1,240 @@
+{
+  "locale": "pl",
+  "path": "/pl/produkt",
+  "alternates": {
+    "de": "/de/produkt",
+    "en": "/en/product",
+    "fr": "/fr/produit",
+    "it": "/it/prodotto",
+    "es": "/es/producto",
+    "nl": "/nl/product",
+    "pl": "/pl/produkt",
+    "pt": "/pt/produto",
+    "sv": "/sv/produkt",
+    "da": "/da/produkt",
+    "x-default": "/en/product"
+  },
+  "meta": {
+    "title": "DPPSpace: platforma cyfrowego paszportu produktu · Qubital",
+    "description": "DPPSpace od Qubital: cyfrowe paszporty produktów UE w jednym miejscu. Dane o produktach, materiałach, dostawcach i dowodach, ocena gotowości i rejestr UE.",
+    "ogImageAlt": "DPPSpace, platforma cyfrowego paszportu produktu od Qubital"
+  },
+  "service": {
+    "serviceType": "Oprogramowanie do cyfrowego paszportu produktu (DPPSpace)",
+    "ogImage": "/og/dppspace-pl.png"
+  },
+  "breadcrumb": [
+    {
+      "name": "Qubital",
+      "href": "/pl"
+    },
+    {
+      "name": "Produkt",
+      "href": "/pl/produkt"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Produkt · DPPSpace",
+    "h1": "Cyfrowe paszporty produktów przygotowane w jednej przestrzeni roboczej.",
+    "lead": "DPPSpace to nasza platforma do cyfrowego paszportu produktu UE. Łączy tożsamość produktu, materiały, dostawców i dowody w jednym miejscu, pokazuje, czego jeszcze brakuje, i przekazuje kwalifikujące się paszporty do rejestru UE.",
+    "cta": {
+      "label": "Umów prezentację",
+      "href": "https://dppspace.com/contact/"
+    },
+    "secondaryCta": {
+      "label": "Odwiedź dppspace.com",
+      "href": "https://dppspace.com/"
+    },
+    "facts": [
+      {
+        "value": "4",
+        "label": "kroki od rekordu produktu do paszportu gotowego do publikacji"
+      },
+      {
+        "value": "1",
+        "label": "przestrzeń robocza na dane o produktach, materiałach, dostawcach i dowodach"
+      },
+      {
+        "value": "luty 2027",
+        "label": "od tej daty paszport baterii jest obowiązkowy dla baterii do pojazdów elektrycznych, LMT i dużych baterii przemysłowych"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenge",
+      "type": "text",
+      "heading": "Informacje o produktach są rozproszone w zbyt wielu miejscach",
+      "paragraphs": [
+        "Specyfikacje są w PLM, zestawienia materiałowe w ERP, deklaracje dostawców w skrzynkach e-mail, a raporty z badań na dysku sieciowym. Cyfrowy paszport produktu potrzebuje tego wszystkiego – powiązanego z jednym produktem i stale aktualnego.",
+        "Na mocy unijnego rozporządzenia w sprawie ekoprojektu dla zrównoważonych produktów (ESPR) oraz rozporządzenia w sprawie baterii paszport będzie wymagany dla coraz większej liczby grup produktów. Zespoły, które zaczynają zbierać dane na tydzień przed terminem, zostają z lukami, których nie zdążą już uzupełnić."
+      ]
+    },
+    {
+      "id": "workspace",
+      "type": "features",
+      "heading": "Od tożsamości produktu do obiegu paszportu",
+      "intro": "Jedna przestrzeń robocza, powiązane dane. Każdy paszport powstaje z tych samych czterech elementów.",
+      "items": [
+        {
+          "title": "01 · Utwórz rekord produktu",
+          "text": "Tożsamość produktu, kategoria, model i kraj produkcji – wprowadzone raz i wykorzystywane w każdym paszporcie."
+        },
+        {
+          "title": "02 · Odwzoruj skład",
+          "text": "Zestawienia materiałowe, rekordy komponentów i wielokrotnego użytku biblioteka materiałów z informacjami o pochodzeniu i zawartości surowców z recyklingu."
+        },
+        {
+          "title": "03 · Trzymaj dowody w kontekście",
+          "text": "Informacje od dostawców, dane środowiskowe i inne materiały uzupełniające, przypisane do produktu, którego dotyczą."
+        },
+        {
+          "title": "04 · Sprawdź gotowość",
+          "text": "Luki w danych widoczne na pierwszy rzut oka, a następnie walidacja, publikacja i zarządzanie cyklem życia paszportu."
+        }
+      ]
+    },
+    {
+      "id": "start",
+      "type": "steps",
+      "heading": "Postępy krok po kroku, produkt po produkcie",
+      "intro": "Do startu nie potrzeba idealnie uporządkowanych danych. Wystarczy zacząć od jednego produktu i stopniowo rozszerzać zakres.",
+      "items": [
+        {
+          "title": "Zbierz dane w jednym rekordzie",
+          "duration": "Dzień 1",
+          "text": "Utwórz produkt, zaimportuj dostępne dane i od razu zobacz, których informacji brakuje."
+        },
+        {
+          "title": "Połącz szczegóły",
+          "duration": "Tygodnie 1–3",
+          "text": "Powiąż materiały, komponenty i dostawców oraz dołącz deklaracje i raporty z badań, które je potwierdzają."
+        },
+        {
+          "title": "Sprawdź i opublikuj",
+          "duration": "Gdy dane są gotowe",
+          "text": "Zweryfikuj gotowość, uzupełnij luki i opublikuj czytelny maszynowo paszport dostępny przez kod QR."
+        },
+        {
+          "title": "Przekaż i monitoruj",
+          "duration": "Na bieżąco",
+          "text": "Przekazuj kwalifikujące się paszporty do rejestru UE, śledź ich przetwarzanie i zachowuj wyniki jako dowód."
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "type": "table",
+      "heading": "Jakie paszporty nadchodzą i kiedy",
+      "columns": ["Grupa produktów", "Podstawa prawna", "Przewidywany termin"],
+      "rows": [
+        [
+          "Baterie do pojazdów elektrycznych, LMT i baterie przemysłowe powyżej 2 kWh",
+          "Rozporządzenie w sprawie baterii (UE) 2023/1542",
+          "Obowiązkowo od 18 lutego 2027 r."
+        ],
+        [
+          "Żelazo i stal",
+          "ESPR (UE) 2024/1781, akt delegowany",
+          "Akt delegowany oczekiwany od końca 2026 r."
+        ],
+        [
+          "Tekstylia i odzież, aluminium, opony",
+          "ESPR, akty delegowane",
+          "Akty delegowane oczekiwane w 2027 r."
+        ],
+        ["Meble", "ESPR, akt delegowany", "Akt delegowany oczekiwany w 2028 r."],
+        ["Materace", "ESPR, akt delegowany", "Akt delegowany oczekiwany w 2029 r."]
+      ],
+      "after": "Terminy ESPR wynikają z planu prac Komisji na lata 2025–2030 i mają charakter orientacyjny. Obowiązki zaczynają zwykle obowiązywać około 18 miesięcy po przyjęciu aktu delegowanego."
+    },
+    {
+      "id": "industries",
+      "type": "features",
+      "heading": "Stworzona z myślą o złożoności produktów fizycznych",
+      "items": [
+        {
+          "title": "Produkcja",
+          "text": "Wiele wariantów, wielu dostawców: materiały i dowody wykorzystywane ponownie w całych rodzinach produktów."
+        },
+        {
+          "title": "Motoryzacja i mobilność",
+          "text": "Głębokie łańcuchy dostaw i komponenty, które przechodzą przez kilka szczebli, zanim trafią do pojazdu."
+        },
+        {
+          "title": "Baterie i elektronika",
+          "text": "Pierwsze obowiązkowe paszporty, ze szczegółowymi danymi o składzie, śladzie węglowym i należytej staranności."
+        },
+        {
+          "title": "Komponenty przemysłowe",
+          "text": "Produkty o długim cyklu życia, których paszport musi pozostać aktualny po naprawie, regeneracji i ponownym użyciu."
+        }
+      ]
+    },
+    {
+      "id": "qubital",
+      "type": "features",
+      "heading": "Oprogramowanie i doradztwo od jednego zespołu",
+      "intro": "DPPSpace tworzy Qubital. Nasi konsultanci pomagają uporządkować dane i model dostępu.",
+      "items": [
+        {
+          "title": "Ocena gotowości danych",
+          "text": "Ustalamy, gdzie dziś znajdują się Państwa dane o produktach, materiałach i dostawcach oraz czego brakuje dla danej grupy produktów."
+        },
+        {
+          "title": "Integracja z ERP i PLM",
+          "text": "Łączymy DPPSpace z systemami, w których już znajdują się dane podstawowe, aby paszporty pozostawały aktualne."
+        },
+        {
+          "title": "Dostęp, który da się uzasadnić",
+          "text": "Kto może przeglądać, edytować i zatwierdzać które dane paszportu? Dzięki naszemu doświadczeniu w zarządzaniu tożsamością i dostępem ta część staje się prosta."
+        },
+        {
+          "title": "Wsparcie przy połączeniu z rejestrem",
+          "text": "Pomagamy skonfigurować autoryzowane połączenie oraz publiczny, czytelny maszynowo paszport, jakiego oczekuje rejestr UE."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "heading": "Pytania o DPPSpace",
+      "items": [
+        {
+          "q": "Czym jest cyfrowy paszport produktu?",
+          "a": "To cyfrowy zapis tożsamości, składu, pochodzenia i informacji o zrównoważoności produktu, dostępny przez nośnik danych, np. kod QR. UE wymaga paszportów dla baterii od lutego 2027 r., a w ramach ESPR stopniowo także dla kolejnych grup produktów."
+        },
+        {
+          "q": "Czy zarejestrowany paszport jest certyfikatem zgodności?",
+          "a": "Nie. Rejestracja w rejestrze UE nie jest certyfikacją zgodności, a DPPSpace nie jest instytucją UE ani jednostką certyfikującą. DPPSpace pomaga przygotować, opublikować i zarejestrować dane. Odpowiedzialność za ich treść pozostaje po stronie podmiotu gospodarczego."
+        },
+        {
+          "q": "Czy przed startem musimy mieć komplet danych?",
+          "a": "Nie. Wystarczy zacząć od jednego produktu, sprawdzić, czego brakuje, i krok po kroku uzupełniać luki. Widok gotowości pokazuje dokładnie, które informacje są jeszcze otwarte."
+        },
+        {
+          "q": "Kto widzi dane w paszporcie?",
+          "a": "Każde rozporządzenie określa, które informacje są publiczne, a które zastrzeżone dla organów lub innych podmiotów mających uzasadniony interes. DPPSpace przechowuje dane robocze w Państwa przestrzeni roboczej i publikuje tylko to, co ma pokazywać paszport."
+        },
+        {
+          "q": "Jak zacząć?",
+          "a": "Wystarczy umówić prezentację. Pokażemy DPPSpace na przykładzie produktu z Państwa branży i omówimy, które paszporty i kiedy będą Państwa dotyczyć."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "heading": "Pełny obraz danych o Państwa produktach.",
+      "text": "Pokażemy DPPSpace na przykładzie produktu z Państwa branży i wyjaśnimy, które paszporty i kiedy będą Państwa dotyczyć.",
+      "cta": {
+        "label": "Umów prezentację",
+        "href": "https://dppspace.com/contact/"
+      },
+      "secondary": {
+        "label": "Przeczytaj nasz przewodnik po cyfrowym paszporcie produktu",
+        "href": "/pl/blog/cyfrowy-paszport-produktu-ue-wyjasnienie"
+      }
+    }
+  ]
+}
